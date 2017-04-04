@@ -1,8 +1,9 @@
+import arrays.TestArrays;
 import bit_manipulation.TestBitManipulation;
 
 public class Main {
     public static void main(String[] args) {
-        //TestArrays.run();
+        TestArrays.run();
         TestBitManipulation.run();
         //TestDesignPatterns().run();
         //TestGraphs().run();
