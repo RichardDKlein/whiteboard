@@ -13,7 +13,7 @@ public class TestArrays {
         MergeTwoSortedArrays.test();
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();
-        //testShortestClosure();
+        ShortestClosure.test();
         ShuffleArray.test();
         SumPairsInSortedArray.test();
         SumPairsInUnsortedArray.test();
