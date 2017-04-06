@@ -9,7 +9,7 @@ public class TestArrays {
         System.out.println("=============================================");
 
         HistogramWater.test();
-        //testLinesThruPoints();
+        LinesThruPoints.test();
         MergeTwoSortedArrays.test();
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();
