@@ -8,9 +8,9 @@ public class Line {
     public double slope;        // Double.MAX_VALUE if vertical
     public double intercept;    // x-coord if vertical
 
-    public Line(double slope_, double intercept_) {
-        slope = slope_;
-        intercept = intercept_;
+    public Line(double slope, double intercept) {
+        this.slope = slope;
+        this.intercept = intercept;
     }
 
     @Override

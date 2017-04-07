@@ -9,12 +9,12 @@ import java.util.Arrays;
  * and columns are sorted in ascending order.
  */
 public class SearchSorted2dArray {
-    private int[][] a_;
-    private int target_;
+    private int[][] a;
+    private int target;
 
     public SearchSorted2dArray(int[][] a, int target) {
-        a_ = a;
-        target_ = target;
+        this.a = a;
+        this.target = target;
     }
 
     /**
@@ -22,8 +22,8 @@ public class SearchSorted2dArray {
      * [or (-1, -1) if not found].
      */
     public Pair<Integer, Integer> compute() {
-        int rows = a_.length;
-        int cols = a_[0].length;
+        int rows = a.length;
+        int cols = a[0].length;
 
         int top = 0;
         int bottom = rows - 1;
@@ -33,9 +33,9 @@ public class SearchSorted2dArray {
         int row = bottom;
         int col = left;
         while (row >= top && col <= right) {
-            if (a_[row][col] < target_) {
+            if (a[row][col] < target) {
                 ++col;
-            } else if (a_[row][col] > target_) {
+            } else if (a[row][col] > target) {
                 --row;
             } else {
                 return new Pair(row, col);

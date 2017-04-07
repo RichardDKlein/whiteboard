@@ -1,21 +1,27 @@
-#include <iostream>
-#include <memory>
-#include <queue>
-#include <string>
-#include <unordered_map>
-#include <utility>
-#include <vector>
+package graphs;
 
-using namespace std;
-
-using City = string;
-using CityPair = pair<City, City>;
+/**
+ * Given a list of city pairs, where each pair denotes that
+ * the two cities belong to the same sales territories, find
+ * all the territories, i.e. find all the cities composing
+ * each territory.
+ */
+public class SalesTerritories {
+}
+    /*
+    private Pair<String, String>[] cityPairs_;
+    vector<CityPair> cityPairs_;
+    vector<Territory> territories_;
+    CityMap cityMap_;
+}
+        using City = string;
+        using CityPair = pair<City, City>;
 using Territory = vector<City>;
 
 class SalesTerritories {
-public:
+    public:
     SalesTerritories(const vector<CityPair>& cityPairs)
-        : cityPairs_(cityPairs) {}
+    : cityPairs_(cityPairs) {}
 
     vector<Territory> getTerritories() {
         buildCityGraph();
@@ -24,21 +30,18 @@ public:
         return territories_;
     }
 
-private:
+    private:
     struct Node {
         City city;
         int territory; // negative => uninitialized
         vector<shared_ptr<Node>> neighbors;
         Node(City aCity) :
-            city(aCity),
-            territory(-1) {
+        city(aCity),
+                territory(-1) {
         }
     };
     using CityMap = unordered_map<City, shared_ptr<Node>>;
 
-    vector<CityPair> cityPairs_;
-    vector<Territory> territories_;
-    CityMap cityMap_;
 
     void buildCityGraph() {
         for (auto& cityPair : cityPairs_) {
@@ -83,7 +86,7 @@ private:
     }
 
     void labelConnectedNodes(const shared_ptr<Node>& root,
-            int territory) {
+                             int territory) {
 
         // Breadth-First Search (BFS)
         queue<shared_ptr<Node>> nodeQueue;
@@ -110,50 +113,51 @@ private:
 };
 
 void testSalesTerritories() {
-    cout << endl;
-    cout << "Test salesTerritories():" << endl;
-    cout << "========================" << endl;
+        cout << endl;
+        cout << "Test salesTerritories():" << endl;
+        cout << "========================" << endl;
 
-    vector<CityPair> cityPairs;
+        vector<CityPair> cityPairs;
 
-    cityPairs.push_back(CityPair("San Francisco", "San Jose"));
-    cityPairs.push_back(CityPair("Denver", "Colorado Springs"));
-    cityPairs.push_back(CityPair("Los Angeles", "San Francisco"));
-    cityPairs.push_back(CityPair("New York City", "Buffalo"));
-    cityPairs.push_back(CityPair("San Jose", "San Diego"));
-    cityPairs.push_back(CityPair("Colorado Springs", "Aspen"));
-    cityPairs.push_back(CityPair("Santa Monica", "Pasadena"));
-    cityPairs.push_back(CityPair("Buffalo", "Yonkers"));
-    cityPairs.push_back(CityPair("Oakland", "Sacramento"));
-    cityPairs.push_back(CityPair("Fort Collins", "Aurora"));
-    cityPairs.push_back(CityPair("San Diego", "Los Angeles"));
-    cityPairs.push_back(CityPair("Syracuse", "Albany"));
-    cityPairs.push_back(CityPair("Los Angeles", "San Diego"));
-    cityPairs.push_back(CityPair("Boulder", "Aspen"));
-    cityPairs.push_back(CityPair("Oakland", "Santa Monica"));
-    cityPairs.push_back(CityPair("Rochester", "Yonkers"));
-    cityPairs.push_back(CityPair("San Francisco", "Oakland"));
-    cityPairs.push_back(CityPair("Denver", "Fort Collins"));
-    cityPairs.push_back(CityPair("San Jose", "San Francisco"));
-    cityPairs.push_back(CityPair("New York City", "Syracuse"));
-    cityPairs.push_back(CityPair("Pasadena", "Sacramento"));
+        cityPairs.push_back(CityPair("San Francisco", "San Jose"));
+        cityPairs.push_back(CityPair("Denver", "Colorado Springs"));
+        cityPairs.push_back(CityPair("Los Angeles", "San Francisco"));
+        cityPairs.push_back(CityPair("New York City", "Buffalo"));
+        cityPairs.push_back(CityPair("San Jose", "San Diego"));
+        cityPairs.push_back(CityPair("Colorado Springs", "Aspen"));
+        cityPairs.push_back(CityPair("Santa Monica", "Pasadena"));
+        cityPairs.push_back(CityPair("Buffalo", "Yonkers"));
+        cityPairs.push_back(CityPair("Oakland", "Sacramento"));
+        cityPairs.push_back(CityPair("Fort Collins", "Aurora"));
+        cityPairs.push_back(CityPair("San Diego", "Los Angeles"));
+        cityPairs.push_back(CityPair("Syracuse", "Albany"));
+        cityPairs.push_back(CityPair("Los Angeles", "San Diego"));
+        cityPairs.push_back(CityPair("Boulder", "Aspen"));
+        cityPairs.push_back(CityPair("Oakland", "Santa Monica"));
+        cityPairs.push_back(CityPair("Rochester", "Yonkers"));
+        cityPairs.push_back(CityPair("San Francisco", "Oakland"));
+        cityPairs.push_back(CityPair("Denver", "Fort Collins"));
+        cityPairs.push_back(CityPair("San Jose", "San Francisco"));
+        cityPairs.push_back(CityPair("New York City", "Syracuse"));
+        cityPairs.push_back(CityPair("Pasadena", "Sacramento"));
 
-    cout << "City pairs = " << endl;
-    for (auto& cityPair : cityPairs) {
+        cout << "City pairs = " << endl;
+        for (auto& cityPair : cityPairs) {
         cout << "\t(" << cityPair.first << ", "
-             << cityPair.second << ")" << endl;
-    }
-    cout << endl;
+        << cityPair.second << ")" << endl;
+        }
+        cout << endl;
 
-    SalesTerritories salesTerritories(cityPairs);
-    vector<Territory> territories = salesTerritories.getTerritories();
+        SalesTerritories salesTerritories(cityPairs);
+        vector<Territory> territories = salesTerritories.getTerritories();
 
-    cout << "Territories = " << endl;
-    for (auto& territory : territories) {
+        cout << "Territories = " << endl;
+        for (auto& territory : territories) {
         cout << "{" << endl;
         for (auto& city : territory) {
-            cout << "\t" << city << endl;
+        cout << "\t" << city << endl;
         }
         cout << "}" << endl;
-    }
-}
+        }
+        }
+*/

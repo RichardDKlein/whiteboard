@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Compute the water collected between the bars of a histogram.
  */
 public class HistogramWater {
-    private int[] heights_;
+    private int[] heights;
 
     /**
      * @brief Constructor.
@@ -15,7 +15,7 @@ public class HistogramWater {
      * of each histogram bar.
      */
     public HistogramWater(int[] heights) {
-        heights_ = heights;
+        this.heights = heights;
     }
 
     /**
@@ -25,26 +25,26 @@ public class HistogramWater {
      * the histogram bars.
      */
     public int compute() {
-        int[] leftTallest = new int[heights_.length];
+        int[] leftTallest = new int[heights.length];
         int maxLeft = -1;
-        for (int i = 0; i < heights_.length; ++i) {
-            maxLeft = Math.max(maxLeft, heights_[i]);
+        for (int i = 0; i < heights.length; ++i) {
+            maxLeft = Math.max(maxLeft, heights[i]);
             leftTallest[i] = maxLeft;
         }
-        int[] rightTallest = new int[heights_.length];
+        int[] rightTallest = new int[heights.length];
         int maxRight = -1;
-        for (int i = heights_.length - 1; i >= 0; --i) {
-            maxRight = Math.max(maxRight, heights_[i]);
+        for (int i = heights.length - 1; i >= 0; --i) {
+            maxRight = Math.max(maxRight, heights[i]);
             rightTallest[i] = maxRight;
         }
-        int[] waterline = new int[heights_.length];
-        for (int i = 0; i < heights_.length; ++i) {
+        int[] waterline = new int[heights.length];
+        for (int i = 0; i < heights.length; ++i) {
             waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
         }
         int waterCollected = 0;
-        for (int i = 0; i < heights_.length; ++i) {
-            if (waterline[i] > heights_[i]) {
-                waterCollected += waterline[i] - heights_[i];
+        for (int i = 0; i < heights.length; ++i) {
+            if (waterline[i] > heights[i]) {
+                waterCollected += waterline[i] - heights[i];
             }
         }
         return waterCollected;

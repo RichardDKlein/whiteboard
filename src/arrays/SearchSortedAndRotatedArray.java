@@ -6,12 +6,12 @@ import java.util.Arrays;
  * Search a sorted and rotated array.
  */
 public class SearchSortedAndRotatedArray {
-    private int[] a_;
-    private int target_;
+    private int[] a;
+    private int target;
 
     public SearchSortedAndRotatedArray(int[] a, int target) {
-        a_ = a;
-        target_ = target;
+        this.a = a;
+        this.target = target;
     }
 
     /**
@@ -19,20 +19,20 @@ public class SearchSortedAndRotatedArray {
      */
     public int compute() {
         int left = 0;
-        int right = a_.length - 1;
+        int right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (a_[mid] == target_) {
+            if (a[mid] == target) {
                 return mid;
             }
-            if (a_[left] < a_[mid]) { // if left half is normally ordered
-                if (a_[left] <= target_ && target_ <= a_[mid]) {
+            if (a[left] < a[mid]) { // if left half is normally ordered
+                if (a[left] <= target && target <= a[mid]) {
                     right = mid - 1; // search left
                 } else {
                     left = mid + 1; // search right
                 }
             } else { // right half is normally ordered
-                if (a_[mid] <= target_ && target_ <= a_[right]) {
+                if (a[mid] <= target && target <= a[right]) {
                     left = mid + 1; // search right
                 } else {
                     right = mid - 1; // search left

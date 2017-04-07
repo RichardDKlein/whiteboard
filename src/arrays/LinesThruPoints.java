@@ -10,29 +10,29 @@ import java.util.Map;
  */
 public class LinesThruPoints {
     private static final double TOLERANCE = 0.0001;
-    private Point[] points_;
-    private ArrayList<Line> linesThruPairs_ = new ArrayList<>();
-    private HashMap<Line, Integer> lineTally_ = new HashMap<>();
-    private int count_ = 0;
+    private Point[] points;
+    private ArrayList<Line> linesThruPairs = new ArrayList<>();
+    private HashMap<Line, Integer> lineTally = new HashMap<>();
+    private int count = 0;
 
     public LinesThruPoints(Point[] points) {
-        points_ = points;
+        this.points = points;
     }
 
     public int compute() {
         findLinesThruPairs();
         tallyLinesThruPairs();
         countRepeatedLinesThruPairs();
-        return count_;
+        return count;
     }
 
     private void findLinesThruPairs() {
-        for (int i = 0; i < points_.length; ++i) {
-            for (int j = i + 1; j < points_.length; ++j) {
-                double x1 = points_[i].x;
-                double y1 = points_[i].y;
-                double x2 = points_[j].x;
-                double y2 = points_[j].y;
+        for (int i = 0; i < points.length; ++i) {
+            for (int j = i + 1; j < points.length; ++j) {
+                double x1 = points[i].x;
+                double y1 = points[i].y;
+                double x2 = points[j].x;
+                double y2 = points[j].y;
                 double slope, intercept;
                 if (Math.abs(x1 - x2) < TOLERANCE) {
                     slope = Double.MAX_VALUE;
@@ -41,22 +41,22 @@ public class LinesThruPoints {
                     slope = (y2 - y1) / (x2 - x1);
                     intercept = y1 - (slope * x1);
                 }
-                linesThruPairs_.add(new Line(slope, intercept));
+                linesThruPairs.add(new Line(slope, intercept));
             }
         }
     }
 
     private void tallyLinesThruPairs() {
-        for (Line line : linesThruPairs_) {
-            Integer tally = lineTally_.get(line);
-            lineTally_.put(line, tally == null ? 1 : tally + 1);
+        for (Line line : linesThruPairs) {
+            Integer tally = lineTally.get(line);
+            lineTally.put(line, tally == null ? 1 : tally + 1);
         }
     }
 
     private void countRepeatedLinesThruPairs() {
-        for (Map.Entry<Line, Integer> entry : lineTally_.entrySet()) {
+        for (Map.Entry<Line, Integer> entry : lineTally.entrySet()) {
             if (entry.getValue() > 1) {
-                ++count_;
+                ++count;
             }
         }
     }

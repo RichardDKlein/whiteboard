@@ -9,41 +9,41 @@ import java.util.List;
  * the needles.
  */
 public class ShortestClosure<T> {
-    private T[] haystack_;
-    private T[] needles_;
-    private List<List<Integer>> locationLists_;
-    Interval shortest_;
+    private T[] haystack;
+    private T[] needles;
+    private List<List<Integer>> locationLists;
+    Interval shortest;
 
     public ShortestClosure(T[] haystack, T[] needles) {
-        haystack_ = haystack;
-        needles_ = needles;
+        this.haystack = haystack;
+        this.needles = needles;
     }
 
     public Interval compute() {
-        shortest_ = new Interval(0, haystack_.length - 1);
+        shortest = new Interval(0, haystack.length - 1);
         buildLocationLists();
         for (;;) {
             Interval candidate = nextCandidate();
             if (!candidate.valid()) {
                 break;
             }
-            if (candidate.length() < shortest_.length()) {
-                shortest_ = candidate;
+            if (candidate.length() < shortest.length()) {
+                shortest = candidate;
             }
         }
-        return shortest_;
+        return shortest;
     }
 
     private void buildLocationLists() {
-        locationLists_= new ArrayList<List<Integer>>();
-        for (int i = 0; i < needles_.length; ++i) {
+        locationLists = new ArrayList<List<Integer>>();
+        for (int i = 0; i < needles.length; ++i) {
             List<Integer> list = new ArrayList<>();
-            locationLists_.add(list);
+            locationLists.add(list);
         }
-        for (int i = 0; i < needles_.length; ++i) {
-            for (int j = 0; j < haystack_.length; ++j) {
-                if (needles_[i] == haystack_[j]) {
-                    locationLists_.get(i).add(j);
+        for (int i = 0; i < needles.length; ++i) {
+            for (int j = 0; j < haystack.length; ++j) {
+                if (needles[i] == haystack[j]) {
+                    locationLists.get(i).add(j);
                 }
             }
         }
@@ -53,7 +53,7 @@ public class ShortestClosure<T> {
         int min = Integer.MAX_VALUE;
         int max = -1;
         List<Integer> minLocationList = new ArrayList<>();
-        for (List<Integer> locationList : locationLists_) {
+        for (List<Integer> locationList : locationLists) {
             if (locationList.isEmpty()) {
                 return new Interval(-1, -1);
             }

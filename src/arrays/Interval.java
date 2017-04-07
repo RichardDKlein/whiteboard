@@ -4,32 +4,32 @@ package arrays;
  * Represent a closed interval [left, right] of integers.
  */
 public class Interval {
-    private int left_;
-    private int right_;
+    private int left;
+    private int right;
 
     public Interval(int left, int right) {
-        left_ = left;
-        right_ = right;
+        this.left = left;
+        this.right = right;
     }
 
     public Interval() {
-        left_ = 0;
-        right_ = 0;
+        left = 0;
+        right = 0;
     }
 
     public int left() {
-        return left_;
+        return left;
     }
 
     public int right() {
-        return right_;
+        return right;
     }
 
     public int length() {
-        return right_ - left_ + 1;
+        return right - left + 1;
     }
 
     public boolean valid() {
-        return (left_ >= 0) && (right_ >= 0) && (right_ >= left_);
+        return (left >= 0) && (right >= 0) && (right >= left);
     }
 }

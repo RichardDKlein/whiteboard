@@ -7,20 +7,20 @@ import java.util.Arrays;
  */
 public class ShuffleArray<T> {
     private static final int NUM_CARDS = 52;
-    private T[] a_;
+    private T[] a;
 
     public ShuffleArray(T[] a) {
-        a_ = a;
+        this.a = a;
     }
 
     public T[] compute() {
-        for (int i = 0; i < a_.length - 1; ++i) {
-            int j = random(i + 1, a_.length - 1);
-            T temp = a_[i];
-            a_[i] = a_[j];
-            a_[j] = temp;
+        for (int i = 0; i < a.length - 1; ++i) {
+            int j = random(i + 1, a.length - 1);
+            T temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
         }
-        return a_;
+        return a;
     }
 
     /**

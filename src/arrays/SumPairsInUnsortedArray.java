@@ -11,8 +11,8 @@ import java.util.HashSet;
  * that sum to a given value.
  */
 public class SumPairsInUnsortedArray {
-    private int[] a_;
-    private int sum_;
+    private int[] a;
+    private int sum;
 
     /**
      * @brief Constructor.
@@ -21,16 +21,16 @@ public class SumPairsInUnsortedArray {
      * @param sum The value to which each pair of elements should sum.
      */
     public SumPairsInUnsortedArray(int[] a, int sum) {
-        a_ = a;
-        sum_ = sum;
+        this.a = a;
+        this.sum = sum;
     }
 
     public ArrayList<Pair<Integer, Integer>> compute() {
         ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
         HashSet<Integer> seen = new HashSet<>();
-        for (int n : a_) {
-            if (seen.contains(sum_ - n)) {
-                pairs.add(new Pair(n, sum_ - n));
+        for (int n : a) {
+            if (seen.contains(sum - n)) {
+                pairs.add(new Pair(n, sum - n));
             }
             seen.add(n);
         }

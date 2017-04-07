@@ -7,31 +7,31 @@ import java.util.Arrays;
  * Merge two sorted arrays into a single sorted array.
  */
 public class MergeTwoSortedArrays<T extends Comparable<T>> {
-    ArrayList<T> a1_;
-    ArrayList<T> a2_;
+    ArrayList<T> a1;
+    ArrayList<T> a2;
 
     public MergeTwoSortedArrays(ArrayList<T> a1, ArrayList<T> a2) {
-        a1_ = a1;
-        a2_ = a2;
+        this.a1 = a1;
+        this.a2 = a2;
     }
 
     public ArrayList<T> compute() {
         ArrayList<T> merged = new ArrayList<>();
         for (;;) {
-            if (a1_.isEmpty()) {
-                merged.addAll(a2_);
+            if (a1.isEmpty()) {
+                merged.addAll(a2);
                 break;
             }
-            if (a2_.isEmpty()) {
-                merged.addAll(a1_);
+            if (a2.isEmpty()) {
+                merged.addAll(a1);
                 break;
             }
-            if (a1_.get(0).compareTo(a2_.get(0)) < 0) {
-                merged.add(a1_.get(0));
-                a1_.remove(0);
+            if (a1.get(0).compareTo(a2.get(0)) < 0) {
+                merged.add(a1.get(0));
+                a1.remove(0);
             } else {
-                merged.add(a2_.get(0));
-                a2_.remove(0);
+                merged.add(a2.get(0));
+                a2.remove(0);
             }
         }
         return merged;
