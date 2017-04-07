@@ -4,15 +4,15 @@ package design_patterns;
  * Singleton design pattern.
  */
 public class Singleton {
-    private static Singleton instance_;
+    private static Singleton instance;
     private Singleton() {
         // construction logic
     }
     public static Singleton instance() {
-        if (instance_ == null) {
-            instance_ = new Singleton();
+        if (instance == null) {
+            instance = new Singleton();
         }
-        return instance_;
+        return instance;
     }
 
     static void test() {
