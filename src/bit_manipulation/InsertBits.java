@@ -4,10 +4,10 @@ package bit_manipulation;
  * Insert a contiguous segment of bits into an int.
  */
 public class InsertBits {
-    private int n_;
-    private int bits_;
-    private int msb_;
-    private int lsb_;
+    private int n;
+    private int bits;
+    private int msb;
+    private int lsb;
 
     /**
      * @brief Constructor.
@@ -23,17 +23,17 @@ public class InsertBits {
      * bits are to be inserted.
      */
     public InsertBits(int n, int bits, int msb, int lsb) {
-        n_ = n;
-        bits_ = bits;
-        msb_ = msb;
-        lsb_ = lsb;
+        this.n = n;
+        this.bits = bits;
+        this.msb = msb;
+        this.lsb = lsb;
     }
 
     public int compute() {
-        int numBits = msb_ - lsb_ + 1;
+        int numBits = msb - lsb + 1;
         int mask = (1 << numBits) - 1;
-        mask <<= lsb_;
-        return (n_ & ~mask) | (bits_ << lsb_);
+        mask <<= lsb;
+        return (n & ~mask) | (bits << lsb);
     }
 
     public static void test() {

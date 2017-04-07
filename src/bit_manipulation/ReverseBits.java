@@ -4,21 +4,21 @@ package bit_manipulation;
  * Reverse the bits in an int.
  */
 public class ReverseBits {
-    private int n_;
+    private int n;
 
     public ReverseBits(int n) {
-        n_ = n;
+        this.n = n;
     }
 
     public int compute() {
         int rev = 0;
         int numShifts = Integer.SIZE - 1;
         for (int i = 0; i < numShifts; ++i) {
-            rev |= n_ & 1; // OR
+            rev |= n & 1; // OR
             rev <<= 1; // shift
-            n_ >>= 1;
+            n >>= 1;
         }
-        rev |= n_ & 1; // one final OR
+        rev |= n & 1; // one final OR
         return rev;
     }
 

@@ -6,16 +6,16 @@ package bit_manipulation;
  * into the other.
  */
 public class BitDiff {
-    private int m_;
-    private int n_;
+    private int m;
+    private int n;
 
     public BitDiff(int m, int n) {
-        m_ = m;
-        n_ = n;
+        this.m = m;
+        this.n = n;
     }
 
     public int compute() {
-        return new CountOneBits(m_ ^ n_).compute();
+        return new CountOneBits(m ^ n).compute();
     }
 
     public static void test() {

@@ -4,14 +4,14 @@ package bit_manipulation;
  * Determine whether an int is a power of 2.
  */
 public class IsPowerOfTwo {
-    private int n_;
+    private int n;
 
     public IsPowerOfTwo(int n) {
-        n_ = n;
+        this.n = n;
     }
 
     public boolean compute() {
-        return (n_ != 0) && ((n_ & (n_ - 1)) == 0);
+        return (n != 0) && ((n & (n - 1)) == 0);
     }
 
     public static void test() {

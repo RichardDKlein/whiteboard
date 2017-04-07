@@ -4,15 +4,15 @@ package bit_manipulation;
  * Count the number of '1' bits in an int.
  */
 public class CountOneBits {
-    private int n_;
+    private int n;
     public CountOneBits(int n) {
-        n_ = n;
+        this.n = n;
     }
 
     public int compute() {
         int count = 0;
-        while (n_ != 0) {
-            n_ &= n_ - 1;
+        while (n != 0) {
+            n &= n - 1;
             ++count;
         }
         return count;
