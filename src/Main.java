@@ -2,6 +2,7 @@ import arrays.TestArrays;
 import bit_manipulation.TestBitManipulation;
 import design_patterns.TestDesignPatterns;
 import graphs.TestGraphs;
+import linked_lists.TestLinkedLists;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class Main {
         TestBitManipulation.run();
         TestDesignPatterns.run();
         TestGraphs.run();
-        //TestLinkedLists().run();
+        TestLinkedLists.run();
         //TestSets().run();
         //TestStacksAndQueues().run();
         //TestStrings().run();
