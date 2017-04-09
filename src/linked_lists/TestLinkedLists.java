@@ -13,7 +13,7 @@ public class TestLinkedLists {
         InsertInList.test();
         //testKthToLastInList();
         //testListHasCycle();
-        //testRemoveDupsFromList();
-        //testReverseList();
+        RemoveDupsFromList.test();
+        ReverseList.test();
     }
 }
