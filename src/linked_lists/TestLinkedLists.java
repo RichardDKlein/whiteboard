@@ -11,8 +11,8 @@ public class TestLinkedLists {
         AppendToList.test();
         DeleteFromList.test();
         InsertInList.test();
-        //testKthToLastInList();
-        //testListHasCycle();
+        KthToLastInList.test();
+        ListHasCycle.test();
         RemoveDupsFromList.test();
         ReverseList.test();
     }
