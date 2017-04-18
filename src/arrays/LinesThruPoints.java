@@ -19,7 +19,7 @@ public class LinesThruPoints {
         this.points = points;
     }
 
-    public int compute() {
+    public int find() {
         findLinesThruPairs();
         tallyLinesThruPairs();
         countRepeatedLinesThruPairs();
@@ -102,7 +102,7 @@ public class LinesThruPoints {
         }
         System.out.println();
 
-        int numLines = new LinesThruPoints(points).compute();
+        int numLines = new LinesThruPoints(points).find();
         System.out.println("Number of lines = " + numLines);
     }
 }

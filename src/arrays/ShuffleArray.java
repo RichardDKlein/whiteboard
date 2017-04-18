@@ -13,7 +13,7 @@ public class ShuffleArray<T> {
         this.a = a;
     }
 
-    public T[] compute() {
+    public T[] shuffle() {
         for (int i = 0; i < a.length - 1; ++i) {
             int j = random(i + 1, a.length - 1);
             T temp = a[i];
@@ -48,7 +48,7 @@ public class ShuffleArray<T> {
         System.out.println("Unshuffled deck = " + Arrays.toString(deck));
         ShuffleArray<Integer> shuffleArray = new ShuffleArray<>(deck);
         for (int i = 0; i < 10; i++) {
-            deck = shuffleArray.compute();
+            deck = shuffleArray.shuffle();
             System.out.println("Shuffled   deck = " + Arrays.toString(deck));
         }
     }

@@ -6,25 +6,16 @@ import java.util.Arrays;
  * Compute the water collected between the bars of a histogram.
  */
 public class HistogramWater {
-    private int[] heights;
+    private HistogramWater() {}
 
     /**
-     * @brief Constructor.
-     *
      * @param heights An array specifying the height, in inches,
      * of each histogram bar.
-     */
-    public HistogramWater(int[] heights) {
-        this.heights = heights;
-    }
-
-    /**
-     * @brief Compute water collected.
      *
      * @return The amount, in inches, of water collected between
      * the histogram bars.
      */
-    public int compute() {
+    public static int compute(int[] heights) {
         int[] leftTallest = new int[heights.length];
         int maxLeft = -1;
         for (int i = 0; i < heights.length; ++i) {
@@ -64,7 +55,7 @@ public class HistogramWater {
         for (int i = 0; i < heights.length; ++i) {
             int[] testArray = heights[i];
             System.out.println("heights = " + Arrays.toString(testArray));
-            System.out.println("water collected = " + new HistogramWater(testArray).compute());
+            System.out.println("water collected = " + HistogramWater.compute(testArray));
         }
     }
 }

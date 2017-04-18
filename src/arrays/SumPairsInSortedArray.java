@@ -10,21 +10,13 @@ import java.util.Arrays;
  * that sum to a given value.
  */
 public class SumPairsInSortedArray {
-    private int[] a;
-    private int sum;
+    private SumPairsInSortedArray() {}
 
     /**
-     * @brief Constructor.
-     *
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public SumPairsInSortedArray(int[] a, int sum) {
-        this.a = a;
-        this.sum = sum;
-    }
-
-    public ArrayList<Pair<Integer, Integer>> compute() {
+    public static ArrayList<Pair<Integer, Integer>> find(int[] a, int sum) {
         ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
         int left = 0;
         int right = a.length - 1;
@@ -50,7 +42,7 @@ public class SumPairsInSortedArray {
 
         int sum = 12;
         ArrayList<Pair<Integer, Integer>> pairs =
-            new SumPairsInSortedArray(a, sum).compute();
+            SumPairsInSortedArray.find(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.fst;

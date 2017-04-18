@@ -11,21 +11,13 @@ import java.util.HashSet;
  * that sum to a given value.
  */
 public class SumPairsInUnsortedArray {
-    private int[] a;
-    private int sum;
+    private SumPairsInUnsortedArray() {}
 
     /**
-     * @brief Constructor.
-     *
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public SumPairsInUnsortedArray(int[] a, int sum) {
-        this.a = a;
-        this.sum = sum;
-    }
-
-    public ArrayList<Pair<Integer, Integer>> compute() {
+    public static ArrayList<Pair<Integer, Integer>> find(int[] a, int sum) {
         ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
         HashSet<Integer> seen = new HashSet<>();
         for (int n : a) {
@@ -45,14 +37,14 @@ public class SumPairsInUnsortedArray {
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
         Integer aI[] = TestUtils.intArrayToIntegerArray(a);
 
-        aI = new ShuffleArray<>(aI).compute();
+        aI = new ShuffleArray<>(aI).shuffle();
         System.out.println("unsorted array = " + Arrays.toString(aI));
 
         a = TestUtils.IntegerArrayToIntArray(aI);
         int sum = 12;
 
         ArrayList<Pair<Integer, Integer>> pairs =
-                new SumPairsInUnsortedArray(a, sum).compute();
+            SumPairsInUnsortedArray.find(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.fst;

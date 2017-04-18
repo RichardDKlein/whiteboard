@@ -9,19 +9,15 @@ import java.util.Arrays;
  * and columns are sorted in ascending order.
  */
 public class SearchSorted2dArray {
-    private int[][] a;
-    private int target;
-
-    public SearchSorted2dArray(int[][] a, int target) {
-        this.a = a;
-        this.target = target;
-    }
+    private SearchSorted2dArray() {}
 
     /**
      * @return The (row, col) of target
      * [or (-1, -1) if not found].
      */
-    public Pair<Integer, Integer> compute() {
+    public static Pair<Integer, Integer>
+    search(int[][] a, int target) {
+
         int rows = a.length;
         int cols = a[0].length;
 
@@ -64,7 +60,7 @@ public class SearchSorted2dArray {
             for (int col = 0; col < a[0].length; ++col) {
                 int target = a[row][col];
                 Pair<Integer, Integer> loc =
-                    new SearchSorted2dArray(a, target).compute();
+                    SearchSorted2dArray.search(a, target);
                 System.out.println("target = " + target + ", row = " +
                     loc.fst + ", col = " + loc.snd);
             }
@@ -72,7 +68,7 @@ public class SearchSorted2dArray {
 
         int target = 16;
         Pair<Integer, Integer> loc =
-            new SearchSorted2dArray(a, target).compute();
+            SearchSorted2dArray.search(a, target);
         System.out.println("target = " + target + ", row = " +
             loc.fst + ", col = " + loc.snd);
     }

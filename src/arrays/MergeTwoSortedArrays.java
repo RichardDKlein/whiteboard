@@ -6,17 +6,13 @@ import java.util.Arrays;
 /**
  * Merge two sorted arrays into a single sorted array.
  */
-public class MergeTwoSortedArrays<T extends Comparable<T>> {
-    ArrayList<T> a1;
-    ArrayList<T> a2;
+public class MergeTwoSortedArrays {
+    private MergeTwoSortedArrays() {}
 
-    public MergeTwoSortedArrays(ArrayList<T> a1, ArrayList<T> a2) {
-        this.a1 = a1;
-        this.a2 = a2;
-    }
+    public static ArrayList<Integer> merge(
+            ArrayList<Integer> a1, ArrayList<Integer> a2) {
 
-    public ArrayList<T> compute() {
-        ArrayList<T> merged = new ArrayList<>();
+        ArrayList<Integer> merged = new ArrayList<>();
         for (;;) {
             if (a1.isEmpty()) {
                 merged.addAll(a2);
@@ -62,7 +58,7 @@ public class MergeTwoSortedArrays<T extends Comparable<T>> {
             ArrayList<Integer> arrayList1 = TestUtils.intArrayToArrayList(a1[i]);
             ArrayList<Integer> arrayList2 = TestUtils.intArrayToArrayList(a2[i]);
             ArrayList<Integer> merged =
-                new MergeTwoSortedArrays<Integer>(arrayList1, arrayList2).compute();
+                MergeTwoSortedArrays.merge(arrayList1, arrayList2);
             System.out.println("merged = " + merged);
         }
     }

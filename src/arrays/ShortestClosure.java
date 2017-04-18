@@ -19,7 +19,7 @@ public class ShortestClosure<T> {
         this.needles = needles;
     }
 
-    public Interval compute() {
+    public Interval find() {
         shortest = new Interval(0, haystack.length - 1);
         buildLocationLists();
         for (;;) {
@@ -83,7 +83,7 @@ public class ShortestClosure<T> {
             7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7
         };
 
-        Interval shortest = new ShortestClosure(haystack, needles).compute();
+        Interval shortest = new ShortestClosure(haystack, needles).find();
 
         System.out.print("needles: { ");
         for (Integer needle : needles) {
