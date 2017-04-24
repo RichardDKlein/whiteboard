@@ -4,15 +4,9 @@ package bit_manipulation;
  * Set the specified bit in an int.
  */
 public class SetBit {
-    private int n;
-    private int bit;
+    private SetBit() {}
 
-    public SetBit(int n, int bit) {
-        this.n = n;
-        this.bit = bit;
-    }
-
-    public int compute() {
+    public static int set(int n, int bit) {
         return n | (1 << bit);
     }
 
@@ -23,7 +17,7 @@ public class SetBit {
 
         int n = 0;
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new SetBit(n, i).compute();
+            n = SetBit.set(n, i);
             TestUtils.printBits(n);
         }
     }

@@ -4,12 +4,9 @@ package bit_manipulation;
  * Count the number of '1' bits in an int.
  */
 public class CountOneBits {
-    private int n;
-    public CountOneBits(int n) {
-        this.n = n;
-    }
+    private CountOneBits() {}
 
-    public int compute() {
+    public static int count(int n) {
         int count = 0;
         while (n != 0) {
             n &= n - 1;
@@ -26,17 +23,17 @@ public class CountOneBits {
         int n = 0;
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new ToggleBit(n, i).compute();
+            n = ToggleBit.toggle(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                    new CountOneBits(n).compute());
+                CountOneBits.count(n));
         }
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new ToggleBit(n, i).compute();
+            n = ToggleBit.toggle(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                    new CountOneBits(n).compute());
+                CountOneBits.count(n));
         }
     }
 }

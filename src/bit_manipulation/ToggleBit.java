@@ -4,15 +4,9 @@ package bit_manipulation;
  * Toggle the specified bit (where 0 = LSB) in an int.
  */
 public class ToggleBit {
-    private int n;
-    private int bit;
+    private ToggleBit() {}
 
-    public ToggleBit(int n, int bit) {
-        this.n = n;
-        this.bit = bit;
-    }
-
-    public int compute() {
+    public static int toggle(int n, int bit) {
         return n ^ (1 << bit);
     }
 
@@ -24,11 +18,11 @@ public class ToggleBit {
         int n = 0;
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new ToggleBit(n, i).compute();
+            n = ToggleBit.toggle(n, i);
             TestUtils.printBits(n);
         }
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new ToggleBit(n, i).compute();
+            n = ToggleBit.toggle(n, i);
             TestUtils.printBits(n);
         }
     }

@@ -4,15 +4,9 @@ package bit_manipulation;
  * Clear a specified bit (where 0 = LSB) in an int.
  */
 public class ClearBit {
-    private int n;
-    private int bit;
+    private ClearBit() {}
 
-    public ClearBit(int n, int bit) {
-        this.n = n;
-        this.bit = bit;
-    }
-
-    public int compute() {
+    public static int clear(int n, int bit) {
         return n & ~(1 << bit);
     }
 
@@ -23,7 +17,7 @@ public class ClearBit {
 
         int n = -1;
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = new ClearBit(n, i).compute();
+            n = ClearBit.clear(n, i);
             TestUtils.printBits(n);
         }
     }

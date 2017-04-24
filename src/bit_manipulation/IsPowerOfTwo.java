@@ -4,13 +4,10 @@ package bit_manipulation;
  * Determine whether an int is a power of 2.
  */
 public class IsPowerOfTwo {
+    private IsPowerOfTwo() {}
     private int n;
 
-    public IsPowerOfTwo(int n) {
-        this.n = n;
-    }
-
-    public boolean compute() {
+    public static boolean decide(int n) {
         return (n != 0) && ((n & (n - 1)) == 0);
     }
 
@@ -24,23 +21,23 @@ public class IsPowerOfTwo {
         n = 0;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-                + (new IsPowerOfTwo(n).compute() ? "true" : "false"));
+            + (IsPowerOfTwo.decide(n) ? "true" : "false"));
 
         n = 1;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-                + (new IsPowerOfTwo(n).compute() ? "true" : "false"));
+            + (IsPowerOfTwo.decide(n) ? "true" : "false"));
 
         for (int i = 1; i < Integer.SIZE; ++i) {
             n = 0;
-            n = new SetBit(n, i).compute();
+            n = SetBit.set(n, i);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                    + (new IsPowerOfTwo(n).compute() ? "true" : "false"));
-            n = new SetBit(n, 0).compute();
+                + (IsPowerOfTwo.decide(n) ? "true" : "false"));
+            n = SetBit.set(n, 0);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                    + (new IsPowerOfTwo(n).compute() ? "true" : "false"));
+                + (IsPowerOfTwo.decide(n) ? "true" : "false"));
         }
     }
 }

@@ -6,7 +6,7 @@ package bit_manipulation;
 public class TestUtils {
     public static void printBits(int n) {
         for (int bit = Integer.SIZE - 1; bit >= 0; --bit) {
-            int bitVal = new GetBit(n, bit).compute();
+            int bitVal = GetBit.get(n, bit);
             System.out.print(bitVal);
         }
         System.out.println();
