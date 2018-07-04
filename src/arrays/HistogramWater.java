@@ -6,32 +6,77 @@ import java.util.Arrays;
  * Compute the water collected between the bars of a histogram.
  */
 public class HistogramWater {
-    private HistogramWater() {}
+    /**
+     * The heights of the given histogram bars.
+     */
+    private int[] heights;
 
     /**
+     * leftTallest[i] is the height of the tallest histogram
+     * bar to the left of bar 'i'.
+     */
+    private int[] leftTallest;
+
+    /**
+     * rightTallest[i] is the height of the tallest histogram
+     * bar to the right of bar 'i'.
+     */
+    private int[] rightTallest;
+
+    /**
+     * waterline[i] is the height of the waterline at bar 'i'.
+     */
+    private int[] waterline;
+
+    /**
+     * General constructor.
+     *
      * @param heights An array specifying the height, in inches,
      * of each histogram bar.
+     */
+    HistogramWater(int[] heights) {
+        this.heights = heights;
+    }
+
+    /**
+     * Compute the water collected between the histogram bars.
      *
      * @return The amount, in inches, of water collected between
      * the histogram bars.
      */
-    public static int compute(int[] heights) {
-        int[] leftTallest = new int[heights.length];
+    public int waterCollected() {
+        findLeftTallest();
+        findRightTallest();
+        findWaterline();
+        return findWaterCollected();
+    }
+
+    private void findLeftTallest() {
+        leftTallest = new int[heights.length];
         int maxLeft = -1;
         for (int i = 0; i < heights.length; ++i) {
             maxLeft = Math.max(maxLeft, heights[i]);
             leftTallest[i] = maxLeft;
         }
-        int[] rightTallest = new int[heights.length];
+    }
+
+    private void findRightTallest() {
+        this.rightTallest = new int[heights.length];
         int maxRight = -1;
         for (int i = heights.length - 1; i >= 0; --i) {
             maxRight = Math.max(maxRight, heights[i]);
             rightTallest[i] = maxRight;
         }
-        int[] waterline = new int[heights.length];
+    }
+
+    private void findWaterline() {
+        this.waterline = new int[heights.length];
         for (int i = 0; i < heights.length; ++i) {
             waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
         }
+    }
+
+    private int findWaterCollected() {
         int waterCollected = 0;
         for (int i = 0; i < heights.length; ++i) {
             if (waterline[i] > heights[i]) {
@@ -52,10 +97,16 @@ public class HistogramWater {
             {1, 3, 0, 7, 2, 0, 9, 0, 4, 3, 0, 5, 6, 0, 8, 0, 3}
         };
 
+        int[] waterCollected = {
+            20, 0, 56
+        };
+
         for (int i = 0; i < heights.length; ++i) {
             int[] testArray = heights[i];
             System.out.println("heights = " + Arrays.toString(testArray));
-            System.out.println("water collected = " + HistogramWater.compute(testArray));
+            System.out.print("water collected = "
+                    + new HistogramWater(testArray).waterCollected());
+            System.out.println(" (should be " + waterCollected[i] + ")");
         }
     }
 }
