@@ -1,8 +1,7 @@
 package arrays;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.Arrays;
+import javafx.util.Pair;
 
 /**
  * Search a 2D array in which all rows
@@ -62,7 +61,7 @@ public class SearchSorted2dArray {
                 Pair<Integer, Integer> loc =
                     SearchSorted2dArray.search(a, target);
                 System.out.println("target = " + target + ", row = " +
-                    loc.fst + ", col = " + loc.snd);
+                    loc.getKey() + ", col = " + loc.getValue());
             }
         }
 
@@ -70,6 +69,6 @@ public class SearchSorted2dArray {
         Pair<Integer, Integer> loc =
             SearchSorted2dArray.search(a, target);
         System.out.println("target = " + target + ", row = " +
-            loc.fst + ", col = " + loc.snd);
+            loc.getKey() + ", col = " + loc.getValue());
     }
 }
