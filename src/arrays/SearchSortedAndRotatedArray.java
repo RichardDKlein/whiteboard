@@ -3,13 +3,28 @@ package arrays;
 import java.util.Arrays;
 
 /**
- * Search a sorted and rotated array.
+ * Search a sorted and rotated one-dimensional array.
  */
 public class SearchSortedAndRotatedArray {
     private SearchSortedAndRotatedArray() {}
 
     /**
-     * @return The index, in a, of target (-1 => not found).
+     * Search a one-dimensional array that has been sorted and then
+     * rotated, so that there is a discontinuity in the array where
+     * it wraps around from the largest to the smallest element.
+     *
+     * The algorithm is basically the same as a binary search, with
+     * one complication: When you subdivide the remaining interval
+     * to be searched, one half of that interval will contain the
+     * wraparound discontinuity, and the other half will not. We
+     * want always to search (and subdivide) the half WITHOUT the
+     * discontinuity, since that is the half where the binary search
+     * algorithm is valid.
+     *
+     * @param a The sorted and rotated one-dimensional array.
+     * @param target The target element to search for.
+     * @return The array index of the target element if found,
+     * or -1 if not found.
      */
     public static int search(int[] a, int target) {
         int left = 0;

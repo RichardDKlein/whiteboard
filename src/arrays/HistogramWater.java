@@ -51,6 +51,10 @@ public class HistogramWater {
         return findWaterCollected();
     }
 
+    /**
+     * For each histogram bar 'i', find the height of the tallest
+     * histogram bar to the left of bar 'i'.
+     */
     private void findLeftTallest() {
         leftTallest = new int[heights.length];
         int maxLeft = -1;
@@ -60,6 +64,10 @@ public class HistogramWater {
         }
     }
 
+    /**
+     * For each histogram bar 'i', find the height of the tallest
+     * histogram bar to the right of bar 'i'.
+     */
     private void findRightTallest() {
         this.rightTallest = new int[heights.length];
         int maxRight = -1;
@@ -69,6 +77,10 @@ public class HistogramWater {
         }
     }
 
+    /**
+     * For each histogram bar 'i', find the height of the waterline
+     * at bar 'i'.
+     */
     private void findWaterline() {
         this.waterline = new int[heights.length];
         for (int i = 0; i < heights.length; ++i) {
@@ -76,6 +88,11 @@ public class HistogramWater {
         }
     }
 
+    /**
+     * Find the total amount of water collected by the histogram bars.
+     *
+     * @return The total amount of water collected.
+     */
     private int findWaterCollected() {
         int waterCollected = 0;
         for (int i = 0; i < heights.length; ++i) {

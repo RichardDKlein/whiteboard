@@ -8,33 +8,13 @@ import java.util.*;
  */
 public class LinesThruPoints {
     /**
-     * The given set of 2D points.
-     */
-    private Set<Point> points;
-
-    /**
-     * A list of all the lines that can be drawn thru each
-     * pair of points. (We use a List rather than a Set,
-     * because lines drawn thru collinear pairs of points
-     * will be equal.)
-     */
-    private List<Line> linesThruPairs = new ArrayList<>();
-
-    /**
-     * A map of <Line, Integer> entries, mapping each Line
-     * in 'linesThruPairs' to the number of times that Line
-     * appears in 'linesThruPairs'.
-     */
-    private Map<Line, Integer> lineTally = new HashMap<>();
-
-    /**
      * Represents a 2D point.
      */
-    public static class Point {
-        public double x;
-        public double y;
+    private static class Point {
+        private double x;
+        private double y;
 
-        public Point(double x, double y) {
+        Point(double x, double y) {
             this.x = x;
             this.y = y;
         }
@@ -43,11 +23,11 @@ public class LinesThruPoints {
     /**
      * Represents a line in the X-Y plane.
      */
-    public static class Line {
-        public double slope;     // Double.MAX_VALUE if vertical
-        public double intercept; // x-coord if vertical
+    private static class Line {
+        private double slope;     // Double.MAX_VALUE if vertical
+        private double intercept; // x-coord if vertical
 
-        public Line(double slope, double intercept) {
+        Line(double slope, double intercept) {
             this.slope = slope;
             this.intercept = intercept;
         }
@@ -79,10 +59,30 @@ public class LinesThruPoints {
     }
 
     /**
+     * The given set of 2D points.
+     */
+    private Set<Point> points;
+
+    /**
+     * A list of all the lines that can be drawn thru each
+     * pair of points. (We use a List rather than a Set,
+     * because lines drawn thru collinear pairs of points
+     * will be equal.)
+     */
+    private List<Line> linesThruPairs = new ArrayList<>();
+
+    /**
+     * A map of <Line, Integer> entries, mapping each Line
+     * in 'linesThruPairs' to the number of times that Line
+     * appears in 'linesThruPairs'.
+     */
+    private Map<Line, Integer> lineTally = new HashMap<>();
+
+    /**
      * General constructor
      * @param points The set of 2D points of interest.
      */
-    public LinesThruPoints(Set<Point> points) {
+    LinesThruPoints(Set<Point> points) {
         this.points = points;
     }
 
