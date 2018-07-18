@@ -21,6 +21,8 @@ public class SearchSortedAndRotatedArray {
      * discontinuity, since that is the half where the binary search
      * algorithm is valid.
      *
+     * Running time = log(n).
+     *
      * @param a The sorted and rotated one-dimensional array.
      * @param target The target element to search for.
      * @return The array index of the target element if found,

@@ -34,7 +34,7 @@ public class SearchSorted2dArray {
      * If the current element is equal to the target,
      * then we are done!
      *
-     * This algorithm is O(2n) = O(n), worst case.
+     * Running time = O(2n) = O(n), worst case.
      *
      * @param a The sorted 2D array to search.
      * @param target The element to search for.

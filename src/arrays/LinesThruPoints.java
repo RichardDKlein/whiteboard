@@ -21,7 +21,9 @@ public class LinesThruPoints {
     }
 
     /**
-     * Represents a line in the X-Y plane.
+     * Represents a line in the X-Y plane. (Since this class will be
+     * used as the Key in a Map, we need to override the equals() and
+     * hashCode() methods.)
      */
     private static class Line {
         private double slope;     // Double.MAX_VALUE if vertical
@@ -87,8 +89,22 @@ public class LinesThruPoints {
     }
 
     /**
-     * Counts the number of lines that can be drawn thru at least
-     * three of the given 2D points.
+     * Counts the number of lines that can be drawn thru at
+     * least three of the given 2D points.
+     *
+     * The algorithm proceeds in three phases. In Phase 1,
+     * we compute the line thru each pair of points.
+     *
+     * In Phase 2, we construct a Map mapping each line found
+     * in Phase 1 to the number of times that line appears.
+     *
+     * In Phase 3, we iterate thru the Map, counting the number
+     * of lines that appear more than once. (Lines that appear
+     * more than once must pass thru at least two different
+     * pairs of points, hence must pass thru at least three
+     * points.)
+     *
+     * Running time = O(n * n) + O(n) + O(n) = O(n * n).
      *
      * @return The number of lines that can be drawn thru at least
      * three of the given 2D points.

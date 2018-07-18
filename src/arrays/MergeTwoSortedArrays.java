@@ -5,6 +5,17 @@ import java.util.Arrays;
 
 /**
  * Merge two sorted arrays into a single sorted array.
+ *
+ * The algorithm is the "merge" part of the merge sort.
+ * We simply compare the two top elements of the two
+ * sorted input arrays, and pick the smaller one to
+ * append to the output array.
+ *
+ * If one of the two input arrays becomes empty, then
+ * we simply append the remaining input array to the
+ * output array.
+ *
+ * Running time is O(n).
  */
 public class MergeTwoSortedArrays {
     private MergeTwoSortedArrays() {}

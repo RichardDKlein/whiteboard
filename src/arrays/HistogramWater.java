@@ -40,6 +40,24 @@ public class HistogramWater {
 
     /**
      * Compute the water collected between the histogram bars.
+     * The computation proceeds in four passes thru the histogram
+     * bars.
+     *
+     * The first two passes compute, for each histogram bar 'i',
+     * the height of the tallest histogram bar to the left and
+     * right of bar 'i', respectively.
+     *
+     * The third pass computes, for each histogram bar 'i', the
+     * height of the waterline at bar 'i'. (This will be the
+     * minimum of the left and right tallest histogram bars for
+     * bar 'i'.)
+     *
+     * The fourth and final pass computes, for each histogram
+     * bar 'i', the amount of water collected above bar 'i'.
+     * (This will simply be the difference between the waterline
+     * at bar 'i' and the height of bar 'i'.)
+     *
+     * Running time = O(n) + O(n) + O(n) + O(n) = O(n).
      *
      * @return The amount, in inches, of water collected between
      * the histogram bars.
