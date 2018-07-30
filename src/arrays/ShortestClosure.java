@@ -116,17 +116,21 @@ public class ShortestClosure<T> {
     /**
      * Build the locationLists, i.e. the data structure identifying
      * the locations of the needles in the haystack.
+     *
+     * We do this by examining each element in the haystack, and
+     * seeing if it is equal to one of the needles. If so, we append
+     * the index of that element to the locationList for that needle.
      */
     private void buildLocationLists() {
-        locationLists = new ArrayList<List<Integer>>();
+        locationLists = new ArrayList<>();
         for (int i = 0; i < needles.length; ++i) {
             List<Integer> list = new ArrayList<>();
             locationLists.add(list);
         }
-        for (int i = 0; i < needles.length; ++i) {
-            for (int j = 0; j < haystack.length; ++j) {
-                if (needles[i] == haystack[j]) {
-                    locationLists.get(i).add(j);
+        for (int i = 0; i < haystack.length; ++i) {
+            for (int j = 0; j < needles.length; ++j) {
+                if (haystack[i] == needles[j]) {
+                    locationLists.get(j).add(i);
                 }
             }
         }
@@ -134,11 +138,13 @@ public class ShortestClosure<T> {
 
     /**
      * Fetch the next closure that is a candidate for the
-     * shortest interval. We do this by examining the head
-     * of each needle's locationList, finding the min and
-     * max, and forming the interval [min, max]. (We also
-     * remove the min index from its locationList, so
-     * that we don't consider that index again next time.)
+     * shortest interval.
+     *
+     * We do this by examining the head of each needle's
+     * locationList, finding the min and max, and forming
+     * the interval [min, max]. (We also remove the min
+     * index from its locationList, so that we don't consider
+     * that index again next time.)
      *
      * @return The next closure that is a candidate for the
      * shortest interval.

@@ -1,13 +1,18 @@
 package bit_manipulation;
 
 /**
- * Determine whether an int is a power of 2.
+ * Is an int a power of 2?
  */
 public class IsPowerOfTwo {
     private IsPowerOfTwo() {}
-    private int n;
 
-    public static boolean decide(int n) {
+    /**
+     * Determine whether an int is a power of 2.
+     * @param n The int of interest.
+     * @return A boolean indicating whether ('true')
+     * or not ('false') the given int is a power of 2.
+     */
+    public static boolean isPowerOfTwo(int n) {
         return (n != 0) && ((n & (n - 1)) == 0);
     }
 
@@ -21,23 +26,23 @@ public class IsPowerOfTwo {
         n = 0;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-            + (IsPowerOfTwo.decide(n) ? "true" : "false"));
+            + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
 
         n = 1;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-            + (IsPowerOfTwo.decide(n) ? "true" : "false"));
+            + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
 
         for (int i = 1; i < Integer.SIZE; ++i) {
             n = 0;
-            n = SetBit.set(n, i);
+            n = SetBit.setBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                + (IsPowerOfTwo.decide(n) ? "true" : "false"));
-            n = SetBit.set(n, 0);
+                + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
+            n = SetBit.setBit(n, 0);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                + (IsPowerOfTwo.decide(n) ? "true" : "false"));
+                + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
         }
     }
 }

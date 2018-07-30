@@ -10,7 +10,7 @@ solution itself, as well as a unit test. Running the
 project runs all the unit tests.
 
 The project was developed using the IntelliJ IDE,
-running on Mac OS X. If you port the project to
-another platform, you may have to make minor changes.
+running on Mac OS X. If you import the project into
+another IDE, you may have to make minor changes.
 
 Enjoy!

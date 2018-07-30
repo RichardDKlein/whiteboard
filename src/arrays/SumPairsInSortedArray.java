@@ -4,10 +4,17 @@ import com.sun.tools.javac.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * In a sorted array, find pairs of array elements
- * that sum to a given value.
+ * In a sorted (in increasing order) array, find
+ * pairs of array elements that sum to a given value.
+ *
+ * Algorithm: Start at both ends of the array, and
+ * work toward the middle. (This works only if the
+ * array is sorted.)
+ *
+ * Running time: O(n)
  */
 public class SumPairsInSortedArray {
     private SumPairsInSortedArray() {}
@@ -16,8 +23,9 @@ public class SumPairsInSortedArray {
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static ArrayList<Pair<Integer, Integer>> find(int[] a, int sum) {
-        ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
+    public static List<Pair<Integer, Integer>>
+    findPairs(int[] a, int sum) {
+        List<Pair<Integer, Integer>> pairs = new ArrayList<>();
         int left = 0;
         int right = a.length - 1;
         while (left < right) {
@@ -41,8 +49,8 @@ public class SumPairsInSortedArray {
         System.out.println("sorted array = " + Arrays.toString(a));
 
         int sum = 12;
-        ArrayList<Pair<Integer, Integer>> pairs =
-            SumPairsInSortedArray.find(a, sum);
+        List<Pair<Integer, Integer>> pairs =
+            SumPairsInSortedArray.findPairs(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.fst;

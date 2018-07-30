@@ -6,7 +6,14 @@ package bit_manipulation;
 public class CountOneBits {
     private CountOneBits() {}
 
-    public static int count(int n) {
+    /**
+     * Count the number of '1' bits in an int.
+     *
+     * @param n The int of interest.
+     * @return The number of '1' bits in the
+     * given int.
+     */
+    public static int countOneBits(int n) {
         int count = 0;
         while (n != 0) {
             n &= n - 1;
@@ -23,17 +30,17 @@ public class CountOneBits {
         int n = 0;
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggle(n, i);
+            n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                CountOneBits.count(n));
+                CountOneBits.countOneBits(n));
         }
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggle(n, i);
+            n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                CountOneBits.count(n));
+                CountOneBits.countOneBits(n));
         }
     }
 }

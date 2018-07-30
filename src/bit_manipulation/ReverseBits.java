@@ -1,12 +1,19 @@
 package bit_manipulation;
 
 /**
- * Reverse the bits in an int.
+ * Reverse bits.
  */
 public class ReverseBits {
     private ReverseBits() {}
 
-    public static int reverse(int n) {
+    /**
+     * Reverse the bits of a given int.
+     *
+     * @param n The int of interest.
+     * @return A copy of the int, but with the
+     * bits reversed.
+     */
+    public static int reverseBits(int n) {
         int rev = 0;
         int numShifts = Integer.SIZE - 1;
         for (int i = 0; i < numShifts; ++i) {
@@ -26,7 +33,7 @@ public class ReverseBits {
         int n = 0xB77BEFD5;
 
         TestUtils.printBits(n);
-        n = ReverseBits.reverse(n);
+        n = ReverseBits.reverseBits(n);
         System.out.print("Reversed:\n");
         TestUtils.printBits(n);
     }

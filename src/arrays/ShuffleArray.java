@@ -3,17 +3,24 @@ package arrays;
 import java.util.Arrays;
 
 /**
- * Shuffle an array, as if it represented a deck of cards.
+ * Shuffle an array.
  */
-public class ShuffleArray<T> {
-    private static final int NUM_CARDS = 52;
-    private T[] a;
+public class ShuffleArray {
+    private ShuffleArray() {}
 
-    public ShuffleArray(T[] a) {
-        this.a = a;
-    }
-
-    public T[] shuffle() {
+    /**
+     * Shuffle an array, as if it represented a deck of card.
+     *
+     * Algorithm: Iterate thru the array, swapping each element
+     * with an element randomly chosen from the array elements
+     * not yet visited.
+     *
+     * Running time: O(n)
+     *
+     * @param a The array to be shuffled.
+     * @return The shuffled array.
+     */
+    public static <T> T[] shuffleArray(final T[] a) {
         for (int i = 0; i < a.length - 1; ++i) {
             int j = random(i + 1, a.length - 1);
             T temp = a[i];
@@ -24,7 +31,15 @@ public class ShuffleArray<T> {
     }
 
     /**
-     * @brief Return a random int in a given closed interval [min, max].
+     * Return a random int in a given closed interval [min, max].
+     */
+    /**
+     * Return a random int in a given closed interval
+     * [min, max].
+     *
+     * @param min The start of the interval.
+     * @param max The end of the interval.
+     * @return A random int in the closed interval [min, max].
      */
     private static int random(int min, int max) {
         int scaleFactor = max - min;
@@ -36,6 +51,8 @@ public class ShuffleArray<T> {
     }
 
     public static void test() {
+        final int NUM_CARDS = 52;
+
         System.out.println();
         System.out.println("Test shuffleArray():");
         System.out.println("====================");
@@ -46,9 +63,8 @@ public class ShuffleArray<T> {
         }
 
         System.out.println("Unshuffled deck = " + Arrays.toString(deck));
-        ShuffleArray<Integer> shuffleArray = new ShuffleArray<>(deck);
         for (int i = 0; i < 10; i++) {
-            deck = shuffleArray.shuffle();
+            deck = ShuffleArray.shuffleArray(deck);
             System.out.println("Shuffled   deck = " + Arrays.toString(deck));
         }
     }

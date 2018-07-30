@@ -1,12 +1,20 @@
 package bit_manipulation;
 
 /**
- * Toggle the specified bit (where 0 = LSB) in an int.
+ * Toggle bit.
  */
 public class ToggleBit {
     private ToggleBit() {}
 
-    public static int toggle(int n, int bit) {
+    /**
+     * Toggle the specified bit in an int.
+     *
+     * @param n The int of interest.
+     * @param bit The bit to toggle (where 0 = LSB).
+     * @return A copy of the int, but with the
+     * specified bit toggled.
+     */
+    public static int toggleBit(int n, int bit) {
         return n ^ (1 << bit);
     }
 
@@ -18,11 +26,11 @@ public class ToggleBit {
         int n = 0;
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggle(n, i);
+            n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
         }
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggle(n, i);
+            n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
         }
     }

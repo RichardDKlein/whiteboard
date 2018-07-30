@@ -2,28 +2,33 @@ package arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Merge two sorted arrays into a single sorted array.
- *
- * The algorithm is the "merge" part of the merge sort.
- * We simply compare the two top elements of the two
- * sorted input arrays, and pick the smaller one to
- * append to the output array.
- *
- * If one of the two input arrays becomes empty, then
- * we simply append the remaining input array to the
- * output array.
- *
- * Running time is O(n).
  */
 public class MergeTwoSortedArrays {
     private MergeTwoSortedArrays() {}
 
-    public static ArrayList<Integer> merge(
-            ArrayList<Integer> a1, ArrayList<Integer> a2) {
-
-        ArrayList<Integer> merged = new ArrayList<>();
+    /**
+     * Algorithm: The "merge" part of the merge sort.
+     * We simply compare the two top elements of the
+     * two sorted input arrays, and pick the smaller
+     * one to append to the output array.
+     *
+     * If one of the two input arrays becomes empty,
+     * then we simply append the remaining input array
+     * to the output array.
+     *
+     * Running time is O(n).
+     *
+     * @param a1 One of the sorted arrays.
+     * @param a2 The other sorted array.
+     * @return The merged, sorted array.
+     */
+    public static List<Integer>
+    merge(List<Integer> a1, List<Integer> a2) {
+        List<Integer> merged = new ArrayList<>();
         for (;;) {
             if (a1.isEmpty()) {
                 merged.addAll(a2);
@@ -68,8 +73,7 @@ public class MergeTwoSortedArrays {
             System.out.println("a2 = " + Arrays.toString(a2[i]));
             ArrayList<Integer> arrayList1 = TestUtils.intArrayToArrayList(a1[i]);
             ArrayList<Integer> arrayList2 = TestUtils.intArrayToArrayList(a2[i]);
-            ArrayList<Integer> merged =
-                MergeTwoSortedArrays.merge(arrayList1, arrayList2);
+            List<Integer> merged = MergeTwoSortedArrays.merge(arrayList1, arrayList2);
             System.out.println("merged = " + merged);
         }
     }

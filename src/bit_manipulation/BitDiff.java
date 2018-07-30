@@ -1,15 +1,22 @@
 package bit_manipulation;
 
 /**
- * Determine the bit difference between two ints, i.e. the
- * number of bits that must be toggled to transform one int
- * into the other.
+ * Determine the bit difference between two ints.
  */
 public class BitDiff {
     private BitDiff() {}
 
-    public static int diff(int m, int n) {
-        return CountOneBits.count(m ^ n);
+    /**
+     * Determine the bit difference between two ints, i.e.
+     * the number of bits that must be toggled to transform
+     * one int into the other.
+     *
+     * @param m One of the ints to compare.
+     * @param n The other int to compare.
+     * @return The bit difference.
+     */
+    public static int bitDiff(int m, int n) {
+        return CountOneBits.countOneBits(m ^ n);
     }
 
     public static void test() {
@@ -22,6 +29,6 @@ public class BitDiff {
 
         TestUtils.printBits(m);
         TestUtils.printBits(n);
-        System.out.println("Bit diff = " + BitDiff.diff(m, n));
+        System.out.println("Bit diff = " + BitDiff.bitDiff(m, n));
     }
 }

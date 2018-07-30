@@ -2,13 +2,22 @@ package arrays;
 
 import com.sun.tools.javac.util.Pair;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * In an unsorted array, find pairs of array elements
  * that sum to a given value.
+ *
+ * Algorithm: Iterate thru the array, using a Set called
+ * 'seen' to remember the elements we've already seen.
+ *
+ * For each element n, determine whether we've already
+ * seen the element (sum - n). If so, then add the pair
+ * (n, sum - n) to our result list.
+ *
+ * In any case, add the element n to our 'seen' Set.
+ *
+ * Running time: O(n)
  */
 public class SumPairsInUnsortedArray {
     private SumPairsInUnsortedArray() {}
@@ -17,9 +26,10 @@ public class SumPairsInUnsortedArray {
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static ArrayList<Pair<Integer, Integer>> find(int[] a, int sum) {
-        ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
-        HashSet<Integer> seen = new HashSet<>();
+    public static List<Pair<Integer, Integer>>
+    findPairs(int[] a, int sum) {
+        List<Pair<Integer, Integer>> pairs = new ArrayList<>();
+        Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
                 pairs.add(new Pair(n, sum - n));
@@ -37,14 +47,14 @@ public class SumPairsInUnsortedArray {
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
         Integer aI[] = TestUtils.intArrayToIntegerArray(a);
 
-        aI = new ShuffleArray<>(aI).shuffle();
+        aI = ShuffleArray.shuffleArray(aI);
         System.out.println("unsorted array = " + Arrays.toString(aI));
 
         a = TestUtils.IntegerArrayToIntArray(aI);
         int sum = 12;
 
-        ArrayList<Pair<Integer, Integer>> pairs =
-            SumPairsInUnsortedArray.find(a, sum);
+        List<Pair<Integer, Integer>> pairs =
+            SumPairsInUnsortedArray.findPairs(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.fst;

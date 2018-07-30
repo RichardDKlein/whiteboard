@@ -1,12 +1,20 @@
 package bit_manipulation;
 
 /**
- * Get the value (0 or 1) of the specified bit (where 0 = LSB) in an int.
+ * Get bit.
  */
 public class GetBit {
     private GetBit() {}
 
-    public static int get(int n, int bit) {
+    /**
+     * Get the value (0 or 1) of the specified bit of the
+     * specified int.
+     *
+     * @param n The int of interest.
+     * @param bit The bit to get (where 0 = LSB).
+     * @return The value (0 or 1) of the specified bit.
+     */
+    public static int getBit(int n, int bit) {
         return (n & (1 << bit)) == 0 ? 0 : 1;
     }
 
@@ -18,7 +26,7 @@ public class GetBit {
         int n = 0xAAAAAAAA;
         TestUtils.printBits(n);
         for (int i = 0; i < Integer.SIZE; ++i) {
-            System.out.println("Bit " + i + " = " + GetBit.get(n, i));
+            System.out.println("Bit " + i + " = " + GetBit.getBit(n, i));
         }
     }
 }

@@ -1,12 +1,14 @@
 package bit_manipulation;
 
 /**
- * Insert a contiguous segment of bits into an int.
+ * Insert bits.
  */
 public class InsertBits {
     private InsertBits() {}
 
     /**
+     * Insert a contiguous segment of bits into an int.
+     *
      * @param n The unsigned int into which the bits are to be inserted.
      * @param bits The bits to be inserted. It is assumed that the bits
      * of interest occupy the least significant bits of 'bits'. The higher
@@ -17,7 +19,7 @@ public class InsertBits {
      * @param lsb The bit # of the least significant bit in 'n' where the
      * bits are to be inserted.
      */
-    public static int insert(int n, int bits, int msb, int lsb) {
+    public static int insertBits(int n, int bits, int msb, int lsb) {
         int numBits = msb - lsb + 1;
         int mask = (1 << numBits) - 1;
         mask <<= lsb;
@@ -36,7 +38,7 @@ public class InsertBits {
         System.out.println("Bits to insert:");
         int bits = 0x3F;
         TestUtils.printBits(bits);
-        n = InsertBits.insert(n, bits, 29, 24);
+        n = InsertBits.insertBits(n, bits, 29, 24);
         TestUtils.printBits(n);
     }
 }

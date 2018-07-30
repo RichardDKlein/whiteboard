@@ -1,12 +1,20 @@
 package bit_manipulation;
 
 /**
- * Set the specified bit in an int.
+ * Set bit.
  */
 public class SetBit {
     private SetBit() {}
 
-    public static int set(int n, int bit) {
+    /**
+     * Set the specified bit in an int.
+     *
+     * @param n The int of interest.
+     * @param bit The bit to set (where 0 = LSB).
+     * @return A copy of the int, but with the
+     * specified bit set.
+     */
+    public static int setBit(int n, int bit) {
         return n | (1 << bit);
     }
 
@@ -17,7 +25,7 @@ public class SetBit {
 
         int n = 0;
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = SetBit.set(n, i);
+            n = SetBit.setBit(n, i);
             TestUtils.printBits(n);
         }
     }
