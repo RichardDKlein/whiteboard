@@ -102,7 +102,6 @@ public class SalesTerritories {
         System.out.println("Test salesTerritories():");
         System.out.println("========================");
 
-
         CityPair[] cityPairs = {
             new CityPair("San Francisco", "San Jose"),
             new CityPair("Denver", "Colorado Springs"),

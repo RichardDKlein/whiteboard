@@ -89,8 +89,8 @@ public class LinesThruPoints {
     }
 
     /**
-     * Counts the number of lines that can be drawn thru at
-     * least three of the given 2D points.
+     * Given a set of 2D points, finds the number of lines
+     * that can be drawn thru at least three points.
      *
      * The algorithm proceeds in three phases. In Phase 1,
      * we compute the line thru each pair of points.

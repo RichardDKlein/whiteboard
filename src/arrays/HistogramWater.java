@@ -40,6 +40,7 @@ public class HistogramWater {
 
     /**
      * Compute the water collected between the histogram bars.
+     *
      * The computation proceeds in four passes thru the histogram
      * bars.
      *

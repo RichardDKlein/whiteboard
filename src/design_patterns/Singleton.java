@@ -6,7 +6,7 @@ package design_patterns;
 public class Singleton {
     private static Singleton instance;
     private Singleton() {
-        // construction logic
+        // add construction logic here
     }
     public static Singleton instance() {
         if (instance == null) {

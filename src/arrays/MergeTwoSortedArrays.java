@@ -11,6 +11,9 @@ public class MergeTwoSortedArrays {
     private MergeTwoSortedArrays() {}
 
     /**
+     * Merge two sorted arrays into a single sorted
+     * array.
+     *
      * Algorithm: The "merge" part of the merge sort.
      * We simply compare the two top elements of the
      * two sorted input arrays, and pick the smaller

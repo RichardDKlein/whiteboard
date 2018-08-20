@@ -9,17 +9,20 @@ import java.util.List;
 /**
  * In a sorted (in increasing order) array, find
  * pairs of array elements that sum to a given value.
- *
- * Algorithm: Start at both ends of the array, and
- * work toward the middle. (This works only if the
- * array is sorted.)
- *
- * Running time: O(n)
  */
 public class SumPairsInSortedArray {
     private SumPairsInSortedArray() {}
 
     /**
+     * In a sorted (in increasing order) array, find
+     * pairs of array elements that sum to a given value.
+     *
+     * Algorithm: Start at both ends of the array, and
+     * work toward the middle. (This works only if the
+     * array is sorted.)
+     *
+     * Running time: O(n)
+     *
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */

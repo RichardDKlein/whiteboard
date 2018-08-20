@@ -8,6 +8,7 @@ public class IsPowerOfTwo {
 
     /**
      * Determine whether an int is a power of 2.
+     *
      * @param n The int of interest.
      * @return A boolean indicating whether ('true')
      * or not ('false') the given int is a power of 2.

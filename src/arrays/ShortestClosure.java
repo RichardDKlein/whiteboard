@@ -76,8 +76,9 @@ public class ShortestClosure<T> {
     }
 
     /**
-     * Find the shortest closure, i.e. the shortest interval in
-     * the haystack that contains all the needles.
+     * Find the shortest closure of needles in a haystack, i.e.
+     * the shortest interval in the haystack that contains all
+     * the needles.
      *
      * The algorithm proceeds in two phases.
      *
