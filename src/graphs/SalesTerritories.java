@@ -1,10 +1,12 @@
 package graphs;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import javafx.util.Pair;
+
+import java.util.*;
+
+// @TODO: ***************************************************
+// @TODO: *************** ADD COMMENTS **********************
+// @TODO: ***************************************************
 
 /**
  * Given a list of city pairs, where each pair denotes that
@@ -15,35 +17,42 @@ import java.util.Queue;
 public class SalesTerritories {
 
     private class CityNode {
-        public City city;
-        public int territory = -1;
-        List<CityNode> neighbors = new LinkedList<>();
+        String city;
+        Set<CityNode> neighbors = new HashSet<>();
+        boolean visited = false;
 
-        public CityNode(City city) {
+        CityNode(String city) {
             this.city = city;
         }
     }
 
-    private CityPair[] cityPairs;
-    private Territory[] territories;
-    private int currTerritory = 0;
-    private Map<City, CityNode> cityMap = new HashMap<>();
+    private Set<Pair<String, String>> cityPairs;
+    private Set<CityNode> cityNodes = new HashSet<>();
+    private Map<String, CityNode> cityMap = new HashMap<>();
+    private Set<Set<String>> territories = new HashSet<>();
 
-    public SalesTerritories(CityPair[] cityPairs) {
+    public SalesTerritories(Set<Pair<String, String>> cityPairs) {
         this.cityPairs = cityPairs;
     }
 
-    public Territory[] compute() {
+    public Set<Set<String>> findSalesTerritories() {
         buildCityGraph();
-        findConnectedSubgraphs();
-        collateTerritories();
+        for (CityNode cityNode : cityNodes) {
+            if (!cityNode.visited) {
+                Set<String> newTerritory = new HashSet<>();
+                addConnectedCitiesToTerritory(cityNode, newTerritory);
+                this.territories.add(newTerritory);
+            }
+        }
         return territories;
     }
 
     private void buildCityGraph() {
-        for (CityPair cityPair : cityPairs) {
-            City city1 = cityPair.cities.fst;
-            City city2 = cityPair.cities.snd;
+        cityNodes.clear();
+        cityMap.clear();
+        for (Pair<String, String> cityPair : cityPairs) {
+            String city1 = cityPair.getKey();
+            String city2 = cityPair.getValue();
             CityNode node1 = findOrCreateNode(city1);
             CityNode node2 = findOrCreateNode(city2);
             node1.neighbors.add(node2);
@@ -51,49 +60,29 @@ public class SalesTerritories {
         }
     }
 
-    private CityNode findOrCreateNode(City city) {
+    private CityNode findOrCreateNode(String city) {
         CityNode node = cityMap.get(city);
         if (node == null) {
             node = new CityNode(city);
+            cityNodes.add(node);
             cityMap.put(city, node);
         }
         return node;
     }
 
-    private void findConnectedSubgraphs() {
-        for (Map.Entry<City, CityNode> entry : cityMap.entrySet()) {
-            CityNode node = entry.getValue();
-            if (node.territory < 0) {
-                labelConnectedNodes(node, currTerritory);
-                ++currTerritory;
-            }
-        }
-    }
-
-    private void labelConnectedNodes(CityNode root, int territory) {
+    private void addConnectedCitiesToTerritory(CityNode root, Set<String> territory) {
         // Breadth-First Search (BFS)
         Queue<CityNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             CityNode node = nodeQueue.remove();
-            node.territory = territory;
+            territory.add(node.city);
+            node.visited = true;
             for (CityNode neighbor : node.neighbors) {
-                if (neighbor.territory < 0) {
+                if (!neighbor.visited) {
                     nodeQueue.add(neighbor);
                 }
             }
-        }
-    }
-
-    private void collateTerritories() {
-        territories = new Territory[currTerritory];
-        for (int i = 0; i < territories.length; ++i) {
-            territories[i] = new Territory();
-        }
-        for (Map.Entry<City, CityNode> entry : cityMap.entrySet()) {
-            City city = entry.getKey();
-            CityNode node = entry.getValue();
-            territories[node.territory].cities.add(city);
         }
     }
 
@@ -102,44 +91,45 @@ public class SalesTerritories {
         System.out.println("Test salesTerritories():");
         System.out.println("========================");
 
-        CityPair[] cityPairs = {
-            new CityPair("San Francisco", "San Jose"),
-            new CityPair("Denver", "Colorado Springs"),
-            new CityPair("Los Angeles", "San Francisco"),
-            new CityPair("New York City", "Buffalo"),
-            new CityPair("San Jose", "San Diego"),
-            new CityPair("Colorado Springs", "Aspen"),
-            new CityPair("Santa Monica", "Pasadena"),
-            new CityPair("Buffalo", "Yonkers"),
-            new CityPair("Oakland", "Sacramento"),
-            new CityPair("Fort Collins", "Aurora"),
-            new CityPair("San Diego", "Los Angeles"),
-            new CityPair("Syracuse", "Albany"),
-            new CityPair("Los Angeles", "San Diego"),
-            new CityPair("Boulder", "Aspen"),
-            new CityPair("Oakland", "Santa Monica"),
-            new CityPair("Rochester", "Yonkers"),
-            new CityPair("San Francisco", "Oakland"),
-            new CityPair("Denver", "Fort Collins"),
-            new CityPair("San Jose", "San Francisco"),
-            new CityPair("New York City", "Syracuse"),
-            new CityPair("Pasadena", "Sacramento")
-        };
+        Set<Pair<String, String>> cityPairs = new HashSet<>();
+        cityPairs.add(new Pair<>("San Francisco", "San Jose"));
+        cityPairs.add(new Pair<>("Denver", "Colorado Springs"));
+        cityPairs.add(new Pair<>("Los Angeles", "San Francisco"));
+        cityPairs.add(new Pair<>("New York City", "Buffalo"));
+        cityPairs.add(new Pair<>("San Jose", "San Diego"));
+        cityPairs.add(new Pair<>("Colorado Springs", "Aspen"));
+        cityPairs.add(new Pair<>("Santa Monica", "Pasadena"));
+        cityPairs.add(new Pair<>("Buffalo", "Yonkers"));
+        cityPairs.add(new Pair<>("Oakland", "Sacramento"));
+        cityPairs.add(new Pair<>("Fort Collins", "Aurora"));
+        cityPairs.add(new Pair<>("San Diego", "Los Angeles"));
+        cityPairs.add(new Pair<>("Syracuse", "Albany"));
+        cityPairs.add(new Pair<>("Los Angeles", "San Diego"));
+        cityPairs.add(new Pair<>("Boulder", "Aspen"));
+        cityPairs.add(new Pair<>("Oakland", "Santa Monica"));
+        cityPairs.add(new Pair<>("Rochester", "Yonkers"));
+        cityPairs.add(new Pair<>("San Francisco", "Oakland"));
+        cityPairs.add(new Pair<>("Denver", "Fort Collins"));
+        cityPairs.add(new Pair<>("San Jose", "San Francisco"));
+        cityPairs.add(new Pair<>("New York City", "Syracuse"));
+        cityPairs.add(new Pair<>("Pasadena", "Sacramento"));
 
         System.out.println("City pairs = ");
-        for (CityPair cityPair : cityPairs) {
-            System.out.println("\t(" + cityPair.cities.fst.name +
-                ", " + cityPair.cities.snd.name + ")");
+        for (Pair<String, String> cityPair : cityPairs) {
+            System.out.println("\t(" + cityPair.getKey() +
+                ", " + cityPair.getValue() + ")");
         }
         System.out.println();
 
-        Territory[] territories = new SalesTerritories(cityPairs).compute();
+        Set<Set<String>> territories =
+                new SalesTerritories(cityPairs)
+                        .findSalesTerritories();
 
         System.out.println("Territories = ");
-        for (Territory territory : territories) {
+        for (Set<String> territory : territories) {
             System.out.println("{");
-            for (City city : territory.cities) {
-                System.out.println("\t" + city.name);
+            for (String city : territory) {
+                System.out.println("\t" + city);
             }
             System.out.println("}");
         }

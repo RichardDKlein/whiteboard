@@ -12,6 +12,7 @@ public class AppendToList<T> {
         this.data = data;
     }
 
+    // @TODO: public static <T> ListNode<T> compute(ListNode<T> head, T data) {
     public ListNode<T> compute() {
         ListNode<T> prev = null;
         ListNode<T> curr = head;
