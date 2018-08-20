@@ -38,26 +38,26 @@ public class AppendToList<T> {
         char f = 'f';
         char g = 'g';
 
-        ListNode<Character> head = new ListNode(a);
+        ListNode<Character> head = new ListNode<>(a);
         TestUtils<Character> testUtils = new TestUtils<>(head);
         testUtils.printList();
 
-        new AppendToList(head, b).compute();
+        new AppendToList<>(head, b).compute();
         testUtils.printList();
 
-        new AppendToList(head, c).compute();
+        new AppendToList<>(head, c).compute();
         testUtils.printList();
 
-        new AppendToList(head, d).compute();
+        new AppendToList<>(head, d).compute();
         testUtils.printList();
 
-        new AppendToList(head, e).compute();
+        new AppendToList<>(head, e).compute();
         testUtils.printList();
 
-        new AppendToList(head, f).compute();
+        new AppendToList<>(head, f).compute();
         testUtils.printList();
 
-        new AppendToList(head, g).compute();
+        new AppendToList<>(head, g).compute();
         testUtils.printList();
     }
 }
