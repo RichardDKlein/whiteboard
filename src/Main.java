@@ -2,7 +2,7 @@ import arrays.TestArrays;
 import bit_manipulation.TestBitManipulation;
 import design_patterns.TestDesignPatterns;
 import graphs.TestGraphs;
-import linked_lists.TestLinkedLists;
+import lists.TestLinkedLists;
 
 public class Main {
     public static void main(String[] args) {

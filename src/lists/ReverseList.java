@@ -1,18 +1,20 @@
-package linked_lists;
+package lists;
 
 /**
  * Reverse a linked list.
  */
+/*
 public class ReverseList<T> {
     private ListNode<T> head;
 
     public ReverseList(ListNode<T> head) {
         this.head = head;
     }
-
+*/
     /**
      * @return Head of reversed list.
      */
+    /*
     public ListNode<T> compute() {
         ListNode<T> rev = null;
         ListNode<T> curr = head;
@@ -54,3 +56,4 @@ public class ReverseList<T> {
         new TestUtils(orig).printList();
     }
 }
+*/

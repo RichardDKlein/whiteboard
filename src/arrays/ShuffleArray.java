@@ -20,10 +20,10 @@ public class ShuffleArray {
      * @param a The array to be shuffled.
      * @return The shuffled array.
      */
-    public static <T> T[] shuffleArray(final T[] a) {
+    public static <E> E[] shuffleArray(final E[] a) {
         for (int i = 0; i < a.length - 1; ++i) {
             int j = random(i + 1, a.length - 1);
-            T temp = a[i];
+            E temp = a[i];
             a[i] = a[j];
             a[j] = temp;
         }

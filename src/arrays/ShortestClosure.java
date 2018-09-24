@@ -8,7 +8,7 @@ import java.util.List;
  * the shortest interval in the haystack that contains all
  * the needles.
  */
-public class ShortestClosure<T> {
+public class ShortestClosure<E> {
     /**
      * Represents a closed interval [left, right] of integers.
      */
@@ -47,13 +47,13 @@ public class ShortestClosure<T> {
      * A one-dimensional array of elements representing the
      * haystack.
      */
-    private T[] haystack;
+    private E[] haystack;
 
     /**
      * A one-dimensional array of elements representing the
      * needles.
      */
-    private T[] needles;
+    private E[] needles;
 
     /**
      * A data structure identifying the locations of the needles
@@ -70,7 +70,7 @@ public class ShortestClosure<T> {
      * @param needles A one-dimensional array of elements representing
      *                the needles.
      */
-    public ShortestClosure(T[] haystack, T[] needles) {
+    public ShortestClosure(E[] haystack, E[] needles) {
         this.haystack = haystack;
         this.needles = needles;
     }

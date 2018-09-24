@@ -1,4 +1,4 @@
-package linked_lists;
+package lists;
 
 public class TestLinkedLists {
     private TestLinkedLists() {}
@@ -8,12 +8,8 @@ public class TestLinkedLists {
         System.out.println("                 LINKED LISTS                ");
         System.out.println("=============================================");
 
-        AppendToList.test();
-        DeleteFromList.test();
-        InsertInList.test();
         KthToLastInList.test();
-        ListHasCycle.test();
         RemoveDupsFromList.test();
-        ReverseList.test();
+        //ReverseList.test();
     }
 }
