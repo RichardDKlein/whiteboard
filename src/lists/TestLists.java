@@ -1,7 +1,7 @@
 package lists;
 
-public class TestLinkedLists {
-    private TestLinkedLists() {}
+public class TestLists {
+    private TestLists() {}
     public static void run() {
         System.out.println();
         System.out.println("=============================================");
@@ -10,6 +10,7 @@ public class TestLinkedLists {
 
         KthToLastInList.test();
         RemoveDupsFromList.test();
-        //ReverseList.test();
+        ReverseListIterative.test();
+        ReverseListRecursive.test();
     }
 }
