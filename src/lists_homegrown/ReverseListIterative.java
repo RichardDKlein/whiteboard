@@ -1,36 +1,35 @@
-package lists;
+package lists_homegrown;
 
-import java.util.Iterator;
+import lists_standardlib.TestUtils;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * Reverse a list.
  */
-public class ReverseListRecursive {
-    private ReverseListRecursive() {}
+public class ReverseListIterative {
+    private ReverseListIterative() {}
 
     /**
      *
      * Reverse a list.
      * @param list The list of interest.
      */
-    public static <E> List<E> reverseListRecursive(List<E> list) {
+    public static <E> List<E> reverseListIterative(List<E> list) {
         List<E> rev = new LinkedList<>();
-        Iterator<E> iter = list.iterator();
-        if (!iter.hasNext()) {
-            return rev;
+        ListIterator<E> iter = list.listIterator(list.size());
+        while (iter.hasPrevious()) {
+            E previous = iter.previous();
+            rev.add(previous);
         }
-        E head = iter.next();
-        iter.remove();
-        rev = reverseListRecursive(list);
-        rev.add(head);
         return rev;
     }
 
     public static void test() {
         System.out.println();
-        System.out.println("Test reverseListRecursive():");
+        System.out.println("Test reverseListIterative():");
         System.out.println("============================");
 
         List<Character> list = new LinkedList<>();
@@ -43,8 +42,8 @@ public class ReverseListRecursive {
         list.add('g');
         TestUtils.printList(list);
 
-        System.out.println("Reversing list recursively:");
-        List<Character> rev = reverseListRecursive(list);
+        System.out.println("Reversing list iteratively:");
+        List<Character> rev = reverseListIterative(list);
         TestUtils.printList(rev);
     }
 }
