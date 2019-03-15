@@ -8,6 +8,7 @@ public class TestListsHomegrown {
         System.out.println("              LISTS - Homegrown              ");
         System.out.println("=============================================");
 
+        DeleteNode.test();
         ListHasCycle.test();
     }
 }
