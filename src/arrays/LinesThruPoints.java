@@ -6,7 +6,7 @@ import java.util.*;
  * Given a set of 2D points, finds the number of lines
  * that can be drawn thru at least three points.
  */
-public class LinesThruPoints {
+public final class LinesThruPoints {
     /**
      * Represents a 2D point.
      */
@@ -52,75 +52,58 @@ public class LinesThruPoints {
 
         @Override
         public int hashCode() {
-            // Ignore small differences in slope and intercept,
-            // by hashing them as floats rather than doubles.
-            int h1 = ((Float)(float)slope).hashCode();
-            int h2 = ((Float)(float)intercept).hashCode();
-            return h1 ^ (h2 << 1);
+            return Objects.hash(slope, intercept);
         }
     }
 
     /**
      * The given set of 2D points.
      */
-    private Set<Point> points;
-
-    /**
-     * A list of all the lines that can be drawn thru each
-     * pair of points. (We use a List rather than a Set,
-     * because lines drawn thru collinear pairs of points
-     * will be equal.)
-     */
-    private List<Line> linesThruPairs = new ArrayList<>();
+    private static Set<Point> points;
 
     /**
      * A map of <Line, Integer> entries, mapping each Line
-     * in 'linesThruPairs' to the number of times that Line
-     * appears in 'linesThruPairs'.
+     * that can be drawn thru a pair of points to the number
+     * of occurrences of that line.
      */
-    private Map<Line, Integer> lineTally = new HashMap<>();
+    private static Map<Line, Integer> lines = new HashMap<>();
 
     /**
-     * General constructor
-     * @param points The set of 2D points of interest.
+     * Private constructor, so the class cannot be instantiated.
      */
-    LinesThruPoints(Set<Point> points) {
-        this.points = points;
+    private LinesThruPoints() {
     }
 
     /**
      * Given a set of 2D points, finds the number of lines
      * that can be drawn thru at least three points.
      *
-     * The algorithm proceeds in three phases. In Phase 1,
-     * we compute the line thru each pair of points.
+     * The algorithm proceeds in two phases. In Phase 1,
+     * we compute the line thru each pair of points, adding
+     * it to the 'lines' Map if it's not already there, or
+     * bumping its count if it is.
      *
-     * In Phase 2, we construct a Map mapping each line found
-     * in Phase 1 to the number of times that line appears.
+     * In Phase 2, we iterate thru the 'lines' Map, counting
+     * the number of lines that appear more than once. (Lines
+     * that appear more than once pass thru two or more pairs
+     * of points, hence must pass thru at least three points.)
      *
-     * In Phase 3, we iterate thru the Map, counting the number
-     * of lines that appear more than once. (Lines that appear
-     * more than once must pass thru at least two different
-     * pairs of points, hence must pass thru at least three
-     * points.)
+     * Running time = O(n * n) + O(n) = O(n * n).
      *
-     * Running time = O(n * n) + O(n) + O(n) = O(n * n).
-     *
-     * @return The number of lines that can be drawn thru at least
-     * three of the given 2D points.
+     * @return The number of lines that can be drawn thru at
+     * least three of the given 2D points.
      */
-    public int countLines() {
+    public static int linesThruPoints(Set<Point> thePoints) {
+        points = thePoints;
         findLinesThruPairs();
-        tallyLinesThruPairs();
-        return countRepeatedLinesThruPairs();
+        return countRepeatedLines();
     }
 
     /**
      * Find all the lines that can be drawn thru each pair of 2D
-     * points. (Some of these lines may be the same, if the pairs
-     * of points thru which they are drawn are collinear.)
+     * points.
      */
-    private void findLinesThruPairs() {
+    private static void findLinesThruPairs() {
         Set<Point> otherPoints = new HashSet<>(points);
         for (Point point1 : points) {
             otherPoints.remove(point1);
@@ -139,33 +122,28 @@ public class LinesThruPoints {
                     slope = (y2 - y1) / (x2 - x1);
                     intercept = y1 - (slope * x1);
                 }
-                linesThruPairs.add(new Line(slope, intercept));
+                Line line = new Line(slope, intercept);
+                Integer count = lines.get(line);
+                if (count == null) {
+                    lines.put(line, 1);
+                } else {
+                    lines.replace(line, count + 1);
+                }
             }
         }
     }
 
     /**
-     * Iterate thru all the lines that can be drawn thru each pair
-     * of 2D points, and tally how many times each line appears.
-     */
-    private void tallyLinesThruPairs() {
-        for (Line line : linesThruPairs) {
-            Integer tally = lineTally.get(line);
-            lineTally.put(line, tally == null ? 1 : tally + 1);
-        }
-    }
-
-    /**
-     * Iterate thru the tally of lines that can be drawn thru each
+     * Iterate thru the Map of lines that can be drawn thru each
      * pair of 2D points, and count how many lines appear more than
-     * once. Each such line passes thru at least two collinear pairs
-     * of points, which means it passes thru at least three points.
+     * once. Since each such line passes thru two or more pairs of
+     * points, it must pass thru at least three points.
      *
      * @return The number of lines that appear more than once.
      */
-    private int countRepeatedLinesThruPairs() {
+    private static int countRepeatedLines() {
         int count = 0;
-        for (Map.Entry<Line, Integer> entry : lineTally.entrySet()) {
+        for (Map.Entry<Line, Integer> entry : lines.entrySet()) {
             if (entry.getValue() > 1) {
                 ++count;
             }
@@ -215,7 +193,7 @@ public class LinesThruPoints {
         System.out.println();
 
         Set<Point> testPoints = new HashSet<>(Arrays.asList(points));
-        int numLines = new LinesThruPoints(testPoints).countLines();
+        int numLines = LinesThruPoints.linesThruPoints(testPoints);
         System.out.println("Number of lines = " + numLines);
     }
 }
