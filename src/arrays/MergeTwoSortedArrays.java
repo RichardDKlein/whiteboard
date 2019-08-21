@@ -19,9 +19,9 @@ public class MergeTwoSortedArrays {
      * two sorted input arrays, and pick the smaller
      * one to append to the output array.
      *
-     * If one of the two input arrays becomes empty,
-     * then we simply append the remaining input array
-     * to the output array.
+     * If one of the two input arrays is completely
+     * merged, then we simply append the remaining
+     * input array to the output array.
      *
      * Running time is O(n).
      *
@@ -29,24 +29,28 @@ public class MergeTwoSortedArrays {
      * @param a2 The other sorted array.
      * @return The merged, sorted array.
      */
-    public static List<Integer>
-    merge(List<Integer> a1, List<Integer> a2) {
-        List<Integer> merged = new ArrayList<>();
+    public static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
+        int[] merged = new int[a1.length + a2.length];
+        int i1 = 0;
+        int i2 = 0;
+        int iMerged = 0;
         for (;;) {
-            if (a1.isEmpty()) {
-                merged.addAll(a2);
+            if (i1 >= a1.length) {
+                while (i2 < a2.length) {
+                    merged[iMerged++] = a2[i2++];
+                }
                 break;
             }
-            if (a2.isEmpty()) {
-                merged.addAll(a1);
+            if (i2 >= a2.length) {
+                while (i1 < a1.length) {
+                    merged[iMerged++] = a1[i1++];
+                }
                 break;
             }
-            if (a1.get(0).compareTo(a2.get(0)) < 0) {
-                merged.add(a1.get(0));
-                a1.remove(0);
+            if (a1[i1] < a2[i2]) {
+                merged[iMerged++] = a1[i1++];
             } else {
-                merged.add(a2.get(0));
-                a2.remove(0);
+                merged[iMerged++] = a2[i2++];
             }
         }
         return merged;
@@ -76,8 +80,8 @@ public class MergeTwoSortedArrays {
             System.out.println("a2 = " + Arrays.toString(a2[i]));
             ArrayList<Integer> arrayList1 = TestUtils.intArrayToArrayList(a1[i]);
             ArrayList<Integer> arrayList2 = TestUtils.intArrayToArrayList(a2[i]);
-            List<Integer> merged = MergeTwoSortedArrays.merge(arrayList1, arrayList2);
-            System.out.println("merged = " + merged);
+            int[] merged = MergeTwoSortedArrays.mergeTwoSortedArrays(a1[i], a2[i]);
+            System.out.println("merged = " + Arrays.toString(merged));
         }
     }
 }
