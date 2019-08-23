@@ -43,7 +43,7 @@ public class SearchSorted2dArray {
      *     if the element is not found.
      */
     public static Pair<Integer, Integer>
-    search(int[][] a, int target) {
+    searchSorted2dArray(int[][] a, int target) {
 
         int rows = a.length;
         int cols = a[0].length;
@@ -87,15 +87,15 @@ public class SearchSorted2dArray {
             for (int col = 0; col < a[0].length; ++col) {
                 int target = a[row][col];
                 Pair<Integer, Integer> loc =
-                    SearchSorted2dArray.search(a, target);
+                    SearchSorted2dArray.searchSorted2dArray(a, target);
                 System.out.println("target = " + target + ", row = " +
                     loc.getKey() + ", col = " + loc.getValue());
             }
         }
 
-        int target = 16;
+        int target = 64;
         Pair<Integer, Integer> loc =
-            SearchSorted2dArray.search(a, target);
+            SearchSorted2dArray.searchSorted2dArray(a, target);
         System.out.println("target = " + target + ", row = " +
             loc.getKey() + ", col = " + loc.getValue());
     }
