@@ -2,9 +2,9 @@ package arrays;
 
 import com.sun.tools.javac.util.Pair;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * In a sorted (in increasing order) array, find
@@ -26,9 +26,9 @@ public final class SumPairsInSortedArray {
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static List<Pair<Integer, Integer>>
-    findPairs(int[] a, int sum) {
-        List<Pair<Integer, Integer>> pairs = new ArrayList<>();
+    public static Set<Pair<Integer, Integer>>
+    sumPairsInSortedArray(int[] a, int sum) {
+        Set<Pair<Integer, Integer>> pairs = new HashSet<>();
         int left = 0;
         int right = a.length - 1;
         while (left < right) {
@@ -52,8 +52,8 @@ public final class SumPairsInSortedArray {
         System.out.println("sorted array = " + Arrays.toString(a));
 
         int sum = 12;
-        List<Pair<Integer, Integer>> pairs =
-            SumPairsInSortedArray.findPairs(a, sum);
+        Set<Pair<Integer, Integer>> pairs =
+            SumPairsInSortedArray.sumPairsInSortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.fst;
@@ -63,3 +63,4 @@ public final class SumPairsInSortedArray {
         }
     }
 }
+
