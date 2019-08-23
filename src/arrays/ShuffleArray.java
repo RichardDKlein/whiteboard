@@ -20,10 +20,10 @@ public final class ShuffleArray {
      * @param a The array to be shuffled.
      * @return The shuffled array.
      */
-    public static <E> E[] shuffleArray(final E[] a) {
+    public static int[] shuffleArray(int[] a) {
         for (int i = 0; i < a.length - 1; ++i) {
             int j = random(i + 1, a.length - 1);
-            E temp = a[i];
+            int temp = a[i];
             a[i] = a[j];
             a[j] = temp;
         }
@@ -44,9 +44,9 @@ public final class ShuffleArray {
     private static int random(int min, int max) {
         int scaleFactor = max - min;
         double random0to1 = Math.random();
-        double scale = random0to1 * scaleFactor;
-        int roundedScale = (int)Math.round(scale);
-        int offset = min + roundedScale;
+        double randomMinToMax = random0to1 * scaleFactor;
+        int roundedRandomMinToMax = (int)Math.round(randomMinToMax);
+        int offset = min + roundedRandomMinToMax;
         return offset;
     }
 
@@ -57,7 +57,7 @@ public final class ShuffleArray {
         System.out.println("Test shuffleArray():");
         System.out.println("====================");
 
-        Integer[] deck = new Integer[NUM_CARDS];
+        int[] deck = new int[NUM_CARDS];
         for (int i = 0; i < NUM_CARDS; ++i) {
             deck[i] = i;
         }

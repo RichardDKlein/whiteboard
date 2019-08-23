@@ -48,12 +48,10 @@ public final class SumPairsInUnsortedArray {
         System.out.println("===============================");
 
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
-        Integer aI[] = TestUtils.intArrayToIntegerArray(a);
 
-        aI = ShuffleArray.shuffleArray(aI);
-        System.out.println("unsorted array = " + Arrays.toString(aI));
+        a = ShuffleArray.shuffleArray(a);
+        System.out.println("unsorted array = " + Arrays.toString(a));
 
-        a = TestUtils.IntegerArrayToIntArray(aI);
         int sum = 12;
 
         List<Pair<Integer, Integer>> pairs =
