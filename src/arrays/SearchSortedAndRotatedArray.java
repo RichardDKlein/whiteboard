@@ -28,7 +28,7 @@ public class SearchSortedAndRotatedArray {
      * @return The array index of the target element if found,
      * or -1 if not found.
      */
-    public static int search(int[] a, int target) {
+    public static int searchSortedAndRotatedArray(int[] a, int target) {
         int left = 0;
         int right = a.length - 1;
         while (left <= right) {
@@ -62,12 +62,12 @@ public class SearchSortedAndRotatedArray {
         System.out.println(Arrays.toString(a));
 
         for (int target : a) {
-            int index = SearchSortedAndRotatedArray.search(a, target);
+            int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, target);
             System.out.println("target = " + target + ", index = " + index);
         }
 
         int target = 999;
-        int index = SearchSortedAndRotatedArray.search(a, target);
+        int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, target);
         System.out.println("target = " + target + ", index = " + index);
     }
 }
