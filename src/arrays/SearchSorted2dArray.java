@@ -7,7 +7,7 @@ import javafx.util.Pair;
  * Search a 2D array in which all rows
  * and columns are sorted in ascending order.
  */
-public class SearchSorted2dArray {
+public final class SearchSorted2dArray {
     private SearchSorted2dArray() {}
 
     /**

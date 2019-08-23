@@ -7,7 +7,7 @@ import java.util.*;
  * the shortest interval in the haystack that contains all
  * the needles.
  */
-public class ShortestClosure {
+public final class ShortestClosure {
     /**
      * Represents a closed interval [min, max] of integers.
      */

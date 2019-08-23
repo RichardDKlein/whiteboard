@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Test utilities for the arrays package.
  */
-public class TestUtils {
+public final class TestUtils {
     public static ArrayList<Integer> intArrayToArrayList(int[] a) {
         ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < a.length; ++i) {

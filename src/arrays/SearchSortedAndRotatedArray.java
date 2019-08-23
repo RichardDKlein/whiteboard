@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Search a sorted and rotated one-dimensional array.
  */
-public class SearchSortedAndRotatedArray {
+public final class SearchSortedAndRotatedArray {
     private SearchSortedAndRotatedArray() {}
 
     /**

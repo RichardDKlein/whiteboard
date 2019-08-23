@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Shuffle an array.
  */
-public class ShuffleArray {
+public final class ShuffleArray {
     private ShuffleArray() {}
 
     /**

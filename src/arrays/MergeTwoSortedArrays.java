@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Merge two sorted arrays into a single sorted array.
  */
-public class MergeTwoSortedArrays {
+public final class MergeTwoSortedArrays {
     private MergeTwoSortedArrays() {}
 
     /**

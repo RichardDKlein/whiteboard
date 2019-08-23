@@ -8,7 +8,7 @@ import java.util.*;
  * In an unsorted array, find pairs of array elements
  * that sum to a given value.
  */
-public class SumPairsInUnsortedArray {
+public final class SumPairsInUnsortedArray {
     private SumPairsInUnsortedArray() {}
 
     /**

@@ -10,7 +10,7 @@ import java.util.List;
  * In a sorted (in increasing order) array, find
  * pairs of array elements that sum to a given value.
  */
-public class SumPairsInSortedArray {
+public final class SumPairsInSortedArray {
     private SumPairsInSortedArray() {}
 
     /**
