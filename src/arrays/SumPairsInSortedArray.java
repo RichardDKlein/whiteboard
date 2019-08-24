@@ -1,10 +1,10 @@
 package arrays;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import javafx.util.Pair;
 
 /**
  * In a sorted (in increasing order) array, find
@@ -56,8 +56,8 @@ public final class SumPairsInSortedArray {
             SumPairsInSortedArray.sumPairsInSortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.fst;
-            int p2 = pair.snd;
+            int p1 = pair.getKey();
+            int p2 = pair.getValue();
             assert(p1 + p2 == sum);
             System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
         }

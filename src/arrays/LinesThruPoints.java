@@ -104,12 +104,14 @@ public final class LinesThruPoints {
      * points.
      */
     private static void findLinesThruPairs() {
-        Set<Point> otherPoints = new HashSet<>(points);
-        for (Point point1 : points) {
-            otherPoints.remove(point1);
-            for (Point point2 : otherPoints) {
-                double x1 = point1.x;
-                double y1 = point1.y;
+        Point[] pointArray = new Point[points.size()];
+        pointArray = points.toArray(pointArray);
+        for (int i = 0; i < pointArray.length; ++i) {
+            Point point1 = pointArray[i];
+            double x1 = point1.x;
+            double y1 = point1.y;
+            for (int j = i + 1; j < pointArray.length; ++j) {
+                Point point2 = pointArray[j];
                 double x2 = point2.x;
                 double y2 = point2.y;
                 double slope, intercept;

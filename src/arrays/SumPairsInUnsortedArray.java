@@ -1,8 +1,10 @@
 package arrays;
 
-import com.sun.tools.javac.util.Pair;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.*;
+import javafx.util.Pair;
 
 /**
  * In an unsorted array, find pairs of array elements
@@ -26,12 +28,12 @@ public final class SumPairsInUnsortedArray {
      *
      * Running time: O(n)
      *
-     * @param a The sorted array to search for pairs.
+     * @param a The unsorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static List<Pair<Integer, Integer>>
+    public static Set<Pair<Integer, Integer>>
     findPairs(int[] a, int sum) {
-        List<Pair<Integer, Integer>> pairs = new ArrayList<>();
+        Set<Pair<Integer, Integer>> pairs = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
@@ -54,12 +56,12 @@ public final class SumPairsInUnsortedArray {
 
         int sum = 12;
 
-        List<Pair<Integer, Integer>> pairs =
+        Set<Pair<Integer, Integer>> pairs =
             SumPairsInUnsortedArray.findPairs(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.fst;
-            int p2 = pair.snd;
+            int p1 = pair.getKey();
+            int p2 = pair.getValue();
             assert(p1 + p2 == sum);
             System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
         }
