@@ -3,8 +3,8 @@ package lists_homegrown;
 /**
  * Reverse a linked-list
  */
-public class ReverseList {
-    private ReverseList() {}
+public class ReverseListIterative {
+    private ReverseListIterative() {}
 
     /**
      * Reverses a singly-linked list

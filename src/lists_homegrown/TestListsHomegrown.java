@@ -10,6 +10,6 @@ public class TestListsHomegrown {
 
         DeleteNode.test();
         ListHasCycle.test();
-        ReverseList.test();
+        ReverseListIterative.test();
     }
 }
