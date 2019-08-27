@@ -10,6 +10,7 @@ public class TestArrays {
 
         HistogramWater.test();
         LinesThruPoints.test();
+        MaxSubarray.test();
         MergeTwoSortedArrays.test();
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();

@@ -11,17 +11,16 @@ public final class MergeTwoSortedArrays {
     private MergeTwoSortedArrays() {}
 
     /**
-     * Merge two sorted arrays into a single sorted
-     * array.
+     * Merge two sorted arrays into a single sorted array.
      *
-     * Algorithm: The "merge" part of the merge sort.
-     * We simply compare the two top elements of the
-     * two sorted input arrays, and pick the smaller
-     * one to append to the output array.
+     * The algorithm we shall use is the "merge" part of the
+     * merge sort. We simply compare the two top elements of
+     * the two sorted input arrays, and pick the smaller one
+     * to append to the output array.
      *
-     * If one of the two input arrays is completely
-     * merged, then we simply append the remaining
-     * input array to the output array.
+     * If one of the two input arrays is completely merged,
+     * then we simply append the remaining input array to the
+     * output array.
      *
      * Running time is O(n).
      *
