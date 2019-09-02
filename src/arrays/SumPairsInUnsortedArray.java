@@ -32,7 +32,7 @@ public final class SumPairsInUnsortedArray {
      * @param sum The value to which each pair of elements should sum.
      */
     public static Set<Pair<Integer, Integer>>
-    findPairs(int[] a, int sum) {
+    sumPairsInUnsortedArray(int[] a, int sum) {
         Set<Pair<Integer, Integer>> pairs = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
@@ -56,8 +56,7 @@ public final class SumPairsInUnsortedArray {
 
         int sum = 12;
 
-        Set<Pair<Integer, Integer>> pairs =
-            SumPairsInUnsortedArray.findPairs(a, sum);
+        Set<Pair<Integer, Integer>> pairs = sumPairsInUnsortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.getKey();

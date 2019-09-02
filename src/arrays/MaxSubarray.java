@@ -39,7 +39,7 @@ public final class MaxSubarray {
      * computing a[i] from a[i - 1], and keeping track of
      * the maximum.
      *
-     * The running time is O(n).
+     * The execution time is O(n).
      *
      * @param a The array whose maximum subarray is to be
      *          found.
@@ -79,7 +79,7 @@ public final class MaxSubarray {
         };
 
         for (int i = 0; i < a.length; ++i) {
-            Pair<Integer, Integer> maxSubarray = MaxSubarray.maxSubarray(a[i]);
+            Pair<Integer, Integer> maxSubarray = maxSubarray(a[i]);
             int maxStart = maxSubarray.getKey();
             int maxEnd = maxSubarray.getValue();
             System.out.print("a: { ");

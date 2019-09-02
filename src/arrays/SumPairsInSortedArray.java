@@ -52,8 +52,7 @@ public final class SumPairsInSortedArray {
         System.out.println("sorted array = " + Arrays.toString(a));
 
         int sum = 12;
-        Set<Pair<Integer, Integer>> pairs =
-            SumPairsInSortedArray.sumPairsInSortedArray(a, sum);
+        Set<Pair<Integer, Integer>> pairs = sumPairsInSortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
             int p1 = pair.getKey();

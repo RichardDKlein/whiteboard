@@ -62,12 +62,12 @@ public final class SearchSortedAndRotatedArray {
         System.out.println(Arrays.toString(a));
 
         for (int target : a) {
-            int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, target);
+            int index = searchSortedAndRotatedArray(a, target);
             System.out.println("target = " + target + ", index = " + index);
         }
 
         int target = 999;
-        int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, target);
+        int index = searchSortedAndRotatedArray(a, target);
         System.out.println("target = " + target + ", index = " + index);
     }
 }

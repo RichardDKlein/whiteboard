@@ -86,16 +86,14 @@ public final class SearchSorted2dArray {
         for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < a[0].length; ++col) {
                 int target = a[row][col];
-                Pair<Integer, Integer> loc =
-                    SearchSorted2dArray.searchSorted2dArray(a, target);
+                Pair<Integer, Integer> loc = searchSorted2dArray(a, target);
                 System.out.println("target = " + target + ", row = " +
                     loc.getKey() + ", col = " + loc.getValue());
             }
         }
 
         int target = 64;
-        Pair<Integer, Integer> loc =
-            SearchSorted2dArray.searchSorted2dArray(a, target);
+        Pair<Integer, Integer> loc = searchSorted2dArray(a, target);
         System.out.println("target = " + target + ", row = " +
             loc.getKey() + ", col = " + loc.getValue());
     }

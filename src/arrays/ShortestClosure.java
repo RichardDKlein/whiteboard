@@ -161,8 +161,7 @@ public final class ShortestClosure {
             needles.add(needle);
         }
 
-        Interval shortest =
-                ShortestClosure.shortestClosure(haystack, needles);
+        Interval shortest = shortestClosure(haystack, needles);
 
         System.out.print("needles: { ");
         for (Integer needle : needles) {

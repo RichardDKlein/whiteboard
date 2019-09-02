@@ -8,6 +8,7 @@ public class TestArrays {
         System.out.println("                    ARRAYS                   ");
         System.out.println("=============================================");
 
+        ArrayHopscotch.test();
         HistogramWater.test();
         LinesThruPoints.test();
         MaxSubarray.test();

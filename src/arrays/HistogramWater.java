@@ -137,8 +137,7 @@ public final class HistogramWater {
         for (int i = 0; i < heights.length; ++i) {
             int[] testArray = heights[i];
             System.out.println("heights = " + Arrays.toString(testArray));
-            System.out.print("water collected = "
-                    + HistogramWater.histogramWater(testArray));
+            System.out.print("water collected = " + histogramWater(testArray));
             System.out.println(" (should be " + waterCollected[i] + ")");
         }
     }

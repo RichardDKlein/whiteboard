@@ -195,7 +195,7 @@ public final class LinesThruPoints {
         System.out.println();
 
         Set<Point> testPoints = new HashSet<>(Arrays.asList(points));
-        int numLines = LinesThruPoints.linesThruPoints(testPoints);
+        int numLines = linesThruPoints(testPoints);
         System.out.println("Number of lines = " + numLines);
     }
 }

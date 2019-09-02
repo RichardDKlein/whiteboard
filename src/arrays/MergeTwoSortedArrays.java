@@ -77,7 +77,7 @@ public final class MergeTwoSortedArrays {
         for (int i = 0; i < a1.length; ++i) {
             System.out.println("a1 = " + Arrays.toString(a1[i]));
             System.out.println("a2 = " + Arrays.toString(a2[i]));
-            int[] merged = MergeTwoSortedArrays.mergeTwoSortedArrays(a1[i], a2[i]);
+            int[] merged = mergeTwoSortedArrays(a1[i], a2[i]);
             System.out.println("merged = " + Arrays.toString(merged));
         }
     }

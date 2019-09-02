@@ -64,7 +64,7 @@ public final class ShuffleArray {
 
         System.out.println("Unshuffled deck = " + Arrays.toString(deck));
         for (int i = 0; i < 10; i++) {
-            deck = ShuffleArray.shuffleArray(deck);
+            deck = shuffleArray(deck);
             System.out.println("Shuffled   deck = " + Arrays.toString(deck));
         }
     }
