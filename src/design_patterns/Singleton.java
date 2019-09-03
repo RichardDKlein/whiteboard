@@ -20,12 +20,12 @@ public class Singleton {
         System.out.println("Test Singleton:");
         System.out.println("===============");
 
-        Singleton instance1 = Singleton.instance();
-        Singleton instance2 = Singleton.instance();
+        Singleton instance1 = instance();
+        Singleton instance2 = instance();
 
-        System.out.println("1st time: Singleton.instance() = "
+        System.out.println("1st time: instance() = "
             + instance1);
-        System.out.println("2nd time: Singleton.instance() = "
+        System.out.println("2nd time: instance() = "
             + instance2);
     }
 }

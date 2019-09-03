@@ -27,23 +27,23 @@ public class IsPowerOfTwo {
         n = 0;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-            + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
+            + (isPowerOfTwo(n) ? "true" : "false"));
 
         n = 1;
         TestUtils.printBits(n);
         System.out.println("Is power of 2 = "
-            + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
+            + (isPowerOfTwo(n) ? "true" : "false"));
 
         for (int i = 1; i < Integer.SIZE; ++i) {
             n = 0;
             n = SetBit.setBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
+                + (isPowerOfTwo(n) ? "true" : "false"));
             n = SetBit.setBit(n, 0);
             TestUtils.printBits(n);
             System.out.println("Is power of 2 = "
-                + (IsPowerOfTwo.isPowerOfTwo(n) ? "true" : "false"));
+                + (isPowerOfTwo(n) ? "true" : "false"));
         }
     }
 }

@@ -26,7 +26,7 @@ public class GetBit {
         int n = 0xAAAAAAAA;
         TestUtils.printBits(n);
         for (int i = 0; i < Integer.SIZE; ++i) {
-            System.out.println("Bit " + i + " = " + GetBit.getBit(n, i));
+            System.out.println("Bit " + i + " = " + getBit(n, i));
         }
     }
 }

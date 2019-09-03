@@ -25,7 +25,7 @@ public class ClearBit {
 
         int n = -1;
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ClearBit.clearBit(n, i);
+            n = clearBit(n, i);
             TestUtils.printBits(n);
         }
     }

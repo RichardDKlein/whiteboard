@@ -29,6 +29,6 @@ public class BitDiff {
 
         TestUtils.printBits(m);
         TestUtils.printBits(n);
-        System.out.println("Bit diff = " + BitDiff.bitDiff(m, n));
+        System.out.println("Bit diff = " + bitDiff(m, n));
     }
 }

@@ -22,11 +22,11 @@ public final class ArrayHopscotch {
      * that it is not possible to land on a zero element
      * (i.e. you lose the game).
      *
-     * We shall use a naive recursive algorithm to play the
-     * game, keeping track of elements we have visited. If
-     * we land on a zero, we win. If we land on an element
-     * we have already visited, we are stuck in an infinite
-     * loop, and we lose.
+     * We shall use a recursive algorithm to play the game,
+     * keeping track of elements we have visited. If we land
+     * on a zero, we win. If we land on an element we have
+     * already visited, we are stuck in an infinite loop,
+     * and we lose.
      *
      * Since each element in the array is visited at most
      * once, the execution time is O(n), worst case.
@@ -50,12 +50,10 @@ public final class ArrayHopscotch {
     private static List<Integer>
     hopscotchHelper(int[] a, int i, Set<Integer> visitedIndices) {
         List<Integer> winningHops = new ArrayList<>();
-        // We landed on a zero -- we win!
         if (a[i] == 0) {
             winningHops.add(i);
             return winningHops;
         }
-        // We already visited this index -- we lose
         if (visitedIndices.contains(i)) {
             return winningHops;
         }
@@ -65,7 +63,6 @@ public final class ArrayHopscotch {
         int iHopRight = i + hopDistance;
         List<Integer> remainingWinningHops;
 
-        // Try hopping to the left
         if (iHopLeft >= 0) {
             remainingWinningHops = hopscotchHelper(a, iHopLeft,
                     visitedIndices);
@@ -75,7 +72,6 @@ public final class ArrayHopscotch {
                 return winningHops;
             }
         }
-        // Try hopping to the right
         if (iHopRight < a.length) {
             remainingWinningHops = hopscotchHelper(a, iHopRight,
                     visitedIndices);
@@ -85,7 +81,6 @@ public final class ArrayHopscotch {
                 return winningHops;
             }
         }
-        // Can't win hopping to the left or right -- we lose
         return winningHops;
     }
 

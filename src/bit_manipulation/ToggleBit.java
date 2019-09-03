@@ -26,11 +26,11 @@ public class ToggleBit {
         int n = 0;
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggleBit(n, i);
+            n = toggleBit(n, i);
             TestUtils.printBits(n);
         }
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggleBit(n, i);
+            n = toggleBit(n, i);
             TestUtils.printBits(n);
         }
     }

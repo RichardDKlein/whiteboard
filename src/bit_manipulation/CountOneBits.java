@@ -33,14 +33,14 @@ public class CountOneBits {
             n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                CountOneBits.countOneBits(n));
+                countOneBits(n));
         }
 
         for (int i = 0; i < Integer.SIZE; ++i) {
             n = ToggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                CountOneBits.countOneBits(n));
+                countOneBits(n));
         }
     }
 }

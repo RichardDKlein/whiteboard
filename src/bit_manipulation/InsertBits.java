@@ -38,7 +38,7 @@ public class InsertBits {
         System.out.println("Bits to insert:");
         int bits = 0x3F;
         TestUtils.printBits(bits);
-        n = InsertBits.insertBits(n, bits, 29, 24);
+        n = insertBits(n, bits, 29, 24);
         TestUtils.printBits(n);
     }
 }

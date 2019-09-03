@@ -33,7 +33,7 @@ public class ReverseBits {
         int n = 0xB77BEFD5;
 
         TestUtils.printBits(n);
-        n = ReverseBits.reverseBits(n);
+        n = reverseBits(n);
         System.out.print("Reversed:\n");
         TestUtils.printBits(n);
     }

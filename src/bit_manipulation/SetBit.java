@@ -25,7 +25,7 @@ public class SetBit {
 
         int n = 0;
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = SetBit.setBit(n, i);
+            n = setBit(n, i);
             TestUtils.printBits(n);
         }
     }
