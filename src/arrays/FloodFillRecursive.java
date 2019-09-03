@@ -19,8 +19,8 @@ public final class FloodFillRecursive {
      * are also O(m * n), due to the recursive nature of the
      * algorithm. Yuck.
      *
-     * For an algorithm with O(1) space requirements, see
-     * the FloodFillBFS class.
+     * For an algorithm with more modest space requirements,
+     * see the FloodFillBFS class.
      *
      * @param a The 2D bitmap to be filled. An element of ' '
      *          denotes an empty pixel. An element of '@' denotes
@@ -44,7 +44,7 @@ public final class FloodFillRecursive {
         } else {
             return;
         }
-        floodFillRecursive(a, x-1, y);
+        floodFillRecursive(a, x - 1, y);
         floodFillRecursive(a, x, y - 1);
         floodFillRecursive(a, x + 1, y);
         floodFillRecursive(a, x, y + 1);
@@ -89,11 +89,11 @@ public final class FloodFillRecursive {
         int cols = a[0].length;
         char[][] copy = new char[rows][cols];
         for (int i = 0; i < x.length; ++i) {
-            System.out.println("BEFORE flood fill:");
+            System.out.println("\nBEFORE flood fill:");
             printBitmap(a, x[i], y[i]);
             copyBitmap(a, copy);
             floodFillRecursive(copy, x[i], y[i]);
-            System.out.println("AFTER flood fill:");
+            System.out.println("\nAFTER flood fill:");
             printBitmap(copy, -1, -1);
         }
     }

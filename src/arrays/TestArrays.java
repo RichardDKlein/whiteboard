@@ -9,6 +9,7 @@ public class TestArrays {
         System.out.println("=============================================");
 
         ArrayHopscotch.test();
+        FloodFillBFS.test();
         FloodFillRecursive.test();
         HistogramWater.test();
         LinesThruPoints.test();
