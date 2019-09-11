@@ -44,11 +44,12 @@ public final class ArrayHopscotch {
     public static List<Integer>
     arrayHopscotch(int[] a, int iStart) {
         Set<Integer> visitedIndices = new HashSet<>();
-        return hopscotchHelper(a, iStart, visitedIndices);
+        return arrayHopscotchHelper(a, iStart, visitedIndices);
     }
 
     private static List<Integer>
-    hopscotchHelper(int[] a, int i, Set<Integer> visitedIndices) {
+    arrayHopscotchHelper(
+            int[] a, int i, Set<Integer> visitedIndices) {
         List<Integer> winningHops = new ArrayList<>();
         if (a[i] == 0) {
             winningHops.add(i);
@@ -64,8 +65,8 @@ public final class ArrayHopscotch {
         List<Integer> remainingWinningHops;
 
         if (iHopLeft >= 0) {
-            remainingWinningHops = hopscotchHelper(a, iHopLeft,
-                    visitedIndices);
+            remainingWinningHops = arrayHopscotchHelper(
+                    a, iHopLeft, visitedIndices);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(i);
                 winningHops.addAll(remainingWinningHops);
@@ -73,8 +74,8 @@ public final class ArrayHopscotch {
             }
         }
         if (iHopRight < a.length) {
-            remainingWinningHops = hopscotchHelper(a, iHopRight,
-                    visitedIndices);
+            remainingWinningHops = arrayHopscotchHelper(
+                    a, iHopRight, visitedIndices);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(i);
                 winningHops.addAll(remainingWinningHops);

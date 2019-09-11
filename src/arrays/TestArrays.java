@@ -15,10 +15,12 @@ public class TestArrays {
         LinesThruPoints.test();
         MaxSubarray.test();
         MergeTwoSortedArrays.test();
+        Rotate2dArray.test();
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();
         ShortestClosure.test();
         ShuffleArray.test();
+        SpiralTraverse2dArray.test();
         SumPairsInSortedArray.test();
         SumPairsInUnsortedArray.test();
     }
