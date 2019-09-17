@@ -16,7 +16,16 @@ public class BitDiff {
      * @return The bit difference.
      */
     public static int bitDiff(int m, int n) {
-        return CountOneBits.countOneBits(m ^ n);
+        return countOneBits(m ^ n);
+    }
+
+    private static int countOneBits(int n) {
+        int count = 0;
+        while (n != 0) {
+            n &= n - 1;
+            ++count;
+        }
+        return count;
     }
 
     public static void test() {
