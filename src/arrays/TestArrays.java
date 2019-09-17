@@ -12,7 +12,6 @@ public class TestArrays {
         FindPrimes.test();
         FloodFillBFS.test();
         FloodFillRecursive.test();
-        HistogramWater.test();
         LinesThruPoints.test();
         MaxSubarray.test();
         MergeTwoSortedArrays.test();
@@ -24,5 +23,6 @@ public class TestArrays {
         SpiralTraverse2dArray.test();
         SumPairsInSortedArray.test();
         SumPairsInUnsortedArray.test();
+        TrappedWater.test();
     }
 }
