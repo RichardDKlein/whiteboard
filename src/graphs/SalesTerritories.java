@@ -10,35 +10,15 @@ import java.util.*;
  * all the territories, i.e. find all the cities composing
  * each territory.
  */
-public class SalesTerritories {
+public final class SalesTerritories {
+    private SalesTerritories() {}
 
     /**
      * Helper class representing a node in the graph of cities.
      */
-    private class CityNode {
-        /**
-         * The name of the city represented by this node.
-         */
+    private static class CityNode {
         String city;
-
-        /**
-         * The set of immediate neighbors of this node.
-         */
         Set<CityNode> neighbors = new HashSet<>();
-
-        /**
-         * A flag indicating whether this node has already been
-         * visited. (Used to avoid visiting a node twice during
-         * graph traversal.)
-         */
-        boolean visited = false;
-
-        /**
-         * Constructor.
-         *
-         * @param city The name of the city represented by this
-         *             node.
-         */
         CityNode(String city) {
             this.city = city;
         }
@@ -48,7 +28,7 @@ public class SalesTerritories {
      * The set of city pairs whose sales territories we are being
      * asked to discover.
      */
-    private Set<Pair<String, String>> cityPairs;
+    private static Set<Pair<String, String>> cityPairs;
 
     /**
      * A graph showing the relationships between the cities. Each
@@ -56,30 +36,26 @@ public class SalesTerritories {
      * two city nodes represents that both cities are in the same
      * sales territory.
      */
-    private Set<CityNode> cityNodes = new HashSet<>();
+    private static Set<CityNode> cityNodes = new HashSet<>();
 
     /**
      * A map that maps each city's name to its node in the city
      * graph.
      */
-    private Map<String, CityNode> cityMap = new HashMap<>();
+    private static Map<String, CityNode> cityMap = new HashMap<>();
+
+    /**
+     * The set of all city nodes we have already visited during
+     * our breadth-first traversal of the city node graph.
+     */
+    private static Set<CityNode> visited = new HashSet<>();
 
     /**
      * The set of sales territories. Each territory is a set
      * containing the names of the cities belonging to that
      * territory.
      */
-    private Set<Set<String>> territories = new HashSet<>();
-
-    /**
-     * Constructor.
-     *
-     * @param cityPairs The pairs of cities whose sales territories
-     *                  we are being asked to discover.
-     */
-    public SalesTerritories(Set<Pair<String, String>> cityPairs) {
-        this.cityPairs = cityPairs;
-    }
+    private static Set<Set<String>> territories = new HashSet<>();
 
     /**
      * Given a list of city pairs, where each pair denotes that
@@ -102,13 +78,14 @@ public class SalesTerritories {
      * @return The given cities, organized into sets representing
      * their sales territories.
      */
-    public Set<Set<String>> findSalesTerritories() {
+    public static Set<Set<String>>
+    salesTerritories(Set<Pair<String, String>> theCityPairs) {
+        cityPairs = theCityPairs;
         buildCityGraph();
         for (CityNode cityNode : cityNodes) {
-            if (!cityNode.visited) {
-                Set<String> newTerritory = new HashSet<>();
-                addConnectedCitiesToTerritory(cityNode, newTerritory);
-                this.territories.add(newTerritory);
+            if (!visited.contains(cityNode)) {
+                Set<String> newTerritory = findConnectedCities(cityNode);
+                territories.add(newTerritory);
             }
         }
         return territories;
@@ -117,7 +94,7 @@ public class SalesTerritories {
     /**
      * From the given pairs of city names, build the city graph.
      */
-    private void buildCityGraph() {
+    private static void buildCityGraph() {
         cityNodes.clear();
         cityMap.clear();
         for (Pair<String, String> cityPair : cityPairs) {
@@ -131,13 +108,13 @@ public class SalesTerritories {
     }
 
     /**
-     * Helper method to find or create a node in the city graph.
+     * Find or create a node in the city graph.
      *
      * @param city The city name of the node to find or create.
      *             If a node for that city already exists in the
      *             city graph, that node will be returned.
      *
-     *             If a node for that city does *not* already
+     *             If a node for that city does not already
      *             exist, it will be created, and added to the
      *             city graph. In addition, an entry will be
      *             added to the map of city names to city nodes.
@@ -145,7 +122,7 @@ public class SalesTerritories {
      *
      * @return The city node found or created.
      */
-    private CityNode findOrCreateNode(String city) {
+    private static CityNode findOrCreateNode(String city) {
         CityNode node = cityMap.get(city);
         if (node == null) {
             node = new CityNode(city);
@@ -156,31 +133,32 @@ public class SalesTerritories {
     }
 
     /**
-     * Helper method to add a city, and its entire connected
-     * subgraph of cities, to a given territory.
+     * Find all the cities that are in the same sales territory
+     * as the given city.
      *
      * @param root The city node that we are to take as the
      *             starting point to find the entire connected
      *             subgraph of city nodes.
      *
-     * @param territory The territory to which we are to add
-     *                  all the connected cities that we find
-     *                  (including the starting 'root' city).
+     * @return territory A set of all the cities connected to
+     * the starting 'root' city (including the root city itself).
      */
-    private void addConnectedCitiesToTerritory(CityNode root, Set<String> territory) {
+    private static Set<String> findConnectedCities(CityNode root) {
         // Breadth-First Search (BFS)
+        Set<String> territory = new HashSet<>();
         Queue<CityNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             CityNode node = nodeQueue.remove();
             territory.add(node.city);
-            node.visited = true;
+            visited.add(node);
             for (CityNode neighbor : node.neighbors) {
-                if (!neighbor.visited) {
+                if (!visited.contains(neighbor)) {
                     nodeQueue.add(neighbor);
                 }
             }
         }
+        return territory;
     }
 
     public static void test() {
@@ -218,9 +196,7 @@ public class SalesTerritories {
         }
         System.out.println();
 
-        Set<Set<String>> territories =
-                new SalesTerritories(cityPairs)
-                        .findSalesTerritories();
+        Set<Set<String>> territories = salesTerritories(cityPairs);
 
         System.out.println("Territories = ");
         for (Set<String> territory : territories) {
