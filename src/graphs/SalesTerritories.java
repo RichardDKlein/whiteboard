@@ -19,9 +19,7 @@ public final class SalesTerritories {
     private static class CityNode {
         String city;
         Set<CityNode> neighbors = new HashSet<>();
-        CityNode(String city) {
-            this.city = city;
-        }
+        CityNode(String city) { this.city = city; }
     }
 
     /**
@@ -36,7 +34,7 @@ public final class SalesTerritories {
      * two city nodes represents that both cities are in the same
      * sales territory.
      */
-    private static Set<CityNode> cityNodes = new HashSet<>();
+    private static Set<CityNode> cityGraph = new HashSet<>();
 
     /**
      * A map that maps each city's name to its node in the city
@@ -82,7 +80,7 @@ public final class SalesTerritories {
     salesTerritories(Set<Pair<String, String>> theCityPairs) {
         cityPairs = theCityPairs;
         buildCityGraph();
-        for (CityNode cityNode : cityNodes) {
+        for (CityNode cityNode : cityGraph) {
             if (!visited.contains(cityNode)) {
                 Set<String> newTerritory = findConnectedCities(cityNode);
                 territories.add(newTerritory);
@@ -95,7 +93,7 @@ public final class SalesTerritories {
      * From the given pairs of city names, build the city graph.
      */
     private static void buildCityGraph() {
-        cityNodes.clear();
+        cityGraph.clear();
         cityMap.clear();
         for (Pair<String, String> cityPair : cityPairs) {
             String city1 = cityPair.getKey();
@@ -126,7 +124,7 @@ public final class SalesTerritories {
         CityNode node = cityMap.get(city);
         if (node == null) {
             node = new CityNode(city);
-            cityNodes.add(node);
+            cityGraph.add(node);
             cityMap.put(city, node);
         }
         return node;
