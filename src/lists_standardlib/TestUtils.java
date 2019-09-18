@@ -8,7 +8,7 @@ import java.util.List;
 public class TestUtils {
     private TestUtils() {}
 
-    public static <E> void printList(List<E> list) {
+    public static <T> void printList(List<T> list) {
         boolean atHead = true;
         for (E element : list) {
             if (!atHead) {

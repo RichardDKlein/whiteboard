@@ -15,11 +15,11 @@ public class RemoveDupsFromList {
      * Remove duplicates from a list.
      * @param list The list of interest.
      */
-    public static <E> void removeDupsFromList(List<E> list) {
-        HashSet<E> seen = new HashSet<>();
-        Iterator<E> iter = list.iterator();
+    public static <T> void removeDupsFromList(List<T> list) {
+        HashSet<T> seen = new HashSet<>();
+        Iterator<T> iter = list.iterator();
         while (iter.hasNext()) {
-            E element = iter.next();
+            T element = iter.next();
             if (seen.contains(element)) {
                 iter.remove();
             } else {

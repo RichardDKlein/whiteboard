@@ -12,11 +12,11 @@ public class ReverseListIterative {
      * @param head The head node of the list to be reversed.
      * @return The head node of the reversed list.
      */
-    public static <E> ListNode<E> reverseList(ListNode<E> head) {
-        ListNode<E> rev = null;
-        ListNode<E> curr = head;
+    public static <T> ListNode<T> reverseList(ListNode<T> head) {
+        ListNode<T> rev = null;
+        ListNode<T> curr = head;
         while (curr != null) {
-            ListNode<E> next = curr.next;
+            ListNode<T> next = curr.next;
             curr.next = rev;
             rev = curr;
             curr = next;

@@ -30,8 +30,8 @@ public class DeleteNode {
      * @return A boolean indicating whether or not
      * the deletion was successful.
      */
-    public static <E> boolean deleteNode(ListNode<E> victim) {
-        ListNode<E> next = victim.next;
+    public static <T> boolean deleteNode(ListNode<T> victim) {
+        ListNode<T> next = victim.next;
         if (next == null) {
             return false;
         }
