@@ -13,6 +13,13 @@ struct Node {
     Node* right;
 };
 
+/*
+public class BinaryTreeNode<T> {
+    public T data;
+    public BinaryTreeNode<T> left, right;
+}
+*/
+
 #include "../arrays/TestUtils.h"
 
 void testCreateBstFromSortedArray();
