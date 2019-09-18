@@ -10,7 +10,7 @@ public class TestUtils {
 
     public static <T> void printList(List<T> list) {
         boolean atHead = true;
-        for (E element : list) {
+        for (T element : list) {
             if (!atHead) {
                 System.out.print("->");
             } else {

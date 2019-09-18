@@ -19,7 +19,7 @@ public class KthToLastInList {
      * @return The kth to last element in the list,
      * or null if the list does not contain k elements.
      */
-    public static <T> E kthToLastInList(List<T> list, int k) {
+    public static <T> T kthToLastInList(List<T> list, int k) {
         if (k > list.size()) {
             return null;
         }
@@ -27,7 +27,7 @@ public class KthToLastInList {
         for (int i = 0; i < k - 1; ++i) {
             lead.next();
         }
-        E kthFromLast = null;
+        T kthFromLast = null;
         Iterator<T> lag = list.iterator();
         while (lead.hasNext()) {
             lead.next();
