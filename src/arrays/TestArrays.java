@@ -1,5 +1,7 @@
 package arrays;
 
+import math.RomanNumeralToDecimal;
+
 public class TestArrays {
     private TestArrays() {}
     public static void run() {
@@ -15,6 +17,7 @@ public class TestArrays {
         LinesThruPoints.test();
         MaxSubarray.test();
         MergeTwoSortedArrays.test();
+        RomanNumeralToDecimal.test();
         Rotate2dArray.test();
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();
