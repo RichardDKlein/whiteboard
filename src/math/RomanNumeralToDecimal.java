@@ -16,7 +16,7 @@ public class RomanNumeralToDecimal {
      * work toward the front. We look up each char's decimal
      * value in a hash table, and add it to a running total,
      * UNLESS the current char's value is less than the
-     * previous char's value. in that case, we SUBTRACT the
+     * previous char's value. In that case, we SUBTRACT the
      * current char's value from the running total.
      *
      * @param roman A string containing the Roman numeral to
