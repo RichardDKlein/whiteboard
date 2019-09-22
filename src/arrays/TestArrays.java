@@ -11,6 +11,7 @@ public class TestArrays {
         System.out.println("=============================================");
 
         ArrayHopscotch.test();
+        CircularBuffer.test();
         FindPrimes.test();
         FloodFillBFS.test();
         FloodFillRecursive.test();
