@@ -4,6 +4,7 @@ import design_patterns.TestDesignPatterns;
 import graphs.TestGraphs;
 import lists_homegrown.TestListsHomegrown;
 import lists_standardlib.TestListsStandardLib;
+import math.TestMath;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class Main {
         TestGraphs.run();
         TestListsHomegrown.run();
         TestListsStandardLib.run();
+        TestMath.run();
         //TestSets().run();
         //TestStacksAndQueues().run();
         //TestStrings().run();
