@@ -9,5 +9,6 @@ public class TestMath {
         System.out.println("=============================================");
 
         ModOperatorUsingSubtraction.test();
+        ReverseDecimalNumber.test();
     }
 }

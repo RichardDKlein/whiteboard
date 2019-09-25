@@ -19,6 +19,10 @@ public class ModOperatorUsingSubtraction {
      * until the dividend is less than the divisor, or is negative. If negative,
      * we undo the last subtraction, and make a recursive call using the now
      * smaller dividend.
+     *
+     * @param dividend The integer being divided.
+     * @param divisor The integer being divided into the dividend.
+     * @return An integer equal to (dividend % divisor).
      */
     public static int modOperatorUsingSubtraction(int dividend, int divisor) {
         if (dividend < divisor) {
