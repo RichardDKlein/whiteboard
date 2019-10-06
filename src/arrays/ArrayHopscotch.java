@@ -45,37 +45,32 @@ public final class ArrayHopscotch {
      */
     public static List<Integer>
     arrayHopscotch(int[] a, int iStart) {
-        return arrayHopscotchHelper(a, iStart);
-    }
-
-    private static List<Integer>
-    arrayHopscotchHelper(int[] a, int i) {
         List<Integer> winningHops = new ArrayList<>();
-        if (visitedIndices.contains(i)) {
+        if (a[iStart] == 0) {
+            winningHops.add(iStart);
             return winningHops;
         }
-        if (a[i] == 0) {
-            winningHops.add(i);
+        if (visitedIndices.contains(iStart)) {
             return winningHops;
         }
-        visitedIndices.add(i);
-        int hopDistance = a[i];
-        int iHopLeft = i - hopDistance;
-        int iHopRight = i + hopDistance;
+        visitedIndices.add(iStart);
+        int hopDistance = a[iStart];
+        int iHopLeft = iStart - hopDistance;
+        int iHopRight = iStart + hopDistance;
         List<Integer> remainingWinningHops;
 
         if (iHopLeft >= 0) {
-            remainingWinningHops = arrayHopscotchHelper(a, iHopLeft);
+            remainingWinningHops = arrayHopscotch(a, iHopLeft);
             if (!remainingWinningHops.isEmpty()) {
-                winningHops.add(i);
+                winningHops.add(iStart);
                 winningHops.addAll(remainingWinningHops);
                 return winningHops;
             }
         }
         if (iHopRight < a.length) {
-            remainingWinningHops = arrayHopscotchHelper(a, iHopRight);
+            remainingWinningHops = arrayHopscotch(a, iHopRight);
             if (!remainingWinningHops.isEmpty()) {
-                winningHops.add(i);
+                winningHops.add(iStart);
                 winningHops.addAll(remainingWinningHops);
                 return winningHops;
             }
