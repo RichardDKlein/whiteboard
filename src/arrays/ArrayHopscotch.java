@@ -6,6 +6,8 @@ import java.util.*;
  * Play a game of "array hopscotch".
  */
 public final class ArrayHopscotch {
+    private static Set<Integer> visitedIndices = new HashSet<>();
+
     private ArrayHopscotch() {}
 
     /**
@@ -43,19 +45,17 @@ public final class ArrayHopscotch {
      */
     public static List<Integer>
     arrayHopscotch(int[] a, int iStart) {
-        Set<Integer> visitedIndices = new HashSet<>();
-        return arrayHopscotchHelper(a, iStart, visitedIndices);
+        return arrayHopscotchHelper(a, iStart);
     }
 
     private static List<Integer>
-    arrayHopscotchHelper(
-            int[] a, int i, Set<Integer> visitedIndices) {
+    arrayHopscotchHelper(int[] a, int i) {
         List<Integer> winningHops = new ArrayList<>();
-        if (a[i] == 0) {
-            winningHops.add(i);
+        if (visitedIndices.contains(i)) {
             return winningHops;
         }
-        if (visitedIndices.contains(i)) {
+        if (a[i] == 0) {
+            winningHops.add(i);
             return winningHops;
         }
         visitedIndices.add(i);
@@ -65,8 +65,7 @@ public final class ArrayHopscotch {
         List<Integer> remainingWinningHops;
 
         if (iHopLeft >= 0) {
-            remainingWinningHops = arrayHopscotchHelper(
-                    a, iHopLeft, visitedIndices);
+            remainingWinningHops = arrayHopscotchHelper(a, iHopLeft);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(i);
                 winningHops.addAll(remainingWinningHops);
@@ -74,8 +73,7 @@ public final class ArrayHopscotch {
             }
         }
         if (iHopRight < a.length) {
-            remainingWinningHops = arrayHopscotchHelper(
-                    a, iHopRight, visitedIndices);
+            remainingWinningHops = arrayHopscotchHelper(a, iHopRight);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(i);
                 winningHops.addAll(remainingWinningHops);
