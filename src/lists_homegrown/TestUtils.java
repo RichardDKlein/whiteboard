@@ -6,7 +6,7 @@ package lists_homegrown;
 public class TestUtils {
     private TestUtils() {}
 
-    public static <T> void printList(ListNode<T> head) {
+    static <T> void printList(ListNode<T> head) {
         ListNode<T> curr = head;
         boolean atHead = true;
         while (curr != null) {
@@ -21,7 +21,7 @@ public class TestUtils {
         System.out.println();
     }
 
-    public static <T> void printList(ListNode<T> head, int max) {
+    static <T> void printList(ListNode<T> head, int max) {
         ListNode<T> curr = head;
         boolean atHead = true;
         int count = 0;
