@@ -25,24 +25,16 @@ public class ModOperatorUsingSubtraction {
      * @return An integer equal to (dividend % divisor).
      */
     public static int modOperatorUsingSubtraction(int dividend, int divisor) {
-        if (dividend < divisor) {
-            return dividend;
-        }
         int subtrahend = divisor;
         for (;;) {
-            dividend -= subtrahend;
-            if (dividend >= 0) {
-                if (dividend < divisor) {
-                    return dividend;
-                } else {
-                    // Subtract twice as much from the dividend.
-                    subtrahend += subtrahend;
-                }
+            if (dividend < divisor) {
+                return dividend;
             } else {
-                // We subtracted too much, so now dividend is negative.
-                // Undo the subtraction, and make a recursive call.
-                dividend += subtrahend;
-                return modOperatorUsingSubtraction(dividend, divisor);
+                dividend -= subtrahend;
+                subtrahend += subtrahend;
+                if (subtrahend > dividend) {
+                    return modOperatorUsingSubtraction(dividend, divisor);
+                }
             }
         }
     }
