@@ -37,44 +37,50 @@ public final class SolveMaze {
             char[][] maze,
             Pair<Integer, Integer> start,
             Pair<Integer, Integer> exit) {
+
         List<Pair<Integer, Integer>> path = new ArrayList<>();
-        if (start == exit) {
+
+        int rowStart = start.getKey();
+        int colStart = start.getValue();
+        int rowExit = exit.getKey();
+        int colExit = exit.getValue();
+
+        if (rowStart == rowExit && colStart == colExit) {
             path.add(start);
-            return path;
-        }
-        int row = start.getKey();
-        int col = start.getValue();
-        if (maze[row][col] == '@') {
             return path;
         }
         int rows = maze.length;
         int cols = maze[0].length;
-        if (row < 0 || col < 0 || row >= rows || col >= cols) {
+
+        if (rowStart < 0 || colStart < 0 || rowStart >= rows || colStart >= cols) {
+            return path;
+        }
+        if (maze[rowStart][colStart] == '@') {
             return path;
         }
         // Turn this cell into a wall wo we don't revisit it.
-        maze[row][col] = '@';
+        maze[rowStart][colStart] = '@';
 
         List<Pair<Integer, Integer>> remainingPath;
-        remainingPath = solveMaze(maze, new Pair(row - 1, col), exit);
+        remainingPath = solveMaze(maze, new Pair(rowStart - 1, colStart), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(row, col - 1), exit);
+        remainingPath = solveMaze(maze, new Pair(rowStart, colStart - 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(row + 1, col), exit);
+        remainingPath = solveMaze(maze, new Pair(rowStart + 1, colStart), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(row, col + 1), exit);
+        remainingPath = solveMaze(maze, new Pair(rowStart, colStart + 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
@@ -87,5 +93,39 @@ public final class SolveMaze {
         System.out.println();
         System.out.println("Test solveMaze():");
         System.out.println("=================");
+
+        char[][] maze = {
+                {'@',' ','@','@','@','@','@','@','@','@','@','@','@','@','@','@',},
+                {'@',' ',' ',' ',' ',' ',' ','@',' ',' ',' ',' ',' ',' ',' ','@',},
+                {'@','@','@','@','@','@',' ','@',' ',' ',' ',' ',' ',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@',' ','@',' ',' ',' ',' ',' ',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@',' ','@',' ',' ',' ',' ',' ',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@',' ','@',' ',' ',' ',' ',' ',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@',' ','@','@','@','@','@','@',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@',' ',' ',' ',' ',' ',' ','@',' ',' ','@',},
+                {'@',' ',' ',' ',' ','@','@','@','@','@','@',' ','@',' ',' ','@',},
+                {'@',' ',' ',' ',' ',' ',' ',' ',' ',' ','@',' ','@',' ',' ','@',},
+                {'@',' ',' ',' ',' ',' ',' ',' ',' ',' ','@',' ','@',' ',' ','@',},
+                {'@',' ',' ',' ',' ',' ',' ',' ',' ',' ','@',' ','@','@','@','@',},
+                {'@',' ',' ',' ',' ',' ',' ',' ',' ',' ','@',' ',' ',' ',' ','@',},
+                {'@','@','@','@','@','@','@','@','@','@','@','@','@','@',' ','@',},
+        };
+
+        int rows = maze.length;
+        int cols = maze[0].length;
+        Pair<Integer, Integer> start = new Pair<>(0, 1);
+        Pair<Integer, Integer> exit = new Pair<>(rows - 1, cols - 2);
+
+        char[][] copy = new char[rows][cols];
+        TestUtils.copyBitmap(maze, copy);
+
+        List<Pair<Integer, Integer>> path = solveMaze(copy, start, exit);
+
+        for (Pair<Integer, Integer> pair : path) {
+            int row = pair.getKey();
+            int col = pair.getValue();
+            maze[row][col] = '.';
+        }
+        TestUtils.printBitmap(maze, -1, -1);
     }
 }
