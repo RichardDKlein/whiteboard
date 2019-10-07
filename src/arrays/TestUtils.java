@@ -17,16 +17,12 @@ public final class TestUtils {
         }
     }
 
-    static void printBitmap(char[][] a, int x, int y) {
+    static void printBitmap(char[][] a) {
         int rows = a.length;
         int cols = a[0].length;
         for (int row = 0; row < rows; ++row) {
             for (int col = 0; col < cols; ++col) {
-                if (row == y && col == x) {
-                    System.out.print('S');
-                } else {
-                    System.out.print(a[row][col]);
-                }
+                System.out.print(" " + a[row][col] + " ");
             }
             System.out.println();
         }

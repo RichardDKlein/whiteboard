@@ -97,11 +97,14 @@ public final class FloodFillBFS {
         char[][] copy = new char[rows][cols];
         for (int i = 0; i < x.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
-            TestUtils.printBitmap(a, x[i], y[i]);
             TestUtils.copyBitmap(a, copy);
+            char tmp = a[y[i]][x[i]];
+            a[y[i]][x[i]] = 'S';
+            TestUtils.printBitmap(a);
+            a[y[i]][x[i]] = tmp;
             floodFillBFS(copy, x[i], y[i]);
             System.out.println("\nAFTER flood fill:");
-            TestUtils.printBitmap(copy, -1, -1);
+            TestUtils.printBitmap(copy);
         }
     }
 }
