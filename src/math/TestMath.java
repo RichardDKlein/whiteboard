@@ -10,5 +10,6 @@ public class TestMath {
 
         ModOperatorUsingSubtraction.test();
         ReverseDecimalNumber.test();
+        SubstringsStartingAndEndingWith1.test();
     }
 }
