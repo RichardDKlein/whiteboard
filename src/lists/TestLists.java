@@ -1,14 +1,18 @@
-package lists_standardlib;
+package lists;
 
-public class TestListsStandardLib {
-    private TestListsStandardLib() {}
+public class TestLists {
+    private TestLists() {}
     public static void run() {
         System.out.println();
         System.out.println("=============================================");
-        System.out.println("          LISTS - Standard Library           ");
+        System.out.println("                    LISTS                    ");
         System.out.println("=============================================");
 
+        DeleteNode.test();
         KthToLastInList.test();
+        ListHasCycle.test();
         RemoveDupsFromList.test();
+        ReverseListIterative.test();
+        ReverseListRecursive.test();
     }
 }

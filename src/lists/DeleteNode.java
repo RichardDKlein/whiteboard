@@ -1,7 +1,8 @@
-package lists_homegrown;
+package lists;
 
 /**
- * Deletes a node from a linked list.
+ * Delete a node from a singly-linked list, given only a pointer
+ * to the node to be deleted.
  */
 public class DeleteNode {
     private static ListNode<Character> aNode = new ListNode<>();
@@ -15,20 +16,20 @@ public class DeleteNode {
     private DeleteNode() {}
 
     /**
-     * Deletes a node from a singly-linked list, given
-     * only a pointer to the node to be deleted.
+     * Delete a node from a singly-linked list, given only a
+     * pointer to the node to be deleted.
      *
-     * This seemingly impossible feat is accomplished
-     * by copying the next node into the node to be
-     * deleted, effectively deleting the latter.
+     * This seemingly impossible feat is accomplished by copying
+     * the next node into the node to be deleted, effectively
+     * deleting the latter.
      *
-     * Of course, this will only work if there IS a
-     * next node, i.e. if the node to be deleted is
-     * not the last node in the list.
+     * Of course, this will only work if there IS a next node,
+     * i.e. if the node to be deleted is not the last node in
+     * the list.
      *
      * @param victim The node to be deleted.
-     * @return A boolean indicating whether or not
-     * the deletion was successful.
+     * @return A boolean indicating whether or not the deletion
+     * was successful.
      */
     public static <T> boolean deleteNode(ListNode<T> victim) {
         ListNode<T> next = victim.next;

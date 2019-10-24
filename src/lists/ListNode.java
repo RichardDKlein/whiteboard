@@ -1,4 +1,4 @@
-package lists_homegrown;
+package lists;
 
 public class ListNode<T> {
     public T data;

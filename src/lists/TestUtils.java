@@ -1,12 +1,16 @@
-package lists_homegrown;
+package lists;
 
 /**
- * Test utilities for the lists_homegrown package.
+ * Test utilities for the lists package.
  */
 public class TestUtils {
     private TestUtils() {}
 
     static <T> void printList(ListNode<T> head) {
+        if (head == null) {
+            System.out.println("<empty>");
+            return;
+        }
         ListNode<T> curr = head;
         boolean atHead = true;
         while (curr != null) {
@@ -22,6 +26,10 @@ public class TestUtils {
     }
 
     static <T> void printList(ListNode<T> head, int max) {
+        if (head == null) {
+            System.out.println("<empty>");
+            return;
+        }
         ListNode<T> curr = head;
         boolean atHead = true;
         int count = 0;

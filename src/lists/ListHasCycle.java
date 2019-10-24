@@ -1,13 +1,20 @@
-package lists_homegrown;
+package lists;
 
 /**
- * Find the kth to last element in a list.
+ * Determine whether a singly-linked list contains a cycle.
  */
 public class ListHasCycle {
     private ListHasCycle() {}
 
     /**
-     * Determines whether a list contains a cycle.
+     * Determine whether a singly-linked list contains a cycle.
+     *
+     * Our algorithm is the classic approach utilizing two
+     * pointers to iterate thru the list: A slow pointer, which
+     * iterates by one list element at a time; and a fast pointer,
+     * which iterates by two list elements at a time. If the fast
+     * pointer ever "laps" the slow pointer, then the list contains
+     * a cycle.
      *
      * @param head The list of interest
      * @return A boolean indicating whether or not
