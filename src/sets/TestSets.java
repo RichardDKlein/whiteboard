@@ -1,6 +1,6 @@
 package sets;
 
-public class TestSets {
+public final class TestSets {
     private TestSets() {}
     public static void run() {
         System.out.println();

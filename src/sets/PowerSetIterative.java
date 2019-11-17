@@ -7,15 +7,19 @@ import java.util.Set;
 /**
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using an iterative approach.
- *
- * We know that a set 's' with 'n' elements has (2 ** n) subsets.
- * So we just count from 0 to (2 ** n) - 1, using the bit pattern
- * in each count to select the elements of 's' that will form the
- * subset corresponding to that count.
  */
 public class PowerSetIterative {
     private PowerSetIterative() {}
 
+    /**
+     * Compute the power set of a set, i.e. the set of all subsets of
+     * that set, using an iterative approach.
+     *
+     * We know that a set 's' with 'n' elements has (2 ** n) subsets.
+     * So we just count from 0 to (2 ** n) - 1, using the bit pattern
+     * in each count to select the elements of 's' that will form the
+     * subset corresponding to that count.
+     */
     public static <T> Set<Set<T>> powerSetIterative(Set<T> set) {
         Set<Set<T>> powerSet = new HashSet<>();
         int numSubsets = (int)Math.pow(2, set.size());

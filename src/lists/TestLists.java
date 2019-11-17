@@ -1,6 +1,6 @@
 package lists;
 
-public class TestLists {
+public final class TestLists {
     private TestLists() {}
     public static void run() {
         System.out.println();

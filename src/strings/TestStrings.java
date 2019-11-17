@@ -1,13 +1,13 @@
-package graphs;
+package strings;
 
-public final class TestGraphs {
-    private TestGraphs() {}
+public final class TestStrings {
+    private TestStrings() {}
     public static void run() {
         System.out.println();
         System.out.println("=============================================");
-        System.out.println("                   GRAPHS                    ");
+        System.out.println("                   STRINGS                   ");
         System.out.println("=============================================");
 
-        SalesTerritories.test();
+        RansomNote.test();
     }
 }

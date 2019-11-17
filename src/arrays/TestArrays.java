@@ -2,7 +2,7 @@ package arrays;
 
 import math.RomanNumeralToDecimal;
 
-public class TestArrays {
+public final class TestArrays {
     private TestArrays() {}
     public static void run() {
         System.out.println();

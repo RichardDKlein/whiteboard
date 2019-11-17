@@ -1,6 +1,6 @@
 package bit_manipulation;
 
-public class TestBitManipulation {
+public final class TestBitManipulation {
     private TestBitManipulation() {}
     public static void run() {
         System.out.println();

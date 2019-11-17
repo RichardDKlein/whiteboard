@@ -1,6 +1,6 @@
 package design_patterns;
 
-public class TestDesignPatterns {
+public final class TestDesignPatterns {
     private TestDesignPatterns() {}
     public static void run() {
         System.out.println();
