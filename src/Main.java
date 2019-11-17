@@ -5,6 +5,7 @@ import graphs.TestGraphs;
 import lists.TestLists;
 import math.TestMath;
 import sets.TestSets;
+import stacks_and_queues.TestStacksAndQueues;
 import strings.TestStrings;
 
 public class Main {
@@ -16,7 +17,7 @@ public class Main {
         TestLists.run();
         TestMath.run();
         TestSets.run();
-        //TestStacksAndQueues.run();
+        TestStacksAndQueues.run();
         TestStrings.run();
         //TestThreads.run();
         //TestTrees.run();
