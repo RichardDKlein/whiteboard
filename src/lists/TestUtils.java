@@ -6,12 +6,12 @@ package lists;
 public class TestUtils {
     private TestUtils() {}
 
-    static <T> void printList(ListNode<T> head) {
+    static <E> void printList(ListNode<E> head) {
         if (head == null) {
             System.out.println("<empty>");
             return;
         }
-        ListNode<T> curr = head;
+        ListNode<E> curr = head;
         boolean atHead = true;
         while (curr != null) {
             if (!atHead) {
@@ -25,12 +25,12 @@ public class TestUtils {
         System.out.println();
     }
 
-    static <T> void printList(ListNode<T> head, int max) {
+    static <E> void printList(ListNode<E> head, int max) {
         if (head == null) {
             System.out.println("<empty>");
             return;
         }
-        ListNode<T> curr = head;
+        ListNode<E> curr = head;
         boolean atHead = true;
         int count = 0;
         while (curr != null) {

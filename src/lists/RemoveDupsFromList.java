@@ -12,10 +12,10 @@ public class RemoveDupsFromList {
      * Remove duplicates from a singly-linked list.
      * @param head The list of interest.
      */
-    public static <T> void removeDupsFromList(ListNode<T> head) {
-        HashSet<T> seen = new HashSet<>();
-        ListNode<T> prev = null;
-        ListNode<T> curr = head;
+    public static <E> void removeDupsFromList(ListNode<E> head) {
+        HashSet<E> seen = new HashSet<>();
+        ListNode<E> prev = null;
+        ListNode<E> curr = head;
         while (curr != null) {
             if (seen.contains(curr.data)) {
                 prev.next = curr.next;

@@ -1,6 +1,6 @@
 package lists;
 
-public class ListNode<T> {
-    public T data;
-    public ListNode<T> next;
+public class ListNode<E> {
+    public E data;
+    public ListNode<E> next;
 }

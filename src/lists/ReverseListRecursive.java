@@ -14,20 +14,20 @@ public class ReverseListRecursive {
      * @param head The head node of the list to be reversed.
      * @return The head node of the reversed list.
      */
-    public static <T> ListNode<T> reverseListRecursive(ListNode<T> head) {
+    public static <E> ListNode<E> reverseListRecursive(ListNode<E> head) {
         if (head == null) {
             return null;
         }
-        ListNode<T> nodeAfterHead = head.next;
-        ListNode<T> rev = reverseListRecursive(nodeAfterHead);
+        ListNode<E> nodeAfterHead = head.next;
+        ListNode<E> rev = reverseListRecursive(nodeAfterHead);
         if (rev == null) {
             return head;
         }
-        ListNode<T> curr = rev;
+        ListNode<E> curr = rev;
         while (curr.next != null) {
             curr = curr.next;
         }
-        ListNode<T> tail = curr;
+        ListNode<E> tail = curr;
         tail.next = head;
         head.next = null;
         return rev;

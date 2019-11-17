@@ -20,9 +20,9 @@ public class ListHasCycle {
      * @return A boolean indicating whether or not
      * the specified list contains a cycle.
      */
-    public static <T> boolean listHasCycle(ListNode<T> head) {
-        ListNode<T> slow = head;
-        ListNode<T> fast = (head != null) ? head.next : null;
+    public static <E> boolean listHasCycle(ListNode<E> head) {
+        ListNode<E> slow = head;
+        ListNode<E> fast = (head != null) ? head.next : null;
         while (fast != null) {
             if (fast == slow) {
                 return true;

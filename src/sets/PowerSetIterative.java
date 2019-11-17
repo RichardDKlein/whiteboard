@@ -20,14 +20,14 @@ public class PowerSetIterative {
      * in each count to select the elements of 's' that will form the
      * subset corresponding to that count.
      */
-    public static <T> Set<Set<T>> powerSetIterative(Set<T> set) {
-        Set<Set<T>> powerSet = new HashSet<>();
+    public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
+        Set<Set<E>> powerSet = new HashSet<>();
         int numSubsets = (int)Math.pow(2, set.size());
         for (int i = 0; i < numSubsets; ++i) {
-            Set<T> subset = new HashSet<>();
-            Iterator<T> iterator = set.iterator();
+            Set<E> subset = new HashSet<>();
+            Iterator<E> iterator = set.iterator();
             for (int bit = 0; bit < set.size(); ++bit) {
-                T element = iterator.next();
+                E element = iterator.next();
                 if ((i & (1 << bit)) != 0) {
                     subset.add(element);
                 }

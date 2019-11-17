@@ -14,8 +14,8 @@ public class KthToLastInList {
      * @return The kth to last element in the list,
      * or null if the list does not contain k elements.
      */
-    public static <T> ListNode<T> kthToLastInList(ListNode<T> head, int k) {
-        ListNode<T> lead = head;
+    public static <E> ListNode<E> kthToLastInList(ListNode<E> head, int k) {
+        ListNode<E> lead = head;
         int count = 0;
         while ((lead != null) && (count < k)) {
             lead = lead.next;
@@ -24,7 +24,7 @@ public class KthToLastInList {
         if (count < k) {
             return null;
         }
-        ListNode<T> lag = head;
+        ListNode<E> lag = head;
         while (lead != null) {
             lead = lead.next;
             lag = lag.next;

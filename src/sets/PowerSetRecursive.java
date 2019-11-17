@@ -10,17 +10,17 @@ import java.util.Set;
 public class PowerSetRecursive {
     private PowerSetRecursive() {}
 
-    public static <T> Set<Set<T>> powerSetRecursive(Set<T> set) {
-        Set<Set<T>> powerSet = new HashSet<>();
+    public static <E> Set<Set<E>> powerSetRecursive(Set<E> set) {
+        Set<Set<E>> powerSet = new HashSet<>();
         if (set.isEmpty()) {
             powerSet.add(new HashSet<>());
             return powerSet;
         }
-        Set<T> remainder = set;
-        T firstElement = remainder.iterator().next();
+        Set<E> remainder = set;
+        E firstElement = remainder.iterator().next();
         remainder.remove(firstElement);
-        Set<Set<T>> remainderPowerSet = powerSetRecursive(remainder);
-        for (Set<T> subset : remainderPowerSet) {
+        Set<Set<E>> remainderPowerSet = powerSetRecursive(remainder);
+        for (Set<E> subset : remainderPowerSet) {
             powerSet.add(new HashSet<>(subset));
             subset.add(firstElement);
             powerSet.add(subset);
