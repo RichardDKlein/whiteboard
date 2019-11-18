@@ -10,5 +10,6 @@ public final class TestStacksAndQueues {
 
         BalancedBrackets.test();
         QueueUsingTwoStacks.test();
+        ReversePolish.test();
     }
 }

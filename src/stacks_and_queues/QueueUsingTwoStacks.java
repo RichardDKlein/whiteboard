@@ -65,5 +65,6 @@ public class QueueUsingTwoStacks<E> {
         for (int i = 0; i < 7; ++i) {
             System.out.print(queue.remove() + " ");
         }
+        System.out.println();
     }
 }
