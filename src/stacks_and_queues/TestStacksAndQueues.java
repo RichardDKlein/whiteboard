@@ -8,6 +8,7 @@ public final class TestStacksAndQueues {
         System.out.println("              STACKS AND QUEUES              ");
         System.out.println("=============================================");
 
+        BalancedBrackets.test();
         QueueUsingTwoStacks.test();
     }
 }
