@@ -10,5 +10,6 @@ public final class TestStrings {
 
         FindSubstring.test();
         RansomNote.test();
+        StringsArePermutations.test();
     }
 }
