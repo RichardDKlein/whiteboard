@@ -8,6 +8,7 @@ public final class TestStrings {
         System.out.println("                   STRINGS                   ");
         System.out.println("=============================================");
 
+        FindSubstring.test();
         RansomNote.test();
     }
 }

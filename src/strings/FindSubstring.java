@@ -1,38 +1,58 @@
 package strings;
 
+/**
+ * Find a specified substring in a string.
+ */
 public class FindSubstring {
-}
-/*
-class Program
-{
-    static void Main(string[] args)
-    {
-        string str = "abcdefg";
-        string substr = "cde";
-        int index = IndexOf(str, substr);
-        Console.WriteLine(index);
-        Console.ReadLine();
-    }
+    private FindSubstring() {}
 
-    private static int IndexOf(string str, string substr)
-    {
-        bool match;
-
-        for (int i = 0; i < str.Length - substr.Length + 1; ++i)
-        {
-            match = true;
-            for (int j = 0; j < substr.Length; ++j)
-            {
-                if (str[i + j] != substr[j])
-                {
-                    match = false;
-                    break;
+    /**
+     * Find a specified substring in a string.
+     *
+     * @param string The string to search.
+     * @param substring The substring to find.
+     * @return The index of the specified substring in the specified
+     * string, or -1 if the substring cannot be found.
+     */
+    public static int findSubstring(String string, String substring) {
+        char firstCharOfSubstring = substring.charAt(0);
+        for (int i = 0; i < string.length() - substring.length() + 1; ++i) {
+            if (string.charAt(i) == firstCharOfSubstring) {
+                boolean found = true;
+                for (int j = 1; j < substring.length(); ++j) {
+                    if (string.charAt(i + j) != substring.charAt(j)) {
+                        found = false;
+                        break;
+                    }
+                }
+                if (found) {
+                    return i;
                 }
             }
-            if (match) return i;
         }
-
         return -1;
     }
+
+    public static void test() {
+        System.out.println();
+        System.out.println("Test FindSubstring():");
+        System.out.println("=====================");
+
+        String testString = "alfalfa romeo";
+        String[] testSubstrings = {
+            "alfa",
+            "rome",
+            "alfa romeo",
+            "alfa romeos",
+            "alfalfa romeo",
+            "alfalfa romeos",
+            "x"
+        };
+
+        System.out.println("Test string = " + testString);
+        for (String s : testSubstrings) {
+            int index = findSubstring(testString, s);
+            System.out.println("findSubstring(" + s + ") = " + index);
+        }
+    }
 }
- */
