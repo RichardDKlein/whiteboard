@@ -69,8 +69,8 @@ public final class MaxSubarray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test maxSubarray():");
-        System.out.println("===================");
+        System.out.println("Test MaxSubarray:");
+        System.out.println("=================");
 
         int[][] a = {
                 {-2, 1, -3, 4, -1, 2, 1, -5, 4},

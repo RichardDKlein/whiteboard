@@ -155,8 +155,8 @@ public final class LinesThruPoints {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test linesThruPoints():");
-        System.out.println("=======================");
+        System.out.println("Test LinesThruPoints:");
+        System.out.println("=====================");
 
         Point[] points = new Point[9];
 

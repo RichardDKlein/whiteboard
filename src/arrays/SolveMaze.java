@@ -91,8 +91,8 @@ public final class SolveMaze {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test solveMaze():");
-        System.out.println("=================");
+        System.out.println("Test SolveMaze:");
+        System.out.println("===============");
 
         char[][] maze = {
                 {'@',' ','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@','@',},

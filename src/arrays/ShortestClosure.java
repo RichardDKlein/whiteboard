@@ -146,8 +146,8 @@ public final class ShortestClosure {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test shortestClosure():");
-        System.out.println("=======================");
+        System.out.println("Test ShortestClosure:");
+        System.out.println("=====================");
 
         int[] haystack = {
                 7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7

@@ -45,8 +45,8 @@ public final class SumPairsInSortedArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test sumPairsInSortedArray():");
-        System.out.println("=============================");
+        System.out.println("Test SumPairsInSortedArray:");
+        System.out.println("===========================");
 
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
         System.out.println("sorted array = " + Arrays.toString(a));

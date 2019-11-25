@@ -43,8 +43,8 @@ public class DeleteNode {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test deleteNode():");
-        System.out.println("==================");
+        System.out.println("Test DeleteNode:");
+        System.out.println("================");
 
         System.out.println("\nOriginal list:");
         ListNode<Character> list = createTestList();

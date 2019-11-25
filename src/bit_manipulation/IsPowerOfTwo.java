@@ -19,8 +19,8 @@ public class IsPowerOfTwo {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test isPowerOfTwo():");
-        System.out.println("====================");
+        System.out.println("Test IsPowerOfTwo:");
+        System.out.println("==================");
 
         int n;
 

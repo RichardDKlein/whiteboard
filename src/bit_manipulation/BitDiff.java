@@ -30,8 +30,8 @@ public class BitDiff {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test bitDiff():");
-        System.out.println("===============");
+        System.out.println("Test BitDiff:");
+        System.out.println("=============");
 
         int m = 0xAAAAAAAA;
         int n = 0xAAABAACA;

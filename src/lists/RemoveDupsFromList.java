@@ -30,8 +30,8 @@ public class RemoveDupsFromList {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test removeDupsFromList():");
-        System.out.println("==========================");
+        System.out.println("Test RemoveDupsFromList:");
+        System.out.println("========================");
 
         ListNode<Character> a1Node = new ListNode<>();
         ListNode<Character> b1Node = new ListNode<>();

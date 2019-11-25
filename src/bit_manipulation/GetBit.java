@@ -20,8 +20,8 @@ public class GetBit {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test getBit():");
-        System.out.println("==============");
+        System.out.println("Test GetBit:");
+        System.out.println("============");
 
         int n = 0xAAAAAAAA;
         TestUtils.printBits(n);

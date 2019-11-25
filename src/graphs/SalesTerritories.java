@@ -161,8 +161,8 @@ public final class SalesTerritories {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test salesTerritories():");
-        System.out.println("========================");
+        System.out.println("Test SalesTerritories:");
+        System.out.println("======================");
 
         Set<Pair<String, String>> cityPairs = new HashSet<>();
         cityPairs.add(new Pair<>("San Francisco", "San Jose"));

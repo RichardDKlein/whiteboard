@@ -70,8 +70,8 @@ public final class Rotate2dArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test rotate2dArray():");
-        System.out.println("=====================");
+        System.out.println("Test Rotate2dArray:");
+        System.out.println("===================");
 
         int[][][] a = {
                 {

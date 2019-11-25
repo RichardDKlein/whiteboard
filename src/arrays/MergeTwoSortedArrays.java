@@ -57,8 +57,8 @@ public final class MergeTwoSortedArrays {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test mergeTwoSortedArrays():");
-        System.out.println("============================");
+        System.out.println("Test MergeTwoSortedArrays:");
+        System.out.println("==========================");
 
         int[][] a1 = {
             {1, 3, 5, 7, 9},

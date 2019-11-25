@@ -54,8 +54,8 @@ public final class ShuffleArray {
         final int NUM_CARDS = 52;
 
         System.out.println();
-        System.out.println("Test shuffleArray():");
-        System.out.println("====================");
+        System.out.println("Test ShuffleArray:");
+        System.out.println("==================");
 
         int[] deck = new int[NUM_CARDS];
         for (int i = 0; i < NUM_CARDS; ++i) {

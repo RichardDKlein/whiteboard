@@ -52,8 +52,8 @@ public class RomanNumeralToDecimal {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test romanNumeralToDecimal():");
-        System.out.println("=============================");
+        System.out.println("Test RomanNumeralToDecimal:");
+        System.out.println("===========================");
 
         String[] romans = new String[] {
                 "MCMXLIV",

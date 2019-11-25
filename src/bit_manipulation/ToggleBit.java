@@ -20,8 +20,8 @@ public class ToggleBit {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test toggleBit():");
-        System.out.println("=================");;
+        System.out.println("Test ToggleBit:");
+        System.out.println("===============");;
 
         int n = 0;
 

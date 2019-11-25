@@ -20,8 +20,8 @@ public class ClearBit {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test clearBit():");
-        System.out.println("================");
+        System.out.println("Test ClearBit:");
+        System.out.println("==============");
 
         int n = -1;
         for (int i = 0; i < Integer.SIZE; ++i) {

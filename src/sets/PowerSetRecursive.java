@@ -30,8 +30,8 @@ public class PowerSetRecursive {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test powerSetRecursive():");
-        System.out.println("=========================");
+        System.out.println("Test PowerSetRecursive:");
+        System.out.println("=======================");
 
         Set<Character> set = new HashSet<>();
 

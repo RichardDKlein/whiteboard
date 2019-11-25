@@ -27,8 +27,8 @@ public class ReverseBits {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test reverseBits():");
-        System.out.println("===================");
+        System.out.println("Test ReverseBits:");
+        System.out.println("=================");
 
         int n = 0xB77BEFD5;
 

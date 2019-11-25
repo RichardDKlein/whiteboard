@@ -41,8 +41,8 @@ public class ModOperatorUsingSubtraction {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test modOperatorUsingSubtraction():");
-        System.out.println("===================================");
+        System.out.println("Test ModOperatorUsingSubtraction:");
+        System.out.println("=================================");
 
         int[] dividend = {1, 7, 18, 19, 20, 21, 22, 23, 24, 1999999997};
         int[] divisor  = {3, 7,  6,  6,  6,  6,  6,  6,  6,         10};

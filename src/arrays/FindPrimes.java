@@ -48,8 +48,8 @@ public final class FindPrimes {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test findPrimes():");
-        System.out.println("==================");
+        System.out.println("Test FindPrimes:");
+        System.out.println("================");
 
         System.out.println("Primes up to 100:");
         List<Integer> primes = findPrimes(100);

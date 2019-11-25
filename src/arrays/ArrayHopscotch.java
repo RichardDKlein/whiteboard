@@ -80,8 +80,8 @@ public final class ArrayHopscotch {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test arrayHopscotch():");
-        System.out.println("======================");
+        System.out.println("Test ArrayHopscotch:");
+        System.out.println("====================");
 
         int[][] a = {
                 {2, 3, 1, 0, 5},

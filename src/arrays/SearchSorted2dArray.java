@@ -69,8 +69,8 @@ public final class SearchSorted2dArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test searchSorted2dArray():");
-        System.out.println("===========================");
+        System.out.println("Test SearchSorted2dArray:");
+        System.out.println("=========================");
 
         int a[][] = {
             { 15, 20, 40, 60, 63 },

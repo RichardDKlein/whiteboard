@@ -46,8 +46,8 @@ public final class SumPairsInUnsortedArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test sumPairsInUnsortedArray():");
-        System.out.println("===============================");
+        System.out.println("Test SumPairsInUnsortedArray:");
+        System.out.println("=============================");
 
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
 

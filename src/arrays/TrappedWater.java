@@ -114,8 +114,8 @@ public final class TrappedWater {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test trappedWater():");
-        System.out.println("====================");
+        System.out.println("Test TrappedWater:");
+        System.out.println("==================");
 
         int[][] heights = {
             {1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 4, 0, 3, 0, 2, 0, 1},

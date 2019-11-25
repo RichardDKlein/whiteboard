@@ -55,8 +55,8 @@ public final class SearchSortedAndRotatedArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test searchSortedAndRotatedArray():");
-        System.out.println("===================================");
+        System.out.println("Test SearchSortedAndRotatedArray:");
+        System.out.println("=================================");
         int a[] = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
 
         System.out.println(Arrays.toString(a));

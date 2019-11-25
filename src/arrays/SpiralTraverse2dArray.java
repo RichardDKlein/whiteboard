@@ -85,8 +85,8 @@ public final class SpiralTraverse2dArray {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test spiralTraverse2dArray():");
-        System.out.println("=============================");
+        System.out.println("Test SpiralTraverse2dArray:");
+        System.out.println("===========================");
 
         int[][][] a = {
                 {

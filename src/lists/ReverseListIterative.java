@@ -28,8 +28,8 @@ public class ReverseListIterative {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test reverseListIterative():");
-        System.out.println("============================");
+        System.out.println("Test ReverseListIterative:");
+        System.out.println("==========================");
 
         ListNode<Character> list = null;
         System.out.println("Original list:");

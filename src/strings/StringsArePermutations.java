@@ -2,32 +2,35 @@ package strings;
 
 import java.util.Arrays;
 
-public class StringsArePermutations {
-    // Method to sort a string alphabetically
-    public static String sortString(String inputString)
-    {
-        // convert input string to char array
-        char tempArray[] = inputString.toCharArray();
-
-        // sort tempArray
-        Arrays.sort(tempArray);
-
-        // return new sorted string
-        return new String(tempArray);
-    }
-}
-/*
-#include "Strings.h"
-
 /**
- * @brief Determine whether two strings are permutations
- * of each other.
- *
- * @param s1 One of the strings.
- * @param s2 The other string.
- * @return |true| if the strings are permutations of each
- * other, |false| otherwise.
+ * Determine whether two strings are permutations of each other.
  */
+public class StringsArePermutations {
+    private StringsArePermutations() {
+    }
+
+    /**
+     * Determine whether two strings are permulations of each other.
+     * @param s1 One of the strings.
+     * @param s2 The other string.
+     * @return A boolean indicating whether ('true) or not ('false')
+     * s1 and s2 are permutations of each other.
+     */
+    public static boolean stringsArePermutations(String s1, String s2) {
+        return sortString(s1).equals(sortString(s2));
+    }
+
+    private static String sortString(String s) {
+        char[] buf = s.toCharArray();
+        Arrays.sort(buf);
+        return new String(buf);
+    }
+
+    public static void test() {
+        System.out.println();
+        System.out.println("Test StringsArePermutations:");
+        System.out.println("============================");
+}
 /*
         bool stringsArePermutations(const string& s1, const string& s2) {
         string s1Sorted = s1;

@@ -29,8 +29,8 @@ public class QueueUsingTwoStacks<E> {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test QueueUsingTwoStacks():");
-        System.out.println("===========================");
+        System.out.println("Test QueueUsingTwoStacks:");
+        System.out.println("=========================");
 
         QueueUsingTwoStacks<Integer> queue = new QueueUsingTwoStacks<>();
         System.out.println("Add five elements");

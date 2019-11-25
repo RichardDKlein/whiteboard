@@ -35,8 +35,8 @@ public class ReverseListRecursive {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test reverseListRecursive():");
-        System.out.println("============================");
+        System.out.println("Test ReverseListRecursive:");
+        System.out.println("==========================");
 
         ListNode<Character> list = null;
         System.out.println("Original list:");

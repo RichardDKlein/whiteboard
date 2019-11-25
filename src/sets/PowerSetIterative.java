@@ -39,8 +39,8 @@ public class PowerSetIterative {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test powerSetIterative():");
-        System.out.println("=========================");
+        System.out.println("Test PowerSetIterative:");
+        System.out.println("=======================");
 
         Set<Character> set = new HashSet<>();
 

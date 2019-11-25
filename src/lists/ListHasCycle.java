@@ -35,8 +35,8 @@ public class ListHasCycle {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test listHasCycle():");
-        System.out.println("====================");
+        System.out.println("Test ListHasCycle:");
+        System.out.println("==================");
 
         ListNode<Character> aNode = new ListNode<>();
         ListNode<Character> bNode = new ListNode<>();

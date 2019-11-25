@@ -51,8 +51,8 @@ public class ReversePolish {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test ReversePolish():");
-        System.out.println("=====================");
+        System.out.println("Test ReversePolish:");
+        System.out.println("===================");
 
         String[] expressions = {
                 "3,4,+",

@@ -59,8 +59,8 @@ public final class FloodFillBFS {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test floodFillBFS():");
-        System.out.println("====================");
+        System.out.println("Test FloodFillBFS:");
+        System.out.println("==================");
 
         char[][] a = {
                 {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',},

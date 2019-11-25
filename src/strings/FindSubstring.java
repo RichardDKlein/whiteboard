@@ -35,8 +35,8 @@ public class FindSubstring {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test FindSubstring():");
-        System.out.println("=====================");
+        System.out.println("Test FindSubstring:");
+        System.out.println("===================");
 
         String testString = "alfalfa romeo";
         String[] testSubstrings = {

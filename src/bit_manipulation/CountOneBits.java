@@ -24,8 +24,8 @@ public class CountOneBits {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test countOneBits():");
-        System.out.println("====================");
+        System.out.println("Test CountOneBits:");
+        System.out.println("==================");
 
         int n = 0;
 

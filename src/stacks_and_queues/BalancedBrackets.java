@@ -54,8 +54,8 @@ public class BalancedBrackets {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test BalancedBrackets():");
-        System.out.println("========================");
+        System.out.println("Test BalancedBrackets:");
+        System.out.println("======================");
 
         String[] expressions = {
                 "(a + b)",

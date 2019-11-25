@@ -27,8 +27,8 @@ public class ReverseDecimalNumber {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test reverseDecimalNumber():");
-        System.out.println("============================");
+        System.out.println("Test ReverseDecimalNumber:");
+        System.out.println("==========================");
 
         int[] n = {0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678};
 

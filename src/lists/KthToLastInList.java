@@ -34,8 +34,8 @@ public class KthToLastInList {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test kthToLastInList():");
-        System.out.println("=======================");
+        System.out.println("Test KthToLastInList:");
+        System.out.println("=====================");
 
         ListNode<Character> aNode = new ListNode<>();
         ListNode<Character> bNode = new ListNode<>();

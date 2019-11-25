@@ -63,8 +63,8 @@ public class RansomNote {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test ransomNote():");
-        System.out.println("==================");
+        System.out.println("Test RansomNote:");
+        System.out.println("================");
 
         String note = "put ten dollars on the plate in the fridge or you will never see your sandwich again";
         String[] magazines = {

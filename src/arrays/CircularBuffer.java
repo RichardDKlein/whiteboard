@@ -54,8 +54,8 @@ public class CircularBuffer {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test CircularBuffer():");
-        System.out.println("======================");
+        System.out.println("Test CircularBuffer:");
+        System.out.println("====================");
 
         System.out.println("Create a CircularBuffer of length 10");
         CircularBuffer buf = new CircularBuffer(10);

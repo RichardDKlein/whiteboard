@@ -52,8 +52,8 @@ public final class FloodFillRecursive {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test floodFillRecursive():");
-        System.out.println("==========================");
+        System.out.println("Test floodFillRecursive:");
+        System.out.println("========================");
 
         char[][] a = {
             {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',},

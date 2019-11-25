@@ -28,8 +28,8 @@ public class InsertBits {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test insertBits():");
-        System.out.println("==================");
+        System.out.println("Test InsertBits:");
+        System.out.println("================");
 
         int n = 0;
 

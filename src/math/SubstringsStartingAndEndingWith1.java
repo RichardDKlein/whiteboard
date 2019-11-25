@@ -50,8 +50,8 @@ public class SubstringsStartingAndEndingWith1 {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test substringsStartingAndEndingWith1():");
-        System.out.println("========================================");
+        System.out.println("Test SubstringsStartingAndEndingWith1:");
+        System.out.println("======================================");
 
         String[] s = {
                 "0000000000",
