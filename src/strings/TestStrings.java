@@ -10,6 +10,7 @@ public final class TestStrings {
 
         FindSubstring.test();
         RansomNote.test();
+        ReverseWordsInSentence.test();
         StringsArePermutations.test();
     }
 }
