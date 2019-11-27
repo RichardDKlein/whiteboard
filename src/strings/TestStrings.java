@@ -9,6 +9,7 @@ public final class TestStrings {
         System.out.println("=============================================");
 
         FindSubstring.test();
+        LongestPalindromicSubstring.test();
         PermutationsOfString.test();
         RansomNote.test();
         ReverseWordsInSentence.test();
