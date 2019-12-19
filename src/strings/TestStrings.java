@@ -11,6 +11,7 @@ public final class TestStrings {
 
         FindSubstring.test();
         LongestPalindromicSubstring.test();
+        ParseStringIntoWords.test();
         PermutationsOfString.test();
         RansomNote.test();
         ReverseWordsInSentence.test();
