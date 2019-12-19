@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Count the number of '1' bits in an int.
  */
-public class CountOneBits {
+public final class CountOneBits {
     private CountOneBits() {}
 
     /**

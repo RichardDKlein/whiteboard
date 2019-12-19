@@ -2,7 +2,9 @@ package sets;
 
 import java.util.Set;
 
-public class TestUtils {
+public final class TestUtils {
+    private TestUtils() {}
+
     static <E> void printSet(Set<E> set) {
         System.out.print("{ ");
         for (E element : set) {

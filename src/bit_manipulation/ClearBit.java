@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Clear a specified bit.
  */
-public class ClearBit {
+public final class ClearBit {
     private ClearBit() {}
 
     /**

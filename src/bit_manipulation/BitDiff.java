@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Determine the bit difference between two ints.
  */
-public class BitDiff {
+public final class BitDiff {
     private BitDiff() {}
 
     /**

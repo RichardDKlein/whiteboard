@@ -3,7 +3,7 @@ package math;
 /**
  * Implement the modulo operator, using subtraction instead of division.
  */
-public class ModOperatorUsingSubtraction {
+public final class ModOperatorUsingSubtraction {
     private ModOperatorUsingSubtraction() {}
 
     /**

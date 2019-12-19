@@ -2,6 +2,7 @@ package bit_manipulation;
 
 public final class TestBitManipulation {
     private TestBitManipulation() {}
+
     public static void run() {
         System.out.println();
         System.out.println("=============================================");

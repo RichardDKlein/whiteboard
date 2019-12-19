@@ -8,7 +8,7 @@ import java.util.Stack;
 /**
  * Evaluate an expression that is in Reverse Polish Notation.
  */
-public class ReversePolish {
+public final class ReversePolish {
     private ReversePolish() {}
 
     /**

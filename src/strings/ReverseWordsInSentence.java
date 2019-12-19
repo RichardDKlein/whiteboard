@@ -3,7 +3,7 @@ package strings;
 /**
  * Reverse the words in a sentence.
  */
-public class ReverseWordsInSentence {
+public final class ReverseWordsInSentence {
     private ReverseWordsInSentence() {}
 
     /**

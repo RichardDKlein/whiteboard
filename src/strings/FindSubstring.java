@@ -3,7 +3,7 @@ package strings;
 /**
  * Find a specified substring in a string.
  */
-public class FindSubstring {
+public final class FindSubstring {
     private FindSubstring() {}
 
     /**

@@ -7,7 +7,7 @@ import java.util.Set;
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using a recursive approach.
  */
-public class PowerSetRecursive {
+public final class PowerSetRecursive {
     private PowerSetRecursive() {}
 
     public static <E> Set<Set<E>> powerSetRecursive(Set<E> set) {

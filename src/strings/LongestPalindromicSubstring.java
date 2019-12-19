@@ -4,7 +4,7 @@ package strings;
  * Find the longest palindromic substring of a given string,
  * i.e. the longest substring that is a palindrome.
  */
-public class LongestPalindromicSubstring {
+public final class LongestPalindromicSubstring {
     private LongestPalindromicSubstring() {}
 
     /**

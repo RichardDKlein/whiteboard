@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Reverse bits.
  */
-public class ReverseBits {
+public final class ReverseBits {
     private ReverseBits() {}
 
     /**

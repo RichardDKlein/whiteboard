@@ -3,7 +3,7 @@ package lists;
 /**
  * Test utilities for the lists package.
  */
-public class TestUtils {
+public final class TestUtils {
     private TestUtils() {}
 
     static <E> void printList(ListNode<E> head) {

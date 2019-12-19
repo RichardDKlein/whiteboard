@@ -4,7 +4,7 @@ package lists;
  * Reverse a singly-linked list in place, using a recursive
  * approach.
  */
-public class ReverseListRecursive {
+public final class ReverseListRecursive {
     private ReverseListRecursive() {}
 
     /**

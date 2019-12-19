@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Insert bits.
  */
-public class InsertBits {
+public final class InsertBits {
     private InsertBits() {}
 
     /**

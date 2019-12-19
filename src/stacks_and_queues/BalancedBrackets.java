@@ -6,7 +6,7 @@ import java.util.*;
  * Determine whether, in an expression containing various kinds
  * of brackets, the brackets are properly balanced and nested.
  */
-public class BalancedBrackets {
+public final class BalancedBrackets {
     private BalancedBrackets() {}
 
     /**

@@ -3,7 +3,7 @@ package math;
 /**
  * Reverse the digits of a decimal number.
  */
-public class ReverseDecimalNumber {
+public final class ReverseDecimalNumber {
     private ReverseDecimalNumber() {}
 
     /**

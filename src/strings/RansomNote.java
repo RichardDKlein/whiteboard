@@ -7,7 +7,7 @@ import java.util.Map;
  * Determine whether a given ransom note can be constructed by cutting out
  * letters from a given magazine.
  */
-public class RansomNote {
+public final class RansomNote {
     private RansomNote() {}
 
     /**

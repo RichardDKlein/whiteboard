@@ -2,6 +2,7 @@ package sets;
 
 public final class TestSets {
     private TestSets() {}
+
     public static void run() {
         System.out.println();
         System.out.println("=============================================");

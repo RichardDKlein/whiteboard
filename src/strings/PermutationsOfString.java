@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Find all the permutations of a given string.
  */
-public class PermutationsOfString {
+public final class PermutationsOfString {
     private PermutationsOfString() {}
 
     /**

@@ -4,7 +4,7 @@ package lists;
  * Delete a node from a singly-linked list, given only a pointer
  * to the node to be deleted.
  */
-public class DeleteNode {
+public final class DeleteNode {
     private static ListNode<Character> aNode = new ListNode<>();
     private static ListNode<Character> bNode = new ListNode<>();
     private static ListNode<Character> cNode = new ListNode<>();

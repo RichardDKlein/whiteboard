@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Get bit.
  */
-public class GetBit {
+public final class GetBit {
     private GetBit() {}
 
     /**

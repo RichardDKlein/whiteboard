@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * Remove duplicates from a singly-linked list.
  */
-public class RemoveDupsFromList {
+public final class RemoveDupsFromList {
     private RemoveDupsFromList() {}
 
     /**

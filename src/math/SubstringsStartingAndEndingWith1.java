@@ -4,7 +4,7 @@ package math;
  * Given a string consisting of '0's and '1's, find the number of
  * substrings starting and ending with '1'.
  */
-public class SubstringsStartingAndEndingWith1 {
+public final class SubstringsStartingAndEndingWith1 {
     private SubstringsStartingAndEndingWith1() {}
 
     /**

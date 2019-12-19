@@ -3,7 +3,7 @@ package lists;
 /**
  * Find the kth to last element in a singly-linked list.
  */
-public class KthToLastInList {
+public final class KthToLastInList {
     private KthToLastInList() {}
 
     /**

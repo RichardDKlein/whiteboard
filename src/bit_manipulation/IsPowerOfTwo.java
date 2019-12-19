@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Is an int a power of 2?
  */
-public class IsPowerOfTwo {
+public final class IsPowerOfTwo {
     private IsPowerOfTwo() {}
 
     /**

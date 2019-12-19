@@ -8,7 +8,7 @@ import java.util.Set;
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using an iterative approach.
  */
-public class PowerSetIterative {
+public final class PowerSetIterative {
     private PowerSetIterative() {}
 
     /**

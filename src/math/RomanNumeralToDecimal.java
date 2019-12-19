@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Convert a Roman numeral to decimal.
  */
-public class RomanNumeralToDecimal {
+public final class RomanNumeralToDecimal {
     private RomanNumeralToDecimal() {}
 
     /**

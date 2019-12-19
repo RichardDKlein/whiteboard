@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Toggle bit.
  */
-public class ToggleBit {
+public final class ToggleBit {
     private ToggleBit() {}
 
     /**

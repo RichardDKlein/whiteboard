@@ -2,6 +2,7 @@ package math;
 
 public final class TestMath {
     private TestMath() {}
+
     public static void run() {
         System.out.println();
         System.out.println("=============================================");

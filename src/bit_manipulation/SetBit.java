@@ -3,7 +3,7 @@ package bit_manipulation;
 /**
  * Set bit.
  */
-public class SetBit {
+public final class SetBit {
     private SetBit() {}
 
     /**

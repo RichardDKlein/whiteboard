@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Determine whether two strings are permutations of each other.
  */
-public class StringsArePermutations {
+public final class StringsArePermutations {
     private StringsArePermutations() {
     }
 

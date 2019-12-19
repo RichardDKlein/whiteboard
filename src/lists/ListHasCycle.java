@@ -3,7 +3,7 @@ package lists;
 /**
  * Determine whether a singly-linked list contains a cycle.
  */
-public class ListHasCycle {
+public final class ListHasCycle {
     private ListHasCycle() {}
 
     /**
