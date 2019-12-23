@@ -16,5 +16,6 @@ public final class TestStrings {
         RansomNote.test();
         ReverseWordsInSentence.test();
         StringsArePermutations.test();
+        TopKStrings.test();
     }
 }

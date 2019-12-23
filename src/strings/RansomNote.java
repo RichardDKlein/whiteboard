@@ -37,7 +37,7 @@ public final class RansomNote {
                 continue;
             }
             if (freq.containsKey(c)) {
-                freq.put(c, freq.get(c) + 1);
+                freq.replace(c, freq.get(c) + 1);
             } else {
                 freq.put(c, 1);
             }
@@ -50,7 +50,7 @@ public final class RansomNote {
             if (freq.containsKey(c)) {
                 int occurences = freq.get(c);
                 if (occurences > 1) {
-                    freq.put(c, occurences - 1);
+                    freq.replace(c, occurences - 1);
                 } else {
                     freq.remove(c);
                 }
