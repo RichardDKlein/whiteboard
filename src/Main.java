@@ -7,6 +7,7 @@ import math.TestMath;
 import sets.TestSets;
 import stacks_and_queues.TestStacksAndQueues;
 import strings.TestStrings;
+import threads.TestThreads;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Main {
         TestSets.run();
         TestStacksAndQueues.run();
         TestStrings.run();
-        //TestThreads.run();
+        TestThreads.run();
         //TestTrees.run();
     }
 }
