@@ -48,9 +48,9 @@ public final class MaxSubarray {
      */
     public static Pair<Integer, Integer> maxSubarray(int[] a) {
         int start, maxStart, end, maxEnd, sum, maxSum;
-        start = maxStart = end = maxEnd = -1;
-        sum = maxSum = Integer.MIN_VALUE;
-        for (int i = 0; i < a.length; ++i) {
+        start = maxStart = end = maxEnd = 0;
+        sum = maxSum = a[0];
+        for (int i = 1; i < a.length; ++i) {
             end = i;
             if (sum < 0) {
                 start = i;
