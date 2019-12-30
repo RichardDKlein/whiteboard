@@ -8,6 +8,7 @@ import sets.TestSets;
 import stacks_and_queues.TestStacksAndQueues;
 import strings.TestStrings;
 import threads.TestThreads;
+import trees.TestTrees;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +22,6 @@ public class Main {
         TestStacksAndQueues.run();
         TestStrings.run();
         TestThreads.run();
-        //TestTrees.run();
+        TestTrees.run();
     }
 }
