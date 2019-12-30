@@ -127,7 +127,7 @@ public final class TraverseBinaryTreeInOrder {
         nine.right = thirteen;
 
         List<Integer> inorderTraversal = traverseBinaryTreeInOrder(nine);
-        System.out.println("traverse BST inorder = " +
+        System.out.println("inorder traversal of BST = " +
                 Arrays.toString(inorderTraversal.toArray()));
     }
 }

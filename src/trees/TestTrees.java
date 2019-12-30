@@ -9,6 +9,7 @@ public final class TestTrees {
         System.out.println("                    TREES                    ");
         System.out.println("=============================================");
 
+        CreateBinarySearchTreeFromSortedList.test();
         TraverseBinaryTreeInOrder.test();
     }
 }
