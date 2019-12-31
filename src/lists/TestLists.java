@@ -15,5 +15,6 @@ public final class TestLists {
         RemoveDupsFromList.test();
         ReverseListIterative.test();
         ReverseListRecursive.test();
+        ShuffleList.test();
     }
 }

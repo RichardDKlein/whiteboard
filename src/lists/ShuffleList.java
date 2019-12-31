@@ -1,33 +1,33 @@
-package arrays;
+package lists;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * Shuffle an array.
+ * Shuffle a list.
  */
-public final class ShuffleArray {
-    private ShuffleArray() {}
+public final class ShuffleList {
+    private ShuffleList() {}
 
     /**
-     * Shuffle an array, as if it represented a deck of card.
+     * Shuffle a list, as if it represented a deck of card.
      *
-     * Algorithm: Iterate thru the array, swapping each element
-     * with an element randomly chosen from the array elements
+     * Algorithm: Iterate thru the list, swapping each element
+     * with an element randomly chosen from the list elements
      * not yet visited.
      *
      * Running time: O(n)
      *
-     * @param a The array to be shuffled.
-     * @return The shuffled array.
+     * @param list The list to be shuffled.
      */
-    public static int[] shuffleArray(int[] a) {
-        for (int i = 0; i < a.length - 1; ++i) {
-            int j = random(i + 1, a.length - 1);
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+    public static <E> void shuffleList(List<E> list) {
+        for (int i = 0; i < list.size() - 1; ++i) {
+            int j = random(i + 1, list.size() - 1);
+            E temp = list.get(i);
+            list.set(i, list.get(j));
+            list.set(j, temp);
         }
-        return a;
     }
 
     /**
@@ -41,7 +41,7 @@ public final class ShuffleArray {
      * @param max The end of the interval.
      * @return A random int in the closed interval [min, max].
      */
-    private static int random(int min, int max) {
+    public static int random(int min, int max) {
         int scaleFactor = max - min;
         double random0to1 = Math.random();
         double randomMinToMax = random0to1 * scaleFactor;
@@ -54,18 +54,18 @@ public final class ShuffleArray {
         final int NUM_CARDS = 52;
 
         System.out.println();
-        System.out.println("Test ShuffleArray:");
+        System.out.println("Test ShuffleList:");
         System.out.println("==================");
 
-        int[] deck = new int[NUM_CARDS];
+        List<Integer> deck = new ArrayList<>();
         for (int i = 0; i < NUM_CARDS; ++i) {
-            deck[i] = i;
+            deck.add(i);
         }
 
-        System.out.println("Unshuffled deck = " + Arrays.toString(deck));
+        System.out.println("Unshuffled deck = " + Arrays.toString(deck.toArray()));
         for (int i = 0; i < 10; i++) {
-            deck = shuffleArray(deck);
-            System.out.println("Shuffled   deck = " + Arrays.toString(deck));
+            shuffleList(deck);
+            System.out.println("Shuffled   deck = " + Arrays.toString(deck.toArray()));
         }
     }
 }

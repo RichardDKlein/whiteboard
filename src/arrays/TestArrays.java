@@ -24,7 +24,6 @@ public final class TestArrays {
         SearchSorted2dArray.test();
         SearchSortedAndRotatedArray.test();
         ShortestClosure.test();
-        ShuffleArray.test();
         SolveMaze.test();
         SpiralTraverse2dArray.test();
         SumPairsInSortedArray.test();

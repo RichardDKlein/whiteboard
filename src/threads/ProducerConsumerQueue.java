@@ -1,8 +1,9 @@
 package threads;
 
+import lists.ShuffleList;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 
 /**
  * A queue that blocks producer threads when full,
@@ -48,15 +49,6 @@ public class ProducerConsumerQueue<E> {
         return item;
     }
 
-    private static int random(int min, int max) {
-        int scaleFactor = max - min;
-        double random0to1 = Math.random();
-        double randomMinToMax = random0to1 * scaleFactor;
-        int roundedRandomMinToMax = (int)Math.round(randomMinToMax);
-        int offset = min + roundedRandomMinToMax;
-        return offset;
-    }
-
     public static void test() {
         System.out.println();
         System.out.println("Test ProducerConsumerQueue:");
@@ -76,7 +68,7 @@ public class ProducerConsumerQueue<E> {
                     queue.produce(item);
                     System.out.println("Producer " + id_ + " produced " + item);
                     try {
-                        sleep(random(100, 500));
+                        sleep(ShuffleList.random(100, 500));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -96,7 +88,7 @@ public class ProducerConsumerQueue<E> {
                     String item = queue.consume();
                     System.out.println("Consumer " + id_ + " consumed " + item);
                     try {
-                        sleep(random(100, 500));
+                        sleep(ShuffleList.random(100, 500));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

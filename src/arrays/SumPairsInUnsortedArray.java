@@ -1,10 +1,9 @@
 package arrays;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import javafx.util.Pair;
+import lists.ShuffleList;
 
 /**
  * In an unsorted array, find pairs of array elements
@@ -51,7 +50,16 @@ public final class SumPairsInUnsortedArray {
 
         int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
 
-        a = ShuffleArray.shuffleArray(a);
+        List<Integer> list = new ArrayList<>();
+        for (int integer : a) {
+            list.add(integer);
+        }
+
+        ShuffleList.shuffleList(list);
+        for (int i = 0; i < a.length; ++i) {
+            a[i] = list.get(i);
+        }
+
         System.out.println("unsorted array = " + Arrays.toString(a));
 
         int sum = 12;
