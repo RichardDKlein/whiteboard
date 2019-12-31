@@ -4,9 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Create a binary search tree from a sorted list.
+ */
 public final class CreateBinarySearchTreeFromSortedList {
     private CreateBinarySearchTreeFromSortedList() {}
 
+    /**
+     * Create a binary search tree from a sorted list.
+     *
+     * @param sortedList The sorted list.
+     * @return The root of the created binary search tree.
+     */
     public static <E> BinaryTreeNode<E>
     createBinarySearchTreeFromSortedList(List<E> sortedList) {
         if (sortedList.isEmpty()) {

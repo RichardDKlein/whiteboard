@@ -10,6 +10,7 @@ public final class TestTrees {
         System.out.println("=============================================");
 
         CreateBinarySearchTreeFromSortedList.test();
+        IsBinarySearchTree.test();
         TraverseBinaryTreeInOrder.test();
     }
 }
