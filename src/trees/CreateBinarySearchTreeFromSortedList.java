@@ -63,7 +63,7 @@ public final class CreateBinarySearchTreeFromSortedList {
                 createBinarySearchTreeFromSortedList(sortedList);
         List<Integer> inorderTraversal =
                 TraverseBinaryTreeInOrder.traverseBinaryTreeInOrder(root);
-        System.out.println("inorder traversal of BST = " +
+        System.out.println("inorder traversal of binary search tree = " +
                 Arrays.toString(inorderTraversal.toArray()));
     }
 }

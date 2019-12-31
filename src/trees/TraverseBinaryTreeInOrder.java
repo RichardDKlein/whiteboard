@@ -14,8 +14,8 @@ public final class TraverseBinaryTreeInOrder {
      * Perform an inorder traversal of a binary tree.
      *
      * @param root The root of the binary tree to be traversed.
-     * @return A list of the items in the binary tree, whose order
-     * corresponds to an inorder traversal of the tree.
+     * @return A list of the items in the binary tree, ordered
+     * in accordance with an inorder traversal of the tree.
      */
     public static <E> List<E> traverseBinaryTreeInOrder(BinaryTreeNode<E> root) {
         List<E> result = new ArrayList<>();
@@ -60,7 +60,7 @@ public final class TraverseBinaryTreeInOrder {
         BinaryTreeNode<Integer> nine = new BinaryTreeNode<>(9, four, thirteen);
 
         List<Integer> inorderTraversal = traverseBinaryTreeInOrder(nine);
-        System.out.println("inorder traversal of BST = " +
+        System.out.println("inorder traversal of binary tree = " +
                 Arrays.toString(inorderTraversal.toArray()));
     }
 }

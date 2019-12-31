@@ -11,6 +11,7 @@ public final class TestTrees {
 
         CreateBinarySearchTreeFromSortedList.test();
         IsBinarySearchTree.test();
+        TraverseBinaryTreeBreadthFirst.test();
         TraverseBinaryTreeInOrder.test();
     }
 }
