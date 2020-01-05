@@ -52,23 +52,22 @@ public final class ArrayHopscotch {
         }
         if (visitedIndices.contains(iStart)) {
             return winningHops;
+        } else {
+            visitedIndices.add(iStart);
         }
-        visitedIndices.add(iStart);
-        int hopDistance = a[iStart];
-        int iHopLeft = iStart - hopDistance;
-        int iHopRight = iStart + hopDistance;
-        List<Integer> remainingWinningHops;
 
+        int iHopLeft = iStart - a[iStart];
         if (iHopLeft >= 0) {
-            remainingWinningHops = arrayHopscotch(a, iHopLeft);
+            List<Integer> remainingWinningHops = arrayHopscotch(a, iHopLeft);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(iStart);
                 winningHops.addAll(remainingWinningHops);
                 return winningHops;
             }
         }
+        int iHopRight = iStart + a[iStart];
         if (iHopRight < a.length) {
-            remainingWinningHops = arrayHopscotch(a, iHopRight);
+            List<Integer> remainingWinningHops = arrayHopscotch(a, iHopRight);
             if (!remainingWinningHops.isEmpty()) {
                 winningHops.add(iStart);
                 winningHops.addAll(remainingWinningHops);
