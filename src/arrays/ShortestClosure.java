@@ -75,14 +75,6 @@ public final class ShortestClosure {
         return shortest;
     }
 
-    /**
-     * Build the needleLocationsMap, i.e. the data structure containing
-     * the locations (indices) of the needles in the haystack.
-     *
-     * We do this by examining each element in the haystack, and
-     * seeing if it is equal to one of the needles. If so, we append
-     * the index of that element to the location list for that needle.
-     */
     private static void buildNeedleLocationsMap() {
         for (int needle : needles_) {
             needleLocationsMap_.put(needle, new ArrayList<>());
