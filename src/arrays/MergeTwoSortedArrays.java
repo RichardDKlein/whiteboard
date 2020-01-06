@@ -45,11 +45,7 @@ public final class MergeTwoSortedArrays {
                 }
                 break;
             }
-            if (a1[i1] < a2[i2]) {
-                merged[iMerged++] = a1[i1++];
-            } else {
-                merged[iMerged++] = a2[i2++];
-            }
+            merged[iMerged++] = a1[i1] < a2[i2] ? a1[i1++] : a2[i2++];
         }
         return merged;
     }
