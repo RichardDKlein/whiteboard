@@ -52,11 +52,11 @@ public final class MaxSubarray {
         sum = maxSum = a[0];
         for (int i = 1; i < a.length; ++i) {
             end = i;
-            if (sum < 0) {
+            if (sum >= 0) {
+                sum += a[i];
+            } else {
                 start = i;
                 sum = a[i];
-            } else {
-                sum += a[i];
             }
             if (sum > maxSum) {
                 maxSum = sum;
@@ -64,7 +64,7 @@ public final class MaxSubarray {
                 maxEnd = end;
             }
         }
-        return new Pair(maxStart, maxEnd);
+        return new Pair<>(maxStart, maxEnd);
     }
 
     public static void test() {
