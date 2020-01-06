@@ -8,9 +8,8 @@ import java.util.*;
  * the needles.
  */
 public final class ShortestClosure {
-    /**
-     * Represents a closed interval [min, max] of integers.
-     */
+    private ShortestClosure() {}
+
     private static class Interval {
         public int min;
         public int max;
@@ -27,22 +26,9 @@ public final class ShortestClosure {
         }
     }
 
-    /**
-     * A one-dimensional array of elements representing the
-     * haystack.
-     */
-    private static int[] haystack;
-
-    /**
-     * A set of elements representing the needles.
-     */
-    private static Set<Integer> needles;
-
-    /**
-     * A data structure that maps each needle to its locations
-     * (indices) in the haystack.
-     */
-    private static Map<Integer, List<Integer>> needleLocationsMap;
+    private static int[] haystack_;
+    private static Set<Integer> needles_;
+    private static Map<Integer, List<Integer>> needleLocationsMap_ = new HashMap<>();
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -66,17 +52,17 @@ public final class ShortestClosure {
      *
      * Total running time = O(n) + O(n) = O(n).
      *
-     * @param theHaystack A one-dimensional array of elements
-     *                    representing the haystack.
-     * @param theNeedles A set of elements representing the needles.
+     * @param haystack A one-dimensional array of elements
+     *                 representing the haystack.
+     * @param needles A set of elements representing the needles.
      * @return An Interval representing the shortest closure.
      */
     public static Interval
-    shortestClosure(int[] theHaystack, Set<Integer> theNeedles) {
-        haystack = theHaystack;
-        needles = theNeedles;
-        Interval shortest = new Interval(0, haystack.length - 1);
+    shortestClosure(int[] haystack, Set<Integer> needles) {
+        haystack_ = haystack;
+        needles_ = needles;
         buildNeedleLocationsMap();
+        Interval shortest = new Interval(0, haystack.length - 1);
         for (;;) {
             Interval candidate = nextCandidate();
             if (!candidate.valid()) {
@@ -98,49 +84,36 @@ public final class ShortestClosure {
      * the index of that element to the location list for that needle.
      */
     private static void buildNeedleLocationsMap() {
-        needleLocationsMap = new HashMap<>();
-        for (int needle : needles) {
-            needleLocationsMap.put(needle, new ArrayList<>());
+        for (int needle : needles_) {
+            needleLocationsMap_.put(needle, new ArrayList<>());
         }
-        for (int i = 0; i < haystack.length; ++i) {
-            if (needles.contains(haystack[i])) {
-                needleLocationsMap.get(haystack[i]).add(i);
+        for (int i = 0; i < haystack_.length; ++i) {
+            if (needles_.contains(haystack_[i])) {
+                needleLocationsMap_.get(haystack_[i]).add(i);
             }
         }
     }
-
-    /**
-     * Fetch the next closure that is a candidate for the
-     * shortest interval.
-     *
-     * We do this by examining the head of each needle's
-     * location list, finding the min and max, and forming
-     * the interval [min, max]. (We also remove the min
-     * index from its location list, so that we don't
-     * consider that index again next time.)
-     *
-     * @return The next closure that is a candidate for the
-     * shortest interval.
-     */
     private static Interval nextCandidate() {
         int min = Integer.MAX_VALUE;
         int max = -1;
-        int startingNeedle = 0; // must init to make compiler happy
-        for (int needle : needles) {
-            List<Integer> locationList = needleLocationsMap.get(needle);
+        List<Integer> minLocationList = null;
+        for (int needle : needles_) {
+            List<Integer> locationList = needleLocationsMap_.get(needle);
             if (locationList.isEmpty()) {
                 return new Interval(-1, -1);
             }
             int front = locationList.get(0);
             if (front < min) {
-                startingNeedle = needle;
                 min = front;
+                minLocationList = locationList;
             }
             if (front > max) {
                 max = front;
             }
         }
-        needleLocationsMap.get(startingNeedle).remove(0);
+        // Remove the min index from its location list,
+        // so that we don't consider that index again next time.
+        minLocationList.remove(0);
         return new Interval(min, max);
     }
 
