@@ -34,12 +34,6 @@ public final class Rotate2dArray {
         }
     }
 
-    /**
-     * Transpose a 2D array in place.
-     *
-     * Our algorithm is to swap each element below the major diagonal
-     * with its mirror image above the major diagonal.
-     */
     private static void transpose2dArray(int[][] a) {
         for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < row; ++col) {
@@ -50,21 +44,13 @@ public final class Rotate2dArray {
         }
     }
 
-    /**
-     * Reverse a one-dimensional array in place.
-     *
-     * Our algorithm is to start at both ends of the array, and swap
-     * elements as we work our way to the middle of the array.
-     */
     private static void reverse1dArray(int[] a) {
-        int begin = 0;
-        int end = a.length - 1;
-        while (begin < end) {
-            int temp = a[begin];
-            a[begin] = a[end];
-            a[end] = temp;
-            ++begin;
-            --end;
+        int left = 0;
+        int right = a.length - 1;
+        while (left < right) {
+            int temp = a[left];
+            a[left++] = a[right];
+            a[right--] = temp;
         }
     }
 
