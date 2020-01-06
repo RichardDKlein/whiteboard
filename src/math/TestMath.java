@@ -11,6 +11,7 @@ public final class TestMath {
 
         ModOperatorUsingSubtraction.test();
         ReverseDecimalNumber.test();
+        RomanNumeralToDecimal.test();
         SubstringsStartingAndEndingWith1.test();
     }
 }

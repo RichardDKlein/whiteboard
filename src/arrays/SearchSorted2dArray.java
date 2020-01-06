@@ -44,27 +44,27 @@ public final class SearchSorted2dArray {
      */
     public static Pair<Integer, Integer>
     searchSorted2dArray(int[][] a, int target) {
-
         int rows = a.length;
         int cols = a[0].length;
 
-        int top = 0;
         int bottom = rows - 1;
         int left = 0;
+        int top = 0;
         int right = cols - 1;
 
         int row = bottom;
         int col = left;
+
         while (row >= top && col <= right) {
             if (a[row][col] < target) {
                 ++col;
             } else if (a[row][col] > target) {
                 --row;
             } else {
-                return new Pair(row, col);
+                return new Pair<>(row, col);
             }
         }
-        return new Pair(-1, -1);
+        return new Pair<>(-1, -1);
     }
 
     public static void test() {
