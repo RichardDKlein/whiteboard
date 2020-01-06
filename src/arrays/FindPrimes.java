@@ -36,10 +36,8 @@ public final class FindPrimes {
         for (int i = 2; i <= n; ++i) {
             if (isPrime[i]) {
                 primes.add(i);
-                int j = i + i;
-                while (j <= n) {
-                    isPrime[j] = false;
-                    j += i;
+                for (int j = 2; j * i <= n; ++j) {
+                    isPrime[j * i] = false;
                 }
             }
         }
