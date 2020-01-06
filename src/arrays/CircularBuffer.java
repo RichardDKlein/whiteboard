@@ -18,38 +18,42 @@ package arrays;
  * (n - 1).
  */
 public class CircularBuffer {
-    int[] buffer;
-    int head;
-    int tail;
+    int[] buffer_;
+    int head_;
+    int tail_;
 
-    public CircularBuffer(int length) {
-        this.buffer = new int[length];
-        this.head = 0;
-        this.tail = 0;
+    public CircularBuffer(int capacity) {
+        buffer_ = new int[capacity];
+        head_ = 0;
+        tail_ = 0;
     }
+
     public void add(int n) {
         if (isFull()) {
             System.out.println("FULL!");
         } else {
-            this.buffer[tail] = n;
-            tail = (tail + 1) % this.buffer.length;
+            buffer_[tail_] = n;
+            tail_ = (tail_ + 1) % buffer_.length;
         }
     }
+
     public int remove() {
         if (isEmpty()) {
             System.out.println("EMPTY!");
             return -1;
         } else {
-            int element = this.buffer[head];
-            head = (head + 1) % this.buffer.length;
+            int element = buffer_[head_];
+            head_ = (head_ + 1) % buffer_.length;
             return element;
         }
     }
+
     private boolean isFull() {
-        return (tail + 1) % this.buffer.length == head;
+        return (tail_ + 1) % buffer_.length == head_;
     }
+
     private boolean isEmpty() {
-        return head == tail;
+        return head_ == tail_;
     }
 
     public static void test() {
