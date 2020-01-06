@@ -24,8 +24,7 @@ public class CircularBuffer {
 
     public CircularBuffer(int capacity) {
         buffer_ = new int[capacity];
-        head_ = 0;
-        tail_ = 0;
+        head_ = tail_ = 0;
     }
 
     public void add(int n) {
