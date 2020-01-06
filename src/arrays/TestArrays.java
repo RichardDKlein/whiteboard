@@ -14,7 +14,7 @@ public final class TestArrays {
         ArrayHopscotch.test();
         CircularBuffer.test();
         FindPrimes.test();
-        FloodFillBFS.test();
+        FloodFillBreadthFirstSearch.test();
         FloodFillRecursive.test();
         LinesThruPoints.test();
         MaxSubarray.test();

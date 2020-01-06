@@ -10,8 +10,8 @@ import java.util.List;
  * in a 2D array, using a Breadth-First Search (BFS)
  * approach.
  */
-public final class FloodFillBFS {
-    private FloodFillBFS() {}
+public final class FloodFillBreadthFirstSearch {
+    private FloodFillBreadthFirstSearch() {}
 
     /**
      * Implement the "flood fill" algorithm to fill a region
@@ -32,7 +32,7 @@ public final class FloodFillBFS {
      *          the flood fill is to start.
      * @param y The y-coordinate of the seed pixel.
      */
-    public static void floodFillBFS(
+    public static void floodFillBreadthFirstSearch(
             char[][] a, int x, int y) {
         int rows = a.length;
         int cols = a[0].length;
@@ -59,8 +59,8 @@ public final class FloodFillBFS {
 
     public static void test() {
         System.out.println();
-        System.out.println("Test FloodFillBFS:");
-        System.out.println("==================");
+        System.out.println("Test FloodFillBreadthFirstSearch:");
+        System.out.println("=================================");
 
         char[][] a = {
                 {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',},
@@ -102,7 +102,7 @@ public final class FloodFillBFS {
             a[y[i]][x[i]] = 'S';
             TestUtils.printBitmap(a);
             a[y[i]][x[i]] = tmp;
-            floodFillBFS(copy, x[i], y[i]);
+            floodFillBreadthFirstSearch(copy, x[i], y[i]);
             System.out.println("\nAFTER flood fill:");
             TestUtils.printBitmap(copy);
         }

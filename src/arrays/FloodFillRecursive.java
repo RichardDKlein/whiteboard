@@ -20,7 +20,7 @@ public final class FloodFillRecursive {
      * algorithm. Yuck.
      *
      * For an algorithm with more modest space requirements,
-     * see the FloodFillBFS class.
+     * see the FloodFillBreadthFirstSearch class.
      *
      * @param a The 2D bitmap to be filled. An element of ' '
      *          denotes an empty pixel. An element of '@' denotes
