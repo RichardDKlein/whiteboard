@@ -6,9 +6,9 @@ import java.util.*;
  * Play a game of "array hopscotch".
  */
 public final class ArrayHopscotch {
-    private static Set<Integer> visitedIndices = new HashSet<>();
-
     private ArrayHopscotch() {}
+
+    private static Set<Integer> visitedIndices = new HashSet<>();
 
     /**
      * Play a game of "array hopscotch".
