@@ -30,9 +30,8 @@ public final class MergeTwoSortedArrays {
      */
     public static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
         int[] merged = new int[a1.length + a2.length];
-        int i1 = 0;
-        int i2 = 0;
-        int iMerged = 0;
+        int i1, i2, iMerged;
+        i1 = i2 = iMerged = 0;
         for (;;) {
             if (i1 >= a1.length) {
                 while (i2 < a2.length) {
