@@ -13,13 +13,10 @@ public final class SearchSortedAndRotatedArray {
      * rotated, so that there is a discontinuity in the array where
      * it wraps around from the largest to the smallest element.
      *
-     * The algorithm is basically the same as a binary search, with
-     * one complication: When you subdivide the remaining interval
-     * to be searched, one half of that interval will contain the
-     * wraparound discontinuity, and the other half will not. We
-     * want always to search (and subdivide) the half WITHOUT the
-     * discontinuity, since that is the half where the binary search
-     * algorithm is valid.
+     * The algorithm is similar to a binary search, with one wrinkle:
+     * When dividing the search range in half, we have to handle the
+     * possibility that one of the two resulting halves will contain
+     * the discontinuity.
      *
      * Running time = log(n).
      *
@@ -36,7 +33,7 @@ public final class SearchSortedAndRotatedArray {
             if (a[mid] == target) {
                 return mid;
             }
-            if (a[left] < a[mid]) { // if left half is normally ordered
+            if (a[left] < a[mid]) { // left half is normally ordered
                 if (a[left] <= target && target <= a[mid]) {
                     right = mid - 1; // search left
                 } else {
