@@ -2,8 +2,8 @@ package arrays;
 
 import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Implement the "flood fill" algorithm to fill a region
@@ -36,23 +36,21 @@ public final class FloodFillBreadthFirstSearch {
             char[][] a, int x, int y) {
         int rows = a.length;
         int cols = a[0].length;
-        List<Pair<Integer, Integer>> queue = new ArrayList<>();
-        queue.add(new Pair(x, y));
+        Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
+        queue.add(new Pair<>(x, y));
         while (!queue.isEmpty()) {
-            Pair<Integer, Integer> bit = queue.remove(0);
-            int x1 = bit.getKey();
-            int y1 = bit.getValue();
+            Pair<Integer, Integer> coords = queue.poll();
+            int x1 = coords.getKey();
+            int y1 = coords.getValue();
             if (x1 < 0 || y1 < 0 || x1 >= cols || y1 >= rows) {
                 continue;
             }
             if (a[y1][x1] == ' ') {
                 a[y1][x1] = '@';
-                queue.add(new Pair(x1 - 1, y1));
-                queue.add(new Pair(x1, y1 - 1));
-                queue.add(new Pair(x1 + 1, y1));
-                queue.add(new Pair(x1, y1 + 1));
-            } else {
-                continue;
+                queue.add(new Pair<>(x1 - 1, y1));
+                queue.add(new Pair<>(x1, y1 - 1));
+                queue.add(new Pair<>(x1 + 1, y1));
+                queue.add(new Pair<>(x1, y1 + 1));
             }
         }
     }
