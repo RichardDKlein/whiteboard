@@ -39,11 +39,10 @@ public final class FloodFillRecursive {
         if (x < 0 || y < 0 || x >= cols || y >= rows) {
             return;
         }
-        if (a[y][x] == ' ') {
-            a[y][x] = '@';
-        } else {
+        if (a[y][x] == '@') {
             return;
         }
+        a[y][x] = '@';
         floodFillRecursive(a, x - 1, y);
         floodFillRecursive(a, x, y - 1);
         floodFillRecursive(a, x + 1, y);

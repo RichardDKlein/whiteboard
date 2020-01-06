@@ -45,13 +45,14 @@ public final class FloodFillBreadthFirstSearch {
             if (x1 < 0 || y1 < 0 || x1 >= cols || y1 >= rows) {
                 continue;
             }
-            if (a[y1][x1] == ' ') {
-                a[y1][x1] = '@';
-                queue.add(new Pair<>(x1 - 1, y1));
-                queue.add(new Pair<>(x1, y1 - 1));
-                queue.add(new Pair<>(x1 + 1, y1));
-                queue.add(new Pair<>(x1, y1 + 1));
+            if (a[y1][x1] == '@') {
+                continue;
             }
+            a[y1][x1] = '@';
+            queue.add(new Pair<>(x1 - 1, y1));
+            queue.add(new Pair<>(x1, y1 - 1));
+            queue.add(new Pair<>(x1 + 1, y1));
+            queue.add(new Pair<>(x1, y1 + 1));
         }
     }
 
