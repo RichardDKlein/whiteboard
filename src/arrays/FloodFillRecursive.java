@@ -28,25 +28,25 @@ public final class FloodFillRecursive {
      *          as a boundary that the flood-fill algorithm is
      *          not allowed to cross. This bitmap is to be updated
      *          by the flood-fill algorithm.
-     * @param x The x-coordinate of the "seed" pixel, at which
-     *          the flood fill is to start.
-     * @param y The y-coordinate of the seed pixel.
+     * @param seedRow The 0-based row index of the "seed" pixel,
+     *                at which the flood fill is to start.
+     * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillRecursive(
-            char[][] a, int x, int y) {
+            char[][] a, int seedRow, int seedCol) {
         int rows = a.length;
         int cols = a[0].length;
-        if (x < 0 || y < 0 || x >= cols || y >= rows) {
+        if (seedRow < 0 || seedCol < 0 || seedRow >= rows || seedCol >= cols) {
             return;
         }
-        if (a[y][x] == '@') {
+        if (a[seedRow][seedCol] == '@') {
             return;
         }
-        a[y][x] = '@';
-        floodFillRecursive(a, x - 1, y);
-        floodFillRecursive(a, x, y - 1);
-        floodFillRecursive(a, x + 1, y);
-        floodFillRecursive(a, x, y + 1);
+        a[seedRow][seedCol] = '@';
+        floodFillRecursive(a, seedRow, seedCol - 1);
+        floodFillRecursive(a, seedRow - 1, seedCol);
+        floodFillRecursive(a, seedRow, seedCol + 1);
+        floodFillRecursive(a, seedRow + 1, seedCol);
     }
 
     public static void test() {
@@ -70,31 +70,31 @@ public final class FloodFillRecursive {
             {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',}
         };
 
-        int[] x = {
-            1,
-            4,
-            12,
-            8,
-            10
+        int[] row = {
+                1,
+                4,
+                3,
+                7,
+                9
         };
-        int[] y = {
-            1,
-            4,
-            3,
-            7,
-            9
+        int[] col = {
+                1,
+                4,
+                12,
+                8,
+                10
         };
         int rows = a.length;
         int cols = a[0].length;
         char[][] copy = new char[rows][cols];
-        for (int i = 0; i < x.length; ++i) {
+        for (int i = 0; i < row.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
             TestUtils.copyBitmap(a, copy);
-            char tmp = a[y[i]][x[i]];
-            a[y[i]][x[i]] = 'S';
+            char tmp = a[row[i]][col[i]];
+            a[row[i]][col[i]] = 'S';
             TestUtils.printBitmap(a);
-            a[y[i]][x[i]] = tmp;
-            floodFillRecursive(copy, x[i], y[i]);
+            a[row[i]][col[i]] = tmp;
+            floodFillRecursive(copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
             TestUtils.printBitmap(copy);
         }
