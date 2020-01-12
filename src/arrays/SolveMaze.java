@@ -33,22 +33,17 @@ public final class SolveMaze {
      * of a path leading from the start to the exit. (If no
      * such path exists, then the list will be empty.)
      */
-    public static List<Pair<Integer, Integer>> solveMaze(
-            char[][] maze,
-            Pair<Integer, Integer> start,
-            Pair<Integer, Integer> exit) {
+    public static List<Pair<Integer, Integer>> solveMaze(char[][] maze,
+            Pair<Integer, Integer> start, Pair<Integer, Integer> exit) {
 
         List<Pair<Integer, Integer>> path = new ArrayList<>();
 
-        int rowStart = start.getKey();
-        int colStart = start.getValue();
-        int rowExit = exit.getKey();
-        int colExit = exit.getValue();
-
-        if (rowStart == rowExit && colStart == colExit) {
+        if (start.equals(exit)) {
             path.add(start);
             return path;
         }
+        int rowStart = start.getKey();
+        int colStart = start.getValue();
         int rows = maze.length;
         int cols = maze[0].length;
 
