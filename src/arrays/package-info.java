@@ -30,4 +30,8 @@ package arrays;
  * SumPairsInUnsortedArray
  * -----------------------
  * For each n in a[], check whether we've already seen (sum - n)
+ *
+ * TrappedWater
+ * ------------
+ * Find left tallest, right tallest, and waterline
  */
