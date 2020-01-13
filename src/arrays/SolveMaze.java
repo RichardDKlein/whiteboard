@@ -44,10 +44,10 @@ public final class SolveMaze {
         }
         int rowStart = start.getKey();
         int colStart = start.getValue();
-        int rows = maze.length;
-        int cols = maze[0].length;
+        int numRows = maze.length;
+        int numCols = maze[0].length;
 
-        if (rowStart < 0 || colStart < 0 || rowStart >= rows || colStart >= cols) {
+        if (rowStart < 0 || colStart < 0 || rowStart >= numRows || colStart >= numCols) {
             return path;
         }
         if (maze[rowStart][colStart] == '@') {
