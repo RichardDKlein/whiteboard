@@ -36,8 +36,8 @@ public final class TrappedWater {
      * @return The amount, in inches, of water trapped between the
      * bars of the bar graph.
      */
-    public static int trappedWater(int[] heights) {
-        barHeights_ = heights;
+    public static int trappedWater(int[] barHeights) {
+        barHeights_ = barHeights;
         findLeftTallest();
         findRightTallest();
         findWaterline();
@@ -46,23 +46,23 @@ public final class TrappedWater {
 
     private static void findLeftTallest() {
         leftTallest_ = new int[barHeights_.length];
-        int maxLeft = -1;
+        int leftTallest = -1;
         for (int i = 0; i < barHeights_.length; ++i) {
-            if (barHeights_[i] > maxLeft) {
-                maxLeft = barHeights_[i];
+            if (barHeights_[i] > leftTallest) {
+                leftTallest = barHeights_[i];
             }
-            leftTallest_[i] = maxLeft;
+            leftTallest_[i] = leftTallest;
         }
     }
 
     private static void findRightTallest() {
         rightTallest_ = new int[barHeights_.length];
-        int maxRight = -1;
+        int rightTallest = -1;
         for (int i = barHeights_.length - 1; i >= 0; --i) {
-            if (barHeights_[i] > maxRight) {
-                maxRight = barHeights_[i];
+            if (barHeights_[i] > rightTallest) {
+                rightTallest = barHeights_[i];
             }
-            rightTallest_[i] = maxRight;
+            rightTallest_[i] = rightTallest;
         }
     }
 
