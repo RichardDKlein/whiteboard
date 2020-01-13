@@ -21,4 +21,9 @@ package arrays;
  * ---------------------
  * Implement SpiralTraverseShell(a, rowTop, rowBottom)
  * Degenerate case where shell is a single element handled as special case
+ *
+ * SumPairsInSortedArray
+ * ---------------------
+ * Use '} else if' structure when testing a[left] + a[right] against sum
+ * Remember, we are testing a[left] + a[right], NOT left + right  :)
  */

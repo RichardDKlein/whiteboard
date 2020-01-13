@@ -37,7 +37,7 @@ public final class SumPairsInSortedArray {
             } else if (a[left] + a[right] > sum) {
                 --right;
             } else {
-                pairs.add(new Pair(a[left++], a[right--]));
+                pairs.add(new Pair<>(a[left++], a[right--]));
             }
         }
         return pairs;
