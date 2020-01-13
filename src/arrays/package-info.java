@@ -17,4 +17,8 @@ package arrays;
  * If start is a wall, return empty path
  * Check remainingPath non-EMPTY (rather than non-null)
  *
+ * SpiralTraverse2dArray
+ * ---------------------
+ * Implement SpiralTraverseShell(a, rowTop, rowBottom)
+ * Degenerate case where shell is a single element handled as special case
  */

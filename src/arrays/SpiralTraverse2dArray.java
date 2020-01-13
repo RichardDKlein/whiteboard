@@ -32,55 +32,39 @@ public final class SpiralTraverse2dArray {
     public static List<Integer>
     spiralTraverse2dArray(int[][] a) {
         List<Integer> spiral = new ArrayList<>();
-        int rows = a.length;
-        for (int topRow = 0, bottomRow = rows - 1;
-             topRow <= bottomRow;
-             ++topRow, --bottomRow) {
-
-            List<Integer> shell = spiralTraverseHelper(a, topRow, bottomRow);
-            spiral.addAll(shell);
+        int rowTop, rowBottom;
+        for (rowTop = 0, rowBottom = a.length - 1; rowTop <= rowBottom; ++rowTop, --rowBottom) {
+            spiral.addAll(spiralTraverseShell(a, rowTop, rowBottom));
         }
         return spiral;
     }
 
-    /**
-     * Traverse one shell of a 2D array in a clockwise spiral
-     * pattern, starting at the specified element.
-     *
-     * @param a The array of interest.
-     * @param topRow The 0-based top row of the shell of interest.
-     * @param bottomRow The 0-based bottom row of the shell of interest.
-     *
-     * @return A list containing the array shell's elements in
-     * spiral order.
-     */
-    private static List<Integer>
-    spiralTraverseHelper(int[][] a, int topRow, int bottomRow) {
-        List<Integer> spiral = new ArrayList<>();
+    private static List<Integer> spiralTraverseShell(int[][]a, int rowTop, int rowBottom) {
+        List<Integer> shell = new ArrayList<>();
+        int colLeft = rowTop;
+        int colRight = rowBottom;
         // degenerate case where shell is a single element
-        if (topRow == bottomRow) {
-            spiral.add(a[topRow][topRow]);
-            return spiral;
+        if (rowTop == rowBottom) {
+            shell.add(a[rowTop][colLeft]);
+            return shell;
         }
-        int leftCol = topRow;
-        int rightCol = bottomRow;
         // top row
-        for (int col = leftCol; col < rightCol; ++col) {
-            spiral.add(a[topRow][col]);
+        for (int col = colLeft; col < colRight; ++col) {
+            shell.add(a[rowTop][col]);
         }
         // right column
-        for (int row = topRow; row < bottomRow; ++row) {
-            spiral.add(a[row][rightCol]);
+        for (int row = rowTop; row < rowBottom; ++row) {
+            shell.add(a[row][colRight]);
         }
         // bottom row
-        for (int col = rightCol; col > leftCol; --col) {
-            spiral.add(a[bottomRow][col]);
+        for (int col = colRight; col > colLeft; --col) {
+            shell.add(a[rowBottom][col]);
         }
         // left column
-        for (int row = bottomRow; row > topRow; --row) {
-            spiral.add(a[row][leftCol]);
+        for (int row = rowBottom; row > rowTop; --row) {
+            shell.add(a[row][colLeft]);
         }
-        return spiral;
+        return shell;
     }
 
     public static void test() {
