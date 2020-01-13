@@ -36,7 +36,7 @@ public final class SumPairsInUnsortedArray {
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
-                pairs.add(new Pair(n, sum - n));
+                pairs.add(new Pair<>(sum - n, n));
             }
             seen.add(n);
         }

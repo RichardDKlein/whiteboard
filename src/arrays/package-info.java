@@ -2,7 +2,7 @@ package arrays;
 
 /**
  * ========================================================================
- * HINTS
+ *                                  HINTS
  * ========================================================================
  *
  * SearchSortedAndRotatedArray
@@ -25,5 +25,9 @@ package arrays;
  * SumPairsInSortedArray
  * ---------------------
  * Use '} else if' structure when testing a[left] + a[right] against sum
- * Remember, we are testing a[left] + a[right], NOT left + right  :)
+ * Remember, we are testing a[left] + a[right], NOT left + right
+ *
+ * SumPairsInUnsortedArray
+ * -----------------------
+ * For each n in a[], check whether we've already seen (sum - n)
  */
