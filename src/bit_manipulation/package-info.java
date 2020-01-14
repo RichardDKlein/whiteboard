@@ -12,4 +12,8 @@ package bit_manipulation;
  * ClearBit
  * --------
  * Don't forget the complement operator ~
+ *
+ * ReverseBits
+ * -----------
+ * int numShifts = Integer.SIZE - 1;
  */
