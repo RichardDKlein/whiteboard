@@ -46,19 +46,19 @@ public final class SalesTerritories {
      * their sales territories.
      */
     public static Set<Set<String>>
-    salesTerritories(Set<Pair<String, String>> theCityPairs) {
-        cityPairs_ = theCityPairs;
-        buildCityGraph();
+    salesTerritories(Set<Pair<String, String>> cityPairs) {
+        cityPairs_ = cityPairs;
+        buildCityMap();
         for (CityNode cityNode : cityMap_.values()) {
             if (!visited_.contains(cityNode)) {
-                Set<String> newTerritory = findConnectedCities(cityNode);
-                territories_.add(newTerritory);
+                Set<String> territory = findConnectedCities(cityNode);
+                territories_.add(territory);
             }
         }
         return territories_;
     }
 
-    private static void buildCityGraph() {
+    private static void buildCityMap() {
         for (Pair<String, String> cityPair : cityPairs_) {
             String city1 = cityPair.getKey();
             String city2 = cityPair.getValue();
@@ -81,15 +81,15 @@ public final class SalesTerritories {
     private static Set<String> findConnectedCities(CityNode root) {
         // Breadth-First Search (BFS)
         Set<String> territory = new HashSet<>();
-        Queue<CityNode> nodeQueue = new LinkedList<>();
-        nodeQueue.add(root);
-        while (!nodeQueue.isEmpty()) {
-            CityNode node = nodeQueue.remove();
-            territory.add(node.city_);
+        Queue<CityNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            CityNode node = queue.poll();
             visited_.add(node);
+            territory.add(node.city_);
             for (CityNode neighbor : node.neighbors_) {
                 if (!visited_.contains(neighbor)) {
-                    nodeQueue.add(neighbor);
+                    queue.add(neighbor);
                 }
             }
         }
