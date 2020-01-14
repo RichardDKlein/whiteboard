@@ -14,15 +14,17 @@ public final class SalesTerritories {
     private SalesTerritories() {}
 
     private static class CityNode {
-        String city;
-        Set<CityNode> neighbors = new HashSet<>();
-        CityNode(String city) { this.city = city; }
+        String city_;
+        Set<CityNode> neighbors_ = new HashSet<>();
+        CityNode(String city) {
+            city_ = city;
+        }
     }
 
-    private static Set<Pair<String, String>> cityPairs;
-    private static Map<String, CityNode> cityMap = new HashMap<>();
-    private static Set<CityNode> visited = new HashSet<>();
-    private static Set<Set<String>> territories = new HashSet<>();
+    private static Set<Pair<String, String>> cityPairs_;
+    private static Map<String, CityNode> cityMap_ = new HashMap<>();
+    private static Set<CityNode> visited_ = new HashSet<>();
+    private static Set<Set<String>> territories_ = new HashSet<>();
 
     /**
      * Given a list of city pairs, where each pair denotes that
@@ -45,34 +47,33 @@ public final class SalesTerritories {
      */
     public static Set<Set<String>>
     salesTerritories(Set<Pair<String, String>> theCityPairs) {
-        cityPairs = theCityPairs;
+        cityPairs_ = theCityPairs;
         buildCityGraph();
-        for (CityNode cityNode : cityMap.values()) {
-            if (!visited.contains(cityNode)) {
+        for (CityNode cityNode : cityMap_.values()) {
+            if (!visited_.contains(cityNode)) {
                 Set<String> newTerritory = findConnectedCities(cityNode);
-                territories.add(newTerritory);
+                territories_.add(newTerritory);
             }
         }
-        return territories;
+        return territories_;
     }
 
     private static void buildCityGraph() {
-        cityMap.clear();
-        for (Pair<String, String> cityPair : cityPairs) {
+        for (Pair<String, String> cityPair : cityPairs_) {
             String city1 = cityPair.getKey();
             String city2 = cityPair.getValue();
             CityNode node1 = findOrCreateNode(city1);
             CityNode node2 = findOrCreateNode(city2);
-            node1.neighbors.add(node2);
-            node2.neighbors.add(node1);
+            node1.neighbors_.add(node2);
+            node2.neighbors_.add(node1);
         }
     }
 
     private static CityNode findOrCreateNode(String city) {
-        CityNode node = cityMap.get(city);
+        CityNode node = cityMap_.get(city);
         if (node == null) {
             node = new CityNode(city);
-            cityMap.put(city, node);
+            cityMap_.put(city, node);
         }
         return node;
     }
@@ -84,10 +85,10 @@ public final class SalesTerritories {
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             CityNode node = nodeQueue.remove();
-            territory.add(node.city);
-            visited.add(node);
-            for (CityNode neighbor : node.neighbors) {
-                if (!visited.contains(neighbor)) {
+            territory.add(node.city_);
+            visited_.add(node);
+            for (CityNode neighbor : node.neighbors_) {
+                if (!visited_.contains(neighbor)) {
                     nodeQueue.add(neighbor);
                 }
             }
