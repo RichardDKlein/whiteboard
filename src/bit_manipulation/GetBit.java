@@ -15,7 +15,7 @@ public final class GetBit {
      * @return The value (0 or 1) of the specified bit.
      */
     public static int getBit(int n, int bit) {
-        return (n & (1 << bit)) == 0 ? 0 : 1;
+        return ((n & (1 << bit)) == 0) ? 0 : 1;
     }
 
     public static void test() {
