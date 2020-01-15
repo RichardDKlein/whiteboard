@@ -42,12 +42,11 @@ public final class ShuffleList {
      * @return A random int in the closed interval [min, max].
      */
     public static int random(int min, int max) {
-        int scaleFactor = max - min;
         double random0to1 = Math.random();
-        double randomMinToMax = random0to1 * scaleFactor;
-        int roundedRandomMinToMax = (int)Math.round(randomMinToMax);
-        int offset = min + roundedRandomMinToMax;
-        return offset;
+        double random0toMaxMinusMin = random0to1 * (max - min);
+        int roundedRandom0toMaxMinusMin = (int)Math.round(random0toMaxMinusMin);
+        int randomMinToMax = min + roundedRandom0toMaxMinusMin;
+        return randomMinToMax;
     }
 
     public static void test() {
