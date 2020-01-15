@@ -16,13 +16,11 @@ public final class KthToLastInList {
      */
     public static <E> ListNode<E> kthToLastInList(ListNode<E> head, int k) {
         ListNode<E> lead = head;
-        int count = 0;
-        while ((lead != null) && (count < k)) {
+        for (int i = 0; i < k; ++i) {
+            if (lead == null) {
+                return null;
+            }
             lead = lead.next;
-            ++count;
-        }
-        if (count < k) {
-            return null;
         }
         ListNode<E> lag = head;
         while (lead != null) {
