@@ -21,8 +21,11 @@ public final class ListHasCycle {
      * the specified list contains a cycle.
      */
     public static <E> boolean listHasCycle(ListNode<E> head) {
+        if (head == null) {
+            return false;
+        }
         ListNode<E> slow = head;
-        ListNode<E> fast = (head != null) ? head.next : null;
+        ListNode<E> fast = head.next;
         while (fast != null) {
             if (fast == slow) {
                 return true;
