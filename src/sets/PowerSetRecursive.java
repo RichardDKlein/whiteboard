@@ -1,7 +1,6 @@
 package sets;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Compute the power set of a set, i.e. the set of all subsets of
@@ -16,9 +15,9 @@ public final class PowerSetRecursive {
             powerSet.add(new HashSet<>());
             return powerSet;
         }
-        Set<E> remainder = set;
-        E firstElement = remainder.iterator().next();
-        remainder.remove(firstElement);
+        Queue<E> elements = new LinkedList<E>(set);
+        E firstElement = elements.poll();
+        Set<E> remainder = new HashSet<>(elements);
         Set<Set<E>> remainderPowerSet = powerSetRecursive(remainder);
         for (Set<E> subset : remainderPowerSet) {
             powerSet.add(new HashSet<>(subset));
