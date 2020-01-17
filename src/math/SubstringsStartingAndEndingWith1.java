@@ -36,7 +36,6 @@ public final class SubstringsStartingAndEndingWith1 {
      * So we just have to compute 'n', and apply this formula.
      *
      * This solution is O(n).
-     *
      */
     public static int substringsStartingAndEndingWith1(String s) {
         int n = 0;
@@ -45,7 +44,7 @@ public final class SubstringsStartingAndEndingWith1 {
                 ++n;
             }
         }
-        return n * (n - 1 ) / 2;
+        return n * (n - 1) / 2;
     }
 
     public static void test() {
