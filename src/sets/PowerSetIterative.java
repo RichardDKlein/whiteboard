@@ -1,8 +1,6 @@
 package sets;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Compute the power set of a set, i.e. the set of all subsets of
@@ -21,15 +19,15 @@ public final class PowerSetIterative {
      * subset corresponding to that count.
      */
     public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
+        List<E> elements = new ArrayList<>();
+        elements.addAll(set);
         Set<Set<E>> powerSet = new HashSet<>();
         int numSubsets = (int)Math.pow(2, set.size());
         for (int i = 0; i < numSubsets; ++i) {
             Set<E> subset = new HashSet<>();
-            Iterator<E> iterator = set.iterator();
             for (int bit = 0; bit < set.size(); ++bit) {
-                E element = iterator.next();
                 if ((i & (1 << bit)) != 0) {
-                    subset.add(element);
+                    subset.add(elements.get(bit));
                 }
             }
             powerSet.add(subset);
