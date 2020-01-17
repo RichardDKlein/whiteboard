@@ -19,8 +19,7 @@ public final class PowerSetIterative {
      * subset corresponding to that count.
      */
     public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
-        List<E> elements = new ArrayList<>();
-        elements.addAll(set);
+        List<E> elements = new ArrayList<>(set);
         Set<Set<E>> powerSet = new HashSet<>();
         int numSubsets = (int)Math.pow(2, set.size());
         for (int i = 0; i < numSubsets; ++i) {
