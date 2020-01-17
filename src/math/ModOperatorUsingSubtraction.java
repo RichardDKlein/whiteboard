@@ -29,12 +29,11 @@ public final class ModOperatorUsingSubtraction {
         for (;;) {
             if (dividend < divisor) {
                 return dividend;
-            } else {
-                dividend -= subtrahend;
-                subtrahend += subtrahend;
-                if (subtrahend > dividend) {
-                    return modOperatorUsingSubtraction(dividend, divisor);
-                }
+            }
+            dividend -= subtrahend;
+            subtrahend <<= 1;
+            if (subtrahend > dividend) {
+                return modOperatorUsingSubtraction(dividend, divisor);
             }
         }
     }
