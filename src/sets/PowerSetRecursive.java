@@ -15,8 +15,8 @@ public final class PowerSetRecursive {
             powerSet.add(new HashSet<>());
             return powerSet;
         }
-        Queue<E> elements = new LinkedList<E>(set);
-        E firstElement = elements.poll();
+        List<E> elements = new ArrayList<>(set);
+        E firstElement = elements.remove(0);
         Set<E> remainder = new HashSet<>(elements);
         Set<Set<E>> remainderPowerSet = powerSetRecursive(remainder);
         for (Set<E> subset : remainderPowerSet) {
