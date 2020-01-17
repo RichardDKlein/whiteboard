@@ -12,15 +12,15 @@ public final class ReverseDecimalNumber {
      * Repeatedly uses the % and / operators to strip off the
      * least significant decimal digit.
      *
-     * @param n The decimal number (integer) to reverse.
+     * @param n The decimal number (positive integer) to reverse.
      * @return An integer equal to n with its digits reversed.
      */
     public static int reverseDecimalNumber(int n) {
         int reverse = 0;
         while (n > 0) {
             int leastSignificantDigit = n % 10;
-            reverse = (reverse * 10) + leastSignificantDigit;
             n /= 10;
+            reverse = (reverse * 10) + leastSignificantDigit;
         }
         return reverse;
     }
