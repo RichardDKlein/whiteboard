@@ -25,17 +25,15 @@ public final class ModOperatorUsingSubtraction {
      * @return An integer equal to (dividend % divisor).
      */
     public static int modOperatorUsingSubtraction(int dividend, int divisor) {
+        if (dividend < divisor) {
+            return dividend;
+        }
         int subtrahend = divisor;
-        for (;;) {
-            if (dividend < divisor) {
-                return dividend;
-            }
+        while (dividend >= divisor && dividend >= subtrahend) {
             dividend -= subtrahend;
             subtrahend <<= 1;
-            if (subtrahend > dividend) {
-                return modOperatorUsingSubtraction(dividend, divisor);
-            }
         }
+        return modOperatorUsingSubtraction(dividend, divisor);
     }
 
     public static void test() {
