@@ -34,7 +34,9 @@ public final class BalancedBrackets {
         bracketMap.put('(', ')');
         bracketMap.put('[', ']');
         bracketMap.put('{', '}');
+
         Stack<Character> openBracketStack = new Stack<>();
+
         for (int i = 0; i < expression.length(); ++i) {
             char c = expression.charAt(i);
             if (bracketMap.containsKey(c)) {
