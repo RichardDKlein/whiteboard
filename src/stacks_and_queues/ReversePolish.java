@@ -41,8 +41,7 @@ public final class ReversePolish {
                         stack.push(firstOperand / secondOperand);
                         break;
                 }
-            }
-            else {
+            } else {
                 stack.push(Integer.parseInt(token));
             }
         }
