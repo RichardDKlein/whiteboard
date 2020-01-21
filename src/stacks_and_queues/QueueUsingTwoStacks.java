@@ -6,16 +6,11 @@ import java.util.Stack;
  * Implement a queue using two stacks.
  */
 public class QueueUsingTwoStacks<E> {
-    Stack<E> addStack;
-    Stack<E> removeStack;
+    private Stack<E> addStack = new Stack<>();
+    private Stack<E> removeStack = new Stack<>();
 
-    public QueueUsingTwoStacks() {
-        addStack = new Stack<>();
-        removeStack = new Stack<>();
-    }
-
-    public void add(E element) {
-        addStack.push(element);
+    public void add(E item) {
+        addStack.push(item);
     }
 
     public E remove() {
@@ -64,7 +59,7 @@ public class QueueUsingTwoStacks<E> {
         queue.add(13);
         queue.add(14);
         queue.add(15);
-        System.out.println("Remove seven elements:");
+        System.out.println("Remove eight elements:");
         for (int i = 0; i < 8; ++i) {
             System.out.print(queue.remove() + " ");
         }
