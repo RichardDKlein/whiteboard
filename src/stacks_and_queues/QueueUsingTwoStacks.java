@@ -24,6 +24,9 @@ public class QueueUsingTwoStacks<E> {
                 removeStack.push(addStack.pop());
             }
         }
+        if (removeStack.isEmpty()) {
+            return null;
+        }
         return removeStack.pop();
     }
 
@@ -62,7 +65,7 @@ public class QueueUsingTwoStacks<E> {
         queue.add(14);
         queue.add(15);
         System.out.println("Remove seven elements:");
-        for (int i = 0; i < 7; ++i) {
+        for (int i = 0; i < 8; ++i) {
             System.out.print(queue.remove() + " ");
         }
         System.out.println();
