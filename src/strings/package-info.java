@@ -15,5 +15,5 @@ package strings;
  * ---------------------------
  * Static inner helper class Interval
  * For each char in string, find longest odd- and even-length palindrome centered at that char
- * Use helper class for that
+ * Use helper class longestCenteredAt() for that
  */
