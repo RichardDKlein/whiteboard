@@ -10,23 +10,6 @@ import java.util.Set;
  * constituent words.
  */
 public final class ParseStringIntoWords {
-    public static class ParseResult {
-        public boolean success_;
-        public List<String> words_;
-
-        public ParseResult(boolean success, List<String> words) {
-            success_ = success;
-            words_ = words;
-        }
-    }
-
-    private static final List<String> EMPTY_WORD_LIST =
-            new ArrayList<>();
-    private static final ParseResult FAILURE =
-            new ParseResult(false, EMPTY_WORD_LIST);
-    private static final ParseResult SUCCESS_EMPTY_STRING =
-            new ParseResult(true, EMPTY_WORD_LIST);
-
     private ParseStringIntoWords() {}
 
     /**
@@ -35,15 +18,16 @@ public final class ParseStringIntoWords {
      *
      * @param s The string to parse.
      * @param dictionary A dictionary of legal words.
-     * @return A data structure containing: (1) A flag
-     * indicating whether the parse was successful, and
-     * if so, (2) A list containing the constituent words.
+     * @return A list containing the constituent words,
+     * or null if the given string cannot be parsed.
+     * An empty list means that the given string is
+     * empty.
      */
-    public static ParseResult parseStringIntoWords(
+    public static List<String> parseStringIntoWords(
             String s, Set<String> dictionary) {
         List<String> words = new ArrayList<>();
         if (s.isEmpty()) {
-            return SUCCESS_EMPTY_STRING;
+            return words;
         }
         for (int i = 0; i < (int)s.length(); ++i) {
             String firstWord = s.substring(0, i + 1);
@@ -51,18 +35,18 @@ public final class ParseStringIntoWords {
                 continue;
             }
             String remainder = s.substring(i + 1);
-            ParseResult remainderParse =
+            List<String> remainderParse =
                     parseStringIntoWords(remainder, dictionary);
-            if (!remainderParse.success_) {
+            if (remainderParse == null) {
+                // Maybe trying a longer first word
+                // will allow us to parse the remainder.
                 continue;
             }
             words.add(firstWord);
-            for (String word : remainderParse.words_) {
-                words.add(word);
-            }
-            return new ParseResult(true, words);
+            words.addAll(remainderParse);
+            return words;
         }
-        return FAILURE;
+        return null;
     }
 
     public static void test() {
@@ -99,14 +83,19 @@ public final class ParseStringIntoWords {
         String[] testStrings = {
             "nowisthetimeforallgoodmentocometotheaidoftheircountry",
             "nowisthetimeforallgoodxmentocometotheaidoftheircountry",
-            "catsruleandsododogs"
+            "catsruleandsododogs",
+            "mxrptlqgaahyutlkjfjiwllvdgirtuwbvsawovmhudtjmnevnorggh"
         };
 
         for (String s : testStrings) {
-            ParseResult parseResult = parseStringIntoWords(s, dictionary);
+            List<String> parseResult = parseStringIntoWords(s, dictionary);
             System.out.println("parseStringIntoWords(\"" + s + "\"):");
             System.out.println("{");
-            for (String word : parseResult.words_) {
+            if (parseResult == null) {
+                System.out.println("\t<cannot parse>\n}");
+                continue;
+            }
+            for (String word : parseResult) {
                 System.out.println("\t\"" + word + "\"");
             }
             System.out.println("}");
