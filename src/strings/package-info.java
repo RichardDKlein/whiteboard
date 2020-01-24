@@ -22,5 +22,6 @@ package strings;
  * Return an empty list if given string is empty, null list if cannot parse it.
  * Use for loop to try longer and longer first words, until find one that allows
  *     the remainder to be parsed.
+ * Don't forget to check whether the first word is in the dictionary!
  * If no such first word is found, return null.
  */
