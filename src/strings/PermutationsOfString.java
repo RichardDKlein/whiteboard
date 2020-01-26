@@ -19,7 +19,7 @@ public final class PermutationsOfString {
     public static List permutationsOfString(String s) {
         List<String> perms = new ArrayList<>();
         if (s.isEmpty()) {
-            perms.add("");
+            perms.add(s);
             return perms;
         }
         char firstChar = s.charAt(0);

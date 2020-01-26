@@ -24,4 +24,8 @@ package strings;
  *     the remainder to be parsed.
  * Don't forget to check whether the first word is in the dictionary!
  * If no such first word is found, return null.
+ *
+ * PermutationsOfString
+ * --------------------
+ * If given string is empty, it is its only permutation. Add it to result list and return.
  */
