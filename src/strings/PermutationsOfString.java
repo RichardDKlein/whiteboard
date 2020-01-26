@@ -16,7 +16,7 @@ public final class PermutationsOfString {
      * @return An list containing all the permutations
      * of the given string.
      */
-    public static List permutationsOfString(String s) {
+    public static List<String> permutationsOfString(String s) {
         List<String> perms = new ArrayList<>();
         if (s.isEmpty()) {
             perms.add(s);
