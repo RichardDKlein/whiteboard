@@ -10,6 +10,10 @@ import java.util.Map;
 public final class RansomNote {
     private RansomNote() {}
 
+    private static String note_;
+    private static String magazine_;
+    private static Map<Character, Integer> inventory_ = new HashMap<>();
+
     /**
      * Determine whether a given ransom note can be constructed by
      * cutting out letters from a given magazine.
@@ -30,29 +34,38 @@ public final class RansomNote {
      * the given ransom note can be constructed from the given magazine.
      */
     public static boolean ransomNote(String note, String magazine) {
-        Map<Character, Integer> freq = new HashMap<>();
-        for (int i = 0; i < magazine.length(); ++i) {
-            char c = magazine.charAt(i);
+        note_ = note;
+        magazine_ = magazine;
+        takeInventoryOfMagazineChars();
+        return buildRansomNoteFromInventory();
+    }
+
+    private static void takeInventoryOfMagazineChars() {
+        for (int i = 0; i < magazine_.length(); ++i) {
+            char c = magazine_.charAt(i);
             if (c == ' ') {
                 continue;
             }
-            if (freq.containsKey(c)) {
-                freq.replace(c, freq.get(c) + 1);
+            if (inventory_.containsKey(c)) {
+                inventory_.replace(c, inventory_.get(c) + 1);
             } else {
-                freq.put(c, 1);
+                inventory_.put(c, 1);
             }
         }
-        for (int i = 0; i < note.length(); ++i) {
-            char c = note.charAt(i);
+    }
+
+    private static boolean buildRansomNoteFromInventory() {
+        for (int i = 0; i < note_.length(); ++i) {
+            char c = note_.charAt(i);
             if (c == ' ') {
                 continue;
             }
-            if (freq.containsKey(c)) {
-                int occurences = freq.get(c);
+            if (inventory_.containsKey(c)) {
+                int occurences = inventory_.get(c);
                 if (occurences > 1) {
-                    freq.replace(c, occurences - 1);
+                    inventory_.replace(c, occurences - 1);
                 } else {
-                    freq.remove(c);
+                    inventory_.remove(c);
                 }
             } else {
                 return false;

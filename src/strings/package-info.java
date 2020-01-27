@@ -29,4 +29,8 @@ package strings;
  * --------------------
  * If given string is empty, it is its only permutation. Add it to result list and return.
  * When inserting the first char into each remPerm, remember to insert at the end of remPerm.
+ *
+ * RansomNote
+ * ----------
+ * Helper methods: takeInventoryOfMagazine() and buildRansomNoteFromInventory().
  */
