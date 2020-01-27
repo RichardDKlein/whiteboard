@@ -36,11 +36,11 @@ public final class RansomNote {
     public static boolean ransomNote(String note, String magazine) {
         note_ = note;
         magazine_ = magazine;
-        takeInventoryOfMagazineChars();
+        takeInventoryOfMagazine();
         return buildRansomNoteFromInventory();
     }
 
-    private static void takeInventoryOfMagazineChars() {
+    private static void takeInventoryOfMagazine() {
         for (int i = 0; i < magazine_.length(); ++i) {
             char c = magazine_.charAt(i);
             if (c == ' ') {
@@ -61,9 +61,9 @@ public final class RansomNote {
                 continue;
             }
             if (inventory_.containsKey(c)) {
-                int occurences = inventory_.get(c);
-                if (occurences > 1) {
-                    inventory_.replace(c, occurences - 1);
+                int occurrences = inventory_.get(c);
+                if (occurrences > 1) {
+                    inventory_.replace(c, occurrences - 1);
                 } else {
                     inventory_.remove(c);
                 }
