@@ -1,7 +1,7 @@
 package strings;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Find all the permutations of a given string.
@@ -13,18 +13,18 @@ public final class PermutationsOfString {
      * Find all the permutations of a given string.
      *
      * @param s The string of interest.
-     * @return An list containing all the permutations
+     * @return A set containing all the permutations
      * of the given string.
      */
-    public static List<String> permutationsOfString(String s) {
-        List<String> perms = new ArrayList<>();
+    public static Set<String> permutationsOfString(String s) {
+        Set<String> perms = new HashSet<>();
         if (s.isEmpty()) {
             perms.add(s);
             return perms;
         }
         char firstChar = s.charAt(0);
         String rem = s.substring(1);
-        List<String> remPerms = permutationsOfString(rem);
+        Set<String> remPerms = permutationsOfString(rem);
         for (String remPerm : remPerms) {
             for (int i = 0; i <= remPerm.length(); ++i) {
                 String perm = insertCharAt(remPerm, firstChar, i);
@@ -44,7 +44,7 @@ public final class PermutationsOfString {
         System.out.println("==========================");
 
         String testString = "abcd";
-        List<String> perms = permutationsOfString(testString);
+        Set<String> perms = permutationsOfString(testString);
         System.out.println("permutationsOfString(" + "\"" + testString
                 + "\") returns " + perms.size() + " permutations:");
         for (String perm : perms) {
