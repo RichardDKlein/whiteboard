@@ -3,7 +3,7 @@ package arrays;
 import java.util.*;
 
 import javafx.util.Pair;
-import lists.ShuffleList;
+import com.whiteboard.lists.ShuffleList;
 
 /**
  * In an unsorted array, find pairs of array elements

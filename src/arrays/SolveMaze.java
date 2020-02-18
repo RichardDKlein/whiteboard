@@ -57,25 +57,25 @@ public final class SolveMaze {
         maze[rowStart][colStart] = '@';
 
         List<Pair<Integer, Integer>> remainingPath;
-        remainingPath = solveMaze(maze, new Pair(rowStart - 1, colStart), exit);
+        remainingPath = solveMaze(maze, new Pair<>(rowStart - 1, colStart), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(rowStart, colStart - 1), exit);
+        remainingPath = solveMaze(maze, new Pair<>(rowStart, colStart - 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(rowStart + 1, colStart), exit);
+        remainingPath = solveMaze(maze, new Pair<>(rowStart + 1, colStart), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair(rowStart, colStart + 1), exit);
+        remainingPath = solveMaze(maze, new Pair<>(rowStart, colStart + 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);

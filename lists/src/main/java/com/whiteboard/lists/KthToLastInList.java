@@ -1,4 +1,4 @@
-package lists;
+package com.whiteboard.lists;
 
 /**
  * Find the kth to last element in a singly-linked list.

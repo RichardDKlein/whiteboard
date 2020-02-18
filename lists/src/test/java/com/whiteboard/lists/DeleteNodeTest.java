@@ -1,98 +1,72 @@
-package lists;
+package com.whiteboard.lists;
 
-/**
- * Delete a node from a singly-linked list, given only a pointer
- * to the node to be deleted.
- */
-public final class DeleteNode {
-    private static ListNode<Character> aNode = new ListNode<>();
-    private static ListNode<Character> bNode = new ListNode<>();
-    private static ListNode<Character> cNode = new ListNode<>();
-    private static ListNode<Character> dNode = new ListNode<>();
-    private static ListNode<Character> eNode = new ListNode<>();
-    private static ListNode<Character> fNode = new ListNode<>();
-    private static ListNode<Character> gNode = new ListNode<>();
+import org.junit.jupiter.api.Test;
 
-    private DeleteNode() {}
+public class DeleteNodeTest {
+    private ListNode<Character> aNode = new ListNode<>();
+    private ListNode<Character> bNode = new ListNode<>();
+    private ListNode<Character> cNode = new ListNode<>();
+    private ListNode<Character> dNode = new ListNode<>();
+    private ListNode<Character> eNode = new ListNode<>();
+    private ListNode<Character> fNode = new ListNode<>();
+    private ListNode<Character> gNode = new ListNode<>();
 
-    /**
-     * Delete a node from a singly-linked list, given only a
-     * pointer to the node to be deleted.
-     *
-     * This seemingly impossible feat is accomplished by copying
-     * the next node into the node to be deleted, effectively
-     * deleting the latter.
-     *
-     * Of course, this will only work if there IS a next node,
-     * i.e. if the node to be deleted is not the last node in
-     * the list.
-     *
-     * @param victim The node to be deleted.
-     * @return A boolean indicating whether or not the deletion
-     * was successful.
-     */
-    public static <E> boolean deleteNode(ListNode<E> victim) {
-        ListNode<E> next = victim.next;
-        if (next == null) {
-            return false;
-        }
-        victim.data = next.data;
-        victim.next = next.next;
-        return true;
-    }
-
-    public static void test() {
+    @Test
+    void deleteNode() {
         System.out.println();
         System.out.println("Test DeleteNode:");
         System.out.println("================");
+
+        DeleteNode<Character> instance = new DeleteNode<>();
+        boolean result;
 
         System.out.println("\nOriginal list:");
         ListNode<Character> list = createTestList();
         TestUtils.printList(list);
 
         System.out.println("\nDeleting Node 'a':");
-        boolean result = deleteNode(aNode);
+        result = instance.deleteNode(aNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'b':");
         list = createTestList();
-        result = deleteNode(bNode);
+        result = instance.deleteNode(bNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'c':");
         list = createTestList();
-        result = deleteNode(cNode);
+        result = instance.deleteNode(cNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'd':");
         list = createTestList();
-        result = deleteNode(dNode);
+        result = instance.deleteNode(dNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'e':");
         list = createTestList();
-        result = deleteNode(eNode);
+        result = instance.deleteNode(eNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'f':");
         list = createTestList();
-        result = deleteNode(fNode);
+        result = instance.deleteNode(fNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'g':");
         list = createTestList();
-        result = deleteNode(gNode);
+        result = instance.deleteNode(gNode);
         TestUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
     }
 
-    private static ListNode<Character> createTestList() {
+    private ListNode<Character> createTestList() {
         aNode.data = 'a'; aNode.next = bNode;
         bNode.data = 'b'; bNode.next = cNode;
         cNode.data = 'c'; cNode.next = dNode;

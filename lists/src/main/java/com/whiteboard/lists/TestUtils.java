@@ -1,4 +1,4 @@
-package lists;
+package com.whiteboard.lists;
 
 /**
  * Test utilities for the lists package.

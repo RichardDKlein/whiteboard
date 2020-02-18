@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/lists/lists.iml" filepath="$PROJECT_DIR$/lists/lists.iml" />
       <module fileurl="file://$PROJECT_DIR$/whiteboard-java.iml" filepath="$PROJECT_DIR$/whiteboard-java.iml" />
     </modules>
   </component>

@@ -1,6 +1,6 @@
 package threads;
 
-import lists.ShuffleList;
+import com.whiteboard.lists.ShuffleList;
 
 import java.util.LinkedList;
 import java.util.Queue;

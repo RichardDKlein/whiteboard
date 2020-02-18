@@ -1,4 +1,4 @@
-package lists;
+package com.whiteboard.lists;
 
 import java.util.HashSet;
 import java.util.Set;

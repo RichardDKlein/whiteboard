@@ -1,6 +1,6 @@
 package trees;
 
-import lists.ShuffleList;
+import com.whiteboard.lists.ShuffleList;
 
 import java.util.*;
 

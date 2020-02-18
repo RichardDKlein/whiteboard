@@ -1,4 +1,4 @@
-package lists;
+package com.whiteboard.lists;
 
 /**
  * Reverse a singly-linked list in place, using a recursive

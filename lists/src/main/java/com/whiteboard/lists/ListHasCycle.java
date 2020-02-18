@@ -1,4 +1,4 @@
-package lists;
+package com.whiteboard.lists;
 
 /**
  * Determine whether a singly-linked list contains a cycle.
