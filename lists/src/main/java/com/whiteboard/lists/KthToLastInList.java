@@ -3,9 +3,7 @@ package com.whiteboard.lists;
 /**
  * Find the kth to last element in a singly-linked list.
  */
-public final class KthToLastInList {
-    private KthToLastInList() {}
-
+public class KthToLastInList<E> {
     /**
      * Find the kth to last element in a singly-linked list.
      *
@@ -14,7 +12,7 @@ public final class KthToLastInList {
      * @return The kth to last element in the list,
      * or null if the list does not contain k elements.
      */
-    public static <E> ListNode<E> kthToLastInList(ListNode<E> head, int k) {
+    public ListNode<E> kthToLastInList(ListNode<E> head, int k) {
         ListNode<E> lead = head;
         for (int i = 0; i < k; ++i) {
             if (lead == null) {
@@ -28,35 +26,5 @@ public final class KthToLastInList {
             lag = lag.next;
         }
         return lag;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test KthToLastInList:");
-        System.out.println("=====================");
-
-        ListNode<Character> aNode = new ListNode<>();
-        ListNode<Character> bNode = new ListNode<>();
-        ListNode<Character> cNode = new ListNode<>();
-        ListNode<Character> dNode = new ListNode<>();
-        ListNode<Character> eNode = new ListNode<>();
-        ListNode<Character> fNode = new ListNode<>();
-        ListNode<Character> gNode = new ListNode<>();
-
-        aNode.data = 'a'; aNode.next = bNode;
-        bNode.data = 'b'; bNode.next = cNode;
-        cNode.data = 'c'; cNode.next = dNode;
-        dNode.data = 'd'; dNode.next = eNode;
-        eNode.data = 'e'; eNode.next = fNode;
-        fNode.data = 'f'; fNode.next = gNode;
-        gNode.data = 'g'; gNode.next = null;
-
-        TestUtils.printList(aNode);
-
-        for (int k = 1; k <= 8; ++k) {
-            ListNode<Character> kthToLast = kthToLastInList(aNode, k);
-            System.out.println("kth to last element (k = " + k + ") is " +
-                    ((kthToLast != null) ? kthToLast.data : "undefined"));
-        }
     }
 }

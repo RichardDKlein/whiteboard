@@ -3,9 +3,7 @@ package com.whiteboard.lists;
 /**
  * Determine whether a singly-linked list contains a cycle.
  */
-public final class ListHasCycle {
-    private ListHasCycle() {}
-
+public class ListHasCycle<E> {
     /**
      * Determine whether a singly-linked list contains a cycle.
      *
@@ -20,7 +18,7 @@ public final class ListHasCycle {
      * @return A boolean indicating whether or not
      * the specified list contains a cycle.
      */
-    public static <E> boolean listHasCycle(ListNode<E> head) {
+    public boolean listHasCycle(ListNode<E> head) {
         if (head == null) {
             return false;
         }
@@ -34,35 +32,5 @@ public final class ListHasCycle {
             fast = (fast.next != null) ? fast.next.next : null;
         }
         return false;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test ListHasCycle:");
-        System.out.println("==================");
-
-        ListNode<Character> aNode = new ListNode<>();
-        ListNode<Character> bNode = new ListNode<>();
-        ListNode<Character> cNode = new ListNode<>();
-        ListNode<Character> dNode = new ListNode<>();
-        ListNode<Character> eNode = new ListNode<>();
-        ListNode<Character> fNode = new ListNode<>();
-        ListNode<Character> gNode = new ListNode<>();
-
-        aNode.data = 'a'; aNode.next = bNode;
-        bNode.data = 'b'; bNode.next = cNode;
-        cNode.data = 'c'; cNode.next = dNode;
-        dNode.data = 'd'; dNode.next = eNode;
-        eNode.data = 'e'; eNode.next = fNode;
-        fNode.data = 'f'; fNode.next = gNode;
-        gNode.data = 'g'; gNode.next = null;
-
-        TestUtils.printList(aNode);
-
-        System.out.println("Has cycle = " + listHasCycle(aNode));
-
-        gNode.next = cNode;
-        TestUtils.printList(aNode, 22);
-        System.out.println("Has cycle = " + listHasCycle(aNode));
     }
 }

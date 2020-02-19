@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/DeleteNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arrays/SolveMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays/SolveMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arrays/SumPairsInUnsortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays/SumPairsInUnsortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/DeleteNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/KthToLastInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/ListHasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/RemoveDupsFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/ReverseListIterative.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/ReverseListRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/TestLists.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lists/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/threads/ProducerConsumerQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/threads/ProducerConsumerQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trees/CreateNestedFolders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trees/CreateNestedFolders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in lists">
+  <component name="RunManager" selected="JUnit.RemoveDupsFromListTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -116,8 +103,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeleteNodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="whiteboard-java" />
+    <configuration name="KthToLastInListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.lists.*" />
@@ -125,14 +112,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.DeleteNodeTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.KthToLastInListTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.whiteboard.lists in whiteboard-java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="whiteboard-java" />
+    <configuration name="RemoveDupsFromListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.lists.*" />
@@ -140,20 +127,21 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.RemoveDupsFromListTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test in whiteboard-java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="whiteboard-java" />
+    <configuration name="com.whiteboard.lists in lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="com.whiteboard.lists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RemoveDupsFromListTest" />
+        <item itemvalue="JUnit.com.whiteboard.lists in lists" />
+        <item itemvalue="JUnit.KthToLastInListTest" />
         <item itemvalue="JUnit.All in lists" />
         <item itemvalue="JUnit.DeleteNodeTest (1)" />
-        <item itemvalue="JUnit.com.whiteboard.lists in whiteboard-java" />
-        <item itemvalue="JUnit.DeleteNodeTest" />
-        <item itemvalue="JUnit.test in whiteboard-java" />
       </list>
     </recent_temporary>
   </component>
