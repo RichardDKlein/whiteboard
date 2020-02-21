@@ -3,10 +3,8 @@ package com.whiteboard.lists;
 /**
  * Test utilities for the lists package.
  */
-public final class TestUtils {
-    private TestUtils() {}
-
-    static <E> void printList(ListNode<E> head) {
+public final class TestUtils<E> {
+    void printList(ListNode<E> head) {
         if (head == null) {
             System.out.println("<empty>");
             return;
@@ -25,7 +23,7 @@ public final class TestUtils {
         System.out.println();
     }
 
-    static <E> void printList(ListNode<E> head, int max) {
+    void printList(ListNode<E> head, int max) {
         if (head == null) {
             System.out.println("<empty>");
             return;

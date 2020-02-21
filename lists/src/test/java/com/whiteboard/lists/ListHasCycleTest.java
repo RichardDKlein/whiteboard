@@ -2,8 +2,6 @@ package com.whiteboard.lists;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ListHasCycleTest {
 
     @Test
@@ -28,14 +26,15 @@ class ListHasCycleTest {
         fNode.data = 'f'; fNode.next = gNode;
         gNode.data = 'g'; gNode.next = null;
 
-        TestUtils.printList(aNode);
+        TestUtils<Character> testUtils = new TestUtils<>();
+        testUtils.printList(aNode);
 
         ListHasCycle<Character> instance = new ListHasCycle<>();
 
         System.out.println("Has cycle = " + instance.listHasCycle(aNode));
 
         gNode.next = cNode;
-        TestUtils.printList(aNode, 22);
+        testUtils.printList(aNode, 22);
         System.out.println("Has cycle = " + instance.listHasCycle(aNode));
     }
 }

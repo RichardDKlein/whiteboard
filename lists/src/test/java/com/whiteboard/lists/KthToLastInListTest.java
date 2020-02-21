@@ -26,7 +26,8 @@ class KthToLastInListTest {
         fNode.data = 'f'; fNode.next = gNode;
         gNode.data = 'g'; gNode.next = null;
 
-        TestUtils.printList(aNode);
+        TestUtils<Character> testUtils = new TestUtils<>();
+        testUtils.printList(aNode);
 
         KthToLastInList<Character> instance = new KthToLastInList<>();
 

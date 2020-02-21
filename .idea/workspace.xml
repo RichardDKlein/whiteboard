@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/KthToLastInListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/KthToLastInListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ListHasCycleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ListHasCycleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/RemoveDupsFromListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/RemoveDupsFromListTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RemoveDupsFromListTest">
+  <component name="RunManager" selected="JUnit.com.whiteboard.lists in lists">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -76,44 +80,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lists" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeleteNodeTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lists" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.DeleteNodeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KthToLastInListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lists" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.KthToLastInListTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,6 +94,51 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
       <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.RemoveDupsFromListTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReverseListIterativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ReverseListIterativeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReverseListRecursiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ReverseListRecursiveTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShuffleListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ShuffleListTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RemoveDupsFromListTest" />
         <item itemvalue="JUnit.com.whiteboard.lists in lists" />
-        <item itemvalue="JUnit.KthToLastInListTest" />
-        <item itemvalue="JUnit.All in lists" />
-        <item itemvalue="JUnit.DeleteNodeTest (1)" />
+        <item itemvalue="JUnit.ShuffleListTest" />
+        <item itemvalue="JUnit.ReverseListRecursiveTest" />
+        <item itemvalue="JUnit.ReverseListIterativeTest" />
+        <item itemvalue="JUnit.RemoveDupsFromListTest" />
       </list>
     </recent_temporary>
   </component>

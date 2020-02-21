@@ -22,47 +22,48 @@ public class DeleteNodeTest {
 
         System.out.println("\nOriginal list:");
         ListNode<Character> list = createTestList();
-        TestUtils.printList(list);
+        TestUtils<Character> testUtils = new TestUtils<>();
+        testUtils.printList(list);
 
         System.out.println("\nDeleting Node 'a':");
         result = instance.deleteNode(aNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'b':");
         list = createTestList();
         result = instance.deleteNode(bNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'c':");
         list = createTestList();
         result = instance.deleteNode(cNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'd':");
         list = createTestList();
         result = instance.deleteNode(dNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'e':");
         list = createTestList();
         result = instance.deleteNode(eNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'f':");
         list = createTestList();
         result = instance.deleteNode(fNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
 
         System.out.println("\nDeleting Node 'g':");
         list = createTestList();
         result = instance.deleteNode(gNode);
-        TestUtils.printList(list);
+        testUtils.printList(list);
         System.out.println(result ? "SUCCESS" : "FAILURE");
     }
 

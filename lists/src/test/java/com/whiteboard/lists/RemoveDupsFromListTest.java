@@ -38,9 +38,10 @@ class RemoveDupsFromListTest {
         e2Node.data = 'e'; e2Node.next = g2Node;
         g2Node.data = 'g'; g2Node.next = null;
 
-        TestUtils.printList(a1Node);
+        TestUtils<Character> testUtils = new TestUtils<>();
+        testUtils.printList(a1Node);
         System.out.println("Removing duplicates:");
         new RemoveDupsFromList<Character>().removeDupsFromList(a1Node);
-        TestUtils.printList(a1Node);
+        testUtils.printList(a1Node);
     }
 }
