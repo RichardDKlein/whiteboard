@@ -2,13 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/KthToLastInListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/KthToLastInListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ListHasCycleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ListHasCycleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/RemoveDupsFromListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/RemoveDupsFromListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/DeleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/DeleteNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/KthToLastInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/KthToLastInList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListHasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListHasCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/RemoveDupsFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/RemoveDupsFromList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListIterative.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ReverseListIterative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ReverseListRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ReverseListRecursive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ShuffleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/lists/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/DeleteNodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/DeleteNodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/KthToLastInListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/KthToLastInListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ListHasCycleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ListHasCycleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/RemoveDupsFromListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/RemoveDupsFromListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ReverseListIterativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ReverseListIterativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ReverseListRecursiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ReverseListRecursiveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/ShuffleListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ShuffleListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/lists/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/ArrayHopscotch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/ArrayHopscotch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/CircularBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/CircularBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/FindPrimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/FindPrimes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/FloodFillBreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/FloodFillBreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/FloodFillRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/FloodFillRecursive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/LinesThruPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/MaxSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/MaxSubarray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/MergeTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/Rotate2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/Rotate2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SearchSorted2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SearchSorted2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SearchSortedAndRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SearchSortedAndRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/ShortestClosure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SolveMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SolveMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SpiralTraverse2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SpiralTraverse2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SumPairsInSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SumPairsInSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/SumPairsInUnsortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/SumPairsInUnsortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/TestArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/TestArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/TrappedWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/TrappedWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arrays/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/arrays/package-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +65,9 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -46,6 +76,7 @@
       <recent name="com.whiteboard.lists" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.whiteboard" />
       <recent name="com.whiteboard.lists" />
       <recent name="test.java.com.whiteboard.lists" />
       <recent name="main.java.com.whiteboard" />
@@ -55,6 +86,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/lists/src" />
     </key>
   </component>
@@ -70,7 +102,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.com.whiteboard.lists in lists">
+  <component name="RunManager" selected="JUnit.com.whiteboard in lists">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -84,31 +116,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveDupsFromListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lists" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.RemoveDupsFromListTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReverseListIterativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lists" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="PATTERN" value="com.whiteboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ReverseListIterativeTest" />
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ReverseListIterativeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,12 +135,12 @@
       <module name="lists" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="PATTERN" value="com.whiteboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ReverseListRecursiveTest" />
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ReverseListRecursiveTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,13 +150,27 @@
       <module name="lists" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="PATTERN" value="com.whiteboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard.lists" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.lists.ShuffleListTest" />
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ShuffleListTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.whiteboard in lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,7 +179,7 @@
       <module name="lists" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.whiteboard.lists.*" />
+          <option name="PATTERN" value="com.whiteboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.whiteboard in lists" />
         <item itemvalue="JUnit.com.whiteboard.lists in lists" />
         <item itemvalue="JUnit.ShuffleListTest" />
         <item itemvalue="JUnit.ReverseListRecursiveTest" />
         <item itemvalue="JUnit.ReverseListIterativeTest" />
-        <item itemvalue="JUnit.RemoveDupsFromListTest" />
       </list>
     </recent_temporary>
   </component>
