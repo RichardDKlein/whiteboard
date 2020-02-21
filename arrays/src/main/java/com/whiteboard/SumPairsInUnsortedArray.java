@@ -3,15 +3,12 @@ package com.whiteboard;
 import java.util.*;
 
 import javafx.util.Pair;
-import com.whiteboard.lists.ShuffleList;
 
 /**
  * In an unsorted array, find pairs of array elements
  * that sum to a given value.
  */
-public final class SumPairsInUnsortedArray {
-    private SumPairsInUnsortedArray() {}
-
+public class SumPairsInUnsortedArray {
     /**
      * In an unsorted array, find pairs of array elements
      * that sum to a given value.
@@ -41,36 +38,5 @@ public final class SumPairsInUnsortedArray {
             seen.add(n);
         }
         return pairs;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test SumPairsInUnsortedArray:");
-        System.out.println("=============================");
-
-        int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
-
-        List<Integer> list = new ArrayList<>();
-        for (int integer : a) {
-            list.add(integer);
-        }
-
-        ShuffleList.shuffleList(list);
-        for (int i = 0; i < a.length; ++i) {
-            a[i] = list.get(i);
-        }
-
-        System.out.println("unsorted array = " + Arrays.toString(a));
-
-        int sum = 12;
-
-        Set<Pair<Integer, Integer>> pairs = sumPairsInUnsortedArray(a, sum);
-
-        for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.getKey();
-            int p2 = pair.getValue();
-            assert(p1 + p2 == sum);
-            System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
-        }
     }
 }
