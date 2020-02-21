@@ -7,9 +7,7 @@ import java.util.List;
 /**
  * Find all primes up to a given integer.
  */
-public final class FindPrimes {
-    private FindPrimes() {}
-
+public class FindPrimes {
     /**
      * Find all primes up to a given integer.
      *
@@ -27,7 +25,7 @@ public final class FindPrimes {
      * go on to the next element, since we've already determined
      * that 'i' is not prime.
      */
-    public static List<Integer> findPrimes(int n) {
+    public List<Integer> findPrimes(int n) {
         List<Integer> primes = new ArrayList<>();
         boolean[] isPrime = new boolean[n + 1];
         Arrays.fill(isPrime, true);
@@ -42,15 +40,5 @@ public final class FindPrimes {
             }
         }
         return primes;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test FindPrimes:");
-        System.out.println("================");
-
-        System.out.println("Primes up to 100:");
-        List<Integer> primes = findPrimes(100);
-        System.out.println(Arrays.toString(primes.toArray()));
     }
 }

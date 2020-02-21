@@ -10,9 +10,7 @@ import java.util.Queue;
  * in a 2D array, using a Breadth-First Search (BFS)
  * approach.
  */
-public final class FloodFillBreadthFirstSearch {
-    private FloodFillBreadthFirstSearch() {}
-
+public class FloodFillBreadthFirstSearch {
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D array, using a Breadth-First Search (BFS)
@@ -32,7 +30,7 @@ public final class FloodFillBreadthFirstSearch {
      *                at which the flood fill is to start.
      * @param seedCol The 0-based column index of the seed pixel.
      */
-    public static void floodFillBreadthFirstSearch(
+    public void floodFillBreadthFirstSearch(
             char[][] a, int seedRow, int seedCol) {
         int rows = a.length;
         int cols = a[0].length;
@@ -53,57 +51,6 @@ public final class FloodFillBreadthFirstSearch {
             queue.add(new Pair<>(row - 1, col));
             queue.add(new Pair<>(row, col + 1));
             queue.add(new Pair<>(row + 1, col));
-        }
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test FloodFillBreadthFirstSearch:");
-        System.out.println("=================================");
-
-        char[][] a = {
-                {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                {' ',' ',' ',' ',' ',' ',' ',' ','@','@','@','@','@','@','@',' ',},
-                {' ',' ','@','@','@','@',' ',' ','@',' ',' ',' ',' ',' ','@',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ','@',' ',' ',' ',' ',' ','@',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ','@',' ',' ',' ',' ',' ','@',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ','@','@','@','@','@','@','@',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ',' ',' ','@',' ',' ',' ',' ',' ',},
-                {' ',' ','@',' ',' ','@',' ',' ',' ','@',' ','@',' ',' ',' ',' ',},
-                {' ',' ','@','@','@','@',' ',' ','@',' ',' ',' ','@',' ',' ',' ',},
-                {' ',' ',' ',' ',' ',' ',' ','@',' ',' ',' ',' ',' ','@',' ',' ',},
-                {' ',' ',' ',' ',' ',' ','@','@','@','@','@','@','@','@','@',' ',},
-                {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',}
-        };
-
-        int[] row = {
-                1,
-                4,
-                3,
-                7,
-                9
-        };
-        int[] col = {
-                1,
-                4,
-                12,
-                8,
-                10
-        };
-        int rows = a.length;
-        int cols = a[0].length;
-        char[][] copy = new char[rows][cols];
-        for (int i = 0; i < row.length; ++i) {
-            System.out.println("\nBEFORE flood fill:");
-            TestUtils.copyBitmap(a, copy);
-            char tmp = a[row[i]][col[i]];
-            a[row[i]][col[i]] = 'S';
-            TestUtils.printBitmap(a);
-            a[row[i]][col[i]] = tmp;
-            floodFillBreadthFirstSearch(copy, row[i], col[i]);
-            System.out.println("\nAFTER flood fill:");
-            TestUtils.printBitmap(copy);
         }
     }
 }

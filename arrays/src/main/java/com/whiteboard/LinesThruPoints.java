@@ -6,13 +6,11 @@ import java.util.*;
  * Given a set of 2D points, finds the number of lines
  * that can be drawn thru at least three points.
  */
-public final class LinesThruPoints {
-    /**
-     * Represents a 2D point.
-     */
-    private static class Point {
-        private double x;
-        private double y;
+public class LinesThruPoints {
+
+    static class Point {
+        double x;
+        double y;
 
         Point(double x, double y) {
             this.x = x;
@@ -20,14 +18,9 @@ public final class LinesThruPoints {
         }
     }
 
-    /**
-     * Represents a line in the X-Y plane. (Since this class will be
-     * used as the Key in a Map, we need to override the equals() and
-     * hashCode() methods.)
-     */
-    private static class Line {
-        private double slope;     // Double.MAX_VALUE if vertical
-        private double intercept; // x-coord if vertical
+    static class Line {
+        double slope;     // Double.MAX_VALUE if vertical
+        double intercept; // x-coord if vertical
 
         Line(double slope, double intercept) {
             this.slope = slope;
@@ -56,23 +49,8 @@ public final class LinesThruPoints {
         }
     }
 
-    /**
-     * The given set of 2D points.
-     */
     private static Set<Point> points;
-
-    /**
-     * A map of <Line, Integer> entries, mapping each Line
-     * that can be drawn thru a pair of points to the number
-     * of occurrences of that line.
-     */
     private static Map<Line, Integer> lines = new HashMap<>();
-
-    /**
-     * Private constructor, so the class cannot be instantiated.
-     */
-    private LinesThruPoints() {
-    }
 
     /**
      * Given a set of 2D points, finds the number of lines
@@ -93,17 +71,13 @@ public final class LinesThruPoints {
      * @return The number of lines that can be drawn thru at
      * least three of the given 2D points.
      */
-    public static int linesThruPoints(Set<Point> thePoints) {
+    public int linesThruPoints(Set<Point> thePoints) {
         points = thePoints;
         findLinesThruPairs();
         return countRepeatedLines();
     }
 
-    /**
-     * Find all the lines that can be drawn thru each pair of 2D
-     * points.
-     */
-    private static void findLinesThruPairs() {
+    private void findLinesThruPairs() {
         Point[] pointArray = new Point[points.size()];
         pointArray = points.toArray(pointArray);
         for (int i = 0; i < pointArray.length; ++i) {
@@ -135,15 +109,7 @@ public final class LinesThruPoints {
         }
     }
 
-    /**
-     * Iterate thru the Map of lines that can be drawn thru each
-     * pair of 2D points, and count how many lines appear more than
-     * once. Since each such line passes thru two or more pairs of
-     * points, it must pass thru at least three points.
-     *
-     * @return The number of lines that appear more than once.
-     */
-    private static int countRepeatedLines() {
+    private int countRepeatedLines() {
         int count = 0;
         for (Map.Entry<Line, Integer> entry : lines.entrySet()) {
             if (entry.getValue() > 1) {
@@ -151,51 +117,5 @@ public final class LinesThruPoints {
             }
         }
         return count;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test LinesThruPoints:");
-        System.out.println("=====================");
-
-        Point[] points = new Point[9];
-
-        points[0] = new Point(-1, -1);
-        points[1] = new Point( 0, -1);
-        points[2] = new Point( 1, -1);
-
-        points[3] = new Point(-1,  0);
-        points[4] = new Point( 0,  0);
-        points[5] = new Point( 1,  0);
-
-        points[6] = new Point(-1,  1);
-        points[7] = new Point( 0,  1);
-        points[8] = new Point( 1,  1);
-
-        System.out.println("             y                 ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println(" (-1, 1) *---*---* (1, 1)      ");
-        System.out.println("         | \\ | / |            ");
-        System.out.println("---------*---*---*--------- x  ");
-        System.out.println("         | / | \\ |            ");
-        System.out.println("(-1, -1) *---*---* (1, -1)     ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println("             |                 ");
-        System.out.println();
-
-        System.out.println("Points = ");
-        for (Point point : points) {
-            System.out.println("\t(" + point.x + ", " + point.y + ")");
-        }
-        System.out.println();
-
-        Set<Point> testPoints = new HashSet<>(Arrays.asList(points));
-        int numLines = linesThruPoints(testPoints);
-        System.out.println("Number of lines = " + numLines);
     }
 }
