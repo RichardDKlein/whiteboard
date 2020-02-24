@@ -1,4 +1,4 @@
-package bit_manipulation;
+package com.whiteboard;
 
 /**
  * Is an int a power of 2?

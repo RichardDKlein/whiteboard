@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularBufferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularBufferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/BitDiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/BitDiff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ClearBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ClearBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/CountOneBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/CountOneBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/GetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/GetBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/InsertBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/InsertBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/SetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/TestBitManipulation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ToggleBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/package-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +62,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/lists/src" />
     </key>
@@ -85,7 +79,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.com.whiteboard in arrays">
+  <component name="RunManager" selected="JUnit.InsertBitsTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -99,8 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SolveMazeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrays" />
+    <configuration name="BitDiffTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -108,14 +102,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SolveMazeTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.BitDiffTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpiralTraverse2dArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrays" />
+    <configuration name="ClearBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -123,14 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SpiralTraverse2dArrayTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ClearBitTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumPairsInSortedArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrays" />
+    <configuration name="CountOneBitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -138,14 +132,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SumPairsInSortedArrayTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CountOneBitsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TrappedWaterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrays" />
+    <configuration name="GetBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -153,14 +147,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.TrappedWaterTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.GetBitTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.whiteboard in arrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrays" />
+    <configuration name="InsertBitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -168,18 +162,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.InsertBitsTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.whiteboard in arrays" />
-        <item itemvalue="JUnit.TrappedWaterTest" />
-        <item itemvalue="JUnit.SumPairsInSortedArrayTest" />
-        <item itemvalue="JUnit.SpiralTraverse2dArrayTest" />
-        <item itemvalue="JUnit.SolveMazeTest" />
+        <item itemvalue="JUnit.InsertBitsTest" />
+        <item itemvalue="JUnit.GetBitTest" />
+        <item itemvalue="JUnit.CountOneBitsTest" />
+        <item itemvalue="JUnit.ClearBitTest" />
+        <item itemvalue="JUnit.BitDiffTest" />
       </list>
     </recent_temporary>
   </component>

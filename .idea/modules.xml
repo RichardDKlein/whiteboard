@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/arrays/arrays.iml" filepath="$PROJECT_DIR$/arrays/arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bit_manipulation/bit_manipulation.iml" filepath="$PROJECT_DIR$/bit_manipulation/bit_manipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/lists/lists.iml" filepath="$PROJECT_DIR$/lists/lists.iml" />
       <module fileurl="file://$PROJECT_DIR$/whiteboard-java.iml" filepath="$PROJECT_DIR$/whiteboard-java.iml" />
     </modules>
