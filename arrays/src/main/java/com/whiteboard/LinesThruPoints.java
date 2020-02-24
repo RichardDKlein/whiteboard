@@ -29,18 +29,11 @@ public class LinesThruPoints {
 
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof Line)) {
-                return false;
-            }
             Line other = (Line)obj;
-            if (slope == Double.MAX_VALUE) {
-                return this.intercept == other.intercept;
-            } else {
-                // Ignore small differences in slope and intercept,
-                // by comparing them as floats rather than doubles.
-                return (float)this.slope == (float)other.slope
-                        && (float)this.intercept == (float)other.intercept;
-            }
+            // Ignore small differences in slope and intercept,
+            // by comparing them as floats rather than doubles.
+            return (float)this.slope == (float)other.slope
+                    && (float)this.intercept == (float)other.intercept;
         }
 
         @Override

@@ -6,10 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class LinesThruPointsTest {
-
     @Test
     void linesThruPoints() {
         System.out.println();

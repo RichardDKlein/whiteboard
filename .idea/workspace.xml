@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/CircularBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/CircularBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FindPrimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FindPrimes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillRecursive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularBufferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularBufferTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinesThruPointsTest">
+  <component name="RunManager" selected="JUnit.com.whiteboard in arrays">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -85,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CircularBufferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolveMazeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrays" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +108,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CircularBufferTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SolveMazeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindPrimesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpiralTraverse2dArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrays" />
       <extension name="coverage">
         <pattern>
@@ -109,13 +123,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.FindPrimesTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SpiralTraverse2dArrayTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FloodFillBreadthFirstSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SumPairsInSortedArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrays" />
       <extension name="coverage">
         <pattern>
@@ -124,13 +138,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.FloodFillBreadthFirstSearchTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SumPairsInSortedArrayTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FloodFillRecursiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TrappedWaterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrays" />
       <extension name="coverage">
         <pattern>
@@ -139,13 +153,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.FloodFillRecursiveTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.TrappedWaterTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinesThruPointsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.whiteboard in arrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrays" />
       <extension name="coverage">
         <pattern>
@@ -154,19 +168,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.LinesThruPointsTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LinesThruPointsTest" />
-        <item itemvalue="JUnit.FloodFillRecursiveTest" />
-        <item itemvalue="JUnit.FloodFillBreadthFirstSearchTest" />
-        <item itemvalue="JUnit.FindPrimesTest" />
-        <item itemvalue="JUnit.CircularBufferTest" />
+        <item itemvalue="JUnit.com.whiteboard in arrays" />
+        <item itemvalue="JUnit.TrappedWaterTest" />
+        <item itemvalue="JUnit.SumPairsInSortedArrayTest" />
+        <item itemvalue="JUnit.SpiralTraverse2dArrayTest" />
+        <item itemvalue="JUnit.SolveMazeTest" />
       </list>
     </recent_temporary>
   </component>

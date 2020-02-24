@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 class FindPrimesTest {
-
     @Test
     void findPrimes() {
         System.out.println();

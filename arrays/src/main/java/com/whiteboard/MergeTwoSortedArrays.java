@@ -1,15 +1,11 @@
 package com.whiteboard;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Merge two sorted arrays into a single sorted array.
  */
-public final class MergeTwoSortedArrays {
-    private MergeTwoSortedArrays() {}
-
+public class MergeTwoSortedArrays {
     /**
      * Merge two sorted arrays into a single sorted array.
      *
@@ -28,7 +24,7 @@ public final class MergeTwoSortedArrays {
      * @param a2 The other sorted array.
      * @return The merged, sorted array.
      */
-    public static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
+    public int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
         int[] merged = new int[a1.length + a2.length];
         int i1, i2, iMerged;
         i1 = i2 = iMerged = 0;
@@ -48,32 +44,5 @@ public final class MergeTwoSortedArrays {
             merged[iMerged++] = a1[i1] < a2[i2] ? a1[i1++] : a2[i2++];
         }
         return merged;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test MergeTwoSortedArrays:");
-        System.out.println("==========================");
-
-        int[][] a1 = {
-            {1, 3, 5, 7, 9},
-            {1, 3, 5, 7, 9},
-            {1, 3, 5, 7, 9, 11, 13, 15},
-            {1, 2, 3, 4, 5}
-        };
-
-        int[][] a2 = {
-            {2, 4, 6, 8, 10},
-            {2, 4, 6, 8, 10, 12, 14, 16},
-            {2, 4, 6, 8, 10},
-            {1, 2, 3, 4, 5}
-        };
-
-        for (int i = 0; i < a1.length; ++i) {
-            System.out.println("a1 = " + Arrays.toString(a1[i]));
-            System.out.println("a2 = " + Arrays.toString(a2[i]));
-            int[] merged = mergeTwoSortedArrays(a1[i], a2[i]);
-            System.out.println("merged = " + Arrays.toString(merged));
-        }
     }
 }

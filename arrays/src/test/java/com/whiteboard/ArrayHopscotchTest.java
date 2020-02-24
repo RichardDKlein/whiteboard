@@ -6,7 +6,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class ArrayHopscotchTest {
-
     @Test
     void arrayHopscotch() {
         System.out.println();

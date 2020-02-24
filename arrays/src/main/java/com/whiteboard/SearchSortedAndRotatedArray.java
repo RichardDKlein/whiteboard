@@ -5,9 +5,7 @@ import java.util.Arrays;
 /**
  * Search a sorted and rotated one-dimensional array.
  */
-public final class SearchSortedAndRotatedArray {
-    private SearchSortedAndRotatedArray() {}
-
+public class SearchSortedAndRotatedArray {
     /**
      * Search a one-dimensional array that has been sorted and then
      * rotated, so that there is a discontinuity in the array where
@@ -25,7 +23,7 @@ public final class SearchSortedAndRotatedArray {
      * @return The array index of the target element if found,
      * or -1 if not found.
      */
-    public static int searchSortedAndRotatedArray(int[] a, int target) {
+    public int searchSortedAndRotatedArray(int[] a, int target) {
         int left = 0;
         int right = a.length - 1;
         while (left <= right) {
@@ -48,23 +46,5 @@ public final class SearchSortedAndRotatedArray {
             }
         }
         return -1;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test SearchSortedAndRotatedArray:");
-        System.out.println("=================================");
-        int a[] = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
-
-        System.out.println(Arrays.toString(a));
-
-        for (int target : a) {
-            int index = searchSortedAndRotatedArray(a, target);
-            System.out.println("target = " + target + ", index = " + index);
-        }
-
-        int target = 999;
-        int index = searchSortedAndRotatedArray(a, target);
-        System.out.println("target = " + target + ", index = " + index);
     }
 }

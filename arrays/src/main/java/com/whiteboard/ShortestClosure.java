@@ -7,12 +7,11 @@ import java.util.*;
  * the shortest interval in the haystack that contains all
  * the needles.
  */
-public final class ShortestClosure {
-    private ShortestClosure() {}
+public class ShortestClosure<E> {
 
-    private static class Interval {
-        protected int min_;
-        protected int max_;
+    static class Interval {
+        int min_;
+        int max_;
 
         Interval(int min, int max) {
             min_ = min;
@@ -26,9 +25,9 @@ public final class ShortestClosure {
         }
     }
 
-    private static int[] haystack_;
-    private static Set<Integer> needles_;
-    private static Map<Integer, List<Integer>> needleLocationMap_ = new HashMap<>();
+    private List<E> haystack_;
+    private Set<E> needles_;
+    private Map<E, List<Integer>> needleLocationMap_ = new HashMap<>();
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -52,17 +51,16 @@ public final class ShortestClosure {
      *
      * Total running time = O(n) + O(n) = O(n).
      *
-     * @param haystack A one-dimensional array of elements
-     *                 representing the haystack.
+     * @param haystack A list of elements representing the haystack.
      * @param needles A set of elements representing the needles.
      * @return An Interval representing the shortest closure.
      */
-    public static Interval
-    shortestClosure(int[] haystack, Set<Integer> needles) {
+    public Interval
+    shortestClosure(List<E> haystack, Set<E> needles) {
         haystack_ = haystack;
         needles_ = needles;
         buildNeedleLocationMap();
-        Interval shortest = new Interval(0, haystack.length - 1);
+        Interval shortest = new Interval(0, haystack.size() - 1);
         for (;;) {
             Interval candidate = nextCandidate();
             if (!candidate.valid()) {
@@ -75,22 +73,22 @@ public final class ShortestClosure {
         return shortest;
     }
 
-    private static void buildNeedleLocationMap() {
-        for (int needle : needles_) {
+    private void buildNeedleLocationMap() {
+        for (E needle : needles_) {
             needleLocationMap_.put(needle, new ArrayList<>());
         }
-        for (int i = 0; i < haystack_.length; ++i) {
-            if (needles_.contains(haystack_[i])) {
-                needleLocationMap_.get(haystack_[i]).add(i);
+        for (int i = 0; i < haystack_.size(); ++i) {
+            if (needles_.contains(haystack_.get(i))) {
+                needleLocationMap_.get(haystack_.get(i)).add(i);
             }
         }
     }
 
-    private static Interval nextCandidate() {
+    private Interval nextCandidate() {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         List<Integer> minLocationList = null;
-        for (int needle : needles_) {
+        for (E needle : needles_) {
             List<Integer> locationList = needleLocationMap_.get(needle);
             if (locationList.isEmpty()) {
                 return new Interval(-1, -1);
@@ -108,46 +106,5 @@ public final class ShortestClosure {
         // so that we don't consider that index again next time.
         minLocationList.remove(0);
         return new Interval(min, max);
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test ShortestClosure:");
-        System.out.println("=====================");
-
-        int[] haystack = {
-                7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7
-        };
-
-        int needleArray[] = {
-            1, 5, 9
-        };
-        Set<Integer> needles = new HashSet<>();
-        for (Integer needle : needleArray) {
-            needles.add(needle);
-        }
-
-        Interval shortest = shortestClosure(haystack, needles);
-
-        System.out.print("needles: { ");
-        for (Integer needle : needles) {
-            System.out.print(needle + " ");
-        }
-        System.out.println("}");
-
-        System.out.print("haystack: { ");
-        for (int i = 0; i < haystack.length; ++i) {
-            if (i == shortest.min_) {
-                System.out.print("[** ");
-            }
-            System.out.print(haystack[i] + " ");
-            if (i == shortest.max_) {
-                System.out.print("**] ");
-            }
-        }
-        System.out.println("}");
-
-        System.out.println("shortest closure: [" + shortest.min_ + ", "
-            + shortest.max_ + "]");
     }
 }

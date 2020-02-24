@@ -3,7 +3,6 @@ package com.whiteboard;
 import org.junit.jupiter.api.Test;
 
 class CircularBufferTest {
-
     @Test
     void circularBuffer() {
         System.out.println();

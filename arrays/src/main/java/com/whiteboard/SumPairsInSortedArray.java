@@ -10,9 +10,7 @@ import javafx.util.Pair;
  * In a sorted (in increasing order) array, find
  * pairs of array elements that sum to a given value.
  */
-public final class SumPairsInSortedArray {
-    private SumPairsInSortedArray() {}
-
+public class SumPairsInSortedArray {
     /**
      * In a sorted (in increasing order) array, find
      * pairs of array elements that sum to a given value.
@@ -26,7 +24,7 @@ public final class SumPairsInSortedArray {
      * @param a The sorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static Set<Pair<Integer, Integer>>
+    public Set<Pair<Integer, Integer>>
     sumPairsInSortedArray(int[] a, int sum) {
         Set<Pair<Integer, Integer>> pairs = new HashSet<>();
         int left = 0;
@@ -42,24 +40,4 @@ public final class SumPairsInSortedArray {
         }
         return pairs;
     }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test SumPairsInSortedArray:");
-        System.out.println("===========================");
-
-        int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
-        System.out.println("sorted array = " + Arrays.toString(a));
-
-        int sum = 12;
-        Set<Pair<Integer, Integer>> pairs = sumPairsInSortedArray(a, sum);
-
-        for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.getKey();
-            int p2 = pair.getValue();
-            assert(p1 + p2 == sum);
-            System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
-        }
-    }
 }
-

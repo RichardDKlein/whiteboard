@@ -1,9 +1,9 @@
 package com.whiteboard;
 
-import javafx.util.Pair;
-
 import java.util.LinkedList;
 import java.util.Queue;
+
+import javafx.util.Pair;
 
 /**
  * Implement the "flood fill" algorithm to fill a region

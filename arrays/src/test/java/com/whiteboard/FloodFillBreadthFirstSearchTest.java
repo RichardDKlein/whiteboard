@@ -3,7 +3,6 @@ package com.whiteboard;
 import org.junit.jupiter.api.Test;
 
 class FloodFillBreadthFirstSearchTest {
-
     @Test
     void floodFillBreadthFirstSearch() {
         System.out.println();
@@ -43,17 +42,18 @@ class FloodFillBreadthFirstSearchTest {
         int rows = a.length;
         int cols = a[0].length;
         char[][] copy = new char[rows][cols];
+        TestUtils testUtils = new TestUtils();
         for (int i = 0; i < row.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
-            TestUtils.copyBitmap(a, copy);
+            testUtils.copyBitmap(a, copy);
             char tmp = a[row[i]][col[i]];
             a[row[i]][col[i]] = 'S';
-            TestUtils.printBitmap(a);
+            testUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
             FloodFillBreadthFirstSearch instance = new FloodFillBreadthFirstSearch();
             instance.floodFillBreadthFirstSearch(copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
-            TestUtils.printBitmap(copy);
+            testUtils.printBitmap(copy);
         }
     }
 }
