@@ -3,9 +3,7 @@ package com.whiteboard;
 /**
  * Set bit.
  */
-public final class SetBit {
-    private SetBit() {}
-
+public class SetBit {
     /**
      * Set the specified bit in an int.
      *
@@ -14,19 +12,7 @@ public final class SetBit {
      * @return A copy of the int, but with the
      * specified bit set.
      */
-    public static int setBit(int n, int bit) {
+    public int setBit(int n, int bit) {
         return n | (1 << bit);
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test SetBit:");
-        System.out.println("============");
-
-        int n = 0;
-        for (int i = 0; i < Integer.SIZE; ++i) {
-            n = setBit(n, i);
-            TestUtils.printBits(n);
-        }
     }
 }

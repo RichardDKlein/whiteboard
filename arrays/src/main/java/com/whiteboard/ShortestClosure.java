@@ -8,23 +8,6 @@ import java.util.*;
  * the needles.
  */
 public class ShortestClosure<E> {
-
-    static class Interval {
-        int min_;
-        int max_;
-
-        Interval(int min, int max) {
-            min_ = min;
-            max_ = max;
-        }
-        protected int length() {
-            return max_ - min_ + 1;
-        }
-        protected boolean valid() {
-            return (min_ >= 0) && (min_ <= max_);
-        }
-    }
-
     private List<E> haystack_;
     private Set<E> needles_;
     private Map<E, List<Integer>> needleLocationMap_ = new HashMap<>();
@@ -106,5 +89,25 @@ public class ShortestClosure<E> {
         // so that we don't consider that index again next time.
         minLocationList.remove(0);
         return new Interval(min, max);
+    }
+
+    // ===================================================================
+    // INNER CLASSES
+    // ===================================================================
+
+    static class Interval {
+        int min_;
+        int max_;
+
+        Interval(int min, int max) {
+            min_ = min;
+            max_ = max;
+        }
+        protected int length() {
+            return max_ - min_ + 1;
+        }
+        protected boolean valid() {
+            return (min_ >= 0) && (min_ <= max_);
+        }
     }
 }

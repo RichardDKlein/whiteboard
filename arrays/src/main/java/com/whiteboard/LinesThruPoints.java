@@ -7,41 +7,6 @@ import java.util.*;
  * that can be drawn thru at least three points.
  */
 public class LinesThruPoints {
-
-    static class Point {
-        double x;
-        double y;
-
-        Point(double x, double y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    static class Line {
-        double slope;     // Double.MAX_VALUE if vertical
-        double intercept; // x-coord if vertical
-
-        Line(double slope, double intercept) {
-            this.slope = slope;
-            this.intercept = intercept;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            Line other = (Line)obj;
-            // Ignore small differences in slope and intercept,
-            // by comparing them as floats rather than doubles.
-            return (float)this.slope == (float)other.slope
-                    && (float)this.intercept == (float)other.intercept;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(slope, intercept);
-        }
-    }
-
     private static Set<Point> points;
     private static Map<Line, Integer> lines = new HashMap<>();
 
@@ -110,5 +75,43 @@ public class LinesThruPoints {
             }
         }
         return count;
+    }
+
+    // ===================================================================
+    // INNER CLASSES
+    // ===================================================================
+
+    static class Point {
+        double x;
+        double y;
+
+        Point(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    static class Line {
+        double slope;     // Double.MAX_VALUE if vertical
+        double intercept; // x-coord if vertical
+
+        Line(double slope, double intercept) {
+            this.slope = slope;
+            this.intercept = intercept;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            Line other = (Line)obj;
+            // Ignore small differences in slope and intercept,
+            // by comparing them as floats rather than doubles.
+            return (float)this.slope == (float)other.slope
+                    && (float)this.intercept == (float)other.intercept;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(slope, intercept);
+        }
     }
 }

@@ -11,24 +11,25 @@ class CountOneBitsTest {
 
         int n = 0;
 
-        CountOneBits instance = new CountOneBits();
+        CountOneBits countOneBits = new CountOneBits();
+        ToggleBit toggleBit = new ToggleBit();
 
         TestUtils.printBits(n);
         System.out.println("Number of 1 bits = " +
-                instance.countOneBits(n));
+                countOneBits.countOneBits(n));
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggleBit(n, i);
+            n = toggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                    instance.countOneBits(n));
+                    countOneBits.countOneBits(n));
         }
 
         for (int i = 0; i < Integer.SIZE; ++i) {
-            n = ToggleBit.toggleBit(n, i);
+            n = toggleBit.toggleBit(n, i);
             TestUtils.printBits(n);
             System.out.println("Number of 1 bits = " +
-                    instance.countOneBits(n));
+                    countOneBits.countOneBits(n));
         }
     }
 }

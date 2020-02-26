@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/BitDiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/BitDiff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ClearBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ClearBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/CountOneBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/CountOneBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/GetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/GetBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/InsertBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/InsertBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/SetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/TestBitManipulation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/ToggleBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit_manipulation/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +36,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -79,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InsertBitsTest">
+  <component name="RunManager" selected="JUnit.All in bit_manipulation">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -93,32 +89,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BitDiffTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in bit_manipulation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bit_manipulation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.BitDiffTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClearBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bit_manipulation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ClearBitTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IsPowerOfTwoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
@@ -147,13 +121,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.GetBitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.IsPowerOfTwoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertBitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SetBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bit_manipulation" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +136,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.InsertBitsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SetBitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToggleBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bit_manipulation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ToggleBitTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InsertBitsTest" />
-        <item itemvalue="JUnit.GetBitTest" />
+        <item itemvalue="JUnit.All in bit_manipulation" />
+        <item itemvalue="JUnit.ToggleBitTest" />
         <item itemvalue="JUnit.CountOneBitsTest" />
-        <item itemvalue="JUnit.ClearBitTest" />
-        <item itemvalue="JUnit.BitDiffTest" />
+        <item itemvalue="JUnit.IsPowerOfTwoTest" />
+        <item itemvalue="JUnit.SetBitTest" />
       </list>
     </recent_temporary>
   </component>
