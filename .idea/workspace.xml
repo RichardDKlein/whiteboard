@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design_patterns/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/design_patterns/src/main/java/com/whiteboard/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design_patterns/TestDesignPatterns.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +52,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/design_patterns/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/lists/src" />
@@ -75,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in bit_manipulation">
+  <component name="RunManager" selected="JUnit.SingletonTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -127,8 +122,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bit_manipulation" />
+    <configuration name="SingletonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="design_patterns" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -136,7 +131,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SetBitTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SingletonTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SingletonTest" />
         <item itemvalue="JUnit.All in bit_manipulation" />
         <item itemvalue="JUnit.ToggleBitTest" />
         <item itemvalue="JUnit.CountOneBitsTest" />
         <item itemvalue="JUnit.IsPowerOfTwoTest" />
-        <item itemvalue="JUnit.SetBitTest" />
       </list>
     </recent_temporary>
   </component>
