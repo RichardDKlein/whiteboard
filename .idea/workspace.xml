@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/graphs/SalesTerritories.java" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/src/main/java/com/whiteboard/SalesTerritories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphs/TestGraphs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphs/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/src/main/java/com/whiteboard/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/ModOperatorUsingSubtraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/math/src/main/java/com/whiteboard/ModOperatorUsingSubtraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/ReverseDecimalNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/math/src/main/java/com/whiteboard/ReverseDecimalNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/RomanNumeralToDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/math/src/main/java/com/whiteboard/RomanNumeralToDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/SubstringsStartingAndEndingWith1.java" beforeDir="false" afterPath="$PROJECT_DIR$/math/src/main/java/com/whiteboard/SubstringsStartingAndEndingWith1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/TestMath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/math/src/main/java/com/whiteboard/package-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +56,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/math/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/graphs/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/design_patterns/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard" />
-      <recent name="$PROJECT_DIR$/lists/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -72,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SalesTerritoriesTest">
+  <component name="RunManager" selected="JUnit.ModOperatorUsingSubtractionTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -94,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountOneBitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bit_manipulation" />
+    <configuration name="ModOperatorUsingSubtractionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="math" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -103,7 +106,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CountOneBitsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ModOperatorUsingSubtractionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModOperatorUsingSubtractionTest" />
         <item itemvalue="JUnit.SalesTerritoriesTest" />
         <item itemvalue="JUnit.SingletonTest" />
         <item itemvalue="JUnit.All in bit_manipulation" />
         <item itemvalue="JUnit.ToggleBitTest" />
-        <item itemvalue="JUnit.CountOneBitsTest" />
       </list>
     </recent_temporary>
   </component>

@@ -18,10 +18,9 @@ public final class ParseStringIntoWords {
      *
      * @param s The string to parse.
      * @param dictionary A dictionary of legal words.
-     * @return A list containing the constituent words,
-     * or null if the given string cannot be parsed.
-     * An empty list means that the given string is
-     * empty.
+     * @return A list containing the constituent words;
+     * or null if the given string cannot be parsed; or
+     * an empty list if the given string is empty.
      */
     public static List<String> parseStringIntoWords(
             String s, Set<String> dictionary) {

@@ -1,4 +1,4 @@
-package math;
+package com.whiteboard;
 
 import java.util.HashMap;
 import java.util.Map;
