@@ -6,9 +6,7 @@ import java.util.Map;
 /**
  * Convert a Roman numeral to decimal.
  */
-public final class RomanNumeralToDecimal {
-    private RomanNumeralToDecimal() {}
-
+public class RomanNumeralToDecimal {
     /**
      * Converts a Roman numeral to decimal.
      *
@@ -48,22 +46,5 @@ public final class RomanNumeralToDecimal {
             prevDecimalVal = currDecimalVal;
         }
         return decimal;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test RomanNumeralToDecimal:");
-        System.out.println("===========================");
-
-        String[] romans = new String[] {
-                "MCMXLIV",
-                "MCMLXVIII",
-                "MMXIX"
-        };
-
-        for (String roman : romans) {
-            System.out.println("roman = " + roman + ", decimal = "
-                    + romanNumeralToDecimal(roman));
-        }
     }
 }

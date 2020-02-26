@@ -4,9 +4,7 @@ package com.whiteboard;
  * Given a string consisting of '0's and '1's, find the number of
  * substrings starting and ending with '1'.
  */
-public final class SubstringsStartingAndEndingWith1 {
-    private SubstringsStartingAndEndingWith1() {}
-
+public class SubstringsStartingAndEndingWith1 {
     /**
      * Given a string consisting of '0's and '1's, find the number
      * of substrings starting and ending with '1'.
@@ -37,7 +35,7 @@ public final class SubstringsStartingAndEndingWith1 {
      *
      * This solution is O(n).
      */
-    public static int substringsStartingAndEndingWith1(String s) {
+    public int substringsStartingAndEndingWith1(String s) {
         int n = 0;
         for (int i = 0; i < s.length(); ++i) {
             if (s.charAt(i) == '1') {
@@ -45,24 +43,5 @@ public final class SubstringsStartingAndEndingWith1 {
             }
         }
         return n * (n - 1) / 2;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test SubstringsStartingAndEndingWith1:");
-        System.out.println("======================================");
-
-        String[] s = {
-                "0000000000",
-                "0001000000",
-                "0010001000",
-                "0100010010",
-                "1001001001",
-        };
-        for (int i = 0; i < s.length; ++i) {
-            System.out.println("String: " + s[i]
-                    + ", Number of substrings starting and ending with '1': "
-                    + substringsStartingAndEndingWith1(s[i]));
-        }
     }
 }
