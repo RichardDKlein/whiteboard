@@ -1,4 +1,4 @@
-package sets;
+package com.whiteboard;
 
 import java.util.*;
 
@@ -6,9 +6,7 @@ import java.util.*;
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using an iterative approach.
  */
-public final class PowerSetIterative {
-    private PowerSetIterative() {}
-
+public class PowerSetIterative<E> {
     /**
      * Compute the power set of a set, i.e. the set of all subsets of
      * that set, using an iterative approach.
@@ -18,7 +16,7 @@ public final class PowerSetIterative {
      * in each count to select the elements of 's' that will form the
      * subset corresponding to that count.
      */
-    public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
+    public Set<Set<E>> powerSetIterative(Set<E> set) {
         Set<Set<E>> powerSet = new HashSet<>();
         List<E> elements = new ArrayList<>(set);
         int numSubsets = (int)Math.pow(2, set.size());
@@ -32,27 +30,5 @@ public final class PowerSetIterative {
             powerSet.add(subset);
         }
         return powerSet;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test PowerSetIterative:");
-        System.out.println("=======================");
-
-        Set<Character> set = new HashSet<>();
-
-        set.add('a');
-        set.add('b');
-        set.add('c');
-        set.add('d');
-        set.add('e');
-
-        System.out.print("set = ");
-        TestUtils.printSet(set);
-
-        Set<Set<Character>> powerSet = powerSetIterative(set);
-        System.out.println("powerSetIterative(set) = " + powerSet.size() +
-                " subsets:");
-        TestUtils.printPowerSet(powerSet);
     }
 }
