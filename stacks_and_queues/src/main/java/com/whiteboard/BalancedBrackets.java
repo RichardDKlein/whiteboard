@@ -1,4 +1,4 @@
-package stacks_and_queues;
+package com.whiteboard;
 
 import java.util.*;
 
@@ -6,9 +6,7 @@ import java.util.*;
  * Determine whether, in an expression containing various kinds
  * of brackets, the brackets are properly balanced and nested.
  */
-public final class BalancedBrackets {
-    private BalancedBrackets() {}
-
+public class BalancedBrackets {
     /**
      * Determine whether, in an expression containing various
      * kinds of brackets, the brackets are properly balanced
@@ -29,7 +27,7 @@ public final class BalancedBrackets {
      * ('false') the brackets in the expression are properly
      * balanced and nested.
      */
-    public static boolean balancedBrackets(String expression) {
+    public boolean balancedBrackets(String expression) {
         Map<Character, Character> bracketMap = new HashMap<>();
         bracketMap.put('(', ')');
         bracketMap.put('[', ']');
@@ -52,28 +50,5 @@ public final class BalancedBrackets {
             }
         }
         return openBracketStack.isEmpty();
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test BalancedBrackets:");
-        System.out.println("======================");
-
-        String[] expressions = {
-                "(a + b)",
-                "(a + b) * c)",
-                "((a + b) * c)",
-                "(((a + b) * c))",
-                "[(a + b) * (c + d)]",
-                "[(a + b) * (c + d)]]",
-                "[(a + b) * (c + d}]",
-                "{[(a + b) * (c + d)] / [(e + f) * (g * h)]} * (i + j)",
-                "{[(a + b) * (c + d)] / [(e + f) * (g * h)]} * (i + j)}",
-                "{[(a + b) * (c + d)] / [(e + f) * (g * h)]} * (i + j"
-        };
-        for (String expression : expressions) {
-            System.out.println("expression: " + expression);
-            System.out.println("balanced brackets: " + balancedBrackets(expression));
-        }
     }
 }

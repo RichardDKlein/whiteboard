@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sets/PowerSetIterative.java" beforeDir="false" afterPath="$PROJECT_DIR$/sets/src/main/java/com/whiteboard/PowerSetIterative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sets/PowerSetRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/sets/src/main/java/com/whiteboard/PowerSetRecursive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sets/TestSets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sets/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sets/src/test/java/com/whiteboard/TestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stacks_and_queues/TestStacksAndQueues.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings/TestStrings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/threads/TestThreads.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/trees/TestTrees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stacks_and_queues/BalancedBrackets.java" beforeDir="false" afterPath="$PROJECT_DIR$/stacks_and_queues/src/main/java/com/whiteboard/BalancedBrackets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stacks_and_queues/QueueUsingTwoStacks.java" beforeDir="false" afterPath="$PROJECT_DIR$/stacks_and_queues/src/main/java/com/whiteboard/QueueUsingTwoStacks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stacks_and_queues/ReversePolish.java" beforeDir="false" afterPath="$PROJECT_DIR$/stacks_and_queues/src/main/java/com/whiteboard/ReversePolish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/FindSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/FindSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/LongestPalindromicSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/LongestPalindromicSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/ParseStringIntoWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/ParseStringIntoWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/PermutationsOfString.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/PermutationsOfString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/RansomNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/RansomNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/ReverseWordsInSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/ReverseWordsInSentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/StringsArePermutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/StringsArePermutations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings/TopKStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/strings/TopKStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/threads/ProducerConsumerQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/threads/ProducerConsumerQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/BinaryTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/BinaryTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/CreateBinarySearchTreeFromSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/CreateBinarySearchTreeFromSortedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/CreateNestedFolders.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/CreateNestedFolders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/IsBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/IsBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/TraverseBinaryTreeBreadthFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/TraverseBinaryTreeBreadthFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trees/TraverseBinaryTreeInOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/xsrc/trees/TraverseBinaryTreeInOrder.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +69,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stacks_and_queues/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/sets/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/math/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/graphs/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/design_patterns/src/main/java/com/whiteboard" />
-      <recent name="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -77,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in sets">
+  <component name="RunManager" selected="JUnit.ReversePolishTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -99,8 +110,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PowerSetIterativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sets" />
+    <configuration name="BalancedBracketsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stacks_and_queues" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -108,7 +119,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.PowerSetIterativeTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.BalancedBracketsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,8 +140,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseDecimalNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="math" />
+    <configuration name="QueueUsingTwoStacksTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stacks_and_queues" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -138,14 +149,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ReverseDecimalNumberTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.QueueUsingTwoStacksTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubstringsStartingAndEndingWith1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="math" />
+    <configuration name="ReversePolishTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stacks_and_queues" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -153,7 +164,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.SubstringsStartingAndEndingWith1Test" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ReversePolishTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReversePolishTest" />
+        <item itemvalue="JUnit.QueueUsingTwoStacksTest" />
+        <item itemvalue="JUnit.BalancedBracketsTest" />
         <item itemvalue="JUnit.All in sets" />
         <item itemvalue="JUnit.PowerSetRecursiveTest" />
-        <item itemvalue="JUnit.PowerSetIterativeTest" />
-        <item itemvalue="JUnit.SubstringsStartingAndEndingWith1Test" />
-        <item itemvalue="JUnit.ReverseDecimalNumberTest" />
       </list>
     </recent_temporary>
   </component>

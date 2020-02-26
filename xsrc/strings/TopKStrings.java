@@ -87,10 +87,9 @@ public class TopKStrings {
         System.out.println("Test TopKStrings:");
         System.out.println("================");
 
-        String gettysburgAddress =
-                "Four score and seven years ago, our fathers brought " +
-                        "forth on this continent a new nation, conceived in " +
-                        "liberty, and dedicated to the proposition that all " +
+        String gettysburgAddress = "Four score and seven years ago, our fathers brought "
+                + "forth on this continent a new nation, conceived in "
+                + "liberty, and dedicated to the proposition that all " +
                         "men are created equal." +
 
                         "Now we are engaged in a great civil war, testing whether " +
@@ -103,7 +102,7 @@ public class TopKStrings {
 
                         "But, in a larger sense, we can not dedicate -- we can not " +
                         "consecrate -- we can not hallow -- this ground. The brave " +
-                        "men, living and dead, who struggled here have consecreated " +
+                        "men, living and dead, who struggled here have consecrated " +
                         "it, far above our poor power to add or detract. The world " +
                         "will little note, nor long remember, what we say here, but " +
                         "it can never forget what they did here." +

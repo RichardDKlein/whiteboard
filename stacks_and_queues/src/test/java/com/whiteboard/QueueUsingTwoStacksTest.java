@@ -1,31 +1,10 @@
-package stacks_and_queues;
+package com.whiteboard;
 
-import java.util.Stack;
+import org.junit.jupiter.api.Test;
 
-/**
- * Implement a queue using two stacks.
- */
-public class QueueUsingTwoStacks<E> {
-    private Stack<E> addStack = new Stack<>();
-    private Stack<E> removeStack = new Stack<>();
-
-    public void add(E item) {
-        addStack.push(item);
-    }
-
-    public E remove() {
-        if (removeStack.isEmpty()) {
-            while (!addStack.isEmpty()) {
-                removeStack.push(addStack.pop());
-            }
-        }
-        if (removeStack.isEmpty()) {
-            return null;
-        }
-        return removeStack.pop();
-    }
-
-    public static void test() {
+class QueueUsingTwoStacksTest {
+    @Test
+    void test1() {
         System.out.println();
         System.out.println("Test QueueUsingTwoStacks:");
         System.out.println("=========================");
