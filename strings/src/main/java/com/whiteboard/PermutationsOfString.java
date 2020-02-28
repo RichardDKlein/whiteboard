@@ -1,4 +1,4 @@
-package strings;
+package com.whiteboard;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,9 +6,7 @@ import java.util.Set;
 /**
  * Find all the permutations of a given string.
  */
-public final class PermutationsOfString {
-    private PermutationsOfString() {}
-
+public class PermutationsOfString {
     /**
      * Find all the permutations of a given string.
      *
@@ -16,7 +14,7 @@ public final class PermutationsOfString {
      * @return A set containing all the permutations
      * of the given string.
      */
-    public static Set<String> permutationsOfString(String s) {
+    public Set<String> permutationsOfString(String s) {
         Set<String> perms = new HashSet<>();
         if (s.isEmpty()) {
             perms.add(s);
@@ -34,21 +32,7 @@ public final class PermutationsOfString {
         return perms;
     }
 
-    private static String insertCharAt(String s, char c, int index) {
+    private String insertCharAt(String s, char c, int index) {
         return s.substring(0, index) + c + s.substring(index);
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test PermutationsOfString:");
-        System.out.println("==========================");
-
-        String testString = "abcd";
-        Set<String> perms = permutationsOfString(testString);
-        System.out.println("permutationsOfString(" + "\"" + testString
-                + "\") returns " + perms.size() + " permutations:");
-        for (String perm : perms) {
-            System.out.println("\t\"" + perm + "\"");
-        }
     }
 }

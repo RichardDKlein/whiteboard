@@ -1,11 +1,9 @@
-package strings;
+package com.whiteboard;
 
 /**
  * Find a specified substring in a string.
  */
-public final class FindSubstring {
-    private FindSubstring() {}
-
+public class FindSubstring {
     /**
      * Find a specified substring in a string.
      *
@@ -14,7 +12,7 @@ public final class FindSubstring {
      * @return The index of the specified substring in the specified
      * string, or -1 if the substring cannot be found.
      */
-    public static int findSubstring(String string, String substring) {
+    public int findSubstring(String string, String substring) {
         char firstCharOfSubstring = substring.charAt(0);
         int lastIndexToCheck = string.length() - substring.length();
         for (int i = 0; i <= lastIndexToCheck; ++i) {
@@ -32,28 +30,5 @@ public final class FindSubstring {
             }
         }
         return -1;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test FindSubstring:");
-        System.out.println("===================");
-
-        String testString = "alfalfa romeo";
-        String[] testSubstrings = {
-            "alfa",
-            "rome",
-            "alfa romeo",
-            "alfa romeos",
-            "alfalfa romeo",
-            "alfalfa romeos",
-            "x"
-        };
-
-        System.out.println("Test string = " + testString);
-        for (String s : testSubstrings) {
-            int index = findSubstring(testString, s);
-            System.out.println("findSubstring(" + s + ") = " + index);
-        }
     }
 }

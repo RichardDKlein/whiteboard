@@ -1,4 +1,4 @@
-package strings;
+package com.whiteboard;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,12 +7,10 @@ import java.util.Map;
  * Determine whether a given ransom note can be constructed by cutting out
  * letters from a given magazine.
  */
-public final class RansomNote {
-    private RansomNote() {}
-
-    private static String note_;
-    private static String magazine_;
-    private static Map<Character, Integer> inventory_ = new HashMap<>();
+public class RansomNote {
+    private String note_;
+    private String magazine_;
+    private Map<Character, Integer> inventory_ = new HashMap<>();
 
     /**
      * Determine whether a given ransom note can be constructed by
@@ -33,14 +31,14 @@ public final class RansomNote {
      * @return A boolean indicating whether ('true') or not ('false')
      * the given ransom note can be constructed from the given magazine.
      */
-    public static boolean ransomNote(String note, String magazine) {
+    public boolean ransomNote(String note, String magazine) {
         note_ = note;
         magazine_ = magazine;
         takeInventoryOfMagazine();
         return buildRansomNoteFromInventory();
     }
 
-    private static void takeInventoryOfMagazine() {
+    private void takeInventoryOfMagazine() {
         for (int i = 0; i < magazine_.length(); ++i) {
             char c = magazine_.charAt(i);
             if (c == ' ') {
@@ -54,7 +52,7 @@ public final class RansomNote {
         }
     }
 
-    private static boolean buildRansomNoteFromInventory() {
+    private boolean buildRansomNoteFromInventory() {
         for (int i = 0; i < note_.length(); ++i) {
             char c = note_.charAt(i);
             if (c == ' ') {
@@ -72,22 +70,5 @@ public final class RansomNote {
             }
         }
         return true;
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test RansomNote:");
-        System.out.println("================");
-
-        String note = "put ten dollars on the plate in the fridge or you will never see your sandwich again";
-        String[] magazines = {
-                "again dollars fridge in never on or plate put sandwich see ten the the will you your",
-                "again dollars fridge in never on or plate put sandwich see ten the will you your"
-        };
-        System.out.println("ransom note = \"" + note + "\"");
-        for (String magazine : magazines) {
-            System.out.println("magazine = \"" + magazine + "\"");
-            System.out.println("can construct = " + ransomNote(note, magazine));
-        }
     }
 }

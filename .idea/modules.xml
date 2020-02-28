@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/math/math.iml" filepath="$PROJECT_DIR$/math/math.iml" />
       <module fileurl="file://$PROJECT_DIR$/sets/sets.iml" filepath="$PROJECT_DIR$/sets/sets.iml" />
       <module fileurl="file://$PROJECT_DIR$/stacks_and_queues/stacks_and_queues.iml" filepath="$PROJECT_DIR$/stacks_and_queues/stacks_and_queues.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strings/strings.iml" filepath="$PROJECT_DIR$/strings/strings.iml" />
       <module fileurl="file://$PROJECT_DIR$/whiteboard-java.iml" filepath="$PROJECT_DIR$/whiteboard-java.iml" />
     </modules>
   </component>

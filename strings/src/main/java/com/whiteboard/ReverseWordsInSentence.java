@@ -1,11 +1,9 @@
-package strings;
+package com.whiteboard;
 
 /**
  * Reverse the words in a sentence.
  */
-public final class ReverseWordsInSentence {
-    private ReverseWordsInSentence() {}
-
+public class ReverseWordsInSentence {
     /**
      * Reverse the words in a sentence.
      *
@@ -13,7 +11,7 @@ public final class ReverseWordsInSentence {
      * @return A copy of the given sentence, but with the words
      * reversed.
      */
-    public static String reverseWordsInSentence(String sentence) {
+    public String reverseWordsInSentence(String sentence) {
         char[] buf = sentence.toCharArray();
         int i = 0;
         while (i < buf.length) {
@@ -28,7 +26,7 @@ public final class ReverseWordsInSentence {
         return new String(buf);
     }
 
-    private static int findStartOfNextWord(char[] buf, int i) {
+    private int findStartOfNextWord(char[] buf, int i) {
         while (i < buf.length) {
             if (Character.isAlphabetic(buf[i])) {
                 return i;
@@ -38,7 +36,7 @@ public final class ReverseWordsInSentence {
         return -1;
     }
 
-    private static int findEndOfNextWord(char[] buf, int i) {
+    private int findEndOfNextWord(char[] buf, int i) {
         while (i < buf.length) {
             if (!Character.isAlphabetic(buf[i])) {
                 return i - 1;
@@ -48,7 +46,7 @@ public final class ReverseWordsInSentence {
         return buf.length - 1;
     }
 
-    private static void reverseWord(char[] buf, int iStartWord, int iEndWord) {
+    private void reverseWord(char[] buf, int iStartWord, int iEndWord) {
         int iLeft = iStartWord;
         int iRight = iEndWord;
         while (iLeft < iRight) {
@@ -57,24 +55,6 @@ public final class ReverseWordsInSentence {
             buf[iRight] = tmp;
             ++iLeft;
             --iRight;
-        }
-    }
-
-    public static void test() {
-        System.out.println();
-        System.out.println("Test ReverseWordsInSentence:");
-        System.out.println("============================");
-
-        String[] testSentences = {
-            "Now is the time",
-            " for all good men   ",
-            "to come to the aid of their country."
-        };
-
-        for (String sentence : testSentences) {
-            String reverse = reverseWordsInSentence(sentence);
-            System.out.println("reverseWordsInSentence(\"" + sentence
-                    + "\") = \"" + reverse + "\"");
         }
     }
 }
