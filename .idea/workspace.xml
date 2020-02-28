@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/BinaryTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/BinaryTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/CreateBinarySearchTreeFromSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateBinarySearchTreeFromSortedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/CreateNestedFolders.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateNestedFolders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/IsBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/IsBinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/TraverseBinaryTreeBreadthFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeBreadthFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/trees/TraverseBinaryTreeInOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeInOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateBinarySearchTreeFromSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateBinarySearchTreeFromSortedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/IsBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/IsBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeBreadthFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeBreadthFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeInOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeInOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/test/java/com/whiteboard/CreateBinarySearchTreeFromSortedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/test/java/com/whiteboard/CreateBinarySearchTreeFromSortedListTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateNestedFoldersTest">
+  <component name="RunManager" selected="JUnit.All in trees">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -90,17 +88,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateBinarySearchTreeFromSortedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in trees" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trees" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CreateBinarySearchTreeFromSortedListTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProducerConsumerQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="threads" />
+    <configuration name="IsBinarySearchTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trees" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -129,14 +120,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ProducerConsumerQueueTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.IsBinarySearchTreeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TopKStringsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="strings" />
+    <configuration name="TraverseBinaryTreeBreadthFirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trees" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -144,14 +135,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.TopKStringsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.TraverseBinaryTreeBreadthFirstTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.whiteboard in lists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lists" />
+    <configuration name="TraverseBinaryTreeInOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trees" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -159,18 +150,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.TraverseBinaryTreeInOrderTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in trees" />
+        <item itemvalue="JUnit.TraverseBinaryTreeInOrderTest" />
+        <item itemvalue="JUnit.TraverseBinaryTreeBreadthFirstTest" />
+        <item itemvalue="JUnit.IsBinarySearchTreeTest" />
         <item itemvalue="JUnit.CreateNestedFoldersTest" />
-        <item itemvalue="JUnit.CreateBinarySearchTreeFromSortedListTest" />
-        <item itemvalue="JUnit.com.whiteboard in lists" />
-        <item itemvalue="JUnit.ProducerConsumerQueueTest" />
-        <item itemvalue="JUnit.TopKStringsTest" />
       </list>
     </recent_temporary>
   </component>

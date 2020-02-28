@@ -1,17 +1,17 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class CreateBinarySearchTreeFromSortedListTest {
+import org.junit.jupiter.api.Test;
+
+class TraverseBinaryTreeBreadthFirstTest {
     @Test
-    void createBinarySearchTreeFromSortedList() {
+    void traverseBinaryTreeBreadthFirst() {
         System.out.println();
-        System.out.println("Test CreateBinarySearchTreeFromSortedList:");
-        System.out.println("==========================================");
+        System.out.println("Test TraverseBinaryTreeBreadthFirst:");
+        System.out.println("====================================");
 
         System.out.println("               9                  ");
         System.out.println("        4            13           ");
@@ -25,15 +25,13 @@ class CreateBinarySearchTreeFromSortedListTest {
         for (int integer : sortedArray) {
             sortedList.add(integer);
         }
-        System.out.println("sorted list = " +
-                Arrays.toString(sortedList.toArray()));
         BinaryTreeNode<Integer> root =
                 new CreateBinarySearchTreeFromSortedList<Integer>()
                         .createBinarySearchTreeFromSortedList(sortedList);
-        List<Integer> inorderTraversal =
-                new TraverseBinaryTreeInOrder<Integer>()
-                        .traverseBinaryTreeInOrder(root);
-        System.out.println("inorder traversal of binary search tree = " +
-                Arrays.toString(inorderTraversal.toArray()));
+        List<Integer> breadthFirstTraversal =
+                new TraverseBinaryTreeBreadthFirst<Integer>()
+                        .traverseBinaryTreeBreadthFirst(root);
+        System.out.println("breadth-first traversal of binary tree = " +
+                Arrays.toString(breadthFirstTraversal.toArray()));
     }
 }
