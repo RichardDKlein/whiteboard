@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/FindSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/FindSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/LongestPalindromicSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/LongestPalindromicSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/ParseStringIntoWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/ParseStringIntoWords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/PermutationsOfString.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/PermutationsOfString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/RansomNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/RansomNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/ReverseWordsInSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/ReverseWordsInSentence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/StringsArePermutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/StringsArePermutations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xsrc/strings/TopKStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/TopKStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ShuffleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xsrc/threads/ProducerConsumerQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/threads/src/main/java/com/whiteboard/ProducerConsumerQueue.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +52,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/threads/src/main/java/com/whiteboard" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/strings/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/stacks_and_queues/src/main/java/com/whiteboard" />
       <recent name="$PROJECT_DIR$/sets/src/main/java/com/whiteboard" />
-      <recent name="$PROJECT_DIR$/math/src/main/java/com/whiteboard" />
-      <recent name="$PROJECT_DIR$/graphs/src/main/java/com/whiteboard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -77,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TopKStringsTest">
+  <component name="RunManager" selected="JUnit.ProducerConsumerQueueTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -91,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PermutationsOfStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="strings" />
+    <configuration name="ProducerConsumerQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="threads" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -100,7 +94,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.PermutationsOfStringTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ProducerConsumerQueueTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProducerConsumerQueueTest" />
         <item itemvalue="JUnit.TopKStringsTest" />
         <item itemvalue="JUnit.RansomNoteTest" />
         <item itemvalue="JUnit.StringsArePermutationsTest" />
         <item itemvalue="JUnit.ReverseWordsInSentenceTest" />
-        <item itemvalue="JUnit.PermutationsOfStringTest" />
       </list>
     </recent_temporary>
   </component>
