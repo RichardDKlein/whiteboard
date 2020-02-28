@@ -1,8 +1,8 @@
-package trees;
+package com.whiteboard;
 
 public class BinaryTreeNode<E> {
-    public E data;
-    public BinaryTreeNode<E> left, right;
+    E data;
+    BinaryTreeNode<E> left, right;
 
     BinaryTreeNode(E data_, BinaryTreeNode<E> left_, BinaryTreeNode<E> right_) {
         data = data_;

@@ -1,4 +1,4 @@
-package trees;
+package com.whiteboard;
 
 import java.util.*;
 
@@ -54,10 +54,10 @@ public class TraverseBinaryTreeBreadthFirst {
         }
         System.out.println("sorted list = " +
                 Arrays.toString(sortedList.toArray()));
-        BinaryTreeNode<Integer> root = CreateBinarySearchTreeFromSortedList
-                .createBinarySearchTreeFromSortedList(sortedList);
-        List<Integer> breadthFirstTraversal = traverseBinaryTreeBreadthFirst(root);
-        System.out.println("breadth-first traversal of binary tree = " +
-                Arrays.toString(breadthFirstTraversal.toArray()));
+//        BinaryTreeNode<Integer> root = CreateBinarySearchTreeFromSortedList
+//                .createBinarySearchTreeFromSortedList(sortedList);
+//        List<Integer> breadthFirstTraversal = traverseBinaryTreeBreadthFirst(root);
+//        System.out.println("breadth-first traversal of binary tree = " +
+//                Arrays.toString(breadthFirstTraversal.toArray()));
     }
 }
