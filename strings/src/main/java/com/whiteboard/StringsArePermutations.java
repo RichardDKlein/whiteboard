@@ -15,10 +15,10 @@ public class StringsArePermutations {
      * s1 and s2 are permutations of each other.
      */
     public boolean stringsArePermutations(String s1, String s2) {
-        return sortString(s1).equals(sortString(s2));
+        return sort(s1).equals(sort(s2));
     }
 
-    private String sortString(String s) {
+    private String sort(String s) {
         char[] buf = s.toCharArray();
         Arrays.sort(buf);
         return new String(buf);

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/ReverseWordsInSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/ReverseWordsInSentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/StringsArePermutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/main/java/com/whiteboard/StringsArePermutations.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ReverseWordsInSentenceTest">
+  <component name="RunManager" selected="JUnit.StringsArePermutationsTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -92,21 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IsBinarySearchTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trees" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.whiteboard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.IsBinarySearchTreeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReverseWordsInSentenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="strings" />
       <extension name="coverage">
@@ -117,6 +102,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
       <option name="MAIN_CLASS_NAME" value="com.whiteboard.ReverseWordsInSentenceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringsArePermutationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="strings" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.StringsArePermutationsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StringsArePermutationsTest" />
         <item itemvalue="JUnit.ReverseWordsInSentenceTest" />
         <item itemvalue="JUnit.All in trees" />
         <item itemvalue="JUnit.TraverseBinaryTreeInOrderTest" />
         <item itemvalue="JUnit.TraverseBinaryTreeBreadthFirstTest" />
-        <item itemvalue="JUnit.IsBinarySearchTreeTest" />
       </list>
     </recent_temporary>
   </component>
