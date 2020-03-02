@@ -12,12 +12,11 @@ import java.util.Queue;
  * interface.
  */
 public class ProducerConsumerQueue<E> {
-    private int capacity_;
-    private Queue<E> queue_;
+    private Queue<E> queue_ = new LinkedList<>();
+    int capacity_;
 
-    public ProducerConsumerQueue(int capacity) {
+    ProducerConsumerQueue(int capacity) {
         capacity_ = capacity;
-        queue_ = new LinkedList<>();
     }
 
     public synchronized void produce(E item) {
