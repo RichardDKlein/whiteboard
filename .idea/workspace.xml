@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/threads/src/main/java/com/whiteboard/ProducerConsumerQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/threads/src/main/java/com/whiteboard/ProducerConsumerQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateBinarySearchTreeFromSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateBinarySearchTreeFromSortedList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProducerConsumerQueueTest">
+  <component name="RunManager" selected="JUnit.CreateBinarySearchTreeFromSortedListTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -84,10 +84,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in trees" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateBinarySearchTreeFromSortedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trees" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CreateBinarySearchTreeFromSortedListTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreateBinarySearchTreeFromSortedListTest" />
         <item itemvalue="JUnit.ProducerConsumerQueueTest" />
         <item itemvalue="JUnit.TopKStringsTest" />
         <item itemvalue="JUnit.StringsArePermutationsTest" />
         <item itemvalue="JUnit.ReverseWordsInSentenceTest" />
-        <item itemvalue="JUnit.All in trees" />
       </list>
     </recent_temporary>
   </component>

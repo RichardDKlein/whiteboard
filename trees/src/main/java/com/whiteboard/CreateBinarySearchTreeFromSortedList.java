@@ -12,6 +12,7 @@ public class CreateBinarySearchTreeFromSortedList<E> {
      *
      * @param sortedList The sorted list.
      * @return The root of the created binary search tree.
+     * Will be null if the given sorted list is empty.
      */
     public BinaryTreeNode<E>
     createBinarySearchTreeFromSortedList(List<E> sortedList) {
@@ -21,18 +22,18 @@ public class CreateBinarySearchTreeFromSortedList<E> {
         int first = 0;
         int last = sortedList.size() - 1;
         int mid = (first + last) / 2;
-        List<E> left = new ArrayList<>();
-        for (int i = 0; i < mid; ++i) {
-            left.add(sortedList.get(i));
+        List<E> leftSublist = new ArrayList<>();
+        for (int i = first; i < mid; ++i) {
+            leftSublist.add(sortedList.get(i));
         }
-        List<E> right = new ArrayList<>();
+        List<E> rightSublist = new ArrayList<>();
         for (int i = mid + 1; i <= last; ++i) {
-            right.add(sortedList.get(i));
+            rightSublist.add(sortedList.get(i));
         }
         BinaryTreeNode<E> root = new BinaryTreeNode<>();
         root.data = sortedList.get(mid);
-        root.left = createBinarySearchTreeFromSortedList(left);
-        root.right = createBinarySearchTreeFromSortedList(right);
+        root.left = createBinarySearchTreeFromSortedList(leftSublist);
+        root.right = createBinarySearchTreeFromSortedList(rightSublist);
 
         return root;
     }
