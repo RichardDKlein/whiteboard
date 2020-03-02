@@ -15,13 +15,13 @@ public class ReverseWordsInSentence {
         char[] buf = sentence.toCharArray();
         int i = 0;
         while (i < buf.length) {
-            int iStartWord = findStartOfNextWord(buf, i);
-            if (iStartWord < 0) {
+            int iStartNextWord = findStartOfNextWord(buf, i);
+            if (iStartNextWord < 0) {
                 break;
             }
-            int iEndWord = findEndOfNextWord(buf, iStartWord);
-            reverseWord(buf, iStartWord, iEndWord);
-            i = iEndWord + 1;
+            int iEndNextWord = findEndOfNextWord(buf, iStartNextWord);
+            reverseWord(buf, iStartNextWord, iEndNextWord);
+            i = iEndNextWord + 1;
         }
         return new String(buf);
     }
@@ -30,8 +30,9 @@ public class ReverseWordsInSentence {
         while (i < buf.length) {
             if (Character.isAlphabetic(buf[i])) {
                 return i;
+            } else {
+                ++i;
             }
-            ++i;
         }
         return -1;
     }
@@ -40,21 +41,22 @@ public class ReverseWordsInSentence {
         while (i < buf.length) {
             if (!Character.isAlphabetic(buf[i])) {
                 return i - 1;
+            } else {
+                ++i;
             }
-            ++i;
         }
         return buf.length - 1;
     }
 
-    private void reverseWord(char[] buf, int iStartWord, int iEndWord) {
-        int iLeft = iStartWord;
-        int iRight = iEndWord;
-        while (iLeft < iRight) {
-            char tmp = buf[iLeft];
-            buf[iLeft] = buf[iRight];
-            buf[iRight] = tmp;
-            ++iLeft;
-            --iRight;
+    void reverseWord(char[] buf, int iStartWord, int iEndWord) {
+        int left = iStartWord;
+        int right = iEndWord;
+        while (left < right) {
+            char tmp = buf[left];
+            buf[left] = buf[right];
+            buf[right] = tmp;
+            ++left;
+            --right;
         }
     }
 }
