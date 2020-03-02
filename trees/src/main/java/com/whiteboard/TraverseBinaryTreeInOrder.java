@@ -20,10 +20,9 @@ public class TraverseBinaryTreeInOrder<E> {
         if (root == null) {
             return result;
         }
-        result = traverseBinaryTreeInOrder(root.left);
+        result.addAll(traverseBinaryTreeInOrder(root.left));
         result.add(root.data);
-        List<E> right = traverseBinaryTreeInOrder(root.right);
-        result.addAll(right);
+        result.addAll(traverseBinaryTreeInOrder(root.right));
         return result;
     }
 }
