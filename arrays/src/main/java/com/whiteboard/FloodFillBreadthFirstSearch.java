@@ -32,25 +32,26 @@ public class FloodFillBreadthFirstSearch {
      */
     public void floodFillBreadthFirstSearch(
             char[][] a, int seedRow, int seedCol) {
-        int rows = a.length;
-        int cols = a[0].length;
-        Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
-        queue.add(new Pair<>(seedRow, seedCol));
-        while (!queue.isEmpty()) {
-            Pair<Integer, Integer> coords = queue.poll();
-            int row = coords.getKey();
-            int col = coords.getValue();
-            if (row < 0 || col < 0 || row >= rows || col >= cols) {
+
+        Queue<Pair<Integer, Integer>> seedQueue = new LinkedList<>();
+        int numRows = a.length;
+        int numCols = a[0].length;
+        seedQueue.add(new Pair<>(seedRow, seedCol));
+        while (!seedQueue.isEmpty()) {
+            Pair<Integer, Integer> seed = seedQueue.poll();
+            int row = seed.getKey();
+            int col = seed.getValue();
+            if (row < 0 || col < 0 || row >= numRows || col >= numCols) {
                 continue;
             }
             if (a[row][col] == '@') {
                 continue;
             }
             a[row][col] = '@';
-            queue.add(new Pair<>(row, col - 1));
-            queue.add(new Pair<>(row - 1, col));
-            queue.add(new Pair<>(row, col + 1));
-            queue.add(new Pair<>(row + 1, col));
+            seedQueue.add(new Pair<>(row, col - 1));
+            seedQueue.add(new Pair<>(row - 1, col));
+            seedQueue.add(new Pair<>(row, col + 1));
+            seedQueue.add(new Pair<>(row + 1, col));
         }
     }
 }

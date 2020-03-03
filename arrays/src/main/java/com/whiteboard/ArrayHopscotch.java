@@ -52,9 +52,8 @@ public class ArrayHopscotch {
         }
         if (visitedIndices_.contains(iStart)) {
             return winningHops;
-        } else {
-            visitedIndices_.add(iStart);
         }
+        visitedIndices_.add(iStart);
         int iHopLeft = iStart - a[iStart];
         List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
         if (!remainingHops.isEmpty()) {
