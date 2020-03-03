@@ -32,9 +32,10 @@ public class FloodFillRecursive {
      */
     public void floodFillRecursive(
             char[][] a, int seedRow, int seedCol) {
-        int rows = a.length;
-        int cols = a[0].length;
-        if (seedRow < 0 || seedCol < 0 || seedRow >= rows || seedCol >= cols) {
+
+        int numRows = a.length;
+        int numCols = a[0].length;
+        if (seedRow < 0 || seedCol < 0 || seedRow >= numRows || seedCol >= numCols) {
             return;
         }
         if (a[seedRow][seedCol] == '@') {
