@@ -19,17 +19,21 @@ public class MaxSubarray {
      * subarray whose endpoint is a[i]. Note that S(i)
      * can be computed easily from S(i - 1), as follows.
      *
-     * If S(i - 1) is positive (or zero), then S(i) is
-     * S(i - 1) + a[i], where the '+' operator here denotes
-     * concatenation. To see this, note that if we chose
-     * any element other than the starting element of
-     * S(i - 1), we would get a smaller sum. Why? Because
-     * S(i - 1) is the maximum subarray ending at a[i - 1].
+     * If S(i - 1) is positive, then S(i) is S(i - 1) + a[i],
+     * where the '+' operator here denotes concatenation. To
+     * see this, note that if we chose any starting element
+     * other than the starting element of S(i - 1), we would
+     * get a smaller sum. Why? Because S(i - 1) is the maximum
+     * subarray ending at a[i - 1].
      *
      * Now suppose S(i - 1) is negative. Then S(i) is simply
      * the single element a[i]. For regardless of whether
      * a[i] is positive or negative, the sum S(i - i) + a[i]
      * will be smaller than just a[i] by itself.
+     *
+     * Finally, suppose S(i - 1) is zero. Then for S(i), we
+     * could choose S(i - 1) + a[i], or simply a[i] by itself.
+     * We'll choose the latter.
      *
      * The algorithm consists of simply iterating thru a[],
      * computing a[i] from a[i - 1], and keeping track of
@@ -47,12 +51,12 @@ public class MaxSubarray {
         start = maxStart = end = maxEnd = 0;
         sum = maxSum = a[0];
         for (int i = 1; i < a.length; ++i) {
-            end = i;
-            if (sum >= 0) {
-                sum += a[i];
+            if (sum > 0) {
+                sum = sum + a[i];
+                end = i;
             } else {
-                start = i;
                 sum = a[i];
+                start = end = i;
             }
             if (sum > maxSum) {
                 maxSum = sum;
