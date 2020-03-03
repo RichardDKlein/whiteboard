@@ -33,11 +33,12 @@ public class Rotate2dArray {
     }
 
     private void transpose2dArray(int[][] a) {
-        for (int row = 0; row < a.length; ++row) {
+        int numRows = a.length;
+        for (int row = 0; row < numRows; ++row) {
             for (int col = 0; col < row; ++col) {
-                int temp = a[row][col];
+                int tmp = a[row][col];
                 a[row][col] = a[col][row];
-                a[col][row] = temp;
+                a[col][row] = tmp;
             }
         }
     }
@@ -46,9 +47,11 @@ public class Rotate2dArray {
         int left = 0;
         int right = a.length - 1;
         while (left < right) {
-            int temp = a[left];
-            a[left++] = a[right];
-            a[right--] = temp;
+            int tmp = a[left];
+            a[left] = a[right];
+            a[right] = tmp;
+            ++left;
+            --right;
         }
     }
 }
