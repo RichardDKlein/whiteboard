@@ -6,7 +6,7 @@ import java.util.*;
  * Play a game of "array hopscotch".
  */
 public class ArrayHopscotch {
-    private Set<Integer> visitedIndices = new HashSet<>();
+    private Set<Integer> visitedIndices_ = new HashSet<>();
 
     /**
      * Play a game of "array hopscotch".
@@ -43,33 +43,31 @@ public class ArrayHopscotch {
      */
     public List<Integer> arrayHopscotch(int[] a, int iStart) {
         List<Integer> winningHops = new ArrayList<>();
+        if (iStart < 0 || iStart > a.length - 1) {
+            return winningHops;
+        }
         if (a[iStart] == 0) {
             winningHops.add(iStart);
             return winningHops;
         }
-        if (visitedIndices.contains(iStart)) {
+        if (visitedIndices_.contains(iStart)) {
             return winningHops;
         } else {
-            visitedIndices.add(iStart);
+            visitedIndices_.add(iStart);
         }
-
         int iHopLeft = iStart - a[iStart];
-        if (iHopLeft >= 0) {
-            List<Integer> remainingWinningHops = arrayHopscotch(a, iHopLeft);
-            if (!remainingWinningHops.isEmpty()) {
-                winningHops.add(iStart);
-                winningHops.addAll(remainingWinningHops);
-                return winningHops;
-            }
+        List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
+        if (!remainingHops.isEmpty()) {
+            winningHops.add(iStart);
+            winningHops.addAll(remainingHops);
+            return winningHops;
         }
         int iHopRight = iStart + a[iStart];
-        if (iHopRight < a.length) {
-            List<Integer> remainingWinningHops = arrayHopscotch(a, iHopRight);
-            if (!remainingWinningHops.isEmpty()) {
-                winningHops.add(iStart);
-                winningHops.addAll(remainingWinningHops);
-                return winningHops;
-            }
+        remainingHops = arrayHopscotch(a, iHopRight);
+        if (!remainingHops.isEmpty()) {
+            winningHops.add(iStart);
+            winningHops.addAll(remainingHops);
+            return winningHops;
         }
         return winningHops;
     }

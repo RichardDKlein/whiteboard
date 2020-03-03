@@ -22,13 +22,12 @@ public class TraverseBinaryTreeBreadthFirst<E> {
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             BinaryTreeNode<E> node = nodeQueue.poll();
+            if (node == null) {
+                continue;
+            }
             result.add(node.data);
-            if (node.left != null) {
-                nodeQueue.add(node.left);
-            }
-            if (node.right != null) {
-                nodeQueue.add(node.right);
-            }
+            nodeQueue.add(node.left);
+            nodeQueue.add(node.right);
         }
         return result;
     }

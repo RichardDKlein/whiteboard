@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cab0f478-abbc-4085-8779-de6749361670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateNestedFolders.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/CreateNestedFolders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees/src/test/java/com/whiteboard/CreateNestedFoldersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/test/java/com/whiteboard/CreateNestedFoldersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ArrayHopscotch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ArrayHopscotch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeBreadthFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/trees/src/main/java/com/whiteboard/TraverseBinaryTreeBreadthFirst.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateNestedFoldersTest">
+  <component name="RunManager" selected="JUnit.ArrayHopscotchTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="whiteboard-java" />
@@ -85,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateBinarySearchTreeFromSortedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="trees" />
+    <configuration name="ArrayHopscotchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrays" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.whiteboard.*" />
@@ -94,7 +94,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.whiteboard" />
-      <option name="MAIN_CLASS_NAME" value="com.whiteboard.CreateBinarySearchTreeFromSortedListTest" />
+      <option name="MAIN_CLASS_NAME" value="com.whiteboard.ArrayHopscotchTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArrayHopscotchTest" />
+        <item itemvalue="JUnit.TraverseBinaryTreeBreadthFirstTest" />
         <item itemvalue="JUnit.CreateNestedFoldersTest" />
         <item itemvalue="JUnit.TraverseBinaryTreeInOrderTest" />
-        <item itemvalue="JUnit.TraverseBinaryTreeBreadthFirstTest" />
         <item itemvalue="JUnit.IsBinarySearchTreeTest" />
-        <item itemvalue="JUnit.CreateBinarySearchTreeFromSortedListTest" />
       </list>
     </recent_temporary>
   </component>
