@@ -2,15 +2,15 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-class CircularBufferTest {
+class CircularQueueTest {
     @Test
     void circularBuffer() {
         System.out.println();
-        System.out.println("Test CircularBuffer:");
-        System.out.println("====================");
+        System.out.println("Test CircularQueue:");
+        System.out.println("===================");
 
-        System.out.println("Create a CircularBuffer of length 10");
-        CircularBuffer buf = new CircularBuffer(10);
+        System.out.println("Create a CircularQueue of length 10");
+        CircularQueue buf = new CircularQueue(10);
         System.out.println("Add five elements");
         buf.add(1);
         buf.add(2);
@@ -19,7 +19,7 @@ class CircularBufferTest {
         buf.add(5);
         System.out.println("Remove five elements:");
         for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.remove() + " ");
+            System.out.print(buf.poll() + " ");
         }
         System.out.println();
         System.out.println("Add five more elements");
@@ -30,7 +30,7 @@ class CircularBufferTest {
         buf.add(10);
         System.out.println("Remove five elements:");
         for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.remove() + " ");
+            System.out.print(buf.poll() + " ");
         }
         System.out.println();
         System.out.println("Add five more elements");
@@ -41,7 +41,7 @@ class CircularBufferTest {
         buf.add(15);
         System.out.println("Remove five elements:");
         for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.remove() + " ");
+            System.out.print(buf.poll() + " ");
         }
         System.out.println();
         System.out.println("Add ten elements");
@@ -57,7 +57,7 @@ class CircularBufferTest {
         buf.add(10);
         System.out.println("Remove ten elements:");
         for (int i = 0; i < 10; ++i) {
-            System.out.print(buf.remove() + " ");
+            System.out.print(buf.poll() + " ");
         }
         System.out.println();
     }

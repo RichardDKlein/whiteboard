@@ -17,34 +17,32 @@ package com.whiteboard;
  * Thus the capacity of a buffer of length n is actually
  * (n - 1).
  */
-public class CircularBuffer {
-    int[] buffer_;
-    int head_;
-    int tail_;
+public class CircularQueue {
+    private int[] buffer_;
+    private int head_;
+    private int tail_;
 
-    public CircularBuffer(int capacity) {
+    CircularQueue(int capacity) {
         buffer_ = new int[capacity];
-        head_ = tail_ = 0;
     }
 
     public void add(int n) {
         if (isFull()) {
             System.out.println("FULL!");
-        } else {
-            buffer_[tail_] = n;
-            tail_ = (tail_ + 1) % buffer_.length;
+            return;
         }
+        buffer_[tail_] = n;
+        tail_ = (tail_ + 1) % buffer_.length;
     }
 
-    public int remove() {
+    public int poll() {
         if (isEmpty()) {
             System.out.println("EMPTY!");
             return -1;
-        } else {
-            int element = buffer_[head_];
-            head_ = (head_ + 1) % buffer_.length;
-            return element;
         }
+        int result = buffer_[head_];
+        head_ = (head_ + 1) % buffer_.length;
+        return result;
     }
 
     private boolean isFull() {
