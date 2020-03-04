@@ -45,36 +45,36 @@ public class ShortestClosure<E> {
         buildNeedleLocationMap();
         Interval shortest = new Interval(0, haystack.size() - 1);
         for (;;) {
-            Interval candidate = nextCandidate();
-            if (!candidate.valid()) {
-                break;
+            Interval candidate = getNextCandidate();
+            if (candidate == null) {
+                return shortest;
             }
             if (candidate.length() < shortest.length()) {
                 shortest = candidate;
             }
         }
-        return shortest;
     }
 
-    private void buildNeedleLocationMap() {
+    void buildNeedleLocationMap() {
         for (E needle : needles_) {
             needleLocationMap_.put(needle, new ArrayList<>());
         }
         for (int i = 0; i < haystack_.size(); ++i) {
-            if (needles_.contains(haystack_.get(i))) {
-                needleLocationMap_.get(haystack_.get(i)).add(i);
+            E needle = haystack_.get(i);
+            if (needles_.contains(needle)) {
+                needleLocationMap_.get(needle).add(i);
             }
         }
     }
 
-    private Interval nextCandidate() {
+    private Interval getNextCandidate() {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         List<Integer> minLocationList = null;
         for (E needle : needles_) {
             List<Integer> locationList = needleLocationMap_.get(needle);
             if (locationList.isEmpty()) {
-                return new Interval(-1, -1);
+                return null;
             }
             int front = locationList.get(0);
             if (front < min) {
@@ -91,10 +91,6 @@ public class ShortestClosure<E> {
         return new Interval(min, max);
     }
 
-    // ===================================================================
-    // INNER CLASSES
-    // ===================================================================
-
     static class Interval {
         int min_;
         int max_;
@@ -103,11 +99,8 @@ public class ShortestClosure<E> {
             min_ = min;
             max_ = max;
         }
-        protected int length() {
+        int length() {
             return max_ - min_ + 1;
-        }
-        protected boolean valid() {
-            return (min_ >= 0) && (min_ <= max_);
         }
     }
 }
