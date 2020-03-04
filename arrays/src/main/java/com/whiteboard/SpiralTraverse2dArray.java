@@ -7,14 +7,13 @@
 package com.whiteboard;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SpiralTraverse2dArray {
     /**
-     * Traverse a 2D array in a spiral pattern, starting at
-     * the upper-left element and spiralling in the clockwise
-     * direction.
+     * Traverse a 2D array, NOT NECESSARILY SQUARE, in a spiral
+     * pattern, starting at the upper-left element, and spiralling
+     * in the clockwise direction.
      *
      * We shall use a straighforward iterative algorithm that
      * traverses each "shell", or layer, of the array, starting
@@ -29,21 +28,34 @@ public class SpiralTraverse2dArray {
      */
     public List<Integer> spiralTraverse2dArray(int[][] a) {
         List<Integer> spiral = new ArrayList<>();
-        int rowTop, rowBottom;
-        for (rowTop = 0, rowBottom = a.length - 1; rowTop <= rowBottom; ++rowTop, --rowBottom) {
-            spiral.addAll(spiralTraverseShell(a, rowTop, rowBottom));
+        int rowTop, rowBottom, colLeft, colRight;
+        for (rowTop = 0, rowBottom = a.length - 1,
+                     colLeft = 0, colRight = a[0].length - 1;
+             rowTop <= rowBottom && colLeft <= colRight;
+             ++rowTop, --rowBottom, ++colLeft, --colRight) {
+
+            List<Integer> shell = spiralTraverseShell(
+                    a, rowTop, rowBottom, colLeft, colRight);
+            spiral.addAll(shell);
         }
         return spiral;
     }
 
-    private List<Integer> spiralTraverseShell(
-            int[][]a, int rowTop, int rowBottom) {
+    private List<Integer> spiralTraverseShell(int[][]a,
+            int rowTop, int rowBottom, int colLeft, int colRight) {
+
         List<Integer> shell = new ArrayList<>();
-        int colLeft = rowTop;
-        int colRight = rowBottom;
-        // degenerate case where shell is a single element
+        // degenerate case where shell is 1-dimensional
         if (rowTop == rowBottom) {
-            shell.add(a[rowTop][colLeft]);
+            for (int col = colLeft; col <= colRight; ++col) {
+                shell.add(a[rowTop][col]);
+            }
+            return shell;
+        }
+        if (colLeft == colRight) {
+            for (int row = rowTop; row <= rowBottom; ++row) {
+                shell.add(a[row][colLeft]);
+            }
             return shell;
         }
         // top row
