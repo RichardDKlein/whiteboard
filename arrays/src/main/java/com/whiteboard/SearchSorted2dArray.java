@@ -42,18 +42,11 @@ public class SearchSorted2dArray {
      */
     public Pair<Integer, Integer>
     searchSorted2dArray(int[][] a, int target) {
-        int rows = a.length;
-        int cols = a[0].length;
-
-        int bottom = rows - 1;
-        int left = 0;
-        int top = 0;
-        int right = cols - 1;
-
-        int row = bottom;
-        int col = left;
-
-        while (row >= top && col <= right) {
+        int numRows = a.length;
+        int numCols = a[0].length;
+        int row = numRows - 1;
+        int col = 0;
+        while (row >= 0 && col < numCols) {
             if (a[row][col] < target) {
                 ++col;
             } else if (a[row][col] > target) {
