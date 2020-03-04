@@ -37,45 +37,41 @@ public class SolveMaze {
             Pair<Integer, Integer> exit) {
 
         List<Pair<Integer, Integer>> path = new ArrayList<>();
-
         if (start.equals(exit)) {
             path.add(start);
             return path;
         }
-        int rowStart = start.getKey();
-        int colStart = start.getValue();
+        int startRow = start.getKey();
+        int startCol = start.getValue();
         int numRows = maze.length;
         int numCols = maze[0].length;
-
-        if (rowStart < 0 || colStart < 0 || rowStart >= numRows || colStart >= numCols) {
+        if (startRow < 0 || startCol < 0 || startRow >= numRows || startCol >= numCols) {
             return path;
         }
-        if (maze[rowStart][colStart] == '@') {
+        if (maze[startRow][startCol] == '@') {
             return path;
         }
-        // Turn this cell into a wall wo we don't revisit it.
-        maze[rowStart][colStart] = '@';
-
+        maze[startRow][startCol] = '@';
         List<Pair<Integer, Integer>> remainingPath;
-        remainingPath = solveMaze(maze, new Pair<>(rowStart - 1, colStart), exit);
+        remainingPath = solveMaze(maze, new Pair<>(startRow, startCol - 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(rowStart, colStart - 1), exit);
+        remainingPath = solveMaze(maze, new Pair<>(startRow - 1, startCol), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(rowStart + 1, colStart), exit);
+        remainingPath = solveMaze(maze, new Pair<>(startRow, startCol + 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(rowStart, colStart + 1), exit);
+        remainingPath = solveMaze(maze, new Pair<>(startRow + 1, startCol), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
