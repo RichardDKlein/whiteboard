@@ -43,34 +43,34 @@ public class SpiralTraverse2dArray {
 
     private List<Integer> spiralTraverseShell(int[][]a,
             int rowTop, int rowBottom, int colLeft, int colRight) {
-
+        // degenerate case: horizontal vector
         List<Integer> shell = new ArrayList<>();
-        // degenerate case where shell is 1-dimensional
         if (rowTop == rowBottom) {
             for (int col = colLeft; col <= colRight; ++col) {
                 shell.add(a[rowTop][col]);
             }
             return shell;
         }
+        // degenerate case: vertical vector
         if (colLeft == colRight) {
             for (int row = rowTop; row <= rowBottom; ++row) {
                 shell.add(a[row][colLeft]);
             }
             return shell;
         }
-        // top row
+        // top row of shell
         for (int col = colLeft; col < colRight; ++col) {
             shell.add(a[rowTop][col]);
         }
-        // right column
+        // right column of shell
         for (int row = rowTop; row < rowBottom; ++row) {
             shell.add(a[row][colRight]);
         }
-        // bottom row
+        // bottom row of shell
         for (int col = colRight; col > colLeft; --col) {
             shell.add(a[rowBottom][col]);
         }
-        // left column
+        // left column of shell
         for (int row = rowBottom; row > rowTop; --row) {
             shell.add(a[row][colLeft]);
         }
