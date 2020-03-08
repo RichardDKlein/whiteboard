@@ -28,9 +28,8 @@ public class SpiralTraverse2dArray {
      */
     public List<Integer> spiralTraverse2dArray(int[][] a) {
         List<Integer> spiral = new ArrayList<>();
-        int rowTop, rowBottom, colLeft, colRight;
-        for (rowTop = 0, rowBottom = a.length - 1,
-                     colLeft = 0, colRight = a[0].length - 1;
+        for (int rowTop = 0, rowBottom = a.length - 1,
+                colLeft = 0, colRight = a[0].length - 1;
              rowTop <= rowBottom && colLeft <= colRight;
              ++rowTop, --rowBottom, ++colLeft, --colRight) {
 
