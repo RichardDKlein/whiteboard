@@ -68,15 +68,16 @@ public class TrappedWater {
         waterline_ = new int[barHeights_.length];
         for (int i = 0; i < barHeights_.length; ++i) {
             waterline_[i] = Math.min(leftTallest_[i], rightTallest_[i]);
+            if (barHeights_[i] > waterline_[i]) {
+                waterline_[i] = barHeights_[i];
+            }
         }
     }
 
     private int computeTrappedWater() {
         int trappedWater = 0;
         for (int i = 0; i < barHeights_.length; ++i) {
-            if (waterline_[i] > barHeights_[i]) {
-                trappedWater += waterline_[i] - barHeights_[i];
-            }
+            trappedWater += waterline_[i] - barHeights_[i];
         }
         return trappedWater;
     }
