@@ -6,10 +6,10 @@ import java.util.Arrays;
  * Compute the water collected between the bars of a bar graph.
  */
 public class TrappedWater {
-    private static int[] barHeights_;
-    private static int[] leftTallest_;  // height of tallest bar to the left
-    private static int[] rightTallest_; // height of tallest bar to the right
-    private static int[] waterline_;    // waterline at each bar
+    private int[] barHeights_;
+    private int[] leftTallest_; // height of tallest bar to the left
+    private int[] rightTallest_; // height of tallest bar to the right
+    private int[] waterline_; // waterline at each bar
 
     /**
      * Compute the water collected between the bars of a bar graph.
@@ -44,23 +44,23 @@ public class TrappedWater {
 
     private void findLeftTallest() {
         leftTallest_ = new int[barHeights_.length];
-        int leftTallest = -1;
+        int leftTallest = 0;
         for (int i = 0; i < barHeights_.length; ++i) {
+            leftTallest_[i] = leftTallest;
             if (barHeights_[i] > leftTallest) {
                 leftTallest = barHeights_[i];
             }
-            leftTallest_[i] = leftTallest;
         }
     }
 
     private void findRightTallest() {
         rightTallest_ = new int[barHeights_.length];
-        int rightTallest = -1;
+        int rightTallest = 0;
         for (int i = barHeights_.length - 1; i >= 0; --i) {
+            rightTallest_[i] = rightTallest;
             if (barHeights_[i] > rightTallest) {
                 rightTallest = barHeights_[i];
             }
-            rightTallest_[i] = rightTallest;
         }
     }
 
