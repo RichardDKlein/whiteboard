@@ -51,43 +51,39 @@ public class SalesTerritories {
         for (Pair<String, String> cityPair : cityPairs_) {
             String city1 = cityPair.getKey();
             String city2 = cityPair.getValue();
-            CityNode node1 = findOrCreateNode(city1);
-            CityNode node2 = findOrCreateNode(city2);
-            node1.neighbors_.add(node2);
-            node2.neighbors_.add(node1);
+            CityNode cityNode1 = findOrCreateCityNode(city1);
+            CityNode cityNode2 = findOrCreateCityNode(city2);
+            cityNode1.neighbors_.add(cityNode2);
+            cityNode2.neighbors_.add(cityNode1);
         }
     }
 
-    private CityNode findOrCreateNode(String city) {
-        CityNode node = cityMap_.get(city);
-        if (node == null) {
-            node = new CityNode(city);
-            cityMap_.put(city, node);
+    private CityNode findOrCreateCityNode(String city) {
+        CityNode cityNode = cityMap_.get(city);
+        if (cityNode == null) {
+            cityNode = new CityNode(city);
+            cityMap_.put(city, cityNode);
         }
-        return node;
+        return cityNode;
     }
 
     private Set<String> findConnectedCities(CityNode root) {
         // Breadth-First Search (BFS)
         Set<String> territory = new HashSet<>();
-        Queue<CityNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            CityNode node = queue.poll();
-            visited_.add(node);
-            territory.add(node.city_);
-            for (CityNode neighbor : node.neighbors_) {
+        Queue<CityNode> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+        while (!nodeQueue.isEmpty()) {
+            CityNode cityNode = nodeQueue.poll();
+            visited_.add(cityNode);
+            territory.add(cityNode.city_);
+            for (CityNode neighbor : cityNode.neighbors_) {
                 if (!visited_.contains(neighbor)) {
-                    queue.add(neighbor);
+                    nodeQueue.add(neighbor);
                 }
             }
         }
         return territory;
     }
-
-    // ===================================================================
-    // INNER CLASSES
-    // ===================================================================
 
     private static class CityNode {
         String city_;
