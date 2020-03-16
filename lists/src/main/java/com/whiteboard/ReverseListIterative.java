@@ -13,14 +13,14 @@ public class ReverseListIterative<E> {
      * @return The head node of the reversed list.
      */
     public ListNode<E> reverseListIterative(ListNode<E> head) {
-        ListNode<E> rev = null;
+        ListNode<E> reverse = null;
         ListNode<E> curr = head;
         while (curr != null) {
             ListNode<E> next = curr.next;
-            curr.next = rev;
-            rev = curr;
+            curr.next = reverse;
+            reverse = curr;
             curr = next;
         }
-        return rev;
+        return reverse;
     }
 }
