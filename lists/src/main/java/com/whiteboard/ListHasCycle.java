@@ -24,13 +24,13 @@ public class ListHasCycle<E> {
         }
         ListNode<E> slow = head;
         ListNode<E> fast = head.next;
-        while (fast != null) {
-            if (fast == slow) {
-                return true;
-            }
+        while (fast != null && fast != slow) {
             slow = slow.next;
-            fast = (fast.next != null) ? fast.next.next : null;
+            fast = fast.next;
+            if (fast != null) {
+                fast = fast.next;
+            }
         }
-        return false;
+        return fast == slow;
     }
 }
