@@ -17,8 +17,8 @@ public class ReverseDecimalNumber {
         int reverse = 0;
         while (n > 0) {
             int leastSignificantDigit = n % 10;
-            n /= 10;
             reverse = (reverse * 10) + leastSignificantDigit;
+            n /= 10;
         }
         return reverse;
     }
