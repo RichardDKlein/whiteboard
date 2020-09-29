@@ -1,8 +1,9 @@
 package com.whiteboard;
 
-import java.util.*;
+import com.sun.tools.javac.util.Pair;
 
-import javafx.util.Pair;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * In an unsorted array, find pairs of array elements

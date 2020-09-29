@@ -1,8 +1,8 @@
 package com.whiteboard;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.util.Pair;
 
 /**
  * Solve a 2D maze.
@@ -31,18 +31,18 @@ public class SolveMaze {
      * of a path leading from the start to the exit. (If no
      * such path exists, then the list will be empty.)
      */
-    public List<Pair<Integer, Integer>> solveMaze(
+    public List<Point> solveMaze(
             char[][] maze,
-            Pair<Integer, Integer> start,
-            Pair<Integer, Integer> exit) {
+            Point start,
+            Point exit) {
 
-        List<Pair<Integer, Integer>> path = new ArrayList<>();
+        List<Point> path = new ArrayList<>();
         if (start.equals(exit)) {
             path.add(start);
             return path;
         }
-        int startRow = start.getKey();
-        int startCol = start.getValue();
+        int startRow = start.x;
+        int startCol = start.y;
         int numRows = maze.length;
         int numCols = maze[0].length;
         if (startRow < 0 || startCol < 0 || startRow >= numRows || startCol >= numCols) {
@@ -52,26 +52,26 @@ public class SolveMaze {
             return path;
         }
         maze[startRow][startCol] = '@';
-        List<Pair<Integer, Integer>> remainingPath;
-        remainingPath = solveMaze(maze, new Pair<>(startRow, startCol - 1), exit);
+        List<Point> remainingPath;
+        remainingPath = solveMaze(maze, new Point(startRow, startCol - 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(startRow - 1, startCol), exit);
+        remainingPath = solveMaze(maze, new Point(startRow - 1, startCol), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(startRow, startCol + 1), exit);
+        remainingPath = solveMaze(maze, new Point(startRow, startCol + 1), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);
             return path;
         }
-        remainingPath = solveMaze(maze, new Pair<>(startRow + 1, startCol), exit);
+        remainingPath = solveMaze(maze, new Point(startRow + 1, startCol), exit);
         if (!remainingPath.isEmpty()) {
             path.add(start);
             path.addAll(remainingPath);

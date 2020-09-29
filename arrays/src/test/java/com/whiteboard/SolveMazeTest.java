@@ -1,7 +1,8 @@
 package com.whiteboard;
 
+import java.awt.Point;
 import java.util.List;
-import javafx.util.Pair;
+
 import org.junit.jupiter.api.Test;
 
 class SolveMazeTest {
@@ -47,19 +48,18 @@ class SolveMazeTest {
         int rows = maze.length;
         int cols = maze[0].length;
 
-        Pair<Integer, Integer> start = new Pair<>(0, 1);
-        Pair<Integer, Integer> exit = new Pair<>(rows - 1, cols - 2);
+        Point start = new Point(0, 1);
+        Point exit = new Point(rows - 1, cols - 2);
 
         char[][] copy = new char[rows][cols];
         testUtils.copyBitmap(maze, copy);
 
-        List<Pair<Integer, Integer>> path =
-                new SolveMaze().solveMaze(copy, start, exit);
+        List<Point> path = new SolveMaze().solveMaze(copy, start, exit);
 
         System.out.println("\nSolution:\n");
-        for (Pair<Integer, Integer> pair : path) {
-            int row = pair.getKey();
-            int col = pair.getValue();
+        for (Point point : path) {
+            int row = point.x;
+            int col = point.y;
             maze[row][col] = '.';
         }
         testUtils.printBitmap(maze);

@@ -1,7 +1,6 @@
 package com.whiteboard;
 
-import java.util.Arrays;
-import javafx.util.Pair;
+import com.sun.tools.javac.util.Pair;
 
 /**
  * Search a 2D array in which all rows
@@ -36,9 +35,9 @@ public class SearchSorted2dArray {
      *
      * @param a The sorted 2D array to search.
      * @param target The element to search for.
-     * @return A Pair containing the <row, column>
-     *     indices of the element if found, or <-1, -1>
-     *     if the element is not found.
+     * @return A Pair containing the <row, column> indices
+     * of the element if found, or <-1, -1> if the element
+     * is not found.
      */
     public Pair<Integer, Integer>
     searchSorted2dArray(int[][] a, int target) {

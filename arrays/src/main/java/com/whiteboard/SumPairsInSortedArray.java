@@ -1,10 +1,9 @@
 package com.whiteboard;
 
-import java.util.Arrays;
+import com.sun.tools.javac.util.Pair;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import javafx.util.Pair;
 
 /**
  * In a sorted (in increasing order) array, find

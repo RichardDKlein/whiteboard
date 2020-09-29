@@ -1,12 +1,9 @@
+package com.whiteboard;
+
 /**
  * Rotate a 2D array 90 degrees in the clockwise direction,
  * IN PLACE.
  */
-
-package com.whiteboard;
-
-import java.util.Arrays;
-
 public class Rotate2dArray {
     /**
      * Rotate a 2D array 90 degrees in the clockwise direction,

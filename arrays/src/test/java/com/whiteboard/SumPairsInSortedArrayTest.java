@@ -2,7 +2,8 @@ package com.whiteboard;
 
 import java.util.Arrays;
 import java.util.Set;
-import javafx.util.Pair;
+
+import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 class SumPairsInSortedArrayTest {
@@ -20,8 +21,8 @@ class SumPairsInSortedArrayTest {
                 .sumPairsInSortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.getKey();
-            int p2 = pair.getValue();
+            int p1 = pair.fst;
+            int p2 = pair.snd;
             assert(p1 + p2 == sum);
             System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
         }

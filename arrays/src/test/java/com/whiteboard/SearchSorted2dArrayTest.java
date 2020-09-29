@@ -1,7 +1,8 @@
 package com.whiteboard;
 
 import java.util.Arrays;
-import javafx.util.Pair;
+
+import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 class SearchSorted2dArrayTest {
@@ -31,7 +32,7 @@ class SearchSorted2dArrayTest {
                 Pair<Integer, Integer> loc =
                         instance.searchSorted2dArray(a, target);
                 System.out.println("target = " + target + ", row = " +
-                        loc.getKey() + ", col = " + loc.getValue());
+                        loc.fst + ", col = " + loc.snd);
             }
         }
 
@@ -39,6 +40,6 @@ class SearchSorted2dArrayTest {
         Pair<Integer, Integer> loc =
                 instance.searchSorted2dArray(a, target);
         System.out.println("target = " + target + ", row = " +
-                loc.getKey() + ", col = " + loc.getValue());
+                loc.fst + ", col = " + loc.snd);
     }
 }

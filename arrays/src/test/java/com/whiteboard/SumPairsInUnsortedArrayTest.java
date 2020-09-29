@@ -1,6 +1,6 @@
 package com.whiteboard;
 
-import javafx.util.Pair;
+import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -33,12 +33,12 @@ class SumPairsInUnsortedArrayTest {
 
         int sum = 12;
 
-        SumPairsInUnsortedArray instance = new SumPairsInUnsortedArray();
-        Set<Pair<Integer, Integer>> pairs = instance.sumPairsInUnsortedArray(a, sum);
+        Set<Pair<Integer, Integer>> pairs =
+                SumPairsInUnsortedArray.sumPairsInUnsortedArray(a, sum);
 
         for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.getKey();
-            int p2 = pair.getValue();
+            int p1 = pair.fst;
+            int p2 = pair.snd;
             assert(p1 + p2 == sum);
             System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
         }
