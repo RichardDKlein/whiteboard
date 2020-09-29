@@ -1,6 +1,6 @@
 package com.whiteboard;
 
-import javafx.util.Pair;
+import sun.jvm.hotspot.utilities.Interval;
 
 /**
  * In an array of positive and negative integers, find
@@ -46,7 +46,7 @@ public class MaxSubarray {
      * @return A pair of integers containing the starting
      * and ending indices of the maximum subarray.
      */
-    public Pair<Integer, Integer> maxSubarray(int[] a) {
+    public Interval maxSubarray(int[] a) {
         int start, maxStart, end, maxEnd, sum, maxSum;
         start = maxStart = end = maxEnd = 0;
         sum = maxSum = a[0];
@@ -64,6 +64,6 @@ public class MaxSubarray {
                 maxEnd = end;
             }
         }
-        return new Pair<>(maxStart, maxEnd);
+        return new Interval(maxStart, maxEnd);
     }
 }

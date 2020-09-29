@@ -24,7 +24,7 @@ public class ShuffleList<E> {
         }
     }
 
-    int randomInInterval(int min, int max) {
+    static int randomInInterval(int min, int max) {
         return (int)Math.round((max - min) * Math.random() + min);
     }
 

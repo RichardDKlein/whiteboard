@@ -1,9 +1,8 @@
 package com.whiteboard;
 
+import java.awt.Point;
 import java.util.LinkedList;
 import java.util.Queue;
-
-import javafx.util.Pair;
 
 /**
  * Implement the "flood fill" algorithm to fill a region
@@ -33,14 +32,14 @@ public class FloodFillBreadthFirstSearch {
     public void floodFillBreadthFirstSearch(
             char[][] a, int seedRow, int seedCol) {
 
-        Queue<Pair<Integer, Integer>> seedQueue = new LinkedList<>();
+        Queue<Point> seedQueue = new LinkedList<>();
         int numRows = a.length;
         int numCols = a[0].length;
-        seedQueue.add(new Pair<>(seedRow, seedCol));
+        seedQueue.add(new Point(seedCol, seedRow));
         while (!seedQueue.isEmpty()) {
-            Pair<Integer, Integer> seed = seedQueue.poll();
-            int row = seed.getKey();
-            int col = seed.getValue();
+            Point seed = seedQueue.poll();
+            int row = seed.y;
+            int col = seed.x;
             if (row < 0 || col < 0 || row >= numRows || col >= numCols) {
                 continue;
             }
@@ -48,10 +47,10 @@ public class FloodFillBreadthFirstSearch {
                 continue;
             }
             a[row][col] = '@';
-            seedQueue.add(new Pair<>(row, col - 1));
-            seedQueue.add(new Pair<>(row - 1, col));
-            seedQueue.add(new Pair<>(row, col + 1));
-            seedQueue.add(new Pair<>(row + 1, col));
+            seedQueue.add(new Point(col - 1, row));
+            seedQueue.add(new Point(col, row - 1));
+            seedQueue.add(new Point(col + 1, row));
+            seedQueue.add(new Point(col, row + 1));
         }
     }
 }

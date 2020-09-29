@@ -46,11 +46,11 @@ public class ArrayHopscotch {
         if (iStart < 0 || iStart > a.length - 1) {
             return winningHops;
         }
-        if (a[iStart] == 0) {
-            winningHops.add(iStart);
+        if (visitedIndices_.contains(iStart)) {
             return winningHops;
         }
-        if (visitedIndices_.contains(iStart)) {
+        if (a[iStart] == 0) {
+            winningHops.add(iStart);
             return winningHops;
         }
         visitedIndices_.add(iStart);
