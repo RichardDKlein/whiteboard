@@ -1,7 +1,8 @@
 package com.whiteboard;
 
+import com.sun.tools.javac.util.Pair;
+
 import java.util.*;
-import javafx.util.Pair;
 
 /**
  * Given a list of city pairs, where each pair denotes that
@@ -49,8 +50,8 @@ public class SalesTerritories {
 
     private void buildCityMap() {
         for (Pair<String, String> cityPair : cityPairs_) {
-            String city1 = cityPair.getKey();
-            String city2 = cityPair.getValue();
+            String city1 = cityPair.fst;
+            String city2 = cityPair.snd;
             CityNode cityNode1 = findOrCreateCityNode(city1);
             CityNode cityNode2 = findOrCreateCityNode(city2);
             cityNode1.neighbors_.add(cityNode2);

@@ -1,5 +1,7 @@
 package com.whiteboard;
 
+import com.sun.tools.javac.util.Pair;
+
 import java.util.*;
 
 /**
@@ -10,7 +12,8 @@ public class TopKStrings {
     private List<String> strings_;
     private int k_;
     private Map<String, Integer> stringCount_ = new HashMap<>();
-    private PriorityQueue<Pair<String, Integer>> minHeap_ = new PriorityQueue<>(new PairComparator());
+    private PriorityQueue<Pair<String, Integer>> minHeap_ =
+            new PriorityQueue<>(new PairComparator());
 
     /**
      * Find the 'k' most frequently occurring strings in a list of
@@ -47,7 +50,7 @@ public class TopKStrings {
                 while (minHeap_.size() > k_) {
                     minHeap_.poll();
                 }
-                min = minHeap_.peek().getValue();
+                min = minHeap_.peek().snd;
             }
         }
     }
@@ -67,7 +70,7 @@ public class TopKStrings {
     private static class PairComparator implements Comparator<Pair<String, Integer>> {
         @Override
         public int compare(Pair<String, Integer> o1, Pair<String, Integer> o2) {
-            return o1.getValue() - o2.getValue();
+            return o1.snd - o2.snd;
         }
     }
 }

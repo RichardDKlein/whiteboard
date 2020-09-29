@@ -2,8 +2,8 @@ package com.whiteboard;
 
 import java.util.ArrayList;
 import java.util.List;
-import javafx.util.Pair;
 
+import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 class TopKStringsTest {
@@ -51,10 +51,11 @@ class TopKStringsTest {
                 new TopKStrings().topKStrings(strings, 10);
         System.out.println("Top 10 words in Gettysburg Address:");
         for (int i = 0; i < 10; ++i) {
-            System.out.println(i + 1 + ". " + topTen.get(i).getKey() +
-                    "\t(" + topTen.get(i).getValue() + " occurrences)");
+            System.out.println(i + 1 + ". " + topTen.get(i).fst +
+                    "\t(" + topTen.get(i).snd + " occurrences)");
         }
     }
+
     private List<String> parseTextIntoLowerCaseWords(String text) {
         List<String> strings = new ArrayList<>();
         String[] words = text.split("[,.\\- ]+");

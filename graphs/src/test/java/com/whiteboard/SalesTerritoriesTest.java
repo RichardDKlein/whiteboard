@@ -2,8 +2,8 @@ package com.whiteboard;
 
 import java.util.HashSet;
 import java.util.Set;
-import javafx.util.Pair;
 
+import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 class SalesTerritoriesTest {
@@ -38,8 +38,8 @@ class SalesTerritoriesTest {
 
         System.out.println("City pairs = ");
         for (Pair<String, String> cityPair : cityPairs) {
-            System.out.println("\t(" + cityPair.getKey() +
-                    ", " + cityPair.getValue() + ")");
+            System.out.println("\t(" + cityPair.fst +
+                    ", " + cityPair.snd + ")");
         }
         System.out.println();
 
