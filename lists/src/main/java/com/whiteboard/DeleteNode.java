@@ -1,13 +1,13 @@
 package com.whiteboard;
 
 /**
- * Delete a node from a singly-linked list, given only a pointer
+ * Delete a node from a singly-linked list, given only a reference
  * to the node to be deleted.
  */
 public class DeleteNode<E> {
     /**
      * Delete a node from a singly-linked list, given only a
-     * pointer to the node to be deleted.
+     * reference to the node to be deleted.
      *
      * This seemingly impossible feat is accomplished by copying
      * the next node into the node to be deleted, effectively
