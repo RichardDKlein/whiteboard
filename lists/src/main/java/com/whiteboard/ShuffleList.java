@@ -19,16 +19,16 @@ public class ShuffleList<E> {
      */
     public void shuffleList(List<E> list) {
         for (int i = 0; i < list.size() - 1; ++i) {
-            int j = randomInInterval(i + 1, list.size() - 1);
-            swapElements(list, i, j);
+            int j = randomIntInInterval(i + 1, list.size() - 1);
+            swapListElements(list, i, j);
         }
     }
 
-    static int randomInInterval(int min, int max) {
-        return (int)Math.round((max - min) * Math.random() + min);
+    static int randomIntInInterval(int min, int max) {
+        return (int)Math.round(Math.random() * (max - min) + min);
     }
 
-    void swapElements(List<E> list, int i, int j) {
+    private void swapListElements(List<E> list, int i, int j) {
         E tmp = list.get(i);
         list.set(i, list.get(j));
         list.set(j, tmp);
