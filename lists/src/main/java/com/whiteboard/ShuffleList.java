@@ -3,11 +3,11 @@ package com.whiteboard;
 import java.util.List;
 
 /**
- * Shuffle a list.
+ * ShuffleList a list.
  */
-public class Shuffle<E> {
+public class ShuffleList<E> {
     /**
-     * Shuffle a list, as if it represented a deck of card.
+     * ShuffleList a list, as if it represented a deck of card.
      *
      * Algorithm: Iterate thru the list, swapping each element
      * with an element randomly chosen from the list elements

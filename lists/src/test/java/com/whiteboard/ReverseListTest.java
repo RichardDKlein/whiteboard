@@ -2,19 +2,19 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-class ReverseTest {
+class ReverseListTest {
 
     @Test
     void reverseListIterative() {
         System.out.println();
-        System.out.println("Test Reverse:");
+        System.out.println("Test ReverseList:");
         System.out.println("==========================");
 
         ListNode<Character> list = null;
         System.out.println("Original list:");
         TestUtils<Character> testUtils = new TestUtils<>();
         testUtils.printList(list);
-        Reverse<Character> instance = new Reverse<>();
+        ReverseList<Character> instance = new ReverseList<>();
         ListNode<Character> rev = instance.reverseListIterative(list);
         System.out.println("\nReversed list:");
         testUtils.printList(rev);

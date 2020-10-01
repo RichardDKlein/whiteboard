@@ -2,7 +2,7 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-public class DeleteNodeTest {
+public class DeleteNodeFromListTest {
     private ListNode<Character> aNode = new ListNode<>();
     private ListNode<Character> bNode = new ListNode<>();
     private ListNode<Character> cNode = new ListNode<>();
@@ -14,10 +14,10 @@ public class DeleteNodeTest {
     @Test
     void deleteNode() {
         System.out.println();
-        System.out.println("Test DeleteNode:");
+        System.out.println("Test DeleteNodeFromList:");
         System.out.println("================");
 
-        DeleteNode<Character> instance = new DeleteNode<>();
+        DeleteNodeFromList<Character> instance = new DeleteNodeFromList<>();
         boolean result;
 
         System.out.println("\nOriginal list:");

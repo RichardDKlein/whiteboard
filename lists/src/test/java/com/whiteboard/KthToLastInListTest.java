@@ -2,13 +2,13 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-class HasCycleTest {
+class KthToLastInListTest {
 
     @Test
-    void listHasCycle() {
+    void kthToLastInList() {
         System.out.println();
-        System.out.println("Test HasCycle:");
-        System.out.println("==================");
+        System.out.println("Test KthToLastInList:");
+        System.out.println("=====================");
 
         ListNode<Character> aNode = new ListNode<>();
         ListNode<Character> bNode = new ListNode<>();
@@ -29,12 +29,12 @@ class HasCycleTest {
         TestUtils<Character> testUtils = new TestUtils<>();
         testUtils.printList(aNode);
 
-        HasCycle<Character> instance = new HasCycle<>();
+        KthToLastInList<Character> instance = new KthToLastInList<>();
 
-        System.out.println("Has cycle = " + instance.listHasCycle(aNode));
-
-        gNode.next = cNode;
-        testUtils.printList(aNode, 22);
-        System.out.println("Has cycle = " + instance.listHasCycle(aNode));
+        for (int k = 1; k <= 8; ++k) {
+            ListNode<Character> kthToLast = instance.kthToLastInList(aNode, k);
+            System.out.println("kth to last element (k = " + k + ") is " +
+                    ((kthToLast != null) ? kthToLast.data : "undefined"));
+        }
     }
 }

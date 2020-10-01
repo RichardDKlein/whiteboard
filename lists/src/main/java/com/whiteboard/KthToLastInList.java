@@ -3,7 +3,7 @@ package com.whiteboard;
 /**
  * Find the kth to last element in a singly-linked list.
  */
-public class KthToLast<E> {
+public class KthToLastInList<E> {
     /**
      * Find the kth to last element in a singly-linked list.
      *

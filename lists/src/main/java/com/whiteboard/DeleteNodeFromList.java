@@ -4,7 +4,7 @@ package com.whiteboard;
  * Delete a node from a singly-linked list, given only a reference
  * to the node to be deleted.
  */
-public class DeleteNode<E> {
+public class DeleteNodeFromList<E> {
     /**
      * Delete a node from a singly-linked list, given only a
      * reference to the node to be deleted.

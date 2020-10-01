@@ -23,8 +23,8 @@ class SumPairsInUnsortedArrayTest {
             list.add(integer);
         }
 
-        Shuffle<Integer> shuffle = new Shuffle<>();
-        shuffle.shuffleList(list);
+        ShuffleList<Integer> shuffleList = new ShuffleList<>();
+        shuffleList.shuffleList(list);
         for (int i = 0; i < a.length; ++i) {
             a[i] = list.get(i);
         }
