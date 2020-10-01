@@ -9,7 +9,8 @@ import java.util.*;
 public class PowerSetIterative<E> {
     /**
      * Compute the power set of a set, i.e. the set of all subsets of
-     * that set, using an iterative approach.
+     * that set, using an iterative approach. (Assume that the size of
+     * the set does not exceed the number of bits in an integer.)
      *
      * We know that a set 's' with 'n' elements has (2 ** n) subsets.
      * So we just count from 0 to (2 ** n) - 1, using the bit pattern
@@ -22,9 +23,9 @@ public class PowerSetIterative<E> {
         int numSubsets = (int)Math.pow(2, set.size());
         for (int i = 0; i < numSubsets; ++i) {
             Set<E> subset = new HashSet<>();
-            for (int bit = 0; bit < set.size(); ++bit) {
-                if ((i & (1 << bit)) != 0) {
-                    subset.add(elements.get(bit));
+            for (int bitNum = 0; bitNum < set.size(); ++bitNum) {
+                if ((i & (1 << bitNum)) != 0) {
+                    subset.add(elements.get(bitNum));
                 }
             }
             powerSet.add(subset);
