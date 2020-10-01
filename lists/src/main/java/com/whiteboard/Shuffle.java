@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Shuffle a list.
  */
-public class ShuffleList<E> {
+public class Shuffle<E> {
     /**
      * Shuffle a list, as if it represented a deck of card.
      *

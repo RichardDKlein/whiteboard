@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Remove duplicates from a singly-linked list.
  */
-public class RemoveDupsFromList<E> {
+public class RemoveDups<E> {
     /**
      * Remove duplicates from a singly-linked list.
      * @param head The list of interest.

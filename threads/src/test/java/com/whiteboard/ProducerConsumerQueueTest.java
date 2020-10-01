@@ -51,7 +51,7 @@ class ProducerConsumerQueueTest {
                 queue_.produce(item);
                 System.out.println("Producer " + id_ + " produced " + item);
                 try {
-                    sleep(ShuffleList.randomInInterval(100, 500));
+                    sleep(Shuffle.randomInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -72,7 +72,7 @@ class ProducerConsumerQueueTest {
                 String item = queue_.consume();
                 System.out.println("Consumer " + id_ + " consumed " + item);
                 try {
-                    sleep(ShuffleList.randomInInterval(100, 500));
+                    sleep(Shuffle.randomInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

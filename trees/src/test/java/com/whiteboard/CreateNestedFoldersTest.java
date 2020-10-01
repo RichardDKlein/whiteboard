@@ -42,7 +42,7 @@ class CreateNestedFoldersTest {
             folderList.add(folder);
         }
 
-        new ShuffleList<CreateNestedFolders.Folder>().shuffleList(folderList);
+        new Shuffle<CreateNestedFolders.Folder>().shuffleList(folderList);
         List<CreateNestedFolders.Folder> reorderedList =
                 new CreateNestedFolders().createNestedFolders(folderList);
         System.out.println("Creation order:");

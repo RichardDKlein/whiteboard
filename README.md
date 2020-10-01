@@ -64,11 +64,11 @@ in one week.
 ### Thursday
 - **lists**
     1. DeleteNode
-    2. KthToLastInList
+    2. KthToLast
     3. ListHasCycle
-    4. RemoveDupsFromList
-    5. ReverseListIterative
-    6. ShuffleList
+    4. RemoveDups
+    5. Reverse
+    6. Shuffle
     
 - **sets**
     7. PowerSetIterative

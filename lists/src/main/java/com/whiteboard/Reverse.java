@@ -3,7 +3,7 @@ package com.whiteboard;
 /**
  * Reverse a singly-linked list in place.
  */
-public class ReverseList<E> {
+public class Reverse<E> {
     /**
      * Reverse a singly-linked list in place.
      *

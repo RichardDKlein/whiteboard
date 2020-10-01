@@ -2,12 +2,12 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-class RemoveDupsFromListTest {
+class RemoveDupsTest {
 
     @Test
     void removeDupsFromList() {
         System.out.println();
-        System.out.println("Test RemoveDupsFromList:");
+        System.out.println("Test RemoveDups:");
         System.out.println("========================");
 
         ListNode<Character> a1Node = new ListNode<>();
@@ -41,7 +41,7 @@ class RemoveDupsFromListTest {
         TestUtils<Character> testUtils = new TestUtils<>();
         testUtils.printList(a1Node);
         System.out.println("Removing duplicates:");
-        new RemoveDupsFromList<Character>().removeDupsFromList(a1Node);
+        new RemoveDups<Character>().removeDupsFromList(a1Node);
         testUtils.printList(a1Node);
     }
 }

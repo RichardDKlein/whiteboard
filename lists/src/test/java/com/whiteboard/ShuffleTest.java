@@ -1,20 +1,19 @@
 package com.whiteboard;
 
-import com.whiteboard.ShuffleList;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class ShuffleListTest {
+class ShuffleTest {
 
     @Test
     void shuffleList() {
         final int NUM_CARDS = 52;
 
         System.out.println();
-        System.out.println("Test ShuffleList:");
+        System.out.println("Test Shuffle:");
         System.out.println("==================");
 
         List<Integer> deck = new ArrayList<>();
@@ -23,7 +22,7 @@ class ShuffleListTest {
         }
 
         System.out.println("Unshuffled deck = " + Arrays.toString(deck.toArray()));
-        ShuffleList<Integer> instance = new ShuffleList<>();
+        Shuffle<Integer> instance = new Shuffle<>();
         for (int i = 0; i < 10; i++) {
             instance.shuffleList(deck);
             System.out.println("Shuffled   deck = " + Arrays.toString(deck.toArray()));
