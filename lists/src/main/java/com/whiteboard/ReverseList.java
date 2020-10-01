@@ -1,13 +1,11 @@
 package com.whiteboard;
 
 /**
- * Reverse a singly-linked list in place, using an iterative
- * approach.
+ * Reverse a singly-linked list in place.
  */
-public class ReverseListIterative<E> {
+public class ReverseList<E> {
     /**
-     * Reverse a singly-linked list in place, using an iterative
-     * approach.
+     * Reverse a singly-linked list in place.
      *
      * @param head The head node of the list to be reversed.
      * @return The head node of the reversed list.
