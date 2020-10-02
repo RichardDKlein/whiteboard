@@ -67,7 +67,8 @@ public class TopKStrings {
     // INNER CLASSES
     // ===================================================================
 
-    private static class PairComparator implements Comparator<Pair<String, Integer>> {
+    private static class PairComparator implements
+            Comparator<Pair<String, Integer>> {
         @Override
         public int compare(Pair<String, Integer> o1, Pair<String, Integer> o2) {
             return o1.snd - o2.snd;
