@@ -90,6 +90,13 @@ in one week.
     8. ProducerConsumerQueue
     
 ### Weekend
+- **trees**
+    9. CreateBinarySearchTreeFromSortedList
+    10. CreateNestedFolders
+    11. IsBinarySearchTree
+    12. TraverseBinaryTreeBreadthFirst
+    13. TraverseBinaryTreeInOrder
+
 - **strings**
     1. FindSubstring
     2. LongestPalindromicSubstring
@@ -99,10 +106,3 @@ in one week.
     6. ReverseWordsInSentence
     7. StringsArePermutations
     8. TopKStrings
-
-- **treees**
-    9. CreateBinarySearchTreeFromSortedList
-    10. CreateNestedFolders
-    11. IsBinarySearchTree
-    12. TraverseBinaryTreeBreadthFirst
-    13. TraverseBinaryTreeInOrder
