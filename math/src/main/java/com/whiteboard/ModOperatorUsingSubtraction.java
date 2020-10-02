@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Implement the modulo operator, using subtraction instead of division.
  */
-public class ModOperatorUsingSubtraction {
+public final class ModOperatorUsingSubtraction {
+    private ModOperatorUsingSubtraction() {
+    }
+
     /**
      * Implement the modulo operator, using subtraction instead of division.
      *
@@ -21,7 +24,7 @@ public class ModOperatorUsingSubtraction {
      * @param divisor The integer being divided into the dividend.
      * @return An integer equal to (dividend % divisor).
      */
-    public int modOperatorUsingSubtraction(int dividend, int divisor) {
+    public static int modOperatorUsingSubtraction(int dividend, int divisor) {
         if (dividend < divisor) {
             return dividend;
         }

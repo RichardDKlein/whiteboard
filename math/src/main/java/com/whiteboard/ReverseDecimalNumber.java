@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Reverse the digits of a decimal number.
  */
-public class ReverseDecimalNumber {
+public final class ReverseDecimalNumber {
+    private ReverseDecimalNumber() {
+    }
+
     /**
      * Reverses the digits of a decimal number.
      *
@@ -13,7 +16,7 @@ public class ReverseDecimalNumber {
      * @param n The decimal number (positive integer) to reverse.
      * @return An integer equal to n with its digits reversed.
      */
-    public int reverseDecimalNumber(int n) {
+    public static int reverseDecimalNumber(int n) {
         int reverse = 0;
         while (n > 0) {
             int onesDigit = n % 10;

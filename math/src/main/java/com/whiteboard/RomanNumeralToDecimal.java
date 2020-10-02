@@ -6,7 +6,10 @@ import java.util.Map;
 /**
  * Convert a Roman numeral to decimal.
  */
-public class RomanNumeralToDecimal {
+public final class RomanNumeralToDecimal {
+    private RomanNumeralToDecimal() {
+    }
+
     /**
      * Converts a Roman numeral to decimal.
      *
@@ -31,18 +34,20 @@ public class RomanNumeralToDecimal {
         map.put('D', 500);
         map.put('M', 1000);
 
-        char nextRomanDigit = roman.charAt(roman.length() - 1);
-        int nextDecimalValue = map.get(nextRomanDigit);
-        int decimal = nextDecimalValue;
-        for (int i = roman.length() - 2; i >= 0; --i) {
-            char currRomanDigit = roman.charAt(i);
-            int currDecimalValue = map.get(currRomanDigit);
-            if (currDecimalValue < nextDecimalValue) {
-                decimal -= currDecimalValue;
+        int decimal = 0;
+
+        char nextDigitRoman = roman.charAt(roman.length() - 1);
+        int nextDigitDecimal = map.get(nextDigitRoman);
+
+        for (int i = roman.length() - 1; i >= 0; --i) {
+            char currDigitRoman = roman.charAt(i);
+            int currDigitDecimal = map.get(currDigitRoman);
+            if (currDigitDecimal < nextDigitDecimal) {
+                decimal -= currDigitDecimal;
             } else {
-                decimal += currDecimalValue;
+                decimal += currDigitDecimal;
             }
-            nextDecimalValue = currDecimalValue;
+            nextDigitDecimal = currDigitDecimal;
         }
         return decimal;
     }

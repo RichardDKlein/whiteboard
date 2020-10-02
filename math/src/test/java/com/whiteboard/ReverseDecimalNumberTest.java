@@ -9,13 +9,13 @@ class ReverseDecimalNumberTest {
         System.out.println("Test ReverseDecimalNumber:");
         System.out.println("==========================");
 
-        int[] n = {0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678};
-
-        ReverseDecimalNumber instance = new ReverseDecimalNumber();
+        int[] n        = {0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678};
+        int[] expected = {0, 1, 21, 321, 4321, 54321, 654321, 7654321, 87654321};
 
         for (int i = 0; i < n.length; ++i) {
-            System.out.println(n[i] + " reversed = "
-                    + instance.reverseDecimalNumber(n[i]));
+            int reversed = ReverseDecimalNumber.reverseDecimalNumber(n[i]);
+            assert(reversed == expected[i]);
+            System.out.println(n[i] + " reversed = " + reversed);
         }
     }
 }

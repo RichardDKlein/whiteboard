@@ -17,13 +17,20 @@ class SubstringsStartingAndEndingWith1Test {
                 "1001001001",
         };
 
-        SubstringsStartingAndEndingWith1 instance =
-                new SubstringsStartingAndEndingWith1();
+        int[] expected = {
+                0,
+                0,
+                1,
+                3,
+                6
+        };
 
         for (int i = 0; i < s.length; ++i) {
-            System.out.println("String: " + s[i]
-                    + ", Number of substrings starting and ending with '1': "
-                    + instance.substringsStartingAndEndingWith1(s[i]));
+            int numSubstrings = SubstringsStartingAndEndingWith1.
+                    substringsStartingAndEndingWith1(s[i]);
+            assert(numSubstrings == expected[i]);
+            System.out.println("String: " + s[i] + ", Number of substrings " +
+                    "starting and ending with '1': " + numSubstrings);
         }
     }
 }

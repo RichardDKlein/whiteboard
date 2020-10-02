@@ -15,11 +15,16 @@ class RomanNumeralToDecimalTest {
                 "MMXIX"
         };
 
-        RomanNumeralToDecimal instance = new RomanNumeralToDecimal();
+        int[] expected = new int[] {
+                1944,
+                1968,
+                2019
+        };
 
-        for (String roman : romans) {
-            System.out.println("roman = " + roman + ", decimal = "
-                    + instance.romanNumeralToDecimal(roman));
+        for (int i = 0; i < romans.length; ++i) {
+            int decimal = RomanNumeralToDecimal.romanNumeralToDecimal(romans[i]);
+            assert(decimal == expected[i]);
+            System.out.println("roman = " + romans[i] + ", decimal = " + decimal);
         }
     }
 }
