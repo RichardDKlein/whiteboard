@@ -12,37 +12,37 @@ import java.util.Queue;
  * interface.
  */
 public class ProducerConsumerQueue<E> {
-    private Queue<E> queue_ = new LinkedList<>();
-    int capacity_;
+    Queue<E> queue = new LinkedList<>();
+    int capacity;
 
     ProducerConsumerQueue(int capacity) {
-        capacity_ = capacity;
+        this.capacity = capacity;
     }
 
-    public synchronized void produce(E item) {
-        while (queue_.size() >= capacity_) {
+    public synchronized void produce(E element) {
+        while (queue.size() >= capacity) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        queue_.add(item);
-        // Notify consumers that the queue is non-empty.
+        queue.add(element);
+        // notify consumers waiting for queue to be non-empty
         notifyAll();
     }
 
     public synchronized E consume() {
-        while (queue_.isEmpty()) {
+        while (queue.isEmpty()) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        E item = queue_.poll();
-        // Notify producers that the queue is non-full.
+        E element = queue.poll();
+        // notify producers waiting for queue to be non-full
         notifyAll();
-        return item;
+        return element;
     }
 }
