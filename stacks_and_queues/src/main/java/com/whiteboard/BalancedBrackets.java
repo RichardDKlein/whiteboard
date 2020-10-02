@@ -6,7 +6,10 @@ import java.util.*;
  * Determine whether, in an expression containing various kinds
  * of brackets, the brackets are properly balanced and nested.
  */
-public class BalancedBrackets {
+public final class BalancedBrackets {
+    private BalancedBrackets() {
+    }
+
     /**
      * Determine whether, in an expression containing various
      * kinds of brackets, the brackets are properly balanced
@@ -27,13 +30,14 @@ public class BalancedBrackets {
      * ('false') the brackets in the expression are properly
      * balanced and nested.
      */
-    public boolean balancedBrackets(String expression) {
+    public static boolean balancedBrackets(String expression) {
         Map<Character, Character> bracketMap = new HashMap<>();
         bracketMap.put('(', ')');
         bracketMap.put('[', ']');
         bracketMap.put('{', '}');
 
         Stack<Character> openBracketStack = new Stack<>();
+
         for (int i = 0; i < expression.length(); ++i) {
             char c = expression.charAt(i);
             if (bracketMap.containsKey(c)) {
