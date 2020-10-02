@@ -15,10 +15,19 @@ class ReversePolishTest {
                 "3,4,+,1,-,5,*",
                 "3,4,+,1,-,5,*,10,/"
         };
-        for (String expression : expressions) {
-            System.out.println("expression: " + expression);
-            System.out.println("value: " + new ReversePolish()
-                    .reversePolish(expression));
+
+        int[] expected = {
+                7,
+                6,
+                30,
+                3
+        };
+
+        for (int i = 0; i < expressions.length; ++i) {
+            int value = ReversePolish.reversePolish(expressions[i]);
+            assert(value == expected[i]);
+            System.out.println("expression: " + expressions[i]);
+            System.out.println("value: " + value);
         }
     }
 }

@@ -8,7 +8,10 @@ import java.util.Stack;
 /**
  * Evaluate an expression that is in Reverse Polish Notation.
  */
-public class ReversePolish {
+public final class ReversePolish {
+    private ReversePolish() {
+    }
+
     /**
      * Evaluate an expression that is in Reverse Polish Notation.
      *
@@ -17,26 +20,34 @@ public class ReversePolish {
      *                   of the arithmetic operators +, -, *, or /.
      * @return An integer representing the value of the expression.
      */
-    public int reversePolish(String expression) {
-        Set<String> operators = new HashSet<>(Arrays.asList("+", "-", "*", "/"));
+    public static int reversePolish(String expression) {
+        Set<String> operators = new HashSet<>();
+        operators.add("+");
+        operators.add("-");
+        operators.add("*");
+        operators.add("/");
+
         Stack<Integer> stack = new Stack<>();
+
         String[] tokens = expression.split(",");
         for (String token : tokens) {
             if (operators.contains(token)) {
-                int secondOperand = stack.pop();
-                int firstOperand = stack.pop();
+                int operand2 = stack.pop();
+                int operand1 = stack.pop();
                 switch (token) {
                     case "+":
-                        stack.push(firstOperand + secondOperand);
+                        stack.push(operand1 + operand2);
                         break;
                     case "-":
-                        stack.push(firstOperand - secondOperand);
+                        stack.push(operand1 - operand2);
                         break;
                     case "*":
-                        stack.push(firstOperand * secondOperand);
+                        stack.push(operand1 * operand2);
                         break;
                     case "/":
-                        stack.push(firstOperand / secondOperand);
+                        stack.push(operand1 / operand2);
+                        break;
+                    default:
                         break;
                 }
             } else {
