@@ -15,11 +15,17 @@ class ReverseWordsInSentenceTest {
                 "to come to the aid of their country."
         };
 
-        ReverseWordsInSentence instance = new ReverseWordsInSentence();
+        String[] expected = {
+                "woN si eht emit",
+                " rof lla doog nem   ",
+                "ot emoc ot eht dia fo rieht .yrtnuoc"
+        };
 
-        for (String sentence : testSentences) {
-            String reverse = instance.reverseWordsInSentence(sentence);
-            System.out.println("reverseWordsInSentence(\"" + sentence
+        for (int i = 0; i < testSentences.length; ++i) {
+            String reverse = ReverseWordsInSentence.
+                    reverseWordsInSentence(testSentences[i]);
+            assert(reverse.equals(expected[i]));
+            System.out.println("reverseWordsInSentence(\"" + testSentences[i]
                     + "\") = \"" + reverse + "\"");
         }
     }

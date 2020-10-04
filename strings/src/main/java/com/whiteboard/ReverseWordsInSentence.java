@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Reverse the words in a sentence.
  */
-public class ReverseWordsInSentence {
+public final class ReverseWordsInSentence {
+    private ReverseWordsInSentence() {
+    }
+
     /**
      * Reverse the words in a sentence.
      *
@@ -11,7 +14,7 @@ public class ReverseWordsInSentence {
      * @return A copy of the given sentence, but with the words
      * reversed.
      */
-    public String reverseWordsInSentence(String sentence) {
+    public static String reverseWordsInSentence(String sentence) {
         char[] buf = sentence.toCharArray();
         int i = 0;
         while (i < buf.length) {
@@ -26,29 +29,25 @@ public class ReverseWordsInSentence {
         return new String(buf);
     }
 
-    private int findStartOfNextWord(char[] buf, int i) {
-        while (i < buf.length) {
-            if (Character.isAlphabetic(buf[i])) {
+    private static int findStartOfNextWord(char[] buf, int startingFrom) {
+        for (int i = startingFrom; i < buf.length; ++i) {
+            if (!Character.isWhitespace(buf[i])) {
                 return i;
-            } else {
-                ++i;
             }
         }
         return -1;
     }
 
-    private int findEndOfNextWord(char[] buf, int i) {
-        while (i < buf.length) {
-            if (!Character.isAlphabetic(buf[i])) {
+    private static int findEndOfNextWord(char[] buf, int startingFrom) {
+        for (int i = startingFrom; i < buf.length; ++i) {
+            if (Character.isWhitespace(buf[i])) {
                 return i - 1;
-            } else {
-                ++i;
             }
         }
         return buf.length - 1;
     }
 
-    void reverseWord(char[] buf, int iStartWord, int iEndWord) {
+    private static void reverseWord(char[] buf, int iStartWord, int iEndWord) {
         int left = iStartWord;
         int right = iEndWord;
         while (left < right) {
