@@ -2,9 +2,7 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class ParseStringIntoWordsTest {
     @Test
@@ -49,11 +47,48 @@ class ParseStringIntoWordsTest {
                 "mxrptlqgaahyutlkjfjiwllvdgirtuwbvsawovmhudtjmnevnorggh"
         };
 
-        ParseStringIntoWords instance = new ParseStringIntoWords();
+        List<List<String>> expected = new ArrayList<>(testStrings.length);
 
-        for (String s : testStrings) {
-            List<String> parseResult = instance.parseStringIntoWords(s, dictionary);
-            System.out.println("parseStringIntoWords(\"" + s + "\"):");
+        expected.add(new ArrayList<>(Arrays.asList(
+                "now",
+                "is",
+                "the",
+                "time",
+                "for",
+                "all",
+                "good",
+                "men",
+                "to",
+                "come",
+                "to",
+                "the",
+                "aid",
+                "of",
+                "their",
+                "country")));
+
+        expected.add(null);
+
+        expected.add(new ArrayList<>(Arrays.asList(
+                "cats",
+                "rule",
+                "and",
+                "so",
+                "do",
+                "dogs")));
+
+        expected.add(null);
+
+        for (int i = 0; i < testStrings.length; ++i) {
+            List<String> parseResult = ParseStringIntoWords.
+                    parseStringIntoWords(testStrings[i], dictionary);
+            if (parseResult == null) {
+                assert(expected.get(i) == null);
+            } else {
+                assert (parseResult.equals(expected.get(i)));
+            }
+            System.out.println("parseStringIntoWords(\"" +
+                    testStrings[i] + "\"):");
             System.out.println("{");
             if (parseResult == null) {
                 System.out.println("\t<cannot parse>\n}");
