@@ -7,10 +7,13 @@ import java.util.Map;
  * Determine whether a given ransom note can be constructed by cutting out
  * letters from a given magazine.
  */
-public class RansomNote {
-    private String note_;
-    private String magazine_;
-    private Map<Character, Integer> inventory_ = new HashMap<>();
+public final class RansomNote {
+    private RansomNote() {
+    }
+
+    private static String note_;
+    private static String magazine_;
+    private static final Map<Character, Integer> inventory_ = new HashMap<>();
 
     /**
      * Determine whether a given ransom note can be constructed by
@@ -31,14 +34,17 @@ public class RansomNote {
      * @return A boolean indicating whether ('true') or not ('false')
      * the given ransom note can be constructed from the given magazine.
      */
-    public boolean ransomNote(String note, String magazine) {
+    public static boolean ransomNote(
+            String note,
+            String magazine) {
+
         note_ = note;
         magazine_ = magazine;
         takeInventoryOfMagazine();
-        return buildRansomNoteFromInventory();
+        return createRansomNoteFromInventory();
     }
 
-    private void takeInventoryOfMagazine() {
+    private static void takeInventoryOfMagazine() {
         for (int i = 0; i < magazine_.length(); ++i) {
             char c = magazine_.charAt(i);
             if (c == ' ') {
@@ -52,7 +58,7 @@ public class RansomNote {
         }
     }
 
-    private boolean buildRansomNoteFromInventory() {
+    private static boolean createRansomNoteFromInventory() {
         for (int i = 0; i < note_.length(); ++i) {
             char c = note_.charAt(i);
             if (c == ' ') {

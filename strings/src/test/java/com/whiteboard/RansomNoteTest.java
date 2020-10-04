@@ -10,17 +10,23 @@ class RansomNoteTest {
         System.out.println("================");
 
         String note = "put ten dollars on the plate in the fridge or you will never see your sandwich again";
+
         String[] magazines = {
                 "again dollars fridge in never on or plate put sandwich see ten the the will you your",
                 "again dollars fridge in never on or plate put sandwich see ten the will you your"
         };
 
-        RansomNote instance = new RansomNote();
+        boolean[] expected = {
+                true,
+                false
+        };
 
         System.out.println("ransom note = \"" + note + "\"");
-        for (String magazine : magazines) {
-            System.out.println("magazine = \"" + magazine + "\"");
-            System.out.println("can construct = " + instance.ransomNote(note, magazine));
+        for (int i = 0; i < magazines.length; ++i) {
+            System.out.println("magazine = \"" + magazines[i] + "\"");
+            boolean canCreate = RansomNote.ransomNote(note, magazines[i]);
+            assert(canCreate == expected[i]);
+            System.out.println("can create = " + canCreate);
         }
     }
 }
