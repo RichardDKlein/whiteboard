@@ -6,7 +6,10 @@ import java.util.Set;
 /**
  * Find all the permutations of a given string.
  */
-public class PermutationsOfString {
+public final class PermutationsOfString {
+    private PermutationsOfString() {
+    }
+
     /**
      * Find all the permutations of a given string.
      *
@@ -14,25 +17,25 @@ public class PermutationsOfString {
      * @return A set containing all the permutations
      * of the given string.
      */
-    public Set<String> permutationsOfString(String s) {
-        Set<String> perms = new HashSet<>();
+    public static Set<String> permutationsOfString(String s) {
+        Set<String> result = new HashSet<>();
         if (s.isEmpty()) {
-            perms.add(s);
-            return perms;
+            result.add(s);
+            return result;
         }
         char firstChar = s.charAt(0);
-        String rem = s.substring(1);
-        Set<String> remPerms = permutationsOfString(rem);
-        for (String remPerm : remPerms) {
-            for (int i = 0; i <= remPerm.length(); ++i) {
-                String perm = insertCharAt(remPerm, firstChar, i);
-                perms.add(perm);
+        String remainder = s.substring(1);
+        Set<String> remainderPermutations = permutationsOfString(remainder);
+        for (String remainderPermutation : remainderPermutations) {
+            for (int i = 0; i <= remainderPermutation.length(); ++i) {
+                String permutation = insertChar(remainderPermutation, firstChar, i);
+                result.add(permutation);
             }
         }
-        return perms;
+        return result;
     }
 
-    private String insertCharAt(String s, char c, int index) {
+    private static String insertChar(String s, char c, int index) {
         return s.substring(0, index) + c + s.substring(index);
     }
 }
