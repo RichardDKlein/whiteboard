@@ -33,6 +33,7 @@ class CreateBinarySearchTreeFromSortedListTest {
         List<Integer> inorderTraversal =
                 new TraverseBinaryTreeInOrder<Integer>()
                         .traverseBinaryTreeInOrder(root);
+        assert(inorderTraversal.equals(sortedList));
         System.out.println("inorder traversal of binary search tree = " +
                 Arrays.toString(inorderTraversal.toArray()));
     }

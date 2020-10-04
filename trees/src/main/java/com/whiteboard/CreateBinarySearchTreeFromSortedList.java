@@ -22,18 +22,20 @@ public class CreateBinarySearchTreeFromSortedList<E> {
         int first = 0;
         int last = sortedList.size() - 1;
         int mid = (first + last) / 2;
-        List<E> leftSublist = new ArrayList<>();
+
+        List<E> leftSortedList = new ArrayList<>();
         for (int i = first; i < mid; ++i) {
-            leftSublist.add(sortedList.get(i));
+            leftSortedList.add(sortedList.get(i));
         }
-        List<E> rightSublist = new ArrayList<>();
+        List<E> rightSortedList = new ArrayList<>();
         for (int i = mid + 1; i <= last; ++i) {
-            rightSublist.add(sortedList.get(i));
+            rightSortedList.add(sortedList.get(i));
         }
+
         BinaryTreeNode<E> root = new BinaryTreeNode<>();
         root.data = sortedList.get(mid);
-        root.left = createBinarySearchTreeFromSortedList(leftSublist);
-        root.right = createBinarySearchTreeFromSortedList(rightSublist);
+        root.left = createBinarySearchTreeFromSortedList(leftSortedList);
+        root.right = createBinarySearchTreeFromSortedList(rightSortedList);
 
         return root;
     }
