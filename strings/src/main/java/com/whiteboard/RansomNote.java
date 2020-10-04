@@ -11,9 +11,9 @@ public final class RansomNote {
     private RansomNote() {
     }
 
-    private static String note_;
-    private static String magazine_;
-    private static final Map<Character, Integer> inventory_ = new HashMap<>();
+    private static String note;
+    private static String magazine;
+    private static Map<Character, Integer> inventory = new HashMap<>();
 
     /**
      * Determine whether a given ransom note can be constructed by
@@ -38,41 +38,35 @@ public final class RansomNote {
             String note,
             String magazine) {
 
-        note_ = note;
-        magazine_ = magazine;
+        RansomNote.note = note;
+        RansomNote.magazine = magazine;
+
         takeInventoryOfMagazine();
-        return createRansomNoteFromInventory();
+        return canCreateNoteFromMagazine();
     }
 
     private static void takeInventoryOfMagazine() {
-        for (int i = 0; i < magazine_.length(); ++i) {
-            char c = magazine_.charAt(i);
-            if (c == ' ') {
-                continue;
-            }
-            if (inventory_.containsKey(c)) {
-                inventory_.replace(c, inventory_.get(c) + 1);
+        for (int i = 0; i < magazine.length(); ++i) {
+            char c = magazine.charAt(i);
+            Integer count = inventory.get(c);
+            if (count == null) {
+                inventory.put(c, 1);
             } else {
-                inventory_.put(c, 1);
+                inventory.replace(c, count + 1);
             }
         }
     }
 
-    private static boolean createRansomNoteFromInventory() {
-        for (int i = 0; i < note_.length(); ++i) {
-            char c = note_.charAt(i);
-            if (c == ' ') {
-                continue;
-            }
-            if (inventory_.containsKey(c)) {
-                int occurrences = inventory_.get(c);
-                if (occurrences > 1) {
-                    inventory_.replace(c, occurrences - 1);
-                } else {
-                    inventory_.remove(c);
-                }
-            } else {
+    private static boolean canCreateNoteFromMagazine() {
+        for (int i = 0; i < note.length(); ++i) {
+            char c = note.charAt(i);
+            Integer count = inventory.get(c);
+            if (count == null) {
                 return false;
+            } else if (count == 1) {
+                inventory.remove(c);
+            } else {
+                inventory.replace(c, count - 1);
             }
         }
         return true;
