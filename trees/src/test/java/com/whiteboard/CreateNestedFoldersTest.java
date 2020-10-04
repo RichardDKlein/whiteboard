@@ -43,11 +43,10 @@ class CreateNestedFoldersTest {
         }
 
         new ShuffleList<CreateNestedFolders.Folder>().shuffleList(folderList);
-        List<CreateNestedFolders.Folder> reorderedList =
-                CreateNestedFolders.createNestedFolders(folderList);
+        List<String> reorderedList = CreateNestedFolders.createNestedFolders(folderList);
         System.out.println("Creation order:");
-        for (CreateNestedFolders.Folder folder : reorderedList) {
-            System.out.println("\t" + folder.folderName);
+        for (String folderName : reorderedList) {
+            System.out.println("\t" + folderName);
         }
     }
 }
