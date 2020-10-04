@@ -16,12 +16,19 @@ class LongestPalindromicSubstringTest {
                 "able was i ere i saw elba"
         };
 
-        LongestPalindromicSubstring instance = new LongestPalindromicSubstring();
+        String[] expected = {
+                "N",
+                "PalindromeWithOddLengthtgneLddOhtiWemordnilaP",
+                "PalindromeWithEvenLengthhtgneLnevEhtiWemordnilaP",
+                "able was i ere i saw elba"
+        };
 
-        for (String testString : testStrings) {
-            String longest = instance.longestPalindromicSubstring(testString);
+        for (int i = 0; i < testStrings.length; ++i) {
+            String longest = LongestPalindromicSubstring.
+                    longestPalindromicSubstring(testStrings[i]);
+            assert(longest.equals(expected[i]));
             System.out.println("longestPalindromicSubstring(\""
-                    + testString + "\") = \"" + longest + "\"");
+                    + testStrings[i] + "\") = \"" + longest + "\"");
         }
     }
 }
