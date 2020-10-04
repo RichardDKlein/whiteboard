@@ -33,8 +33,9 @@ class IsBinarySearchTreeTest {
 
         IsBinarySearchTree<Integer> instance = new IsBinarySearchTree<>();
 
-        System.out.println("Is Binary Search Tree = " +
-                instance.isBinarySearchTree(node4));
+        boolean isBinarySearchTree = instance.isBinarySearchTree(node4);
+        assert(isBinarySearchTree);
+        System.out.println("Is Binary Search Tree = " + isBinarySearchTree);
         System.out.println();
 
         System.out.println("        4      ");
@@ -45,7 +46,9 @@ class IsBinarySearchTreeTest {
         node2.right = node5;
         node6.left = node3;
 
-        System.out.println("Is Binary Search Tree = " +
-                instance.isBinarySearchTree(node4));
+        isBinarySearchTree = instance.isBinarySearchTree(node4);
+        assert(!isBinarySearchTree);
+        System.out.println("Is Binary Search Tree = " + isBinarySearchTree);
+        System.out.println();
     }
 }
