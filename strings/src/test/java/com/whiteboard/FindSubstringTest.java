@@ -20,11 +20,10 @@ class FindSubstringTest {
                 "x"
         };
 
-        FindSubstring instance = new FindSubstring();
-
         System.out.println("Test string = " + testString);
         for (String s : testSubstrings) {
-            int index = instance.findSubstring(testString, s);
+            int index = FindSubstring.findSubstring(testString, s);
+            assert(index == testString.indexOf(s));
             System.out.println("findSubstring(" + s + ") = " + index);
         }
     }
