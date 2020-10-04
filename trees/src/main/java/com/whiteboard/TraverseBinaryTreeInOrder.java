@@ -23,6 +23,7 @@ public class TraverseBinaryTreeInOrder<E> {
         result.addAll(traverseBinaryTreeInOrder(root.left));
         result.add(root.data);
         result.addAll(traverseBinaryTreeInOrder(root.right));
+
         return result;
     }
 }

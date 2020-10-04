@@ -37,9 +37,11 @@ class TraverseBinaryTreeInOrderTest {
         BinaryTreeNode<Integer> thirteen = new BinaryTreeNode<>(13, eleven, fifteen);
         BinaryTreeNode<Integer> nine = new BinaryTreeNode<>(9, four, thirteen);
 
-        List<Integer> inorderTraversal =
-                new TraverseBinaryTreeInOrder<Integer>()
+        List<Integer> inorderTraversal = new TraverseBinaryTreeInOrder<Integer>()
                         .traverseBinaryTreeInOrder(nine);
+        for (int i = 0; i < inorderTraversal.size(); ++i) {
+            assert(inorderTraversal.get(i) == i + 1);
+        }
         System.out.println("inorder traversal of binary tree = " +
                 Arrays.toString(inorderTraversal.toArray()));
     }
