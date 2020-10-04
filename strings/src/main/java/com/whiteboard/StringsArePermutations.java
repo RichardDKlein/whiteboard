@@ -1,11 +1,16 @@
 package com.whiteboard;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Determine whether two strings are permutations of each other.
  */
-public class StringsArePermutations {
+public final class StringsArePermutations {
+    private StringsArePermutations() {
+    }
+
     /**
      * Determine whether two strings are permulations of each other.
      *
@@ -14,13 +19,24 @@ public class StringsArePermutations {
      * @return A boolean indicating whether ('true) or not ('false')
      * s1 and s2 are permutations of each other.
      */
-    public boolean stringsArePermutations(String s1, String s2) {
-        return sort(s1).equals(sort(s2));
+    public static boolean stringsArePermutations(String s1, String s2) {
+        Map<Character, Integer> s1CharInventory = inventoryString(s1);
+        Map<Character, Integer> s2CharInventory = inventoryString(s2);
+
+        return s1CharInventory.equals(s2CharInventory);
     }
 
-    private String sort(String s) {
-        char[] buf = s.toCharArray();
-        Arrays.sort(buf);
-        return new String(buf);
+    private static Map<Character, Integer> inventoryString(String s) {
+        Map<Character, Integer> result = new HashMap<>();
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+            Integer count = result.get(c);
+            if (count == null) {
+                result.put(c, 1);
+            } else {
+                result.replace(c, count + 1);
+            }
+        }
+        return result;
     }
 }
