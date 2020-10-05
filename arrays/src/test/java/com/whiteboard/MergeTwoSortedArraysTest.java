@@ -24,11 +24,18 @@ class MergeTwoSortedArraysTest {
                 {1, 2, 3, 4, 5}
         };
 
+        int[][] expected = {
+                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16},
+                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15},
+                {1, 1, 2, 2, 3, 3, 4, 4, 5, 5}
+        };
+
         for (int i = 0; i < a1.length; ++i) {
             System.out.println("a1 = " + Arrays.toString(a1[i]));
             System.out.println("a2 = " + Arrays.toString(a2[i]));
-            int[] merged = new MergeTwoSortedArrays().
-                    mergeTwoSortedArrays(a1[i], a2[i]);
+            int[] merged = MergeTwoSortedArrays.mergeTwoSortedArrays(a1[i], a2[i]);
+            assert(Arrays.equals(merged,expected[i]));
             System.out.println("merged = " + Arrays.toString(merged));
         }
     }

@@ -4,6 +4,9 @@ package com.whiteboard;
  * Merge two sorted arrays into a single sorted array.
  */
 public class MergeTwoSortedArrays {
+    private MergeTwoSortedArrays() {
+    }
+
     /**
      * Merge two sorted arrays into a single sorted array.
      *
@@ -22,7 +25,7 @@ public class MergeTwoSortedArrays {
      * @param a2 The other sorted array.
      * @return The merged, sorted array.
      */
-    public int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
+    public static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
         int[] merged = new int[a1.length + a2.length];
         int iMerged, i1, i2;
         iMerged = i1 = i2 = 0;
