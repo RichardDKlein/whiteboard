@@ -1,5 +1,6 @@
 package com.whiteboard;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,10 +24,26 @@ class ArrayHopscotchTest {
                 0,
                 5
         };
+
+        int[][] expectedArray = {
+                {0, 2, 3},
+                {},
+                {5, 3, 6}
+        };
+
+        List<Integer> expected0 = Arrays.asList(0, 2, 3);
+        List<Integer> expected1 = Arrays.asList();
+        List<Integer> expected2 = Arrays.asList(5, 3, 6);
+
+        List<List<Integer>> expected = new ArrayList<>();
+        expected.add(expected0);
+        expected.add(expected1);
+        expected.add(expected2);
+
         for (int i = 0; i < a.length; ++i) {
             System.out.println(Arrays.toString(a[i]) + ", start = " + iStart[i]);
-            ArrayHopscotch instance = new ArrayHopscotch();
-            List<Integer> winningHops = instance.arrayHopscotch(a[i], iStart[i]);
+            List<Integer> winningHops = ArrayHopscotch.arrayHopscotch(a[i], iStart[i]);
+            assert(winningHops.equals(expected.get(i)));
             System.out.println("Winning hops = " + winningHops);
         }
     }

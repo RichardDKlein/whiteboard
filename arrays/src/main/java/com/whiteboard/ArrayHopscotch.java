@@ -8,8 +8,11 @@ import java.util.Set;
 /**
  * Play a game of "array hopscotch".
  */
-public class ArrayHopscotch {
-    private Set<Integer> visitedIndices_ = new HashSet<>();
+public final class ArrayHopscotch {
+    private ArrayHopscotch() {
+    }
+
+    private static final Set<Integer> visitedIndices = new HashSet<>();
 
     /**
      * Play a game of "array hopscotch".
@@ -44,33 +47,33 @@ public class ArrayHopscotch {
      * indices that led to a zero. (If no such winning
      * sequence exists, then the list will be empty.)
      */
-    public List<Integer> arrayHopscotch(int[] a, int iStart) {
-        List<Integer> winningHops = new ArrayList<>();
+    public static List<Integer> arrayHopscotch(int[] a, int iStart) {
+        List<Integer> result = new ArrayList<>();
         if (iStart < 0 || iStart > a.length - 1) {
-            return winningHops;
+            return result;
         }
-        if (visitedIndices_.contains(iStart)) {
-            return winningHops;
+        if (visitedIndices.contains(iStart)) {
+            return result;
         }
         if (a[iStart] == 0) {
-            winningHops.add(iStart);
-            return winningHops;
+            result.add(iStart);
+            return result;
         }
-        visitedIndices_.add(iStart);
+        visitedIndices.add(iStart);
         int iHopLeft = iStart - a[iStart];
         List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
         if (!remainingHops.isEmpty()) {
-            winningHops.add(iStart);
-            winningHops.addAll(remainingHops);
-            return winningHops;
+            result.add(iStart);
+            result.addAll(remainingHops);
+            return result;
         }
         int iHopRight = iStart + a[iStart];
         remainingHops = arrayHopscotch(a, iHopRight);
         if (!remainingHops.isEmpty()) {
-            winningHops.add(iStart);
-            winningHops.addAll(remainingHops);
-            return winningHops;
+            result.add(iStart);
+            result.addAll(remainingHops);
+            return result;
         }
-        return winningHops;
+        return result;
     }
 }
