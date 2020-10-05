@@ -3,62 +3,104 @@ package com.whiteboard;
 import org.junit.jupiter.api.Test;
 
 class CircularQueueTest {
+    private static CircularQueue queue;
+
     @Test
     void circularBuffer() {
         System.out.println();
         System.out.println("Test CircularQueue:");
         System.out.println("===================");
 
-        System.out.println("Create a CircularQueue of length 10");
-        CircularQueue buf = new CircularQueue(10);
-        System.out.println("Add five elements");
-        buf.add(1);
-        buf.add(2);
-        buf.add(3);
-        buf.add(4);
-        buf.add(5);
-        System.out.println("Remove five elements:");
-        for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.poll() + " ");
-        }
+        boolean success;
+        int element;
+
+        System.out.println("Creating a CircularQueue of length 10");
+        queue = new CircularQueue(10);
+
         System.out.println();
-        System.out.println("Add five more elements");
-        buf.add(6);
-        buf.add(7);
-        buf.add(8);
-        buf.add(9);
-        buf.add(10);
-        System.out.println("Remove five elements:");
-        for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.poll() + " ");
-        }
+
+        success = add(1); assert(success);
+        success = add(2); assert(success);
+        success = add(3); assert(success);
+        success = add(4); assert(success);
+        success = add(5); assert(success);
+
         System.out.println();
-        System.out.println("Add five more elements");
-        buf.add(11);
-        buf.add(12);
-        buf.add(13);
-        buf.add(14);
-        buf.add(15);
-        System.out.println("Remove five elements:");
-        for (int i = 0; i < 5; ++i) {
-            System.out.print(buf.poll() + " ");
+
+        for (int i = 0; i < 3; ++i) {
+            element = remove();
+            assert(element == i + 1);
         }
+
         System.out.println();
-        System.out.println("Add ten elements");
-        buf.add(1);
-        buf.add(2);
-        buf.add(3);
-        buf.add(4);
-        buf.add(5);
-        buf.add(6);
-        buf.add(7);
-        buf.add(8);
-        buf.add(9);
-        buf.add(10);
-        System.out.println("Remove ten elements:");
+
+        success = add(6); assert(success);
+        success = add(7); assert(success);
+        success = add(8); assert(success);
+        success = add(9); assert(success);
+        success = add(10); assert(success);
+
+        System.out.println();
+
+        for (int i = 0; i < 2; ++i) {
+            element = remove();
+            assert(element == i + 4);
+        }
+
+        System.out.println();
+
+        success = add(11); assert(success);
+        success = add(12); assert(success);
+        success = add(13); assert(success);
+        success = add(14); assert(success);
+        success = add(15); assert(!success);
+
+        System.out.println();
+
+        for (int i = 0; i < 3; ++i) {
+            element = remove();
+            assert(element == i + 6);
+        }
+
+        System.out.println();
+
+        success = add(16); assert(success);
+        success = add(17); assert(success);
+        success = add(18); assert(success);
+        success = add(19); assert(!success);
+
+        System.out.println();
+
         for (int i = 0; i < 10; ++i) {
-            System.out.print(buf.poll() + " ");
+            element = remove();
+            if (i < 6) {
+                assert(element == i + 9);
+            } else if (i < 9) {
+                assert (element == i + 10);
+            } else {
+                assert(element == -1);
+            }
         }
-        System.out.println();
+    }
+
+    private static boolean add(int element) {
+        System.out.print("Adding element " + element);
+        boolean success = queue.add(element);
+        if (success) {
+            System.out.println(" ... success");
+        } else {
+            System.out.println(" ... FAILED (queue full)");
+        }
+        return success;
+    }
+
+    private static int remove() {
+        int result = queue.poll();
+        if (result == -1) {
+            System.out.println("Removing element FAILED (queue empty)");
+        } else {
+            System.out.println("Removing element " + result);
+        }
+        return result;
     }
 }

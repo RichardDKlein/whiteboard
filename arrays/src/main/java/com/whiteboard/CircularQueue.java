@@ -18,38 +18,37 @@ package com.whiteboard;
  * (n - 1).
  */
 public class CircularQueue {
-    private int[] buffer_;
-    private int head_;
-    private int tail_;
+    private final int[] buf;
+    private int head;
+    private int tail;
 
-    CircularQueue(int capacity) {
-        buffer_ = new int[capacity];
+    public CircularQueue(int capacity) {
+        buf = new int[capacity];
     }
 
-    public void add(int n) {
+    public boolean add(int element) {
         if (isFull()) {
-            System.out.println("FULL!");
-            return;
+            return false;
         }
-        buffer_[tail_] = n;
-        tail_ = (tail_ + 1) % buffer_.length;
+        buf[tail] = element;
+        tail = (tail + 1) % buf.length;
+        return true;
     }
 
     public int poll() {
         if (isEmpty()) {
-            System.out.println("EMPTY!");
             return -1;
         }
-        int result = buffer_[head_];
-        head_ = (head_ + 1) % buffer_.length;
+        int result = buf[head];
+        head = (head + 1) % buf.length;
         return result;
     }
 
     private boolean isFull() {
-        return (tail_ + 1) % buffer_.length == head_;
+        return (tail + 1) % buf.length == head;
     }
 
     private boolean isEmpty() {
-        return head_ == tail_;
+        return head == tail;
     }
 }
