@@ -39,7 +39,7 @@ public final class FloodFillRecursive {
         int numRows = a.length;
         int numCols = a[0].length;
 
-        if (seedRow < 0 || seedCol < 0 || seedRow >= numRows || seedCol >= numCols) {
+        if (seedRow < 0 || seedRow >= numRows || seedCol < 0 || seedCol >= numCols) {
             return;
         }
         if (a[seedRow][seedCol] == '@') {
