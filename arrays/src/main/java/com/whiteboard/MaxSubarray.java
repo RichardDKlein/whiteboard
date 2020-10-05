@@ -59,8 +59,10 @@ public final class MaxSubarray {
      */
     public static Interval maxSubarray(int[] a) {
         int start, maxStart, end, maxEnd, sum, maxSum;
+
         start = maxStart = end = maxEnd = 0;
         sum = maxSum = a[0];
+
         for (int i = 1; i < a.length; ++i) {
             if (sum > 0) {
                 sum = sum + a[i];
