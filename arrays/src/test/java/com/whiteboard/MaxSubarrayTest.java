@@ -1,7 +1,8 @@
 package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.utilities.Interval;
+
+import static com.whiteboard.MaxSubarray.Interval;
 
 class MaxSubarrayTest {
     @Test
@@ -16,10 +17,18 @@ class MaxSubarrayTest {
                 {-1, -2, -3, -4, -5, -6, -7, -8, -9}
         };
 
+        Interval[] expected = {
+                new Interval(3, 6),
+                new Interval(0, 8),
+                new Interval(0, 0)
+        };
+
         for (int i = 0; i < a.length; ++i) {
-            Interval maxSubarray = new MaxSubarray().maxSubarray(a[i]);
-            int maxStart = (int)maxSubarray.getLowEndpoint();
-            int maxEnd = (int)maxSubarray.getHighEndpoint();
+            Interval maxSubarray = MaxSubarray.maxSubarray(a[i]);
+            int maxStart = maxSubarray.start;
+            int maxEnd = maxSubarray.end;
+            assert(maxStart == expected[i].start);
+            assert(maxEnd == expected[i].end);
             System.out.print("a: { ");
             for (int j = 0; j < a[i].length; ++j) {
                 if (j == maxStart) {
