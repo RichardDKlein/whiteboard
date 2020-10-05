@@ -35,25 +35,27 @@ public final class FloodFillBreadthFirstSearch {
     public static void floodFillBreadthFirstSearch(
             char[][] a, int seedRow, int seedCol) {
 
-        Queue<Point> seedQueue = new LinkedList<>();
         int numRows = a.length;
         int numCols = a[0].length;
-        seedQueue.add(new Point(seedCol, seedRow));
-        while (!seedQueue.isEmpty()) {
-            Point seed = seedQueue.poll();
-            int row = seed.y;
-            int col = seed.x;
-            if (row < 0 || col < 0 || row >= numRows || col >= numCols) {
+
+        Queue<Point> queue = new LinkedList<>();
+        queue.add(new Point(seedCol, seedRow));
+
+        while (!queue.isEmpty()) {
+            Point point = queue.poll();
+            int row = point.y;
+            int col = point.x;
+            if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
             if (a[row][col] == '@') {
                 continue;
             }
             a[row][col] = '@';
-            seedQueue.add(new Point(col - 1, row));
-            seedQueue.add(new Point(col, row - 1));
-            seedQueue.add(new Point(col + 1, row));
-            seedQueue.add(new Point(col, row + 1));
+            queue.add(new Point(col - 1, row));
+            queue.add(new Point(col, row - 1));
+            queue.add(new Point(col + 1, row));
+            queue.add(new Point(col, row + 1));
         }
     }
 }
