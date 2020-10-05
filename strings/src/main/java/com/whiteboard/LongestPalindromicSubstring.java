@@ -8,22 +8,6 @@ public final class LongestPalindromicSubstring {
     private LongestPalindromicSubstring() {
     }
 
-    private static class Interval {
-        int min;
-        int max;
-
-        Interval(int min, int max) {
-            this.min = min;
-            this.max = max;
-        }
-        int length() {
-            return max - min + 1;
-        }
-        boolean isValid() {
-            return min >= 0 && min <= max;
-        }
-    }
-
     /**
      * Find the longest palindromic substring of a given string,
      * i.e. the longest substring that is a palindrome.
@@ -32,28 +16,29 @@ public final class LongestPalindromicSubstring {
      * @return The longest palindromic substring.
      */
     public static String longestPalindromicSubstring(String s) {
-        Interval longest = new Interval(0, 0);
+        String longest = s.substring(0, 1);
         for (int i = 0; i < s.length(); ++i) {
-            Interval longestOdd = longestCenteredAt(s, i, true);
-            Interval longestEven = longestCenteredAt(s, i, false);
-            if (longestOdd.isValid() && longestOdd.length() > longest.length()) {
-                longest = longestOdd;
+            String longestWithOddLength = getLongestCenteredAt(s, i, true);
+            String longestWithEvenLength = getLongestCenteredAt(s, i, false);
+            if (longestWithOddLength.length() > longest.length()) {
+                longest = longestWithOddLength;
             }
-            if (longestEven.isValid() && longestEven.length() > longest.length()) {
-                longest = longestEven;
+            if (longestWithEvenLength.length() > longest.length()) {
+                longest = longestWithEvenLength;
             }
-        }
-        return s.substring(longest.min, longest.max + 1);
-    }
-
-    private static Interval longestCenteredAt(String s, int center, boolean isLengthOdd) {
-        Interval longest = new Interval(-1, -1);
-        int left = isLengthOdd ? center - 1 : center;
-        int right = center + 1;
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            longest.min = left--;
-            longest.max = right++;
         }
         return longest;
+    }
+
+    private static String getLongestCenteredAt(String s, int center, boolean isOddLength) {
+        int left = isOddLength ? center : center - 1;
+        int right = center + 1;
+        boolean foundOne = false;
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            foundOne = true;
+            --left;
+            ++right;
+        }
+        return foundOne ? s.substring(left + 1, right) : "";
     }
 }
