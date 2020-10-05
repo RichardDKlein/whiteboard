@@ -6,7 +6,10 @@ import java.util.List;
 /**
  * Find all primes up to a given integer.
  */
-public class FindPrimes {
+public final class FindPrimes {
+    private FindPrimes() {
+    }
+
     /**
      * Find all primes up to a given integer.
      *
@@ -24,22 +27,23 @@ public class FindPrimes {
      * go on to the next element, since we've already determined
      * that 'i' is not prime.
      */
-    public List<Integer> findPrimes(int n) {
-        List<Integer> primes = new ArrayList<>();
+    public static List<Integer> findPrimes(int n) {
+        List<Integer> result = new ArrayList<>();
         boolean[] isPrime = new boolean[n + 1];
         for (int i = 0; i < n; ++i) {
             isPrime[i] = true;
         }
         isPrime[0] = false;
         isPrime[1] = false;
+
         for (int i = 2; i <= n; ++i) {
             if (isPrime[i]) {
-                primes.add(i);
+                result.add(i);
                 for (int j = 2; i * j <= n; ++j) {
                     isPrime[i * j] = false;
                 }
             }
         }
-        return primes;
+        return result;
     }
 }
