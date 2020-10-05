@@ -1,19 +1,27 @@
 package com.whiteboard;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.*;
 
 /**
  * Find the 'k' most frequently occurring strings in a list
  * of strings, along with the number of times they occur.
  */
-public class TopKStrings {
-    private List<String> strings_;
-    private int k_;
-    private Map<String, Integer> stringCount_ = new HashMap<>();
-    private PriorityQueue<Pair<String, Integer>> minHeap_ =
-            new PriorityQueue<>(new PairComparator());
+public final class TopKStrings {
+    private TopKStrings() {
+    }
+
+    private static class MapEntryComparator implements Comparator<Map.Entry<String, Integer>> {
+        @Override
+        public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+            return o1.getValue() - o2.getValue();
+        }
+    }
+
+    private static List<String> strings;
+    private static int k;
+    private static final Map<String, Integer> stringCounts = new HashMap<>();
+    private static final PriorityQueue<Map.Entry<String, Integer>> minHeap =
+            new PriorityQueue<>(new MapEntryComparator());
 
     /**
      * Find the 'k' most frequently occurring strings in a list of
@@ -24,54 +32,48 @@ public class TopKStrings {
      * @return The 'k' most frequently occurring strings in 'strings',
      * along with the number of times they occur.
      */
-    public List<Pair<String, Integer>> topKStrings (List<String> strings, int k) {
-        strings_ = strings;
-        k_ = k;
+    public static List<Map.Entry<String, Integer>>
+    topKStrings (
+            List<String> strings,
+            int k) {
+
+        TopKStrings.strings = strings;
+        TopKStrings.k = k;
+
         countStrings();
         buildMinHeap();
         return extractResults();
     }
 
-    private void countStrings() {
-        for (String string : strings_) {
-            if (stringCount_.containsKey(string)) {
-                stringCount_.replace(string, stringCount_.get(string) + 1);
+    private static void countStrings() {
+        for (String string : strings) {
+            Integer count = stringCounts.get(string);
+            if (count == null) {
+                stringCounts.put(string, 1);
             } else {
-                stringCount_.put(string, 1);
+                stringCounts.replace(string, count + 1);
             }
         }
     }
 
-    private void buildMinHeap() {
+    private static void buildMinHeap() {
         int min = -1;
-        for (Map.Entry<String, Integer> entry : stringCount_.entrySet()) {
+        for (Map.Entry<String, Integer> entry : stringCounts.entrySet()) {
             if (entry.getValue() >= min) {
-                minHeap_.add(new Pair<>(entry.getKey(), entry.getValue()));
-                while (minHeap_.size() > k_) {
-                    minHeap_.poll();
+                minHeap.add(entry);
+                while (minHeap.size() > k) {
+                    minHeap.poll();
                 }
-                min = minHeap_.peek().snd;
+                min = minHeap.peek().getValue();
             }
         }
     }
 
-    private List<Pair<String, Integer>> extractResults() {
-        LinkedList<Pair<String, Integer>> results = new LinkedList<>();
-        while (!minHeap_.isEmpty()) {
-            results.addFirst(minHeap_.poll());
+    private static List<Map.Entry<String, Integer>> extractResults() {
+        LinkedList<Map.Entry<String, Integer>> results = new LinkedList<>();
+        while (!minHeap.isEmpty()) {
+            results.addFirst(minHeap.poll());
         }
         return results;
-    }
-
-    // ===================================================================
-    // INNER CLASSES
-    // ===================================================================
-
-    private static class PairComparator implements
-            Comparator<Pair<String, Integer>> {
-        @Override
-        public int compare(Pair<String, Integer> o1, Pair<String, Integer> o2) {
-            return o1.snd - o2.snd;
-        }
     }
 }

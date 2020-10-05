@@ -1,9 +1,10 @@
 package com.whiteboard;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-import com.sun.tools.javac.util.Pair;
 import org.junit.jupiter.api.Test;
 
 class TopKStringsTest {
@@ -45,14 +46,26 @@ class TopKStringsTest {
             "of freedom -- and that government of the people, by the people, " +
             "for the people, shall not perish from the earth.";
 
+        List<Map.Entry<String, Integer>> expected = new ArrayList<>();
+        expected.add(new AbstractMap.SimpleEntry<>("that", 13));
+        expected.add(new AbstractMap.SimpleEntry<>("the", 11));
+        expected.add(new AbstractMap.SimpleEntry<>("we", 10));
+        expected.add(new AbstractMap.SimpleEntry<>("to", 8));
+        expected.add(new AbstractMap.SimpleEntry<>("here", 8));
+        expected.add(new AbstractMap.SimpleEntry<>("a", 7));
+        expected.add(new AbstractMap.SimpleEntry<>("and", 6));
+        expected.add(new AbstractMap.SimpleEntry<>("have", 5));
+        expected.add(new AbstractMap.SimpleEntry<>("of", 5));
+        expected.add(new AbstractMap.SimpleEntry<>("can", 5));
+
         List<String> strings = parseTextIntoLowerCaseWords(gettysburgAddress);
         //printStrings(strings);
-        List<Pair<String, Integer>> topTen =
-                new TopKStrings().topKStrings(strings, 10);
+        List<Map.Entry<String, Integer>> topTen = TopKStrings.topKStrings(strings, 10);
+        assert(topTen.equals(expected));
         System.out.println("Top 10 words in Gettysburg Address:");
         for (int i = 0; i < 10; ++i) {
-            System.out.println(i + 1 + ". " + topTen.get(i).fst +
-                    "\t(" + topTen.get(i).snd + " occurrences)");
+            System.out.println(i + 1 + ". " + topTen.get(i).getKey() +
+                    "\t(" + topTen.get(i).getValue() + " occurrences)");
         }
     }
 
