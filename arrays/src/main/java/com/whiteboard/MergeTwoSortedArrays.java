@@ -26,22 +26,23 @@ public class MergeTwoSortedArrays {
      * @return The merged, sorted array.
      */
     public static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
-        int[] merged = new int[a1.length + a2.length];
-        int iMerged, i1, i2;
-        iMerged = i1 = i2 = 0;
-        while (iMerged < merged.length) {
+        int[] result = new int[a1.length + a2.length];
+        int iResult, i1, i2;
+        iResult = i1 = i2 = 0;
+
+        while (iResult < result.length) {
             if (i1 >= a1.length) {
                 while (i2 < a2.length) {
-                    merged[iMerged++] = a2[i2++];
+                    result[iResult++] = a2[i2++];
                 }
             } else if (i2 >= a2.length) {
                 while (i1 < a1.length) {
-                    merged[iMerged++] = a1[i1++];
+                    result[iResult++] = a1[i1++];
                 }
             } else {
-                merged[iMerged++] = a1[i1] < a2[i2] ? a1[i1++] : a2[i2++];
+                result[iResult++] = a1[i1] < a2[i2] ? a1[i1++] : a2[i2++];
             }
         }
-        return merged;
+        return result;
     }
 }
