@@ -9,7 +9,10 @@ import java.util.Queue;
  * in a 2D array, using a Breadth-First Search (BFS)
  * approach.
  */
-public class FloodFillBreadthFirstSearch {
+public final class FloodFillBreadthFirstSearch {
+    private FloodFillBreadthFirstSearch() {
+    }
+
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D array, using a Breadth-First Search (BFS)
@@ -29,7 +32,7 @@ public class FloodFillBreadthFirstSearch {
      *                at which the flood fill is to start.
      * @param seedCol The 0-based column index of the seed pixel.
      */
-    public void floodFillBreadthFirstSearch(
+    public static void floodFillBreadthFirstSearch(
             char[][] a, int seedRow, int seedCol) {
 
         Queue<Point> seedQueue = new LinkedList<>();

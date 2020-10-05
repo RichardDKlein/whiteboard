@@ -50,8 +50,8 @@ class FloodFillBreadthFirstSearchTest {
             a[row[i]][col[i]] = 'S';
             testUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
-            FloodFillBreadthFirstSearch instance = new FloodFillBreadthFirstSearch();
-            instance.floodFillBreadthFirstSearch(copy, row[i], col[i]);
+            FloodFillBreadthFirstSearch.floodFillBreadthFirstSearch(
+                    copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
             testUtils.printBitmap(copy);
         }
