@@ -29,12 +29,15 @@ public final class FindPrimes {
      */
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();
+
         boolean[] isPrime = new boolean[n + 1];
-        for (int i = 0; i < n; ++i) {
-            isPrime[i] = true;
-        }
+
         isPrime[0] = false;
         isPrime[1] = false;
+
+        for (int i = 2; i < isPrime.length; ++i) {
+            isPrime[i] = true;
+        }
 
         for (int i = 2; i <= n; ++i) {
             if (isPrime[i]) {
