@@ -12,7 +12,7 @@ public final class ArrayHopscotch {
     private ArrayHopscotch() {
     }
 
-    private static final Set<Integer> visitedIndices = new HashSet<>();
+    private static final Set<Integer> visited = new HashSet<>();
 
     /**
      * Play a game of "array hopscotch".
@@ -49,17 +49,19 @@ public final class ArrayHopscotch {
      */
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
         List<Integer> result = new ArrayList<>();
-        if (iStart < 0 || iStart > a.length - 1) {
+        if (iStart < 0 || iStart >= a.length) {
             return result;
         }
-        if (visitedIndices.contains(iStart)) {
+        if (visited.contains(iStart)) {
             return result;
         }
         if (a[iStart] == 0) {
             result.add(iStart);
             return result;
         }
-        visitedIndices.add(iStart);
+
+        visited.add(iStart);
+
         int iHopLeft = iStart - a[iStart];
         List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
         if (!remainingHops.isEmpty()) {
