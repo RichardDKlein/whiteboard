@@ -4,7 +4,10 @@ package com.whiteboard;
  * Implement the "flood fill" algorithm to fill a region
  * in a 2D array, using a recursive approach.
  */
-public class FloodFillRecursive {
+public final class FloodFillRecursive {
+    private FloodFillRecursive() {
+    }
+
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D bitmap, using a recursive approach.
@@ -30,11 +33,12 @@ public class FloodFillRecursive {
      *                at which the flood fill is to start.
      * @param seedCol The 0-based column index of the seed pixel.
      */
-    public void floodFillRecursive(
+    public static void floodFillRecursive(
             char[][] a, int seedRow, int seedCol) {
 
         int numRows = a.length;
         int numCols = a[0].length;
+
         if (seedRow < 0 || seedCol < 0 || seedRow >= numRows || seedCol >= numCols) {
             return;
         }

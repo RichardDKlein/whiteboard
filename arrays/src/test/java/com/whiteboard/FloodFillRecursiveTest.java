@@ -50,8 +50,7 @@ class FloodFillRecursiveTest {
             a[row[i]][col[i]] = 'S';
             testUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
-            FloodFillRecursive instance = new FloodFillRecursive();
-            instance.floodFillRecursive(copy, row[i], col[i]);
+            FloodFillRecursive.floodFillRecursive(copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
             testUtils.printBitmap(copy);
         }
