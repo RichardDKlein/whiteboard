@@ -6,6 +6,9 @@ import java.util.Arrays;
  * Search a sorted and rotated one-dimensional array.
  */
 public class SearchSortedAndRotatedArray {
+    private SearchSortedAndRotatedArray() {
+    }
+
     /**
      * Search a one-dimensional array that has been sorted and then
      * rotated, so that there is a discontinuity in the array where
@@ -23,7 +26,7 @@ public class SearchSortedAndRotatedArray {
      * @return The array index of the target element if found,
      * or -1 if not found.
      */
-    public int searchSortedAndRotatedArray(int[] a, int target) {
+    public static int searchSortedAndRotatedArray(int[] a, int target) {
         int left = 0;
         int right = a.length - 1;
         while (left <= right) {

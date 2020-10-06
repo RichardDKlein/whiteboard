@@ -13,15 +13,15 @@ class SearchSortedAndRotatedArrayTest {
 
         System.out.println(Arrays.toString(a));
 
-        SearchSortedAndRotatedArray instance = new SearchSortedAndRotatedArray();
-
-        for (int target : a) {
-            int index = instance.searchSortedAndRotatedArray(a, target);
-            System.out.println("target = " + target + ", index = " + index);
+        for (int i = 0; i < a.length; ++i) {
+            int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, a[i]);
+            assert(index == i);
+            System.out.println("target = " + a[i] + ", index = " + index);
         }
 
         int target = 999;
-        int index = instance.searchSortedAndRotatedArray(a, target);
+        int index = SearchSortedAndRotatedArray.searchSortedAndRotatedArray(a, target);
+        assert(index == -1);
         System.out.println("target = " + target + ", index = " + index);
     }
 }
