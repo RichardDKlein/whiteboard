@@ -33,8 +33,7 @@ public final class Rotate2dArray {
     }
 
     private static void transpose2dArray(int[][] a) {
-        int numRows = a.length;
-        for (int row = 0; row < numRows; ++row) {
+        for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < row; ++col) {
                 int tmp = a[row][col];
                 a[row][col] = a[col][row];

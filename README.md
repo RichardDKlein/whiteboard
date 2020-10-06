@@ -64,7 +64,7 @@ in one week.
 ### Thursday
 - **lists**
     1. DeleteNodeFromList
-    2. KthToLastInLast
+    2. KthToLastInList
     3. ListHasCycle
     4. RemoveDupsFromList
     5. ReverseList
