@@ -1,12 +1,23 @@
 package com.whiteboard;
 
-import com.sun.tools.javac.util.Pair;
-
 /**
  * Search a 2D array in which all rows
  * and columns are sorted in ascending order.
  */
 public class SearchSorted2dArray {
+    private SearchSorted2dArray() {
+    }
+
+    static class RowCol {
+        int row;
+        int col;
+
+        RowCol(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
+    }
+
     /**
      * Search a 2D array in which all rows and columns
      * are sorted in ascending order.
@@ -39,8 +50,7 @@ public class SearchSorted2dArray {
      * of the element if found, or <-1, -1> if the element
      * is not found.
      */
-    public Pair<Integer, Integer>
-    searchSorted2dArray(int[][] a, int target) {
+    public static RowCol searchSorted2dArray(int[][] a, int target) {
         int numRows = a.length;
         int numCols = a[0].length;
         int row = numRows - 1;
@@ -51,9 +61,9 @@ public class SearchSorted2dArray {
             } else if (a[row][col] > target) {
                 --row;
             } else {
-                return new Pair<>(row, col);
+                return new RowCol(row, col);
             }
         }
-        return new Pair<>(-1, -1);
+        return new RowCol(-1, -1);
     }
 }

@@ -1,8 +1,7 @@
 package com.whiteboard;
 
 import java.util.Arrays;
-
-import com.sun.tools.javac.util.Pair;
+import com.whiteboard.SearchSorted2dArray.RowCol;
 import org.junit.jupiter.api.Test;
 
 class SearchSorted2dArrayTest {
@@ -24,22 +23,22 @@ class SearchSorted2dArrayTest {
             System.out.println(Arrays.toString(a[row]));
         }
 
-        SearchSorted2dArray instance = new SearchSorted2dArray();
-
         for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < a[0].length; ++col) {
                 int target = a[row][col];
-                Pair<Integer, Integer> loc =
-                        instance.searchSorted2dArray(a, target);
+                RowCol loc = SearchSorted2dArray.searchSorted2dArray(a, target);
+                assert(loc.row == row);
+                assert(loc.col == col);
                 System.out.println("target = " + target + ", row = " +
-                        loc.fst + ", col = " + loc.snd);
+                        loc.row + ", col = " + loc.col);
             }
         }
 
         int target = 64;
-        Pair<Integer, Integer> loc =
-                instance.searchSorted2dArray(a, target);
+        RowCol loc = SearchSorted2dArray.searchSorted2dArray(a, target);
+        assert(loc.row == -1);
+        assert(loc.col == -1);
         System.out.println("target = " + target + ", row = " +
-                loc.fst + ", col = " + loc.snd);
+                loc.row + ", col = " + loc.col);
     }
 }
