@@ -30,14 +30,14 @@ public final class SumPairsInUnsortedArray {
      * @param sum The value to which each pair of elements should sum.
      */
     public static Set<UnorderedPair> sumPairsInUnsortedArray(int[] a, int sum) {
-        Set<UnorderedPair> unorderedPairs = new HashSet<>();
+        Set<UnorderedPair> result = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
-                unorderedPairs.add(new UnorderedPair(sum - n, n));
+                result.add(new UnorderedPair(n, sum - n));
             }
             seen.add(n);
         }
-        return unorderedPairs;
+        return result;
     }
 }
