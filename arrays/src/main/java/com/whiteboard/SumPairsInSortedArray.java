@@ -49,7 +49,7 @@ public final class SumPairsInSortedArray {
      * @param sum The value to which each pair of elements should sum.
      */
     public static Set<Pair> sumPairsInSortedArray(int[] a, int sum) {
-        Set<Pair> pairs = new HashSet<>();
+        Set<Pair> result = new HashSet<>();
         int left = 0;
         int right = a.length - 1;
         while (left < right) {
@@ -58,11 +58,11 @@ public final class SumPairsInSortedArray {
             } else if (a[left] + a[right] > sum) {
                 --right;
             } else {
-                pairs.add(new Pair(a[left], a[right]));
+                result.add(new Pair(a[left], a[right]));
                 ++left;
                 --right;
             }
         }
-        return pairs;
+        return result;
     }
 }
