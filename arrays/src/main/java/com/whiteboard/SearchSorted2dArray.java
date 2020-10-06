@@ -53,6 +53,7 @@ public class SearchSorted2dArray {
     public static RowCol searchSorted2dArray(int[][] a, int target) {
         int numRows = a.length;
         int numCols = a[0].length;
+
         int row = numRows - 1;
         int col = 0;
         while (row >= 0 && col < numCols) {
