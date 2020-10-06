@@ -29,6 +29,7 @@ public class SearchSortedAndRotatedArray {
     public static int searchSortedAndRotatedArray(int[] a, int target) {
         int left = 0;
         int right = a.length - 1;
+
         while (left <= right) {
             int mid = (left + right) / 2;
             if (a[mid] == target) {
@@ -36,7 +37,7 @@ public class SearchSortedAndRotatedArray {
             }
             if (a[left] <= a[mid]) {
                 // left half is normally ordered
-                if (a[left] <= target && target <= a[mid]) {
+                if (a[left] <= target && target < a[mid]) {
                     // target is in left half
                     right = mid - 1;
                 } else {
@@ -45,7 +46,7 @@ public class SearchSortedAndRotatedArray {
                 }
             } else {
                 // right half is normally ordered
-                if (a[mid] <= target && target <= a[right]) {
+                if (a[mid] < target && target <= a[right]) {
                     // target is in right half
                     left = mid + 1;
                 } else {
