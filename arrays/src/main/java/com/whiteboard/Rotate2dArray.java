@@ -4,7 +4,10 @@ package com.whiteboard;
  * Rotate a 2D array 90 degrees in the clockwise direction,
  * IN PLACE.
  */
-public class Rotate2dArray {
+public final class Rotate2dArray {
+    private Rotate2dArray() {
+    }
+
     /**
      * Rotate a 2D array 90 degrees in the clockwise direction,
      * IN PLACE.
@@ -22,14 +25,14 @@ public class Rotate2dArray {
      *
      * @param a The 2D array that is to be rotated.
      */
-    public void rotate2dArray(int[][] a) {
+    public static void rotate2dArray(int[][] a) {
         transpose2dArray(a);
         for (int row = 0; row < a.length; ++row) {
             reverse1dArray(a[row]);
         }
     }
 
-    private void transpose2dArray(int[][] a) {
+    private static void transpose2dArray(int[][] a) {
         int numRows = a.length;
         for (int row = 0; row < numRows; ++row) {
             for (int col = 0; col < row; ++col) {
@@ -40,7 +43,7 @@ public class Rotate2dArray {
         }
     }
 
-    private void reverse1dArray(int[] a) {
+    private static void reverse1dArray(int[] a) {
         int left = 0;
         int right = a.length - 1;
         while (left < right) {
