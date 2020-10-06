@@ -46,7 +46,7 @@ public final class SearchSorted2dArray {
      *
      * @param a The sorted 2D array to search.
      * @param target The element to search for.
-     * @return A Pair containing the <row, column> indices
+     * @return A UnorderedPair containing the <row, column> indices
      * of the element if found, or <-1, -1> if the element
      * is not found.
      */

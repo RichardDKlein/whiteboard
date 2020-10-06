@@ -1,22 +1,23 @@
 package com.whiteboard;
 
-import com.sun.tools.javac.util.Pair;
+import java.util.*;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-
 class SumPairsInUnsortedArrayTest {
-
     @Test
     void sumPairsInUnsortedArray() {
         System.out.println();
         System.out.println("Test SumPairsInUnsortedArray:");
         System.out.println("=============================");
 
-        int a[] = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
+        int[] a = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
+
+        Set<UnorderedPair> expected = new HashSet<>();
+        expected.add(new UnorderedPair(6, 6));
+        expected.add(new UnorderedPair(-1, 13));
+        expected.add(new UnorderedPair(5, 7));
+        expected.add(new UnorderedPair(3, 9));
+        expected.add(new UnorderedPair(-2, 14));
 
         List<Integer> list = new ArrayList<>();
         for (int integer : a) {
@@ -33,13 +34,12 @@ class SumPairsInUnsortedArrayTest {
 
         int sum = 12;
 
-        Set<Pair<Integer, Integer>> pairs =
-                SumPairsInUnsortedArray.sumPairsInUnsortedArray(a, sum);
+        Set<UnorderedPair> unorderedPairs = SumPairsInUnsortedArray.sumPairsInUnsortedArray(a, sum);
+        assert(unorderedPairs.equals(expected));
 
-        for (Pair<Integer, Integer> pair : pairs) {
-            int p1 = pair.fst;
-            int p2 = pair.snd;
-            assert(p1 + p2 == sum);
+        for (UnorderedPair unorderedPair : unorderedPairs) {
+            int p1 = unorderedPair.first;
+            int p2 = unorderedPair.second;
             System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
         }
     }

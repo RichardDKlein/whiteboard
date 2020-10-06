@@ -1,7 +1,5 @@
 package com.whiteboard;
 
-import com.sun.tools.javac.util.Pair;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +7,10 @@ import java.util.Set;
  * In an unsorted array, find pairs of array elements
  * that sum to a given value.
  */
-public class SumPairsInUnsortedArray {
+public final class SumPairsInUnsortedArray {
+    private SumPairsInUnsortedArray() {
+    }
+
     /**
      * In an unsorted array, find pairs of array elements
      * that sum to a given value.
@@ -28,16 +29,15 @@ public class SumPairsInUnsortedArray {
      * @param a The unsorted array to search for pairs.
      * @param sum The value to which each pair of elements should sum.
      */
-    public static Set<Pair<Integer, Integer>>
-    sumPairsInUnsortedArray(int[] a, int sum) {
-        Set<Pair<Integer, Integer>> pairs = new HashSet<>();
+    public static Set<UnorderedPair> sumPairsInUnsortedArray(int[] a, int sum) {
+        Set<UnorderedPair> unorderedPairs = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
-                pairs.add(new Pair<>(sum - n, n));
+                unorderedPairs.add(new UnorderedPair(sum - n, n));
             }
             seen.add(n);
         }
-        return pairs;
+        return unorderedPairs;
     }
 }
