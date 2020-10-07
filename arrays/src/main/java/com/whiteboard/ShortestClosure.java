@@ -65,19 +65,20 @@ public final class ShortestClosure {
      */
     public static Interval
     shortestClosure(int[] haystack, Set<Integer> needles) {
+        Interval result = new Interval(0, haystack.length - 1);
+
         ShortestClosure.haystack = haystack;
         ShortestClosure.needles = needles;
 
         buildNeedleLocationMap();
 
-        Interval shortest = new Interval(0, haystack.length - 1);
         for (;;) {
             Interval candidate = getNextCandidate();
             if (candidate == null) {
-                return shortest;
+                return result;
             }
-            if (candidate.length() < shortest.length()) {
-                shortest = candidate;
+            if (candidate.length() < result.length()) {
+                result = candidate;
             }
         }
     }
@@ -86,7 +87,7 @@ public final class ShortestClosure {
         for (int needle : needles) {
             needleLocationMap.put(needle, new ArrayList<>());
         }
-        for (int i = 0; i < haystack.length; ++i) {
+        for (int i =0; i < haystack.length; ++i) {
             int needle = haystack[i];
             if (needles.contains(needle)) {
                 needleLocationMap.get(needle).add(i);
@@ -95,28 +96,29 @@ public final class ShortestClosure {
     }
 
     private static Interval getNextCandidate() {
-        int start = Integer.MAX_VALUE;
-        int end = Integer.MIN_VALUE;
+        int candidateStartIndex = Integer.MAX_VALUE;
+        int candidateEndIndex = Integer.MIN_VALUE;
 
-        List<Integer> startingNeedleLocationList = null;
+        Integer candidateStartNeedle = null;
 
         for (int needle : needles) {
             List<Integer> needleLocationList = needleLocationMap.get(needle);
             if (needleLocationList.isEmpty()) {
                 return null;
             }
-            int front = needleLocationList.get(0);
-            if (front < start) {
-                start = front;
-                startingNeedleLocationList = needleLocationList;
+            int smallestIndexOfNeedle = needleLocationList.get(0);
+            if (smallestIndexOfNeedle < candidateStartIndex) {
+                candidateStartIndex = smallestIndexOfNeedle;
+                candidateStartNeedle = needle;
             }
-            if (front > end) {
-                end = front;
+            if (smallestIndexOfNeedle > candidateEndIndex) {
+                candidateEndIndex = smallestIndexOfNeedle;
             }
         }
-        // Remove the start index from its needle's location list,
-        // so that we don't consider that index again next time.
-        startingNeedleLocationList.remove(0);
-        return new Interval(start, end);
+        // Remove the index of the starting needle from that needle's
+        // location list, so we don't revisit that index again.
+        needleLocationMap.get(candidateStartNeedle).remove(0);
+
+        return new Interval(candidateStartIndex, candidateEndIndex);
     }
 }
