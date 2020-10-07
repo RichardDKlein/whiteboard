@@ -1,11 +1,9 @@
 package com.whiteboard;
 
+import com.whiteboard.ShortestClosure.Interval;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class ShortestClosureTest {
     @Test
@@ -14,46 +12,48 @@ class ShortestClosureTest {
         System.out.println("Test ShortestClosure:");
         System.out.println("=====================");
 
-        int[] haystackArray = {
+        int[] haystack = {
                 7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7
         };
 
-        int needleArray[] = {
-                1, 5, 9
+        List<Set<Integer>> needles = new ArrayList<>();
+        needles.add(new HashSet<>(Arrays.asList(1, 5, 9)));
+        needles.add(new HashSet<>(Arrays.asList(5, 7, 9)));
+        needles.add(new HashSet<>(Arrays.asList(7, 8, 9)));
+        needles.add(new HashSet<>(Arrays.asList(0, 8)));
+
+        Interval[] expected = {
+                new Interval(7, 10),
+                new Interval(0, 2),
+                new Interval(14, 16),
+                new Interval(3, 13)
         };
 
-        List<Integer> haystack = new ArrayList<>();
-        for (Integer hay : haystackArray) {
-            haystack.add(hay);
-        }
-        Set<Integer> needles = new HashSet<>();
-        for (Integer needle : needleArray) {
-            needles.add(needle);
-        }
 
-        ShortestClosure instance = new ShortestClosure();
-        ShortestClosure.Interval shortest =
-                instance.shortestClosure(haystack, needles);
-
-        System.out.print("needles: { ");
-        for (Integer needle : needles) {
-            System.out.print(needle + " ");
-        }
-        System.out.println("}");
-
-        System.out.print("haystack: { ");
-        for (int i = 0; i < haystack.size(); ++i) {
-            if (i == shortest.min_) {
-                System.out.print("[** ");
+        for (int i = 0; i < needles.size(); ++i) {
+            Interval shortest = ShortestClosure.shortestClosure(
+                    haystack, needles.get(i));
+            assert(shortest.equals(expected[i]));
+            System.out.print("needles: { ");
+            for (Integer needle : needles.get(i)) {
+                System.out.print(needle + " ");
             }
-            System.out.print(haystack.get(i) + " ");
-            if (i == shortest.max_) {
-                System.out.print("**] ");
-            }
-        }
-        System.out.println("}");
+            System.out.println("}");
 
-        System.out.println("shortest closure: [" + shortest.min_ + ", "
-                + shortest.max_ + "]");
+            System.out.print("haystack: { ");
+            for (int j = 0; j < haystack.length; ++j) {
+                if (j == shortest.start) {
+                    System.out.print("[** ");
+                }
+                System.out.print(haystack[j] + " ");
+                if (j == shortest.end) {
+                    System.out.print("**] ");
+                }
+            }
+            System.out.println("}");
+
+            System.out.println("shortest closure: [" + shortest.start + ", "
+                    + shortest.end + "]");
+        }
     }
 }

@@ -7,10 +7,35 @@ import java.util.*;
  * the shortest interval in the haystack that contains all
  * the needles.
  */
-public class ShortestClosure<E> {
-    private List<E> haystack_;
-    private Set<E> needles_;
-    private Map<E, List<Integer>> needleLocationMap_ = new HashMap<>();
+public final class ShortestClosure {
+    private ShortestClosure() {
+    }
+
+    static class Interval {
+        int start;
+        int end;
+
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+        int length() {
+            return end - start + 1;
+        }
+        // Needed only for the unit test
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Interval)) {
+                return false;
+            }
+            Interval other = (Interval)o;
+            return this.start == other.start && this.end == other.end;
+        }
+    }
+
+    private static int[] haystack;
+    private static Set<Integer> needles;
+    private static Map<Integer, List<Integer>> needleLocationMap = new HashMap<>();
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -38,12 +63,14 @@ public class ShortestClosure<E> {
      * @param needles A set of elements representing the needles.
      * @return An Interval representing the shortest closure.
      */
-    public Interval
-    shortestClosure(List<E> haystack, Set<E> needles) {
-        haystack_ = haystack;
-        needles_ = needles;
+    public static Interval
+    shortestClosure(int[] haystack, Set<Integer> needles) {
+        ShortestClosure.haystack = haystack;
+        ShortestClosure.needles = needles;
+
         buildNeedleLocationMap();
-        Interval shortest = new Interval(0, haystack.size() - 1);
+
+        Interval shortest = new Interval(0, haystack.length - 1);
         for (;;) {
             Interval candidate = getNextCandidate();
             if (candidate == null) {
@@ -55,52 +82,41 @@ public class ShortestClosure<E> {
         }
     }
 
-    void buildNeedleLocationMap() {
-        for (E needle : needles_) {
-            needleLocationMap_.put(needle, new ArrayList<>());
+    private static void buildNeedleLocationMap() {
+        for (int needle : needles) {
+            needleLocationMap.put(needle, new ArrayList<>());
         }
-        for (int i = 0; i < haystack_.size(); ++i) {
-            E needle = haystack_.get(i);
-            if (needles_.contains(needle)) {
-                needleLocationMap_.get(needle).add(i);
+        for (int i = 0; i < haystack.length; ++i) {
+            int needle = haystack[i];
+            if (needles.contains(needle)) {
+                needleLocationMap.get(needle).add(i);
             }
         }
     }
 
-    private Interval getNextCandidate() {
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-        List<Integer> minLocationList = null;
-        for (E needle : needles_) {
-            List<Integer> locationList = needleLocationMap_.get(needle);
-            if (locationList.isEmpty()) {
+    private static Interval getNextCandidate() {
+        int start = Integer.MAX_VALUE;
+        int end = Integer.MIN_VALUE;
+
+        List<Integer> startingNeedleLocationList = null;
+
+        for (int needle : needles) {
+            List<Integer> needleLocationList = needleLocationMap.get(needle);
+            if (needleLocationList.isEmpty()) {
                 return null;
             }
-            int front = locationList.get(0);
-            if (front < min) {
-                min = front;
-                minLocationList = locationList;
+            int front = needleLocationList.get(0);
+            if (front < start) {
+                start = front;
+                startingNeedleLocationList = needleLocationList;
             }
-            if (front > max) {
-                max = front;
+            if (front > end) {
+                end = front;
             }
         }
-        // Remove the min index from its location list,
+        // Remove the start index from its needle's location list,
         // so that we don't consider that index again next time.
-        minLocationList.remove(0);
-        return new Interval(min, max);
-    }
-
-    static class Interval {
-        int min_;
-        int max_;
-
-        Interval(int min, int max) {
-            min_ = min;
-            max_ = max;
-        }
-        int length() {
-            return max_ - min_ + 1;
-        }
+        startingNeedleLocationList.remove(0);
+        return new Interval(start, end);
     }
 }
