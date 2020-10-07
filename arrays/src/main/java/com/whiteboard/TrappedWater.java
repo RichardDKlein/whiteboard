@@ -7,10 +7,10 @@ public final class TrappedWater {
     private TrappedWater() {
     }
 
-    private static int[] barHeights_;
-    private static int[] leftTallest_; // height of tallest bar to the left
-    private static int[] rightTallest_; // height of tallest bar to the right
-    private static int[] waterline_; // waterline at each bar
+    private static int[] barHeights;
+    private static int[] leftTallest;
+    private static int[] rightTallest;
+    private static int[] waterline;
 
     /**
      * Compute the water collected between the bars of a bar graph.
@@ -36,7 +36,7 @@ public final class TrappedWater {
      * bars of the bar graph.
      */
     public static int trappedWater(int[] barHeights) {
-        barHeights_ = barHeights;
+        TrappedWater.barHeights = barHeights;
         findLeftTallest();
         findRightTallest();
         findWaterline();
@@ -44,42 +44,42 @@ public final class TrappedWater {
     }
 
     private static void findLeftTallest() {
-        leftTallest_ = new int[barHeights_.length];
-        int leftTallest = 0;
-        for (int i = 0; i < barHeights_.length; ++i) {
-            leftTallest_[i] = leftTallest;
-            if (barHeights_[i] > leftTallest) {
-                leftTallest = barHeights_[i];
+        leftTallest = new int[barHeights.length];
+        int tallest = 0;
+        for (int i = 0; i < barHeights.length; ++i) {
+            leftTallest[i] = tallest;
+            if (barHeights[i] > tallest) {
+                tallest = barHeights[i];
             }
         }
     }
 
     private static void findRightTallest() {
-        rightTallest_ = new int[barHeights_.length];
-        int rightTallest = 0;
-        for (int i = barHeights_.length - 1; i >= 0; --i) {
-            rightTallest_[i] = rightTallest;
-            if (barHeights_[i] > rightTallest) {
-                rightTallest = barHeights_[i];
+        rightTallest = new int[barHeights.length];
+        int tallest = 0;
+        for (int i = barHeights.length - 1; i >= 0; --i) {
+            rightTallest[i] = tallest;
+            if (barHeights[i] > tallest) {
+                tallest = barHeights[i];
             }
         }
     }
 
     private static void findWaterline() {
-        waterline_ = new int[barHeights_.length];
-        for (int i = 0; i < barHeights_.length; ++i) {
-            waterline_[i] = Math.min(leftTallest_[i], rightTallest_[i]);
-            if (barHeights_[i] > waterline_[i]) {
-                waterline_[i] = barHeights_[i];
+        waterline = new int[barHeights.length];
+        for (int i = 0; i < waterline.length; ++i) {
+            waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
+            if (waterline[i] < barHeights[i]) {
+                waterline[i] = barHeights[i];
             }
         }
     }
 
     private static int computeTrappedWater() {
-        int trappedWater = 0;
-        for (int i = 0; i < barHeights_.length; ++i) {
-            trappedWater += waterline_[i] - barHeights_[i];
+        int result = 0;
+        for (int i = 0; i < barHeights.length; ++i) {
+            result += waterline[i] - barHeights[i];
         }
-        return trappedWater;
+        return result;
     }
 }
