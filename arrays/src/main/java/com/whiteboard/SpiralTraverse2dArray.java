@@ -30,50 +30,54 @@ public final class SpiralTraverse2dArray {
      */
     public static List<Integer> spiralTraverse2dArray(int[][] a) {
         List<Integer> result = new ArrayList<>();
-        for (int rowTop = 0, rowBottom = a.length - 1,
-             colLeft = 0, colRight = a[0].length - 1;
-             rowTop <= rowBottom && colLeft <= colRight;
-             ++rowTop, --rowBottom, ++colLeft, --colRight) {
 
-            List<Integer> shell = spiralTraverseShell(
-                    a, rowTop, rowBottom, colLeft, colRight);
+        int numRows = a.length;
+        int numCols = a[0].length;
+
+        for (int topRow = 0, rightCol = numCols - 1, bottomRow = numRows - 1, leftCol = 0;
+                topRow <= bottomRow && leftCol <= rightCol;
+                ++topRow, --rightCol, --bottomRow, ++leftCol) {
+
+            List<Integer> shell = spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol);
             result.addAll(shell);
         }
         return result;
     }
 
-    private static List<Integer> spiralTraverseShell(int[][]a,
-            int rowTop, int rowBottom, int colLeft, int colRight) {
-        // degenerate case: horizontal vector
+    private static List<Integer> spiralTraverseShell(
+            int[][] a, int topRow, int rightCol, int bottomRow, int leftCol) {
+
         List<Integer> result = new ArrayList<>();
-        if (rowTop == rowBottom) {
-            for (int col = colLeft; col <= colRight; ++col) {
-                result.add(a[rowTop][col]);
+
+        if (topRow == bottomRow) {
+            // degenerate case: row vector
+            for (int col = leftCol; col <= rightCol; ++col) {
+                result.add(a[topRow][col]);
             }
             return result;
         }
-        // degenerate case: vertical vector
-        if (colLeft == colRight) {
-            for (int row = rowTop; row <= rowBottom; ++row) {
-                result.add(a[row][colLeft]);
+        if (leftCol == rightCol) {
+            // degenerate case: column vector
+            for (int row = topRow; row <= bottomRow; ++row) {
+                result.add(a[row][leftCol]);
             }
             return result;
         }
         // top row of shell
-        for (int col = colLeft; col < colRight; ++col) {
-            result.add(a[rowTop][col]);
+        for (int col = leftCol; col < rightCol; ++col) {
+            result.add(a[topRow][col]);
         }
         // right column of shell
-        for (int row = rowTop; row < rowBottom; ++row) {
-            result.add(a[row][colRight]);
+        for (int row = topRow; row < bottomRow; ++row) {
+            result.add(a[row][rightCol]);
         }
         // bottom row of shell
-        for (int col = colRight; col > colLeft; --col) {
-            result.add(a[rowBottom][col]);
+        for (int col = rightCol; col > leftCol; --col) {
+            result.add(a[bottomRow][col]);
         }
         // left column of shell
-        for (int row = rowBottom; row > rowTop; --row) {
-            result.add(a[row][colLeft]);
+        for (int row = bottomRow; row > topRow; --row) {
+            result.add(a[row][leftCol]);
         }
         return result;
     }
