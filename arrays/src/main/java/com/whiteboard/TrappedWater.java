@@ -1,15 +1,16 @@
 package com.whiteboard;
 
-import java.util.Arrays;
-
 /**
  * Compute the water collected between the bars of a bar graph.
  */
-public class TrappedWater {
-    private int[] barHeights_;
-    private int[] leftTallest_; // height of tallest bar to the left
-    private int[] rightTallest_; // height of tallest bar to the right
-    private int[] waterline_; // waterline at each bar
+public final class TrappedWater {
+    private TrappedWater() {
+    }
+
+    private static int[] barHeights_;
+    private static int[] leftTallest_; // height of tallest bar to the left
+    private static int[] rightTallest_; // height of tallest bar to the right
+    private static int[] waterline_; // waterline at each bar
 
     /**
      * Compute the water collected between the bars of a bar graph.
@@ -34,7 +35,7 @@ public class TrappedWater {
      * @return The amount, in inches, of water trapped between the
      * bars of the bar graph.
      */
-    public int trappedWater(int[] barHeights) {
+    public static int trappedWater(int[] barHeights) {
         barHeights_ = barHeights;
         findLeftTallest();
         findRightTallest();
@@ -42,7 +43,7 @@ public class TrappedWater {
         return computeTrappedWater();
     }
 
-    private void findLeftTallest() {
+    private static void findLeftTallest() {
         leftTallest_ = new int[barHeights_.length];
         int leftTallest = 0;
         for (int i = 0; i < barHeights_.length; ++i) {
@@ -53,7 +54,7 @@ public class TrappedWater {
         }
     }
 
-    private void findRightTallest() {
+    private static void findRightTallest() {
         rightTallest_ = new int[barHeights_.length];
         int rightTallest = 0;
         for (int i = barHeights_.length - 1; i >= 0; --i) {
@@ -64,7 +65,7 @@ public class TrappedWater {
         }
     }
 
-    private void findWaterline() {
+    private static void findWaterline() {
         waterline_ = new int[barHeights_.length];
         for (int i = 0; i < barHeights_.length; ++i) {
             waterline_[i] = Math.min(leftTallest_[i], rightTallest_[i]);
@@ -74,7 +75,7 @@ public class TrappedWater {
         }
     }
 
-    private int computeTrappedWater() {
+    private static int computeTrappedWater() {
         int trappedWater = 0;
         for (int i = 0; i < barHeights_.length; ++i) {
             trappedWater += waterline_[i] - barHeights_[i];

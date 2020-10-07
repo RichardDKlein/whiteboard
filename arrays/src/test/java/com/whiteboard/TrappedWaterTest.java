@@ -16,16 +16,16 @@ class TrappedWaterTest {
                 {1, 3, 0, 7, 2, 0, 9, 0, 4, 3, 0, 5, 6, 0, 8, 0, 3}
         };
 
-        int[] waterCollected = {
+        int[] expected = {
                 20, 0, 56
         };
 
         for (int i = 0; i < heights.length; ++i) {
             int[] testArray = heights[i];
+            int trappedWater = TrappedWater.trappedWater(testArray);
+            assert(trappedWater == expected[i]);
             System.out.println("heights = " + Arrays.toString(testArray));
-            System.out.print("water collected = " +
-                    new TrappedWater().trappedWater(testArray));
-            System.out.println(" (should be " + waterCollected[i] + ")");
+            System.out.println("trapped water = " + trappedWater);
         }
     }
 }
