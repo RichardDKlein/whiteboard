@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Count the number of '1' bits in an int.
  */
-public class CountOneBits {
+public final class CountOneBits {
+    private CountOneBits() {
+    }
+
     /**
      * Count the number of '1' bits in an int.
      *
@@ -11,7 +14,7 @@ public class CountOneBits {
      * @return The number of '1' bits in the
      * given int.
      */
-    public int countOneBits(int n) {
+    public static int countOneBits(int n) {
         int count = 0;
         while (n != 0) {
             ++count;
