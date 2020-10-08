@@ -16,8 +16,8 @@ public final class ReverseBits {
      */
     public static int reverseBits(int n) {
         int result = 0;
-        int numShifts = Integer.SIZE - 1;
-        for (int i = 0; i < numShifts; ++i) {
+        int numberOfShifts = Integer.SIZE - 1;
+        for (int i = 0; i < numberOfShifts; ++i) {
             result |= n & 1; // OR
             result <<= 1; // shift
             n >>= 1;
