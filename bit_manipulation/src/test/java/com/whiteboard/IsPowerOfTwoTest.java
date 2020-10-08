@@ -9,30 +9,33 @@ class IsPowerOfTwoTest {
         System.out.println("Test IsPowerOfTwo:");
         System.out.println("==================");
 
-        IsPowerOfTwo instance = new IsPowerOfTwo();
-
         int n;
 
         n = 0;
         TestUtils.printBits(n);
-        System.out.println("Is power of 2 = "
-                + (instance.isPowerOfTwo(n) ? "true" : "false"));
+        boolean isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
+        assert(!isPowerOfTwo);
+        System.out.println("Is power of 2 = " + isPowerOfTwo);
 
         n = 1;
         TestUtils.printBits(n);
-        System.out.println("Is power of 2 = "
-                + (instance.isPowerOfTwo(n) ? "true" : "false"));
+        isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
+        assert(isPowerOfTwo);
+        System.out.println("Is power of 2 = " + isPowerOfTwo);
 
         for (int i = 1; i < Integer.SIZE; ++i) {
             n = 0;
             n = SetBit.setBit(n, i);
             TestUtils.printBits(n);
-            System.out.println("Is power of 2 = "
-                    + (instance.isPowerOfTwo(n) ? "true" : "false"));
+            isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
+            assert(isPowerOfTwo);
+            System.out.println("Is power of 2 = " + isPowerOfTwo);
+
             n = SetBit.setBit(n, 0);
+            isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
+            assert(!isPowerOfTwo);
             TestUtils.printBits(n);
-            System.out.println("Is power of 2 = "
-                    + (instance.isPowerOfTwo(n) ? "true" : "false"));
+            System.out.println("Is power of 2 = " + isPowerOfTwo);
         }
     }
 }

@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Is an int a power of 2?
  */
-public class IsPowerOfTwo {
+public final class IsPowerOfTwo {
+    private IsPowerOfTwo() {
+    }
+
     /**
      * Determine whether an int is a power of 2.
      *
@@ -11,7 +14,7 @@ public class IsPowerOfTwo {
      * @return A boolean indicating whether ('true')
      * or not ('false') the given int is a power of 2.
      */
-    public boolean isPowerOfTwo(int n) {
+    public static boolean isPowerOfTwo(int n) {
         return (n != 0) && ((n & (n - 1)) == 0);
     }
 }
