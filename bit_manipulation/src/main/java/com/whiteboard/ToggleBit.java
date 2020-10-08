@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Toggle bit.
  */
-public class ToggleBit {
+public final class ToggleBit {
+    private ToggleBit() {
+    }
+
     /**
      * Toggle the specified bit in an int.
      *
@@ -12,7 +15,7 @@ public class ToggleBit {
      * @return A copy of the int, but with the
      * specified bit toggled.
      */
-    public int toggleBit(int n, int bit) {
+    public static int toggleBit(int n, int bit) {
         return n ^ (1 << bit);
     }
 }
