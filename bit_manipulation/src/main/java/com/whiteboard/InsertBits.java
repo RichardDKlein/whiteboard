@@ -3,7 +3,7 @@ package com.whiteboard;
 /**
  * Insert bits.
  */
-public class InsertBits {
+public final class InsertBits {
     /**
      * Insert a contiguous segment of bits into an int.
      *
@@ -17,7 +17,7 @@ public class InsertBits {
      * @param lsb The bit # of the least significant bit in 'n' where the
      *            bits are to be inserted.
      */
-    public int insertBits(int n, int bits, int msb, int lsb) {
+    public static int insertBits(int n, int bits, int msb, int lsb) {
         int numBits = msb - lsb + 1;
         int mask = (1 << numBits) - 1;
         int shiftedAndComplementedMask = ~(mask << lsb);
