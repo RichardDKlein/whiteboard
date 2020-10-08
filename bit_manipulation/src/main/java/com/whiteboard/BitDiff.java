@@ -21,11 +21,11 @@ public final class BitDiff {
     }
 
     private static int countOneBits(int n) {
-        int count = 0;
+        int result = 0;
         while (n != 0) {
-            ++count;
+            ++result;
             n &= n - 1;
         }
-        return count;
+        return result;
     }
 }
