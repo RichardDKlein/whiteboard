@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Set bit.
  */
-public class SetBit {
+public final class SetBit {
+    private SetBit() {
+    }
+
     /**
      * Set the specified bit in an int.
      *
@@ -12,7 +15,7 @@ public class SetBit {
      * @return A copy of the int, but with the
      * specified bit set.
      */
-    public int setBit(int n, int bit) {
+    public static int setBit(int n, int bit) {
         return n | (1 << bit);
     }
 }
