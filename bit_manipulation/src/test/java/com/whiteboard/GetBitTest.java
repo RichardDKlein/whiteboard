@@ -12,8 +12,9 @@ class GetBitTest {
         int n = 0xAAAAAAAA;
         TestUtils.printBits(n);
         for (int i = 0; i < Integer.SIZE; ++i) {
-            System.out.println("Bit " + i + " = " +
-                    new GetBit().getBit(n, i));
+            int bit = GetBit.getBit(n, i);
+            assert(bit == i % 2);
+            System.out.println("Bit " + i + " = " + bit);
         }
     }
 }
