@@ -53,7 +53,6 @@ public final class SolveMaze {
      */
     public static List<RowCol>
     solveMaze(char[][] maze, RowCol start, RowCol exit) {
-
         List<RowCol> result = new ArrayList<>();
 
         // error checking
