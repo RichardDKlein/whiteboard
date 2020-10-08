@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Clear a specified bit.
  */
-public class ClearBit {
+public final class ClearBit {
+    private ClearBit() {
+    }
+
     /**
      * Clear a specified bit in an int.
      *
@@ -12,7 +15,7 @@ public class ClearBit {
      * @return A copy of the int with the specified
      * bit cleared.
      */
-    public int clearBit(int n, int bit) {
+    public static int clearBit(int n, int bit) {
         return n & ~(1 << bit);
     }
 }
