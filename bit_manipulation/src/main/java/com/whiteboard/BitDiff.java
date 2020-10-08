@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Determine the bit difference between two ints.
  */
-public class BitDiff {
+public final class BitDiff {
+    private BitDiff() {
+    }
+
     /**
      * Determine the bit difference between two ints, i.e.
      * the number of bits that must be toggled to transform
@@ -13,11 +16,11 @@ public class BitDiff {
      * @param n The other int to compare.
      * @return The bit difference.
      */
-    public int bitDiff(int m, int n) {
+    public static int bitDiff(int m, int n) {
         return countOneBits(m ^ n);
     }
 
-    private int countOneBits(int n) {
+    private static int countOneBits(int n) {
         int count = 0;
         while (n != 0) {
             ++count;

@@ -12,9 +12,12 @@ class BitDiffTest {
         int m = 0xAAAAAAAA;
         int n = 0xAAABAACA;
 
+        int expected = 3;
+
         TestUtils.printBits(m);
         TestUtils.printBits(n);
-        System.out.println("Bit diff = " +
-                new BitDiff().bitDiff(m, n));
+        int bitDiff = BitDiff.bitDiff(m, n);
+        assert(bitDiff == expected);
+        System.out.println("Bit diff = " + bitDiff);
     }
 }
