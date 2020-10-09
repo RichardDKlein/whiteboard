@@ -13,7 +13,7 @@ class PermutationsOfStringTest {
         System.out.println("Test PermutationsOfString:");
         System.out.println("==========================");
 
-        String[] expectedArray = {
+        Set<String> expectedSet = new HashSet(Arrays.asList(
                 "abcd",
                 "abdc",
                 "acbd",
@@ -41,9 +41,7 @@ class PermutationsOfStringTest {
                 "dbca",
                 "dcab",
                 "dcba"
-        };
-
-        Set<String> expectedSet = new HashSet(Arrays.asList(expectedArray));
+        ));
 
         String testString = "abcd";
         Set<String> perms = PermutationsOfString.permutationsOfString(testString);

@@ -20,17 +20,14 @@ class TraverseBinaryTreeBreadthFirstTest {
         System.out.println("             8              17    ");
         System.out.println();
 
-        int[] expectedArray = {9,4,13,2,6,11,15,1,3,5,7,10,12,14,16,8,17};
-        List<Integer> expectedList = new ArrayList<>();
-        for (int integer : expectedArray) {
-            expectedList.add(integer);
-        }
+        List<Integer> expectedList = new ArrayList<>(Arrays.asList(
+                9,4,13,2,6,11,15,1,3,5,7,10,12,14,16,8,17
+        ));
 
-        int[] sortedArray = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
-        List<Integer> sortedList = new ArrayList<>();
-        for (int integer : sortedArray) {
-            sortedList.add(integer);
-        }
+        List<Integer> sortedList = new ArrayList<>(Arrays.asList(
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+        ));
+
         BinaryTreeNode<Integer> root =
                 new CreateBinarySearchTreeFromSortedList<Integer>()
                         .createBinarySearchTreeFromSortedList(sortedList);
