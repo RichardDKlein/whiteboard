@@ -4,16 +4,18 @@ package com.whiteboard;
  * Singleton design pattern.
  */
 public class Singleton {
-    private static Singleton instance_;
+    private static volatile Singleton instance;
 
     private Singleton() {
         // construction logic
     }
 
     public static Singleton getInstance() {
-        if (instance_ == null) {
-            instance_ = new Singleton();
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                instance = new Singleton();
+            }
         }
-        return instance_;
+        return instance;
     }
 }
