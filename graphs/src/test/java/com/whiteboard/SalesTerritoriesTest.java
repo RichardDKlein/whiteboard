@@ -1,5 +1,6 @@
 package com.whiteboard;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +37,34 @@ class SalesTerritoriesTest {
         cityPairs.add(new Pair<>("New York City", "Syracuse"));
         cityPairs.add(new Pair<>("Pasadena", "Sacramento"));
 
+        Set<Set<String>> expected = new HashSet<>();
+        expected.add(new HashSet<>(Arrays.asList(
+                "San Francisco",
+                "Santa Monica",
+                "San Diego",
+                "Sacramento",
+                "Los Angeles",
+                "Oakland",
+                "Pasadena",
+                "San Jose"
+        )));
+        expected.add(new HashSet<>(Arrays.asList(
+                "Aurora",
+                "Fort Collins",
+                "Boulder",
+                "Denver",
+                "Colorado Springs",
+                "Aspen"
+        )));
+        expected.add(new HashSet<>(Arrays.asList(
+                "New York City",
+                "Rochester",
+                "Yonkers",
+                "Syracuse",
+                "Buffalo",
+                "Albany"
+        )));
+
         System.out.println("City pairs = ");
         for (Pair<String, String> cityPair : cityPairs) {
             System.out.println("\t(" + cityPair.fst +
@@ -43,8 +72,8 @@ class SalesTerritoriesTest {
         }
         System.out.println();
 
-        Set<Set<String>> territories =
-                new SalesTerritories().salesTerritories(cityPairs);
+        Set<Set<String>> territories = SalesTerritories.salesTerritories(cityPairs);
+        assert(territories.equals(expected));
 
         System.out.println("Territories = ");
         for (Set<String> territory : territories) {

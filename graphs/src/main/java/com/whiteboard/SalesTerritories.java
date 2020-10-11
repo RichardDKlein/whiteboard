@@ -10,11 +10,21 @@ import java.util.*;
  * all the territories, i.e. find all the cities composing
  * each territory.
  */
-public class SalesTerritories {
-    private Set<Pair<String, String>> cityPairs_;
-    private Map<String, CityNode> cityMap_ = new HashMap<>();
-    private Set<CityNode> visited_ = new HashSet<>();
-    private Set<Set<String>> territories_ = new HashSet<>();
+public final class SalesTerritories {
+    private SalesTerritories() {
+    }
+
+    private static class CityNode {
+        String city;
+        Set<CityNode> neighbors = new HashSet<>();
+        CityNode(String city) {
+            this.city = city;
+        }
+    }
+
+    private static Set<Pair<String, String>> cityPairs;
+    private static Map<String, CityNode> cityMap = new HashMap<>();
+    private static Set<CityNode> visited = new HashSet<>();
 
     /**
      * Given a list of city pairs, where each pair denotes that
@@ -35,62 +45,56 @@ public class SalesTerritories {
      * @return The given cities, organized into sets representing
      * their sales territories.
      */
-    public Set<Set<String>>
+    public static Set<Set<String>>
     salesTerritories(Set<Pair<String, String>> cityPairs) {
-        cityPairs_ = cityPairs;
+        Set<Set<String>> result = new HashSet<>();
+        SalesTerritories.cityPairs = cityPairs;
         buildCityMap();
-        for (CityNode cityNode : cityMap_.values()) {
-            if (!visited_.contains(cityNode)) {
+        for (CityNode cityNode : cityMap.values()) {
+            if (!visited.contains(cityNode)) {
                 Set<String> territory = findConnectedCities(cityNode);
-                territories_.add(territory);
+                result.add(territory);
             }
         }
-        return territories_;
+        return result;
     }
 
-    private void buildCityMap() {
-        for (Pair<String, String> cityPair : cityPairs_) {
+    private static void buildCityMap() {
+        for (Pair<String, String> cityPair : cityPairs) {
             String city1 = cityPair.fst;
             String city2 = cityPair.snd;
             CityNode cityNode1 = findOrCreateCityNode(city1);
             CityNode cityNode2 = findOrCreateCityNode(city2);
-            cityNode1.neighbors_.add(cityNode2);
-            cityNode2.neighbors_.add(cityNode1);
+            cityNode1.neighbors.add(cityNode2);
+            cityNode2.neighbors.add(cityNode1);
         }
     }
 
-    private CityNode findOrCreateCityNode(String city) {
-        CityNode cityNode = cityMap_.get(city);
+    private static CityNode findOrCreateCityNode(String city) {
+        CityNode cityNode = cityMap.get(city);
         if (cityNode == null) {
             cityNode = new CityNode(city);
-            cityMap_.put(city, cityNode);
+            cityMap.put(city, cityNode);
         }
         return cityNode;
     }
 
-    private Set<String> findConnectedCities(CityNode root) {
+    private static Set<String> findConnectedCities(CityNode root) {
         // Breadth-First Search (BFS)
         Set<String> territory = new HashSet<>();
         Queue<CityNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             CityNode cityNode = nodeQueue.poll();
-            visited_.add(cityNode);
-            territory.add(cityNode.city_);
-            for (CityNode neighbor : cityNode.neighbors_) {
-                if (!visited_.contains(neighbor)) {
-                    nodeQueue.add(neighbor);
-                }
+            if (visited.contains(cityNode)) {
+                continue;
+            }
+            visited.add(cityNode);
+            territory.add(cityNode.city);
+            for (CityNode neighbor : cityNode.neighbors) {
+                nodeQueue.add(neighbor);
             }
         }
         return territory;
-    }
-
-    private static class CityNode {
-        String city_;
-        Set<CityNode> neighbors_ = new HashSet<>();
-        CityNode(String city) {
-            city_ = city;
-        }
     }
 }
