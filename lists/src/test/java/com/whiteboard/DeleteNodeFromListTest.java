@@ -2,14 +2,13 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class DeleteNodeFromListTest {
-    private ListNode<Character> aNode = new ListNode<>();
-    private ListNode<Character> bNode = new ListNode<>();
-    private ListNode<Character> cNode = new ListNode<>();
-    private ListNode<Character> dNode = new ListNode<>();
-    private ListNode<Character> eNode = new ListNode<>();
-    private ListNode<Character> fNode = new ListNode<>();
-    private ListNode<Character> gNode = new ListNode<>();
+    private ArrayList<Character> listData = new ArrayList<>(Arrays.asList(
+            'a', 'b', 'c', 'd', 'e', 'f', 'g'));
 
     @Test
     void deleteNode() {
@@ -17,65 +16,32 @@ public class DeleteNodeFromListTest {
         System.out.println("Test DeleteNodeFromList:");
         System.out.println("================");
 
-        DeleteNodeFromList<Character> instance = new DeleteNodeFromList<>();
-        boolean result;
+        List<ListNode<Character>> expected = new ArrayList<>();
+        expected.add(TestUtils.createList(Arrays.asList('b', 'c', 'd', 'e', 'f', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'c', 'd', 'e', 'f', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'd', 'e', 'f', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'e', 'f', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'f', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'g')));
+        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g')));
 
         System.out.println("\nOriginal list:");
         ListNode<Character> list = createTestList();
-        TestUtils<Character> testUtils = new TestUtils<>();
-        testUtils.printList(list);
+        TestUtils.printList(list);
 
-        System.out.println("\nDeleting Node 'a':");
-        result = instance.deleteNode(aNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'b':");
-        list = createTestList();
-        result = instance.deleteNode(bNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'c':");
-        list = createTestList();
-        result = instance.deleteNode(cNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'd':");
-        list = createTestList();
-        result = instance.deleteNode(dNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'e':");
-        list = createTestList();
-        result = instance.deleteNode(eNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'f':");
-        list = createTestList();
-        result = instance.deleteNode(fNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
-
-        System.out.println("\nDeleting Node 'g':");
-        list = createTestList();
-        result = instance.deleteNode(gNode);
-        testUtils.printList(list);
-        System.out.println(result ? "SUCCESS" : "FAILURE");
+        for (int i = 0; i < listData.size(); ++i) {
+            System.out.println("\nDeleting Node '" + listData.get(i) + "':");
+            list = createTestList();
+            ListNode<Character> node = TestUtils.findNode(list, listData.get(i));
+            boolean result = DeleteNodeFromList.deleteNodeFromList(node);
+            assert(TestUtils.listsAreEqual(list, expected.get(i)));
+            assert(result == i < listData.size() - 1);
+            TestUtils.printList(list);
+            System.out.println(result ? "SUCCESS" : "FAILURE");
+        }
     }
 
     private ListNode<Character> createTestList() {
-        aNode.data = 'a'; aNode.next = bNode;
-        bNode.data = 'b'; bNode.next = cNode;
-        cNode.data = 'c'; cNode.next = dNode;
-        dNode.data = 'd'; dNode.next = eNode;
-        eNode.data = 'e'; eNode.next = fNode;
-        fNode.data = 'f'; fNode.next = gNode;
-        gNode.data = 'g'; gNode.next = null;
-
-        return aNode;
+        return TestUtils.createList(listData);
     }
 }

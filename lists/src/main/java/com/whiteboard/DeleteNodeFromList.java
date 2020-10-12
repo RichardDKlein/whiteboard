@@ -4,7 +4,10 @@ package com.whiteboard;
  * Delete a node from a singly-linked list, given only a reference
  * to the node to be deleted.
  */
-public class DeleteNodeFromList<E> {
+public final class DeleteNodeFromList {
+    private DeleteNodeFromList() {
+    }
+
     /**
      * Delete a node from a singly-linked list, given only a
      * reference to the node to be deleted.
@@ -21,7 +24,7 @@ public class DeleteNodeFromList<E> {
      * @return A boolean indicating whether or not the deletion
      * was successful.
      */
-    public boolean deleteNode(ListNode<E> victim) {
+    public static <E> boolean deleteNodeFromList(ListNode<E> victim) {
         ListNode<E> next = victim.next;
         if (next == null) {
             return false;
