@@ -3,7 +3,10 @@ package com.whiteboard;
 /**
  * Determine whether a singly-linked list contains a cycle.
  */
-public class ListHasCycle<E> {
+public final class ListHasCycle {
+    private ListHasCycle() {
+    }
+
     /**
      * Determine whether a singly-linked list contains a cycle.
      *
@@ -18,7 +21,7 @@ public class ListHasCycle<E> {
      * @return A boolean indicating whether or not
      * the specified list contains a cycle.
      */
-    public boolean listHasCycle(ListNode<E> head) {
+    public static <E> boolean listHasCycle(ListNode<E> head) {
         if (head == null) {
             return false;
         }
