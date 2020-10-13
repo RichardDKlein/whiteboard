@@ -2,6 +2,10 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class KthToLastInListTest {
 
     @Test
@@ -10,31 +14,21 @@ class KthToLastInListTest {
         System.out.println("Test KthToLastInList:");
         System.out.println("=====================");
 
-//        ListNode<Character> aNode = new ListNode<>();
-//        ListNode<Character> bNode = new ListNode<>();
-//        ListNode<Character> cNode = new ListNode<>();
-//        ListNode<Character> dNode = new ListNode<>();
-//        ListNode<Character> eNode = new ListNode<>();
-//        ListNode<Character> fNode = new ListNode<>();
-//        ListNode<Character> gNode = new ListNode<>();
-//
-//        aNode.data = 'a'; aNode.next = bNode;
-//        bNode.data = 'b'; bNode.next = cNode;
-//        cNode.data = 'c'; cNode.next = dNode;
-//        dNode.data = 'd'; dNode.next = eNode;
-//        eNode.data = 'e'; eNode.next = fNode;
-//        fNode.data = 'f'; fNode.next = gNode;
-//        gNode.data = 'g'; gNode.next = null;
-//
-//        TestUtils<Character> testUtils = new TestUtils<>();
-//        testUtils.printList(aNode);
-//
-//        KthToLastInList<Character> instance = new KthToLastInList<>();
-//
-//        for (int k = 1; k <= 8; ++k) {
-//            ListNode<Character> kthToLast = instance.kthToLastInList(aNode, k);
-//            System.out.println("kth to last element (k = " + k + ") is " +
-//                    ((kthToLast != null) ? kthToLast.data : "undefined"));
-//        }
+        List<Character> listData = new ArrayList<>(Arrays.asList(
+                'a','b','c','d','e','f','g'));
+        ListNode<Character> list = TestUtils.createList(listData);
+
+        TestUtils.printList(list);
+
+        for (int k = 1; k <= 8; ++k) {
+            ListNode<Character> kthToLast = KthToLastInList.kthToLastInList(list, k);
+            if (k == 8) {
+                assert(kthToLast == null);
+            } else {
+                assert(kthToLast.data == listData.get(listData.size() - k));
+            }
+            System.out.println("kth to last element (k = " + k + ") is " +
+                    ((kthToLast != null) ? kthToLast.data : "undefined"));
+        }
     }
 }
