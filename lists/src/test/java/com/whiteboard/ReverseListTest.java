@@ -2,59 +2,37 @@ package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
 
-class ReverseListTest {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+class ReverseListTest {
     @Test
     void reverseListIterative() {
         System.out.println();
         System.out.println("Test ReverseList:");
         System.out.println("==========================");
 
-//        ListNode<Character> list = null;
-//        System.out.println("Original list:");
-//        TestUtils<Character> testUtils = new TestUtils<>();
-//        testUtils.printList(list);
-//        ReverseList<Character> instance = new ReverseList<>();
-//        ListNode<Character> rev = instance.reverseListIterative(list);
-//        System.out.println("\nReversed list:");
-//        testUtils.printList(rev);
-//
-//        ListNode<Character> aNode = new ListNode<>();
-//        ListNode<Character> bNode = new ListNode<>();
-//        ListNode<Character> cNode = new ListNode<>();
-//        ListNode<Character> dNode = new ListNode<>();
-//        ListNode<Character> eNode = new ListNode<>();
-//        ListNode<Character> fNode = new ListNode<>();
-//        ListNode<Character> gNode = new ListNode<>();
-//
-//        aNode.data = 'a';
-//        bNode.data = 'b';
-//        cNode.data = 'c';
-//        dNode.data = 'd';
-//        eNode.data = 'e';
-//        fNode.data = 'f';
-//        gNode.data = 'g';
-//
-//        aNode.next = null;
-//        list = aNode;
-//        System.out.println("\nOriginal list:");
-//        testUtils.printList(list);
-//        rev = instance.reverseListIterative(list);
-//        System.out.println("\nReversed list:");
-//        testUtils.printList(rev);
-//
-//        aNode.next = bNode;
-//        bNode.next = cNode;
-//        cNode.next = dNode;
-//        dNode.next = eNode;
-//        eNode.next = fNode;
-//        fNode.next = gNode;
-//        gNode.next = null;
-//        list = aNode;
-//        System.out.println("\nOriginal list:");
-//        testUtils.printList(list);
-//        rev = instance.reverseListIterative(list);
-//        System.out.println("\nReversed list:");
-//        testUtils.printList(rev);
+        List<ListNode<Character>> lists = new ArrayList<>();
+        lists.add(null);
+        lists.add(new ListNode<>('a'));
+        lists.add(TestUtils.createList(Arrays.asList('a','b','c','d','e','f','g')));
+
+        List<ListNode<Character>> expected = new ArrayList<>();
+        expected.add(null);
+        expected.add(new ListNode<>('a'));
+        expected.add(TestUtils.createList(Arrays.asList('g','f','e','d','c','b','a')));
+
+        for (int i = 0; i < lists.size(); ++i) {
+            if (i > 0) {
+                System.out.println();
+            }
+            System.out.println("Original list:");
+            TestUtils.printList(lists.get(i));
+            ListNode<Character> reversedList = ReverseList.reverseList(lists.get(i));
+            assert(TestUtils.listsAreEqual(reversedList, expected.get(i)));
+            System.out.println("Reversed list:");
+            TestUtils.printList(reversedList);
+        }
     }
 }

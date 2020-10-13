@@ -1,10 +1,10 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.jupiter.api.Test;
 
 public class DeleteNodeFromListTest {
     private ArrayList<Character> listData = new ArrayList<>(Arrays.asList(
