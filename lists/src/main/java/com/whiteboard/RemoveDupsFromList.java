@@ -6,12 +6,15 @@ import java.util.Set;
 /**
  * Remove duplicates from a singly-linked list.
  */
-public class RemoveDupsFromList<E> {
+public final class RemoveDupsFromList {
+    private RemoveDupsFromList() {
+    }
+
     /**
      * Remove duplicates from a singly-linked list.
      * @param head The list of interest.
      */
-    public void removeDupsFromList(ListNode<E> head) {
+    public static <E> void removeDupsFromList(ListNode<E> head) {
         ListNode<E> prev = null;
         ListNode<E> curr = head;
         Set<E> seen = new HashSet<>();
