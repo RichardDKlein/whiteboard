@@ -1,11 +1,11 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import org.junit.jupiter.api.Test;
 
 class ShuffleListTest {
 
@@ -24,9 +24,8 @@ class ShuffleListTest {
         List<Integer> shuffledList = new ArrayList<>(unshuffledList);
 
         System.out.println("Unshuffled list = " + Arrays.toString(unshuffledList.toArray()));
-        ShuffleList<Integer> instance = new ShuffleList<>();
         for (int i = 0; i < 10; i++) {
-            instance.shuffleList(shuffledList);
+            ShuffleList.shuffleList(shuffledList);
             List<Integer> sortedShuffledList = new ArrayList<>(shuffledList);
             Collections.sort(sortedShuffledList);
             assert(sortedShuffledList.equals(unshuffledList));

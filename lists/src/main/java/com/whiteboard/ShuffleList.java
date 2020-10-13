@@ -5,7 +5,10 @@ import java.util.List;
 /**
  * ShuffleList a list.
  */
-public class ShuffleList<E> {
+public final class ShuffleList {
+    private ShuffleList() {
+    }
+
     /**
      * ShuffleList a list, as if it represented a deck of card.
      *
@@ -17,7 +20,7 @@ public class ShuffleList<E> {
      *
      * @param list The list to be shuffled.
      */
-    public void shuffleList(List<E> list) {
+    public static <E> void shuffleList(List<E> list) {
         for (int i = 0; i < list.size() - 1; ++i) {
             int j = randomIntInInterval(i + 1, list.size() - 1);
             swapListElements(list, i, j);
@@ -28,7 +31,7 @@ public class ShuffleList<E> {
         return (int)Math.round(Math.random() * (max - min) + min);
     }
 
-    private void swapListElements(List<E> list, int i, int j) {
+    private static <E> void swapListElements(List<E> list, int i, int j) {
         E tmp = list.get(i);
         list.set(i, list.get(j));
         list.set(j, tmp);
