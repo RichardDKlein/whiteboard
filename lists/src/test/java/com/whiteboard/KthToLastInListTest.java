@@ -7,9 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class KthToLastInListTest {
-
     @Test
-    void kthToLastInList() {
+    void kthToLastInListTest() {
         System.out.println();
         System.out.println("Test KthToLastInList:");
         System.out.println("=====================");

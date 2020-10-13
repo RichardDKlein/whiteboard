@@ -2,8 +2,11 @@ package com.whiteboard;
 
 import java.util.Set;
 
-public class TestUtils<E> {
-    void printSet(Set<E> set) {
+public final class TestUtils {
+    private TestUtils() {
+    }
+
+    static <E> void printSet(Set<E> set) {
         System.out.print("{ ");
         for (E element : set) {
             System.out.print(element + " ");
@@ -11,7 +14,7 @@ public class TestUtils<E> {
         System.out.println("}");
     }
 
-    void printPowerSet(Set<Set<E>> powerSet) {
+    static <E> void printPowerSet(Set<Set<E>> powerSet) {
         System.out.println("{");
         for (Set set : powerSet) {
             System.out.print("\t");

@@ -6,8 +6,11 @@ import java.util.*;
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using a recursive approach.
  */
-public class PowerSetRecursive<E> {
-    public Set<Set<E>> powerSetRecursive(Set<E> set) {
+public final class PowerSetRecursive {
+    private PowerSetRecursive() {
+    }
+
+    public static <E> Set<Set<E>> powerSetRecursive(Set<E> set) {
         Set<Set<E>> powerSet = new HashSet<>();
         if (set.isEmpty()) {
             Set<E> emptySet = new HashSet<>();

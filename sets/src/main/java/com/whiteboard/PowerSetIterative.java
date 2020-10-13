@@ -6,7 +6,10 @@ import java.util.*;
  * Compute the power set of a set, i.e. the set of all subsets of
  * that set, using an iterative approach.
  */
-public class PowerSetIterative<E> {
+public final class PowerSetIterative {
+    private PowerSetIterative() {
+    }
+
     /**
      * Compute the power set of a set, i.e. the set of all subsets of
      * that set, using an iterative approach. (Assume that the size of
@@ -17,7 +20,7 @@ public class PowerSetIterative<E> {
      * in each count to select the elements of 's' that will form the
      * subset corresponding to that count.
      */
-    public Set<Set<E>> powerSetIterative(Set<E> set) {
+    public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
         Set<Set<E>> powerSet = new HashSet<>();
         List<E> elements = new ArrayList<>(set);
         int numSubsets = (int)Math.pow(2, set.size());
