@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class Rotate2dArrayTest {
     @Test
-    void rotate2dArray() {
+    void rotate2dArrayTest() {
         System.out.println();
         System.out.println("Test Rotate2dArray:");
         System.out.println("===================");

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class TrappedWaterTest {
     @Test
-    void trappedWater() {
+    void trappedWaterTest() {
         System.out.println();
         System.out.println("Test TrappedWater:");
         System.out.println("==================");

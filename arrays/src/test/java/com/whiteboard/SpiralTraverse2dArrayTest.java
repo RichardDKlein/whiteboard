@@ -3,11 +3,12 @@ package com.whiteboard;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 class SpiralTraverse2dArrayTest {
     @Test
-    void spiralTraverse2dArray() {
+    void spiralTraverse2dArrayTest() {
         System.out.println();
         System.out.println("Test SpiralTraverse2dArray:");
         System.out.println("===========================");

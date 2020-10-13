@@ -1,14 +1,15 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
 import com.whiteboard.SolveMaze.RowCol;
 
 class SolveMazeTest {
     @Test
-    void solveMaze() {
+    void solveMazeTest() {
         System.out.println();
         System.out.println("Test SolveMaze:");
         System.out.println("===============");
@@ -266,10 +267,8 @@ class SolveMazeTest {
         expected.add(new RowCol(23, 23));
         expected.add(new RowCol(24, 23));
 
-        TestUtils testUtils = new TestUtils();
-
         System.out.println("\nMaze to solve:\n");
-        testUtils.printBitmap(maze);
+        TestUtils.printBitmap(maze);
 
         int rows = maze.length;
         int cols = maze[0].length;
@@ -278,7 +277,7 @@ class SolveMazeTest {
         RowCol exit = new RowCol(rows - 1, cols - 2);
 
         char[][] copy = new char[rows][cols];
-        testUtils.copyBitmap(maze, copy);
+        TestUtils.copyBitmap(maze, copy);
 
         List<RowCol> path = SolveMaze.solveMaze(copy, start, exit);
         assert(path.equals(expected));
@@ -290,6 +289,6 @@ class SolveMazeTest {
             expected.add(new RowCol(0,1));
             maze[row][col] = '.';
         }
-        testUtils.printBitmap(maze);
+        TestUtils.printBitmap(maze);
     }
 }

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class FloodFillRecursiveTest {
     @Test
-    void floodFillRecursive() {
+    void floodFillRecursiveTest() {
         System.out.println();
         System.out.println("Test floodFillRecursive:");
         System.out.println("========================");
@@ -42,17 +42,16 @@ class FloodFillRecursiveTest {
         int rows = a.length;
         int cols = a[0].length;
         char[][] copy = new char[rows][cols];
-        TestUtils testUtils = new TestUtils();
         for (int i = 0; i < row.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
-            testUtils.copyBitmap(a, copy);
+            TestUtils.copyBitmap(a, copy);
             char tmp = a[row[i]][col[i]];
             a[row[i]][col[i]] = 'S';
-            testUtils.printBitmap(a);
+            TestUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
             FloodFillRecursive.floodFillRecursive(copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
-            testUtils.printBitmap(copy);
+            TestUtils.printBitmap(copy);
         }
     }
 }

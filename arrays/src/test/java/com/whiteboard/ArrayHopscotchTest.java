@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class ArrayHopscotchTest {
     @Test
-    void arrayHopscotch() {
+    void arrayHopscotchTest() {
         System.out.println();
         System.out.println("Test ArrayHopscotch:");
         System.out.println("====================");

@@ -6,7 +6,7 @@ class CircularQueueTest {
     private static CircularQueue queue;
 
     @Test
-    void circularBuffer() {
+    void circularQueueTest() {
         System.out.println();
         System.out.println("Test CircularQueue:");
         System.out.println("===================");

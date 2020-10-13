@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class SumPairsInUnsortedArrayTest {
     @Test
-    void sumPairsInUnsortedArray() {
+    void sumPairsInUnsortedArrayTest() {
         System.out.println();
         System.out.println("Test SumPairsInUnsortedArray:");
         System.out.println("=============================");
@@ -24,8 +24,7 @@ class SumPairsInUnsortedArrayTest {
             list.add(integer);
         }
 
-        ShuffleList<Integer> shuffleList = new ShuffleList<>();
-        shuffleList.shuffleList(list);
+        ShuffleList.shuffleList(list);
         for (int i = 0; i < a.length; ++i) {
             a[i] = list.get(i);
         }

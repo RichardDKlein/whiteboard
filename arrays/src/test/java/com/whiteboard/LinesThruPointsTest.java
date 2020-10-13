@@ -1,14 +1,14 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.jupiter.api.Test;
+
 class LinesThruPointsTest {
     @Test
-    void linesThruPoints() {
+    void linesThruPointsTest() {
         System.out.println();
         System.out.println("Test LinesThruPoints:");
         System.out.println("=====================");

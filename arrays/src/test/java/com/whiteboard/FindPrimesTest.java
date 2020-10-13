@@ -1,13 +1,13 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+
 class FindPrimesTest {
     @Test
-    void findPrimes() {
+    void findPrimesTest() {
         System.out.println();
         System.out.println("Test FindPrimes:");
         System.out.println("================");

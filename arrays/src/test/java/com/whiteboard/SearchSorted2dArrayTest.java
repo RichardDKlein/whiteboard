@@ -5,9 +5,8 @@ import com.whiteboard.SearchSorted2dArray.RowCol;
 import org.junit.jupiter.api.Test;
 
 class SearchSorted2dArrayTest {
-
     @Test
-    void searchSorted2dArray() {
+    void searchSorted2dArrayTest() {
         System.out.println();
         System.out.println("Test SearchSorted2dArray:");
         System.out.println("=========================");

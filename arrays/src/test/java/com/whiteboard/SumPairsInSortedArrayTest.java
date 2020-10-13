@@ -3,11 +3,12 @@ package com.whiteboard;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
 import org.junit.jupiter.api.Test;
 
 class SumPairsInSortedArrayTest {
     @Test
-    void sumPairsInSortedArray() {
+    void sumPairsInSortedArrayTest() {
         System.out.println();
         System.out.println("Test SumPairsInSortedArray:");
         System.out.println("===========================");

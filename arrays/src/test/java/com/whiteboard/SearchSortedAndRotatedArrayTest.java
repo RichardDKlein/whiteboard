@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class SearchSortedAndRotatedArrayTest {
     @Test
-    void searchSortedAndRotatedArray() {
+    void searchSortedAndRotatedArrayTest() {
         System.out.println();
         System.out.println("Test SearchSortedAndRotatedArray:");
         System.out.println("=================================");

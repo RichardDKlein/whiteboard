@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class FloodFillBreadthFirstSearchTest {
     @Test
-    void floodFillBreadthFirstSearch() {
+    void floodFillBreadthFirstSearchTest() {
         System.out.println();
         System.out.println("Test FloodFillBreadthFirstSearch:");
         System.out.println("=================================");
@@ -42,18 +42,17 @@ class FloodFillBreadthFirstSearchTest {
         int rows = a.length;
         int cols = a[0].length;
         char[][] copy = new char[rows][cols];
-        TestUtils testUtils = new TestUtils();
         for (int i = 0; i < row.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
-            testUtils.copyBitmap(a, copy);
+            TestUtils.copyBitmap(a, copy);
             char tmp = a[row[i]][col[i]];
             a[row[i]][col[i]] = 'S';
-            testUtils.printBitmap(a);
+            TestUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
             FloodFillBreadthFirstSearch.floodFillBreadthFirstSearch(
                     copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
-            testUtils.printBitmap(copy);
+            TestUtils.printBitmap(copy);
         }
     }
 }

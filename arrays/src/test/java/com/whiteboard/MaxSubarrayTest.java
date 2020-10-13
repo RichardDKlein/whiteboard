@@ -1,12 +1,11 @@
 package com.whiteboard;
 
 import org.junit.jupiter.api.Test;
-
 import static com.whiteboard.MaxSubarray.Interval;
 
 class MaxSubarrayTest {
     @Test
-    void maxSubarray() {
+    void maxSubarrayTest() {
         System.out.println();
         System.out.println("Test MaxSubarray:");
         System.out.println("=================");

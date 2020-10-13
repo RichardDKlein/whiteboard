@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class MergeTwoSortedArraysTest {
     @Test
-    void mergeTwoSortedArrays() {
+    void mergeTwoSortedArraysTest() {
         System.out.println();
         System.out.println("Test MergeTwoSortedArrays:");
         System.out.println("==========================");

@@ -1,13 +1,13 @@
 package com.whiteboard;
 
+import java.util.*;
+
 import com.whiteboard.ShortestClosure.Interval;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
 class ShortestClosureTest {
     @Test
-    void shortestClosure() {
+    void shortestClosureTest() {
         System.out.println();
         System.out.println("Test ShortestClosure:");
         System.out.println("=====================");
