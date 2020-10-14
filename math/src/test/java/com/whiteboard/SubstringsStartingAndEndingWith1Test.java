@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class SubstringsStartingAndEndingWith1Test {
     @Test
-    void substringsStartingAndEndingWith1() {
+    void substringsStartingAndEndingWith1Test() {
         System.out.println();
         System.out.println("Test SubstringsStartingAndEndingWith1:");
         System.out.println("======================================");

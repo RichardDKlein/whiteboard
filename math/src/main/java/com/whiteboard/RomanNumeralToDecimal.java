@@ -34,21 +34,21 @@ public final class RomanNumeralToDecimal {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int decimal = 0;
+        int result = 0;
 
-        char nextDigitRoman = roman.charAt(roman.length() - 1);
-        int nextDigitDecimal = map.get(nextDigitRoman);
+        char nextRomanDigit = roman.charAt(roman.length() - 1);
+        int nextRomanDigitDecimalValue = map.get(nextRomanDigit);
 
         for (int i = roman.length() - 1; i >= 0; --i) {
-            char currDigitRoman = roman.charAt(i);
-            int currDigitDecimal = map.get(currDigitRoman);
-            if (currDigitDecimal < nextDigitDecimal) {
-                decimal -= currDigitDecimal;
+            char currRomanDigit = roman.charAt(i);
+            int currRomanDigitDecimalValue = map.get(currRomanDigit);
+            if (currRomanDigitDecimalValue < nextRomanDigitDecimalValue) {
+                result -= currRomanDigitDecimalValue;
             } else {
-                decimal += currDigitDecimal;
+                result += currRomanDigitDecimalValue;
             }
-            nextDigitDecimal = currDigitDecimal;
+            nextRomanDigitDecimalValue = currRomanDigitDecimalValue;
         }
-        return decimal;
+        return result;
     }
 }

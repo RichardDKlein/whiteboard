@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ReverseDecimalNumberTest {
     @Test
-    void reverseDecimalNumber() {
+    void reverseDecimalNumberTest() {
         System.out.println();
         System.out.println("Test ReverseDecimalNumber:");
         System.out.println("==========================");

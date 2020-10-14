@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class RomanNumeralToDecimalTest {
     @Test
-    void romanNumeralToDecimal() {
+    void romanNumeralToDecimalTest() {
         System.out.println();
         System.out.println("Test RomanNumeralToDecimal:");
         System.out.println("===========================");

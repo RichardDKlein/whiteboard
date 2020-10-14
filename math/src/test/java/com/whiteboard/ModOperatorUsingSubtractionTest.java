@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ModOperatorUsingSubtractionTest {
     @Test
-    void modOperatorUsingSubtraction() {
+    void modOperatorUsingSubtractionTest() {
         System.out.println();
         System.out.println("Test ModOperatorUsingSubtraction:");
         System.out.println("=================================");
