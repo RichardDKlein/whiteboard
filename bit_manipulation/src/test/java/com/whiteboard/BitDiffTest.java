@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class BitDiffTest {
     @Test
-    void bitDiff() {
+    void bitDiffTest() {
         System.out.println();
         System.out.println("Test BitDiff:");
         System.out.println("=============");

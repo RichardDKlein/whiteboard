@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ClearBitTest {
     @Test
-    void clearBit() {
+    void clearBitTest() {
         System.out.println();
         System.out.println("Test ClearBit:");
         System.out.println("==============");

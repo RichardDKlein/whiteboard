@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class CountOneBitsTest {
     @Test
-    void countOneBits() {
+    void countOneBitsTest() {
         System.out.println();
         System.out.println("Test CountOneBits:");
         System.out.println("==================");

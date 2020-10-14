@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class GetBitTest {
     @Test
-    void getBit() {
+    void getBitTest() {
         System.out.println();
         System.out.println("Test GetBit:");
         System.out.println("============");

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ToggleBitTest {
     @Test
-    void toggleBit() {
+    void toggleBitTest() {
         System.out.println();
         System.out.println("Test ToggleBit:");
         System.out.println("===============");

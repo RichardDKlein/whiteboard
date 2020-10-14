@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ReverseBitsTest {
     @Test
-    void reverseBits() {
+    void reverseBitsTest() {
         System.out.println();
         System.out.println("Test ReverseBits:");
         System.out.println("=================");

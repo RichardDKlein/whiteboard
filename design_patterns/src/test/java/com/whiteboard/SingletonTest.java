@@ -12,9 +12,7 @@ class SingletonTest {
 
         assert(instance1.equals(instance2));
 
-        System.out.println("1st time: instance() = "
-                + instance1);
-        System.out.println("2nd time: instance() = "
-                + instance2);
+        System.out.println("1st time: instance() = " + instance1);
+        System.out.println("2nd time: instance() = " + instance2);
     }
 }

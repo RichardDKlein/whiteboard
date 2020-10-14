@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class InsertBitsTest {
     @Test
-    void insertBits() {
+    void insertBitsTest() {
         System.out.println();
         System.out.println("Test InsertBits:");
         System.out.println("================");

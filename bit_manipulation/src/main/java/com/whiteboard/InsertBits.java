@@ -1,9 +1,14 @@
 package com.whiteboard;
 
+import sun.jvm.hotspot.utilities.Interval;
+
 /**
  * Insert bits.
  */
 public final class InsertBits {
+    private InsertBits() {
+    }
+
     /**
      * Insert a contiguous segment of bits into an int.
      *

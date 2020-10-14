@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class IsPowerOfTwoTest {
     @Test
-    void isPowerOfTwo() {
+    void isPowerOfTwoTest() {
         System.out.println();
         System.out.println("Test IsPowerOfTwo:");
         System.out.println("==================");

@@ -10,7 +10,7 @@ import com.whiteboard.SalesTerritories.UnorderedPair;
 
 class SalesTerritoriesTest {
     @Test
-    void salesTerritories() {
+    void salesTerritoriesTest() {
         System.out.println();
         System.out.println("Test SalesTerritories:");
         System.out.println("======================");
