@@ -8,9 +8,8 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class ShuffleListTest {
-
     @Test
-    void shuffleList() {
+    void shuffleListTest() {
         final int NUM_CARDS = 52;
 
         System.out.println();

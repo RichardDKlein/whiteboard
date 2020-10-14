@@ -11,7 +11,7 @@ public class DeleteNodeFromListTest {
             'a', 'b', 'c', 'd', 'e', 'f', 'g'));
 
     @Test
-    void deleteNode() {
+    void deleteNodeFromListTest() {
         System.out.println();
         System.out.println("Test DeleteNodeFromList:");
         System.out.println("================");

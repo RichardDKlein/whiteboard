@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class ReverseListTest {
     @Test
-    void reverseListIterative() {
+    void reverseListTest() {
         System.out.println();
         System.out.println("Test ReverseList:");
         System.out.println("==========================");

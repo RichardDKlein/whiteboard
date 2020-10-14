@@ -1,13 +1,12 @@
 package com.whiteboard;
 
 import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
 
 class ListHasCycleTest {
 
     @Test
-    void listHasCycle() {
+    void listHasCycleTest() {
         System.out.println();
         System.out.println("Test ListHasCycle:");
         System.out.println("==================");

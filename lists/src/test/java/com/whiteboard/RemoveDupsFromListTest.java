@@ -6,9 +6,8 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 class RemoveDupsFromListTest {
-
     @Test
-    void removeDupsFromList() {
+    void removeDupsFromListTest() {
         System.out.println();
         System.out.println("Test RemoveDupsFromList:");
         System.out.println("========================");
