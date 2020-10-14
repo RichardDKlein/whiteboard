@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class TraverseBinaryTreeBreadthFirstTest {
     @Test
-    void traverseBinaryTreeBreadthFirst() {
+    void traverseBinaryTreeBreadthFirstTest() {
         System.out.println();
         System.out.println("Test TraverseBinaryTreeBreadthFirst:");
         System.out.println("====================================");
@@ -28,12 +28,10 @@ class TraverseBinaryTreeBreadthFirstTest {
                 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
         ));
 
-        BinaryTreeNode<Integer> root =
-                new CreateBinarySearchTreeFromSortedList<Integer>()
+        BinaryTreeNode<Integer> root = CreateBinarySearchTreeFromSortedList
                         .createBinarySearchTreeFromSortedList(sortedList);
         List<Integer> breadthFirstTraversal =
-                new TraverseBinaryTreeBreadthFirst<Integer>()
-                        .traverseBinaryTreeBreadthFirst(root);
+                TraverseBinaryTreeBreadthFirst.traverseBinaryTreeBreadthFirst(root);
         assert(breadthFirstTraversal.equals(expectedList));
         System.out.println("breadth-first traversal of binary tree = " +
                 Arrays.toString(breadthFirstTraversal.toArray()));

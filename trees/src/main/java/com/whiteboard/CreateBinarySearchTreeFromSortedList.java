@@ -6,7 +6,10 @@ import java.util.List;
 /**
  * Create a binary search tree from a sorted list.
  */
-public class CreateBinarySearchTreeFromSortedList<E> {
+public final class CreateBinarySearchTreeFromSortedList {
+    private CreateBinarySearchTreeFromSortedList() {
+    }
+
     /**
      * Create a binary search tree from a sorted list.
      *
@@ -14,7 +17,7 @@ public class CreateBinarySearchTreeFromSortedList<E> {
      * @return The root of the created binary search tree.
      * Will be null if the given sorted list is empty.
      */
-    public BinaryTreeNode<E>
+    public static <E> BinaryTreeNode<E>
     createBinarySearchTreeFromSortedList(List<E> sortedList) {
         if (sortedList.isEmpty()) {
             return null;
@@ -31,7 +34,6 @@ public class CreateBinarySearchTreeFromSortedList<E> {
         for (int i = mid + 1; i <= last; ++i) {
             rightSortedList.add(sortedList.get(i));
         }
-
         BinaryTreeNode<E> root = new BinaryTreeNode<>();
         root.data = sortedList.get(mid);
         root.left = createBinarySearchTreeFromSortedList(leftSortedList);

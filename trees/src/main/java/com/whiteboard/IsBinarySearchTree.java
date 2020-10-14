@@ -5,7 +5,10 @@ import java.util.List;
 /**
  * Determine whether a given binary tree is a binary search tree.
  */
-public class IsBinarySearchTree<E extends Comparable<E>> {
+public final class IsBinarySearchTree {
+    private IsBinarySearchTree() {
+    }
+
     /**
      * Determine whether a given binary tree is a binary search tree.
      *
@@ -16,13 +19,12 @@ public class IsBinarySearchTree<E extends Comparable<E>> {
      * @return 'true' if the given tree is a binary search tree,
      * 'false' otherwise.
      */
-    public boolean isBinarySearchTree(BinaryTreeNode<E> root) {
-        List<E> inorderTraversal = new TraverseBinaryTreeInOrder<E>()
-                .traverseBinaryTreeInOrder(root);
-
+    public static
+    boolean isBinarySearchTree(BinaryTreeNode<Integer> root) {
+        List<Integer> inorderTraversal =
+                TraverseBinaryTreeInOrder.traverseBinaryTreeInOrder(root);
         for (int i = 0; i < inorderTraversal.size() - 1; ++i) {
-            if (inorderTraversal.get(i).compareTo(
-                    inorderTraversal.get(i + 1)) > 0) {
+            if (inorderTraversal.get(i) > inorderTraversal.get(i + 1)) {
                 return false;
             }
         }

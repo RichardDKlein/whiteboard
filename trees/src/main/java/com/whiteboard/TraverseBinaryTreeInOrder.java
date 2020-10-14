@@ -7,7 +7,10 @@ import java.util.List;
 /**
  * Perform an inorder traversal of a binary tree.
  */
-public class TraverseBinaryTreeInOrder<E> {
+public final class TraverseBinaryTreeInOrder {
+    private TraverseBinaryTreeInOrder() {
+    }
+
     /**
      * Perform an inorder traversal of a binary tree.
      *
@@ -15,7 +18,7 @@ public class TraverseBinaryTreeInOrder<E> {
      * @return A list of the items in the binary tree, ordered
      * in accordance with an inorder traversal of the tree.
      */
-    public List<E> traverseBinaryTreeInOrder(BinaryTreeNode<E> root) {
+    public static <E> List<E> traverseBinaryTreeInOrder(BinaryTreeNode<E> root) {
         List<E> result = new ArrayList<>();
         if (root == null) {
             return result;

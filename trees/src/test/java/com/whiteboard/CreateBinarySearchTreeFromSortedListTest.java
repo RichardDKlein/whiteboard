@@ -1,14 +1,14 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+
 class CreateBinarySearchTreeFromSortedListTest {
     @Test
-    void createBinarySearchTreeFromSortedList() {
+    void createBinarySearchTreeFromSortedListTest() {
         System.out.println();
         System.out.println("Test CreateBinarySearchTreeFromSortedList:");
         System.out.println("==========================================");
@@ -27,12 +27,10 @@ class CreateBinarySearchTreeFromSortedListTest {
         }
         System.out.println("sorted list = " +
                 Arrays.toString(sortedList.toArray()));
-        BinaryTreeNode<Integer> root =
-                new CreateBinarySearchTreeFromSortedList<Integer>()
-                        .createBinarySearchTreeFromSortedList(sortedList);
+        BinaryTreeNode<Integer> root = CreateBinarySearchTreeFromSortedList
+                .createBinarySearchTreeFromSortedList(sortedList);
         List<Integer> inorderTraversal =
-                new TraverseBinaryTreeInOrder<Integer>()
-                        .traverseBinaryTreeInOrder(root);
+                TraverseBinaryTreeInOrder.traverseBinaryTreeInOrder(root);
         assert(inorderTraversal.equals(sortedList));
         System.out.println("inorder traversal of binary search tree = " +
                 Arrays.toString(inorderTraversal.toArray()));

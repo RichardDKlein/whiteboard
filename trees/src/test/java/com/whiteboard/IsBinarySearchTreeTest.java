@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class IsBinarySearchTreeTest {
     @Test
-    void isBinarySearchTree() {
+    void isBinarySearchTreeTest() {
         System.out.println();
         System.out.println("Test IsBinarySearchTree:");
         System.out.println("========================");
@@ -31,9 +31,7 @@ class IsBinarySearchTreeTest {
         node6.left = node5;
         node6.right = node7;
 
-        IsBinarySearchTree<Integer> instance = new IsBinarySearchTree<>();
-
-        boolean isBinarySearchTree = instance.isBinarySearchTree(node4);
+        boolean isBinarySearchTree = IsBinarySearchTree.isBinarySearchTree(node4);
         assert(isBinarySearchTree);
         System.out.println("Is Binary Search Tree = " + isBinarySearchTree);
         System.out.println();
@@ -46,7 +44,7 @@ class IsBinarySearchTreeTest {
         node2.right = node5;
         node6.left = node3;
 
-        isBinarySearchTree = instance.isBinarySearchTree(node4);
+        isBinarySearchTree = IsBinarySearchTree.isBinarySearchTree(node4);
         assert(!isBinarySearchTree);
         System.out.println("Is Binary Search Tree = " + isBinarySearchTree);
         System.out.println();

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class TraverseBinaryTreeInOrderTest {
     @Test
-    void traverseBinaryTreeInOrder() {
+    void traverseBinaryTreeInOrderTest() {
         System.out.println();
         System.out.println("Test TraverseBinaryTreeInOrder:");
         System.out.println("===============================");
@@ -37,8 +37,7 @@ class TraverseBinaryTreeInOrderTest {
         BinaryTreeNode<Integer> thirteen = new BinaryTreeNode<>(13, eleven, fifteen);
         BinaryTreeNode<Integer> nine = new BinaryTreeNode<>(9, four, thirteen);
 
-        List<Integer> inorderTraversal = new TraverseBinaryTreeInOrder<Integer>()
-                        .traverseBinaryTreeInOrder(nine);
+        List<Integer> inorderTraversal = TraverseBinaryTreeInOrder.traverseBinaryTreeInOrder(nine);
         for (int i = 0; i < inorderTraversal.size(); ++i) {
             assert(inorderTraversal.get(i) == i + 1);
         }
