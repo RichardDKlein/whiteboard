@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class TopKStringsTest {
     @Test
-    void topKStrings() {
+    void topKStringsTest() {
         System.out.println();
         System.out.println("Test TopKStrings:");
         System.out.println("================");

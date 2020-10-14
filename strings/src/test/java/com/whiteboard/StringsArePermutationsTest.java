@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class StringsArePermutationsTest {
     @Test
-    void stringsArePermutations() {
+    void stringsArePermutationsTest() {
         System.out.println();
         System.out.println("Test StringsArePermutations:");
         System.out.println("============================");

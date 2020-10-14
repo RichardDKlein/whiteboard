@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class ReverseWordsInSentenceTest {
     @Test
-    void reverseWordsInSentence() {
+    void reverseWordsInSentenceTest() {
         System.out.println();
         System.out.println("Test ReverseWordsInSentence:");
         System.out.println("============================");

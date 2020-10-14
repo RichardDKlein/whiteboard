@@ -34,10 +34,7 @@ public final class RansomNote {
      * @return A boolean indicating whether ('true') or not ('false')
      * the given ransom note can be constructed from the given magazine.
      */
-    public static boolean ransomNote(
-            String note,
-            String magazine) {
-
+    public static boolean ransomNote(String note, String magazine) {
         RansomNote.note = note;
         RansomNote.magazine = magazine;
 

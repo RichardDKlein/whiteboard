@@ -1,12 +1,11 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
+import org.junit.jupiter.api.Test;
 
 class ParseStringIntoWordsTest {
     @Test
-    void parseStringIntoWords() {
+    void parseStringIntoWordsTest() {
         System.out.println();
         System.out.println("Test ParseStringIntoWords:");
         System.out.println("==========================");

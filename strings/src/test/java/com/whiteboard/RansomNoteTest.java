@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class RansomNoteTest {
     @Test
-    void ransomNote() {
+    void ransomNoteTest() {
         System.out.println();
         System.out.println("Test RansomNote:");
         System.out.println("================");

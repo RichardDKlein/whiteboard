@@ -1,7 +1,6 @@
 package com.whiteboard;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,10 +22,7 @@ public final class ParseStringIntoWords {
      * or null if the given string cannot be parsed; or
      * an empty list if the given string is empty.
      */
-    public static List<String> parseStringIntoWords(
-            String s,
-            Set<String> dictionary) {
-
+    public static List<String> parseStringIntoWords(String s, Set<String> dictionary) {
         List<String> result = new ArrayList<>();
         if (s.isEmpty()) {
             return result;

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class LongestPalindromicSubstringTest {
     @Test
-    void longestPalindromicSubstring() {
+    void longestPalindromicSubstringTest() {
         System.out.println();
         System.out.println("Test LongestPalindromicSubstring:");
         System.out.println("=================================");

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class FindSubstringTest {
     @Test
-    void findSubstring() {
+    void findSubstringTest() {
         System.out.println();
         System.out.println("Test FindSubstring:");
         System.out.println("===================");

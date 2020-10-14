@@ -33,10 +33,7 @@ public final class TopKStrings {
      * along with the number of times they occur.
      */
     public static List<Map.Entry<String, Integer>>
-    topKStrings (
-            List<String> strings,
-            int k) {
-
+    topKStrings (List<String> strings, int k) {
         TopKStrings.strings = strings;
         TopKStrings.k = k;
 

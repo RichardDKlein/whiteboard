@@ -1,19 +1,19 @@
 package com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.jupiter.api.Test;
+
 class PermutationsOfStringTest {
     @Test
-    void permutationsOfString() {
+    void permutationsOfStringTest() {
         System.out.println();
         System.out.println("Test PermutationsOfString:");
         System.out.println("==========================");
 
-        Set<String> expectedSet = new HashSet(Arrays.asList(
+        Set<String> expectedSet = new HashSet<>(Arrays.asList(
                 "abcd",
                 "abdc",
                 "acbd",
