@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class BalancedBracketsTest {
     @Test
-    void balancedBrackets() {
+    void balancedBracketsTest() {
         System.out.println();
         System.out.println("Test BalancedBrackets:");
         System.out.println("======================");

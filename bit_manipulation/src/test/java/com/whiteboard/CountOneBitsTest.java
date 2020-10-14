@@ -11,7 +11,7 @@ class CountOneBitsTest {
 
         int n = 0;
 
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         int numOneBits = CountOneBits.countOneBits(n);
         assert(numOneBits == 0);
         System.out.println("Number of 1 bits = " + numOneBits);
@@ -20,7 +20,7 @@ class CountOneBitsTest {
             n = ToggleBit.toggleBit(n, i);
             numOneBits = CountOneBits.countOneBits(n);
             assert(numOneBits == i + 1);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
             System.out.println("Number of 1 bits = " + numOneBits);
         }
 
@@ -28,7 +28,7 @@ class CountOneBitsTest {
             n = ToggleBit.toggleBit(n, i);
             numOneBits = CountOneBits.countOneBits(n);
             assert(numOneBits == 31 - i);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
             System.out.println("Number of 1 bits = " + numOneBits);
         }
     }

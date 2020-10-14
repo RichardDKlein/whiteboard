@@ -268,7 +268,7 @@ class SolveMazeTest {
         expected.add(new RowCol(24, 23));
 
         System.out.println("\nMaze to solve:\n");
-        TestUtils.printBitmap(maze);
+        ArrayTestUtils.printBitmap(maze);
 
         int rows = maze.length;
         int cols = maze[0].length;
@@ -277,7 +277,7 @@ class SolveMazeTest {
         RowCol exit = new RowCol(rows - 1, cols - 2);
 
         char[][] copy = new char[rows][cols];
-        TestUtils.copyBitmap(maze, copy);
+        ArrayTestUtils.copyBitmap(maze, copy);
 
         List<RowCol> path = SolveMaze.solveMaze(copy, start, exit);
         assert(path.equals(expected));
@@ -289,6 +289,6 @@ class SolveMazeTest {
             expected.add(new RowCol(0,1));
             maze[row][col] = '.';
         }
-        TestUtils.printBitmap(maze);
+        ArrayTestUtils.printBitmap(maze);
     }
 }

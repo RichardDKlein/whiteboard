@@ -45,12 +45,12 @@ class SetBitTest {
         };
 
         int n = 0;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
 
         for (int i = 0; i < Integer.SIZE; ++i) {
             n = SetBit.setBit(n, i);
             assert(n == expected[i]);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
         }
     }
 }

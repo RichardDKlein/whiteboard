@@ -10,7 +10,7 @@ class GetBitTest {
         System.out.println("============");
 
         int n = 0xAAAAAAAA;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         for (int i = 0; i < Integer.SIZE; ++i) {
             int bit = GetBit.getBit(n, i);
             assert(bit == i % 2);

@@ -13,16 +13,16 @@ class RemoveDupsFromListTest {
         System.out.println("Test RemoveDupsFromList:");
         System.out.println("========================");
 
-        ListNode<Character> listWithDups = TestUtils.createList(new ArrayList<>(
+        ListNode<Character> listWithDups = ListTestUtils.createList(new ArrayList<>(
                 Arrays.asList('a','b','c','a','d','e','b','f','d','g','c','e','g')));
 
-        ListNode<Character> listWithoutDups = TestUtils.createList(new ArrayList<>(
+        ListNode<Character> listWithoutDups = ListTestUtils.createList(new ArrayList<>(
                 Arrays.asList('a','b','c','d','e','f','g')));
 
-        TestUtils.printList(listWithDups);
+        ListTestUtils.printList(listWithDups);
         System.out.println("Removing duplicates:");
         RemoveDupsFromList.removeDupsFromList(listWithDups);
-        assert(TestUtils.listsAreEqual(listWithDups, listWithoutDups));
-        TestUtils.printList(listWithDups);
+        assert(ListTestUtils.listsAreEqual(listWithDups, listWithoutDups));
+        ListTestUtils.printList(listWithDups);
     }
 }

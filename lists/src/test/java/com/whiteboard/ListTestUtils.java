@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Test utilities for the lists package.
  */
-public final class TestUtils {
-    private TestUtils() {
+public final class ListTestUtils {
+    private ListTestUtils() {
     }
 
     static <E> ListNode<E> createList(List<E> data) {

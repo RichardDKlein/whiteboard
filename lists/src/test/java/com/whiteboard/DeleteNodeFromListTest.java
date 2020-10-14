@@ -17,31 +17,31 @@ public class DeleteNodeFromListTest {
         System.out.println("================");
 
         List<ListNode<Character>> expected = new ArrayList<>();
-        expected.add(TestUtils.createList(Arrays.asList('b', 'c', 'd', 'e', 'f', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'c', 'd', 'e', 'f', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'd', 'e', 'f', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'e', 'f', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'f', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'g')));
-        expected.add(TestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('b', 'c', 'd', 'e', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'c', 'd', 'e', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'b', 'd', 'e', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'b', 'c', 'e', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'f', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'g')));
+        expected.add(ListTestUtils.createList(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g')));
 
         System.out.println("\nOriginal list:");
         ListNode<Character> list = createTestList();
-        TestUtils.printList(list);
+        ListTestUtils.printList(list);
 
         for (int i = 0; i < listData.size(); ++i) {
             System.out.println("\nDeleting Node '" + listData.get(i) + "':");
             list = createTestList();
-            ListNode<Character> node = TestUtils.findNode(list, listData.get(i));
+            ListNode<Character> node = ListTestUtils.findNode(list, listData.get(i));
             boolean result = DeleteNodeFromList.deleteNodeFromList(node);
-            assert(TestUtils.listsAreEqual(list, expected.get(i)));
+            assert(ListTestUtils.listsAreEqual(list, expected.get(i)));
             assert(result == i < listData.size() - 1);
-            TestUtils.printList(list);
+            ListTestUtils.printList(list);
             System.out.println(result ? "SUCCESS" : "FAILURE");
         }
     }
 
     private ListNode<Character> createTestList() {
-        return TestUtils.createList(listData);
+        return ListTestUtils.createList(listData);
     }
 }

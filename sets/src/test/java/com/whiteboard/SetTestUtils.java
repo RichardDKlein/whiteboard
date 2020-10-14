@@ -2,8 +2,8 @@ package com.whiteboard;
 
 import java.util.Set;
 
-public final class TestUtils {
-    private TestUtils() {
+public final class SetTestUtils {
+    private SetTestUtils() {
     }
 
     static <E> void printSet(Set<E> set) {

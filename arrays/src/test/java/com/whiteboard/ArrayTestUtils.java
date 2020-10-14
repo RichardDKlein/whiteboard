@@ -3,8 +3,8 @@ package com.whiteboard;
 /**
  * Test utilities for the arrays package.
  */
-public final class TestUtils {
-    private TestUtils() {
+public final class ArrayTestUtils {
+    private ArrayTestUtils() {
     }
 
     static void copyBitmap(char[][] original, char[][] copy) {

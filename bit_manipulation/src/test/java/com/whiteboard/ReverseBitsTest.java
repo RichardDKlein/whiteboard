@@ -13,10 +13,10 @@ class ReverseBitsTest {
 
         int expected = 0b10101011111101111101111011101101;
 
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         n = ReverseBits.reverseBits(n);
         assert(n == expected);
         System.out.print("Reversed:\n");
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
     }
 }

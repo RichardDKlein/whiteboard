@@ -14,12 +14,12 @@ class InsertBitsTest {
         int n = 0;
 
         System.out.println("Destination bits:");
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         System.out.println("Bits to insert:");
         int bits = 0x3F;
-        TestUtils.printBits(bits);
+        BitTestUtils.printBits(bits);
         n = InsertBits.insertBits(n, bits, 29, 24);
         assert(n == expected);
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
     }
 }

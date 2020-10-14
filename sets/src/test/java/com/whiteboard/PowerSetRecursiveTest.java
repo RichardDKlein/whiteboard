@@ -50,11 +50,11 @@ class PowerSetRecursiveTest {
         expected.add(new HashSet<>(Arrays.asList('a','b','c','d','e')));
 
         System.out.print("set = ");
-        TestUtils.printSet(set);
+        SetTestUtils.printSet(set);
 
         Set<Set<Character>> powerSet = PowerSetRecursive.powerSetRecursive(set);
         assert(powerSet.equals(expected));
         System.out.println("powerSetRecursive(set) = " + powerSet.size() + " subsets:");
-        TestUtils.printPowerSet(powerSet);
+        SetTestUtils.printPowerSet(powerSet);
     }
 }

@@ -12,13 +12,13 @@ class IsPowerOfTwoTest {
         int n;
 
         n = 0;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         boolean isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
         assert(!isPowerOfTwo);
         System.out.println("Is power of 2 = " + isPowerOfTwo);
 
         n = 1;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
         assert(isPowerOfTwo);
         System.out.println("Is power of 2 = " + isPowerOfTwo);
@@ -26,7 +26,7 @@ class IsPowerOfTwoTest {
         for (int i = 1; i < Integer.SIZE; ++i) {
             n = 0;
             n = SetBit.setBit(n, i);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
             isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
             assert(isPowerOfTwo);
             System.out.println("Is power of 2 = " + isPowerOfTwo);
@@ -34,7 +34,7 @@ class IsPowerOfTwoTest {
             n = SetBit.setBit(n, 0);
             isPowerOfTwo = IsPowerOfTwo.isPowerOfTwo(n);
             assert(!isPowerOfTwo);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
             System.out.println("Is power of 2 = " + isPowerOfTwo);
         }
     }

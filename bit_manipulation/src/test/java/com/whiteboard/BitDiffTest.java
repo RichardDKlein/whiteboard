@@ -14,8 +14,8 @@ class BitDiffTest {
 
         int expected = 3;
 
-        TestUtils.printBits(m);
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(m);
+        BitTestUtils.printBits(n);
         int bitDiff = BitDiff.bitDiff(m, n);
         assert(bitDiff == expected);
         System.out.println("Bit diff = " + bitDiff);

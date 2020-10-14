@@ -15,9 +15,9 @@ class KthToLastInListTest {
 
         List<Character> listData = new ArrayList<>(Arrays.asList(
                 'a','b','c','d','e','f','g'));
-        ListNode<Character> list = TestUtils.createList(listData);
+        ListNode<Character> list = ListTestUtils.createList(listData);
 
-        TestUtils.printList(list);
+        ListTestUtils.printList(list);
 
         for (int k = 1; k <= 8; ++k) {
             ListNode<Character> kthToLast = KthToLastInList.kthToLastInList(list, k);

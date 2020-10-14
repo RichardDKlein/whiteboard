@@ -80,17 +80,17 @@ class ToggleBitTest {
         };
 
         int n = 0;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
 
         for (int i = 0; i < Integer.SIZE; ++i) {
             n = ToggleBit.toggleBit(n, i);
             assert(n == expected1[i]);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
         }
         for (int i = 0; i < Integer.SIZE; ++i) {
             n = ToggleBit.toggleBit(n, i);
             assert(n == expected2[i]);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
         }
     }
 }

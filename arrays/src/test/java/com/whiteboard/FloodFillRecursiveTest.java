@@ -44,14 +44,14 @@ class FloodFillRecursiveTest {
         char[][] copy = new char[rows][cols];
         for (int i = 0; i < row.length; ++i) {
             System.out.println("\nBEFORE flood fill:");
-            TestUtils.copyBitmap(a, copy);
+            ArrayTestUtils.copyBitmap(a, copy);
             char tmp = a[row[i]][col[i]];
             a[row[i]][col[i]] = 'S';
-            TestUtils.printBitmap(a);
+            ArrayTestUtils.printBitmap(a);
             a[row[i]][col[i]] = tmp;
             FloodFillRecursive.floodFillRecursive(copy, row[i], col[i]);
             System.out.println("\nAFTER flood fill:");
-            TestUtils.printBitmap(copy);
+            ArrayTestUtils.printBitmap(copy);
         }
     }
 }

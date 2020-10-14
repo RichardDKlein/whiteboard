@@ -45,11 +45,11 @@ class ClearBitTest {
         };
 
         int n = -1;
-        TestUtils.printBits(n);
+        BitTestUtils.printBits(n);
         for (int i = 0; i < Integer.SIZE; ++i) {
             n = ClearBit.clearBit(n, i);
             assert(n == expected[i]);
-            TestUtils.printBits(n);
+            BitTestUtils.printBits(n);
         }
     }
 }
