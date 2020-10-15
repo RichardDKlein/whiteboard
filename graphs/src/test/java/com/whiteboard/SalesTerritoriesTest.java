@@ -74,7 +74,7 @@ class SalesTerritoriesTest {
         System.out.println();
 
         Set<Set<String>> territories = SalesTerritories.salesTerritories(cityUnorderedPairs);
-//        assert(territories.equals(expected));
+        assert(territories.equals(expected));
 
         System.out.println("Territories = ");
         for (Set<String> territory : territories) {

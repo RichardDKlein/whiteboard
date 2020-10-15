@@ -22,23 +22,20 @@ public final class FindPrimes {
      * outset, all integers (except 0 and 1) are prime.
      *
      * We then loop thru the isPrime array. If isPrime[i] is true,
-     * we add 'i' to our list of primes, and set isPrime[k*i] to
-     * false for each multiple of i. If isPrime[i] is false, we just
-     * go on to the next element, since we've already determined
+     * we add 'i' to our list of primes, and set isPrime[i * j] to
+     * false for each multiple 'j' of i. If isPrime[i] is false, we
+     * just go on to the next element, since we've already determined
      * that 'i' is not prime.
      */
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();
 
         boolean[] isPrime = new boolean[n + 1];
-
         isPrime[0] = false;
         isPrime[1] = false;
-
         for (int i = 2; i < isPrime.length; ++i) {
             isPrime[i] = true;
         }
-
         for (int i = 2; i <= n; ++i) {
             if (isPrime[i]) {
                 result.add(i);
