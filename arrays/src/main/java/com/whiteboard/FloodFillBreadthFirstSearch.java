@@ -1,6 +1,5 @@
 package com.whiteboard;
 
-import java.awt.Point;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,6 +10,24 @@ import java.util.Queue;
  */
 public final class FloodFillBreadthFirstSearch {
     private FloodFillBreadthFirstSearch() {
+    }
+
+    static class RowCol {
+        int row;
+        int col;
+
+        RowCol(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof SolveMaze.RowCol)) {
+                return false;
+            }
+            SolveMaze.RowCol other = (SolveMaze.RowCol)o;
+            return this.row == other.row && this.col == other.col;
+        }
     }
 
     /**
@@ -38,13 +55,13 @@ public final class FloodFillBreadthFirstSearch {
         int numRows = a.length;
         int numCols = a[0].length;
 
-        Queue<Point> queue = new LinkedList<>();
-        queue.add(new Point(seedCol, seedRow));
+        Queue<RowCol> queue = new LinkedList<>();
+        queue.add(new RowCol(seedRow, seedCol));
 
         while (!queue.isEmpty()) {
-            Point point = queue.poll();
-            int row = point.y;
-            int col = point.x;
+            RowCol rowCol = queue.poll();
+            int row = rowCol.row;
+            int col = rowCol.col;
             if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
@@ -52,10 +69,10 @@ public final class FloodFillBreadthFirstSearch {
                 continue;
             }
             a[row][col] = '@';
-            queue.add(new Point(col - 1, row));
-            queue.add(new Point(col, row - 1));
-            queue.add(new Point(col + 1, row));
-            queue.add(new Point(col, row + 1));
+            queue.add(new RowCol(row,col - 1));
+            queue.add(new RowCol(row - 1, col));
+            queue.add(new RowCol(row,col + 1));
+            queue.add(new RowCol(row + 1, col));
         }
     }
 }
