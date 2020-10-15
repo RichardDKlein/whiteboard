@@ -54,7 +54,6 @@ public final class SolveMaze {
     public static List<RowCol>
     solveMaze(char[][] maze, RowCol start, RowCol exit) {
         List<RowCol> result = new ArrayList<>();
-
         // error checking
         int numRows = maze.length;
         int numCols = maze[0].length;

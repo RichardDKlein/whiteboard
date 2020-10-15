@@ -1,7 +1,5 @@
 package com.whiteboard;
 
-import java.util.Arrays;
-
 /**
  * Search a sorted and rotated one-dimensional array.
  */
@@ -35,7 +33,7 @@ public final class SearchSortedAndRotatedArray {
             if (a[mid] == target) {
                 return mid;
             }
-            if (a[left] <= a[mid]) {
+            if (a[left] < a[mid]) {
                 // left half is normally ordered
                 if (a[left] <= target && target < a[mid]) {
                     // target is in left half

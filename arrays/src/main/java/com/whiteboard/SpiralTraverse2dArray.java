@@ -37,7 +37,6 @@ public final class SpiralTraverse2dArray {
         for (int topRow = 0, rightCol = numCols - 1, bottomRow = numRows - 1, leftCol = 0;
                 topRow <= bottomRow && leftCol <= rightCol;
                 ++topRow, --rightCol, --bottomRow, ++leftCol) {
-
             List<Integer> shell = spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol);
             result.addAll(shell);
         }

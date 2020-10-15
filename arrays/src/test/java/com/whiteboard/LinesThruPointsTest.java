@@ -50,7 +50,8 @@ class LinesThruPointsTest {
         System.out.println();
 
         Set<LinesThruPoints.Point> testPoints = new HashSet<>(Arrays.asList(points));
-        int numLines = new LinesThruPoints().linesThruPoints(testPoints);
+        int numLines = LinesThruPoints.linesThruPoints(testPoints);
+        assert(numLines == 8);
         System.out.println("Number of lines = " + numLines);
     }
 }
