@@ -20,14 +20,6 @@ public final class FloodFillBreadthFirstSearch {
             this.row = row;
             this.col = col;
         }
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof SolveMaze.RowCol)) {
-                return false;
-            }
-            SolveMaze.RowCol other = (SolveMaze.RowCol)o;
-            return this.row == other.row && this.col == other.col;
-        }
     }
 
     /**
