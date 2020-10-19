@@ -18,7 +18,7 @@ package com.whiteboard;
  * (n - 1).
  */
 public class CircularQueue {
-    private final int[] buf;
+    private int[] buf;
     private int head;
     private int tail;
 
@@ -35,11 +35,12 @@ public class CircularQueue {
         return true;
     }
 
-    public int poll() {
+    public Integer poll() {
+        Integer result;
         if (isEmpty()) {
-            return -1;
+            return null;
         }
-        int result = buf[head];
+        result = buf[head];
         head = (head + 1) % buf.length;
         return result;
     }

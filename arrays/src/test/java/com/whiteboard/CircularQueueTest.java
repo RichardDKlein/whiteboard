@@ -12,7 +12,7 @@ class CircularQueueTest {
         System.out.println("===================");
 
         boolean success;
-        int element;
+        Integer element;
 
         System.out.println("Creating a CircularQueue of length 10");
         queue = new CircularQueue(10);
@@ -78,7 +78,7 @@ class CircularQueueTest {
             } else if (i < 9) {
                 assert (element == i + 10);
             } else {
-                assert(element == -1);
+                assert(element == null);
             }
         }
     }
@@ -94,9 +94,9 @@ class CircularQueueTest {
         return success;
     }
 
-    private static int remove() {
-        int result = queue.poll();
-        if (result == -1) {
+    private static Integer remove() {
+        Integer result = queue.poll();
+        if (result == null) {
             System.out.println("Removing element FAILED (queue empty)");
         } else {
             System.out.println("Removing element " + result);
