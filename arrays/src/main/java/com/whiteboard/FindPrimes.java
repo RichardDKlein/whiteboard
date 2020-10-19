@@ -29,7 +29,6 @@ public final class FindPrimes {
      */
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();
-
         boolean[] isPrime = new boolean[n + 1];
         isPrime[0] = false;
         isPrime[1] = false;
