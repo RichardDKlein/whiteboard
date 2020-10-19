@@ -61,9 +61,9 @@ public final class FloodFillBreadthFirstSearch {
                 continue;
             }
             a[row][col] = '@';
-            queue.add(new RowCol(row,col - 1));
+            queue.add(new RowCol(row, col - 1));
             queue.add(new RowCol(row - 1, col));
-            queue.add(new RowCol(row,col + 1));
+            queue.add(new RowCol(row, col + 1));
             queue.add(new RowCol(row + 1, col));
         }
     }
