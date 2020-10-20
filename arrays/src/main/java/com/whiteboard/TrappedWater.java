@@ -67,18 +67,17 @@ public final class TrappedWater {
 
     private static void findWaterline() {
         waterline = new int[barHeights.length];
-        for (int i = 0; i < waterline.length; ++i) {
+        for (int i = 0; i < barHeights.length; ++i) {
             waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
-            if (waterline[i] < barHeights[i]) {
-                waterline[i] = barHeights[i];
-            }
         }
     }
 
     private static int computeTrappedWater() {
         int result = 0;
         for (int i = 0; i < barHeights.length; ++i) {
-            result += waterline[i] - barHeights[i];
+            if (waterline[i] > barHeights[i]) {
+                result += waterline[i] - barHeights[i];
+            }
         }
         return result;
     }
