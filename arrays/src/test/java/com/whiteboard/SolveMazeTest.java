@@ -280,7 +280,11 @@ class SolveMazeTest {
         ArrayTestUtils.copyBitmap(maze, copy);
 
         List<RowCol> path = SolveMaze.solveMaze(copy, start, exit);
-        assert(path.equals(expected));
+        assert(path.size() == expected.size());
+        for (int i = 0; i < path.size(); ++i) {
+            assert(path.get(i).row == expected.get(i).row);
+            assert(path.get(i).col == expected.get(i).col);
+        }
 
         System.out.println("\nSolution:\n");
         for (RowCol rowCol : path) {

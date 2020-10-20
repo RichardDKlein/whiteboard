@@ -18,14 +18,6 @@ public final class SolveMaze {
             this.row = row;
             this.col = col;
         }
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof RowCol)) {
-                return false;
-            }
-            RowCol other = (RowCol)o;
-            return this.row == other.row && this.col == other.col;
-        }
     }
 
     /**
@@ -64,8 +56,8 @@ public final class SolveMaze {
             return result;
         }
         // base case
-        if (start.equals(exit)) {
-            result.add(start);
+        if (start.row == exit.row && start.col == exit.col) {
+            result.add(new RowCol(start.row, start.col));
             return result;
         }
         // recursive step
@@ -73,28 +65,29 @@ public final class SolveMaze {
         List<RowCol> remainingPath;
         remainingPath = solveMaze(maze, new RowCol(start.row, start.col - 1), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(start);
+            result.add(new RowCol(start.row, start.col));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row - 1, start.col), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(start);
+            result.add(new RowCol(start.row, start.col));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row, start.col + 1), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(start);
+            result.add(new RowCol(start.row, start.col));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row + 1, start.col), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(start);
+            result.add(new RowCol(start.row, start.col));
             result.addAll(remainingPath);
             return result;
         }
+        // no solution
         return result;
     }
 }
