@@ -32,7 +32,8 @@ class ShortestClosureTest {
         for (int i = 0; i < needles.size(); ++i) {
             Interval shortest = ShortestClosure.shortestClosure(
                     haystack, needles.get(i));
-            assert(shortest.equals(expected[i]));
+            assert(shortest.start == expected[i].start);
+            assert(shortest.end == expected[i].end);
             System.out.print("needles: { ");
             for (Integer needle : needles.get(i)) {
                 System.out.print(needle + " ");
