@@ -30,15 +30,13 @@ public final class SpiralTraverse2dArray {
      */
     public static List<Integer> spiralTraverse2dArray(int[][] a) {
         List<Integer> result = new ArrayList<>();
-
         int numRows = a.length;
         int numCols = a[0].length;
-
         for (int topRow = 0, rightCol = numCols - 1, bottomRow = numRows - 1, leftCol = 0;
-                topRow <= bottomRow && leftCol <= rightCol;
-                ++topRow, --rightCol, --bottomRow, ++leftCol) {
-            List<Integer> shell = spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol);
-            result.addAll(shell);
+             topRow <= bottomRow && leftCol <= rightCol;
+             ++topRow, --bottomRow, ++leftCol, --rightCol) {
+
+            result.addAll(spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol));
         }
         return result;
     }
@@ -48,33 +46,33 @@ public final class SpiralTraverse2dArray {
 
         List<Integer> result = new ArrayList<>();
 
+        // degenerate case: row vector
         if (topRow == bottomRow) {
-            // degenerate case: row vector
             for (int col = leftCol; col <= rightCol; ++col) {
                 result.add(a[topRow][col]);
             }
             return result;
         }
+        // degenerate case: column vector
         if (leftCol == rightCol) {
-            // degenerate case: column vector
             for (int row = topRow; row <= bottomRow; ++row) {
                 result.add(a[row][leftCol]);
             }
             return result;
         }
-        // top row of shell
+        // top row
         for (int col = leftCol; col < rightCol; ++col) {
             result.add(a[topRow][col]);
         }
-        // right column of shell
+        // right column
         for (int row = topRow; row < bottomRow; ++row) {
             result.add(a[row][rightCol]);
         }
-        // bottom row of shell
+        // bottom row
         for (int col = rightCol; col > leftCol; --col) {
             result.add(a[bottomRow][col]);
         }
-        // left column of shell
+        // left column
         for (int row = bottomRow; row > topRow; --row) {
             result.add(a[row][leftCol]);
         }
