@@ -31,9 +31,9 @@ public final class SalesTerritories {
         }
     }
 
-    static Set<UnorderedPair<String>> cityPairs;
-    static Map<String, CityNode> cityMap = new HashMap<>();
-    static Set<String> visited = new HashSet<>();
+    private static Set<UnorderedPair<String>> cityPairs;
+    private static Map<String, CityNode> cityMap = new HashMap<>();
+    private static Set<CityNode> visited = new HashSet<>();
 
     /**
      * Given a list of city pairs, where each pair denotes that
@@ -56,16 +56,9 @@ public final class SalesTerritories {
      */
     public static Set<Set<String>>
     salesTerritories(Set<UnorderedPair<String>> cityPairs) {
-        Set<Set<String>> result = new HashSet<>();
         SalesTerritories.cityPairs = cityPairs;
         buildCityMap();
-        for (String cityName : cityMap.keySet()) {
-            if (!visited.contains(cityName)) {
-                Set<String> territory = findNeighboringCities(cityName);
-                result.add(territory);
-            }
-        }
-        return result;
+        return findTerritories();
     }
 
     private static void buildCityMap() {
@@ -78,25 +71,36 @@ public final class SalesTerritories {
     }
 
     private static CityNode findOrCreateCityNode(String cityName) {
-        CityNode result = cityMap.get(cityName);
-        if (result == null) {
-            result = new CityNode(cityName);
-            cityMap.put(cityName, result);
+        CityNode cityNode = cityMap.get(cityName);
+        if (cityNode == null) {
+            cityNode = new CityNode(cityName);
+            cityMap.put(cityName, cityNode);
+        }
+        return cityNode;
+    }
+
+    private static Set<Set<String>> findTerritories() {
+        Set<Set<String>> result = new HashSet<>();
+        for (CityNode cityNode : cityMap.values()) {
+            if (visited.contains(cityNode)) {
+                continue;
+            }
+            Set<String> territory = findNeighboringCities(cityNode);
+            result.add(territory);
         }
         return result;
     }
 
-    private static Set<String> findNeighboringCities(String cityName) {
+    private static Set<String> findNeighboringCities(CityNode rootNode) {
         Set<String> result = new HashSet<>();
         Queue<CityNode> cityNodeQueue = new LinkedList<>();
-        CityNode rootCityNode = cityMap.get(cityName);
-        cityNodeQueue.add(rootCityNode);
+        cityNodeQueue.add(rootNode);
         while (!cityNodeQueue.isEmpty()) {
             CityNode cityNode = cityNodeQueue.poll();
-            if (visited.contains(cityNode.cityName)) {
+            if (visited.contains(cityNode)) {
                 continue;
             }
-            visited.add(cityNode.cityName);
+            visited.add(cityNode);
             result.add(cityNode.cityName);
             cityNodeQueue.addAll(cityNode.neighboringCities);
         }
