@@ -16,13 +16,16 @@ public final class ReverseBits {
      */
     public static int reverseBits(int n) {
         int result = 0;
-        int numberOfShifts = Integer.SIZE - 1;
-        for (int i = 0; i < numberOfShifts; ++i) {
-            result |= n & 1; // OR
-            result <<= 1; // shift
+        int numShifts = Integer.SIZE - 1;
+        for (int i = 0; i < numShifts; ++i) {
+            // OR
+            result |= n & 1;
+            // shift
+            result <<= 1;
             n >>= 1;
         }
-        result |= n & 1; // one final OR
+        // one final OR
+        result |= n & 1;
         return result;
     }
 }
