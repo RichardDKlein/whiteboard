@@ -47,7 +47,7 @@ in one week.
 - **bit_manipulation**
     1. BitDiff
     2. ClearBit
-    3. CountOneBit
+    3. CountOneBits
     4. GetBit
     5. InsertBits
     6. IsPowerOfTwo
