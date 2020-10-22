@@ -22,10 +22,10 @@ public final class ListHasCycle {
      * the specified list contains a cycle.
      */
     public static <E> boolean listHasCycle(ListNode<E> head) {
+        ListNode<E> slow = head;
         if (head == null) {
             return false;
         }
-        ListNode<E> slow = head;
         ListNode<E> fast = head.next;
         while (fast != null && fast != slow) {
             slow = slow.next;

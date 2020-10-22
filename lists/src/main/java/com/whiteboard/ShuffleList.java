@@ -22,16 +22,18 @@ public final class ShuffleList {
      */
     public static <E> void shuffleList(List<E> list) {
         for (int i = 0; i < list.size() - 1; ++i) {
-            int j = randomIntInInterval(i + 1, list.size() - 1);
-            swapListElements(list, i, j);
+            int j = randomIntegerInInterval(i + 1, list.size() - 1);
+            swapElements(list, i, j);
         }
     }
 
-    static int randomIntInInterval(int min, int max) {
-        return (int)Math.round(Math.random() * (max - min) + min);
+    static int randomIntegerInInterval(int start, int end) {
+        int scaleFactor = end - start;
+        int offset = start;
+        return (int)Math.round(Math.random() * scaleFactor + offset);
     }
 
-    private static <E> void swapListElements(List<E> list, int i, int j) {
+    private static <E> void swapElements(List<E> list, int i, int j) {
         E tmp = list.get(i);
         list.set(i, list.get(j));
         list.set(j, tmp);

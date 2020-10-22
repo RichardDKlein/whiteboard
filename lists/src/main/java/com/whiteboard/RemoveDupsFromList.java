@@ -15,9 +15,9 @@ public final class RemoveDupsFromList {
      * @param head The list of interest.
      */
     public static <E> void removeDupsFromList(ListNode<E> head) {
+        Set<E> seen = new HashSet<>();
         ListNode<E> prev = null;
         ListNode<E> curr = head;
-        Set<E> seen = new HashSet<>();
         while (curr != null) {
             if (seen.contains(curr.data)) {
                 prev.next = curr.next;

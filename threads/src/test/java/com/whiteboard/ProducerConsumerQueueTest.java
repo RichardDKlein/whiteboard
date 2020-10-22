@@ -22,7 +22,7 @@ class ProducerConsumerQueueTest {
                 queue.produce(item);
                 System.out.println("Producer " + id + " produced " + item);
                 try {
-                    sleep(ShuffleList.randomIntInInterval(100, 500));
+                    sleep(ShuffleList.randomIntegerInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -44,7 +44,7 @@ class ProducerConsumerQueueTest {
                 consumedItems.add(item);
                 System.out.println("Consumer " + id_ + " consumed " + item);
                 try {
-                    sleep(ShuffleList.randomIntInInterval(100, 500));
+                    sleep(ShuffleList.randomIntegerInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

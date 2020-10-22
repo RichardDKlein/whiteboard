@@ -25,10 +25,10 @@ public final class DeleteNodeFromList {
      * was successful.
      */
     public static <E> boolean deleteNodeFromList(ListNode<E> victim) {
-        ListNode<E> next = victim.next;
-        if (next == null) {
+        if (victim.next == null) {
             return false;
         }
+        ListNode<E> next = victim.next;
         victim.data = next.data;
         victim.next = next.next;
         return true;
