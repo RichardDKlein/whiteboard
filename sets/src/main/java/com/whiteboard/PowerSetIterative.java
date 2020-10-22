@@ -21,18 +21,22 @@ public final class PowerSetIterative {
      * subset corresponding to that count.
      */
     public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
-        Set<Set<E>> powerSet = new HashSet<>();
-        List<E> elements = new ArrayList<>(set);
+        Set<Set<E>> result = new HashSet<>();
         int numSubsets = (int)Math.pow(2, set.size());
+        List<E> setList = new ArrayList<>(set);
         for (int i = 0; i < numSubsets; ++i) {
             Set<E> subset = new HashSet<>();
             for (int bitNum = 0; bitNum < set.size(); ++bitNum) {
-                if ((i & (1 << bitNum)) != 0) {
-                    subset.add(elements.get(bitNum));
+                if (isBitSet(i, bitNum)) {
+                    subset.add(setList.get(bitNum));
                 }
             }
-            powerSet.add(subset);
+            result.add(subset);
         }
-        return powerSet;
+        return result;
+    }
+
+    private static boolean isBitSet(int n, int bit) {
+        return (n & (1 << bit)) != 0;
     }
 }

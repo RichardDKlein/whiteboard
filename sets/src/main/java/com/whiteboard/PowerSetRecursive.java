@@ -11,22 +11,24 @@ public final class PowerSetRecursive {
     }
 
     public static <E> Set<Set<E>> powerSetRecursive(Set<E> set) {
-        Set<Set<E>> powerSet = new HashSet<>();
+        Set<Set<E>> result = new HashSet<>();
+        // base case
         if (set.isEmpty()) {
             Set<E> emptySet = new HashSet<>();
-            powerSet.add(emptySet);
-            return powerSet;
+            result.add(emptySet);
+            return result;
         }
-        List<E> elements = new ArrayList<>(set);
-        E firstElement = elements.remove(0);
-        Set<E> remainderSet = new HashSet<>(elements);
+        // recursive step
+        List<E> setList = new ArrayList<>(set);
+        E firstElement = setList.remove(0);
+        Set<E> remainderSet = new HashSet<>(setList);
         Set<Set<E>> remainderPowerSet = powerSetRecursive(remainderSet);
         for (Set<E> remainderSubset : remainderPowerSet) {
-            powerSet.add(remainderSubset);
-            Set<E> copyOfRemainderSubset = new HashSet<>(remainderSubset);
-            copyOfRemainderSubset.add(firstElement);
-            powerSet.add(copyOfRemainderSubset);
+            Set<E> remainderSubsetCopy = new HashSet<>(remainderSubset);
+            result.add(remainderSubsetCopy);
+            remainderSubset.add(firstElement);
+            result.add(remainderSubset);
         }
-        return powerSet;
+        return result;
     }
 }
