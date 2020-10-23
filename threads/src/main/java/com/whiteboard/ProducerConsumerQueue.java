@@ -12,7 +12,7 @@ import java.util.Queue;
  * interface.
  */
 public class ProducerConsumerQueue<E> {
-    Queue<E> queue = new LinkedList<>();
+    private Queue<E> queue = new LinkedList<>();
     int capacity;
 
     ProducerConsumerQueue(int capacity) {
@@ -20,7 +20,7 @@ public class ProducerConsumerQueue<E> {
     }
 
     public synchronized void produce(E element) {
-        while (queue.size() >= capacity) {
+        while (isFull()) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -28,7 +28,7 @@ public class ProducerConsumerQueue<E> {
             }
         }
         queue.add(element);
-        // notify consumers waiting for queue to be non-empty
+        // notify consumer threads blocked on queue empty
         notifyAll();
     }
 
@@ -41,8 +41,12 @@ public class ProducerConsumerQueue<E> {
             }
         }
         E element = queue.poll();
-        // notify producers waiting for queue to be non-full
+        // notify producer threads blocked on queue full
         notifyAll();
         return element;
+    }
+
+    private boolean isFull() {
+        return queue.size() >= this.capacity;
     }
 }
