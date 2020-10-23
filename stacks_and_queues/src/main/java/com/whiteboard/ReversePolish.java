@@ -1,5 +1,6 @@
 package com.whiteboard;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -20,39 +21,33 @@ public final class ReversePolish {
      * @return An integer representing the value of the expression.
      */
     public static int reversePolish(String expression) {
-        Set<String> operators = new HashSet<>();
-        operators.add("+");
-        operators.add("-");
-        operators.add("*");
-        operators.add("/");
-
-        Stack<Integer> stack = new Stack<>();
+        Set<String> operators = new HashSet<>(Arrays.asList("+", "-", "*", "/"));
+        Stack<Integer> tokenStack = new Stack<>();
 
         String[] tokens = expression.split(",");
+
         for (String token : tokens) {
             if (operators.contains(token)) {
-                int operand2 = stack.pop();
-                int operand1 = stack.pop();
+                int secondOperand = tokenStack.pop();
+                int firstOperand = tokenStack.pop();
                 switch (token) {
                     case "+":
-                        stack.push(operand1 + operand2);
+                        tokenStack.push(firstOperand + secondOperand);
                         break;
                     case "-":
-                        stack.push(operand1 - operand2);
+                        tokenStack.push(firstOperand - secondOperand);
                         break;
                     case "*":
-                        stack.push(operand1 * operand2);
+                        tokenStack.push(firstOperand * secondOperand);
                         break;
                     case "/":
-                        stack.push(operand1 / operand2);
-                        break;
-                    default:
+                        tokenStack.push(firstOperand / secondOperand);
                         break;
                 }
             } else {
-                stack.push(Integer.parseInt(token));
+                tokenStack.push(Integer.parseInt(token));
             }
         }
-        return stack.pop();
+        return tokenStack.pop();
     }
 }
