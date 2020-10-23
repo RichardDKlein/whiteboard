@@ -39,12 +39,12 @@ public final class SubstringsStartingAndEndingWith1 {
      * This solution is O(n).
      */
     public static int substringsStartingAndEndingWith1(String s) {
-        int n = 0;
+        int numberOfOnes = 0;
         for (int i = 0; i < s.length(); ++i) {
             if (s.charAt(i) == '1') {
-                ++n;
+                ++numberOfOnes;
             }
         }
-        return n * (n - 1) / 2;
+        return numberOfOnes * (numberOfOnes - 1) / 2;
     }
 }

@@ -17,12 +17,12 @@ public final class ReverseDecimalNumber {
      * @return An integer equal to n with its digits reversed.
      */
     public static int reverseDecimalNumber(int n) {
-        int reverse = 0;
+        int result = 0;
         while (n > 0) {
             int onesDigit = n % 10;
-            reverse = (reverse * 10) + onesDigit;
+            result = result * 10 + onesDigit;
             n /= 10;
         }
-        return reverse;
+        return result;
     }
 }

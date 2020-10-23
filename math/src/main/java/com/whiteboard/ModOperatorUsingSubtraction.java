@@ -25,11 +25,13 @@ public final class ModOperatorUsingSubtraction {
      * @return An integer equal to (dividend % divisor).
      */
     public static int modOperatorUsingSubtraction(int dividend, int divisor) {
+        // base case
         if (dividend < divisor) {
             return dividend;
         }
+        // recursive step
         int subtrahend = divisor;
-        while (dividend >= subtrahend) {
+        while (subtrahend <= dividend) {
             dividend -= subtrahend;
             subtrahend <<= 1;
         }
