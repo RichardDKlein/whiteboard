@@ -19,10 +19,12 @@ public final class PermutationsOfString {
      */
     public static Set<String> permutationsOfString(String s) {
         Set<String> result = new HashSet<>();
+        // base case
         if (s.isEmpty()) {
-            result.add(s);
+            result.add("");
             return result;
         }
+        // recursive step
         char firstChar = s.charAt(0);
         String remainder = s.substring(1);
         Set<String> remainderPermutations = permutationsOfString(remainder);

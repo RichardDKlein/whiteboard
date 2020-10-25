@@ -10,7 +10,7 @@ public final class TopKStrings {
     private TopKStrings() {
     }
 
-    private static class StringCountComparator implements Comparator<Map.Entry<String, Integer>> {
+    static class StringCountComparator implements Comparator<Map.Entry<String, Integer>> {
         @Override
         public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
             return o1.getValue() - o2.getValue();
@@ -19,8 +19,8 @@ public final class TopKStrings {
 
     private static List<String> strings;
     private static int k;
-    private static final Map<String, Integer> stringCounts = new HashMap<>();
-    private static final PriorityQueue<Map.Entry<String, Integer>> minHeap =
+    private static Map<String, Integer> stringCounts = new HashMap<>();
+    private static PriorityQueue<Map.Entry<String, Integer>> minHeap =
             new PriorityQueue<>(new StringCountComparator());
 
     /**
@@ -32,23 +32,21 @@ public final class TopKStrings {
      * @return The 'k' most frequently occurring strings in 'strings',
      * along with the number of times they occur.
      */
-    public static List<Map.Entry<String, Integer>>
-    topKStrings (List<String> strings, int k) {
+    public static List<Map.Entry<String, Integer>> topKStrings (List<String> strings, int k) {
         TopKStrings.strings = strings;
         TopKStrings.k = k;
-
         countStrings();
         buildMinHeap();
         return extractResults();
     }
 
     private static void countStrings() {
-        for (String string : strings) {
-            Integer count = stringCounts.get(string);
+        for (String s : strings) {
+            Integer count = stringCounts.get(s);
             if (count == null) {
-                stringCounts.put(string, 1);
+                stringCounts.put(s, 1);
             } else {
-                stringCounts.replace(string, count + 1);
+                stringCounts.put(s, count + 1);
             }
         }
     }
@@ -56,7 +54,8 @@ public final class TopKStrings {
     private static void buildMinHeap() {
         int min = -1;
         for (Map.Entry<String, Integer> entry : stringCounts.entrySet()) {
-            if (entry.getValue() >= min) {
+            int count = entry.getValue();
+            if (count >= min) {
                 minHeap.add(entry);
                 while (minHeap.size() > k) {
                     minHeap.poll();
@@ -67,10 +66,11 @@ public final class TopKStrings {
     }
 
     private static List<Map.Entry<String, Integer>> extractResults() {
-        LinkedList<Map.Entry<String, Integer>> results = new LinkedList<>();
+        LinkedList<Map.Entry<String, Integer>> result = new LinkedList<>();
         while (!minHeap.isEmpty()) {
-            results.addFirst(minHeap.poll());
+            Map.Entry<String, Integer> entry = minHeap.poll();
+            result.addFirst(entry);
         }
-        return results;
+        return result;
     }
 }

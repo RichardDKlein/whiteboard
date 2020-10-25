@@ -13,25 +13,25 @@ public final class CreateNestedFolders {
 
     static class Folder {
         String folderName;
-        String parentName;
+        String parentFolderName;
 
-        Folder(String folderName, String parentName) {
+        Folder(String folderName, String parentFolderName) {
             this.folderName = folderName;
-            this.parentName = parentName; // null => root folder
+            this.parentFolderName = parentFolderName;
         }
     }
 
-    private static class FolderNode {
+    static class FolderNode {
         String folderName;
         Set<FolderNode> childFolderNodes = new HashSet<>();
 
         FolderNode(String folderName) {
-            this.folderName = folderName; // null => root folder
+            this.folderName = folderName;
         }
     }
 
     private static List<Folder> folders;
-    private static final Map<String, FolderNode> folderMap = new HashMap<>();
+    private static Map<String, FolderNode> folderMap = new HashMap<>();
 
     /**
      * Given a list of folders and subfolders in no particular order,
@@ -44,18 +44,18 @@ public final class CreateNestedFolders {
      */
     public static List<String> createNestedFolders(List<Folder> folders) {
         CreateNestedFolders.folders = folders;
-        FolderNode root = buildFolderTree();
+        FolderNode root = buildFolderMap();
         return traverseFolderTreeInPreOrder(root);
     }
 
-    private static FolderNode buildFolderTree() {
+    private static FolderNode buildFolderMap() {
         FolderNode root = null;
         for (Folder folder : folders) {
             FolderNode folderNode = findOrCreateFolderNode(folder.folderName);
-            if (folder.parentName == null) {
+            FolderNode parentFolderNode = findOrCreateFolderNode(folder.parentFolderName);
+            if (parentFolderNode == null) {
                 root = folderNode;
             } else {
-                FolderNode parentFolderNode = findOrCreateFolderNode(folder.parentName);
                 parentFolderNode.childFolderNodes.add(folderNode);
             }
         }
@@ -63,6 +63,9 @@ public final class CreateNestedFolders {
     }
 
     private static FolderNode findOrCreateFolderNode(String folderName) {
+        if (folderName == null || folderName.isEmpty()) {
+            return null;
+        }
         FolderNode folderNode = folderMap.get(folderName);
         if (folderNode == null) {
             folderNode = new FolderNode(folderName);
@@ -73,12 +76,14 @@ public final class CreateNestedFolders {
 
     private static List<String> traverseFolderTreeInPreOrder(FolderNode root) {
         List<String> result = new ArrayList<>();
+        // base case
         if (root == null) {
             return result;
         }
+        // recursive step
         result.add(root.folderName);
-        for (FolderNode childFolder : root.childFolderNodes) {
-            result.addAll(traverseFolderTreeInPreOrder(childFolder));
+        for (FolderNode childFolderNode : root.childFolderNodes) {
+            result.addAll(traverseFolderTreeInPreOrder(childFolderNode));
         }
         return result;
     }

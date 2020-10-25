@@ -20,10 +20,9 @@ public final class StringsArePermutations {
      * s1 and s2 are permutations of each other.
      */
     public static boolean stringsArePermutations(String s1, String s2) {
-        Map<Character, Integer> s1CharInventory = inventoryString(s1);
-        Map<Character, Integer> s2CharInventory = inventoryString(s2);
-
-        return s1CharInventory.equals(s2CharInventory);
+        Map<Character, Integer> s1Inventory = inventoryString(s1);
+        Map<Character, Integer> s2Inventory = inventoryString(s2);
+        return s1Inventory.equals(s2Inventory);
     }
 
     private static Map<Character, Integer> inventoryString(String s) {
@@ -34,7 +33,7 @@ public final class StringsArePermutations {
             if (count == null) {
                 result.put(c, 1);
             } else {
-                result.replace(c, count + 1);
+                result.put(c, count + 1);
             }
         }
         return result;

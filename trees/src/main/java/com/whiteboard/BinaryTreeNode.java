@@ -4,13 +4,13 @@ public class BinaryTreeNode<E> {
     E data;
     BinaryTreeNode<E> left, right;
 
-    BinaryTreeNode(E data_, BinaryTreeNode<E> left_, BinaryTreeNode<E> right_) {
-        data = data_;
-        left = left_;
-        right = right_;
+    BinaryTreeNode(E data, BinaryTreeNode<E> left, BinaryTreeNode<E> right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
     }
 
-    BinaryTreeNode() {
-        this(null, null, null);
+    BinaryTreeNode(E data) {
+        this(data, null, null);
     }
 }

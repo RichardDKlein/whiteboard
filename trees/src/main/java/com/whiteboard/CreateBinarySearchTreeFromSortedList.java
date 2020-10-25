@@ -22,23 +22,19 @@ public final class CreateBinarySearchTreeFromSortedList {
         if (sortedList.isEmpty()) {
             return null;
         }
-        int first = 0;
-        int last = sortedList.size() - 1;
-        int mid = (first + last) / 2;
-
+        // recursive step
+        int mid = (sortedList.size() - 1) / 2;
+        BinaryTreeNode<E> root = new BinaryTreeNode<>(sortedList.get(mid));
         List<E> leftSortedList = new ArrayList<>();
-        for (int i = first; i < mid; ++i) {
+        for (int i = 0; i < mid; ++i) {
             leftSortedList.add(sortedList.get(i));
         }
         List<E> rightSortedList = new ArrayList<>();
-        for (int i = mid + 1; i <= last; ++i) {
+        for (int i = mid + 1; i < sortedList.size(); ++i) {
             rightSortedList.add(sortedList.get(i));
         }
-        BinaryTreeNode<E> root = new BinaryTreeNode<>();
-        root.data = sortedList.get(mid);
         root.left = createBinarySearchTreeFromSortedList(leftSortedList);
         root.right = createBinarySearchTreeFromSortedList(rightSortedList);
-
         return root;
     }
 }

@@ -48,7 +48,7 @@ class CreateNestedFoldersTest {
 
         Map<String, String> parentFolderMap = new HashMap<>();
         for (Folder folder : folderArray) {
-            parentFolderMap.put(folder.folderName, folder.parentName);
+            parentFolderMap.put(folder.folderName, folder.parentFolderName);
         }
         for (String folderName : reorderedList) {
             if (folderName.equals("root")) {

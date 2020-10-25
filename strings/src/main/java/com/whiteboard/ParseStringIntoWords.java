@@ -24,25 +24,24 @@ public final class ParseStringIntoWords {
      */
     public static List<String> parseStringIntoWords(String s, Set<String> dictionary) {
         List<String> result = new ArrayList<>();
+        // base case
         if (s.isEmpty()) {
             return result;
         }
+        // recursive step
         for (int i = 0; i < s.length(); ++i) {
             String firstWord = s.substring(0, i + 1);
-            if (!dictionary.contains(firstWord)) {
-                continue;
+            if (dictionary.contains(firstWord)) {
+                String remainder = s.substring(i + 1);
+                List<String> parseOfRemainder = parseStringIntoWords(remainder, dictionary);
+                if (parseOfRemainder == null) {
+                    // try a longer first word
+                    continue;
+                }
+                result.add(firstWord);
+                result.addAll(parseOfRemainder);
+                return result;
             }
-            String remainder = s.substring(i + 1);
-            List<String> parseRemainder =
-                    parseStringIntoWords(remainder, dictionary);
-            if (parseRemainder == null) {
-                // We failed to parse the remainder.
-                // Let's try a longer first word.
-                continue;
-            }
-            result.add(firstWord);
-            result.addAll(parseRemainder);
-            return result;
         }
         return null;
     }
