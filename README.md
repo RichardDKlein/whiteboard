@@ -95,7 +95,6 @@ in one week.
     10. CreateNestedFolders
     11. IsBinarySearchTree
     12. TraverseBinaryTreeBreadthFirst
-    13. TraverseBinaryTreeInOrder
 
 - **strings**
     1. FindSubstring
