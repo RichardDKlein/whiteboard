@@ -12,7 +12,7 @@ public final class FloodFillBreadthFirstSearch {
     private FloodFillBreadthFirstSearch() {
     }
 
-    static class RowCol {
+    private static class RowCol {
         int row;
         int col;
 
@@ -41,26 +41,26 @@ public final class FloodFillBreadthFirstSearch {
      *                at which the flood fill is to start.
      * @param seedCol The 0-based column index of the seed pixel.
      */
-    public static void floodFillBreadthFirstSearch(
-            char[][] a, int seedRow, int seedCol) {
-
+    public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
         int numRows = a.length;
         int numCols = a[0].length;
-
         Queue<RowCol> queue = new LinkedList<>();
         queue.add(new RowCol(seedRow, seedCol));
-
         while (!queue.isEmpty()) {
-            RowCol rowCol = queue.poll();
-            int row = rowCol.row;
-            int col = rowCol.col;
+            RowCol pixel = queue.poll();
+            int row = pixel.row;
+            int col = pixel.col;
+            // Error checking
             if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
+            // Already visited
             if (a[row][col] == '@') {
                 continue;
             }
+            // Visit the pixel
             a[row][col] = '@';
+            // Add the pixel's neighbors to the queue
             queue.add(new RowCol(row, col - 1));
             queue.add(new RowCol(row - 1, col));
             queue.add(new RowCol(row, col + 1));
