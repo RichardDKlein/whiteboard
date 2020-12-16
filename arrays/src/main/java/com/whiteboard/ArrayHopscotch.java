@@ -50,7 +50,7 @@ public final class ArrayHopscotch {
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
         List<Integer> result = new ArrayList<>();
         // Error checking
-        if (iStart < 0 || iStart >= a.length) {
+        if (iStart < 0 || iStart > a.length - 1) {
             return result;
         }
         if (visited.contains(iStart)) {
