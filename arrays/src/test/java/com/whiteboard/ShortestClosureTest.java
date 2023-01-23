@@ -1,8 +1,9 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.*;
-import org.junit.jupiter.api.Test;
-import com.whiteboard.ShortestClosure.Interval;
+import java.com.whiteboard.ShortestClosure.Interval;
 
 class ShortestClosureTest {
     @Test

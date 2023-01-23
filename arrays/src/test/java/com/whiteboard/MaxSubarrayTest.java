@@ -1,7 +1,8 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
-import static com.whiteboard.MaxSubarray.Interval;
+import org.junit.Test;
+
+import static java.com.whiteboard.MaxSubarray.Interval;
 
 class MaxSubarrayTest {
     @Test

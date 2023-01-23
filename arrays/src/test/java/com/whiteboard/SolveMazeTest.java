@@ -1,11 +1,11 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-import com.whiteboard.SolveMaze.RowCol;
+import java.com.whiteboard.SolveMaze.RowCol;
 
 class SolveMazeTest {
     @Test

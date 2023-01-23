@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 /**
  * Rotate a 2D array 90 degrees in the clockwise direction,

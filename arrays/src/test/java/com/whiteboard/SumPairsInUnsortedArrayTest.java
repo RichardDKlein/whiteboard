@@ -1,7 +1,8 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.*;
-import org.junit.jupiter.api.Test;
 
 class SumPairsInUnsortedArrayTest {
     @Test

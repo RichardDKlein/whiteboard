@@ -1,12 +1,12 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class CircularQueueTest {
     private static CircularQueue queue;
 
     @Test
-    void circularQueueTest() {
+    public void circularQueueTest() {
         System.out.println();
         System.out.println("Test CircularQueue:");
         System.out.println("===================");

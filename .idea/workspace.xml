@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ArrayHopscotch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ArrayHopscotch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/CircularQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/CircularQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FindPrimes.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FindPrimes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillBreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillRecursive.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/FloodFillRecursive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/LinesThruPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MaxSubarray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/MergeTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/Rotate2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSorted2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SearchSortedAndRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/ShortestClosure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SolveMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SpiralTraverse2dArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInSortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInUnsortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/SumPairsInUnsortedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/TrappedWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/UnorderedPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/main/java/com/whiteboard/UnorderedPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayTestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayTestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/CircularQueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FindPrimesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillBreadthFirstSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/FloodFillRecursiveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/LinesThruPointsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/MaxSubarrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/MaxSubarrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/MergeTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/MergeTwoSortedArraysTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/Rotate2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/Rotate2dArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SearchSorted2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SearchSorted2dArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SearchSortedAndRotatedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SearchSortedAndRotatedArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ShortestClosureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ShortestClosureTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SolveMazeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SolveMazeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SpiralTraverse2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SpiralTraverse2dArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SumPairsInSortedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SumPairsInSortedArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SumPairsInUnsortedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/SumPairsInUnsortedArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/TrappedWaterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/TrappedWaterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ShuffleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ShuffleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whiteboard-java.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Kk0ezcBQzijKo7NGWiL21jCbKX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/daily/dev/src/whiteboard",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ArrayHopscotchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="whiteboard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="java.com.whiteboard.ArrayHopscotchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ArrayHopscotchTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="" />
+      <created>1674503372946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674503372946</updated>
+    </task>
+    <servers />
+  </component>
+</project>

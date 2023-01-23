@@ -1,14 +1,14 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ArrayHopscotchTest {
+public class ArrayHopscotchTest {
     @Test
-    void arrayHopscotchTest() {
+    public void arrayHopscotchTest() {
         System.out.println();
         System.out.println("Test ArrayHopscotch:");
         System.out.println("====================");
@@ -25,14 +25,8 @@ class ArrayHopscotchTest {
                 5
         };
 
-        int[][] expectedArray = {
-                {0, 2, 3},
-                {},
-                {5, 3, 6}
-        };
-
         List<Integer> expected0 = Arrays.asList(0, 2, 3);
-        List<Integer> expected1 = Arrays.asList();
+        List<Integer> expected1 = new ArrayList<>();
         List<Integer> expected2 = Arrays.asList(5, 3, 6);
 
         List<List<Integer>> expected = new ArrayList<>();

@@ -1,8 +1,9 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.Arrays;
-import org.junit.jupiter.api.Test;
-import com.whiteboard.SearchSorted2dArray.RowCol;
+import java.com.whiteboard.SearchSorted2dArray.RowCol;
 
 class SearchSorted2dArrayTest {
     @Test
