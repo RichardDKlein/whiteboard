@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 /**
  * Delete a node from a singly-linked list, given only a reference

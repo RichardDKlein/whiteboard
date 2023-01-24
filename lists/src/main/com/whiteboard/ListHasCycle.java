@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 /**
  * Determine whether a singly-linked list contains a cycle.

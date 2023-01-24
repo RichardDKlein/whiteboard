@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 public class ListNode<E> {
     E data;

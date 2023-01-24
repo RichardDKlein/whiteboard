@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 /**
  * Find the kth to last element in a singly-linked list.

@@ -1,10 +1,10 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 import org.junit.Test;
 
 import java.util.*;
 
-import java.com.whiteboard.CreateNestedFolders.Folder;
+import com.whiteboard.CreateNestedFolders.Folder;
 
 public class CreateNestedFoldersTest {
     @Test

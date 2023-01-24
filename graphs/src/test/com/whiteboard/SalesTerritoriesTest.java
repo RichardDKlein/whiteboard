@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import java.com.whiteboard.SalesTerritories.UnorderedPair;
+import com.whiteboard.SalesTerritories.UnorderedPair;
 
 public class SalesTerritoriesTest {
     @Test

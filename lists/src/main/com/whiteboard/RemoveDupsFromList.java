@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 import java.util.HashSet;
 import java.util.Set;
