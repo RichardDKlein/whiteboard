@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class RomanNumeralToDecimalTest {
+public class RomanNumeralToDecimalTest {
     @Test
-    void romanNumeralToDecimalTest() {
+    public void romanNumeralToDecimalTest() {
         System.out.println();
         System.out.println("Test RomanNumeralToDecimal:");
         System.out.println("===========================");

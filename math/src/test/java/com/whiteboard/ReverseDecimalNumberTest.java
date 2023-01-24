@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ReverseDecimalNumberTest {
+public class ReverseDecimalNumberTest {
     @Test
-    void reverseDecimalNumberTest() {
+    public void reverseDecimalNumberTest() {
         System.out.println();
         System.out.println("Test ReverseDecimalNumber:");
         System.out.println("==========================");

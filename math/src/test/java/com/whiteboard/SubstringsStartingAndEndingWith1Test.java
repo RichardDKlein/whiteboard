@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class SubstringsStartingAndEndingWith1Test {
+public class SubstringsStartingAndEndingWith1Test {
     @Test
-    void substringsStartingAndEndingWith1Test() {
+    public void substringsStartingAndEndingWith1Test() {
         System.out.println();
         System.out.println("Test SubstringsStartingAndEndingWith1:");
         System.out.println("======================================");

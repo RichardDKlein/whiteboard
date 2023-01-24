@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 /**
  * Given a string consisting of '0's and '1's, find the number of

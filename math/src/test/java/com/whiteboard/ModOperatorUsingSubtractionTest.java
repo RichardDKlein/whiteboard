@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ModOperatorUsingSubtractionTest {
+public class ModOperatorUsingSubtractionTest {
     @Test
-    void modOperatorUsingSubtractionTest() {
+    public void modOperatorUsingSubtractionTest() {
         System.out.println();
         System.out.println("Test ModOperatorUsingSubtraction:");
         System.out.println("=================================");
