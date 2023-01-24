@@ -1,11 +1,11 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.Collections;
 import java.util.Vector;
 
-import org.junit.jupiter.api.Test;
-
-class ProducerConsumerQueueTest {
+public class ProducerConsumerQueueTest {
     ProducerConsumerQueue<String> queue = new ProducerConsumerQueue<>(5);
     Vector<String> consumedItems = new Vector<>(); // Need Vector<> for thread safety
 
@@ -54,7 +54,7 @@ class ProducerConsumerQueueTest {
     }
 
     @Test
-    void producerConsumerTest1() {
+    public void producerConsumerTest1() {
         System.out.println();
         System.out.println("Test ProducerConsumerQueue:");
         System.out.println("===========================");
