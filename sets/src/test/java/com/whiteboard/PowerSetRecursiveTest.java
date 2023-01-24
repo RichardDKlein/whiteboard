@@ -1,14 +1,14 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.jupiter.api.Test;
-
-class PowerSetRecursiveTest {
+public class PowerSetRecursiveTest {
     @Test
-    void powerSetRecursiveTest() {
+    public void powerSetRecursiveTest() {
         System.out.println();
         System.out.println("Test PowerSetRecursive:");
         System.out.println("=======================");
