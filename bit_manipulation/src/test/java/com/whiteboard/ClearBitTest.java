@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ClearBitTest {
+public class ClearBitTest {
     @Test
-    void clearBitTest() {
+    public void clearBitTest() {
         System.out.println();
         System.out.println("Test ClearBit:");
         System.out.println("==============");

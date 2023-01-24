@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class BitDiffTest {
+public class BitDiffTest {
     @Test
-    void bitDiffTest() {
+    public void bitDiffTest() {
         System.out.println();
         System.out.println("Test BitDiff:");
         System.out.println("=============");

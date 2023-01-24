@@ -18,8 +18,8 @@ Enjoy!
 ## ONE-WEEK INTERVIEW PREP PLAN
 
 The following is an aggressive interview prep plan
-that allows you to cover (almost) all the exercises
-in one week.
+that allows you to cover all the exercises in one
+week.
 
 ### Monday
 - **arrays**
@@ -28,9 +28,10 @@ in one week.
     3. FindPrimes
     4. FloodFillBreadthFirstSearch
     5. FloodFillRecursive
-    6. MaxSubarray
-    7. MergeTwoSortedArrays
-    8. Rotate2dArray
+    6. LinesThruPoints
+    7. MaxSubarray
+    8. MergeTwoSortedArrays
+    9. Rotate2dArray
     
 ### Tuesday
 - **arrays *[cont]***
@@ -91,17 +92,17 @@ in one week.
     
 ### Weekend
 - **trees**
-    9. CreateBinarySearchTreeFromSortedList
-    10. CreateNestedFolders
-    11. IsBinarySearchTree
-    12. TraverseBinaryTreeBreadthFirst
+    1. CreateBinarySearchTreeFromSortedList
+    2. CreateNestedFolders
+    3. IsBinarySearchTree
+    4. TraverseBinaryTreeBreadthFirst
 
 - **strings**
-    1. FindSubstring
-    2. LongestPalindromicSubstring
-    3. ParseStringIntoWords
-    4. PermutationsOfString
-    5. RansomNote
-    6. ReverseWordsInSentence
-    7. StringsArePermutations
-    8. TopKStrings
+    5. FindSubstring
+    6. LongestPalindromicSubstring
+    7. ParseStringIntoWords
+    8. PermutationsOfString
+    9. RansomNote
+    10. ReverseWordsInSentence
+    11. StringsArePermutations
+    12. TopKStrings

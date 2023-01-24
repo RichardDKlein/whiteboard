@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ToggleBitTest {
+public class ToggleBitTest {
     @Test
-    void toggleBitTest() {
+    public void toggleBitTest() {
         System.out.println();
         System.out.println("Test ToggleBit:");
         System.out.println("===============");

@@ -1,6 +1,4 @@
-package com.whiteboard;
-
-import sun.jvm.hotspot.utilities.Interval;
+package java.com.whiteboard;
 
 /**
  * Insert bits.

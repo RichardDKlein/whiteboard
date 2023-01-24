@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class CountOneBitsTest {
+public class CountOneBitsTest {
     @Test
-    void countOneBitsTest() {
+    public void countOneBitsTest() {
         System.out.println();
         System.out.println("Test CountOneBits:");
         System.out.println("==================");

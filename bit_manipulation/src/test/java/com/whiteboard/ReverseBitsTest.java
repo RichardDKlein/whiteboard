@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ReverseBitsTest {
+public class ReverseBitsTest {
     @Test
-    void reverseBitsTest() {
+    public void reverseBitsTest() {
         System.out.println();
         System.out.println("Test ReverseBits:");
         System.out.println("=================");

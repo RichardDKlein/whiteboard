@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class GetBitTest {
+public class GetBitTest {
     @Test
-    void getBitTest() {
+    public void getBitTest() {
         System.out.println();
         System.out.println("Test GetBit:");
         System.out.println("============");

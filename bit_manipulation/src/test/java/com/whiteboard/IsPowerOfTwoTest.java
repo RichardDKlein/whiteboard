@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class IsPowerOfTwoTest {
+public class IsPowerOfTwoTest {
     @Test
-    void isPowerOfTwoTest() {
+    public void isPowerOfTwoTest() {
         System.out.println();
         System.out.println("Test IsPowerOfTwo:");
         System.out.println("==================");

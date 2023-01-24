@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class InsertBitsTest {
     @Test
-    void insertBitsTest() {
+    public void insertBitsTest() {
         System.out.println();
         System.out.println("Test InsertBits:");
         System.out.println("================");
