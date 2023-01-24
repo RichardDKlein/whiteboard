@@ -1,8 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-class SingletonTest {
-    @org.junit.jupiter.api.Test
-    void test() {
+import org.junit.Test;
+
+public class SingletonTest {
+    @Test
+    public void testSingleton() {
         System.out.println();
         System.out.println("Test Singleton:");
         System.out.println("===============");

@@ -59,7 +59,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.test in whiteboard">
+  <component name="RunManager" selected="JUnit.SingletonTest">
     <configuration name="ArrayHopscotchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="whiteboard" />
       <extension name="coverage">
@@ -75,6 +75,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SingletonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="whiteboard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.com.whiteboard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.com.whiteboard" />
+      <option name="MAIN_CLASS_NAME" value="java.com.whiteboard.SingletonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test in whiteboard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="whiteboard" />
       <option name="TEST_OBJECT" value="directory" />
@@ -85,6 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SingletonTest" />
         <item itemvalue="JUnit.test in whiteboard" />
         <item itemvalue="JUnit.ArrayHopscotchTest" />
       </list>
