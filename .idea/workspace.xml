@@ -6,23 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/ArrayTestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/ArrayTestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/CircularQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/CircularQueueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/FloodFillBreadthFirstSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/FloodFillBreadthFirstSearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/FloodFillRecursiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/FloodFillRecursiveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/LinesThruPointsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/LinesThruPointsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/MaxSubarrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/MaxSubarrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/MergeTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/MergeTwoSortedArraysTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/Rotate2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/Rotate2dArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SearchSorted2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SearchSorted2dArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SearchSortedAndRotatedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SearchSortedAndRotatedArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/ShortestClosureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/ShortestClosureTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SolveMazeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SolveMazeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SpiralTraverse2dArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SpiralTraverse2dArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SumPairsInSortedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SumPairsInSortedArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SumPairsInUnsortedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/SumPairsInUnsortedArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/TrappedWaterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/com/whiteboard/TrappedWaterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/src/test/com/whiteboard/StringsArePermutationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/test/com/whiteboard/StringsArePermutationsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays/arrays.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +38,16 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.test in whiteboard (1)">
+  <component name="RunManager" selected="JUnit.All in whiteboard (2)">
     <configuration name="All in whiteboard (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="whiteboard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in whiteboard (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="whiteboard" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -94,21 +86,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="whiteboard in whiteboard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="whiteboard" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/arrays/src/test/com/whiteboard" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in whiteboard (2)" />
         <item itemvalue="JUnit.test in whiteboard (1)" />
         <item itemvalue="JUnit.ReverseWordsInSentenceTest" />
         <item itemvalue="JUnit.All in whiteboard (1)" />
         <item itemvalue="JUnit.All in whiteboard" />
-        <item itemvalue="JUnit.whiteboard in whiteboard" />
       </list>
     </recent_temporary>
   </component>
