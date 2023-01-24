@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 import java.util.Set;
 
@@ -16,7 +16,7 @@ public final class SetTestUtils {
 
     static <E> void printPowerSet(Set<Set<E>> powerSet) {
         System.out.println("{");
-        for (Set set : powerSet) {
+        for (Set<E> set : powerSet) {
             System.out.print("\t");
             printSet(set);
         }
