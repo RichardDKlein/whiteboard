@@ -1,4 +1,4 @@
-package java.com.whiteboard;
+package com.whiteboard;
 
 /**
  * Reverse the digits of a decimal number.
