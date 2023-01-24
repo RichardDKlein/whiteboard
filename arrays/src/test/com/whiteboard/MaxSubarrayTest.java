@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import static com.whiteboard.MaxSubarray.Interval;
 
-class MaxSubarrayTest {
+public class MaxSubarrayTest {
     @Test
-    void maxSubarrayTest() {
+    public void maxSubarrayTest() {
         System.out.println();
         System.out.println("Test MaxSubarray:");
         System.out.println("=================");

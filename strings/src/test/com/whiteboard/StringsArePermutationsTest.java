@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class StringsArePermutationsTest {
     @Test
-    void stringsArePermutationsTest() {
+    public void stringsArePermutationsTest() {
         System.out.println();
         System.out.println("Test StringsArePermutations:");
         System.out.println("============================");

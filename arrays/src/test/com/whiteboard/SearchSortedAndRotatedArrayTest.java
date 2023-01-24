@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class SearchSortedAndRotatedArrayTest {
+public class SearchSortedAndRotatedArrayTest {
     @Test
-    void searchSortedAndRotatedArrayTest() {
+    public void searchSortedAndRotatedArrayTest() {
         System.out.println();
         System.out.println("Test SearchSortedAndRotatedArray:");
         System.out.println("=================================");

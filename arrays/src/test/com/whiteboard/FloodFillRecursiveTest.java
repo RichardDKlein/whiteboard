@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class FloodFillRecursiveTest {
+public class FloodFillRecursiveTest {
     @Test
-    void floodFillRecursiveTest() {
+    public void floodFillRecursiveTest() {
         System.out.println();
         System.out.println("Test FloodFillRecursive:");
         System.out.println("========================");

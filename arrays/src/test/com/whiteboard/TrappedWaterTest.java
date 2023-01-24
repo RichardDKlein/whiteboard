@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class TrappedWaterTest {
+public class TrappedWaterTest {
     @Test
-    void trappedWaterTest() {
+    public void trappedWaterTest() {
         System.out.println();
         System.out.println("Test TrappedWater:");
         System.out.println("==================");

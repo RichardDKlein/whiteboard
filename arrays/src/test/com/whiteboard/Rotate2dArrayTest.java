@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class Rotate2dArrayTest {
+public class Rotate2dArrayTest {
     @Test
-    void rotate2dArrayTest() {
+    public void rotate2dArrayTest() {
         System.out.println();
         System.out.println("Test Rotate2dArray:");
         System.out.println("===================");

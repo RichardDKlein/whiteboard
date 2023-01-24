@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class SpiralTraverse2dArrayTest {
+public class SpiralTraverse2dArrayTest {
     @Test
-    void spiralTraverse2dArrayTest() {
+    public void spiralTraverse2dArrayTest() {
         System.out.println();
         System.out.println("Test SpiralTraverse2dArray:");
         System.out.println("===========================");

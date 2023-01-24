@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class MergeTwoSortedArraysTest {
+public class MergeTwoSortedArraysTest {
     @Test
-    void mergeTwoSortedArraysTest() {
+    public void mergeTwoSortedArraysTest() {
         System.out.println();
         System.out.println("Test MergeTwoSortedArrays:");
         System.out.println("==========================");

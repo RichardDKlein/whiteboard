@@ -5,9 +5,9 @@ import org.junit.Test;
 import java.util.Arrays;
 import com.whiteboard.SearchSorted2dArray.RowCol;
 
-class SearchSorted2dArrayTest {
+public class SearchSorted2dArrayTest {
     @Test
-    void searchSorted2dArrayTest() {
+    public void searchSorted2dArrayTest() {
         System.out.println();
         System.out.println("Test SearchSorted2dArray:");
         System.out.println("=========================");

@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class LinesThruPointsTest {
+public class LinesThruPointsTest {
     @Test
-    void linesThruPointsTest() {
+    public void linesThruPointsTest() {
         System.out.println();
         System.out.println("Test LinesThruPoints:");
         System.out.println("=====================");

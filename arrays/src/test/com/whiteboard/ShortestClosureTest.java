@@ -5,9 +5,9 @@ import org.junit.Test;
 import java.util.*;
 import com.whiteboard.ShortestClosure.Interval;
 
-class ShortestClosureTest {
+public class ShortestClosureTest {
     @Test
-    void shortestClosureTest() {
+    public void shortestClosureTest() {
         System.out.println();
         System.out.println("Test ShortestClosure:");
         System.out.println("=====================");

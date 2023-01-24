@@ -2,7 +2,7 @@ package com.whiteboard;
 
 import org.junit.Test;
 
-class CircularQueueTest {
+public class CircularQueueTest {
     private static CircularQueue queue;
 
     @Test

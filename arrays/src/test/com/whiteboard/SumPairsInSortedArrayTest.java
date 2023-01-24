@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class SumPairsInSortedArrayTest {
+public class SumPairsInSortedArrayTest {
     @Test
-    void sumPairsInSortedArrayTest() {
+    public void sumPairsInSortedArrayTest() {
         System.out.println();
         System.out.println("Test SumPairsInSortedArray:");
         System.out.println("===========================");

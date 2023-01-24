@@ -7,9 +7,9 @@ import java.util.List;
 
 import com.whiteboard.SolveMaze.RowCol;
 
-class SolveMazeTest {
+public class SolveMazeTest {
     @Test
-    void solveMazeTest() {
+    public void solveMazeTest() {
         System.out.println();
         System.out.println("Test SolveMaze:");
         System.out.println("===============");

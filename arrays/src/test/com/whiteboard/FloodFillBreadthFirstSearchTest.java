@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-class FloodFillBreadthFirstSearchTest {
+public class FloodFillBreadthFirstSearchTest {
     @Test
-    void floodFillBreadthFirstSearchTest() {
+    public void floodFillBreadthFirstSearchTest() {
         System.out.println();
         System.out.println("Test FloodFillBreadthFirstSearch:");
         System.out.println("=================================");

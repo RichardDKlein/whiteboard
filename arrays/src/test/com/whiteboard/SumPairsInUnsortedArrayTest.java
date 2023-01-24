@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.*;
 
-class SumPairsInUnsortedArrayTest {
+public class SumPairsInUnsortedArrayTest {
     @Test
-    void sumPairsInUnsortedArrayTest() {
+    public void sumPairsInUnsortedArrayTest() {
         System.out.println();
         System.out.println("Test SumPairsInUnsortedArray:");
         System.out.println("=============================");

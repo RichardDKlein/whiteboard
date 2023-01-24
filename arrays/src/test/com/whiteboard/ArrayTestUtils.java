@@ -3,7 +3,7 @@ package com.whiteboard;
 /**
  * Test utilities for the arrays package.
  */
-public final class ArrayTestUtils {
+public class ArrayTestUtils {
     private ArrayTestUtils() {
     }
 
