@@ -11,6 +11,9 @@
       <sourceFolder url="file://$MODULE_DIR$/bit_manipulation/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/design_patterns/src/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/design_patterns/src/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/src/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lists/src/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

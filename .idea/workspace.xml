@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/arrays/src/test/java/com/whiteboard/ArrayHopscotchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/BitDiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/BitDiff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ClearBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ClearBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/CountOneBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/CountOneBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/GetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/GetBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/InsertBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/InsertBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/IsPowerOfTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ReverseBits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/SetBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/main/java/com/whiteboard/ToggleBit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/BitDiffTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/BitDiffTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/BitTestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/BitTestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ClearBitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ClearBitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/CountOneBitsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/GetBitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/GetBitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/InsertBitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/InsertBitsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/IsPowerOfTwoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/IsPowerOfTwoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ReverseBitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ReverseBitsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/SetBitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/SetBitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ToggleBitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bit_manipulation/src/test/java/com/whiteboard/ToggleBitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard.iml" afterDir="false" />
-    </list>
+    <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

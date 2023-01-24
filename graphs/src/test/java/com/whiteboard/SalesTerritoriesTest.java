@@ -1,16 +1,16 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.jupiter.api.Test;
+import java.com.whiteboard.SalesTerritories.UnorderedPair;
 
-import com.whiteboard.SalesTerritories.UnorderedPair;
-
-class SalesTerritoriesTest {
+public class SalesTerritoriesTest {
     @Test
-    void salesTerritoriesTest() {
+    public void salesTerritoriesTest() {
         System.out.println();
         System.out.println("Test SalesTerritories:");
         System.out.println("======================");
