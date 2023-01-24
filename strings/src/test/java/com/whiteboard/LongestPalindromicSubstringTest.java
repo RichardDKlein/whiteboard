@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class LongestPalindromicSubstringTest {
+public class LongestPalindromicSubstringTest {
     @Test
-    void longestPalindromicSubstringTest() {
+    public void longestPalindromicSubstringTest() {
         System.out.println();
         System.out.println("Test LongestPalindromicSubstring:");
         System.out.println("=================================");

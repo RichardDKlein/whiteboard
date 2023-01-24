@@ -1,8 +1,8 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class StringsArePermutationsTest {
+public class StringsArePermutationsTest {
     @Test
     void stringsArePermutationsTest() {
         System.out.println();

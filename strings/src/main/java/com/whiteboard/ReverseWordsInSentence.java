@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 /**
  * Reverse the words in a sentence.

@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ReversePolishTest {
+public class ReversePolishTest {
     @Test
-    void reversePolish() {
+    public void reversePolish() {
         System.out.println();
         System.out.println("Test ReversePolish:");
         System.out.println("===================");

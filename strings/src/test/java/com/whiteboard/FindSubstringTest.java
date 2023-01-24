@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class FindSubstringTest {
+public class FindSubstringTest {
     @Test
-    void findSubstringTest() {
+    public void findSubstringTest() {
         System.out.println();
         System.out.println("Test FindSubstring:");
         System.out.println("===================");

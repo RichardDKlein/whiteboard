@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class BalancedBracketsTest {
+public class BalancedBracketsTest {
     @Test
-    void balancedBracketsTest() {
+    public void balancedBracketsTest() {
         System.out.println();
         System.out.println("Test BalancedBrackets:");
         System.out.println("======================");

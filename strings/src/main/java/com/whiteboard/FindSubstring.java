@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 /**
  * Find a specified substring in a string.

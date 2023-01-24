@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 /**
  * Find the longest palindromic substring of a given string,

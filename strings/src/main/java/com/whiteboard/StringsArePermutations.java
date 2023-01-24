@@ -1,6 +1,5 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class QueueUsingTwoStacksTest {
+public class QueueUsingTwoStacksTest {
     @Test
-    void test1() {
+    public void test1() {
         System.out.println();
         System.out.println("Test QueueUsingTwoStacks:");
         System.out.println("=========================");

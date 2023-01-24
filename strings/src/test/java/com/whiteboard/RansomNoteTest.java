@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class RansomNoteTest {
+public class RansomNoteTest {
     @Test
-    void ransomNoteTest() {
+    public void ransomNoteTest() {
         System.out.println();
         System.out.println("Test RansomNote:");
         System.out.println("================");

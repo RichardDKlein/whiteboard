@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class ReverseWordsInSentenceTest {
+public class ReverseWordsInSentenceTest {
     @Test
-    void reverseWordsInSentenceTest() {
+    public void reverseWordsInSentenceTest() {
         System.out.println();
         System.out.println("Test ReverseWordsInSentence:");
         System.out.println("============================");
@@ -24,7 +24,7 @@ class ReverseWordsInSentenceTest {
         for (int i = 0; i < testSentences.length; ++i) {
             String reverse = ReverseWordsInSentence.
                     reverseWordsInSentence(testSentences[i]);
-//            assert(reverse.equals(expected[i]));
+            assert(reverse.equals(expected[i]));
             System.out.println("reverseWordsInSentence(\"" + testSentences[i]
                     + "\") = \"" + reverse + "\"");
         }

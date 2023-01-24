@@ -1,15 +1,15 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.Test;
-
-class TopKStringsTest {
+public class TopKStringsTest {
     @Test
-    void topKStringsTest() {
+    public void topKStringsTest() {
         System.out.println();
         System.out.println("Test TopKStrings:");
         System.out.println("================");
