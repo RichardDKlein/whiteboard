@@ -3,7 +3,7 @@ package com.whiteboard;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.com.whiteboard.SearchSorted2dArray.RowCol;
+import com.whiteboard.SearchSorted2dArray.RowCol;
 
 class SearchSorted2dArrayTest {
     @Test

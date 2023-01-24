@@ -3,7 +3,7 @@ package com.whiteboard;
 import org.junit.Test;
 
 import java.util.*;
-import java.com.whiteboard.ShortestClosure.Interval;
+import com.whiteboard.ShortestClosure.Interval;
 
 class ShortestClosureTest {
     @Test

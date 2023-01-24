@@ -2,7 +2,7 @@ package com.whiteboard;
 
 import org.junit.Test;
 
-import static java.com.whiteboard.MaxSubarray.Interval;
+import static com.whiteboard.MaxSubarray.Interval;
 
 class MaxSubarrayTest {
     @Test
