@@ -1,14 +1,14 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-class KthToLastInListTest {
+public class KthToLastInListTest {
     @Test
-    void kthToLastInListTest() {
+    public void kthToLastInListTest() {
         System.out.println();
         System.out.println("Test KthToLastInList:");
         System.out.println("=====================");

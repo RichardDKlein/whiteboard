@@ -1,13 +1,13 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
-
 class RemoveDupsFromListTest {
     @Test
-    void removeDupsFromListTest() {
+    public void removeDupsFromListTest() {
         System.out.println();
         System.out.println("Test RemoveDupsFromList:");
         System.out.println("========================");

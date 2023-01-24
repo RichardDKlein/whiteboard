@@ -1,14 +1,14 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-class ReverseListTest {
+public class ReverseListTest {
     @Test
-    void reverseListTest() {
+    public void reverseListTest() {
         System.out.println();
         System.out.println("Test ReverseList:");
         System.out.println("==========================");

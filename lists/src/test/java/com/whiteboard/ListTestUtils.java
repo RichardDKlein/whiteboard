@@ -1,6 +1,4 @@
-package com.whiteboard;
-
-import com.whiteboard.ListNode;
+package java.com.whiteboard;
 
 import java.util.List;
 

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="" />
+    <list default="true" id="2311fceb-ce9b-4453-a38d-a13d59f1476e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/DeleteNodeFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/DeleteNodeFromList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/KthToLastInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/KthToLastInList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListHasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListHasCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/RemoveDupsFromList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/RemoveDupsFromList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ReverseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/main/java/com/whiteboard/ReverseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ShuffleListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lists/src/test/java/com/whiteboard/ShuffleListTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

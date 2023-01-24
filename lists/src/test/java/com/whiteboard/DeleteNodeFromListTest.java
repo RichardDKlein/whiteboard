@@ -1,17 +1,17 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.jupiter.api.Test;
 
 public class DeleteNodeFromListTest {
     private ArrayList<Character> listData = new ArrayList<>(Arrays.asList(
             'a', 'b', 'c', 'd', 'e', 'f', 'g'));
 
     @Test
-    void deleteNodeFromListTest() {
+    public void deleteNodeFromListTest() {
         System.out.println();
         System.out.println("Test DeleteNodeFromList:");
         System.out.println("================");

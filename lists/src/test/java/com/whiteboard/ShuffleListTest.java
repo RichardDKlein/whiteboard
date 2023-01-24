@@ -1,15 +1,15 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-class ShuffleListTest {
+public class ShuffleListTest {
     @Test
-    void shuffleListTest() {
+    public void shuffleListTest() {
         final int NUM_CARDS = 52;
 
         System.out.println();
