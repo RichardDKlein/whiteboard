@@ -1,14 +1,14 @@
-package com.whiteboard;
+package java.com.whiteboard;
+
+import org.junit.Test;
 
 import java.util.*;
 
-import org.junit.jupiter.api.Test;
+import java.com.whiteboard.CreateNestedFolders.Folder;
 
-import com.whiteboard.CreateNestedFolders.Folder;
-
-class CreateNestedFoldersTest {
+public class CreateNestedFoldersTest {
     @Test
-    void createNestedFoldersTest() {
+    public void createNestedFoldersTest() {
         System.out.println();
         System.out.println("Test CreateNestedFolders:");
         System.out.println("=========================");

@@ -1,4 +1,4 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
 public class BinaryTreeNode<E> {
     E data;

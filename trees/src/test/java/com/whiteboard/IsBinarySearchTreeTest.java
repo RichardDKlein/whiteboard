@@ -1,10 +1,10 @@
-package com.whiteboard;
+package java.com.whiteboard;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class IsBinarySearchTreeTest {
+public class IsBinarySearchTreeTest {
     @Test
-    void isBinarySearchTreeTest() {
+    public void isBinarySearchTreeTest() {
         System.out.println();
         System.out.println("Test IsBinarySearchTree:");
         System.out.println("========================");
