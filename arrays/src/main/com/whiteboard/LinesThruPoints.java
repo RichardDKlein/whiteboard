@@ -25,7 +25,7 @@ public final class LinesThruPoints {
 
     static class Line {
         double slope;     // Double.MAX_VALUE if vertical
-        double intercept; // x-coord if vertical
+        double intercept; // x-coordinate if vertical
 
         Line(double slope, double intercept) {
             this.slope = slope;
@@ -67,8 +67,8 @@ public final class LinesThruPoints {
      * @return The number of lines that can be drawn thru at
      * least three of the given 2D points.
      */
-    public static int linesThruPoints(Set<Point> thePoints) {
-        points = thePoints;
+    public static int linesThruPoints(Set<Point> points) {
+        LinesThruPoints.points = points;
         findLinesThruPairs();
         return countRepeatedLines();
     }
