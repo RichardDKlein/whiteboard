@@ -49,19 +49,20 @@ public final class ArrayHopscotch {
      */
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
         List<Integer> result = new ArrayList<>();
-        // Error checking
+        // error checking
         if (iStart < 0 || iStart > a.length - 1) {
             return result;
         }
+        // check for loop
         if (visited.contains(iStart)) {
             return result;
         }
-        // Base case
+        // base case
         if (a[iStart] == 0) {
             result.add(iStart);
             return result;
         }
-        // Recursive step
+        // recursive step
         visited.add(iStart);
         int iHopLeft = iStart - a[iStart];
         List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
@@ -77,7 +78,7 @@ public final class ArrayHopscotch {
             result.addAll(remainingHops);
             return result;
         }
-        // No solution
+        // no solution
         return result;
     }
 }
