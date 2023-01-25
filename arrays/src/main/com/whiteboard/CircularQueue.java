@@ -36,9 +36,9 @@ public class CircularQueue {
     }
 
     public Integer poll() {
-        Integer result;
+        Integer result = null;
         if (isEmpty()) {
-            return null;
+            return result;
         }
         result = buf[head];
         head = (head + 1) % buf.length;
