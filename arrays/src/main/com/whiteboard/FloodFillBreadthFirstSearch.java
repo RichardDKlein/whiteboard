@@ -42,6 +42,7 @@ public final class FloodFillBreadthFirstSearch {
      * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
+        // error checking
         int numRows = a.length;
         int numCols = a[0].length;
         Queue<RowCol> queue = new LinkedList<>();
@@ -50,17 +51,17 @@ public final class FloodFillBreadthFirstSearch {
             RowCol pixel = queue.poll();
             int row = pixel.row;
             int col = pixel.col;
-            // Error checking
-            if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
+            // error checking
+            if (row < 0 || row > numRows - 1 || col < 0 || col > numCols - 1) {
                 continue;
             }
-            // Already visited
+            // check if pixel already filled
             if (a[row][col] == '@') {
                 continue;
             }
-            // Visit the pixel
+            // fill the pixel
             a[row][col] = '@';
-            // Add the pixel's neighbors to the queue
+            // add the pixel's neighbors to the queue
             queue.add(new RowCol(row, col - 1));
             queue.add(new RowCol(row - 1, col));
             queue.add(new RowCol(row, col + 1));
