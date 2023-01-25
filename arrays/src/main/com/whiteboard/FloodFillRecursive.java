@@ -34,17 +34,17 @@ public final class FloodFillRecursive {
      * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillRecursive(char[][] a, int seedRow, int seedCol) {
-        // Error checking
+        // error checking
         int numRows = a.length;
         int numCols = a[0].length;
-        if (seedRow < 0 || seedRow >= numRows || seedCol < 0 || seedCol >= numCols) {
+        if (seedRow < 0 || seedRow > numRows - 1 || seedCol < 0 || seedCol > numCols -1) {
             return;
         }
-        // Base case
+        // base case
         if (a[seedRow][seedCol] == '@') {
             return;
         }
-        // Recursive step
+        // recursive step
         a[seedRow][seedCol] = '@';
         floodFillRecursive(a, seedRow, seedCol - 1);
         floodFillRecursive(a, seedRow - 1, seedCol);
