@@ -17,9 +17,8 @@ Enjoy!
 
 ## ONE-WEEK INTERVIEW PREP PLAN
 
-The following is an aggressive interview prep plan
-that allows you to cover all the exercises in one
-week.
+The following is an interview prep plan that allows you
+to cover all the exercises in one week.
 
 ### Monday
 - **arrays**
