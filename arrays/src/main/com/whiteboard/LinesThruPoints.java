@@ -1,9 +1,6 @@
 package com.whiteboard;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Given a set of 2D points, finds the number of lines
@@ -24,21 +21,25 @@ public final class LinesThruPoints {
     }
 
     static class Line {
-        double slope;     // Double.MAX_VALUE if vertical
-        double intercept; // x-coordinate if vertical
+        private float slope; // Float.MAX_VALUE if line is vertical
+        private float intercept; // x-coordinate if line is vertical
 
-        Line(double slope, double intercept) {
-            this.slope = slope;
-            this.intercept = intercept;
+        Line(Point p1, Point p2) {
+            if ((float)p1.x == (float)p2.x) {
+                slope = Float.MAX_VALUE;
+                intercept = (float)p1.x;
+            } else {
+                slope = (float)((p2.y - p1.y) / (p2.x - p1.x));
+                intercept = (float)(p1.y - (slope * p1.x));
+            }
         }
+
         @Override
-        public boolean equals(Object obj) {
-            Line other = (Line)obj;
-            // Ignore small differences in slope and intercept,
-            // by comparing them as floats rather than doubles.
-            return (float)this.slope == (float)other.slope
-                    && (float)this.intercept == (float)other.intercept;
+        public boolean equals(Object o) {
+            Line other = (Line)o;
+            return (this.slope == other.slope) && (this.intercept == other.intercept);
         }
+
         @Override
         public int hashCode() {
             return Objects.hash(slope, intercept);
@@ -75,43 +76,31 @@ public final class LinesThruPoints {
 
     private static void findLinesThruPairs() {
         Point[] pointArray = new Point[points.size()];
-        pointArray = points.toArray(pointArray);
-        for (int i = 0; i < pointArray.length; ++i) {
-            Point point1 = pointArray[i];
-            double x1 = point1.x;
-            double y1 = point1.y;
+        int i = 0;
+        for (Point point : points) {
+            pointArray[i++] = point;
+        }
+        for (i = 0; i < pointArray.length - 1; ++i) {
+            Point p1 = pointArray[i];
             for (int j = i + 1; j < pointArray.length; ++j) {
-                Point point2 = pointArray[j];
-                double x2 = point2.x;
-                double y2 = point2.y;
-                double slope, intercept;
-                // Ignore small differences in x1 and x2, by
-                // comparing them as floats rather than doubles.
-                if ((float)x1 == (float)x2) {
-                    slope = Double.MAX_VALUE;
-                    intercept = x1;
+                Point p2 = pointArray[j];
+                Line line = new Line(p1, p2);
+                if (lines.containsKey(line)) {
+                    lines.put(line, lines.get(line) + 1);
                 } else {
-                    slope = (y2 - y1) / (x2 - x1);
-                    intercept = y1 - (slope * x1);
-                }
-                Line line = new Line(slope, intercept);
-                Integer count = lines.get(line);
-                if (count == null) {
                     lines.put(line, 1);
-                } else {
-                    lines.replace(line, count + 1);
                 }
             }
         }
     }
 
     private static int countRepeatedLines() {
-        int count = 0;
+        int result = 0;
         for (Map.Entry<Line, Integer> entry : lines.entrySet()) {
             if (entry.getValue() > 1) {
-                ++count;
+                ++result;
             }
         }
-        return count;
+        return result;
     }
 }
