@@ -1,15 +1,15 @@
 package com.whiteboard;
 
 /**
- * Rotate a 2D array 90 degrees in the clockwise direction,
+ * Rotate a square 2D array 90 degrees in the clockwise direction,
  * IN PLACE.
  */
-public final class Rotate2dArray {
-    private Rotate2dArray() {
+public final class RotateArray {
+    private RotateArray() {
     }
 
     /**
-     * Rotate a 2D array 90 degrees in the clockwise direction,
+     * Rotate a square 2D array 90 degrees in the clockwise direction,
      * IN PLACE.
      *
      * We can use a small amount of extra storage, as long as it
@@ -25,14 +25,14 @@ public final class Rotate2dArray {
      *
      * @param a The 2D array that is to be rotated.
      */
-    public static void rotate2dArray(int[][] a) {
-        transpose2dArray(a);
+    public static void rotateArray(int[][] a) {
+        transposeArray(a);
         for (int row = 0; row < a.length; ++row) {
-            reverse1dArray(a[row]);
+            reverseRow(a[row]);
         }
     }
 
-    private static void transpose2dArray(int[][] a) {
+    private static void transposeArray(int[][] a) {
         for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < row; ++col) {
                 int tmp = a[row][col];
@@ -42,7 +42,7 @@ public final class Rotate2dArray {
         }
     }
 
-    private static void reverse1dArray(int[] a) {
+    private static void reverseRow(int[] a) {
         int left = 0;
         int right = a.length - 1;
         while (left < right) {

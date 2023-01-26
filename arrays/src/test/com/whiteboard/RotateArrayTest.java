@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class Rotate2dArrayTest {
+public class RotateArrayTest {
     @Test
     public void rotate2dArrayTest() {
         System.out.println();
@@ -73,7 +73,7 @@ public class Rotate2dArrayTest {
             for (int row = 0; row < rows; ++row) {
                 System.out.println(Arrays.toString(a[i][row]));
             }
-            Rotate2dArray.rotate2dArray(a[i]);
+            RotateArray.rotateArray(a[i]);
             for (int j = 0; j < rows; ++j) {
                 assert(Arrays.equals(a[i][j], expected[i][j]));
             }
