@@ -27,13 +27,15 @@ public final class RotateArray {
      */
     public static void rotateArray(int[][] a) {
         transposeArray(a);
-        for (int row = 0; row < a.length; ++row) {
-            reverseRow(a[row]);
+        int numRows = a.length;
+        for (int row = 0; row < numRows; ++row) {
+            reverseRow(a, row);
         }
     }
 
     private static void transposeArray(int[][] a) {
-        for (int row = 0; row < a.length; ++row) {
+        int numRows = a.length;
+        for (int row = 0; row < numRows; ++row) {
             for (int col = 0; col < row; ++col) {
                 int tmp = a[row][col];
                 a[row][col] = a[col][row];
@@ -42,15 +44,16 @@ public final class RotateArray {
         }
     }
 
-    private static void reverseRow(int[] a) {
-        int left = 0;
-        int right = a.length - 1;
-        while (left < right) {
-            int tmp = a[left];
-            a[left] = a[right];
-            a[right] = tmp;
-            ++left;
-            --right;
+    private static void reverseRow(int[][] a, int row) {
+        int numCols = a[0].length;
+        int leftCol = 0;
+        int rightCol = numCols - 1;
+        while (leftCol < rightCol) {
+            int tmp = a[row][leftCol];
+            a[row][leftCol] = a[row][rightCol];
+            a[row][rightCol] = tmp;
+            ++leftCol;
+            --rightCol;
         }
     }
 }
