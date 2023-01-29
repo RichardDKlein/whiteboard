@@ -56,9 +56,10 @@ public final class SearchSorted2dArray {
         int row = numRows - 1;
         int col = 0;
         while (row >= 0 && col < numCols) {
-            if (a[row][col] < target) {
+            int current = a[row][col];
+            if (current < target) {
                 ++col;
-            } else if (a[row][col] > target) {
+            } else if (current > target) {
                 --row;
             } else {
                 return new RowCol(row, col);
