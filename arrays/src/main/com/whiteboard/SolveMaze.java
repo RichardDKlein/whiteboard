@@ -18,6 +18,15 @@ public final class SolveMaze {
             this.row = row;
             this.col = col;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof RowCol)) {
+                return false;
+            }
+            RowCol other = (RowCol)o;
+            return other.row == this.row && other.col == this.col;
+        }
     }
 
     /**
@@ -56,7 +65,7 @@ public final class SolveMaze {
             return result;
         }
         // base case
-        if (start.row == exit.row && start.col == exit.col) {
+        if (start.equals(exit)) {
             result.add(new RowCol(start.row, start.col));
             return result;
         }
