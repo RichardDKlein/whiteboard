@@ -19,8 +19,9 @@ public final class ShortestClosure {
             this.start = start;
             this.end = end;
         }
+
         int length() {
-            return this.end - this.start + 1;
+            return end - start + 1;
         }
     }
 
@@ -94,12 +95,16 @@ public final class ShortestClosure {
             int needleSmallestIndex = needleLocationList.get(0);
             if (needleSmallestIndex < candidateStart) {
                 candidateStart = needleSmallestIndex;
+                // remember which needleLocationList contains the candidateStart
                 candidateStartLocationList = needleLocationList;
             }
             if (needleSmallestIndex > candidateEnd) {
                 candidateEnd = needleSmallestIndex;
             }
         }
+        // Remove this candidate's starting index from the head of
+        // its needle's location list,so it will not be considered
+        // the next time this method is called.
         candidateStartLocationList.remove(0);
         return new Interval(candidateStart, candidateEnd);
     }
