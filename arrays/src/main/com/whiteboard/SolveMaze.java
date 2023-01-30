@@ -19,6 +19,11 @@ public final class SolveMaze {
             this.col = col;
         }
 
+        RowCol(RowCol other) {
+            this.row = other.row;
+            this.col = other.col;
+        }
+
         @Override
         public boolean equals(Object o) {
             if (!(o instanceof RowCol)) {
@@ -58,7 +63,7 @@ public final class SolveMaze {
         // error checking
         int numRows = maze.length;
         int numCols = maze[0].length;
-        if (start.row < 0 || start.row >= numRows || start.col < 0 || start.col >= numCols) {
+        if (start.row < 0 || start.row > numRows - 1 || start.col < 0 || start.col > numCols - 1) {
             return result;
         }
         if (maze[start.row][start.col] == '@') {
@@ -66,33 +71,32 @@ public final class SolveMaze {
         }
         // base case
         if (start.equals(exit)) {
-            result.add(new RowCol(start.row, start.col));
+            result.add(new RowCol(start));
             return result;
         }
         // recursive step
         maze[start.row][start.col] = '@';
-        List<RowCol> remainingPath;
-        remainingPath = solveMaze(maze, new RowCol(start.row, start.col - 1), exit);
+        List<RowCol> remainingPath = solveMaze(maze, new RowCol(start.row, start.col - 1), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start.row, start.col));
+            result.add(new RowCol(start));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row - 1, start.col), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start.row, start.col));
+            result.add(new RowCol(start));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row, start.col + 1), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start.row, start.col));
+            result.add(new RowCol(start));
             result.addAll(remainingPath);
             return result;
         }
         remainingPath = solveMaze(maze, new RowCol(start.row + 1, start.col), exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start.row, start.col));
+            result.add(new RowCol(start));
             result.addAll(remainingPath);
             return result;
         }
