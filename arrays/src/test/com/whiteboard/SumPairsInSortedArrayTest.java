@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.whiteboard.SumPairsInSortedArray.UnorderedPair;
+
 public class SumPairsInSortedArrayTest {
     @Test
     public void sumPairsInSortedArrayTest() {

@@ -11,6 +11,30 @@ public final class SumPairsInSortedArray {
     private SumPairsInSortedArray() {
     }
 
+    static class UnorderedPair {
+        int first;
+        int second;
+
+        UnorderedPair(int first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof UnorderedPair other)) {
+                return false;
+            }
+            return (this.first == other.first && this.second == other.second) ||
+                    (this.first == other.second && this.second == other.first);
+        }
+
+        @Override
+        public int hashCode() {
+            return first + second;
+        }
+    }
+
     /**
      * In a sorted (in increasing order) array, find
      * pairs of array elements that sum to a given value.
