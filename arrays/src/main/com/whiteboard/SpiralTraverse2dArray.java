@@ -34,7 +34,7 @@ public final class SpiralTraverse2dArray {
         int numCols = a[0].length;
         for (int topRow = 0, rightCol = numCols - 1, bottomRow = numRows - 1, leftCol = 0;
              topRow <= bottomRow && leftCol <= rightCol;
-             ++topRow, --bottomRow, ++leftCol, --rightCol) {
+             ++topRow, --rightCol, --bottomRow, ++leftCol) {
 
             result.addAll(spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol));
         }
@@ -43,9 +43,7 @@ public final class SpiralTraverse2dArray {
 
     private static List<Integer> spiralTraverseShell(
             int[][] a, int topRow, int rightCol, int bottomRow, int leftCol) {
-
         List<Integer> result = new ArrayList<>();
-
         // degenerate case: row vector
         if (topRow == bottomRow) {
             for (int col = leftCol; col <= rightCol; ++col) {
