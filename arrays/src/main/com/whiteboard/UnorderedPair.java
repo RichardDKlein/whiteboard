@@ -14,6 +14,7 @@ public class UnorderedPair {
     public int hashCode() {
         return first + second;
     }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof UnorderedPair)) {

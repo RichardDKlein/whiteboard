@@ -2,6 +2,7 @@ package com.whiteboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Solve a 2D maze.
@@ -31,6 +32,11 @@ public final class SolveMaze {
             }
             RowCol other = (RowCol)o;
             return other.row == this.row && other.col == this.col;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(row, col);
         }
     }
 
