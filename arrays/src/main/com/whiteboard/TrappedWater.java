@@ -44,37 +44,41 @@ public final class TrappedWater {
     }
 
     private static void findLeftTallest() {
-        leftTallest = new int[barHeights.length];
-        int tallest = 0;
-        for (int i = 0; i < barHeights.length; ++i) {
-            leftTallest[i] = tallest;
-            if (barHeights[i] > tallest) {
-                tallest = barHeights[i];
+        int numBars = barHeights.length;
+        leftTallest = new int[numBars];
+        int tallestSoFar = 0;
+        for (int i = 0; i < numBars; ++i) {
+            if (barHeights[i] > tallestSoFar) {
+                tallestSoFar = barHeights[i];
             }
+            leftTallest[i] = tallestSoFar;
         }
     }
 
     private static void findRightTallest() {
-        rightTallest = new int[barHeights.length];
-        int tallest = 0;
-        for (int i = barHeights.length - 1; i >= 0; --i) {
-            rightTallest[i] = tallest;
-            if (barHeights[i] > tallest) {
-                tallest = barHeights[i];
+        int numBars = barHeights.length;
+        rightTallest = new int[numBars];
+        int tallestSoFar = 0;
+        for (int i = numBars - 1; i >= 0; --i) {
+            if (barHeights[i] > tallestSoFar) {
+                tallestSoFar = barHeights[i];
             }
+            rightTallest[i] = tallestSoFar;
         }
     }
 
     private static void findWaterline() {
-        waterline = new int[barHeights.length];
-        for (int i = 0; i < barHeights.length; ++i) {
+        int numBars = barHeights.length;
+        waterline = new int[numBars];
+        for (int i = 0; i < numBars; ++i) {
             waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
         }
     }
 
     private static int computeTrappedWater() {
         int result = 0;
-        for (int i = 0; i < barHeights.length; ++i) {
+        int numBars = barHeights.length;
+        for (int i = 0; i < numBars; ++i) {
             if (waterline[i] > barHeights[i]) {
                 result += waterline[i] - barHeights[i];
             }
