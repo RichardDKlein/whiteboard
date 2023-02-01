@@ -23,8 +23,8 @@ public final class BitDiff {
     private static int countOneBits(int n) {
         int result = 0;
         while (n != 0) {
-            ++result;
             n = clearLeastSignificantOneBit(n);
+            ++result;
         }
         return result;
     }
