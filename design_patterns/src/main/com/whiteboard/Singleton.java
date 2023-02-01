@@ -7,7 +7,7 @@ public class Singleton {
     private static volatile Singleton instance;
 
     private Singleton() {
-        // construction logic
+        // construction logic goes here
     }
 
     public static Singleton getInstance() {
