@@ -17,9 +17,13 @@ public final class CountOneBits {
     public static int countOneBits(int n) {
         int result = 0;
         while (n != 0) {
+            n = clearLeastSignificantOneBit(n);
             ++result;
-            n &= n - 1;
         }
         return result;
+    }
+
+    private static int clearLeastSignificantOneBit(int n) {
+        return n & (n - 1);
     }
 }
