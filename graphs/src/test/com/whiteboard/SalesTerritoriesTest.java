@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.whiteboard.SalesTerritories.UnorderedPair;
+import com.whiteboard.SalesTerritories.CityPair;
 
 public class SalesTerritoriesTest {
     @Test
@@ -15,28 +15,28 @@ public class SalesTerritoriesTest {
         System.out.println("Test SalesTerritories:");
         System.out.println("======================");
 
-        Set<UnorderedPair<String>> cityUnorderedPairs = new HashSet<>();
-        cityUnorderedPairs.add(new UnorderedPair<>("San Francisco", "San Jose"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Denver", "Colorado Springs"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Los Angeles", "San Francisco"));
-        cityUnorderedPairs.add(new UnorderedPair<>("New York City", "Buffalo"));
-        cityUnorderedPairs.add(new UnorderedPair<>("San Jose", "San Diego"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Colorado Springs", "Aspen"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Santa Monica", "Pasadena"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Buffalo", "Yonkers"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Oakland", "Sacramento"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Fort Collins", "Aurora"));
-        cityUnorderedPairs.add(new UnorderedPair<>("San Diego", "Los Angeles"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Syracuse", "Albany"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Los Angeles", "San Diego"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Boulder", "Aspen"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Oakland", "Santa Monica"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Rochester", "Yonkers"));
-        cityUnorderedPairs.add(new UnorderedPair<>("San Francisco", "Oakland"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Denver", "Fort Collins"));
-        cityUnorderedPairs.add(new UnorderedPair<>("San Jose", "San Francisco"));
-        cityUnorderedPairs.add(new UnorderedPair<>("New York City", "Syracuse"));
-        cityUnorderedPairs.add(new UnorderedPair<>("Pasadena", "Sacramento"));
+        Set<CityPair> cityPairs = new HashSet<>();
+        cityPairs.add(new CityPair("San Francisco", "San Jose"));
+        cityPairs.add(new CityPair("Denver", "Colorado Springs"));
+        cityPairs.add(new CityPair("Los Angeles", "San Francisco"));
+        cityPairs.add(new CityPair("New York City", "Buffalo"));
+        cityPairs.add(new CityPair("San Jose", "San Diego"));
+        cityPairs.add(new CityPair("Colorado Springs", "Aspen"));
+        cityPairs.add(new CityPair("Santa Monica", "Pasadena"));
+        cityPairs.add(new CityPair("Buffalo", "Yonkers"));
+        cityPairs.add(new CityPair("Oakland", "Sacramento"));
+        cityPairs.add(new CityPair("Fort Collins", "Aurora"));
+        cityPairs.add(new CityPair("San Diego", "Los Angeles"));
+        cityPairs.add(new CityPair("Syracuse", "Albany"));
+        cityPairs.add(new CityPair("Los Angeles", "San Diego"));
+        cityPairs.add(new CityPair("Boulder", "Aspen"));
+        cityPairs.add(new CityPair("Oakland", "Santa Monica"));
+        cityPairs.add(new CityPair("Rochester", "Yonkers"));
+        cityPairs.add(new CityPair("San Francisco", "Oakland"));
+        cityPairs.add(new CityPair("Denver", "Fort Collins"));
+        cityPairs.add(new CityPair("San Jose", "San Francisco"));
+        cityPairs.add(new CityPair("New York City", "Syracuse"));
+        cityPairs.add(new CityPair("Pasadena", "Sacramento"));
 
         Set<Set<String>> expected = new HashSet<>();
         expected.add(new HashSet<>(Arrays.asList(
@@ -66,14 +66,14 @@ public class SalesTerritoriesTest {
                 "Albany"
         )));
 
-        System.out.println("City UnorderedPairs = ");
-        for (UnorderedPair<String> cityUnorderedPair : cityUnorderedPairs) {
-            System.out.println("\t(" + cityUnorderedPair.first +
-                    ", " + cityUnorderedPair.second + ")");
+        System.out.println("City Pairs = ");
+        for (CityPair cityPair : cityPairs) {
+            System.out.println("\t(" + cityPair.city1 +
+                    ", " + cityPair.city2 + ")");
         }
         System.out.println();
 
-        Set<Set<String>> territories = SalesTerritories.salesTerritories(cityUnorderedPairs);
+        Set<Set<String>> territories = SalesTerritories.salesTerritories(cityPairs);
         assert(territories.equals(expected));
 
         System.out.println("Territories = ");

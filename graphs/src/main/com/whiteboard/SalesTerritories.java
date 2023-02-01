@@ -12,13 +12,27 @@ public final class SalesTerritories {
     private SalesTerritories() {
     }
 
-    static class UnorderedPair<E> {
-        E first;
-        E second;
+    static class CityPair {
+        String city1;
+        String city2;
 
-        UnorderedPair(E first, E second) {
-            this.first = first;
-            this.second = second;
+        CityPair(String city1, String city2) {
+            this.city1 = city1;
+            this.city2 = city2;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof CityPair other)) {
+                return false;
+            }
+            return (this.city1 == other.city2 && this.city2 == other.city2) ||
+                    (this.city1 == other.city2 && this.city2 == other.city1);
+        }
+
+        @Override
+        public int hashCode() {
+            return city1.hashCode() + city2.hashCode();
         }
     }
 
@@ -31,7 +45,7 @@ public final class SalesTerritories {
         }
     }
 
-    private static Set<UnorderedPair<String>> cityPairs;
+    private static Set<CityPair> cityPairs;
     private static Map<String, CityNode> cityMap = new HashMap<>();
     private static Set<CityNode> visited = new HashSet<>();
 
@@ -51,20 +65,20 @@ public final class SalesTerritories {
      *
      * Running time is O(n).
      *
-     * @return The given cities, organized into sets representing
+     * @return The given cities, grouped into sets representing
      * their sales territories.
      */
     public static Set<Set<String>>
-    salesTerritories(Set<UnorderedPair<String>> cityPairs) {
+    salesTerritories(Set<CityPair> cityPairs) {
         SalesTerritories.cityPairs = cityPairs;
         buildCityMap();
         return findTerritories();
     }
 
     private static void buildCityMap() {
-        for (UnorderedPair<String> cityPair : cityPairs) {
-            CityNode cityNode1 = findOrCreateCityNode(cityPair.first);
-            CityNode cityNode2 = findOrCreateCityNode(cityPair.second);
+        for (CityPair cityPair : cityPairs) {
+            CityNode cityNode1 = findOrCreateCityNode(cityPair.city1);
+            CityNode cityNode2 = findOrCreateCityNode(cityPair.city2);
             cityNode1.neighboringCities.add(cityNode2);
             cityNode2.neighboringCities.add(cityNode1);
         }
@@ -85,13 +99,13 @@ public final class SalesTerritories {
             if (visited.contains(cityNode)) {
                 continue;
             }
-            Set<String> territory = findNeighboringCities(cityNode);
+            Set<String> territory = findConnectedCities(cityNode);
             result.add(territory);
         }
         return result;
     }
 
-    private static Set<String> findNeighboringCities(CityNode rootNode) {
+    private static Set<String> findConnectedCities(CityNode rootNode) {
         Set<String> result = new HashSet<>();
         Queue<CityNode> cityNodeQueue = new LinkedList<>();
         cityNodeQueue.add(rootNode);
