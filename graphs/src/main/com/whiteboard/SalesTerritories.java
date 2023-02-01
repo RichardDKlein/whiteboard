@@ -26,8 +26,8 @@ public final class SalesTerritories {
             if (!(o instanceof CityPair other)) {
                 return false;
             }
-            return (this.city1 == other.city2 && this.city2 == other.city2) ||
-                    (this.city1 == other.city2 && this.city2 == other.city1);
+            return (this.city1.equals(other.city1) && this.city2.equals(other.city2)) ||
+                    (this.city1.equals(other.city2) && this.city2.equals(other.city1));
         }
 
         @Override
@@ -42,6 +42,19 @@ public final class SalesTerritories {
 
         CityNode(String cityName) {
             this.cityName = cityName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof CityNode other)) {
+                return false;
+            }
+            return (this.cityName.equals(other.cityName));
+        }
+
+        @Override
+        public int hashCode() {
+            return cityName.hashCode();
         }
     }
 
