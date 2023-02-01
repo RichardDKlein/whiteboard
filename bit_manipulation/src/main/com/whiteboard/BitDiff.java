@@ -24,8 +24,12 @@ public final class BitDiff {
         int result = 0;
         while (n != 0) {
             ++result;
-            n &= n - 1;
+            n = clearLeastSignificantOneBit(n);
         }
         return result;
+    }
+
+    private static int clearLeastSignificantOneBit(int n) {
+        return n & (n - 1);
     }
 }
