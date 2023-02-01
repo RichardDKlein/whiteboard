@@ -2,7 +2,7 @@ package com.whiteboard;
 
 import org.junit.Test;
 
-class InsertBitsTest {
+public class InsertBitsTest {
     @Test
     public void insertBitsTest() {
         System.out.println();
