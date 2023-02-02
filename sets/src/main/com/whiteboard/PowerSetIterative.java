@@ -23,12 +23,13 @@ public final class PowerSetIterative {
     public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
         Set<Set<E>> result = new HashSet<>();
         int numSubsets = (int)Math.round(Math.pow(2, set.size()));
-        List<E> setAsList = new ArrayList<>(set);
         for (int i = 0; i < numSubsets; ++i) {
             Set<E> subset = new HashSet<>();
+            Iterator<E> iterator = set.iterator();
             for (int bitNum = 0; bitNum < set.size(); ++bitNum) {
+                E nextElement = iterator.next();
                 if (isBitSet(i, bitNum)) {
-                    subset.add(setAsList.get(bitNum));
+                    subset.add(nextElement);
                 }
             }
             result.add(subset);
