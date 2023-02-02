@@ -3,14 +3,14 @@ package com.whiteboard;
 import java.util.List;
 
 /**
- * ShuffleList a list.
+ * Shuffle a list.
  */
 public final class ShuffleList {
     private ShuffleList() {
     }
 
     /**
-     * ShuffleList a list, as if it represented a deck of card.
+     * Shuffle a list, as if it represented a deck of card.
      *
      * Algorithm: Iterate thru the list, swapping each element
      * with an element randomly chosen from the list elements
@@ -27,7 +27,7 @@ public final class ShuffleList {
         }
     }
 
-    static int randomIntegerInInterval(int start, int end) {
+    private static int randomIntegerInInterval(int start, int end) {
         int scaleFactor = end - start;
         int offset = start;
         return (int)Math.round(Math.random() * scaleFactor + offset);

@@ -22,7 +22,7 @@ public class ProducerConsumerQueueTest {
                 queue.produce(item);
                 System.out.println("Producer " + id + " produced " + item);
                 try {
-                    sleep(ShuffleList.randomIntegerInInterval(100, 500));
+                    sleep(randomIntegerInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -44,7 +44,7 @@ public class ProducerConsumerQueueTest {
                 consumedItems.add(item);
                 System.out.println("Consumer " + id_ + " consumed " + item);
                 try {
-                    sleep(ShuffleList.randomIntegerInInterval(100, 500));
+                    sleep(randomIntegerInInterval(100, 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -90,4 +90,11 @@ public class ProducerConsumerQueueTest {
         Collections.sort(consumedItems);
         assert(consumedItems.equals(expectedItems));
     }
+
+    private static int randomIntegerInInterval(int start, int end) {
+        int scaleFactor = end - start;
+        int offset = start;
+        return (int)Math.round(Math.random() * scaleFactor + offset);
+    }
+
 }
