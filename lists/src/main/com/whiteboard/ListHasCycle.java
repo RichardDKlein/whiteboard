@@ -17,15 +17,12 @@ public final class ListHasCycle {
      * pointer ever "laps" the slow pointer, then the list contains
      * a cycle.
      *
-     * @param head The list of interest
-     * @return A boolean indicating whether or not
-     * the specified list contains a cycle.
+     * @param head The list of interest (assume it is non-null).
+     * @return A boolean indicating whether the specified list
+     * contains a cycle.
      */
     public static <E> boolean listHasCycle(ListNode<E> head) {
         ListNode<E> slow = head;
-        if (head == null) {
-            return false;
-        }
         ListNode<E> fast = head.next;
         while (fast != null && fast != slow) {
             slow = slow.next;
