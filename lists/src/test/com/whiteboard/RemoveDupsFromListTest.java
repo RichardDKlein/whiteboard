@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class RemoveDupsFromListTest {
+public class RemoveDupsFromListTest {
     @Test
     public void removeDupsFromListTest() {
         System.out.println();
