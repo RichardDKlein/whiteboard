@@ -19,10 +19,10 @@ public final class PowerSetRecursive {
             return result;
         }
         // recursive step
-        List<E> setList = new ArrayList<>(set);
-        E firstElement = setList.remove(0);
-        Set<E> remainderSet = new HashSet<>(setList);
-        Set<Set<E>> remainderPowerSet = powerSetRecursive(remainderSet);
+        Iterator<E> iterator = set.iterator();
+        E firstElement = iterator.next();
+        iterator.remove();
+        Set<Set<E>> remainderPowerSet = powerSetRecursive(set);
         for (Set<E> remainderSubset : remainderPowerSet) {
             Set<E> remainderSubsetCopy = new HashSet<>(remainderSubset);
             result.add(remainderSubsetCopy);
