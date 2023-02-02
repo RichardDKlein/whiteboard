@@ -21,8 +21,8 @@ public final class DeleteNodeFromList {
      * the list.
      *
      * @param victim The node to be deleted.
-     * @return A boolean indicating whether or not the deletion
-     * was successful.
+     * @return A boolean indicating whether the deletion was
+     * successful.
      */
     public static <E> boolean deleteNodeFromList(ListNode<E> victim) {
         if (victim.next == null) {
