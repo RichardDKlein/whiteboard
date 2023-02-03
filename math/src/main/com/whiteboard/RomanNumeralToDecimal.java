@@ -27,25 +27,26 @@ public final class RomanNumeralToDecimal {
     public static int romanNumeralToDecimal(String roman) {
         int result = 0;
 
-        Map<Character, Integer> romanToDecimalMap = new HashMap<>();
-        romanToDecimalMap.put('I', 1);
-        romanToDecimalMap.put('V', 5);
-        romanToDecimalMap.put('X', 10);
-        romanToDecimalMap.put('L', 50);
-        romanToDecimalMap.put('C', 100);
-        romanToDecimalMap.put('D', 500);
-        romanToDecimalMap.put('M', 1000);
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
 
-        int prevRomanDigitDecimalValue = 0;
-        for (int i = roman.length() - 1; i >= 0; --i) {
-            char currRomanDigit = roman.charAt(i);
-            int currRomanDigitDecimalValue = romanToDecimalMap.get(currRomanDigit);
-            if (currRomanDigitDecimalValue < prevRomanDigitDecimalValue) {
-                result -= currRomanDigitDecimalValue;
+        int[] decimal = new int[roman.length()];
+        for (int i = 0; i < roman.length(); ++i) {
+            decimal[i] = map.get(roman.charAt(i));
+        }
+        result = decimal[roman.length() - 1];
+        for (int i = roman.length() - 2; i >= 0; --i) {
+            if (decimal[i] < decimal[i + 1]) {
+                result -= decimal[i];
             } else {
-                result += currRomanDigitDecimalValue;
+                result += decimal[i];
             }
-            prevRomanDigitDecimalValue = currRomanDigitDecimalValue;
         }
         return result;
     }
