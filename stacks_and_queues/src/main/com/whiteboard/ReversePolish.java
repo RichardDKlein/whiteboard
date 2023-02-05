@@ -22,32 +22,32 @@ public final class ReversePolish {
      */
     public static int reversePolish(String expression) {
         Set<String> operators = new HashSet<>(Arrays.asList("+", "-", "*", "/"));
-        Stack<Integer> tokenStack = new Stack<>();
+        Stack<Integer> operandStack = new Stack<>();
 
         String[] tokens = expression.split(",");
 
         for (String token : tokens) {
-            if (operators.contains(token)) {
-                int secondOperand = tokenStack.pop();
-                int firstOperand = tokenStack.pop();
+            if (!operators.contains(token)) {
+                operandStack.push(Integer.parseInt(token));
+            } else {
+                int operand2 = operandStack.pop();
+                int operand1 = operandStack.pop();
                 switch (token) {
                     case "+":
-                        tokenStack.push(firstOperand + secondOperand);
+                        operandStack.push(operand1 + operand2);
                         break;
                     case "-":
-                        tokenStack.push(firstOperand - secondOperand);
+                        operandStack.push(operand1 - operand2);
                         break;
                     case "*":
-                        tokenStack.push(firstOperand * secondOperand);
+                        operandStack.push(operand1 * operand2);
                         break;
                     case "/":
-                        tokenStack.push(firstOperand / secondOperand);
+                        operandStack.push(operand1 / operand2);
                         break;
                 }
-            } else {
-                tokenStack.push(Integer.parseInt(token));
             }
         }
-        return tokenStack.pop();
+        return operandStack.pop();
     }
 }
