@@ -22,15 +22,10 @@ public final class IsBinarySearchTree {
      */
     public static boolean isBinarySearchTree(BinaryTreeNode<Integer> root) {
         List<Integer> inorderList = traverseInorder(root);
-        for (int i = 0; i < inorderList.size() - 1; ++i) {
-            if (inorderList.get(i) > inorderList.get(i + 1)) {
-                return false;
-            }
-        }
-        return true;
+        return isInAscendingOrder(inorderList);
     }
 
-    // declared package-private so tests can call it
+    // Declared package-private so unit tests can call it.
     static List<Integer> traverseInorder(BinaryTreeNode<Integer> root) {
         List<Integer> result = new ArrayList<>();
         // base case
@@ -42,5 +37,14 @@ public final class IsBinarySearchTree {
         result.add(root.data);
         result.addAll(traverseInorder(root.right));
         return result;
+    }
+
+    private static boolean isInAscendingOrder(List<Integer> list) {
+        for (int i = 0; i < list.size() - 1; ++i) {
+            if (list.get(i) > list.get(i + 1)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
