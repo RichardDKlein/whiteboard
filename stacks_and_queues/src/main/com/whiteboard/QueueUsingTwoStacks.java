@@ -13,7 +13,7 @@ public class QueueUsingTwoStacks<E> {
         addStack.push(element);
     }
 
-    public E remove() {
+    public E poll() {
         if (removeStack.isEmpty()) {
             while (!addStack.isEmpty()) {
                 removeStack.push(addStack.pop());

@@ -18,7 +18,7 @@ public class QueueUsingTwoStacksTest {
         queue.add(5);
         System.out.println("Remove five elements:");
         for (int i = 0; i < 5; ++i) {
-            Integer removedElement = queue.remove();
+            Integer removedElement = queue.poll();
             assert(removedElement == 1 + i);
             System.out.print(removedElement + " ");
         }
@@ -31,7 +31,7 @@ public class QueueUsingTwoStacksTest {
         queue.add(10);
         System.out.println("Remove three elements:");
         for (int i = 0; i < 3; ++i) {
-            Integer removedElement = queue.remove();
+            Integer removedElement = queue.poll();
             assert(removedElement == 6 + i);
             System.out.print(removedElement + " ");
         }
@@ -44,7 +44,7 @@ public class QueueUsingTwoStacksTest {
         queue.add(15);
         System.out.println("Remove eight elements:");
         for (int i = 0; i < 8; ++i) {
-            Integer removedElement = queue.remove();
+            Integer removedElement = queue.poll();
             if (i == 7) {
                 assert(removedElement == null);
             } else {
