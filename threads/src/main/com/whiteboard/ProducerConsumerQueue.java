@@ -13,7 +13,7 @@ import java.util.Queue;
  */
 public class ProducerConsumerQueue<E> {
     private Queue<E> queue = new LinkedList<>();
-    int capacity;
+    private int capacity;
 
     ProducerConsumerQueue(int capacity) {
         this.capacity = capacity;
@@ -28,7 +28,7 @@ public class ProducerConsumerQueue<E> {
             }
         }
         queue.add(element);
-        // notify consumer threads blocked on queue empty
+        // notify consumer threads blocked on empty queue
         notifyAll();
     }
 
@@ -40,13 +40,13 @@ public class ProducerConsumerQueue<E> {
                 e.printStackTrace();
             }
         }
-        E element = queue.poll();
-        // notify producer threads blocked on queue full
+        E result = queue.poll();
+        // notify producer threads blocked on full queue
         notifyAll();
-        return element;
+        return result;
     }
 
     private boolean isFull() {
-        return queue.size() >= this.capacity;
+        return queue.size() >= capacity;
     }
 }
