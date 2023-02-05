@@ -19,9 +19,6 @@ public class QueueUsingTwoStacks<E> {
                 removeStack.push(addStack.pop());
             }
         }
-        if (removeStack.isEmpty()) {
-            return null;
-        }
-        return removeStack.pop();
+        return !removeStack.isEmpty() ? removeStack.pop() : null;
     }
 }
