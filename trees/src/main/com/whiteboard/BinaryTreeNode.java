@@ -10,7 +10,11 @@ public class BinaryTreeNode<E> {
         this.right = right;
     }
 
-    BinaryTreeNode(E data) {
-        this(data, null, null);
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof BinaryTreeNode<?> other)) {
+            return false;
+        }
+        return this.data == other.data && this.left.equals(other.left) && this.right.equals(other.right);
     }
 }
