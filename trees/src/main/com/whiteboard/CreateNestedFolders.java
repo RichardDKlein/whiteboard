@@ -19,6 +19,19 @@ public final class CreateNestedFolders {
             this.folderName = folderName;
             this.parentFolderName = parentFolderName;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Folder other)) {
+                return false;
+            }
+            return this.folderName.equals(other.folderName) && this.parentFolderName.equals(other.parentFolderName);
+        }
+
+        @Override
+        public int hashCode() {
+            return folderName.hashCode();
+        }
     }
 
     static class FolderNode {
@@ -27,6 +40,19 @@ public final class CreateNestedFolders {
 
         FolderNode(String folderName) {
             this.folderName = folderName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof FolderNode other)) {
+                return false;
+            }
+            return this.folderName.equals(other.folderName);
+        }
+
+        @Override
+        public int hashCode() {
+            return folderName.hashCode();
         }
     }
 
