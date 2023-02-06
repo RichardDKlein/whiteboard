@@ -13,11 +13,13 @@ public class RansomNoteTest {
 
         String[] magazines = {
                 "again dollars fridge in never on or plate put sandwich see ten the the will you your",
-                "again dollars fridge in never on or plate put sandwich see ten the will you your"
+                "again dollars fridge in never on or plate put sandwih see ten the the will you your",
+                "again dollars fridge in never on or plate put sandwich see ten the will you your",
         };
 
         boolean[] expected = {
                 true,
+                false,
                 false
         };
 
