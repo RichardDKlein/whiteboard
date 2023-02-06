@@ -22,15 +22,15 @@ public final class ReverseWordsInSentence {
             if (iStartOfNextWord < 0) {
                 break;
             }
-            int iEndOfNextWord = findEndOfWord(buf, iStartOfNextWord);
+            int iEndOfNextWord = findEndOfCurrentWord(buf, iStartOfNextWord);
             reverseWord(buf, iStartOfNextWord, iEndOfNextWord);
             i = iEndOfNextWord + 1;
         }
         return new String(buf);
     }
 
-    private static int findStartOfNextWord(char[] buf, int startingFrom) {
-        for (int i = startingFrom; i < buf.length; ++i) {
+    private static int findStartOfNextWord(char[] buf, int iStartingFrom) {
+        for (int i = iStartingFrom; i < buf.length; ++i) {
             if (!Character.isWhitespace(buf[i])) {
                 return i;
             }
@@ -38,8 +38,8 @@ public final class ReverseWordsInSentence {
         return -1;
     }
 
-    private static int findEndOfWord(char[] buf, int startingFrom) {
-        for (int i = startingFrom; i < buf.length; ++i) {
+    private static int findEndOfCurrentWord(char[] buf, int iStartingFrom) {
+        for (int i = iStartingFrom; i < buf.length; ++i) {
             if (Character.isWhitespace(buf[i])) {
                 return i - 1;
             }
