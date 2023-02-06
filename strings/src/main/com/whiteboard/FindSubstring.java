@@ -16,8 +16,8 @@ public final class FindSubstring {
      * string, or -1 if the substring cannot be found.
      */
     public static int findSubstring(String string, String substring) {
-        int lastIndexTocheck = string.length() - substring.length();
-        for (int i = 0; i <= lastIndexTocheck; ++i) {
+        int lastIndexToCheck = string.length() - substring.length();
+        for (int i = 0; i <= lastIndexToCheck; ++i) {
             if (string.charAt(i) == substring.charAt(0)) {
                 boolean foundSubstring = true;
                 for (int j = 1; j < substring.length(); ++j) {
