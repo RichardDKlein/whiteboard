@@ -55,6 +55,7 @@ public class CreateNestedFoldersTest {
             System.out.println("\t" + folderName);
         }
         String[] reorderedArray = CreateNestedFolders.createNestedFolders(folderNames, parentFolderNames);
+        assert(reorderedArray.length == folderArray.length);
         List<String> reorderedList = Arrays.asList(reorderedArray);
 
         Map<String, String> parentFolderMap = new HashMap<>();
