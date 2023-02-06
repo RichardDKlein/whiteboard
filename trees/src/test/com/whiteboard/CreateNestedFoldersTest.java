@@ -44,13 +44,24 @@ public class CreateNestedFoldersTest {
         }
 
         ShuffleList.shuffleList(folderList);
-        List<String> reorderedList = CreateNestedFolders.createNestedFolders(folderList);
+        String[] folderNames = new String[folderList.size()];
+        String[] parentFolderNames = new String[folderList.size()];
+        for (int i = 0; i < folderList.size(); ++i) {
+            folderNames[i] = folderList.get(i).folderName;
+            parentFolderNames[i] = folderList.get(i).parentFolderName;
+        }
+        System.out.println("Folder names:");
+        for (String folderName : folderNames) {
+            System.out.println("\t" + folderName);
+        }
+        String[] reorderedArray = CreateNestedFolders.createNestedFolders(folderNames, parentFolderNames);
+        List<String> reorderedList = Arrays.asList(reorderedArray);
 
         Map<String, String> parentFolderMap = new HashMap<>();
         for (Folder folder : folderArray) {
             parentFolderMap.put(folder.folderName, folder.parentFolderName);
         }
-        for (String folderName : reorderedList) {
+        for (String folderName : reorderedArray) {
             if (folderName.equals("root")) {
                 assert(reorderedList.indexOf(folderName) == 0);
                 continue;
@@ -60,7 +71,7 @@ public class CreateNestedFoldersTest {
         }
 
         System.out.println("Creation order:");
-        for (String folderName : reorderedList) {
+        for (String folderName : reorderedArray) {
             System.out.println("\t" + folderName);
         }
     }
