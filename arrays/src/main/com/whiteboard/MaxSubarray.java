@@ -8,16 +8,6 @@ public final class MaxSubarray {
     private MaxSubarray() {
     }
 
-    static class Interval {
-        int start;
-        int end;
-
-        Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
-        }
-    }
-
     /**
      * In an array of positive and negative integers, find
      * the subarray whose elements sum to the maximum value.
@@ -57,7 +47,8 @@ public final class MaxSubarray {
      * @return A pair of integers containing the starting
      * and ending indices of the maximum subarray.
      */
-    public static Interval maxSubarray(int[] a) {
+    public static int[] maxSubarray(int[] a) {
+        int[] result = new int[2];
         int start, end, sum;
         int maxStart, maxEnd, maxSum;
         start = maxStart = end = maxEnd = 0;
@@ -76,6 +67,8 @@ public final class MaxSubarray {
                 maxEnd = end;
             }
         }
-        return new Interval(maxStart, maxEnd);
+        result[0] = maxStart;
+        result[1] = maxEnd;
+        return result;
     }
 }

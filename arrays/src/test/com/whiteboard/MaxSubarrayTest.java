@@ -2,8 +2,6 @@ package com.whiteboard;
 
 import org.junit.Test;
 
-import static com.whiteboard.MaxSubarray.Interval;
-
 public class MaxSubarrayTest {
     @Test
     public void maxSubarrayTest() {
@@ -17,18 +15,18 @@ public class MaxSubarrayTest {
                 {-1, -2, -3, -4, -5, -6, -7, -8, -9}
         };
 
-        Interval[] expected = {
-                new Interval(3, 6),
-                new Interval(0, 8),
-                new Interval(0, 0)
+        int[][] expected = {
+                {3, 6},
+                {0, 8},
+                {0, 0}
         };
 
         for (int i = 0; i < a.length; ++i) {
-            Interval maxSubarray = MaxSubarray.maxSubarray(a[i]);
-            int maxStart = maxSubarray.start;
-            int maxEnd = maxSubarray.end;
-            assert(maxStart == expected[i].start);
-            assert(maxEnd == expected[i].end);
+            int[] maxSubarray = MaxSubarray.maxSubarray(a[i]);
+            int maxStart = maxSubarray[0];
+            int maxEnd = maxSubarray[1];
+            assert(maxStart == expected[i][0]);
+            assert(maxEnd == expected[i][1]);
             System.out.print("a: { ");
             for (int j = 0; j < a[i].length; ++j) {
                 if (j == maxStart) {

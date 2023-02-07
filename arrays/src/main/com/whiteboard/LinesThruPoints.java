@@ -44,8 +44,8 @@ public final class LinesThruPoints {
     private static Map<Line, Integer> lines = new HashMap<>();
 
     /**
-     * Given a set of 2D points, finds the number of lines
-     * that can be drawn thru at least three points.
+     * Given a collection of 2D points, finds the number of
+     * lines that can be drawn thru at least three points.
      *
      * The algorithm proceeds in two phases. In Phase 1,
      * we compute the line thru each pair of points, adding
@@ -59,6 +59,8 @@ public final class LinesThruPoints {
      *
      * Running time = O(n * n) + O(n) = O(n * n).
      *
+     * @param x The x-coordinates of the 2D points.
+     * @param y The y-coordinates of the 2D points.
      * @return The number of lines that can be drawn thru at
      * least three of the given 2D points.
      */
