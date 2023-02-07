@@ -46,14 +46,14 @@ public final class RotateArray {
 
     private static void reverseRow(int[][] a, int row) {
         int numCols = a[0].length;
-        int leftCol = 0;
-        int rightCol = numCols - 1;
-        while (leftCol < rightCol) {
-            int tmp = a[row][leftCol];
-            a[row][leftCol] = a[row][rightCol];
-            a[row][rightCol] = tmp;
-            ++leftCol;
-            --rightCol;
+        int left = 0;
+        int right = numCols - 1;
+        while (left < right) {
+            int tmp = a[row][left];
+            a[row][left] = a[row][right];
+            a[row][right] = tmp;
+            ++left;
+            --right;
         }
     }
 }
