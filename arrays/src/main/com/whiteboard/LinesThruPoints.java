@@ -18,6 +18,19 @@ public final class LinesThruPoints {
             this.x = x;
             this.y = y;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Point other)) {
+                return false;
+            }
+            return this.x == other.x && this.y == other.y;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(x, y);
+        }
     }
 
     static class Line {
@@ -46,7 +59,7 @@ public final class LinesThruPoints {
         }
     }
 
-    private static Set<Point> points;
+    private static Point[] points;
     private static Map<Line, Integer> lines = new HashMap<>();
 
     /**
@@ -68,27 +81,30 @@ public final class LinesThruPoints {
      * @return The number of lines that can be drawn thru at
      * least three of the given 2D points.
      */
-    public static int linesThruPoints(Set<Point> points) {
-        LinesThruPoints.points = points;
+    public static int linesThruPoints(int[] x, int[] y) {
+        saveCallingParameters(x, y);
         findLinesThruPairs();
         return countRepeatedLines();
     }
 
-    private static void findLinesThruPairs() {
-        Point[] pointArray = new Point[points.size()];
-        int i = 0;
-        for (Point point : points) {
-            pointArray[i++] = point;
+    private static void saveCallingParameters(int[] x, int[] y) {
+        points = new Point[x.length];
+        for (int i = 0; i < x.length; ++i) {
+            points[i] = new Point(x[i], y[i]);
         }
-        for (i = 0; i < pointArray.length - 1; ++i) {
-            Point p1 = pointArray[i];
-            for (int j = i + 1; j < pointArray.length; ++j) {
-                Point p2 = pointArray[j];
+    }
+
+    private static void findLinesThruPairs() {
+        for (int i = 0; i < points.length - 1; ++i) {
+            Point p1 = points[i];
+            for (int j = i + 1; j < points.length; ++j) {
+                Point p2 = points[j];
                 Line line = new Line(p1, p2);
-                if (lines.containsKey(line)) {
-                    lines.put(line, lines.get(line) + 1);
-                } else {
+                Integer count = lines.get(line);
+                if (count == null) {
                     lines.put(line, 1);
+                } else {
+                    lines.put(line, count + 1);
                 }
             }
         }
