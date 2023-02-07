@@ -39,7 +39,7 @@ public final class MergeTwoSortedArrays {
                     result[iResult++] = a1[i1++];
                 }
             } else {
-                result[iResult++] = a1[i1] <= a2[i2] ? a1[i1++] : a2[i2++];
+                result[iResult++] = (a1[i1] <= a2[i2]) ? a1[i1++] : a2[i2++];
             }
         }
         return result;
