@@ -1,6 +1,7 @@
 package com.whiteboard;
 
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 /**
@@ -12,13 +13,26 @@ public final class FloodFillBreadthFirstSearch {
     private FloodFillBreadthFirstSearch() {
     }
 
-    private static class RowCol {
+    static class RowCol {
         int row;
         int col;
 
         RowCol(int row, int col) {
             this.row = row;
             this.col = col;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof RowCol other)) {
+                return false;
+            }
+            return (this.row == other.row && this.col == other.col);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(row, col);
         }
     }
 
@@ -42,7 +56,6 @@ public final class FloodFillBreadthFirstSearch {
      * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
-        // error checking
         int numRows = a.length;
         int numCols = a[0].length;
         Queue<RowCol> queue = new LinkedList<>();
