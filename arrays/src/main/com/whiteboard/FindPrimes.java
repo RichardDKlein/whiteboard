@@ -38,7 +38,7 @@ public final class FindPrimes {
         for (int i = 2; i <= n; ++i) {
             if (isPrime[i]) {
                 result.add(i);
-                for (int j = 2; i * j < n + 1; ++j) {
+                for (int j = 2; i * j < isPrime.length; ++j) {
                     isPrime[i * j] = false;
                 }
             }
