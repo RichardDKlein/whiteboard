@@ -10,47 +10,26 @@ public final class LinesThruPoints {
     private LinesThruPoints() {
     }
 
-    static class Point {
-        double x;
-        double y;
+    private static class Line {
+        private float slope; // Float.MAX_VALUE if vertical
+        private float intercept; // x-coordinate if vertical
 
-        Point(double x, double y) {
-            this.x = x;
-            this.y = y;
+        Line(double x1, double y1, double x2, double y2) {
+            if ((float)x1 == (float)x2) {
+                slope = Float.MAX_VALUE;
+                intercept = (float)x1;
+            } else {
+                slope = (float)((y2 - y1) / (x2 - x1));
+                intercept = (float)(y1 - slope * x1);
+            }
         }
 
         @Override
         public boolean equals(Object o) {
-            if (!(o instanceof Point other)) {
+            if (!(o instanceof Line other)) {
                 return false;
             }
-            return this.x == other.x && this.y == other.y;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, y);
-        }
-    }
-
-    static class Line {
-        private float slope; // Float.MAX_VALUE if line is vertical
-        private float intercept; // x-coordinate if line is vertical
-
-        Line(Point p1, Point p2) {
-            if ((float)p1.x == (float)p2.x) {
-                slope = Float.MAX_VALUE;
-                intercept = (float)p1.x;
-            } else {
-                slope = (float)((p2.y - p1.y) / (p2.x - p1.x));
-                intercept = (float)(p1.y - (slope * p1.x));
-            }
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            Line other = (Line)o;
-            return (this.slope == other.slope) && (this.intercept == other.intercept);
+            return this.slope == other.slope && this.intercept == other.intercept;
         }
 
         @Override
@@ -59,7 +38,9 @@ public final class LinesThruPoints {
         }
     }
 
-    private static Point[] points;
+    private static double[] x;
+    private static double[] y;
+
     private static Map<Line, Integer> lines = new HashMap<>();
 
     /**
@@ -83,23 +64,19 @@ public final class LinesThruPoints {
      */
     public static int linesThruPoints(double[] x, double[] y) {
         saveCallingParameters(x, y);
-        findLinesThruPairs();
+        findLinesThruPairsOfPoints();
         return countRepeatedLines();
     }
 
     private static void saveCallingParameters(double[] x, double[] y) {
-        points = new Point[x.length];
-        for (int i = 0; i < x.length; ++i) {
-            points[i] = new Point(x[i], y[i]);
-        }
+        LinesThruPoints.x = x;
+        LinesThruPoints.y = y;
     }
 
-    private static void findLinesThruPairs() {
-        for (int i = 0; i < points.length - 1; ++i) {
-            Point p1 = points[i];
-            for (int j = i + 1; j < points.length; ++j) {
-                Point p2 = points[j];
-                Line line = new Line(p1, p2);
+    private static void findLinesThruPairsOfPoints() {
+        for (int i = 0; i < x.length - 1; ++i) {
+            for (int j = i + 1; j < x.length; ++j) {
+                Line line = new Line(x[i], y[i], x[j], y[j]);
                 Integer count = lines.get(line);
                 if (count == null) {
                     lines.put(line, 1);
@@ -112,8 +89,8 @@ public final class LinesThruPoints {
 
     private static int countRepeatedLines() {
         int result = 0;
-        for (Map.Entry<Line, Integer> entry : lines.entrySet()) {
-            if (entry.getValue() > 1) {
+        for (int count : lines.values()) {
+            if (count > 1) {
                 ++result;
             }
         }
