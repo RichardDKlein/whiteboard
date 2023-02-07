@@ -60,7 +60,7 @@ public final class TopKStrings {
     private static void buildMinHeap() {
         for (Map.Entry<String, Integer> entry : stringCounts.entrySet()) {
             int count = entry.getValue();
-            if (minHeap.peek() == null || count >= minHeap.peek().getValue()) {
+            if (minHeap.isEmpty() || count >= minHeap.peek().getValue()) {
                 minHeap.add(entry);
                 while (minHeap.size() > k) {
                     minHeap.poll();

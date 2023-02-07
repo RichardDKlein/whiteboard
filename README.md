@@ -30,7 +30,7 @@ to cover all the exercises in one week.
     6. LinesThruPoints
     7. MaxSubarray
     8. MergeTwoSortedArrays
-    9. Rotate2dArray
+    9. RotateArray
     
 ### Tuesday
 - **arrays *[cont]***
