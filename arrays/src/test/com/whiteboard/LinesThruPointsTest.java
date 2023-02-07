@@ -9,7 +9,7 @@ public class LinesThruPointsTest {
         System.out.println("Test LinesThruPoints:");
         System.out.println("=====================");
 
-        int[] x = {
+        double[] x = {
                 -1,
                 0,
                 1,
@@ -21,7 +21,7 @@ public class LinesThruPointsTest {
                 1
         };
 
-        int[] y = {
+        double[] y = {
                 -1,
                 -1,
                 -1,

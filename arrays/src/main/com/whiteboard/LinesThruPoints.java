@@ -81,13 +81,13 @@ public final class LinesThruPoints {
      * @return The number of lines that can be drawn thru at
      * least three of the given 2D points.
      */
-    public static int linesThruPoints(int[] x, int[] y) {
+    public static int linesThruPoints(double[] x, double[] y) {
         saveCallingParameters(x, y);
         findLinesThruPairs();
         return countRepeatedLines();
     }
 
-    private static void saveCallingParameters(int[] x, int[] y) {
+    private static void saveCallingParameters(double[] x, double[] y) {
         points = new Point[x.length];
         for (int i = 0; i < x.length; ++i) {
             points[i] = new Point(x[i], y[i]);
