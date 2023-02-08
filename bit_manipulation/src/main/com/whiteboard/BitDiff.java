@@ -23,13 +23,10 @@ public final class BitDiff {
     private static int countOneBits(int n) {
         int result = 0;
         while (n != 0) {
-            n = clearLeastSignificantOneBit(n);
+            // clear least significant one bit
+            n &= n - 1;
             ++result;
         }
         return result;
-    }
-
-    private static int clearLeastSignificantOneBit(int n) {
-        return n & (n - 1);
     }
 }
