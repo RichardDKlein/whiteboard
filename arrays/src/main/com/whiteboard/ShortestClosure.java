@@ -39,12 +39,10 @@ public final class ShortestClosure {
      *
      * @param haystack An array of elements representing the haystack.
      * @param needles A set of elements representing the needles.
-     * @return A two-element array representing the shortest closure.
-     * Element 0 contains the starting index, in the haystack, of the
-     * closure, and element 1 contains the ending index.
+     * @return A two-element array containing the {start, end} indices
+     * of the shortest closure.
      */
-    public static int[]
-    shortestClosure(int[] haystack, Set<Integer> needles) {
+    public static int[] shortestClosure(int[] haystack, Set<Integer> needles) {
         saveCallingParameters(haystack, needles);
         buildNeedleLocationMap();
         return findShortestClosure();

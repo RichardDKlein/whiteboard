@@ -26,6 +26,10 @@ public final class FindPrimes {
      * false for each multiple 'j' of i. If isPrime[i] is false, we
      * just go on to the next element, since we've already determined
      * that 'i' is not prime.
+     *
+     * @param n A positive integer.
+     * @return A list containing all primes up to and including the
+     * given integer.
      */
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();

@@ -44,8 +44,8 @@ public final class MaxSubarray {
      *
      * @param a The array whose maximum subarray is to be
      *          found.
-     * @return A pair of integers containing the starting
-     * and ending indices of the maximum subarray.
+     * @return A two-element array containing the {start, end}
+     * indices of the maximum subarray.
      */
     public static int[] maxSubarray(int[] a) {
         int[] result = new int[2];

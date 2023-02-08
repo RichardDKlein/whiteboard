@@ -42,7 +42,7 @@ public final class ArrayHopscotch {
      *          elements in the array are greater than or
      *          equal to zero.
      * @param iStart The starting index for our game of
-     *              hopscotch.
+     *               hopscotch.
      * @return A list containing a winning sequence of
      * indices that led to a zero. (If no such winning
      * sequence exists, then the list will be empty.)
