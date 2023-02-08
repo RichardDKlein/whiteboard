@@ -30,7 +30,7 @@ public final class SolveMaze {
      *              cell.
      * @param exit The (row, column) indices of the maze
      *             exit that we are trying to reach.
-     * @return A list containing the (row, column) indices
+     * @return A list containing the {row, column} indices
      * of a path leading from the start to the exit. (If no
      * such path exists, then the list will be empty.)
      */
