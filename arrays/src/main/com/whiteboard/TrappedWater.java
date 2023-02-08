@@ -48,10 +48,10 @@ public final class TrappedWater {
         leftTallest = new int[numBars];
         int tallestSoFar = 0;
         for (int i = 0; i < numBars; ++i) {
+            leftTallest[i] = tallestSoFar;
             if (barHeights[i] > tallestSoFar) {
                 tallestSoFar = barHeights[i];
             }
-            leftTallest[i] = tallestSoFar;
         }
     }
 
@@ -60,10 +60,10 @@ public final class TrappedWater {
         rightTallest = new int[numBars];
         int tallestSoFar = 0;
         for (int i = numBars - 1; i >= 0; --i) {
+            rightTallest[i] = tallestSoFar;
             if (barHeights[i] > tallestSoFar) {
                 tallestSoFar = barHeights[i];
             }
-            rightTallest[i] = tallestSoFar;
         }
     }
 
