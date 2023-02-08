@@ -8,16 +8,6 @@ public final class SearchSorted2dArray {
     private SearchSorted2dArray() {
     }
 
-    static class RowCol {
-        int row;
-        int col;
-
-        RowCol(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-    }
-
     /**
      * Search a 2D array in which all rows and columns
      * are sorted in ascending order.
@@ -46,11 +36,12 @@ public final class SearchSorted2dArray {
      *
      * @param a The sorted 2D array to search.
      * @param target The element to search for.
-     * @return A UnorderedPair containing the <row, column> indices
-     * of the element if found, or <-1, -1> if the element
+     * @return A two-element array containing the {row, column}
+     * indices of the element if found, or {-1, -1} if the element
      * is not found.
      */
-    public static RowCol searchSorted2dArray(int[][] a, int target) {
+    public static int[] searchSorted2dArray(int[][] a, int target) {
+        int[] result = {-1, -1};
         int numRows = a.length;
         int numCols = a[0].length;
         int row = numRows - 1;
@@ -62,9 +53,12 @@ public final class SearchSorted2dArray {
             } else if (current > target) {
                 --row;
             } else {
-                return new RowCol(row, col);
+                result[0] = row;
+                result[1] = col;
+                return result;
             }
         }
-        return new RowCol(-1, -1);
+        // no solution
+        return result;
     }
 }

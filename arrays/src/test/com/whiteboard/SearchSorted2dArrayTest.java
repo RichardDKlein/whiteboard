@@ -1,9 +1,7 @@
 package com.whiteboard;
 
-import org.junit.Test;
-
 import java.util.Arrays;
-import com.whiteboard.SearchSorted2dArray.RowCol;
+import org.junit.Test;
 
 public class SearchSorted2dArrayTest {
     @Test
@@ -26,19 +24,19 @@ public class SearchSorted2dArrayTest {
         for (int row = 0; row < a.length; ++row) {
             for (int col = 0; col < a[0].length; ++col) {
                 int target = a[row][col];
-                RowCol loc = SearchSorted2dArray.searchSorted2dArray(a, target);
-                assert(loc.row == row);
-                assert(loc.col == col);
+                int[] loc = SearchSorted2dArray.searchSorted2dArray(a, target);
+                assert(loc[0] == row);
+                assert(loc[1] == col);
                 System.out.println("target = " + target + ", row = " +
-                        loc.row + ", col = " + loc.col);
+                        loc[0] + ", col = " + loc[1]);
             }
         }
 
         int target = 64;
-        RowCol loc = SearchSorted2dArray.searchSorted2dArray(a, target);
-        assert(loc.row == -1);
-        assert(loc.col == -1);
+        int[] loc = SearchSorted2dArray.searchSorted2dArray(a, target);
+        assert(loc[0] == -1);
+        assert(loc[1] == -1);
         System.out.println("target = " + target + ", row = " +
-                loc.row + ", col = " + loc.col);
+                loc[0] + ", col = " + loc[1]);
     }
 }
