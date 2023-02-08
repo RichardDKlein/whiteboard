@@ -11,20 +11,6 @@ public final class ShortestClosure {
     private ShortestClosure() {
     }
 
-    static class Interval {
-        int start;
-        int end;
-
-        Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        int length() {
-            return end - start + 1;
-        }
-    }
-
     private static int[] haystack;
     private static Set<Integer> needles;
     private static Map<Integer, List<Integer>> needleLocationMap = new HashMap<>();
@@ -51,25 +37,22 @@ public final class ShortestClosure {
      *
      * Total running time = O(n) + O(n) = O(n).
      *
-     * @param haystack A list of elements representing the haystack.
+     * @param haystack An array of elements representing the haystack.
      * @param needles A set of elements representing the needles.
-     * @return An Interval representing the shortest closure.
+     * @return A two-element array representing the shortest closure.
+     * Element 0 contains the starting index, in the haystack, of the
+     * closure, and element 1 contains the ending index.
      */
-    public static Interval
+    public static int[]
     shortestClosure(int[] haystack, Set<Integer> needles) {
-        Interval result = new Interval(0, haystack.length - 1);
+        saveCallingParameters(haystack, needles);
+        buildNeedleLocationMap();
+        return findShortestClosure();
+    }
+
+    private static void saveCallingParameters(int[] haystack, Set<Integer> needles) {
         ShortestClosure.haystack = haystack;
         ShortestClosure.needles = needles;
-        buildNeedleLocationMap();
-        for (;;) {
-            Interval candidate = getNextCandidate();
-            if (candidate == null) {
-                return result;
-            }
-            if (candidate.length() < result.length()) {
-                result = candidate;
-            }
-        }
     }
 
     private static void buildNeedleLocationMap() {
@@ -83,29 +66,42 @@ public final class ShortestClosure {
         }
     }
 
-    private static Interval getNextCandidate() {
-        int candidateStart = Integer.MAX_VALUE;
-        int candidateEnd = Integer.MIN_VALUE;
-        List<Integer> candidateStartLocationList = null;
+    private static int[] findShortestClosure() {
+        int[] result = {0, haystack.length - 1};
+        for (;;) {
+            int[] closure = getNextClosure();
+            if (closure == null) {
+                break;
+            }
+            if (intervalLength(closure) < intervalLength(result)) {
+                result = closure;
+            }
+        }
+        return result;
+    }
+
+    private static int[] getNextClosure() {
+        int[] result = {Integer.MAX_VALUE, Integer.MIN_VALUE};
+        int startNeedle = -1;
         for (int needle : needles) {
             List<Integer> needleLocationList = needleLocationMap.get(needle);
             if (needleLocationList.isEmpty()) {
                 return null;
             }
             int needleSmallestIndex = needleLocationList.get(0);
-            if (needleSmallestIndex < candidateStart) {
-                candidateStart = needleSmallestIndex;
-                // remember which needleLocationList contains the candidateStart
-                candidateStartLocationList = needleLocationList;
+            if (needleSmallestIndex < result[0]) {
+                result[0] = needleSmallestIndex;
+                startNeedle = needle;
             }
-            if (needleSmallestIndex > candidateEnd) {
-                candidateEnd = needleSmallestIndex;
+            if (needleSmallestIndex > result[1]) {
+                result[1] = needleSmallestIndex;
             }
         }
-        // Remove this candidate's starting index from the head of
-        // its needle's location list,so it will not be considered
-        // the next time this method is called.
-        candidateStartLocationList.remove(0);
-        return new Interval(candidateStart, candidateEnd);
+        needleLocationMap.get(startNeedle).remove(0);
+        return result;
+    }
+
+    private static int intervalLength(int[] interval) {
+        return interval[1] - interval[0] + 1;
     }
 }

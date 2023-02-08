@@ -1,9 +1,7 @@
 package com.whiteboard;
 
-import org.junit.Test;
-
 import java.util.*;
-import com.whiteboard.ShortestClosure.Interval;
+import org.junit.Test;
 
 public class ShortestClosureTest {
     @Test
@@ -22,19 +20,19 @@ public class ShortestClosureTest {
         needles.add(new HashSet<>(Arrays.asList(7, 8, 9)));
         needles.add(new HashSet<>(Arrays.asList(0, 8)));
 
-        Interval[] expected = {
-                new Interval(7, 10),
-                new Interval(0, 2),
-                new Interval(14, 16),
-                new Interval(3, 13)
+        int[][] expected = {
+                {7, 10},
+                {0, 2},
+                {14, 16},
+                {3, 13}
         };
 
 
         for (int i = 0; i < needles.size(); ++i) {
-            Interval shortest = ShortestClosure.shortestClosure(
+            int[] shortest = ShortestClosure.shortestClosure(
                     haystack, needles.get(i));
-            assert(shortest.start == expected[i].start);
-            assert(shortest.end == expected[i].end);
+            assert(shortest[0] == expected[i][0]);
+            assert(shortest[1] == expected[i][1]);
             System.out.print("needles: { ");
             for (Integer needle : needles.get(i)) {
                 System.out.print(needle + " ");
@@ -43,18 +41,18 @@ public class ShortestClosureTest {
 
             System.out.print("haystack: { ");
             for (int j = 0; j < haystack.length; ++j) {
-                if (j == shortest.start) {
+                if (j == shortest[0]) {
                     System.out.print("[** ");
                 }
                 System.out.print(haystack[j] + " ");
-                if (j == shortest.end) {
+                if (j == shortest[1]) {
                     System.out.print("**] ");
                 }
             }
             System.out.println("}");
 
-            System.out.println("shortest closure: [" + shortest.start + ", "
-                    + shortest.end + "]");
+            System.out.println("shortest closure: [" + shortest[0] + ", "
+                    + shortest[1] + "]");
         }
     }
 }
