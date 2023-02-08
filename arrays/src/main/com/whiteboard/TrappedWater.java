@@ -36,11 +36,15 @@ public final class TrappedWater {
      * bars of the bar graph.
      */
     public static int trappedWater(int[] barHeights) {
-        TrappedWater.barHeights = barHeights;
+        saveCallingParameter();
         findLeftTallest();
         findRightTallest();
         findWaterline();
         return computeTrappedWater();
+    }
+
+    private static void saveCallingParameter(int[] barHeights) {
+        TrappedWater.barHeights = barHeights;
     }
 
     private static void findLeftTallest() {
