@@ -8,6 +8,7 @@ public final class TrappedWater {
     }
 
     private static int[] barHeights;
+    private static int numBars;
     private static int[] leftTallest;
     private static int[] rightTallest;
     private static int[] waterline;
@@ -36,7 +37,7 @@ public final class TrappedWater {
      * bars of the bar graph.
      */
     public static int trappedWater(int[] barHeights) {
-        saveCallingParameter();
+        saveCallingParameter(barHeights);
         findLeftTallest();
         findRightTallest();
         findWaterline();
@@ -45,10 +46,10 @@ public final class TrappedWater {
 
     private static void saveCallingParameter(int[] barHeights) {
         TrappedWater.barHeights = barHeights;
+        numBars = barHeights.length;
     }
 
     private static void findLeftTallest() {
-        int numBars = barHeights.length;
         leftTallest = new int[numBars];
         int tallestSoFar = 0;
         for (int i = 0; i < numBars; ++i) {
@@ -60,7 +61,6 @@ public final class TrappedWater {
     }
 
     private static void findRightTallest() {
-        int numBars = barHeights.length;
         rightTallest = new int[numBars];
         int tallestSoFar = 0;
         for (int i = numBars - 1; i >= 0; --i) {
@@ -72,7 +72,6 @@ public final class TrappedWater {
     }
 
     private static void findWaterline() {
-        int numBars = barHeights.length;
         waterline = new int[numBars];
         for (int i = 0; i < numBars; ++i) {
             waterline[i] = Math.min(leftTallest[i], rightTallest[i]);
@@ -81,7 +80,6 @@ public final class TrappedWater {
 
     private static int computeTrappedWater() {
         int result = 0;
-        int numBars = barHeights.length;
         for (int i = 0; i < numBars; ++i) {
             if (waterline[i] > barHeights[i]) {
                 result += waterline[i] - barHeights[i];
