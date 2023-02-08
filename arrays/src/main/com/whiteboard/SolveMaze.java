@@ -1,43 +1,14 @@
 package com.whiteboard;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Solve a 2D maze.
  */
 public final class SolveMaze {
     private SolveMaze() {
-    }
-
-    static class RowCol {
-        int row;
-        int col;
-
-        RowCol(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-
-        RowCol(RowCol other) {
-            this.row = other.row;
-            this.col = other.col;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof RowCol)) {
-                return false;
-            }
-            RowCol other = (RowCol)o;
-            return other.row == this.row && other.col == this.col;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(row, col);
-        }
     }
 
     /**
@@ -63,46 +34,51 @@ public final class SolveMaze {
      * of a path leading from the start to the exit. (If no
      * such path exists, then the list will be empty.)
      */
-    public static List<RowCol>
-    solveMaze(char[][] maze, RowCol start, RowCol exit) {
-        List<RowCol> result = new ArrayList<>();
+    public static List<int[]> solveMaze(char[][] maze, int[] start, int[] exit) {
+        List<int[]> result = new ArrayList<>();
         // error checking
+        int startRow = start[0];
+        int startCol = start[1];
         int numRows = maze.length;
         int numCols = maze[0].length;
-        if (start.row < 0 || start.row > numRows - 1 || start.col < 0 || start.col > numCols - 1) {
+        if (startRow < 0 || startRow > numRows - 1 || startCol < 0 || startCol > numCols - 1) {
             return result;
         }
-        if (maze[start.row][start.col] == '@') {
+        if (maze[startRow][startCol] == '@') {
             return result;
         }
         // base case
-        if (start.equals(exit)) {
-            result.add(new RowCol(start));
+        if (Arrays.equals(start, exit)) {
+            result.add(start);
             return result;
         }
         // recursive step
-        maze[start.row][start.col] = '@';
-        List<RowCol> remainingPath = solveMaze(maze, new RowCol(start.row, start.col - 1), exit);
+        maze[startRow][startCol] = '@';
+        int[] goLeft = {startRow, startCol - 1};
+        List<int[]> remainingPath = solveMaze(maze, goLeft, exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start));
+            result.add(start);
             result.addAll(remainingPath);
             return result;
         }
-        remainingPath = solveMaze(maze, new RowCol(start.row - 1, start.col), exit);
+        int[] goUp = {startRow - 1, startCol};
+        remainingPath = solveMaze(maze, goUp, exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start));
+            result.add(start);
             result.addAll(remainingPath);
             return result;
         }
-        remainingPath = solveMaze(maze, new RowCol(start.row, start.col + 1), exit);
+        int[] goRight = {startRow, startCol + 1};
+        remainingPath = solveMaze(maze, goRight, exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start));
+            result.add(start);
             result.addAll(remainingPath);
             return result;
         }
-        remainingPath = solveMaze(maze, new RowCol(start.row + 1, start.col), exit);
+        int[] goDown = {startRow + 1, startCol};
+        remainingPath = solveMaze(maze, goDown, exit);
         if (!remainingPath.isEmpty()) {
-            result.add(new RowCol(start));
+            result.add(start);
             result.addAll(remainingPath);
             return result;
         }
