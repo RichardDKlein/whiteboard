@@ -1,9 +1,7 @@
 package com.whiteboard;
 
-import org.junit.Test;
-
 import java.util.*;
-import com.whiteboard.SumPairsInUnsortedArray.UnorderedPair;
+import org.junit.Test;
 
 public class SumPairsInUnsortedArrayTest {
     @Test
@@ -14,34 +12,31 @@ public class SumPairsInUnsortedArrayTest {
 
         int[] a = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
 
-        Set<UnorderedPair> expected = new HashSet<>();
-        expected.add(new UnorderedPair(6, 6));
-        expected.add(new UnorderedPair(-1, 13));
-        expected.add(new UnorderedPair(5, 7));
-        expected.add(new UnorderedPair(3, 9));
-        expected.add(new UnorderedPair(-2, 14));
+        Integer[][] expectedArray = {
+                {6, 6},
+                {-1, 13},
+                {5, 7},
+                {3, 9},
+                {-2, 14}
+        };
 
-        List<Integer> list = new ArrayList<>();
-        for (int integer : a) {
-            list.add(integer);
+        Set<Set<Integer>> expected = new HashSet<>();
+        for (Integer[] pair : expectedArray) {
+            expected.add(new HashSet<>(Arrays.asList(pair)));
         }
 
-        ShuffleList.shuffleList(list);
-        for (int i = 0; i < a.length; ++i) {
-            a[i] = list.get(i);
-        }
-
-        System.out.println("unsorted array = " + Arrays.toString(a));
+        System.out.println("sorted array = " + Arrays.toString(a));
 
         int sum = 12;
 
-        Set<UnorderedPair> unorderedPairs = SumPairsInUnsortedArray.sumPairsInUnsortedArray(a, sum);
+        Set<Set<Integer>> unorderedPairs = SumPairsInUnsortedArray.sumPairsInUnsortedArray(a, sum);
         assert(unorderedPairs.equals(expected));
 
-        for (UnorderedPair unorderedPair : unorderedPairs) {
-            int p1 = unorderedPair.first;
-            int p2 = unorderedPair.second;
-            System.out.println(p1 + " + " + p2 + " = " + (p1 + p2));
+        for (Set<Integer> unorderedPair : unorderedPairs) {
+            Iterator<Integer> iterator = unorderedPair.iterator();
+            int i1 = iterator.next();
+            int i2 = iterator.hasNext() ? iterator.next() : i1;
+            System.out.println(i1 + " + " + i2 + " = " + (i1 + i2));
         }
     }
 }

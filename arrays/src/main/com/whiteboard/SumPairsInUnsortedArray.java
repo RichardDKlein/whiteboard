@@ -1,5 +1,6 @@
 package com.whiteboard;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,30 +10,6 @@ import java.util.Set;
  */
 public final class SumPairsInUnsortedArray {
     private SumPairsInUnsortedArray() {
-    }
-
-    static class UnorderedPair {
-        int first;
-        int second;
-
-        UnorderedPair(int first, int second) {
-            this.first = first;
-            this.second = second;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof UnorderedPair other)) {
-                return false;
-            }
-            return (this.first == other.first && this.second == other.second) ||
-                    (this.first == other.second && this.second == other.first);
-        }
-
-        @Override
-        public int hashCode() {
-            return first + second;
-        }
     }
 
     /**
@@ -51,14 +28,21 @@ public final class SumPairsInUnsortedArray {
      * Running time: O(n)
      *
      * @param a The unsorted array to search for pairs.
-     * @param sum The value to which each pair of elements should sum.
+     * @param sum The value to which each pair of elements
+     *            should sum.
+     * @return A set containing all the pairs of elements
+     * that sum to the desired value. Each pair is represented
+     * by a set containing two integers, except in the case
+     * where both elements of the pair are the same integer.
+     * In that case, the pair is represented by a set containing
+     * that single integer.
      */
-    public static Set<UnorderedPair> sumPairsInUnsortedArray(int[] a, int sum) {
-        Set<UnorderedPair> result = new HashSet<>();
+    public static Set<Set<Integer>> sumPairsInUnsortedArray(int[] a, int sum) {
+        Set<Set<Integer>> result = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
             if (seen.contains(sum - n)) {
-                result.add(new UnorderedPair(n, sum - n));
+                result.add(new HashSet<>(Arrays.asList(n, sum - n)));
             }
             seen.add(n);
         }

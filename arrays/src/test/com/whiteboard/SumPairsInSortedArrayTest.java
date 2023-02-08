@@ -17,11 +17,11 @@ public class SumPairsInSortedArrayTest {
         int[] a = {-2, -1, 0, 3, 5, 6, 6, 7, 9, 13, 14};
 
         Integer[][] expectedArray = {
-                {6, 6},
+                {-2, 14},
                 {-1, 13},
-                {5, 7},
                 {3, 9},
-                {-2, 14}
+                {5, 7},
+                {6, 6}
         };
 
         Set<Set<Integer>> expected = new HashSet<>();
