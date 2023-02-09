@@ -28,9 +28,8 @@ public final class DeleteNodeFromList {
         if (victim.next == null) {
             return false;
         }
-        ListNode<E> next = victim.next;
-        victim.data = next.data;
-        victim.next = next.next;
+        victim.data = victim.next.data;
+        victim.next = victim.next.next;
         return true;
     }
 }
