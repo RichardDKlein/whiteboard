@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
-
-import com.whiteboard.SalesTerritories.CityPair;
 
 public class SalesTerritoriesTest {
     @Test
@@ -15,28 +14,34 @@ public class SalesTerritoriesTest {
         System.out.println("Test SalesTerritories:");
         System.out.println("======================");
 
-        Set<CityPair> cityPairs = new HashSet<>();
-        cityPairs.add(new CityPair("San Francisco", "San Jose"));
-        cityPairs.add(new CityPair("Denver", "Colorado Springs"));
-        cityPairs.add(new CityPair("Los Angeles", "San Francisco"));
-        cityPairs.add(new CityPair("New York City", "Buffalo"));
-        cityPairs.add(new CityPair("San Jose", "San Diego"));
-        cityPairs.add(new CityPair("Colorado Springs", "Aspen"));
-        cityPairs.add(new CityPair("Santa Monica", "Pasadena"));
-        cityPairs.add(new CityPair("Buffalo", "Yonkers"));
-        cityPairs.add(new CityPair("Oakland", "Sacramento"));
-        cityPairs.add(new CityPair("Fort Collins", "Aurora"));
-        cityPairs.add(new CityPair("San Diego", "Los Angeles"));
-        cityPairs.add(new CityPair("Syracuse", "Albany"));
-        cityPairs.add(new CityPair("Los Angeles", "San Diego"));
-        cityPairs.add(new CityPair("Boulder", "Aspen"));
-        cityPairs.add(new CityPair("Oakland", "Santa Monica"));
-        cityPairs.add(new CityPair("Rochester", "Yonkers"));
-        cityPairs.add(new CityPair("San Francisco", "Oakland"));
-        cityPairs.add(new CityPair("Denver", "Fort Collins"));
-        cityPairs.add(new CityPair("San Jose", "San Francisco"));
-        cityPairs.add(new CityPair("New York City", "Syracuse"));
-        cityPairs.add(new CityPair("Pasadena", "Sacramento"));
+        String[][] cityPairsArray = {
+                {"San Francisco", "San Jose"},
+                {"Denver", "Colorado Springs"},
+                {"Los Angeles", "San Francisco"},
+                {"New York City", "Buffalo"},
+                {"San Jose", "San Diego"},
+                {"Colorado Springs", "Aspen"},
+                {"Santa Monica", "Pasadena"},
+                {"Buffalo", "Yonkers"},
+                {"Oakland", "Sacramento"},
+                {"Fort Collins", "Aurora"},
+                {"San Diego", "Los Angeles"},
+                {"Syracuse", "Albany"},
+                {"Los Angeles", "San Diego"},
+                {"Boulder", "Aspen"},
+                {"Oakland", "Santa Monica"},
+                {"Rochester", "Yonkers"},
+                {"San Francisco", "Oakland"},
+                {"Denver", "Fort Collins"},
+                {"San Jose", "San Francisco"},
+                {"New York City", "Syracuse"},
+                {"Pasadena", "Sacramento"}
+        };
+
+        Set<Set<String>> cityPairs = new HashSet<>();
+        for (String[] cityPair : cityPairsArray) {
+            cityPairs.add(new HashSet<>(Arrays.asList(cityPair)));
+        }
 
         Set<Set<String>> expected = new HashSet<>();
         expected.add(new HashSet<>(Arrays.asList(
@@ -67,9 +72,11 @@ public class SalesTerritoriesTest {
         )));
 
         System.out.println("City Pairs = ");
-        for (CityPair cityPair : cityPairs) {
-            System.out.println("\t(" + cityPair.city1 +
-                    ", " + cityPair.city2 + ")");
+        for (Set<String> cityPair : cityPairs) {
+            Iterator<String> iterator = cityPair.iterator();
+            String city1 = iterator.next();
+            String city2 = iterator.next();
+            System.out.println("\t(" + city1 + ", " + city2 + ")");
         }
         System.out.println();
 

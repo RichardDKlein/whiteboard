@@ -12,30 +12,6 @@ public final class SalesTerritories {
     private SalesTerritories() {
     }
 
-    static class CityPair {
-        String city1;
-        String city2;
-
-        CityPair(String city1, String city2) {
-            this.city1 = city1;
-            this.city2 = city2;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof CityPair other)) {
-                return false;
-            }
-            return (this.city1.equals(other.city1) && this.city2.equals(other.city2)) ||
-                    (this.city1.equals(other.city2) && this.city2.equals(other.city1));
-        }
-
-        @Override
-        public int hashCode() {
-            return city1.hashCode() + city2.hashCode();
-        }
-    }
-
     static class CityNode {
         String cityName;
         Set<CityNode> neighboringCities = new HashSet<>();
@@ -58,14 +34,14 @@ public final class SalesTerritories {
         }
     }
 
-    private static Set<CityPair> cityPairs;
+    private static Set<Set<String>> cityPairs;
     private static Map<String, CityNode> cityMap = new HashMap<>();
     private static Set<CityNode> visited = new HashSet<>();
 
     /**
-     * Given a list of city pairs, where each pair denotes that
-     * the two cities belong to the same sales territories, find
-     * all the territories, i.e. find all the cities composing
+     * Given a collection of city pairs, where each pair denotes
+     * that the two cities belong to the same sales territories,
+     * find all the territories, i.e. find all the cities composing
      * each territory.
      *
      * This is a straightforward graph problem, where each graph
@@ -78,20 +54,28 @@ public final class SalesTerritories {
      *
      * Running time is O(n).
      *
+     * @param cityPairs A set of pairs of city names, where each
+     *                  pair is represented by a set containing
+     *                  the names of two cities that are in the
+     *                  same sales territory.
      * @return The given cities, grouped into sets representing
      * their sales territories.
      */
-    public static Set<Set<String>>
-    salesTerritories(Set<CityPair> cityPairs) {
-        SalesTerritories.cityPairs = cityPairs;
+    public static Set<Set<String>> salesTerritories(Set<Set<String>> cityPairs) {
+        saveCallingParameter(cityPairs);
         buildCityMap();
         return findTerritories();
     }
 
+    private static void saveCallingParameter(Set<Set<String>> cityPairs) {
+        SalesTerritories.cityPairs = cityPairs;
+    }
+
     private static void buildCityMap() {
-        for (CityPair cityPair : cityPairs) {
-            CityNode cityNode1 = findOrCreateCityNode(cityPair.city1);
-            CityNode cityNode2 = findOrCreateCityNode(cityPair.city2);
+        for (Set<String> cityPair : cityPairs) {
+            Iterator<String> iterator = cityPair.iterator();
+            CityNode cityNode1 = findOrCreateCityNode(iterator.next());
+            CityNode cityNode2 = findOrCreateCityNode(iterator.next());
             cityNode1.neighboringCities.add(cityNode2);
             cityNode2.neighboringCities.add(cityNode1);
         }
