@@ -12,9 +12,9 @@ public final class SalesTerritories {
     private SalesTerritories() {
     }
 
-    static class CityNode {
+    private static class CityNode {
         String cityName;
-        Set<CityNode> neighboringCities = new HashSet<>();
+        Set<CityNode> adjacentCities = new HashSet<>();
 
         CityNode(String cityName) {
             this.cityName = cityName;
@@ -74,10 +74,12 @@ public final class SalesTerritories {
     private static void buildCityMap() {
         for (Set<String> cityPair : cityPairs) {
             Iterator<String> iterator = cityPair.iterator();
-            CityNode cityNode1 = findOrCreateCityNode(iterator.next());
-            CityNode cityNode2 = findOrCreateCityNode(iterator.next());
-            cityNode1.neighboringCities.add(cityNode2);
-            cityNode2.neighboringCities.add(cityNode1);
+            String cityName1 = iterator.next();
+            String cityName2 = iterator.next();
+            CityNode cityNode1 = findOrCreateCityNode(cityName1);
+            CityNode cityNode2 = findOrCreateCityNode(cityName2);
+            cityNode1.adjacentCities.add(cityNode2);
+            cityNode2.adjacentCities.add(cityNode1);
         }
     }
 
@@ -102,10 +104,10 @@ public final class SalesTerritories {
         return result;
     }
 
-    private static Set<String> findConnectedCities(CityNode rootNode) {
+    private static Set<String> findConnectedCities(CityNode startingNode) {
         Set<String> result = new HashSet<>();
         Queue<CityNode> cityNodeQueue = new LinkedList<>();
-        cityNodeQueue.add(rootNode);
+        cityNodeQueue.add(startingNode);
         while (!cityNodeQueue.isEmpty()) {
             CityNode cityNode = cityNodeQueue.poll();
             if (visited.contains(cityNode)) {
@@ -113,7 +115,7 @@ public final class SalesTerritories {
             }
             visited.add(cityNode);
             result.add(cityNode.cityName);
-            cityNodeQueue.addAll(cityNode.neighboringCities);
+            cityNodeQueue.addAll(cityNode.adjacentCities);
         }
         return result;
     }
