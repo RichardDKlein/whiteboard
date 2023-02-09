@@ -24,7 +24,7 @@ public final class ListHasCycle {
     public static <E> boolean listHasCycle(ListNode<E> head) {
         ListNode<E> slow = head;
         ListNode<E> fast = head.next;
-        while (fast != null && fast != slow) {
+        while (fast != slow && fast != null) {
             slow = slow.next;
             fast = fast.next;
             if (fast != null) {
