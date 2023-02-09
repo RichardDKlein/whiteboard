@@ -50,7 +50,7 @@ public final class SalesTerritories {
      *
      * Finding the sales territories amounts to finding all the
      * connected subgraphs of cities. We do this with a simple
-     * Breadth-First Search (BFS).
+     * Breadth-First Search (BFS), taking care to avoid loops.
      *
      * Running time is O(n).
      *
