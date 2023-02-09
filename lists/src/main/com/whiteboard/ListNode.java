@@ -1,10 +1,10 @@
 package com.whiteboard;
 
 public class ListNode<E> {
-    E data;
-    ListNode<E> next;
+    public E data;
+    public ListNode<E> next;
 
-    ListNode(E data) {
+    public ListNode(E data) {
         this.data = data;
     }
 
