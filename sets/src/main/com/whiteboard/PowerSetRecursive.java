@@ -24,10 +24,10 @@ public final class PowerSetRecursive {
         iterator.remove();
         Set<Set<E>> remainderPowerSet = powerSetRecursive(set);
         for (Set<E> remainderSubset : remainderPowerSet) {
-            Set<E> remainderSubsetCopy = new HashSet<>(remainderSubset);
-            result.add(remainderSubsetCopy);
-            remainderSubset.add(firstElement);
             result.add(remainderSubset);
+            Set<E> remainderSubsetCopy = new HashSet<>(remainderSubset);
+            remainderSubsetCopy.add(firstElement);
+            result.add(remainderSubsetCopy);
         }
         return result;
     }
