@@ -15,7 +15,7 @@ public class ProducerConsumerQueue<E> {
     private Queue<E> queue = new LinkedList<>();
     private int capacity;
 
-    ProducerConsumerQueue(int capacity) {
+    public ProducerConsumerQueue(int capacity) {
         this.capacity = capacity;
     }
 
