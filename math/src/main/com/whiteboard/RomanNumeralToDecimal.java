@@ -21,12 +21,11 @@ public final class RomanNumeralToDecimal {
      * current char's value from the running total.
      *
      * @param roman A string containing the Roman numeral to
-     *              be converted to decimal.
+     *              be converted to decimal. You may assume
+     *              that the string is a valid Roman numeral.
      * @return The decimal equivalent of the given Roman numeral.
      */
     public static int romanNumeralToDecimal(String roman) {
-        int result = 0;
-
         Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
@@ -36,16 +35,14 @@ public final class RomanNumeralToDecimal {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int[] decimal = new int[roman.length()];
-        for (int i = 0; i < roman.length(); ++i) {
-            decimal[i] = map.get(roman.charAt(i));
-        }
-        result = decimal[roman.length() - 1];
+        int result = map.get(roman.charAt(roman.length() - 1));
         for (int i = roman.length() - 2; i >= 0; --i) {
-            if (decimal[i] < decimal[i + 1]) {
-                result -= decimal[i];
+            int currDecimal = map.get(roman.charAt(i));
+            int prevDecimal = map.get(roman.charAt(i + 1));
+            if (currDecimal < prevDecimal) {
+                result -= currDecimal;
             } else {
-                result += decimal[i];
+                result += currDecimal;
             }
         }
         return result;
