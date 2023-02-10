@@ -27,9 +27,9 @@ public final class PowerSetIterative {
             Set<E> subset = new HashSet<>();
             Iterator<E> iterator = set.iterator();
             for (int bitNum = 0; bitNum < set.size(); ++bitNum) {
-                E nextElement = iterator.next();
+                E element = iterator.next();
                 if (isBitSet(i, bitNum)) {
-                    subset.add(nextElement);
+                    subset.add(element);
                 }
             }
             result.add(subset);
@@ -37,7 +37,7 @@ public final class PowerSetIterative {
         return result;
     }
 
-    private static boolean isBitSet(int n, int bitNum) {
-        return (n & (1 << bitNum)) != 0;
+    private static boolean isBitSet(int i, int bitNum) {
+        return (i & (1 << bitNum)) != 0;
     }
 }
