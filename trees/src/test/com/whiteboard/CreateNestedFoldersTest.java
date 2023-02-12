@@ -38,10 +38,7 @@ public class CreateNestedFoldersTest {
             new Folder("II.B.3",   "II.B")
         };
 
-        List<Folder> folderList = new LinkedList<>();
-        for (Folder folder : folderArray) {
-            folderList.add(folder);
-        }
+        List<Folder> folderList = new LinkedList<>(Arrays.asList(folderArray));
 
         ShuffleList.shuffleList(folderList);
         String[] folderNames = new String[folderList.size()];
@@ -54,25 +51,24 @@ public class CreateNestedFoldersTest {
         for (String folderName : folderNames) {
             System.out.println("\t" + folderName);
         }
-        String[] reorderedArray = CreateNestedFolders.createNestedFolders(folderNames, parentFolderNames);
-        assert(reorderedArray.length == folderArray.length);
-        List<String> reorderedList = Arrays.asList(reorderedArray);
+        List<String> reorderedList = CreateNestedFolders.createNestedFolders(folderNames, parentFolderNames);
+        assert (reorderedList.size() == folderArray.length);
 
         Map<String, String> parentFolderMap = new HashMap<>();
         for (Folder folder : folderArray) {
             parentFolderMap.put(folder.folderName, folder.parentFolderName);
         }
-        for (String folderName : reorderedArray) {
+        for (String folderName : reorderedList) {
             if (folderName.equals("root")) {
-                assert(reorderedList.indexOf(folderName) == 0);
+                assert (reorderedList.indexOf(folderName) == 0);
                 continue;
             }
             String parentName = parentFolderMap.get(folderName);
-            assert(reorderedList.indexOf(parentName) < reorderedList.indexOf(folderName));
+            assert (reorderedList.indexOf(parentName) < reorderedList.indexOf(folderName));
         }
 
         System.out.println("Creation order:");
-        for (String folderName : reorderedArray) {
+        for (String folderName : reorderedList) {
             System.out.println("\t" + folderName);
         }
     }

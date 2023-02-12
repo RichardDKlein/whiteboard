@@ -67,23 +67,27 @@ public final class CreateNestedFolders {
      * @param folderNames An array of folder and subfolder names, in no
      *                    particular order.
      * @param parentFolderNames An array of specifying the names of the
-     *                          corresponding parent folders.
-     * @return An array containing the folder names in a valid creation
+     *                          corresponding parent folders. (The top-
+     *                          level folder will have a parent folder
+     *                          name of null or the empty string.)
+     * @return A list containing the folder names in a valid creation
      * order.
      */
-    public static String[] createNestedFolders(String[] folderNames, String[] parentFolderNames) {
+    public static List<String> createNestedFolders(String[] folderNames, String[] parentFolderNames) {
         saveCallingParameters(folderNames, parentFolderNames);
         FolderNode root = buildFolderMap();
         return traverseFolderTreeInPreorder(root);
     }
 
     private static void saveCallingParameters(String[] folderNames, String[] parentFolderNames) {
+        folders.clear();
         for (int i = 0; i < folderNames.length; ++i) {
             folders.add(new Folder(folderNames[i], parentFolderNames[i]));
         }
     }
 
     private static FolderNode buildFolderMap() {
+        folderMap.clear();
         FolderNode root = null;
         for (Folder folder : folders) {
             FolderNode folderNode = findOrCreateFolderNode(folder.folderName);
@@ -109,13 +113,7 @@ public final class CreateNestedFolders {
         return folderNode;
     }
 
-    private static String[] traverseFolderTreeInPreorder(FolderNode root) {
-        List<String> folderList = traverseFolderTreeInPreorderHelper(root);
-        String[] folderArray = new String[folderList.size()];
-        return folderList.toArray(folderArray);
-    }
-
-    private static List<String> traverseFolderTreeInPreorderHelper(FolderNode root) {
+    private static List<String> traverseFolderTreeInPreorder(FolderNode root) {
         List<String> result = new ArrayList<>();
         // base case
         if (root == null) {
@@ -124,7 +122,7 @@ public final class CreateNestedFolders {
         // recursive step
         result.add(root.folderName);
         for (FolderNode child : root.childFolders) {
-            result.addAll(traverseFolderTreeInPreorderHelper(child));
+            result.addAll(traverseFolderTreeInPreorder(child));
         }
         return result;
     }
