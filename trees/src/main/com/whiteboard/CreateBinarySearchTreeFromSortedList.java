@@ -25,17 +25,16 @@ public final class CreateBinarySearchTreeFromSortedList {
         }
         // recursive step
         int mid = (sortedList.size() - 1) / 2;
-        E data = sortedList.get(mid);
         List<E> leftList = new ArrayList<>();
         for (int i = 0; i < mid; ++i) {
             leftList.add(sortedList.get(i));
         }
-        BinaryTreeNode<E> left = createBinarySearchTreeFromSortedList(leftList);
         List<E> rightList = new ArrayList<>();
         for (int i = mid + 1; i < sortedList.size(); ++i) {
             rightList.add(sortedList.get(i));
         }
-        BinaryTreeNode<E> right = createBinarySearchTreeFromSortedList(rightList);
-        return new BinaryTreeNode<>(data, left, right);
+        BinaryTreeNode<E> leftNode = createBinarySearchTreeFromSortedList(leftList);
+        BinaryTreeNode<E> rightNode = createBinarySearchTreeFromSortedList(rightList);
+        return new BinaryTreeNode<>(sortedList.get(mid), leftNode, rightNode);
     }
 }
