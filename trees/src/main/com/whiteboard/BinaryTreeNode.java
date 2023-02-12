@@ -1,20 +1,15 @@
 package com.whiteboard;
 
-public class BinaryTreeNode<E> {
-    E data;
-    BinaryTreeNode<E> left, right;
+import java.util.Objects;
 
-    BinaryTreeNode(E data, BinaryTreeNode<E> left, BinaryTreeNode<E> right) {
+public class BinaryTreeNode<E> {
+    public E data;
+    public BinaryTreeNode<E> left;
+    public BinaryTreeNode<E> right;
+
+    public BinaryTreeNode(E data, BinaryTreeNode<E> left, BinaryTreeNode<E> right) {
         this.data = data;
         this.left = left;
         this.right = right;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof BinaryTreeNode<?> other)) {
-            return false;
-        }
-        return this.data == other.data && this.left.equals(other.left) && this.right.equals(other.right);
     }
 }
