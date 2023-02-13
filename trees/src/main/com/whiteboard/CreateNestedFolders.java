@@ -36,7 +36,7 @@ public final class CreateNestedFolders {
 
     static class FolderNode {
         String folderName;
-        Set<FolderNode> childFolders = new HashSet<>();
+        Set<FolderNode> childFolderNodes = new HashSet<>();
 
         FolderNode(String folderName) {
             this.folderName = folderName;
@@ -95,7 +95,7 @@ public final class CreateNestedFolders {
             if (parentFolderNode == null) {
                 root = folderNode;
             } else {
-                parentFolderNode.childFolders.add(folderNode);
+                parentFolderNode.childFolderNodes.add(folderNode);
             }
         }
         return root;
@@ -121,8 +121,8 @@ public final class CreateNestedFolders {
         }
         // recursive step
         result.add(root.folderName);
-        for (FolderNode child : root.childFolders) {
-            result.addAll(traverseFolderTreeInPreorder(child));
+        for (FolderNode childFolderNode : root.childFolderNodes) {
+            result.addAll(traverseFolderTreeInPreorder(childFolderNode));
         }
         return result;
     }
