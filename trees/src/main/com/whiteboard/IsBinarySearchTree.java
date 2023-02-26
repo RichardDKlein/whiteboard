@@ -21,21 +21,20 @@ public final class IsBinarySearchTree {
      * 'false' otherwise.
      */
     public static boolean isBinarySearchTree(BinaryTreeNode<Integer> root) {
-        List<Integer> inorderList = traverseInorder(root);
-        return isInAscendingOrder(inorderList);
+        List<Integer> inOrderList = traverseTreeInOrder(root);
+        return isInAscendingOrder(inOrderList);
     }
 
-    // Declared package-private so unit tests can call it.
-    static List<Integer> traverseInorder(BinaryTreeNode<Integer> root) {
+    static List<Integer> traverseTreeInOrder(BinaryTreeNode<Integer> root) {
         List<Integer> result = new ArrayList<>();
         // base case
         if (root == null) {
             return result;
         }
         // recursive step
-        result.addAll(traverseInorder(root.left));
+        result.addAll(traverseTreeInOrder(root.left));
         result.add(root.data);
-        result.addAll(traverseInorder(root.right));
+        result.addAll(traverseTreeInOrder(root.right));
         return result;
     }
 

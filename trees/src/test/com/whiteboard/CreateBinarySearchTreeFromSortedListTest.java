@@ -29,7 +29,7 @@ public class CreateBinarySearchTreeFromSortedListTest {
                 Arrays.toString(sortedList.toArray()));
         BinaryTreeNode<Integer> root = CreateBinarySearchTreeFromSortedList
                 .createBinarySearchTreeFromSortedList(sortedList);
-        List<Integer> inorderTraversal = IsBinarySearchTree.traverseInorder(root);
+        List<Integer> inorderTraversal = IsBinarySearchTree.traverseTreeInOrder(root);
         assert(inorderTraversal.equals(sortedList));
         System.out.println("inorder traversal of binary search tree = " +
                 Arrays.toString(inorderTraversal.toArray()));
