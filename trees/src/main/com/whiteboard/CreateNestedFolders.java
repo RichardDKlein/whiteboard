@@ -36,7 +36,7 @@ public final class CreateNestedFolders {
 
     static class FolderNode {
         String folderName;
-        Set<FolderNode> childFolderNodes = new HashSet<>();
+        Set<FolderNode> subfolderNodes = new HashSet<>();
 
         FolderNode(String folderName) {
             this.folderName = folderName;
@@ -75,8 +75,8 @@ public final class CreateNestedFolders {
      */
     public static List<String> createNestedFolders(String[] folderNames, String[] parentFolderNames) {
         saveCallingParameters(folderNames, parentFolderNames);
-        FolderNode root = buildFolderMap();
-        return traverseFolderTreeInPreorder(root);
+        FolderNode root = buildFolderTree();
+        return traverseFolderTreeInPreOrder(root);
     }
 
     private static void saveCallingParameters(String[] folderNames, String[] parentFolderNames) {
@@ -86,7 +86,7 @@ public final class CreateNestedFolders {
         }
     }
 
-    private static FolderNode buildFolderMap() {
+    private static FolderNode buildFolderTree() {
         folderMap.clear();
         FolderNode root = null;
         for (Folder folder : folders) {
@@ -95,7 +95,7 @@ public final class CreateNestedFolders {
             if (parentFolderNode == null) {
                 root = folderNode;
             } else {
-                parentFolderNode.childFolderNodes.add(folderNode);
+                parentFolderNode.subfolderNodes.add(folderNode);
             }
         }
         return root;
@@ -113,7 +113,7 @@ public final class CreateNestedFolders {
         return folderNode;
     }
 
-    private static List<String> traverseFolderTreeInPreorder(FolderNode root) {
+    private static List<String> traverseFolderTreeInPreOrder(FolderNode root) {
         List<String> result = new ArrayList<>();
         // base case
         if (root == null) {
@@ -121,8 +121,8 @@ public final class CreateNestedFolders {
         }
         // recursive step
         result.add(root.folderName);
-        for (FolderNode childFolderNode : root.childFolderNodes) {
-            result.addAll(traverseFolderTreeInPreorder(childFolderNode));
+        for (FolderNode subfolderNode : root.subfolderNodes) {
+            result.addAll(traverseFolderTreeInPreOrder(subfolderNode));
         }
         return result;
     }
