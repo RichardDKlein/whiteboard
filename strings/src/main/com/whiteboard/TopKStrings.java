@@ -10,20 +10,13 @@ public final class TopKStrings {
     private TopKStrings() {
     }
 
-    private static class StringCountEntryComparator implements Comparator<Map.Entry<String, Integer>> {
-        @Override
-        public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-            return o1.getValue() - o2.getValue();
-        }
-    }
-
     private static List<String> strings;
     private static int k;
 
     private static Map<String, Integer> stringCounts = new HashMap<>();
 
     private static PriorityQueue<Map.Entry<String, Integer>> minHeap =
-            new PriorityQueue<>(new StringCountEntryComparator());
+            new PriorityQueue<>((x, y) -> x.getValue() - y.getValue());
 
     /**
      * Find the 'k' most frequently occurring strings in a list of
@@ -47,6 +40,7 @@ public final class TopKStrings {
     }
 
     private static void countStrings() {
+        stringCounts.clear();
         for (String s : strings) {
             Integer count = stringCounts.get(s);
             if (count == null) {
@@ -58,6 +52,7 @@ public final class TopKStrings {
     }
 
     private static void buildMinHeap() {
+        minHeap.clear();
         for (Map.Entry<String, Integer> entry : stringCounts.entrySet()) {
             int count = entry.getValue();
             if (minHeap.isEmpty() || count >= minHeap.peek().getValue()) {
