@@ -21,16 +21,16 @@ public final class PermutationsOfString {
         Set<String> result = new HashSet<>();
         // base case
         if (s.isEmpty()) {
-            result.add("");
+            result.add(s);
             return result;
         }
         // recursive step
         char firstChar = s.charAt(0);
         String remainder = s.substring(1);
-        Set<String> remainderPermutations = permutationsOfString(remainder);
-        for (String remainderPermutation : remainderPermutations) {
-            for (int i = 0; i <= remainderPermutation.length(); ++i) {
-                String permutation = insertChar(remainderPermutation, firstChar, i);
+        Set<String> permutationsOfRemainder = permutationsOfString(remainder);
+        for (String permutationOfRemainder : permutationsOfRemainder) {
+            for (int i = 0; i <= permutationOfRemainder.length(); ++i) {
+                String permutation = insertChar(permutationOfRemainder, firstChar, i);
                 result.add(permutation);
             }
         }
