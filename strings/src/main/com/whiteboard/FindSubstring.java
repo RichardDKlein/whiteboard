@@ -18,19 +18,19 @@ public final class FindSubstring {
     public static int findSubstring(String string, String substring) {
         int lastIndexToCheck = string.length() - substring.length();
         for (int i = 0; i <= lastIndexToCheck; ++i) {
-            if (string.charAt(i) == substring.charAt(0)) {
-                boolean foundSubstring = true;
-                for (int j = 1; j < substring.length(); ++j) {
-                    if (string.charAt(i + j) != substring.charAt(j)) {
-                        foundSubstring = false;
-                        break;
-                    }
-                }
-                if (foundSubstring) {
-                    return i;
-                }
+            if (substringFound(string, substring, i)) {
+                return i;
             }
         }
         return -1;
+    }
+
+    private static boolean substringFound(String string, String substring, int i) {
+        for (int j = 0; j < substring.length(); ++j) {
+            if (string.charAt(i + j) != substring.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
