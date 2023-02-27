@@ -40,7 +40,8 @@ public final class ArrayHopscotch {
      *          elements in the array are greater than or
      *          equal to zero.
      * @param iStart The starting index for our game of
-     *               hopscotch.
+     *               hopscotch. You may assume that it is
+     *               within the bounds of the given array.
      * @return A list containing a winning sequence of
      * indices that led to a zero. (If no such winning
      * sequence exists, then the list will be empty.)
@@ -52,10 +53,6 @@ public final class ArrayHopscotch {
 
     private static List<Integer> arrayHopscotchHelper(int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
-        // error checking
-        if (iStart < 0 || iStart > a.length - 1) {
-            return result;
-        }
         // base case
         if (a[iStart] == 0) {
             result.add(iStart);
@@ -64,7 +61,7 @@ public final class ArrayHopscotch {
         // recursive step
         visited.add(iStart);
         int iHopLeft = iStart - a[iStart];
-        if (!visited.contains(iHopLeft)) {
+        if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
             List<Integer> remainingHops = arrayHopscotchHelper(a, iHopLeft, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
@@ -73,7 +70,7 @@ public final class ArrayHopscotch {
             }
         }
         int iHopRight = iStart + a[iStart];
-        if (!visited.contains(iHopRight)) {
+        if (iHopRight < a.length && !visited.contains(iHopRight)) {
             List<Integer> remainingHops = arrayHopscotchHelper(a, iHopRight, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
