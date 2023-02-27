@@ -31,7 +31,7 @@ public final class TopKStrings {
         saveCallingParameters(strings, k);
         countStrings();
         buildMinHeap();
-        return extractResults();
+        return extractResultsFromMinHeap();
     }
 
     private static void saveCallingParameters(List<String> strings, int k) {
@@ -53,10 +53,9 @@ public final class TopKStrings {
 
     private static void buildMinHeap() {
         minHeap.clear();
-        for (Map.Entry<String, Integer> entry : stringCounts.entrySet()) {
-            int count = entry.getValue();
-            if (minHeap.isEmpty() || count >= minHeap.peek().getValue()) {
-                minHeap.add(entry);
+        for (Map.Entry<String, Integer> stringCountEntry : stringCounts.entrySet()) {
+            if (minHeap.isEmpty() || minHeap.peek().getValue() <= stringCountEntry.getValue()) {
+                minHeap.add(stringCountEntry);
                 while (minHeap.size() > k) {
                     minHeap.poll();
                 }
@@ -64,7 +63,7 @@ public final class TopKStrings {
         }
     }
 
-    private static List<Map.Entry<String, Integer>> extractResults() {
+    private static List<Map.Entry<String, Integer>> extractResultsFromMinHeap() {
         LinkedList<Map.Entry<String, Integer>> result = new LinkedList<>();
         while (!minHeap.isEmpty()) {
             result.addFirst(minHeap.poll());
