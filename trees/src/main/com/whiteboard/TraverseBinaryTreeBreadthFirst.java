@@ -19,9 +19,6 @@ public final class TraverseBinaryTreeBreadthFirst {
     public static <E> List<E>
     traverseBinaryTreeBreadthFirst(BinaryTreeNode<E> root) {
         List<E> result = new ArrayList<>();
-        if (root == null) {
-            return result;
-        }
         Queue<BinaryTreeNode<E>> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
