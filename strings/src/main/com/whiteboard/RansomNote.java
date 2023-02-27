@@ -37,7 +37,7 @@ public final class RansomNote {
      */
     public static boolean ransomNote(String note, String magazine) {
         saveCallingParameters(note, magazine);
-        inventoryMagazine();
+        inventoryMagazineChars();
         return createNoteFromMagazineInventory();
     }
 
@@ -46,7 +46,7 @@ public final class RansomNote {
         RansomNote.magazine = magazine;
     }
 
-    private static void inventoryMagazine() {
+    private static void inventoryMagazineChars() {
         magazineInventory.clear();
         for (int i = 0; i < magazine.length(); ++i) {
             char c = magazine.charAt(i);
