@@ -12,8 +12,6 @@ public final class ArrayHopscotch {
     private ArrayHopscotch() {
     }
 
-    private static Set<Integer> visited = new HashSet<>();
-
     /**
      * Play a game of "array hopscotch".
      *
@@ -48,13 +46,14 @@ public final class ArrayHopscotch {
      * sequence exists, then the list will be empty.)
      */
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
+        Set<Integer> visited = new HashSet<>();
+        return arrayHopscotchHelper(a, iStart, visited);
+    }
+
+    private static List<Integer> arrayHopscotchHelper(int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
         // error checking
         if (iStart < 0 || iStart > a.length - 1) {
-            return result;
-        }
-        // check for loop
-        if (visited.contains(iStart)) {
             return result;
         }
         // base case
@@ -65,18 +64,22 @@ public final class ArrayHopscotch {
         // recursive step
         visited.add(iStart);
         int iHopLeft = iStart - a[iStart];
-        List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
-        if (!remainingHops.isEmpty()) {
-            result.add(iStart);
-            result.addAll(remainingHops);
-            return result;
+        if (!visited.contains(iHopLeft)) {
+            List<Integer> remainingHops = arrayHopscotchHelper(a, iHopLeft, visited);
+            if (!remainingHops.isEmpty()) {
+                result.add(iStart);
+                result.addAll(remainingHops);
+                return result;
+            }
         }
         int iHopRight = iStart + a[iStart];
-        remainingHops = arrayHopscotch(a, iHopRight);
-        if (!remainingHops.isEmpty()) {
-            result.add(iStart);
-            result.addAll(remainingHops);
-            return result;
+        if (!visited.contains(iHopRight)) {
+            List<Integer> remainingHops = arrayHopscotchHelper(a, iHopRight, visited);
+            if (!remainingHops.isEmpty()) {
+                result.add(iStart);
+                result.addAll(remainingHops);
+                return result;
+            }
         }
         // no solution
         return result;

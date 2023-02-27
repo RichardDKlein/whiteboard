@@ -14,6 +14,7 @@ public class ArrayHopscotchTest {
 
         int[][] a = {
                 {2, 3, 1, 0, 5},
+                {2, 2, 2, 0, 0},
                 {2, 2, 2, 0, 2},
                 {1, 1, 1, 3, 1, 2, 0, 3}
         };
@@ -21,17 +22,20 @@ public class ArrayHopscotchTest {
         int[] iStart = {
                 0,
                 0,
+                0,
                 5
         };
 
         List<Integer> expected0 = Arrays.asList(0, 2, 3);
-        List<Integer> expected1 = new ArrayList<>();
-        List<Integer> expected2 = Arrays.asList(5, 3, 6);
+        List<Integer> expected1 = Arrays.asList(0, 2, 4);
+        List<Integer> expected2 = new ArrayList<>();
+        List<Integer> expected3 = Arrays.asList(5, 3, 6);
 
         List<List<Integer>> expected = new ArrayList<>();
         expected.add(expected0);
         expected.add(expected1);
         expected.add(expected2);
+        expected.add(expected3);
 
         for (int i = 0; i < a.length; ++i) {
             System.out.println(Arrays.toString(a[i]) + ", start = " + iStart[i]);
