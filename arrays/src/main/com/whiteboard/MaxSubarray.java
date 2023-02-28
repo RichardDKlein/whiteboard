@@ -37,7 +37,7 @@ public final class MaxSubarray {
      * We'll choose the latter.
      *
      * The algorithm consists of simply iterating thru a[],
-     * computing a[i] from a[i - 1], and keeping track of
+     * computing S(i) from S(i - 1), and keeping track of
      * the maximum.
      *
      * The execution time is O(n).
