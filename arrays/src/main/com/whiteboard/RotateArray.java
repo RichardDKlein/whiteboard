@@ -27,9 +27,8 @@ public final class RotateArray {
      */
     public static void rotateArray(int[][] a) {
         transposeArray(a);
-        int numRows = a.length;
-        for (int row = 0; row < numRows; ++row) {
-            reverseRow(a, row);
+        for (int[] row : a) {
+            reverseRow(row);
         }
     }
 
@@ -44,14 +43,14 @@ public final class RotateArray {
         }
     }
 
-    private static void reverseRow(int[][] a, int row) {
-        int numCols = a[0].length;
+    private static void reverseRow(int[] row) {
+        int numCols = row.length;
         int left = 0;
         int right = numCols - 1;
         while (left < right) {
-            int tmp = a[row][left];
-            a[row][left] = a[row][right];
-            a[row][right] = tmp;
+            int tmp = row[left];
+            row[left] = row[right];
+            row[right] = tmp;
             ++left;
             --right;
         }
