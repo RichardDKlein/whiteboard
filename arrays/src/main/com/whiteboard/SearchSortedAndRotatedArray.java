@@ -52,7 +52,7 @@ public final class SearchSortedAndRotatedArray {
                 }
             }
         }
-        // no solution
+        // target not found
         return -1;
     }
 }
