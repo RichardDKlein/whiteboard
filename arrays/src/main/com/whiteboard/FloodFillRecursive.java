@@ -37,7 +37,7 @@ public final class FloodFillRecursive {
         // error checking
         int numRows = a.length;
         int numCols = a[0].length;
-        if (seedRow < 0 || seedRow > numRows - 1 || seedCol < 0 || seedCol > numCols - 1) {
+        if (seedRow < 0 || seedRow >= numRows || seedCol < 0 || seedCol >= numCols) {
             return;
         }
         // base case
