@@ -39,13 +39,13 @@ public class CircularQueue {
         if (isEmpty()) {
             return null;
         }
-        Integer result = buf[head];
+        int element = buf[head];
         head = (head + 1) % buf.length;
-        return result;
+        return element;
     }
 
     private boolean isFull() {
-        return (tail + 1) % buf.length == head;
+        return ((tail + 1) % buf.length) == head;
     }
 
     private boolean isEmpty() {
