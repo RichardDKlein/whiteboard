@@ -47,10 +47,9 @@ public final class SearchSorted2dArray {
         int row = numRows - 1;
         int col = 0;
         while (row >= 0 && col < numCols) {
-            int current = a[row][col];
-            if (current < target) {
+            if (a[row][col] < target) {
                 ++col;
-            } else if (current > target) {
+            } else if (a[row][col] > target) {
                 --row;
             } else {
                 result[0] = row;
@@ -58,7 +57,7 @@ public final class SearchSorted2dArray {
                 return result;
             }
         }
-        // no solution
+        // target not found
         return result;
     }
 }
