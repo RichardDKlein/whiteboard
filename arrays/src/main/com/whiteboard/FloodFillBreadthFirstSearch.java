@@ -13,7 +13,7 @@ public final class FloodFillBreadthFirstSearch {
     private FloodFillBreadthFirstSearch() {
     }
 
-    static class RowCol {
+    private static class RowCol {
         int row;
         int col;
 
@@ -27,7 +27,7 @@ public final class FloodFillBreadthFirstSearch {
             if (!(o instanceof RowCol other)) {
                 return false;
             }
-            return (this.row == other.row && this.col == other.col);
+            return this.row == other.row && this.col == other.col;
         }
 
         @Override
@@ -65,7 +65,7 @@ public final class FloodFillBreadthFirstSearch {
             int row = pixel.row;
             int col = pixel.col;
             // error checking
-            if (row < 0 || row > numRows - 1 || col < 0 || col > numCols - 1) {
+            if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
             // check if pixel already filled
