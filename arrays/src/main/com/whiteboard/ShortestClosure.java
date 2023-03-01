@@ -80,7 +80,7 @@ public final class ShortestClosure {
 
     private static int[] getNextClosure() {
         int[] result = {Integer.MAX_VALUE, Integer.MIN_VALUE};
-        int startNeedle = -1;
+        Integer startNeedle = null;
         for (int needle : needles) {
             List<Integer> needleLocationList = needleLocations.get(needle);
             if (needleLocationList.isEmpty()) {
