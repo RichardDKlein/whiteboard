@@ -35,7 +35,7 @@ public final class SalesTerritories {
     }
 
     private static Set<Set<String>> cityPairs;
-    private static Map<String, CityNode> cityMap = new HashMap<>();
+    private static Map<String, CityNode> cityGraph = new HashMap<>();
     private static Set<CityNode> visited = new HashSet<>();
 
     /**
@@ -63,7 +63,7 @@ public final class SalesTerritories {
      */
     public static Set<Set<String>> salesTerritories(Set<Set<String>> cityPairs) {
         saveCallingParameter(cityPairs);
-        buildCityMap();
+        buildCityGraph();
         return findTerritories();
     }
 
@@ -71,7 +71,8 @@ public final class SalesTerritories {
         SalesTerritories.cityPairs = cityPairs;
     }
 
-    private static void buildCityMap() {
+    private static void buildCityGraph() {
+        cityGraph.clear();
         for (Set<String> cityPair : cityPairs) {
             Iterator<String> iterator = cityPair.iterator();
             String cityName1 = iterator.next();
@@ -84,17 +85,17 @@ public final class SalesTerritories {
     }
 
     private static CityNode findOrCreateCityNode(String cityName) {
-        CityNode cityNode = cityMap.get(cityName);
+        CityNode cityNode = cityGraph.get(cityName);
         if (cityNode == null) {
             cityNode = new CityNode(cityName);
-            cityMap.put(cityName, cityNode);
+            cityGraph.put(cityName, cityNode);
         }
         return cityNode;
     }
 
     private static Set<Set<String>> findTerritories() {
         Set<Set<String>> result = new HashSet<>();
-        for (CityNode cityNode : cityMap.values()) {
+        for (CityNode cityNode : cityGraph.values()) {
             if (visited.contains(cityNode)) {
                 continue;
             }
