@@ -41,7 +41,7 @@ public final class SolveMaze {
         int startCol = start[1];
         int numRows = maze.length;
         int numCols = maze[0].length;
-        if (startRow < 0 || startRow > numRows - 1 || startCol < 0 || startCol > numCols - 1) {
+        if (startRow < 0 || startRow >= numRows || startCol < 0 || startCol >= numCols) {
             return result;
         }
         if (maze[startRow][startCol] == '@') {
