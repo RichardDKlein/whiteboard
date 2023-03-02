@@ -21,7 +21,7 @@ public final class ShuffleList {
      * @param list The list to be shuffled.
      */
     public static <E> void shuffleList(List<E> list) {
-        for (int i = 0; i <= list.size() - 2; ++i) {
+        for (int i = 0; i < list.size() - 1; ++i) {
             int j = randomIntegerInInterval(i + 1, list.size() - 1);
             swapElements(list, i, j);
         }
