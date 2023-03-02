@@ -25,7 +25,7 @@ public final class SalesTerritories {
             if (!(o instanceof CityNode other)) {
                 return false;
             }
-            return (this.cityName.equals(other.cityName));
+            return this.cityName.equals(other.cityName);
         }
 
         @Override
@@ -105,18 +105,18 @@ public final class SalesTerritories {
         return result;
     }
 
-    private static Set<String> findConnectedCities(CityNode startingNode) {
+    private static Set<String> findConnectedCities(CityNode cityNode) {
         Set<String> result = new HashSet<>();
-        Queue<CityNode> cityNodeQueue = new LinkedList<>();
-        cityNodeQueue.add(startingNode);
-        while (!cityNodeQueue.isEmpty()) {
-            CityNode cityNode = cityNodeQueue.poll();
-            if (visited.contains(cityNode)) {
+        Queue<CityNode> queue = new LinkedList<>();
+        queue.add(cityNode);
+        while (!queue.isEmpty()) {
+            CityNode node = queue.poll();
+            if (visited.contains(node)) {
                 continue;
             }
-            visited.add(cityNode);
-            result.add(cityNode.cityName);
-            cityNodeQueue.addAll(cityNode.adjacentCities);
+            visited.add(node);
+            result.add(node.cityName);
+            queue.addAll(node.adjacentCities);
         }
         return result;
     }
