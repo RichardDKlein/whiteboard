@@ -19,7 +19,7 @@ public class ProducerConsumerQueue<E> {
         this.capacity = capacity;
     }
 
-    public synchronized void produce(E element) {
+    public synchronized void produce(E item) {
         while (isFull()) {
             try {
                 wait();
@@ -27,7 +27,7 @@ public class ProducerConsumerQueue<E> {
                 e.printStackTrace();
             }
         }
-        queue.add(element);
+        queue.add(item);
         // notify consumer threads blocked on empty queue
         notifyAll();
     }
