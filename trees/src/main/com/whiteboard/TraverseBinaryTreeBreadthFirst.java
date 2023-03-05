@@ -19,16 +19,16 @@ public final class TraverseBinaryTreeBreadthFirst {
     public static <E> List<E>
     traverseBinaryTreeBreadthFirst(BinaryTreeNode<E> root) {
         List<E> result = new ArrayList<>();
-        Queue<BinaryTreeNode<E>> nodeQueue = new LinkedList<>();
-        nodeQueue.add(root);
-        while (!nodeQueue.isEmpty()) {
-            BinaryTreeNode<E> node = nodeQueue.poll();
+        Queue<BinaryTreeNode<E>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryTreeNode<E> node = queue.poll();
             if (node == null) {
                 continue;
             }
             result.add(node.data);
-            nodeQueue.add(node.left);
-            nodeQueue.add(node.right);
+            queue.add(node.left);
+            queue.add(node.right);
         }
         return result;
     }
