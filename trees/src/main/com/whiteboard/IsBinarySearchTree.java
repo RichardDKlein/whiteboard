@@ -22,7 +22,7 @@ public final class IsBinarySearchTree {
      */
     public static boolean isBinarySearchTree(BinaryTreeNode<Integer> root) {
         List<Integer> inOrderList = traverseTreeInOrder(root);
-        return isInAscendingOrder(inOrderList);
+        return isAscending(inOrderList);
     }
 
     static List<Integer> traverseTreeInOrder(BinaryTreeNode<Integer> root) {
@@ -38,9 +38,9 @@ public final class IsBinarySearchTree {
         return result;
     }
 
-    private static boolean isInAscendingOrder(List<Integer> list) {
+    private static boolean isAscending(List<Integer> list) {
         for (int i = 0; i < list.size() - 1; ++i) {
-            if (list.get(i) > list.get(i + 1)) {
+            if (list.get(i + 1) < list.get(i)) {
                 return false;
             }
         }
