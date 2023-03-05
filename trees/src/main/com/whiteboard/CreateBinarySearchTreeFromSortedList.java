@@ -33,8 +33,8 @@ public final class CreateBinarySearchTreeFromSortedList {
         for (int i = mid + 1; i < sortedList.size(); ++i) {
             rightSortedList.add(sortedList.get(i));
         }
-        BinaryTreeNode<E> leftBinarySearchTree = createBinarySearchTreeFromSortedList(leftSortedList);
-        BinaryTreeNode<E> rightBinarySearchTree = createBinarySearchTreeFromSortedList(rightSortedList);
-        return new BinaryTreeNode(sortedList.get(mid), leftBinarySearchTree, rightBinarySearchTree);
+        BinaryTreeNode<E> left = createBinarySearchTreeFromSortedList(leftSortedList);
+        BinaryTreeNode<E> right = createBinarySearchTreeFromSortedList(rightSortedList);
+        return new BinaryTreeNode<E>(sortedList.get(mid), left, right);
     }
 }
