@@ -36,7 +36,7 @@ public final class CreateNestedFolders {
 
     static class FolderNode {
         String folderName;
-        Set<FolderNode> subfolderNodes = new HashSet<>();
+        Set<FolderNode> subFolders = new HashSet<>();
 
         FolderNode(String folderName) {
             this.folderName = folderName;
@@ -56,8 +56,8 @@ public final class CreateNestedFolders {
         }
     }
 
-    private static List<Folder> folders = new ArrayList<>();
-    private static Map<String, FolderNode> folderMap = new HashMap<>();
+    private static Folder[] folders;
+    private static Map<String, FolderNode> folderTree = new HashMap<>();
 
     /**
      * Given an array of folders and subfolders in no particular order,
@@ -80,14 +80,14 @@ public final class CreateNestedFolders {
     }
 
     private static void saveCallingParameters(String[] folderNames, String[] parentFolderNames) {
-        folders.clear();
+        folders = new Folder[folderNames.length];
         for (int i = 0; i < folderNames.length; ++i) {
-            folders.add(new Folder(folderNames[i], parentFolderNames[i]));
+            folders[i] = new Folder(folderNames[i], parentFolderNames[i]);
         }
     }
 
     private static FolderNode buildFolderTree() {
-        folderMap.clear();
+        folderTree.clear();
         FolderNode root = null;
         for (Folder folder : folders) {
             FolderNode folderNode = findOrCreateFolderNode(folder.folderName);
@@ -95,7 +95,7 @@ public final class CreateNestedFolders {
             if (parentFolderNode == null) {
                 root = folderNode;
             } else {
-                parentFolderNode.subfolderNodes.add(folderNode);
+                parentFolderNode.subFolders.add(folderNode);
             }
         }
         return root;
@@ -105,10 +105,10 @@ public final class CreateNestedFolders {
         if (folderName == null || folderName.isEmpty()) {
             return null;
         }
-        FolderNode folderNode = folderMap.get(folderName);
+        FolderNode folderNode = folderTree.get(folderName);
         if (folderNode == null) {
             folderNode = new FolderNode(folderName);
-            folderMap.put(folderName, folderNode);
+            folderTree.put(folderName, folderNode);
         }
         return folderNode;
     }
@@ -121,8 +121,8 @@ public final class CreateNestedFolders {
         }
         // recursive step
         result.add(root.folderName);
-        for (FolderNode subfolderNode : root.subfolderNodes) {
-            result.addAll(traverseFolderTreeInPreOrder(subfolderNode));
+        for (FolderNode subFolder : root.subFolders) {
+            result.addAll(traverseFolderTreeInPreOrder(subFolder));
         }
         return result;
     }
