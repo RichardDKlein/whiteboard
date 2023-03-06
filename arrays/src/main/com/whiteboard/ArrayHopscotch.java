@@ -48,10 +48,11 @@ public final class ArrayHopscotch {
      */
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
         Set<Integer> visited = new HashSet<>();
-        return arrayHopscotchHelper(a, iStart, visited);
+        return arrayHopscotchWithLoopDetection(a, iStart, visited);
     }
 
-    private static List<Integer> arrayHopscotchHelper(int[] a, int iStart, Set<Integer> visited) {
+    private static List<Integer>
+    arrayHopscotchWithLoopDetection(int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
         // base case
         if (a[iStart] == 0) {
@@ -62,7 +63,7 @@ public final class ArrayHopscotch {
         visited.add(iStart);
         int iHopLeft = iStart - a[iStart];
         if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
-            List<Integer> remainingHops = arrayHopscotchHelper(a, iHopLeft, visited);
+            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
@@ -71,7 +72,7 @@ public final class ArrayHopscotch {
         }
         int iHopRight = iStart + a[iStart];
         if (iHopRight < a.length && !visited.contains(iHopRight)) {
-            List<Integer> remainingHops = arrayHopscotchHelper(a, iHopRight, visited);
+            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopRight, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
