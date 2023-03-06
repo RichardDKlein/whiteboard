@@ -13,29 +13,6 @@ public final class FloodFillBreadthFirstSearch {
     private FloodFillBreadthFirstSearch() {
     }
 
-    private static class RowCol {
-        int row;
-        int col;
-
-        RowCol(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (!(o instanceof RowCol other)) {
-                return false;
-            }
-            return this.row == other.row && this.col == other.col;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(row, col);
-        }
-    }
-
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D array, using a Breadth-First Search (BFS)
@@ -58,12 +35,13 @@ public final class FloodFillBreadthFirstSearch {
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
         int numRows = a.length;
         int numCols = a[0].length;
-        Queue<RowCol> queue = new LinkedList<>();
-        queue.add(new RowCol(seedRow, seedCol));
+        Queue<int[]> queue = new LinkedList<>();
+        int[] seed = {seedRow, seedCol};
+        queue.add(seed);
         while (!queue.isEmpty()) {
-            RowCol pixel = queue.poll();
-            int row = pixel.row;
-            int col = pixel.col;
+            int[] pixel = queue.poll();
+            int row = pixel[0];
+            int col = pixel[1];
             // error checking
             if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
@@ -75,10 +53,14 @@ public final class FloodFillBreadthFirstSearch {
             // fill the pixel
             a[row][col] = '@';
             // add the pixel's neighbors to the queue
-            queue.add(new RowCol(row, col - 1));
-            queue.add(new RowCol(row - 1, col));
-            queue.add(new RowCol(row, col + 1));
-            queue.add(new RowCol(row + 1, col));
+            int[] goLeft = {row, col - 1};
+            int[] goUp = {row - 1, col};
+            int[] goRight = {row, col + 1};
+            int[] goDown = {row + 1, col};
+            queue.add(goLeft);
+            queue.add(goUp);
+            queue.add(goRight);
+            queue.add(goDown);
         }
     }
 }
