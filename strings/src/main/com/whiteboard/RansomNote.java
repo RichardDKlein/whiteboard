@@ -13,7 +13,6 @@ public final class RansomNote {
 
     private static String note;
     private static String magazine;
-
     private static Map<Character, Integer> magazineInventory = new HashMap<>();
 
     /**
@@ -65,9 +64,8 @@ public final class RansomNote {
             Integer count = magazineInventory.get(c);
             if (count == null || count == 0) {
                 return false;
-            } else {
-                magazineInventory.put(c, count - 1);
             }
+            magazineInventory.put(c, count - 1);
         }
         return true;
     }
