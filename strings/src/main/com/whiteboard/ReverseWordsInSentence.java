@@ -18,19 +18,19 @@ public final class ReverseWordsInSentence {
         char[] buf = sentence.toCharArray();
         int i = 0;
         while (i < buf.length) {
-            int startOfNextWord = findStartOfNextWord(buf, i);
+            int startOfNextWord = startOfNextWord(buf, i);
             if (startOfNextWord < 0) {
                 break;
             }
-            int endOfNextWord = findEndOfCurrentWord(buf, startOfNextWord);
+            int endOfNextWord = endOfCurrentWord(buf, startOfNextWord);
             reverseWord(buf, startOfNextWord, endOfNextWord);
             i = endOfNextWord + 1;
         }
         return new String(buf);
     }
 
-    private static int findStartOfNextWord(char[] buf, int startingIndex) {
-        for (int i = startingIndex; i < buf.length; ++i) {
+    private static int startOfNextWord(char[] buf, int startingFrom) {
+        for (int i = startingFrom; i < buf.length; ++i) {
             if (!Character.isWhitespace(buf[i])) {
                 return i;
             }
@@ -38,8 +38,8 @@ public final class ReverseWordsInSentence {
         return -1;
     }
 
-    private static int findEndOfCurrentWord(char[] buf, int startingIndex) {
-        for (int i = startingIndex; i < buf.length; ++i) {
+    private static int endOfCurrentWord(char[] buf, int startingFrom) {
+        for (int i = startingFrom; i < buf.length; ++i) {
             if (Character.isWhitespace(buf[i])) {
                 return i - 1;
             }
