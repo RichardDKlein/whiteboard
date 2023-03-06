@@ -31,17 +31,19 @@ public final class ParseStringIntoWords {
         // recursive step
         for (int i = 0; i < s.length(); ++i) {
             String firstWord = s.substring(0, i + 1);
-            if (dictionary.contains(firstWord)) {
-                String remainder = s.substring(i + 1);
-                List<String> parseOfRemainder = parseStringIntoWords(remainder, dictionary);
-                if (parseOfRemainder == null) {
-                    // try a longer first word
-                    continue;
-                }
-                result.add(firstWord);
-                result.addAll(parseOfRemainder);
-                return result;
+            if (!dictionary.contains(firstWord)) {
+                // try a longer first word
+                continue;
             }
+            String remainder = s.substring(i + 1);
+            List<String> parseOfRemainder = parseStringIntoWords(remainder, dictionary);
+            if (parseOfRemainder == null) {
+                // try a longer first word
+                continue;
+            }
+            result.add(firstWord);
+            result.addAll(parseOfRemainder);
+            return result;
         }
         return null;
     }
