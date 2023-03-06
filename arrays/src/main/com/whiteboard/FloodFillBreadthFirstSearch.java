@@ -33,8 +33,6 @@ public final class FloodFillBreadthFirstSearch {
      * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
-        int numRows = a.length;
-        int numCols = a[0].length;
         Queue<int[]> queue = new LinkedList<>();
         int[] seed = {seedRow, seedCol};
         queue.add(seed);
@@ -43,6 +41,8 @@ public final class FloodFillBreadthFirstSearch {
             int row = pixel[0];
             int col = pixel[1];
             // error checking
+            int numRows = a.length;
+            int numCols = a[0].length;
             if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
