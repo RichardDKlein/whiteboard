@@ -12,9 +12,7 @@ public final class TopKStrings {
 
     private static List<String> strings;
     private static int k;
-
     private static Map<String, Integer> stringCounts = new HashMap<>();
-
     private static PriorityQueue<Map.Entry<String, Integer>> minHeap =
             new PriorityQueue<>((x, y) -> x.getValue() - y.getValue());
 
@@ -41,12 +39,12 @@ public final class TopKStrings {
 
     private static void countStrings() {
         stringCounts.clear();
-        for (String s : strings) {
-            Integer count = stringCounts.get(s);
+        for (String string : strings) {
+            Integer count = stringCounts.get(string);
             if (count == null) {
-                stringCounts.put(s, 1);
+                stringCounts.put(string, 1);
             } else {
-                stringCounts.put(s, count + 1);
+                stringCounts.put(string, count + 1);
             }
         }
     }
