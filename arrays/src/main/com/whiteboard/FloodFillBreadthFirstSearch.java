@@ -1,7 +1,6 @@
 package com.whiteboard;
 
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Queue;
 
 /**
