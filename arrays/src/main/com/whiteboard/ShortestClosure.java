@@ -13,7 +13,8 @@ public final class ShortestClosure {
 
     private static int[] haystack;
     private static Set<Integer> needles;
-    private static Map<Integer, List<Integer>> needleLocations = new HashMap<>();
+
+    private static Map<Integer, List<Integer>> needleLocationLists = new HashMap<>();
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -53,13 +54,13 @@ public final class ShortestClosure {
     }
 
     private static void buildNeedleLocationLists() {
-        needleLocations.clear();
+        needleLocationLists.clear();
         for (int needle : needles) {
-            needleLocations.put(needle, new ArrayList<>());
+            needleLocationLists.put(needle, new ArrayList<>());
         }
         for (int i = 0; i < haystack.length; ++i) {
             if (needles.contains(haystack[i])) {
-                needleLocations.get(haystack[i]).add(i);
+                needleLocationLists.get(haystack[i]).add(i);
             }
         }
     }
@@ -80,22 +81,23 @@ public final class ShortestClosure {
 
     private static int[] getNextClosure() {
         int[] result = {Integer.MAX_VALUE, Integer.MIN_VALUE};
-        Integer startNeedle = null;
+        Integer startingNeedle = null;
         for (int needle : needles) {
-            List<Integer> needleLocationList = needleLocations.get(needle);
+            List<Integer> needleLocationList = needleLocationLists.get(needle);
             if (needleLocationList.isEmpty()) {
                 return null;
             }
-            int needleSmallestIndex = needleLocationList.get(0);
-            if (needleSmallestIndex < result[0]) {
-                result[0] = needleSmallestIndex;
-                startNeedle = needle;
+            int needleSmallestLocation = needleLocationList.get(0);
+            if (needleSmallestLocation < result[0]) {
+                result[0] = needleSmallestLocation;
+                startingNeedle = needle;
             }
-            if (needleSmallestIndex > result[1]) {
-                result[1] = needleSmallestIndex;
+            if (needleSmallestLocation > result[1]) {
+                result[1] = needleSmallestLocation;
             }
         }
-        needleLocations.get(startNeedle).remove(0);
+        // don't use the starting needle's smallest location again
+        needleLocationLists.get(startingNeedle).remove(0);
         return result;
     }
 
