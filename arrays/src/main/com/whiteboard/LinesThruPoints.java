@@ -11,8 +11,8 @@ public final class LinesThruPoints {
     }
 
     private static class Line {
-        private float slope; // Float.MAX_VALUE if vertical
-        private float intercept; // x-coordinate if vertical
+        float slope; // Float.MAX_VALUE if line is vertical
+        float intercept; // x-coordinate if line is vertical
 
         Line(double x1, double y1, double x2, double y2) {
             if ((float)x1 == (float)x2) {
@@ -40,7 +40,6 @@ public final class LinesThruPoints {
 
     private static double[] x;
     private static double[] y;
-
     private static Map<Line, Integer> lineCounts = new HashMap<>();
 
     /**
@@ -92,8 +91,8 @@ public final class LinesThruPoints {
 
     private static int countRepeatedLines() {
         int result = 0;
-        for (int count : lineCounts.values()) {
-            if (count > 1) {
+        for (int lineCount : lineCounts.values()) {
+            if (lineCount > 1) {
                 ++result;
             }
         }
