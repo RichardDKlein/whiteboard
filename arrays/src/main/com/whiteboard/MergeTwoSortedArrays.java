@@ -30,10 +30,12 @@ public final class MergeTwoSortedArrays {
         int iResult, i1, i2;
         iResult = i1 = i2 = 0;
         while (iResult < result.length) {
+            // if a1 is fully merged, just append what remains of a2
             if (i1 >= a1.length) {
                 while (i2 < a2.length) {
                     result[iResult++] = a2[i2++];
                 }
+            // if a2 is fully merged, just append what remains of a1
             } else if (i2 >= a2.length) {
                 while (i1 < a1.length) {
                     result[iResult++] = a1[i1++];
