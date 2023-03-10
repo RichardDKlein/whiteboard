@@ -37,7 +37,7 @@ public final class PowerSetIterative {
         return result;
     }
 
-    private static boolean isBitSet(int i, int bitNum) {
-        return (i & (1 << bitNum)) != 0;
+    private static boolean isBitSet(int n, int bitNum) {
+        return (n & (1 << bitNum)) != 0;
     }
 }
