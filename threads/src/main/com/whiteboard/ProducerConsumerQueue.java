@@ -40,10 +40,10 @@ public class ProducerConsumerQueue<E> {
                 e.printStackTrace();
             }
         }
-        E result = queue.poll();
+        E item = queue.poll();
         // notify producer threads blocked on full queue
         notifyAll();
-        return result;
+        return item;
     }
 
     private boolean isFull() {
