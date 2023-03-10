@@ -6,8 +6,8 @@ import java.util.Stack;
  * Implement a queue using two stacks.
  */
 public class QueueUsingTwoStacks<E> {
-    Stack<E> addStack = new Stack<>();
-    Stack<E> pollStack = new Stack<>();
+    private Stack<E> addStack = new Stack<>();
+    private Stack<E> pollStack = new Stack<>();
 
     public void add(E item) {
         addStack.push(item);
