@@ -34,7 +34,7 @@ public final class CreateNestedFolders {
         }
     }
 
-    static class FolderNode {
+    private static class FolderNode {
         String folderName;
         Set<FolderNode> subFolders = new HashSet<>();
 
