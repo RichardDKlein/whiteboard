@@ -35,6 +35,6 @@ public final class CreateBinarySearchTreeFromSortedList {
         }
         BinaryTreeNode<E> left = createBinarySearchTreeFromSortedList(leftSortedList);
         BinaryTreeNode<E> right = createBinarySearchTreeFromSortedList(rightSortedList);
-        return new BinaryTreeNode<E>(sortedList.get(mid), left, right);
+        return new BinaryTreeNode<>(sortedList.get(mid), left, right);
     }
 }
