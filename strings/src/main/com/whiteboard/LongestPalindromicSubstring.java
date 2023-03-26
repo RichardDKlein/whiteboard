@@ -16,18 +16,20 @@ public final class LongestPalindromicSubstring {
      * @return The longest palindromic substring.
      */
     public static String longestPalindromicSubstring(String s) {
-        String result = s.substring(0, 1);
-        for (int i = 1; i < s.length() - 1; ++i) {
+        String longest = s.substring(0, 1);
+        for (int i = 0; i < s.length() - 1; ++i) {
             String longestWithEvenLength = longestCenteredAt(s, i, i + 1);
-            if (longestWithEvenLength.length() > result.length()) {
-                result = longestWithEvenLength;
-            }
-            String longestWithOddLength = longestCenteredAt(s, i - 1, i + 1);
-            if (longestWithOddLength.length() > result.length()) {
-                result = longestWithOddLength;
+            if (longestWithEvenLength.length() > longest.length()) {
+                longest = longestWithEvenLength;
             }
         }
-        return result;
+        for (int i = 1; i < s.length() - 1; ++i) {
+            String longestWithOddLength = longestCenteredAt(s, i - 1, i + 1);
+            if (longestWithOddLength.length() > longest.length()) {
+                longest = longestWithOddLength;
+            }
+        }
+        return longest;
     }
 
     private static String longestCenteredAt(String s, int left, int right) {
