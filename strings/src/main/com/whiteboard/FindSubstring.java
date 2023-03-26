@@ -25,9 +25,9 @@ public final class FindSubstring {
         return -1;
     }
 
-    private static boolean substringFound(String string, String substring, int i) {
-        for (int j = 0; j < substring.length(); ++j) {
-            if (string.charAt(i + j) != substring.charAt(j)) {
+    private static boolean substringFound(String string, String substring, int index) {
+        for (int i = 0; i < substring.length(); ++i) {
+            if (substring.charAt(i) != string.charAt(index + i)) {
                 return false;
             }
         }
