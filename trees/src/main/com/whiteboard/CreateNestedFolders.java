@@ -76,7 +76,7 @@ public final class CreateNestedFolders {
     public static List<String> createNestedFolders(String[] folderNames, String[] parentFolderNames) {
         saveCallingParameters(folderNames, parentFolderNames);
         FolderNode root = buildFolderTree();
-        return traverseFolderTreeInPreOrder(root);
+        return traverseFolderTreePreOrder(root);
     }
 
     private static void saveCallingParameters(String[] folderNames, String[] parentFolderNames) {
@@ -113,7 +113,7 @@ public final class CreateNestedFolders {
         return folderNode;
     }
 
-    private static List<String> traverseFolderTreeInPreOrder(FolderNode root) {
+    private static List<String> traverseFolderTreePreOrder(FolderNode root) {
         List<String> result = new ArrayList<>();
         // base case
         if (root == null) {
@@ -122,7 +122,7 @@ public final class CreateNestedFolders {
         // recursive step
         result.add(root.folderName);
         for (FolderNode subFolder : root.subFolders) {
-            result.addAll(traverseFolderTreeInPreOrder(subFolder));
+            result.addAll(traverseFolderTreePreOrder(subFolder));
         }
         return result;
     }
