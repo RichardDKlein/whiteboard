@@ -21,7 +21,7 @@ public final class PermutationsOfString {
         Set<String> result = new HashSet<>();
         // base case
         if (s.isEmpty()) {
-            result.add(s);
+            result.add("");
             return result;
         }
         // recursive step
