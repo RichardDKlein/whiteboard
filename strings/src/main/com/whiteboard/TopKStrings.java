@@ -39,21 +39,21 @@ public final class TopKStrings {
 
     private static void countStrings() {
         stringCounts.clear();
-        for (String string : strings) {
-            Integer count = stringCounts.get(string);
+        for (String s : strings) {
+            Integer count = stringCounts.get(s);
             if (count == null) {
-                stringCounts.put(string, 1);
+                stringCounts.put(s, 1);
             } else {
-                stringCounts.put(string, count + 1);
+                stringCounts.put(s, count + 1);
             }
         }
     }
 
     private static void buildMinHeap() {
         minHeap.clear();
-        for (Map.Entry<String, Integer> stringCountEntry : stringCounts.entrySet()) {
-            if (minHeap.isEmpty() || minHeap.peek().getValue() <= stringCountEntry.getValue()) {
-                minHeap.add(stringCountEntry);
+        for (Map.Entry<String, Integer> stringCount : stringCounts.entrySet()) {
+            if (minHeap.isEmpty() || minHeap.peek().getValue() <= stringCount.getValue()) {
+                minHeap.add(stringCount);
                 while (minHeap.size() > k) {
                     minHeap.poll();
                 }
