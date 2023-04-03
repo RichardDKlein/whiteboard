@@ -40,7 +40,7 @@ public final class LinesThruPoints {
 
     private static double[] x;
     private static double[] y;
-    private static Map<Line, Integer> lineCounts = new HashMap<>();
+    private static Map<Line, Integer> lines = new HashMap<>();
 
     /**
      * Given a collection of 2D points, finds the number of
@@ -75,15 +75,15 @@ public final class LinesThruPoints {
     }
 
     private static void findLinesThruPairsOfPoints() {
-        lineCounts.clear();
+        lines.clear();
         for (int i = 0; i < x.length - 1; ++i) {
             for (int j = i + 1; j < x.length; ++j) {
                 Line line = new Line(x[i], y[i], x[j], y[j]);
-                Integer count = lineCounts.get(line);
+                Integer count = lines.get(line);
                 if (count == null) {
-                    lineCounts.put(line, 1);
+                    lines.put(line, 1);
                 } else {
-                    lineCounts.put(line, count + 1);
+                    lines.put(line, count + 1);
                 }
             }
         }
@@ -91,7 +91,7 @@ public final class LinesThruPoints {
 
     private static int countRepeatedLines() {
         int result = 0;
-        for (int lineCount : lineCounts.values()) {
+        for (int lineCount : lines.values()) {
             if (lineCount > 1) {
                 ++result;
             }
