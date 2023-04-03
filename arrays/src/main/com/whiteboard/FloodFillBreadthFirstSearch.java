@@ -32,34 +32,30 @@ public final class FloodFillBreadthFirstSearch {
      * @param seedCol The 0-based column index of the seed pixel.
      */
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
-        Queue<int[]> queue = new LinkedList<>();
+        int numRows = a.length;
+        int numCols = a[0].length;
+        Queue<int[]> queue = new LinkedList<int[]>();
         int[] seed = {seedRow, seedCol};
         queue.add(seed);
         while (!queue.isEmpty()) {
             int[] pixel = queue.poll();
             int row = pixel[0];
             int col = pixel[1];
-            // error checking
-            int numRows = a.length;
-            int numCols = a[0].length;
             if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
                 continue;
             }
-            // check if pixel already filled
             if (a[row][col] == '@') {
                 continue;
             }
-            // fill the pixel
             a[row][col] = '@';
-            // add the pixel's neighbors to the queue
-            int[] goLeft = {row, col - 1};
-            int[] goUp = {row - 1, col};
-            int[] goRight = {row, col + 1};
-            int[] goDown = {row + 1, col};
-            queue.add(goLeft);
-            queue.add(goUp);
-            queue.add(goRight);
-            queue.add(goDown);
+            int[] left = {row, col - 1};
+            int[] up = {row - 1, col};
+            int[] right = {row, col + 1};
+            int[] down = {row + 1, col};
+            queue.add(left);
+            queue.add(up);
+            queue.add(right);
+            queue.add(down);
         }
     }
 }
