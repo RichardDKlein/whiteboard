@@ -51,8 +51,8 @@ public final class ArrayHopscotch {
         return arrayHopscotchWithLoopDetection(a, iStart, visited);
     }
 
-    private static List<Integer>
-    arrayHopscotchWithLoopDetection(int[] a, int iStart, Set<Integer> visited) {
+    private static List<Integer> arrayHopscotchWithLoopDetection(
+            int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
         // base case
         if (a[iStart] == 0) {
