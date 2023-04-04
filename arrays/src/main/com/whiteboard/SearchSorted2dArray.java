@@ -41,7 +41,6 @@ public final class SearchSorted2dArray {
      * is not found.
      */
     public static int[] searchSorted2dArray(int[][] a, int target) {
-        int[] result = {-1, -1};
         int numRows = a.length;
         int numCols = a[0].length;
         int row = numRows - 1;
@@ -52,12 +51,11 @@ public final class SearchSorted2dArray {
             } else if (a[row][col] > target) {
                 --row;
             } else {
-                result[0] = row;
-                result[1] = col;
+                int[] result = {row, col};
                 return result;
             }
         }
-        // target not found
+        int[] result = {-1, -1};
         return result;
     }
 }
