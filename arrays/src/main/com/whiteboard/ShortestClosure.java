@@ -13,7 +13,6 @@ public final class ShortestClosure {
 
     private static int[] haystack;
     private static Set<Integer> needles;
-
     private static Map<Integer, List<Integer>> needleLocationLists = new HashMap<>();
 
     /**
@@ -80,24 +79,19 @@ public final class ShortestClosure {
     }
 
     private static int[] getNextClosure() {
-        int[] result = {Integer.MAX_VALUE, Integer.MIN_VALUE};
-        Integer startingNeedle = null;
-        for (int needle : needles) {
+        Map<Integer, List<Integer>> smallestNeedleLocations = new HashMap<>();
+        for (Integer needle : needles) {
             List<Integer> needleLocationList = needleLocationLists.get(needle);
             if (needleLocationList.isEmpty()) {
                 return null;
             }
-            int needleSmallestLocation = needleLocationList.get(0);
-            if (needleSmallestLocation < result[0]) {
-                result[0] = needleSmallestLocation;
-                startingNeedle = needle;
-            }
-            if (needleSmallestLocation > result[1]) {
-                result[1] = needleSmallestLocation;
-            }
+            smallestNeedleLocations.put(needleLocationList.get(0), needleLocationList);
         }
-        // don't use the starting needle's smallest location again
-        needleLocationLists.get(startingNeedle).remove(0);
+        Integer min = Collections.min(smallestNeedleLocations.keySet());
+        Integer max = Collections.max(smallestNeedleLocations.keySet());
+        // Remove min from consideration next time we are called
+        smallestNeedleLocations.get(min).remove(0);
+        int[] result = {min, max};
         return result;
     }
 
