@@ -56,10 +56,10 @@ to cover all the exercises in one week.
     9. ToggleBit
     
 - **design_patterns**
-    10. Singleton
+   10. Singleton
 
 - **graphs**
-    11. SalesTerritories
+   11. SalesTerritories
     
 ### Thursday
 - **lists**
@@ -96,12 +96,14 @@ to cover all the exercises in one week.
     3. IsBinarySearchTree
     4. TraverseBinaryTreeBreadthFirst
 
-- **strings**
-    5. FindSubstring
-    6. LongestPalindromicSubstring
-    7. ParseStringIntoWords
-    8. PermutationsOfString
-    9. RansomNote
-    10. ReverseWordsInSentence
-    11. StringsArePermutations
-    12. TopKStrings
+- **strings**AlphabetizeString
+    5. AlphabetizeString
+    6. FindSubstring
+    7. LongestPalindromicSubstring
+    8. ParseStringIntoWords
+    9. PermutationsOfString
+   10. RansomNote
+   11. ReverseWordsInSentence
+   12. StringsArePermutations
+   13. TopKStrings
+
