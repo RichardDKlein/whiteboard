@@ -1,7 +1,5 @@
 package com.whiteboard;
 
-import java.util.Arrays;
-
 /**
  * Reverse a given string.
  */
