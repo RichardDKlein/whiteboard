@@ -1,7 +1,5 @@
 package com.whiteboard;
 
-import java.util.Arrays;
-
 /**
  * Sort an array using the bubble sort algorithm.
  */

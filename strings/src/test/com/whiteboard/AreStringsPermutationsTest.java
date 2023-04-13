@@ -2,11 +2,11 @@ package com.whiteboard;
 
 import org.junit.Test;
 
-public class StringsArePermutationsTest {
+public class AreStringsPermutationsTest {
     @Test
     public void stringsArePermutationsTest() {
         System.out.println();
-        System.out.println("Test StringsArePermutations:");
+        System.out.println("Test AreStringsPermutations:");
         System.out.println("============================");
 
         String[][] testStrings = {
@@ -32,7 +32,7 @@ public class StringsArePermutationsTest {
             String s2 = testStrings[i][1];
             System.out.println("s1 = " + s1 + ", s2 = " + s2);
             boolean arePermutations =
-                    StringsArePermutations.stringsArePermutations(s1, s2);
+                    AreStringsPermutations.areStringsPermutations(s1, s2);
             assert(arePermutations == expected[i]);
             System.out.println("stringsArePermutations(\"" +
                     s1 + "\", \"" + s2 + "\") = " + arePermutations);

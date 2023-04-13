@@ -6,19 +6,19 @@ import java.util.Map;
 /**
  * Determine whether two strings are permutations of each other.
  */
-public final class StringsArePermutations {
-    private StringsArePermutations() {
+public final class AreStringsPermutations {
+    private AreStringsPermutations() {
     }
 
     /**
-     * Determine whether two strings are permulations of each other.
+     * Determine whether two strings are permutations of each other.
      *
      * @param s1 One of the strings.
      * @param s2 The other string.
      * @return A boolean indicating whether ('true) or not ('false')
      * s1 and s2 are permutations of each other.
      */
-    public static boolean stringsArePermutations(String s1, String s2) {
+    public static boolean areStringsPermutations(String s1, String s2) {
         Map<Character, Integer> s1Inventory = inventoryStringChars(s1);
         Map<Character, Integer> s2Inventory = inventoryStringChars(s2);
         return s1Inventory.equals(s2Inventory);
