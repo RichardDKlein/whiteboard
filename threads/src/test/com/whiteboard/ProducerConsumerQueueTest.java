@@ -54,7 +54,7 @@ public class ProducerConsumerQueueTest {
     }
 
     @Test
-    public void producerConsumerTest1() {
+    public void producerConsumerQueueTest() {
         System.out.println();
         System.out.println("Test ProducerConsumerQueue:");
         System.out.println("===========================");
