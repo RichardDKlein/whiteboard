@@ -20,15 +20,15 @@ public class SumOfSquaresTest {
 
     private static Set<Integer[]> generateExpectedResult() {
         Set<Integer[]> result = new HashSet<>();
-        Map<Integer, List<Integer[]>> sumOfSquares = new HashMap<>();
+        Map<Integer, Set<Integer[]>> sumOfSquares = new HashMap<>();
         for (int a = 0; a <= 1000; ++a) {
             for (int b = 0; b <= 1000; ++b) {
                 int sum = a * a + b * b;
                 Integer[] pair = {a, b};
-                sumOfSquares.computeIfAbsent(sum, k -> new ArrayList<>()).add(pair);
+                sumOfSquares.computeIfAbsent(sum, k -> new HashSet<>()).add(pair);
             }
         }
-        for (List<Integer[]> pairList : sumOfSquares.values()) {
+        for (Set<Integer[]> pairList : sumOfSquares.values()) {
             for (Integer[] pair1 : pairList) {
                 for (Integer[] pair2 : pairList) {
                     Integer[] solution = {pair1[0], pair1[1], pair2[0], pair2[1]};
