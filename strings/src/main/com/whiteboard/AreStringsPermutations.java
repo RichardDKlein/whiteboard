@@ -28,12 +28,8 @@ public final class AreStringsPermutations {
         Map<Character, Integer> result = new HashMap<>();
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
-            Integer count = result.get(c);
-            if (count == null) {
-                result.put(c, 1);
-            } else {
-                result.put(c, count + 1);
-            }
+            int count = result.getOrDefault(c, 0);
+            result.put(c, count + 1);
         }
         return result;
     }
