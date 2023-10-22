@@ -10,38 +10,38 @@ public class SumOfSquaresTest {
         System.out.println("Test SumOfSquares:");
         System.out.println("==================");
 
+        int n = 400;
         System.out.println("Generating expected...");
-        Set<String> expected = tuplesToStrings(generateExpectedResult());
+        Set<String> expected = tuplesToStrings(generateExpectedResult(n));
+        System.out.println("expected.size() = " + expected.size());
         System.out.println("Generating actual...");
-        Set<String> actual = tuplesToStrings(SumOfSquares.sumOfSquares());
+        Set<String> actual = tuplesToStrings(SumOfSquares.sumOfSquares(n));
+        System.out.println("actual.size() = " + actual.size());
+
         System.out.println("Performing comparison...");
         assert(expected.equals(actual));
     }
 
-    private static Set<Integer[]> generateExpectedResult() {
-        Set<Integer[]> result = new HashSet<>();
-        Map<Integer, Set<Integer[]>> sumOfSquares = new HashMap<>();
-        for (int a = 0; a <= 1000; ++a) {
-            for (int b = 0; b <= 1000; ++b) {
-                int sum = a * a + b * b;
-                Integer[] pair = {a, b};
-                sumOfSquares.computeIfAbsent(sum, k -> new HashSet<>()).add(pair);
-            }
-        }
-        for (Set<Integer[]> pairList : sumOfSquares.values()) {
-            for (Integer[] pair1 : pairList) {
-                for (Integer[] pair2 : pairList) {
-                    Integer[] solution = {pair1[0], pair1[1], pair2[0], pair2[1]};
-                    result.add(solution);
+    private static Set<int[]> generateExpectedResult(int n) {
+        Set<int[]> result = new HashSet<>();
+        for (int a = 0; a <= n; ++a) {
+            for (int b = 0; b <= n; ++b) {
+                for (int c = 0; c <= n; ++c) {
+                    for (int d = 0; d <= n; ++d) {
+                        if (a*a + b*b == c*c + d*d) {
+                            int[] solution = {a, b, c, d};
+                            result.add(solution);
+                        }
+                    }
                 }
             }
         }
         return result;
     }
 
-    private static Set<String> tuplesToStrings(Set<Integer[]> set) {
+    private static Set<String> tuplesToStrings(Set<int[]> set) {
         Set<String> result = new HashSet<>();
-        for (Integer[] tuple : set) {
+        for (int[] tuple : set) {
             String tupleAsString = String.format("%d,%d,%d,%d",
                     tuple[0], tuple[1], tuple[2], tuple[3]);
             result.add(tupleAsString);
