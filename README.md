@@ -1,7 +1,7 @@
 # whiteboard
 
 Common whiteboard problems asked during coding interviews,
-solved in Java and Kotlin.
+solved in Java and other languages.
 
 The problems are grouped by category into modules,
 e.g.  'arrays', 'strings', 'trees', etc. Each problem
