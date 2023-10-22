@@ -26,19 +26,19 @@ public final class RomanNumeralToDecimal {
      * @return The decimal equivalent of the given Roman numeral.
      */
     public static int romanNumeralToDecimal(String roman) {
-        Map<Character, Integer> romanToDecimalMap = new HashMap<>();
-        romanToDecimalMap.put('I', 1);
-        romanToDecimalMap.put('V', 5);
-        romanToDecimalMap.put('X', 10);
-        romanToDecimalMap.put('L', 50);
-        romanToDecimalMap.put('C', 100);
-        romanToDecimalMap.put('D', 500);
-        romanToDecimalMap.put('M', 1000);
+        Map<Character, Integer> romanToDecimal = new HashMap<>();
+        romanToDecimal.put('I', 1);
+        romanToDecimal.put('V', 5);
+        romanToDecimal.put('X', 10);
+        romanToDecimal.put('L', 50);
+        romanToDecimal.put('C', 100);
+        romanToDecimal.put('D', 500);
+        romanToDecimal.put('M', 1000);
 
-        int result = romanToDecimalMap.get(roman.charAt(roman.length() - 1));
+        int result = romanToDecimal.get(roman.charAt(roman.length() - 1));
         for (int i = roman.length() - 2; i >= 0; --i) {
-            int currDecimal = romanToDecimalMap.get(roman.charAt(i));
-            int prevDecimal = romanToDecimalMap.get(roman.charAt(i + 1));
+            int currDecimal = romanToDecimal.get(roman.charAt(i));
+            int prevDecimal = romanToDecimal.get(roman.charAt(i + 1));
             if (currDecimal < prevDecimal) {
                 result -= currDecimal;
             } else {
