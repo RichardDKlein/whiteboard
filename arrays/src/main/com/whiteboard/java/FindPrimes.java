@@ -14,14 +14,14 @@ public final class FindPrimes {
      * Find all primes up to a given integer.
      *
      * Our algorithm shall be the famous Sieve of Eratosthenes.
-     * We use an an array 'isPrime' to keep track of which integers
+     * We use an array 'isPrime' to keep track of which integers
      * are prime: isPrime[i] = true if and only if 'i' is prime.
      *
      * All elements of isPrime, except isPrime[0] and isPrime[1],
      * are initialized to true, since as far as we know at the
      * outset, all integers (except 0 and 1) are prime.
      *
-     * We then loop thru the isPrime array. If isPrime[i] is true,
+     * We then loop through the isPrime array. If isPrime[i] is true,
      * we add 'i' to our list of primes, and set isPrime[i * j] to
      * false for each multiple 'j' of i. If isPrime[i] is false, we
      * just go on to the next element, since we've already determined

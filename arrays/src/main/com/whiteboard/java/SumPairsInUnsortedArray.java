@@ -41,10 +41,10 @@ public final class SumPairsInUnsortedArray {
         Set<Set<Integer>> result = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         for (int n : a) {
+            seen.add(n);
             if (seen.contains(sum - n)) {
                 result.add(new HashSet<>(Arrays.asList(n, sum - n)));
             }
-            seen.add(n);
         }
         return result;
     }
