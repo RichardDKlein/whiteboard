@@ -53,7 +53,7 @@ public final class ArrayHopscotch {
             return result;
         }
         // recursive step
-        a[iStart] = -1; // mark element as visited, to avoid infinite loop
+        a[iStart] = -1; // mark element as visited, to detect infinite loop
         int iHopLeft = iStart - hop;
         if (iHopLeft >= 0 && a[iHopLeft] != -1) {
             List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
