@@ -1,9 +1,7 @@
 package com.whiteboard.java;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Play a game of "array hopscotch".
@@ -47,32 +45,27 @@ public final class ArrayHopscotch {
      * sequence exists, then the list will be empty.)
      */
     public static List<Integer> arrayHopscotch(int[] a, int iStart) {
-        Set<Integer> visited = new HashSet<>();
-        return arrayHopscotchWithLoopDetection(a, iStart, visited);
-    }
-
-    private static List<Integer> arrayHopscotchWithLoopDetection(
-            int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
+        int hop = a[iStart];
         // base case
-        if (a[iStart] == 0) {
+        if (hop == 0) {
             result.add(iStart);
             return result;
         }
         // recursive step
-        visited.add(iStart);
-        int iHopLeft = iStart - a[iStart];
-        if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
-            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
+        a[iStart] = -1; // mark element as visited, to avoid infinite loop
+        int iHopLeft = iStart - hop;
+        if (iHopLeft >= 0 && a[iHopLeft] != -1) {
+            List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
                 return result;
             }
         }
-        int iHopRight = iStart + a[iStart];
-        if (iHopRight < a.length && !visited.contains(iHopRight)) {
-            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopRight, visited);
+        int iHopRight = iStart + hop;
+        if (iHopRight < a.length && a[iHopRight] != -1) {
+            List<Integer> remainingHops = arrayHopscotch(a, iHopRight);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
