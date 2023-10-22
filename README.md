@@ -1,4 +1,4 @@
-# whiteboard-java-kotlin
+# whiteboard
 
 Common whiteboard problems asked during coding interviews,
 solved in Java and Kotlin.
@@ -16,11 +16,10 @@ another IDE, you may have to make minor changes.
 Enjoy!
 
 
-## GLIDER/HACKERRANK INTERVIEW PREP PLAN
+## Glider / HackerRank Interview Prep Plan
 
-The following is an interview prep plan
-for coding problems similar to the ones
-in Glider and HackerRank.
+The following is an interview prep plan for coding
+problems similar to the ones on Glider and HackerRank.
 
 - **arrays**
   - ArrayHopscotch
