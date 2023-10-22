@@ -27,8 +27,8 @@ public class RansomNoteTest {
         for (int i = 0; i < magazines.length; ++i) {
             System.out.println("magazine = \"" + magazines[i] + "\"");
             boolean canCreate = RansomNote.ransomNote(note, magazines[i]);
-            assert(canCreate == expected[i]);
             System.out.println("can create = " + canCreate);
+            assert(canCreate == expected[i]);
         }
     }
 }

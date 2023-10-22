@@ -49,20 +49,16 @@ public final class RansomNote {
         magazineInventory.clear();
         for (int i = 0; i < magazine.length(); ++i) {
             char c = magazine.charAt(i);
-            Integer count = magazineInventory.get(c);
-            if (count == null) {
-                magazineInventory.put(c, 1);
-            } else {
-                magazineInventory.put(c, count + 1);
-            }
+            int count = magazineInventory.computeIfAbsent(c, k -> 0);
+            magazineInventory.put(c, count + 1);
         }
     }
 
     private static boolean createNoteFromMagazineInventory() {
         for (int i = 0; i < note.length(); ++i) {
             char c = note.charAt(i);
-            Integer count = magazineInventory.get(c);
-            if (count == null || count == 0) {
+            int count = magazineInventory.getOrDefault(c, 0);
+            if (count == 0) {
                 return false;
             }
             magazineInventory.put(c, count - 1);
