@@ -14,26 +14,3 @@ running on Mac OS X. If you import the project into
 another IDE, you may have to make minor changes.
 
 Enjoy!
-
-
-## Glider / HackerRank Interview Prep Plan
-
-The following is an interview prep plan for coding
-problems similar to the ones on Glider and HackerRank.
-
-- **arrays**
-  - ArrayHopscotch
-  - FindPrimes
-  - SumPairsInUnsortedArray
-
-- **math**
-  - ReverseDecimalNumber
-  - RomanNumeralToDecimal
-  - SumOfSquares
-
-- **stacks_and_queues**
-  - BalancedBrackets
-  - ReversePolish
-
-- **strings**
-  - RansomNote
