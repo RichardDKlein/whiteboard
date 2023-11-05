@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class QueueUsingTwoStacksTest {
     @Test
-    public void test1() {
+    public void queueUsingTwoStacksTest() {
         System.out.println();
         System.out.println("Test QueueUsingTwoStacks:");
         System.out.println("=========================");

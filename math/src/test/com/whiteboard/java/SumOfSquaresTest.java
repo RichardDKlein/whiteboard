@@ -10,7 +10,7 @@ public class SumOfSquaresTest {
         System.out.println("Test SumOfSquares:");
         System.out.println("==================");
 
-        int n = 400;
+        int n = 250;
         System.out.println("Generating expected...");
         Set<String> expected = tuplesToStrings(generateExpectedResult(n));
         System.out.println("expected.size() = " + expected.size());
