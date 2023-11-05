@@ -26,9 +26,10 @@ public final class ArrayHopscotch {
      *
      * We shall use a recursive algorithm to play the game,
      * keeping track of elements we have visited. If we land
-     * on a zero, we win. If we land on an element we have
-     * already visited, we are stuck in an infinite loop,
-     * and we lose.
+     * on a zero, we win. If, regardless of whether we hop
+     * left or right, we land on an element we have already
+     * visited, then we are stuck in an infinite loop, and
+     * we lose.
      *
      * Since each element in the array is visited at most
      * once, the execution time is O(n), worst case.

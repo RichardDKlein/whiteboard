@@ -20,8 +20,9 @@ public final class SumOfSquares {
      * all possible permutations of two of those pairs. This solution is
      * O(n*n).
      *
-     * @return A set of all possible 4-tuples {a, b, c, d} that satisfy
-     * the equation a*a + b*b == c*c + d*d.
+     * @param n The upper limit of the range containing a, b, c, and d.
+     * @return A set of all possible 4-tuples {a, b, c, d} in the range
+     * [0..n] that satisfy the equation a*a + b*b == c*c + d*d.
      */
     public static Set<int[]> sumOfSquares(int n) {
         Set<int[]> result = new HashSet<>();
