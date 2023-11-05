@@ -49,7 +49,7 @@ public final class RansomNote {
         magazineInventory.clear();
         for (int i = 0; i < magazine.length(); ++i) {
             char c = magazine.charAt(i);
-            int count = magazineInventory.computeIfAbsent(c, k -> 0);
+            int count = magazineInventory.getOrDefault(c, 0);
             magazineInventory.put(c, count + 1);
         }
     }
