@@ -13,7 +13,7 @@ public final class ShortestClosure {
 
     private static int[] haystack;
     private static Set<Integer> needles;
-    private static Map<Integer, List<Integer>> needleLocationLists = new HashMap<>();
+    private static Map<Integer, List<Integer>> needleLocationLists;
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -53,13 +53,10 @@ public final class ShortestClosure {
     }
 
     private static void buildNeedleLocationLists() {
-        needleLocationLists.clear();
-        for (int needle : needles) {
-            needleLocationLists.put(needle, new ArrayList<>());
-        }
+        needleLocationLists = new HashMap<>();
         for (int i = 0; i < haystack.length; ++i) {
             if (needles.contains(haystack[i])) {
-                needleLocationLists.get(haystack[i]).add(i);
+                needleLocationLists.computeIfAbsent(haystack[i], k -> new ArrayList<>()).add(i);
             }
         }
     }
@@ -68,12 +65,8 @@ public final class ShortestClosure {
         int[] result = {0, haystack.length - 1};
         for (;;) {
             int[] closure = getNextClosure();
-            if (closure == null) {
-                break;
-            }
-            if (intervalLength(closure) < intervalLength(result)) {
-                result = closure;
-            }
+            if (closure == null) break;
+            if (intervalLength(closure) < intervalLength(result)) result = closure;
         }
         return result;
     }
@@ -82,14 +75,12 @@ public final class ShortestClosure {
         Map<Integer, List<Integer>> smallestNeedleLocations = new HashMap<>();
         for (Integer needle : needles) {
             List<Integer> needleLocationList = needleLocationLists.get(needle);
-            if (needleLocationList.isEmpty()) {
-                return null;
-            }
+            if (needleLocationList.isEmpty()) return null;
             smallestNeedleLocations.put(needleLocationList.get(0), needleLocationList);
         }
         Integer min = Collections.min(smallestNeedleLocations.keySet());
         Integer max = Collections.max(smallestNeedleLocations.keySet());
-        // Remove min from consideration next time we are called
+        // Remove min from consideration next time we are called.
         smallestNeedleLocations.get(min).remove(0);
         int[] result = {min, max};
         return result;
