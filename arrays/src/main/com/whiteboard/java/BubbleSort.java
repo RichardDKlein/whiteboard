@@ -14,8 +14,8 @@ public final class BubbleSort {
      * @param a The array to sort.
      */
     public static void bubbleSort(int[] a) {
-        boolean swapOccurred;
-        do {
+        boolean swapOccurred = true;
+        while (swapOccurred) {
             swapOccurred = false;
             for (int i = 0; i < a.length - 1; ++i) {
                 if (a[i] > a[i + 1]) {
@@ -25,6 +25,6 @@ public final class BubbleSort {
                     swapOccurred = true;
                 }
             }
-        } while (swapOccurred);
+        }
     }
 }
