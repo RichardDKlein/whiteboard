@@ -14,15 +14,15 @@ public final class BubbleSort {
      * @param a The array to sort.
      */
     public static void bubbleSort(int[] a) {
-        boolean swapOccurred = true;
-        while (swapOccurred) {
-            swapOccurred = false;
+        boolean swqpOccurred = true;
+        while (swqpOccurred) {
+            swqpOccurred = false;
             for (int i = 0; i < a.length - 1; ++i) {
                 if (a[i] > a[i + 1]) {
                     int tmp = a[i];
                     a[i] = a[i + 1];
                     a[i + 1] = tmp;
-                    swapOccurred = true;
+                    swqpOccurred = true;
                 }
             }
         }
