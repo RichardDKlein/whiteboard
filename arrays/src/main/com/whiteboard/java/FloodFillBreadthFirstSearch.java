@@ -34,7 +34,7 @@ public final class FloodFillBreadthFirstSearch {
     public static void floodFillBreadthFirstSearch(char[][] a, int seedRow, int seedCol) {
         int numRows = a.length;
         int numCols = a[0].length;
-        Queue<int[]> queue = new LinkedList<int[]>();
+        Queue<int[]> queue = new LinkedList<>();
         int[] seed = {seedRow, seedCol};
         queue.add(seed);
         while (!queue.isEmpty()) {
