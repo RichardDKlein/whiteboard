@@ -26,11 +26,11 @@ public class CircularQueue {
         buf = new int[capacity];
     }
 
-    public boolean add(int item) {
+    public boolean add(int element) {
         if (isFull()) {
             return false;
         }
-        buf[tail] = item;
+        buf[tail] = element;
         tail = (tail + 1) % buf.length;
         return true;
     }
@@ -39,9 +39,9 @@ public class CircularQueue {
         if (isEmpty()) {
             return null;
         }
-        int item = buf[head];
+        int element = buf[head];
         head = (head + 1) % buf.length;
-        return item;
+        return element;
     }
 
     private boolean isFull() {
