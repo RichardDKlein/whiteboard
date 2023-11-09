@@ -40,7 +40,7 @@ public final class LinesThruPoints {
 
     private static double[] x;
     private static double[] y;
-    private static Map<Line, Integer> lines = new HashMap<>();
+    private static Map<Line, Integer> lineCounts;
 
     /**
      * Given a collection of 2D points, finds the number of
@@ -64,34 +64,30 @@ public final class LinesThruPoints {
      * least three of the given 2D points.
      */
     public static int linesThruPoints(double[] x, double[] y) {
-        saveCallingParameters(x, y);
+        init(x, y);
         findLinesThruPairsOfPoints();
         return countRepeatedLines();
     }
 
-    private static void saveCallingParameters(double[] x, double[] y) {
+    private static void init(double[] x, double[] y) {
         LinesThruPoints.x = x;
         LinesThruPoints.y = y;
+        lineCounts = new HashMap<>();
     }
 
     private static void findLinesThruPairsOfPoints() {
-        lines.clear();
         for (int i = 0; i < x.length - 1; ++i) {
             for (int j = i + 1; j < x.length; ++j) {
                 Line line = new Line(x[i], y[i], x[j], y[j]);
-                Integer count = lines.get(line);
-                if (count == null) {
-                    lines.put(line, 1);
-                } else {
-                    lines.put(line, count + 1);
-                }
+                int count = lineCounts.getOrDefault(line, 0);
+                lineCounts.put(line, count + 1);
             }
         }
     }
 
     private static int countRepeatedLines() {
         int result = 0;
-        for (int lineCount : lines.values()) {
+        for (int lineCount : lineCounts.values()) {
             if (lineCount > 1) {
                 ++result;
             }
