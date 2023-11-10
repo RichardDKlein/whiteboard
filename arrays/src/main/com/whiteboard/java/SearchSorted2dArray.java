@@ -41,21 +41,24 @@ public final class SearchSorted2dArray {
      * is not found.
      */
     public static int[] searchSorted2dArray(int[][] a, int target) {
+        int[] result = {-1, -1};
         int numRows = a.length;
         int numCols = a[0].length;
         int row = numRows - 1;
         int col = 0;
         while (row >= 0 && col < numCols) {
-            if (a[row][col] < target) {
-                ++col;
-            } else if (a[row][col] > target) {
+            int curr = a[row][col];
+            if (curr > target) {
                 --row;
+            } else if (curr < target) {
+                ++col;
             } else {
-                int[] result = {row, col};
+                result[0] = row;
+                result[1] = col;
                 return result;
             }
         }
-        int[] result = {-1, -1};
+        // target not found
         return result;
     }
 }
