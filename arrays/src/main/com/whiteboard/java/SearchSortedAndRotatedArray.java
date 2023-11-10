@@ -32,26 +32,21 @@ public final class SearchSortedAndRotatedArray {
             if (a[mid] == target) {
                 return mid;
             }
-            if (a[left] <= a[mid]) {
-                // left half is normally ordered
-                if (a[left] <= target && target < a[mid]) {
-                    // target is in left half
+            if (a[left] <= a[mid]) { // left half is normally ordered
+                if (a[left] <= target && target < a[mid]) { // target is in left half
                     right = mid - 1;
-                } else {
-                    // target is in right half
+                } else { // target is in right half
                     left = mid + 1;
                 }
-            } else {
-                // right half is normally ordered
-                if (a[mid] < target && target <= a[right]) {
-                    // target is in right half
+            } else { // right half is normally ordered
+                if (a[mid] < target && target <= a[right]) { // target is in right half
                     left = mid + 1;
-                } else {
-                    // target is in left half
+                } else { // target is in left half
                     right = mid - 1;
                 }
             }
         }
+        // target not found
         return -1;
     }
 }
