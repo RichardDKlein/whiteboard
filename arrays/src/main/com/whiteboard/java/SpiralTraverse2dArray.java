@@ -32,17 +32,17 @@ public final class SpiralTraverse2dArray {
         List<Integer> result = new ArrayList<>();
         int numRows = a.length;
         int numCols = a[0].length;
-        for (int topRow = 0, rightCol = numCols - 1, bottomRow = numRows - 1, leftCol = 0;
+        for (int topRow = 0, bottomRow = numRows - 1, leftCol = 0, rightCol = numCols - 1;
              topRow <= bottomRow && leftCol <= rightCol;
-             ++topRow, --rightCol, --bottomRow, ++leftCol) {
+             ++topRow, --bottomRow, ++leftCol, --rightCol) {
 
-            result.addAll(spiralTraverseShell(a, topRow, rightCol, bottomRow, leftCol));
+            result.addAll(spiralTraverseShell(a, topRow, bottomRow, leftCol, rightCol));
         }
         return result;
     }
 
-    private static List<Integer> spiralTraverseShell(
-            int[][] a, int topRow, int rightCol, int bottomRow, int leftCol) {
+    private static List<Integer> spiralTraverseShell(int[][] a, int topRow, int bottomRow,
+                                                     int leftCol, int rightCol) {
         List<Integer> result = new ArrayList<>();
         // degenerate case: row vector
         if (topRow == bottomRow) {
@@ -58,19 +58,19 @@ public final class SpiralTraverse2dArray {
             }
             return result;
         }
-        // top row
+        // top row: left to right
         for (int col = leftCol; col < rightCol; ++col) {
             result.add(a[topRow][col]);
         }
-        // right column
+        // right col: top to bottom
         for (int row = topRow; row < bottomRow; ++row) {
             result.add(a[row][rightCol]);
         }
-        // bottom row
+        // bottom row: right to left
         for (int col = rightCol; col > leftCol; --col) {
             result.add(a[bottomRow][col]);
         }
-        // left column
+        // left col: bottom to top
         for (int row = bottomRow; row > topRow; --row) {
             result.add(a[row][leftCol]);
         }
