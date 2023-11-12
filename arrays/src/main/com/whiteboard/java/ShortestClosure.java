@@ -13,7 +13,7 @@ public final class ShortestClosure {
 
     private static int[] haystack;
     private static Set<Integer> needles;
-    private static Map<Integer, List<Integer>> needleLocationLists;
+    private static Map<Integer, List<Integer>> needleLocationMap;
 
     /**
      * Find the shortest closure of needles in a haystack, i.e.
@@ -42,21 +42,21 @@ public final class ShortestClosure {
      * of the shortest closure.
      */
     public static int[] shortestClosure(int[] haystack, Set<Integer> needles) {
-        saveCallingParameters(haystack, needles);
-        buildNeedleLocationLists();
+        init(haystack, needles);
+        buildNeedleLocationMap();
         return findShortestClosure();
     }
 
-    private static void saveCallingParameters(int[] haystack, Set<Integer> needles) {
+    private static void init(int[] haystack, Set<Integer> needles) {
         ShortestClosure.haystack = haystack;
         ShortestClosure.needles = needles;
+        needleLocationMap = new HashMap<>();
     }
 
-    private static void buildNeedleLocationLists() {
-        needleLocationLists = new HashMap<>();
+    private static void buildNeedleLocationMap() {
         for (int i = 0; i < haystack.length; ++i) {
             if (needles.contains(haystack[i])) {
-                needleLocationLists.computeIfAbsent(haystack[i], k -> new ArrayList<>()).add(i);
+                needleLocationMap.computeIfAbsent(haystack[i], k -> new ArrayList<>()).add(i);
             }
         }
     }
@@ -65,28 +65,34 @@ public final class ShortestClosure {
         int[] result = {0, haystack.length - 1};
         for (;;) {
             int[] closure = getNextClosure();
-            if (closure == null) break;
-            if (intervalLength(closure) < intervalLength(result)) result = closure;
+            if (closure == null) {
+                break;
+            }
+            if (length(closure) < length(result)) {
+                result = closure;
+            }
         }
         return result;
     }
 
     private static int[] getNextClosure() {
-        Map<Integer, List<Integer>> smallestNeedleLocations = new HashMap<>();
-        for (Integer needle : needles) {
-            List<Integer> needleLocationList = needleLocationLists.get(needle);
-            if (needleLocationList.isEmpty()) return null;
-            smallestNeedleLocations.put(needleLocationList.get(0), needleLocationList);
+        Map<Integer, List<Integer>> nextNeedleLocations = new HashMap<>();
+        for (int needle : needles) {
+            List<Integer> needleLocationList = needleLocationMap.get(needle);
+            if (needleLocationList.isEmpty()) {
+                return null;
+            }
+            nextNeedleLocations.put(needleLocationList.get(0), needleLocationList);
         }
-        Integer min = Collections.min(smallestNeedleLocations.keySet());
-        Integer max = Collections.max(smallestNeedleLocations.keySet());
+        int min = Collections.min(nextNeedleLocations.keySet());
+        int max = Collections.max(nextNeedleLocations.keySet());
         // Remove min from consideration next time we are called.
-        smallestNeedleLocations.get(min).remove(0);
+        nextNeedleLocations.get(min).remove(0);
         int[] result = {min, max};
         return result;
     }
 
-    private static int intervalLength(int[] interval) {
-        return interval[1] - interval[0] + 1;
+    private static int length(int[] closure) {
+        return closure[1] - closure[0] + 1;
     }
 }
