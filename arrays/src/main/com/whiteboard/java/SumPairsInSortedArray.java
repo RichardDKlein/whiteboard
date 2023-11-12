@@ -42,7 +42,10 @@ public final class SumPairsInSortedArray {
             } else if (a[left] + a[right] > sum) {
                 --right;
             } else {
-                result.add(new HashSet<>(Arrays.asList(a[left], a[right])));
+                Set<Integer> pair = new HashSet<>();
+                pair.add(a[left]);
+                pair.add(a[right]);
+                result.add(pair);
                 ++left;
                 --right;
             }
