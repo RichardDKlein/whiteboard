@@ -22,8 +22,7 @@ public final class InsertBits {
      */
     public static int insertBits(int n, int bits, int msb, int lsb) {
         int numBits = msb - lsb + 1;
-        int mask = (1 << numBits) - 1;
-        int shiftedAndComplementedMask = ~(mask << lsb);
-        return (n & shiftedAndComplementedMask) | (bits << lsb);
+        int mask = ((1 << numBits) - 1) << lsb;
+        return (n ^ mask) | (bits << lsb);
     }
 }
