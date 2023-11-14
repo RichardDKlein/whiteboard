@@ -16,6 +16,6 @@ public final class ClearBit {
      * bit cleared.
      */
     public static int clearBit(int n, int bit) {
-        return n & ~(1 << bit);
+        return n ^ (1 << bit);
     }
 }
