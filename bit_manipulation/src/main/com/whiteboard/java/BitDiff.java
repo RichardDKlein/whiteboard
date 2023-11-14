@@ -24,8 +24,8 @@ public final class BitDiff {
         int result = 0;
         while (n != 0) {
             ++result;
-            // clear the least significant one bit
-            n &= n-1;
+            // clear the least significant one big
+            n &= n - 1;
         }
         return result;
     }
