@@ -28,6 +28,6 @@ public final class AreBitsPalindrome {
     }
 
     private static int getBit(int n, int bit) {
-        return (((1 << bit) & n) == 0) ? 0 : 1;
+        return ((n & (1 << bit)) == 0) ? 0 : 1;
     }
 }
