@@ -45,6 +45,7 @@ public final class ParseStringIntoWords {
             result.addAll(parseOfRemainder);
             return result;
         }
+        // cannot parse
         return null;
     }
 }
