@@ -13,7 +13,7 @@ public final class RansomNote {
 
     private static String note;
     private static String magazine;
-    private static Map<Character, Integer> magazineInventory = new HashMap<>();
+    private static Map<Character, Integer> magazineInventory;
 
     /**
      * Determine whether a given ransom note can be constructed by
@@ -35,18 +35,18 @@ public final class RansomNote {
      * the given ransom note can be constructed from the given magazine.
      */
     public static boolean ransomNote(String note, String magazine) {
-        saveCallingParameters(note, magazine);
+        saveCallingParams(note, magazine);
         inventoryMagazineChars();
-        return createNoteFromMagazineInventory();
+        return createNoteFromMagazine();
     }
 
-    private static void saveCallingParameters(String note, String magazine) {
+    private static void saveCallingParams(String note, String magazine) {
         RansomNote.note = note;
         RansomNote.magazine = magazine;
     }
 
     private static void inventoryMagazineChars() {
-        magazineInventory.clear();
+        magazineInventory = new HashMap<>();
         for (int i = 0; i < magazine.length(); ++i) {
             char c = magazine.charAt(i);
             int count = magazineInventory.getOrDefault(c, 0);
@@ -54,7 +54,7 @@ public final class RansomNote {
         }
     }
 
-    private static boolean createNoteFromMagazineInventory() {
+    private static boolean createNoteFromMagazine() {
         for (int i = 0; i < note.length(); ++i) {
             char c = note.charAt(i);
             int count = magazineInventory.getOrDefault(c, 0);
