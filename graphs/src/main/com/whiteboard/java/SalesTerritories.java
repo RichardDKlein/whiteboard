@@ -14,10 +14,11 @@ public final class SalesTerritories {
 
     private static class CityNode {
         String cityName;
-        Set<CityNode> adjacentCities = new HashSet<>();
+        Set<CityNode> neighbors;
 
         CityNode(String cityName) {
             this.cityName = cityName;
+            neighbors = new HashSet<>();
         }
 
         @Override
@@ -35,8 +36,8 @@ public final class SalesTerritories {
     }
 
     private static Set<Set<String>> cityPairs;
-    private static Map<String, CityNode> cityGraph = new HashMap<>();
-    private static Set<CityNode> visited = new HashSet<>();
+    private static Map<String, CityNode> cityGraph;
+    private static Set<CityNode> visited;
 
     /**
      * Given a collection of city pairs, where each pair denotes
@@ -62,35 +63,27 @@ public final class SalesTerritories {
      * their sales territories.
      */
     public static Set<Set<String>> salesTerritories(Set<Set<String>> cityPairs) {
-        saveCallingParameter(cityPairs);
+        init(cityPairs);
         buildCityGraph();
         return findTerritories();
     }
 
-    private static void saveCallingParameter(Set<Set<String>> cityPairs) {
+    private static void init(Set<Set<String>> cityPairs) {
         SalesTerritories.cityPairs = cityPairs;
+        cityGraph = new HashMap<>();
+        visited = new HashSet<>();
     }
 
     private static void buildCityGraph() {
-        cityGraph.clear();
         for (Set<String> cityPair : cityPairs) {
-            Iterator<String> iterator = cityPair.iterator();
-            String cityName1 = iterator.next();
-            String cityName2 = iterator.next();
-            CityNode cityNode1 = findOrCreateCityNode(cityName1);
-            CityNode cityNode2 = findOrCreateCityNode(cityName2);
-            cityNode1.adjacentCities.add(cityNode2);
-            cityNode2.adjacentCities.add(cityNode1);
+            Iterator<String> iter = cityPair.iterator();
+            String cityName1 = iter.next();
+            String cityName2 = iter.next();
+            CityNode cityNode1 = cityGraph.computeIfAbsent(cityName1, CityNode::new);
+            CityNode cityNode2 = cityGraph.computeIfAbsent(cityName2, CityNode::new);
+            cityNode1.neighbors.add(cityNode2);
+            cityNode2.neighbors.add(cityNode1);
         }
-    }
-
-    private static CityNode findOrCreateCityNode(String cityName) {
-        CityNode cityNode = cityGraph.get(cityName);
-        if (cityNode == null) {
-            cityNode = new CityNode(cityName);
-            cityGraph.put(cityName, cityNode);
-        }
-        return cityNode;
     }
 
     private static Set<Set<String>> findTerritories() {
@@ -107,6 +100,7 @@ public final class SalesTerritories {
 
     private static Set<String> findConnectedCities(CityNode cityNode) {
         Set<String> result = new HashSet<>();
+        // Breadth-First Search (BFS)
         Queue<CityNode> queue = new LinkedList<>();
         queue.add(cityNode);
         while (!queue.isEmpty()) {
@@ -116,7 +110,7 @@ public final class SalesTerritories {
             }
             visited.add(node);
             result.add(node.cityName);
-            queue.addAll(node.adjacentCities);
+            queue.addAll(node.neighbors);
         }
         return result;
     }
