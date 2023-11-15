@@ -40,38 +40,28 @@ public final class LongestNonRepeatingSubstring {
      * @return The longest non-repeating substring.
      */
     public static String longestNonRepeatingSubstring(String s) {
-        int maxStart = 0; // start index of longest substring so far
-        int maxLength = 0; // length of longest substring so far
-        int currStart = 0; // start index of current candidate substring
-        int currLen = 0; // length of current candidate substring
-
-        // largest index so far of each character in string
-        Map<Character, Integer> charIndexMap = new HashMap<>();
-
+        int currStart, currLen, maxStart, maxLen;
+        currStart = maxStart = 0;
+        currLen = maxLen = 0;
+        Map<Character, Integer> charToIndexMap = new HashMap<>();
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
-            int index = charIndexMap.getOrDefault(c, -1);
-            // If current char is repeated, check if substring ending
-            // at previous char is longest so far.
-            if (index >= currStart) {
+            int charIndex = charToIndexMap.getOrDefault(c, -1);
+            if (charIndex >= currStart) {
                 currLen = (i - 1) - currStart + 1;
-                if (currLen > maxLength) {
-                    maxLength = currLen;
+                if (currLen > maxLen) {
                     maxStart = currStart;
+                    maxLen = currLen;
                 }
-                // start of new candidate is char after 1st occurrence
-                // of repeated char.
-                currStart = index + 1;
+                currStart = charIndex + 1;
             }
-            charIndexMap.put(c, i);
+            charToIndexMap.put(c, i);
         }
-        // End of string. Check if candidate in progress is longest
-        // so far.
         currLen = (s.length() - 1) - currStart + 1;
-        if (currLen > maxLength) {
-            maxLength = currLen;
+        if (currLen > maxLen) {
             maxStart = currStart;
+            maxLen = currLen;
         }
-        return s.substring(maxStart, maxStart + maxLength);
+        return s.substring(maxStart, maxStart + maxLen);
     }
 }
