@@ -16,7 +16,7 @@ public final class ReverseString {
     public static String reverseString(String s) {
         char[] buf = s.toCharArray();
         int left = 0;
-        int right = s.length() - 1;
+        int right = buf.length - 1;
         while (left < right) {
             char tmp = buf[left];
             buf[left] = buf[right];
