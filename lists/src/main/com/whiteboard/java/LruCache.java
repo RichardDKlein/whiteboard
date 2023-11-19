@@ -101,7 +101,7 @@ public final class LruCache<K, V> {
         LruListNode<K> lruListNode = cacheNode.lruListNode;
         lruLinkedList.remove(lruListNode);
         lruLinkedList.addFirst(lruListNode);
-        return cache.get(key).value;
+        return cacheNode.value;
     }
 
     private void evictLeastRecentlyUsed() {
