@@ -1,7 +1,7 @@
 package com.whiteboard.java;
 
 /**
- * ReverseList a singly-linked list in place.
+ * Reverse a singly-linked list in place.
  */
 public final class ReverseList {
     private ReverseList() {
