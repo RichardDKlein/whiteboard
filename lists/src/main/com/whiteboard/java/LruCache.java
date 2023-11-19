@@ -3,7 +3,17 @@ package com.whiteboard.java;
 import java.util.*;
 
 /**
- * Implement an LRU (Least-Recently Used) Cache
+ * Implement an LRU (Least-Recently Used) Cache.
+ *
+ * The LRU eviction strategy is implemented using a doubly-linked
+ * list of cache keys. Whenever a value is read from or written to
+ * the cache, its key is moved to the front of the list. Therefore,
+ * at any point in the time, the key at the tail of the list is the
+ * least-recently used one.
+ *
+ * Each cache entry contains not just the cached value, but also a
+ * reference to the corresponding node in the LRU list. Thus, accessing
+ * the LRU list node for a given cache key is an O(1) operation.
  */
 public final class LruCache<K, V> {
     private static class LruListNode<K> {
@@ -50,11 +60,7 @@ public final class LruCache<K, V> {
 
         LruListNode<K> removeLast() {
             LruListNode<K> last = tail;
-            if (head == tail) {
-                head = tail = null;
-            } else {
-                tail = last.prev;
-            }
+            tail = last.prev;
             last.next = last.prev = null;
             return last;
         }
