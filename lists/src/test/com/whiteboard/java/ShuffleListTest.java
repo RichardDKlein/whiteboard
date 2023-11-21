@@ -14,7 +14,7 @@ public class ShuffleListTest {
 
         System.out.println();
         System.out.println("Test ShuffleList:");
-        System.out.println("==================");
+        System.out.println("=================");
 
         List<Integer> unshuffledList = new ArrayList<>();
         for (int i = 0; i < NUM_CARDS; ++i) {

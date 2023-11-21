@@ -14,7 +14,7 @@ public class DeleteNodeFromListTest {
     public void deleteNodeFromListTest() {
         System.out.println();
         System.out.println("Test DeleteNodeFromList:");
-        System.out.println("================");
+        System.out.println("========================");
 
         List<ListNode<Character>> expected = new ArrayList<>();
         expected.add(ListTestUtils.createList(Arrays.asList('b', 'c', 'd', 'e', 'f', 'g')));

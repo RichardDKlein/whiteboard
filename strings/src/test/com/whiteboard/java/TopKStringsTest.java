@@ -12,7 +12,7 @@ public class TopKStringsTest {
     public void topKStringsTest() {
         System.out.println();
         System.out.println("Test TopKStrings:");
-        System.out.println("================");
+        System.out.println("=================");
 
         String gettysburgAddress =
             "Four score and seven years ago, our fathers brought " +

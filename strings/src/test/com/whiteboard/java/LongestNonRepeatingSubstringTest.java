@@ -7,7 +7,7 @@ public class LongestNonRepeatingSubstringTest {
     public void longestNonRepeatingSubstringTest() {
         System.out.println();
         System.out.println("Test LongestNonRepeatingSubstring:");
-        System.out.println("========================-=========");
+        System.out.println("==================================");
 
         String[] testStrings = {
                 "abcdefg",

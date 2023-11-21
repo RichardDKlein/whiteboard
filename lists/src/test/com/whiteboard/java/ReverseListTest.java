@@ -11,7 +11,7 @@ public class ReverseListTest {
     public void reverseListTest() {
         System.out.println();
         System.out.println("Test ReverseList:");
-        System.out.println("==========================");
+        System.out.println("=================");
 
         List<ListNode<Character>> lists = new ArrayList<>();
         lists.add(null);
