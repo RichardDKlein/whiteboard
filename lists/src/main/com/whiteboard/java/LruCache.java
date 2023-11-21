@@ -35,9 +35,9 @@ public final class LruCache<K, V> {
                 head = tail = lruListNode;
                 lruListNode.next = lruListNode.prev = null;
             } else {
-                LruListNode<K> oldHead = head;
+                lruListNode.next = head;
+                head.prev = lruListNode;
                 head = lruListNode;
-                lruListNode.next = oldHead;
                 lruListNode.prev = null;
             }
         }
@@ -47,8 +47,10 @@ public final class LruCache<K, V> {
                 head = tail = null;
             } else if (head == lruListNode) {
                 head = lruListNode.next;
+                lruListNode.next.prev = null;
             } else if (tail == lruListNode) {
                 tail = lruListNode.prev;
+                lruListNode.prev.next = null;
             } else {
                 LruListNode<K> prev = lruListNode.prev;
                 LruListNode<K> next = lruListNode.next;
@@ -61,8 +63,29 @@ public final class LruCache<K, V> {
         LruListNode<K> removeLast() {
             LruListNode<K> last = tail;
             tail = last.prev;
+            last.prev.next = null;
             last.next = last.prev = null;
             return last;
+        }
+
+        @Override
+        public String toString() {
+            StringBuffer result = new StringBuffer();
+            if (head == null) {
+                return("<empty>");
+            }
+            LruListNode<K> curr = head;
+            boolean atHead = true;
+            while (curr != null) {
+                if (!atHead) {
+                    result.append("->");
+                } else {
+                    atHead = false;
+                }
+                result.append(curr.key);
+                curr = curr.next;
+            }
+            return result.toString();
         }
     }
 
@@ -107,5 +130,10 @@ public final class LruCache<K, V> {
     private void evictLeastRecentlyUsed() {
         LruListNode<K> lruListNode = lruLinkedList.removeLast();
         cache.remove(lruListNode.key);
+    }
+
+    // for testing
+    public String lruLinkedListToString() {
+        return lruLinkedList.toString();
     }
 }

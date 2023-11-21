@@ -27,41 +27,41 @@ public class LruCacheTest {
         lruCache.put("8", "eight");
         lruCache.put("9", "nine");
 
-        assert("9->8->7->6->5->4->3->2->1->0".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("9->8->7->6->5->4->3->2->1->0".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         System.out.println("\nput 10:");
         lruCache.put("10", "ten");
-        assert("10->9->8->7->6->5->4->3->2->1".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("10->9->8->7->6->5->4->3->2->1".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         String value = lruCache.get("6");
         assert("six".equals(value));
         System.out.printf("\nlruCache.get(\"6\") = %s\n", value);
-        assert("6->10->9->8->7->5->4->3->2->1".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("6->10->9->8->7->5->4->3->2->1".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         value = lruCache.get("2");
         assert("two".equals(value));
         System.out.printf("\nlruCache.get(\"2\") = %s\n", value);
-        assert("2->6->10->9->8->7->5->4->3->1".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("2->6->10->9->8->7->5->4->3->1".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         value = lruCache.get("1");
         assert("one".equals(value));
         System.out.printf("\nlruCache.get(\"1\") = %s\n", value);
-        assert("1->2->6->10->9->8->7->5->4->3".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("1->2->6->10->9->8->7->5->4->3".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         value = lruCache.get("1");
         assert("one".equals(value));
         System.out.printf("\nlruCache.get(\"1\") = %s\n", value);
-        assert("1->2->6->10->9->8->7->5->4->3".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("1->2->6->10->9->8->7->5->4->3".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
 
         System.out.println("\nput 11:");
         lruCache.put("11", "eleven");
-        assert("11->1->2->6->10->9->8->7->5->4".equals(lruCache.getLruLinkedList().toString()));
-        System.out.println(lruCache.getLruLinkedList());
+        assert("11->1->2->6->10->9->8->7->5->4".equals(lruCache.lruLinkedListToString()));
+        System.out.println(lruCache.lruLinkedListToString());
     }
 }
