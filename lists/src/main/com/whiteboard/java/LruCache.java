@@ -16,7 +16,7 @@ import java.util.*;
  * the LRU list node for a given cache key is an O(1) operation.
  */
 public final class LruCache<K, V> {
-    private static class LruListNode<K> {
+    static class LruListNode<K> {
         K key;
         LruListNode<K> next;
         LruListNode<K> prev;
@@ -26,7 +26,7 @@ public final class LruCache<K, V> {
         }
     }
 
-    private static class LruLinkedList<K> {
+    static class LruLinkedList<K> {
         LruListNode<K> head;
         LruListNode<K> tail;
 
@@ -67,26 +67,6 @@ public final class LruCache<K, V> {
             last.next = last.prev = null;
             return last;
         }
-
-        @Override
-        public String toString() {
-            StringBuffer result = new StringBuffer();
-            if (head == null) {
-                return("<empty>");
-            }
-            LruListNode<K> curr = head;
-            boolean atHead = true;
-            while (curr != null) {
-                if (!atHead) {
-                    result.append("->");
-                } else {
-                    atHead = false;
-                }
-                result.append(curr.key);
-                curr = curr.next;
-            }
-            return result.toString();
-        }
     }
 
     private static class CacheNode<K, V> {
@@ -101,7 +81,7 @@ public final class LruCache<K, V> {
 
     private final int capacity;
     private final Map<K, CacheNode<K, V>> cache;
-    private final LruLinkedList<K> lruLinkedList;
+    final LruLinkedList<K> lruLinkedList;
 
     public LruCache(int capacity) {
         this.capacity = capacity;
@@ -130,10 +110,5 @@ public final class LruCache<K, V> {
     private void evictLeastRecentlyUsed() {
         LruListNode<K> lruListNode = lruLinkedList.removeLast();
         cache.remove(lruListNode.key);
-    }
-
-    // for testing
-    public String lruLinkedListToString() {
-        return lruLinkedList.toString();
     }
 }
