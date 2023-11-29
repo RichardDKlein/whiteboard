@@ -10,6 +10,9 @@ public final class ListTestUtils {
     }
 
     static <E> ListNode<E> createList(List<E> data) {
+        if (data.isEmpty()) {
+            return null;
+        }
         ListNode<E> result = new ListNode<>(data.get(0));
         ListNode<E> previousNode = result;
         for (int i = 1; i < data.size(); ++i) {
@@ -47,46 +50,54 @@ public final class ListTestUtils {
         return null;
     }
 
-    static <E> void printList(ListNode<E> head) {
+    static <E> String listToString(ListNode<E> head) {
         if (head == null) {
-            System.out.println("<empty>");
-            return;
+            return "<empty>";
         }
+        StringBuilder builder = new StringBuilder();
         ListNode<E> curr = head;
         boolean atHead = true;
         while (curr != null) {
             if (!atHead) {
-                System.out.print("->");
+                builder.append("->");
             } else {
                 atHead = false;
             }
-            System.out.print(curr.data);
+            builder.append(curr.data);
             curr = curr.next;
         }
-        System.out.println();
+        return builder.toString();
     }
 
-    static <E> void printList(ListNode<E> head, int max) {
+    static <E> void printList(ListNode<E> head) {
+        System.out.println(listToString(head));
+    }
+
+    static <E> String listToString(ListNode<E> head, int max) {
         if (head == null) {
-            System.out.println("<empty>");
-            return;
+            return "<empty>";
         }
+        StringBuilder builder = new StringBuilder();
         ListNode<E> curr = head;
         boolean atHead = true;
         int count = 0;
         while (curr != null) {
             if (!atHead) {
-                System.out.print("->");
+                builder.append("->");
             } else {
                 atHead = false;
             }
-            System.out.print(curr.data);
+            builder.append(curr.data);
             if (++count >= max) {
-                System.out.print("-> ...");
+                builder.append("-> ...");
                 break;
             }
             curr = curr.next;
         }
-        System.out.println();
+        return builder.toString();
+    }
+
+    static <E> void printList(ListNode<E> head, int max) {
+        System.out.println(listToString(head, max));
     }
 }
