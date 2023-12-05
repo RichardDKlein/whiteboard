@@ -1,0 +1,55 @@
+package com.whiteboard.java;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Partition an array of integers into disjoint subarrays
+ * `arrA` and `arrB` such that `arrA` is the smallest
+ * possible subarray whose elements sum to a greater
+ * number than the elements of `arrB`.
+ */
+public final class ArraySubsets {
+    private ArraySubsets() {
+    }
+
+    /**
+     * Partition an array of integers into disjoint subarrays
+     * `arrA` and `arrB` such that `arrA` is the smallest
+     * possible subarray whose elements sum to a greater
+     * number than the elements of `arrB`.
+     *
+     * Our strategy will be to first sort the given array in
+     * descending order. Then, starting from the first element,
+     * keep adding elements to `arrA` until the running total
+     * of the elements in `arrA` exceeds the running total of
+     * the remaining elements (in `arrB`).
+     *
+     * Performance is O(n*log(n)), due to the sorting operation.
+     *
+     * @param arr The array to be partitioned.
+     * @return The subarray `arrA`, whose elements are in
+     * ascending order.
+     */
+    public static List<Integer> arraySubsets(List<Integer> arr) {
+        List<Integer> result = new ArrayList<>();
+        Collections.sort(arr, Collections.reverseOrder());
+        long sumA = 0;
+        long sumB = 0;
+        for (int n : arr) {
+            sumB += n;
+        }
+        int i = 0;
+        while (sumA <= sumB) {
+            int n = arr.get(i);
+            result.add(n);
+            sumA += n;
+            sumB -= n;
+            ++i;
+        }
+        Collections.sort(result);
+        return result;
+    }
+}
