@@ -6,10 +6,7 @@ import java.util.List;
 /**
  * Play a game of "array hopscotch".
  */
-public final class ArrayHopscotch {
-    private ArrayHopscotch() {
-    }
-
+public class ArrayHopscotch {
     /**
      * Play a game of "array hopscotch".
      *
@@ -39,16 +36,19 @@ public final class ArrayHopscotch {
      *          elements in the array are greater than or
      *          equal to zero.
      * @param iStart The starting index for our game of
-     *               hopscotch. You may assume that it is
-     *               within the bounds of the given array.
+     *               hopscotch.
      * @return A list containing a winning sequence of
      * indices that led to a zero. (If no such winning
      * sequence exists, then the list will be empty.)
      */
-    public static List<Integer> arrayHopscotch(int[] a, int iStart) {
+    public List<Integer> arrayHopscotch(int[] a, int iStart) {
         List<Integer> result = new ArrayList<>();
-        int hop = a[iStart];
+        // error checking
+        if (iStart < 0 || iStart >= a.length) {
+            return result;
+        }
         // base case
+        int hop = a[iStart];
         if (hop == 0) {
             result.add(iStart);
             return result;
