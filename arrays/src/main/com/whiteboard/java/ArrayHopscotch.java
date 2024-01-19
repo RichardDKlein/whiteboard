@@ -1,40 +1,40 @@
 package com.whiteboard.java;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Play a game of "array hopscotch".
  */
 public class ArrayHopscotch {
     /**
-     * Play a game of "array hopscotch".
+     * <p>Play a game of "array hopscotch".</p>
      *
-     * The game is played as follows. Given an array 'a'
+     * <p>The game is played as follows. Given an array 'a'
      * containing integers greater than or equal to zero,
      * and a starting index 'i', hop left and right in the
      * array by the distance contained in a[i]. Then repeat
-     * the process for the new elements you land on.
+     * the process for the new elements you land on.</p>
      *
-     * Continue in this manner until you either land on a
+     * <p>Continue in this manner until you either land on a
      * zero element (i.e. you win the game), or you realize
      * that it is not possible to land on a zero element
-     * (i.e. you lose the game).
+     * (i.e. you lose the game).</p>
      *
-     * We shall use a recursive algorithm to play the game,
+     * <p>We shall use a recursive algorithm to play the game,
      * keeping track of elements we have visited. If we land
      * on a zero, we win. If, regardless of whether we hop
      * left or right, we land on an element we have already
      * visited, then we are stuck in an infinite loop, and
-     * we lose.
+     * we lose.</p>
      *
-     * Since each element in the array is visited at most
-     * once, the execution time is O(n), worst case.
+     * <p>Since each element in the array is visited at most
+     * once, the execution time is O(n), worst case.</p>
      *
      * @param a The array in which we are to play "array
-     *          hopscotch". You may assume that all the
-     *          elements in the array are greater than or
-     *          equal to zero.
+     *          hopscotch".
      * @param iStart The starting index for our game of
      *               hopscotch.
      * @return A list containing a winning sequence of
@@ -42,22 +42,31 @@ public class ArrayHopscotch {
      * sequence exists, then the list will be empty.)
      */
     public List<Integer> arrayHopscotch(int[] a, int iStart) {
+        Set<Integer> visited = new HashSet<>();
+        return arrayHopscotchWithLoopDetection(a, iStart, visited);
+    }
+
+    private static List<Integer> arrayHopscotchWithLoopDetection(
+            int[] a, int iStart, Set<Integer> visited) {
         List<Integer> result = new ArrayList<>();
         // error checking
         if (iStart < 0 || iStart >= a.length) {
             return result;
         }
-        // base case
         int hop = a[iStart];
+        if (hop < 0) {
+            return result;
+        }
+        // base case
         if (hop == 0) {
             result.add(iStart);
             return result;
         }
         // recursive step
-        a[iStart] = -1; // mark element as visited, to detect infinite loop
+        visited.add(iStart);
         int iHopLeft = iStart - hop;
-        if (iHopLeft >= 0 && a[iHopLeft] != -1) {
-            List<Integer> remainingHops = arrayHopscotch(a, iHopLeft);
+        if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
+            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
@@ -65,8 +74,8 @@ public class ArrayHopscotch {
             }
         }
         int iHopRight = iStart + hop;
-        if (iHopRight < a.length && a[iHopRight] != -1) {
-            List<Integer> remainingHops = arrayHopscotch(a, iHopRight);
+        if (iHopRight < a.length && !visited.contains(iHopRight)) {
+            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopRight, visited);
             if (!remainingHops.isEmpty()) {
                 result.add(iStart);
                 result.addAll(remainingHops);
