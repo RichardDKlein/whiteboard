@@ -41,7 +41,7 @@ public class ArrayHopscotch {
      * indices that led to a zero. (If no such winning
      * sequence exists, then the list will be empty.)
      */
-    public List<Integer> arrayHopscotch(int[] a, int iStart) {
+    public static List<Integer> arrayHopscotch(int[] a, int iStart) {
         Set<Integer> visited = new HashSet<>();
         return arrayHopscotchWithLoopDetection(a, iStart, visited);
     }

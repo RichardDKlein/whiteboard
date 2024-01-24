@@ -9,8 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ArrayHopscotchTest {
-    ArrayHopscotch instance;
-
     @BeforeClass
     public static void beforeClass() {
         System.out.println();
@@ -20,7 +18,6 @@ public class ArrayHopscotchTest {
 
     @Before
     public void beforeEachTest() {
-        instance = new ArrayHopscotch();
     }
 
     @Test
@@ -59,7 +56,7 @@ public class ArrayHopscotchTest {
     }
 
     private void doTest(int[] a, int iStart, List<Integer> expected) {
-        List<Integer> actual = instance.arrayHopscotch(a, iStart);
+        List<Integer> actual = ArrayHopscotch.arrayHopscotch(a, iStart);
         assert(expected.equals(actual));
         System.out.println(Arrays.toString(a) + ", start = " + iStart);
         System.out.println("Winning hops = " + actual);
