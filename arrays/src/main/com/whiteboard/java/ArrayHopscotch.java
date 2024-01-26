@@ -37,18 +37,19 @@ public class ArrayHopscotch {
      *          hopscotch".
      * @param iStart The starting index for our game of
      *               hopscotch.
-     * @return A list containing a winning sequence of
-     * indices that led to a zero. (If no such winning
-     * sequence exists, then the list will be empty.)
+     * @return A Set containing all the winning paths. Each
+     * winning path is a List containing a sequence of hop
+     * indices that lead to a zero element. (If there are
+     * no winning paths, then the Set will be empty.)
      */
-    public static List<Integer> arrayHopscotch(int[] a, int iStart) {
+    public static Set<List<Integer>> arrayHopscotch(int[] a, int iStart) {
         Set<Integer> visited = new HashSet<>();
         return arrayHopscotchWithLoopDetection(a, iStart, visited);
     }
 
-    private static List<Integer> arrayHopscotchWithLoopDetection(
+    private static Set<List<Integer>> arrayHopscotchWithLoopDetection(
             int[] a, int iStart, Set<Integer> visited) {
-        List<Integer> result = new ArrayList<>();
+        Set<List<Integer>> result = new HashSet<>();
         // error checking
         if (iStart < 0 || iStart >= a.length) {
             return result;
@@ -59,30 +60,32 @@ public class ArrayHopscotch {
         }
         // base case
         if (hop == 0) {
-            result.add(iStart);
+            List<Integer> path = new ArrayList<>();
+            path.add(iStart);
+            result.add(path);
             return result;
         }
         // recursive step
-        visited.add(iStart);
+        visited.add(iStart); // don't revisit starting index
         int iHopLeft = iStart - hop;
         if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
-            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
-            if (!remainingHops.isEmpty()) {
-                result.add(iStart);
-                result.addAll(remainingHops);
-                return result;
+            Set<List<Integer>> remainingPaths =
+                    arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
+            for (List<Integer> path : remainingPaths) {
+                path.add(0, iStart);
+                result.add(path);
             }
         }
         int iHopRight = iStart + hop;
         if (iHopRight < a.length && !visited.contains(iHopRight)) {
-            List<Integer> remainingHops = arrayHopscotchWithLoopDetection(a, iHopRight, visited);
-            if (!remainingHops.isEmpty()) {
-                result.add(iStart);
-                result.addAll(remainingHops);
-                return result;
+            Set<List<Integer>> remainingPaths =
+                    arrayHopscotchWithLoopDetection(a, iHopRight, visited);
+            for (List<Integer> path : remainingPaths) {
+                path.add(0, iStart);
+                result.add(path);
             }
         }
-        // no solution
+        visited.remove(iStart); // ok to revisit starting index
         return result;
     }
 }
