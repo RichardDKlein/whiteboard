@@ -51,14 +51,11 @@ public class ArrayHopscotch {
             int[] a, int iStart, Set<Integer> visited) {
         Set<List<Integer>> result = new HashSet<>();
         // error checking
-        if (iStart < 0 || iStart >= a.length) {
-            return result;
-        }
-        int hop = a[iStart];
-        if (hop < 0) {
+        if (iStart < 0 || iStart >= a.length || a[iStart] < 0) {
             return result;
         }
         // base case
+        int hop = a[iStart];
         if (hop == 0) {
             List<Integer> path = new ArrayList<>();
             path.add(iStart);
