@@ -14,9 +14,9 @@ public class ArrayHopscotch {
      *
      * <p>The game is played as follows. Given an array 'a'
      * containing integers greater than or equal to zero,
-     * and a starting index 'i', hop left and right in the
-     * array by the distance contained in a[i]. Then repeat
-     * the process for the new elements you land on.</p>
+     * and a starting index 'iStart', hop left and right in
+     * the array by the distance contained in a[iStart]. Then
+     * repeat the process for the new elements you land on.</p>
      *
      * <p>Continue in this manner until you either land on a
      * zero element (i.e. you win the game), or you realize
