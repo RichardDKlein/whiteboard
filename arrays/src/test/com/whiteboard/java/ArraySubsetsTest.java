@@ -1,36 +1,61 @@
 package com.whiteboard.java;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ArraySubsetsTest {
-    @Test
-    public void arraySubsetsTest() {
+    @BeforeClass
+    public static void beforeClass() {
         System.out.println();
         System.out.println("Test ArraySubsets:");
         System.out.println("==================");
+    }
 
-        List<List<Integer>> input = new ArrayList<>();
-        input.add(Arrays.asList(1));
-        input.add(Arrays.asList(1, 2, 3, 4));
-        input.add(Arrays.asList(1, 2, 2, 3, 3, 3, 4));
-        input.add(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        input.add(Arrays.asList(1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+    @Before
+    public void beforeEachTest() {
+    }
 
-        List<List<Integer>> expected = new ArrayList<>();
-        expected.add(Arrays.asList(1));
-        expected.add(Arrays.asList(3, 4));
-        expected.add(Arrays.asList(3, 3, 4));
-        expected.add(Arrays.asList(7, 8, 9, 10));
-        expected.add(Arrays.asList(1, 1, 1, 1, 1, 1));
+    @Test
+    public void test1() {
+        List<Integer> a = Arrays.asList(1);
+        List<Integer> expected = List.of(1);
+        doTest(a, expected);
+    }
 
-        for (int i = 0; i < expected.size(); ++i) {
-            List<Integer> arrA = ArraySubsets.arraySubsets(input.get(i));
-            assert(arrA.equals(expected.get(i)));
-            System.out.printf("input = %s, arrA = %s\n", input.get(i), arrA);
-        }
+    @Test
+    public void test2() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4);
+        List<Integer> expected = List.of(3, 4);
+        doTest(a, expected);
+    }
+
+    @Test
+    public void test3() {
+        List<Integer> a = Arrays.asList(1, 2, 2, 3, 3, 3, 4);
+        List<Integer> expected = List.of(3, 3, 4);
+        doTest(a, expected);
+    }
+
+    @Test
+    public void test4() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> expected = List.of(7, 8, 9, 10);
+        doTest(a, expected);
+    }
+
+    @Test
+    public void test5() {
+        List<Integer> a = Arrays.asList(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        List<Integer> expected = List.of(1, 1, 1, 1, 1, 1);
+        doTest(a, expected);
+    }
+
+    private void doTest(List<Integer> a, List<Integer> expected) {
+        List<Integer> actual = ArraySubsets.arraySubsets(a);
+        assert(expected.equals(actual));
+        System.out.printf("a = %s, arrA = %s\n", a, actual);
     }
 }

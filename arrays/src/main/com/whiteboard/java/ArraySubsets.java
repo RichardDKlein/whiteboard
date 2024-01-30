@@ -1,20 +1,10 @@
 package com.whiteboard.java;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Partition an array of integers into disjoint subarrays
- * `arrA` and `arrB` such that `arrA` is the smallest
- * possible subarray whose elements sum to a greater
- * number than the elements of `arrB`.
- */
-public final class ArraySubsets {
-    private ArraySubsets() {
-    }
-
+public class ArraySubsets {
     /**
      * Partition an array of integers into disjoint subarrays
      * `arrA` and `arrB` such that `arrA` is the smallest
@@ -29,21 +19,21 @@ public final class ArraySubsets {
      *
      * Performance is O(n*log(n)), due to the sorting operation.
      *
-     * @param arr The array to be partitioned.
+     * @param a The array to be partitioned.
      * @return The subarray `arrA`, whose elements are in
      * ascending order.
      */
-    public static List<Integer> arraySubsets(List<Integer> arr) {
+    public static List<Integer> arraySubsets(List<Integer> a) {
         List<Integer> result = new ArrayList<>();
-        Collections.sort(arr, Collections.reverseOrder());
+        a.sort(Collections.reverseOrder());
         long sumA = 0;
         long sumB = 0;
-        for (int n : arr) {
+        for (int n : a) {
             sumB += n;
         }
         int i = 0;
         while (sumA <= sumB) {
-            int n = arr.get(i);
+            int n = a.get(i);
             result.add(n);
             sumA += n;
             sumB -= n;

@@ -5,9 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Play a game of "array hopscotch".
- */
 public class ArrayHopscotch {
     /**
      * <p>Play a game of "array hopscotch".</p>
@@ -43,15 +40,18 @@ public class ArrayHopscotch {
      * no winning paths, then the Set will be empty.)
      */
     public static Set<List<Integer>> arrayHopscotch(int[] a, int iStart) {
-        Set<Integer> visited = new HashSet<>();
-        return arrayHopscotchWithLoopDetection(a, iStart, visited);
+        return helper(a, iStart, new HashSet<>());
     }
 
-    private static Set<List<Integer>> arrayHopscotchWithLoopDetection(
+    private static Set<List<Integer>> helper(
             int[] a, int iStart, Set<Integer> visited) {
         Set<List<Integer>> result = new HashSet<>();
         // error checking
         if (iStart < 0 || iStart >= a.length || a[iStart] < 0) {
+            return result;
+        }
+        // loop detection
+        if (visited.contains(iStart)) {
             return result;
         }
         // base case
@@ -64,13 +64,10 @@ public class ArrayHopscotch {
         // recursive step
         visited.add(iStart); // don't revisit starting index
         for (int iHop : new int[] {iStart - a[iStart], iStart + a[iStart]}) {
-            if (0 <= iHop && iHop < a.length && !visited.contains(iHop)) {
-                Set<List<Integer>> remainingPaths =
-                        arrayHopscotchWithLoopDetection(a, iHop, visited);
-                for (List<Integer> path : remainingPaths) {
-                    path.add(0, iStart);
-                    result.add(path);
-                }
+            Set<List<Integer>> remainingPaths = helper(a, iHop, visited);
+            for (List<Integer> path : remainingPaths) {
+                path.add(0, iStart);
+                result.add(path);
             }
         }
         visited.remove(iStart); // ok to revisit starting index
