@@ -55,8 +55,7 @@ public class ArrayHopscotch {
             return result;
         }
         // base case
-        int hop = a[iStart];
-        if (hop == 0) {
+        if (a[iStart] == 0) {
             List<Integer> path = new ArrayList<>();
             path.add(iStart);
             result.add(path);
@@ -64,22 +63,14 @@ public class ArrayHopscotch {
         }
         // recursive step
         visited.add(iStart); // don't revisit starting index
-        int iHopLeft = iStart - hop;
-        if (iHopLeft >= 0 && !visited.contains(iHopLeft)) {
-            Set<List<Integer>> remainingPaths =
-                    arrayHopscotchWithLoopDetection(a, iHopLeft, visited);
-            for (List<Integer> path : remainingPaths) {
-                path.add(0, iStart);
-                result.add(path);
-            }
-        }
-        int iHopRight = iStart + hop;
-        if (iHopRight < a.length && !visited.contains(iHopRight)) {
-            Set<List<Integer>> remainingPaths =
-                    arrayHopscotchWithLoopDetection(a, iHopRight, visited);
-            for (List<Integer> path : remainingPaths) {
-                path.add(0, iStart);
-                result.add(path);
+        for (int iHop : new int[] {iStart - a[iStart], iStart + a[iStart]}) {
+            if (0 <= iHop && iHop < a.length && !visited.contains(iHop)) {
+                Set<List<Integer>> remainingPaths =
+                        arrayHopscotchWithLoopDetection(a, iHop, visited);
+                for (List<Integer> path : remainingPaths) {
+                    path.add(0, iStart);
+                    result.add(path);
+                }
             }
         }
         visited.remove(iStart); // ok to revisit starting index
