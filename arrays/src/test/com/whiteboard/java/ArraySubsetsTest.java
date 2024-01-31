@@ -19,6 +19,20 @@ public class ArraySubsetsTest {
     }
 
     @Test
+    public void nullArray() {
+        List<Integer> a = null;
+        List<Integer> expected = Collections.emptyList();
+        doTest(a, expected);
+    }
+
+    @Test
+    public void emptyArray() {
+        List<Integer> a = Collections.emptyList();
+        List<Integer> expected = Collections.emptyList();
+        doTest(a, expected);
+    }
+
+    @Test
     public void test1() {
         List<Integer> a = Arrays.asList(1);
         List<Integer> expected = List.of(1);

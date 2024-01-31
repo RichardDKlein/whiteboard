@@ -25,19 +25,19 @@ public class ArraySubsets {
      */
     public static List<Integer> arraySubsets(List<Integer> a) {
         List<Integer> result = new ArrayList<>();
+        if (a == null || a.isEmpty()) {
+          return result;
+        }
         a.sort(Collections.reverseOrder());
         long sumA = 0;
-        long sumB = 0;
+        long sumB = a.stream().mapToInt(Integer::intValue).sum();
         for (int n : a) {
-            sumB += n;
-        }
-        int i = 0;
-        while (sumA <= sumB) {
-            int n = a.get(i);
             result.add(n);
             sumA += n;
             sumB -= n;
-            ++i;
+            if (sumA > sumB) {
+                break;
+            }
         }
         Collections.sort(result);
         return result;
