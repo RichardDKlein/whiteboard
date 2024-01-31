@@ -45,17 +45,13 @@ public class ArrayHopscotch {
     /**
      * Helper function to perform loop detection.
      *
-     * @param a The array in which we are to play our game of
-     *          array hopscotch.
-     * @param iStart The starting index for our game.
+     * @param a (Same as in main function.)
+     * @param iStart (Same as in main function.)
      * @param visited A Set of indices that have already been
-     *                visited during our game. Do not continue
-     *                to explore any paths that land on any of
-     *                these indices.
-     * @return A Set containing all the winning paths. Each
-     * winning path is a List containing a sequence of hop
-     * indices that lead to a zero element. (If there are
-     * no winning paths, then the Set will be empty.)
+     *                visited during our game of array hopscotch.
+     *                Do not continue to explore any paths that
+     *                land on any of these indices.
+     * @return (Same as in main function.)
      */
     private static Set<List<Integer>> helper(
             int[] a, int iStart, Set<Integer> visited) {
