@@ -30,10 +30,9 @@ public class ArrayHopscotch {
      * <p>Since each element in the array is visited at most
      * once, the execution time is O(n), worst case.</p>
      *
-     * @param a The array in which we are to play "array
-     *          hopscotch".
-     * @param iStart The starting index for our game of
-     *               hopscotch.
+     * @param a The array in which we are to play our game of
+     *          array hopscotch.
+     * @param iStart The starting index for our game.
      * @return A Set containing all the winning paths. Each
      * winning path is a List containing a sequence of hop
      * indices that lead to a zero element. (If there are
@@ -43,6 +42,21 @@ public class ArrayHopscotch {
         return helper(a, iStart, new HashSet<>());
     }
 
+    /**
+     * Helper function to perform loop detection.
+     *
+     * @param a The array in which we are to play our game of
+     *          array hopscotch.
+     * @param iStart The starting index for our game.
+     * @param visited A Set of indices that have already been
+     *                visited during our game. Do not continue
+     *                to explore any paths that land on any of
+     *                these indices.
+     * @return A Set containing all the winning paths. Each
+     * winning path is a List containing a sequence of hop
+     * indices that lead to a zero element. (If there are
+     * no winning paths, then the Set will be empty.)
+     */
     private static Set<List<Integer>> helper(
             int[] a, int iStart, Set<Integer> visited) {
         Set<List<Integer>> result = new HashSet<>();
