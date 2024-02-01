@@ -43,7 +43,16 @@ public class ArrayHopscotchTest {
     }
 
     @Test
-    public void solutionExists1() {
+    public void startIndexAlreadyWins() {
+        int[] a = {2, 3, 1, 0, 5};
+        int iStart = 3;
+        Set<List<Integer>> expected = new HashSet<>(
+                List.of(List.of(3)));
+        doTest(a, iStart, expected);
+    }
+
+    @Test
+    public void oneWinningPath1() {
         int[] a = {2, 3, 1, 0, 5};
         int iStart = 0;
         Set<List<Integer>> expected = new HashSet<>(
@@ -52,7 +61,7 @@ public class ArrayHopscotchTest {
     }
 
     @Test
-    public void solutionExists2() {
+    public void oneWinningPath2() {
         int[] a = {2, 2, 2, 0, 0};
         int iStart = 0;
         Set<List<Integer>> expected = new HashSet<>(
@@ -61,7 +70,16 @@ public class ArrayHopscotchTest {
     }
 
     @Test
-    public void solutionExists3() {
+    public void oneWinningPath3() {
+        int[] a = {4, 2, 0, 3, 1, 5, 0};
+        int iStart = 0;
+        Set<List<Integer>> expected = new HashSet<>(
+                List.of(Arrays.asList(0, 4, 3, 6)));
+        doTest(a, iStart, expected);
+    }
+
+    @Test
+    public void twoWinningPaths() {
         int[] a = {1, 1, 1, 3, 1, 2, 0, 3};
         int iStart = 5;
         Set<List<Integer>> expected = new HashSet<>(
@@ -73,16 +91,7 @@ public class ArrayHopscotchTest {
     }
 
     @Test
-    public void solutionExists4() {
-        int[] a = {4, 2, 0, 3, 1, 5, 0};
-        int iStart = 0;
-        Set<List<Integer>> expected = new HashSet<>(
-                List.of(Arrays.asList(0, 4, 3, 6)));
-        doTest(a, iStart, expected);
-    }
-
-    @Test
-    public void multipleSolutionsExist() {
+    public void threeWinningPaths() {
         int[] a = {5, 2, 1, 3, 0, 1, 2, 4, 1};
         int iStart = 3;
         Set<List<Integer>> expected = new HashSet<>(
