@@ -6,10 +6,12 @@ import java.util.List;
 
 public class ArraySubsets {
     /**
-     * Partition an array of integers into disjoint subarrays
-     * `arrA` and `arrB` such that `arrA` is the smallest
-     * possible subarray whose elements sum to a greater
-     * number than the elements of `arrB`.
+     * Partition an array `a` of integers into disjoint
+     * subarrays `arrA` and `arrB` such that `arrA` is
+     * the smallest possible subarray whose elements sum
+     * to a greater number than the elements of `arrB`.
+     * (Note that neither `arrA` nor `arrB` need consist
+     * of consecutive elements from `a`.)
      *
      * Our strategy will be to first sort the given array in
      * descending order. Then, starting from the first element,
@@ -20,7 +22,7 @@ public class ArraySubsets {
      * Performance is O(n*log(n)), due to the sorting operation.
      *
      * @param a The array to be partitioned.
-     * @return The subarray `arrA`, whose elements are in
+     * @return The subarray `arrA`, with its elements in
      * ascending order.
      */
     public static List<Integer> arraySubsets(List<Integer> a) {
