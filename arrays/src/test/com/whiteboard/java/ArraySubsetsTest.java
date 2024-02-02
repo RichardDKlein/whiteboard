@@ -33,35 +33,35 @@ public class ArraySubsetsTest {
     }
 
     @Test
-    public void test1() {
+    public void arrayWithSingleElement() {
         List<Integer> a = Arrays.asList(1);
         List<Integer> expected = List.of(1);
         doTest(a, expected);
     }
 
     @Test
-    public void test2() {
+    public void arrayWithNoDuplicateElements() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4);
         List<Integer> expected = List.of(3, 4);
         doTest(a, expected);
     }
 
     @Test
-    public void test3() {
-        List<Integer> a = Arrays.asList(1, 2, 2, 3, 3, 3, 4);
-        List<Integer> expected = List.of(3, 3, 4);
-        doTest(a, expected);
-    }
-
-    @Test
-    public void test4() {
+    public void longerArrayWithNoDuplicateElements() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<Integer> expected = List.of(7, 8, 9, 10);
         doTest(a, expected);
     }
 
     @Test
-    public void test5() {
+    public void arrayWithSomeDuplicateElements() {
+        List<Integer> a = Arrays.asList(1, 2, 2, 3, 3, 3, 4);
+        List<Integer> expected = List.of(3, 3, 4);
+        doTest(a, expected);
+    }
+
+    @Test
+    public void arrayWithAllDuplicateElements() {
         List<Integer> a = Arrays.asList(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
         List<Integer> expected = List.of(1, 1, 1, 1, 1, 1);
         doTest(a, expected);
