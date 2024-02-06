@@ -17,7 +17,7 @@ public class BubbleSort {
         while (lastUnsortedIndex > 0) {
             boolean swapOccurred = false;
             int lastUnsortedIndexThisIteration = lastUnsortedIndex;
-            for (int i = 0; i < lastUnsortedIndex; ++i) {
+            for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (a[i] > a[i + 1]) {
                     int tmp = a[i];
                     a[i] = a[i + 1];
