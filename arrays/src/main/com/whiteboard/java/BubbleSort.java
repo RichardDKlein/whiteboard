@@ -10,7 +10,8 @@ public class BubbleSort {
      * bottom of the array during each iteration of the
      * bubble sort.
      *
-     * @param a The array to sort.
+     * @param a The array to be sorted. It will be sorted
+     *          in place.
      */
     public static void bubbleSort(int[] a) {
         int lastUnsortedIndex = a.length - 1;
