@@ -14,21 +14,18 @@ public class BubbleSort {
      *          in place.
      */
     public static void bubbleSort(int[] a) {
-        boolean swapOccurred;
         int numberOfUnsortedElements = a.length;
-        do {
-            swapOccurred = false;
+        while (numberOfUnsortedElements > 0) {
             int newNumberOfUnsortedElements = 0;
             for (int i = 0; i < numberOfUnsortedElements - 1; i++) {
                 if (a[i] > a[i + 1]) {
                     int tmp = a[i];
                     a[i] = a[i + 1];
                     a[i + 1] = tmp;
-                    swapOccurred = true;
                     newNumberOfUnsortedElements = i + 1;
                 }
             }
             numberOfUnsortedElements = newNumberOfUnsortedElements;
-        } while (swapOccurred);
+        }
     }
 }
