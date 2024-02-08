@@ -1,7 +1,7 @@
 package com.whiteboard.java;
 
 /**
- * Implements a queue using a circular buffer.
+ * Implement a queue using a circular buffer.
  *
  * We keep two private indices, head and tail. The head
  * points to the element at the head of the queue. The
