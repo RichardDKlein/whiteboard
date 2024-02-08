@@ -14,7 +14,7 @@ package com.whiteboard.java;
  * when the next element after the tail is the head. Since
  * the tail always points to the next free slot, a full
  * queue contains exactly one free, and unusable, slot.
- * Thus the capacity of a buffer of length n is actually
+ * Thus, the capacity of a buffer of length n is actually
  * (n - 1).
  */
 public class CircularQueue {
@@ -22,10 +22,23 @@ public class CircularQueue {
     private int head;
     private int tail;
 
+    /**
+     * General constructor.
+     *
+     * @param capacity The maximum number of elements that
+     *                 the queue can hold.
+     */
     public CircularQueue(int capacity) {
-        buf = new int[capacity];
+        buf = new int[capacity + 1];
     }
 
+    /**
+     * Append an element to the queue.
+     *
+     * @param element The element to be appended.
+     * @return 'true' if the append operation was successful,
+     * 'false' otherwise.
+     */
     public boolean add(int element) {
         if (isFull()) {
             return false;
@@ -35,6 +48,13 @@ public class CircularQueue {
         return true;
     }
 
+    /**
+     * Remove an element from the front of the queue.
+     *
+     * @return the element that was removed from the
+     * front of the queue, or `null` if the queue is
+     * empty.
+     */
     public Integer poll() {
         if (isEmpty()) {
             return null;
@@ -44,10 +64,22 @@ public class CircularQueue {
         return element;
     }
 
+    /**
+     * Determine whether the queue is full.
+     *
+     * @return 'true' if the queue is full, 'false'
+     * otherwise.
+     */
     private boolean isFull() {
         return ((tail + 1) % buf.length) == head;
     }
 
+    /**
+     * Determine whether the queue is empty.
+     *
+     * @return 'true' if the queue is empty, 'false'
+     * otherwise.
+     */
     private boolean isEmpty() {
         return head == tail;
     }

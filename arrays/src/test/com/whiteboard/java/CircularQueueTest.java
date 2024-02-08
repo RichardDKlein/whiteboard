@@ -1,86 +1,108 @@
 package com.whiteboard.java;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CircularQueueTest {
     private static CircularQueue queue;
 
-    @Test
-    public void circularQueueTest() {
+    @BeforeClass
+    public static void beforeClass() {
         System.out.println();
         System.out.println("Test CircularQueue:");
         System.out.println("===================");
+    }
 
-        boolean success;
-        Integer element;
-
-        System.out.println("Creating a CircularQueue of length 10");
+    @Before
+    public void beforeEachTest() {
+        System.out.println(
+                "Creating a CircularQueue that can hold 10 elements");
         queue = new CircularQueue(10);
+    }
 
+    @Test
+    public void addAndRemove() {
+        // add five elements
         System.out.println();
+        assert(add(1));
+        assert(add(2));
+        assert(add(3));
+        assert(add(4));
+        assert(add(5));
 
-        success = add(1); assert(success);
-        success = add(2); assert(success);
-        success = add(3); assert(success);
-        success = add(4); assert(success);
-        success = add(5); assert(success);
-
+        // remove three elements
         System.out.println();
-
         for (int i = 0; i < 3; ++i) {
-            element = remove();
+            Integer element = remove();
             assert(element == i + 1);
         }
 
+        // add five more elements
         System.out.println();
+        assert(add(6));
+        assert(add(7));
+        assert(add(8));
+        assert(add(9));
+        assert(add(10));
 
-        success = add(6); assert(success);
-        success = add(7); assert(success);
-        success = add(8); assert(success);
-        success = add(9); assert(success);
-        success = add(10); assert(success);
-
+        // remove two more elements
         System.out.println();
-
         for (int i = 0; i < 2; ++i) {
-            element = remove();
+            Integer element = remove();
             assert(element == i + 4);
         }
 
+        // add five more elements
         System.out.println();
+        assert(add(11));
+        assert(add(12));
+        assert(add(13));
+        assert(add(14));
+        assert(add(15));
 
-        success = add(11); assert(success);
-        success = add(12); assert(success);
-        success = add(13); assert(success);
-        success = add(14); assert(success);
-        success = add(15); assert(!success);
-
+        // try to add one more element
+        // (should fail -- queue full)
         System.out.println();
+        assert(!add(16));
 
+        // remove three more elements
+        System.out.println();
         for (int i = 0; i < 3; ++i) {
-            element = remove();
+            Integer element = remove();
             assert(element == i + 6);
         }
 
+        // add three more elements
         System.out.println();
+        assert(add(17));
+        assert(add(18));
+        assert(add(19));
 
-        success = add(16); assert(success);
-        success = add(17); assert(success);
-        success = add(18); assert(success);
-        success = add(19); assert(!success);
-
+        // try to add one more element
+        // (should fail -- queue full)
         System.out.println();
+        assert(!add(20));
 
-        for (int i = 0; i < 10; ++i) {
-            element = remove();
-            if (i < 6) {
-                assert(element == i + 9);
-            } else if (i < 9) {
-                assert (element == i + 10);
-            } else {
-                assert(element == null);
-            }
+        // remove six elements
+        System.out.println();
+        for (int i = 0; i < 7; i++) {
+            Integer element = remove();
+            assert(element == i + 9);
         }
+
+        // remove three more elements
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            Integer element = remove();
+            assert(element == i + 17);
+        }
+
+        // try to remove another element
+        // (should fail - queue empty)
+        System.out.println();
+        Integer element = remove();
+        assert(element == null);
     }
 
     private static boolean add(int element) {
