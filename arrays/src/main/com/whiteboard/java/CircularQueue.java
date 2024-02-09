@@ -14,8 +14,8 @@ package com.whiteboard.java;
  * when the next element after the tail is the head. Since
  * the tail always points to the next free slot, a full queue
  * contains exactly one free, and unusable, slot. Thus, if we
- * want the queue to be able to hold `capacity` elements, we
- * need to allocate a buffer of length (capacity + 1).
+ * want a queue that can hold `capacity` elements, we need to
+ * allocate a buffer of length (capacity + 1).
  */
 public class CircularQueue {
     private int[] buf;
