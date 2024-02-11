@@ -28,8 +28,8 @@ public class ArrayHopscotch {
      * (i.e., you win the game), or you land on an element from which there
      * are no legal hops (i.e., you lose the game).</p>
      *
-     * The goal of the game is to find not just one winning path, but all
-     * possible winning paths.
+     * <p>The goal of the game is to find not just one winning path, but all
+     * possible winning paths.</p>
      *
      * <p>Since there are at most `n` indices in each winning path, where
      * `n` is the length of the array, and since there are only `k` winning
