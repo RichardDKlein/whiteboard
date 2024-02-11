@@ -9,41 +9,36 @@ public class ArrayHopscotch {
     /**
      * <p>Play a game of "array hopscotch".</p>
      *
-     * <p>The game is played as follows. Given an array 'a'
-     * containing integers greater than or equal to zero,
-     * and a starting index 'iStart', hop left or right in
-     * the array by the distance contained in a[iStart].
-     * Then repeat the hopping process for the new element
-     * you land on: Hop left or right by the distance
-     * contained in that new element.
+     * <p>The game is played as follows. Given an array 'a' containing
+     * integers greater than or equal to zero, and a starting index
+     * 'iStart', hop left or right in the array by the distance contained
+     * in a[iStart]. Then repeat the hopping process for the new element
+     * you land on: Hop left or right by the distance contained in that
+     * new element.
      *
-     * There are two important restrictions on the hopping
-     * process:
+     * There are two important restrictions on the hopping process:
      *
-     * (1) If a hop would take you beyond the bounds of the
-     * array, that is not a legal hop; and
+     * (1) If a hop would take you beyond the bounds of the array, that is
+     * not a legal hop; and
      *
-     * (2) If a hop would take you to an element you have
-     * already visited, that is not a legal hop.</p>
+     * (2) If a hop would take you to an element you have already visited,
+     * that is not a legal hop.</p>
      *
-     * <p>Continue in this manner until you either land on a
-     * zero element (i.e., you win the game), or you land on
-     * an element from which there are no legal hops (i.e.,
-     * you lose the game).</p>
+     * <p>Continue in this manner until you either land on a zero element
+     * (i.e., you win the game), or you land on an element from which there
+     * are no legal hops (i.e., you lose the game).</p>
      *
-     * <p>We shall use a recursive algorithm to play the game,
-     * keeping track of the elements we have visited.</p>
+     * <p>We shall use a recursive algorithm to play the game, keeping track
+     * of the elements we have visited.</p>
      *
-     * <p>Since each element in the array is visited at most
-     * once, the execution time is O(n), worst case.</p>
+     * <p>Since each element in the array is visited at most once, the
+     * execution time is O(n), worst case.</p>
      *
-     * @param a The array in which we are to play our game of
-     *          array hopscotch.
+     * @param a The array in which we are to play our game of array hopscotch.
      * @param iStart The starting index for our game.
-     * @return A Set containing all the winning paths. Each
-     * winning path is a List containing a sequence of unique
-     * hop indices that lead to a zero element. (If there are
-     * no winning paths, then the Set will be empty.)
+     * @return A Set containing all the winning paths. Each winning path is a
+     * List containing a sequence of unique hop indices that lead to a zero
+     * element. (If there are no winning paths, then the Set will be empty.)
      */
     public static Set<List<Integer>> arrayHopscotch(int[] a, int iStart) {
         return helper(a, iStart, new HashSet<>());
@@ -54,10 +49,9 @@ public class ArrayHopscotch {
      *
      * @param a (Same as in main function.)
      * @param iStart (Same as in main function.)
-     * @param visited A Set of indices that have already been
-     *                visited during our game of array hopscotch.
-     *                Do not continue to explore any paths that
-     *                land on any of these indices.
+     * @param visited A Set of indices that have already been visited during
+     *                our game of array hopscotch. Do not continue to explore
+     *                any paths that land on any of these indices.
      * @return (Same as in main function.)
      */
     private static Set<List<Integer>> helper(
