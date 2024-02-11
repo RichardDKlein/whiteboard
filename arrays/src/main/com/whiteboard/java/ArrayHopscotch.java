@@ -11,21 +11,28 @@ public class ArrayHopscotch {
      *
      * <p>The game is played as follows. Given an array 'a'
      * containing integers greater than or equal to zero,
-     * and a starting index 'iStart', hop left and right in
-     * the array by the distance contained in a[iStart]. Then
-     * repeat the process for the new elements you land on.</p>
+     * and a starting index 'iStart', hop left or right in
+     * the array by the distance contained in a[iStart].
+     * Then repeat the hopping process for the new element
+     * you land on: Hop left or right by the distance
+     * contained in that new element.
+     *
+     * There are two important restrictions on the hopping
+     * process:
+     *
+     * (1) If a hop would take you beyond the bounds of the
+     * array, that is not a legal hop; and
+     *
+     * (2) If a hop would take you to an element you have
+     * already visited, that is not a legal hop.</p>
      *
      * <p>Continue in this manner until you either land on a
-     * zero element (i.e. you win the game), or you realize
-     * that it is not possible to land on a zero element
-     * (i.e. you lose the game).</p>
+     * zero element (i.e., you win the game), or you land on
+     * an element from which there are no legal hops (i.e.,
+     * you lose the game).</p>
      *
      * <p>We shall use a recursive algorithm to play the game,
-     * keeping track of elements we have visited. If we land
-     * on a zero, we win. If, regardless of whether we hop
-     * left or right, we land on an element we have already
-     * visited, then we are stuck in an infinite loop, and
-     * we lose.</p>
+     * keeping track of the elements we have visited.</p>
      *
      * <p>Since each element in the array is visited at most
      * once, the execution time is O(n), worst case.</p>
@@ -34,8 +41,8 @@ public class ArrayHopscotch {
      *          array hopscotch.
      * @param iStart The starting index for our game.
      * @return A Set containing all the winning paths. Each
-     * winning path is a List containing a sequence of hop
-     * indices that lead to a zero element. (If there are
+     * winning path is a List containing a sequence of unique
+     * hop indices that lead to a zero element. (If there are
      * no winning paths, then the Set will be empty.)
      */
     public static Set<List<Integer>> arrayHopscotch(int[] a, int iStart) {
