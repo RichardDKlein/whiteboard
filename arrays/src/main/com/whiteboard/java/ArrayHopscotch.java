@@ -39,7 +39,9 @@ public class ArrayHopscotch {
      * @param iStart The starting index for our game.
      * @return A Set containing all the winning paths. Each winning path is a
      * List containing a sequence of unique hop indices that lead to a zero
-     * element. (If there are no winning paths, then the Set will be empty.)
+     * element. Note that the first element of a winning tuple must be `i_start`,
+     * and the last element must be the index of a zero element in `a`. If there
+     * are no winning paths, then the Set will be empty.
      */
     public static Set<List<Integer>> arrayHopscotch(int[] a, int iStart) {
         return helper(a, iStart, new HashSet<>());
