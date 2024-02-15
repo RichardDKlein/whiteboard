@@ -6,7 +6,7 @@ package com.whiteboard.java;
  * We keep two private indices, head and tail. The head
  * points to the element at the head of the queue. The
  * tail points to the next free slot at the end of the
- * queue. The head and tail chase each other around the
+ * queue. The tail and head chase each other around the
  * circular buffer as elements are added and removed.
  *
  * The queue is considered empty when the head and the tail
@@ -18,7 +18,7 @@ package com.whiteboard.java;
  * allocate a buffer of length (capacity + 1).
  */
 public class CircularQueue {
-    private int[] buf;
+    private Integer[] buf;
     private int head;
     private int tail;
 
@@ -29,7 +29,7 @@ public class CircularQueue {
      *                 the queue can hold.
      */
     public CircularQueue(int capacity) {
-        buf = new int[capacity + 1];
+        buf = new Integer[capacity + 1];
     }
 
     /**
@@ -60,6 +60,7 @@ public class CircularQueue {
             return null;
         }
         int element = buf[head];
+        buf[head] = null;
         head = (head + 1) % buf.length;
         return element;
     }
