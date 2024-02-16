@@ -32,14 +32,14 @@ public class FindPrimesTest {
         System.out.println("Primes up to 1000:");
 
         long startTime = System.nanoTime();
-        List<Integer> primes = FindPrimes.findPrimes(1_000);
+        List<Integer> primes = FindPrimes.findPrimes(1000);
         long endTime = System.nanoTime();
 
         long elapsedTime = endTime - startTime;
-        long microseconds = elapsedTime / 1_000;
-        System.out.printf("Elapsed time = %d microseconds\n", microseconds);
+        long microseconds = elapsedTime / 1000;
 
         printLongString(Arrays.toString(primes.toArray()));
+        System.out.printf("Elapsed time = %d microseconds\n", microseconds);
         assert(primes.equals(expected));
     }
 }
