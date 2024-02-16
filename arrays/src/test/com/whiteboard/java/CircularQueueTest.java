@@ -84,7 +84,7 @@ public class CircularQueueTest {
         System.out.println();
         assert(!add(20));
 
-        // remove six elements
+        // remove seven elements
         System.out.println();
         for (int i = 0; i < 7; i++) {
             Integer element = remove();
