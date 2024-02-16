@@ -113,10 +113,10 @@ public class ArrayHopscotchTest {
 
     private void doTest(int[] a, int iStart, Set<List<Integer>> expected) {
         Set<List<Integer>> actual = ArrayHopscotch.arrayHopscotch(a, iStart);
-        assert(expected.equals(actual));
         System.out.printf("a = %s, iStart = %d\n", Arrays.toString(a), iStart);
         System.out.println("Winning hops:");
         printPaths(actual);
+        assert(expected.equals(actual));
     }
 
     private void printPaths(Set<List<Integer>> paths) {

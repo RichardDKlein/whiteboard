@@ -69,7 +69,7 @@ public class ArraySubsetsTest {
 
     private void doTest(List<Integer> a, List<Integer> expected) {
         List<Integer> actual = ArraySubsets.arraySubsets(a);
-        assert(expected.equals(actual));
         System.out.printf("a = %s, arrA = %s\n", a, actual);
+        assert(expected.equals(actual));
     }
 }

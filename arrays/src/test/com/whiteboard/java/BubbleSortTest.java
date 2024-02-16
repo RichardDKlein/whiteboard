@@ -56,8 +56,8 @@ public class BubbleSortTest {
     public void doTest(int[] a, int[] expected) {
         int[] aCopy = Arrays.copyOf(a, a.length);
         BubbleSort.bubbleSort(aCopy);
-        assert(Arrays.equals(expected, aCopy));
         System.out.printf("bubbleSort(%s) = %s\n",
                 Arrays.toString(a), Arrays.toString(aCopy));
+        assert(Arrays.equals(expected, aCopy));
     }
 }
