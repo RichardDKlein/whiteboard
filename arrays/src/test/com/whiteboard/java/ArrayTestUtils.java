@@ -1,7 +1,7 @@
 package com.whiteboard.java;
 
 /**
- * Test utilities for the arrays package.
+ * Test utilities for arrays.
  */
 public class ArrayTestUtils {
     private ArrayTestUtils() {
