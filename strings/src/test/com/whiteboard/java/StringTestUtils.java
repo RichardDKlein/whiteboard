@@ -4,9 +4,13 @@ package com.whiteboard.java;
  * Test utilities for Strings.
  */
 public class StringTestUtils {
-    private StringTestUtils() {
-    }
-
+    /**
+     * Print a long string, automatically wrapping
+     * the lines at space characters so that the
+     * entire string is visible onscreen.
+     *
+     * @param s The long string to be printed.
+     */
     public static void printLongString(String s) {
         int maxLen = 68;
         int currIndex = 0;
