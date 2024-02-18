@@ -38,14 +38,15 @@ public class FindPrimes {
      */
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();
-        if (n < 2) {
-            return result;
-        }
         boolean[] isPrime = new boolean[n + 1];
-        for (int i = 2; i <= n; i++) {
-            isPrime[i] = true;
+        isPrime[0] = isPrime[1] = false;
+        if (n >= 2) {
+            isPrime[2] = true;
         }
-        for (int i = 2; i * i <= n; i++) {
+        for (int i = 3; i <= n; i++) {
+            isPrime[i] = i % 2 != 0;
+        }
+        for (int i = 3; i * i <= n; i += 2) {
             if (isPrime[i]) {
                 for (int j = i * i; j <= n; j += i) {
                     isPrime[j] = false;

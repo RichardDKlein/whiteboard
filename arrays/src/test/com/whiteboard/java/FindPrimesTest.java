@@ -1,19 +1,41 @@
 package com.whiteboard.java;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static com.whiteboard.java.StringTestUtils.printLongString;
 
 public class FindPrimesTest {
-    @Test
-    public void findPrimesTest() {
+    @BeforeClass
+    public static void beforeClass() {
         System.out.println();
         System.out.println("Test FindPrimes:");
         System.out.println("================");
+    }
 
+    @Before
+    public void beforeEachTest() {
+    }
+
+    @Test
+    public void upTo1() {
+        List<Integer> expected = Collections.emptyList();
+        doTest(1, expected);
+    }
+
+    @Test
+    public void upTo2() {
+        List<Integer> expected = List.of(2);
+        doTest(2, expected);
+    }
+
+    @Test
+    public void upTo1000() {
         List<Integer> expected = Arrays.asList(
                 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
                 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137,
@@ -29,17 +51,22 @@ public class FindPrimesTest {
                 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967,
                 971, 977, 983, 991, 997);
 
-        System.out.println("Primes up to 1000:");
+        doTest(1000, expected);
+    }
+
+    private void doTest(int n, List<Integer> expected) {
+        System.out.printf("Primes up to %d:\n", n);
 
         long startTime = System.nanoTime();
-        List<Integer> primes = FindPrimes.findPrimes(1000);
+        List<Integer> primes = FindPrimes.findPrimes(n);
         long endTime = System.nanoTime();
 
         long elapsedTime = endTime - startTime;
         long microseconds = elapsedTime / 1000;
 
         printLongString(Arrays.toString(primes.toArray()));
-        System.out.printf("Elapsed time = %d microseconds\n", microseconds);
+        System.out.printf("Elapsed time = %d microseconds\n\n",
+                microseconds);
         assert(primes.equals(expected));
     }
 }
