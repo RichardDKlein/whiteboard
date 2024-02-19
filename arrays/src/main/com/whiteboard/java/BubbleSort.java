@@ -2,12 +2,12 @@ package com.whiteboard.java;
 
 public class BubbleSort {
     /**
-     * Sort an array using the bubble sort algorithm.
+     * Sort an array using the bubble sort algorithm.</p>
      *
      * The algorithm is optimized to avoid re-examining
      * the already sorted elements that "sink" to the
      * bottom of the array during each iteration of the
-     * bubble sort.
+     * bubble sort.</p>
      *
      * Performance is O(n*n).
      *

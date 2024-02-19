@@ -11,13 +11,13 @@ public class ArraySubsets {
      * the smallest possible subarray whose elements sum
      * to a greater number than the elements of `arrB`.
      * (Note that neither `arrA` nor `arrB` need consist
-     * of consecutive elements from `a`.)
+     * of consecutive elements from `a`.)</p>
      *
      * Our strategy will be to first sort the given array in
      * descending order. Then, starting from the first element,
      * keep adding elements to `arrA` until the running total
      * of the elements in `arrA` exceeds the running total of
-     * the remaining elements (in `arrB`).
+     * the remaining elements (in `arrB`).</p>
      *
      * Performance is O(n*log(n)), due to the sorting operation.
      *

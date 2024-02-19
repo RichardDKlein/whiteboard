@@ -1,13 +1,13 @@
 package com.whiteboard.java;
 
 /**
- * Implement a queue using a circular buffer.
+ * Implement a queue using a circular buffer.</p>
  *
  * We keep two private indices, head and tail. The head
  * points to the element at the head of the queue. The
  * tail points to the next free slot at the end of the
  * queue. The tail and head chase each other around the
- * circular buffer as elements are added and removed.
+ * circular buffer as elements are added and removed.</p>
  *
  * The queue is considered empty when the head and the tail
  * point to the same element. The queue is considered full

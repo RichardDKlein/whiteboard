@@ -7,33 +7,33 @@ import java.util.Set;
 
 public class ArrayHopscotch {
     /**
-     * <p>Play a game of "array hopscotch".</p>
+     * Play a game of "array hopscotch".</p>
      *
-     * <p>The game is played as follows. Given an array 'a' containing
+     * The game is played as follows. Given an array 'a' containing
      * integers greater than or equal to zero, and a starting index
      * 'iStart', hop left or right in the array by the distance contained
      * in a[iStart]. Then repeat the hopping process for the new element
      * you land on: Hop left or right by the distance contained in that
-     * new element.
+     * new element.</p>
      *
-     * There are two important restrictions on the hopping process:
+     * There are two important restrictions on the hopping process:</p>
      *
      * (1) If a hop would take you beyond the bounds of the array, that is
-     * not a legal hop; and
+     * not a legal hop; and</p>
      *
      * (2) If a hop would take you to an element you have already visited,
      * that is not a legal hop.</p>
      *
-     * <p>Continue in this manner until you either land on a zero element
+     * Continue in this manner until you either land on a zero element
      * (i.e., you win the game), or you land on an element from which there
      * are no legal hops (i.e., you lose the game).</p>
      *
-     * <p>The goal of the game is to find not just one winning path, but all
+     * The goal of the game is to find not just one winning path, but all
      * possible winning paths.</p>
      *
-     * <p>Since there are at most `n` indices in each winning path, where
+     * Since there are at most `n` indices in each winning path, where
      * `n` is the length of the array, and since there are only `k` winning
-     * paths, the execution time is O(k * n) = O(n), worst case.</p>
+     * paths, the execution time is O(k * n) = O(n), worst case.
      *
      * @param a The array in which we are to play our game of array hopscotch.
      * @param iStart The starting index for our game.
