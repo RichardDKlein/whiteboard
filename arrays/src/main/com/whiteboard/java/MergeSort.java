@@ -1,6 +1,7 @@
 package com.whiteboard.java;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,57 +27,32 @@ public final class MergeSort {
             return result;
         }
         // recursive step
-        List<int[]> halves = splitArrayIntoHalves(a);
-        int[] left = halves.get(0);
-        int[] right = halves.get(1);
-        int[] leftSorted = mergeSort(left);
-        int[] rightSorted = mergeSort(right);
+        int[][] halves = splitArrayIntoHalves(a);
+        int[] leftSorted = mergeSort(halves[0]);
+        int[] rightSorted = mergeSort(halves[1]);
         return mergeTwoSortedArrays(leftSorted, rightSorted);
     }
 
-    private static List<int[]> splitArrayIntoHalves(int[] a) {
-        List<int[]> result = new ArrayList<>();
-        int iLeftEnd;
-        if (a.length % 2 == 0) {
-            iLeftEnd = a.length / 2 - 1;
-        } else {
-            iLeftEnd = a.length / 2;
-        }
-        int leftLen = iLeftEnd - 0 + 1;
-        int rightLen = (a.length - 1) - (iLeftEnd + 1) + 1;
-        int[] left = new int[leftLen];
-        int[] right = new int[rightLen];
-        for (int iSrc = 0, iDest = 0; iSrc <= iLeftEnd; ++iSrc, ++iDest) {
-            left[iDest] = a[iSrc];
-        }
-        for (int iSrc = iLeftEnd + 1, iDest = 0; iSrc < a.length; ++iSrc, ++iDest) {
-            right[iDest] = a[iSrc];
-        }
-        result.add(left);
-        result.add(right);
+    private static int[][] splitArrayIntoHalves(int[] a) {
+        int[][] result = new int[2][];
+        int size1 = a.length / 2;
+        result[0] = Arrays.copyOfRange(a, 0, size1);
+        result[1] = Arrays.copyOfRange(a, size1, a.length);
         return result;
     }
-
 
     private static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
         int[] merged = new int[a1.length + a2.length];
         int i1, i2, iMerged;
         i1 = i2 = iMerged = 0;
-        while (iMerged < merged.length) {
-            // if a1 is fully merged, just append the remaining a2 elements
-            if (i1 >= a1.length) {
-                while (i2 < a2.length) {
-                    merged[iMerged++] = a2[i2++];
-                }
-            }
-            // if a2 is fully merged, just append the remaining a1 elements
-            else if (i2 >= a2.length) {
-                while (i1 < a1.length) {
-                    merged[iMerged++] = a1[i1++];
-                }
-            } else {
-                merged[iMerged++] = (a1[i1] <= a2[i2]) ? a1[i1++] : a2[i2++];
-            }
+        while (i1 < a1.length && i2 < a2.length) {
+            merged[iMerged++] = (a1[i1] <= a2[i2]) ? a1[i1++] : a2[i2++];
+        }
+        while (i1 < a1.length) {
+            merged[iMerged++] = a1[i1++];
+        }
+        while (i2 < a2.length) {
+            merged[iMerged++] = a2[i2++];
         }
         return merged;
     }
