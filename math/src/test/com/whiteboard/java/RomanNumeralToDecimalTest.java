@@ -15,7 +15,7 @@ public class RomanNumeralToDecimalTest {
                 "MMXIX"
         };
 
-        int[] expected = new int[] {
+        int[] expected = {
                 1944,
                 1968,
                 2019
