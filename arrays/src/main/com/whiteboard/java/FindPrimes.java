@@ -35,10 +35,10 @@ public class FindPrimes {
     public static List<Integer> findPrimes(int n) {
         List<Integer> result = new ArrayList<>();
         boolean[] isPrime = new boolean[n + 1];
-        for (int i = 0; i <= n; i++) {
+        for (int i = 2; i <= n; i++) {
             isPrime[i] = true;
         }
-        int sqrtN = (int) Math.sqrt(n);
+        int sqrtN = (int)Math.round(Math.sqrt(n));
         for (int i = 2; i <= sqrtN; i++) {
             if (isPrime[i]) {
                 for (int j = i * i; j <= n; j += i) {
