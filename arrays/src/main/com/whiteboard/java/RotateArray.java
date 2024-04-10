@@ -5,9 +5,6 @@ package com.whiteboard.java;
  * IN PLACE.
  */
 public final class RotateArray {
-    private RotateArray() {
-    }
-
     /**
      * Rotate a square 2D array 90 degrees in the clockwise direction,
      * IN PLACE.
@@ -34,8 +31,8 @@ public final class RotateArray {
 
     private static void transposeArray(int[][] a) {
         int numRows = a.length;
-        for (int row = 0; row < numRows; ++row) {
-            for (int col = 0; col < row; ++col) {
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < row; col++) {
                 int tmp = a[row][col];
                 a[row][col] = a[col][row];
                 a[col][row] = tmp;
@@ -44,15 +41,14 @@ public final class RotateArray {
     }
 
     private static void reverseRow(int[] row) {
-        int numCols = row.length;
-        int left = 0;
-        int right = numCols - 1;
-        while (left < right) {
-            int tmp = row[left];
-            row[left] = row[right];
-            row[right] = tmp;
-            ++left;
-            --right;
+        int leftCol = 0;
+        int rightCol = row.length - 1;
+        while (leftCol < rightCol) {
+            int tmp = row[leftCol];
+            row[leftCol] = row[rightCol];
+            row[rightCol] = tmp;
+            leftCol++;
+            rightCol--;
         }
     }
 }
