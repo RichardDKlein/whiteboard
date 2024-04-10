@@ -5,9 +5,6 @@ package com.whiteboard.java;
  * and columns are sorted in ascending order.
  */
 public final class SearchSorted2dArray {
-    private SearchSorted2dArray() {
-    }
-
     /**
      * Search a 2D array in which all rows and columns
      * are sorted in ascending order.
@@ -41,24 +38,18 @@ public final class SearchSorted2dArray {
      * is not found.
      */
     public static int[] searchSorted2dArray(int[][] a, int target) {
-        int[] result = {-1, -1};
-        int numRows = a.length;
-        int numCols = a[0].length;
-        int row = numRows - 1;
+        int row = a.length - 1;
         int col = 0;
-        while (row >= 0 && col < numCols) {
+        while (row >= 0 && col < a[0].length) {
             int curr = a[row][col];
-            if (curr > target) {
-                --row;
-            } else if (curr < target) {
-                ++col;
+            if (curr < target) {
+                col++;
+            } else if (curr > target) {
+                row--;
             } else {
-                result[0] = row;
-                result[1] = col;
-                return result;
+                return new int[] {row, col};
             }
         }
-        // target not found
-        return result;
+        return new int[] {-1, -1};
     }
 }
