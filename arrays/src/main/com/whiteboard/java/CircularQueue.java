@@ -18,7 +18,7 @@ package com.whiteboard.java;
  * allocate a buffer of length (capacity + 1).
  */
 public class CircularQueue {
-    private Integer[] buf;
+    private int[] buf;
     private int head;
     private int tail;
 
@@ -29,21 +29,21 @@ public class CircularQueue {
      *                 the queue can hold.
      */
     public CircularQueue(int capacity) {
-        buf = new Integer[capacity + 1];
+        buf = new int[capacity + 1];
     }
 
     /**
      * Append an element to the queue.
      *
-     * @param element The element to be appended.
+     * @param e The element to be appended.
      * @return 'true' if the append operation was successful,
      * 'false' otherwise.
      */
-    public boolean add(int element) {
+    public boolean add(int e) {
         if (isFull()) {
             return false;
         }
-        buf[tail] = element;
+        buf[tail] = e;
         tail = (tail + 1) % buf.length;
         return true;
     }
@@ -59,10 +59,9 @@ public class CircularQueue {
         if (isEmpty()) {
             return null;
         }
-        int element = buf[head];
-        buf[head] = null;
+        int e = buf[head];
         head = (head + 1) % buf.length;
-        return element;
+        return e;
     }
 
     /**
