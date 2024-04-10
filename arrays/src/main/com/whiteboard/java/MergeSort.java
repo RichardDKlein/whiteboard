@@ -20,13 +20,10 @@ public final class MergeSort {
      * @return The sorted array.
      */
     public static int[] mergeSort(int[] a) {
-        int[] result = new int[a.length];
         // base case
         if (a.length == 1) {
-            result[0] = a[0];
-            return result;
+            return a;
         }
-        // recursive step
         int[][] halves = splitArrayIntoHalves(a);
         int[] leftSorted = mergeSort(halves[0]);
         int[] rightSorted = mergeSort(halves[1]);
@@ -34,11 +31,10 @@ public final class MergeSort {
     }
 
     private static int[][] splitArrayIntoHalves(int[] a) {
-        int[][] result = new int[2][];
-        int size1 = a.length / 2;
-        result[0] = Arrays.copyOfRange(a, 0, size1);
-        result[1] = Arrays.copyOfRange(a, size1, a.length);
-        return result;
+        int halfLength = a.length / 2;
+        int[] left = Arrays.copyOfRange(a, 0, halfLength);
+        int[] right = Arrays.copyOfRange(a, halfLength, a.length);
+        return new int[][] {left, right};
     }
 
     private static int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
