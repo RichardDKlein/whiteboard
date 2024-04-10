@@ -1,8 +1,6 @@
 package com.whiteboard.java;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Sort an array using the `merge sort` algorithm.
