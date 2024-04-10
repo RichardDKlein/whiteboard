@@ -17,7 +17,7 @@ public class IsPrime {
         if (n % 2 == 0) {
             return false;
         }
-        int sqrtN = (int) Math.sqrt(n);
+        int sqrtN = (int)Math.round(Math.sqrt(n));
         for (int i = 3; i <= sqrtN; i += 2) {
             if (n % i == 0) {
                 return false;
