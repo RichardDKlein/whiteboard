@@ -51,13 +51,13 @@ public final class MaxSubarray {
         int start, maxStart, end, maxEnd, sum, maxSum;
         start = maxStart = end = maxEnd = 0;
         sum = maxSum = a[0];
-        for (int i = 1; i < a.length; ++i) {
+        for (int i = 1; i < a.length; i++) {
             if (sum > 0) {
-                sum += a[i];
                 end = i;
+                sum += a[i];
             } else {
-                sum = a[i];
                 start = end = i;
+                sum = a[i];
             }
             if (sum > maxSum) {
                 maxSum = sum;
@@ -65,7 +65,6 @@ public final class MaxSubarray {
                 maxEnd = end;
             }
         }
-        int[] result = {maxStart, maxEnd};
-        return result;
+        return new int[] {maxStart, maxEnd};
     }
 }
