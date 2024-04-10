@@ -39,7 +39,7 @@ public class ArrayHopscotch {
      * @param iStart The starting index for our game.
      * @return A Set containing all the winning paths. Each winning path is a
      * List containing a sequence of unique hop indices that lead to a zero
-     * element. Note that the first element of a winning tuple must be `i_start`,
+     * element. Note that the first element of a winning List must be `iStart`,
      * and the last element must be the index of a zero element in `a`. If there
      * are no winning paths, then the Set will be empty.
      */
@@ -50,41 +50,51 @@ public class ArrayHopscotch {
     /**
      * Helper function to perform loop detection.
      *
-     * @param a (Same as in main function.)
-     * @param iStart (Same as in main function.)
+     * This function is called as we explore a potential winning path, to
+     * find all possible remaining paths starting from the current index,
+     * taking care not to visit any indices that have already been visited.
+     *
+     * @param a The array in which we are playing our game of array hopscotch.
+     * @param iCurrent The index we are currently on in our game of array
+     *                 hopscotch.
      * @param visited A Set of indices that have already been visited during
-     *                our game of array hopscotch. Do not continue to explore
-     *                any paths that land on any of these indices.
-     * @return (Same as in main function.)
+     *                our game of array hopscotch. Do not return any paths
+     *                that contain any of these indices.
+     * @return A Set containing all winning paths, starting from `iCurrent`.
+     * Each winning path is a List containing a sequence of unique hop indices
+     * that lead to a zero element. Note that the first element of a winning
+     * List must be `iCurrent`, the last element must be the index of a zero
+     * element in `a`, and none of the elements can be indices contained in
+     * `visited`. If there are no winning paths, then the Set will be empty.
      */
     private static Set<List<Integer>> helper(
-            int[] a, int iStart, Set<Integer> visited) {
+            int[] a, int iCurrent, Set<Integer> visited) {
         Set<List<Integer>> result = new HashSet<>();
         // error checking
-        if (iStart < 0 || iStart >= a.length || a[iStart] < 0) {
+        if (iCurrent < 0 || iCurrent >= a.length || a[iCurrent] < 0) {
             return result;
         }
         // loop detection
-        if (visited.contains(iStart)) {
+        if (visited.contains(iCurrent)) {
             return result;
         }
         // base case
-        if (a[iStart] == 0) {
+        if (a[iCurrent] == 0) {
             List<Integer> path = new ArrayList<>();
-            path.add(iStart);
+            path.add(iCurrent);
             result.add(path);
             return result;
         }
         // recursive step
-        visited.add(iStart); // don't revisit starting index
-        for (int iHop : new int[] {iStart - a[iStart], iStart + a[iStart]}) {
+        visited.add(iCurrent); // don't revisit starting index
+        for (int iHop : new int[] {iCurrent - a[iCurrent], iCurrent + a[iCurrent]}) {
             Set<List<Integer>> remainingPaths = helper(a, iHop, visited);
             for (List<Integer> path : remainingPaths) {
-                path.add(0, iStart);
+                path.add(0, iCurrent);
                 result.add(path);
             }
         }
-        visited.remove(iStart); // ok to revisit starting index
+        visited.remove(iCurrent); // ok to revisit starting index
         return result;
     }
 }
