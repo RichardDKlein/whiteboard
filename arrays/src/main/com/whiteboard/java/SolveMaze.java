@@ -44,6 +44,7 @@ public final class SolveMaze {
         if (startRow < 0 || startRow >= numRows || startCol < 0 || startCol >= numCols) {
             return result;
         }
+        // wall or already visited
         if (maze[startRow][startCol] == '@') {
             return result;
         }
@@ -55,32 +56,17 @@ public final class SolveMaze {
         // recursive step
         maze[startRow][startCol] = '@';
         int[] goLeft = {startRow, startCol - 1};
-        List<int[]> remainingPath = solveMaze(maze, goLeft, exit);
-        if (!remainingPath.isEmpty()) {
-            result.add(start);
-            result.addAll(remainingPath);
-            return result;
-        }
         int[] goUp = {startRow - 1, startCol};
-        remainingPath = solveMaze(maze, goUp, exit);
-        if (!remainingPath.isEmpty()) {
-            result.add(start);
-            result.addAll(remainingPath);
-            return result;
-        }
         int[] goRight = {startRow, startCol + 1};
-        remainingPath = solveMaze(maze, goRight, exit);
-        if (!remainingPath.isEmpty()) {
-            result.add(start);
-            result.addAll(remainingPath);
-            return result;
-        }
         int[] goDown = {startRow + 1, startCol};
-        remainingPath = solveMaze(maze, goDown, exit);
-        if (!remainingPath.isEmpty()) {
-            result.add(start);
-            result.addAll(remainingPath);
-            return result;
+        int[][] moves = new int[][] {goLeft, goUp, goRight, goDown};
+        for (int[] move : moves) {
+            List<int[]> remainingPath = solveMaze(maze, move, exit);
+            if (!remainingPath.isEmpty()) {
+                result.add(start);
+                result.addAll(remainingPath);
+                return result;
+            }
         }
         // no solution
         return result;
