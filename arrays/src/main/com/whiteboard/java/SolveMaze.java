@@ -18,9 +18,6 @@ public final class SolveMaze {
      * by looking for paths that start at each cell that
      * is adjacent to the specified start cell.
      *
-     * Execution time is O(n) [worst case], where n is
-     * the number of cells in the maze.
-     *
      * @param maze A 2D array representing the maze to
      *             be solved. Each element of the array
      *             contains either a '@', representing
@@ -59,7 +56,7 @@ public final class SolveMaze {
         int[] goUp = {startRow - 1, startCol};
         int[] goRight = {startRow, startCol + 1};
         int[] goDown = {startRow + 1, startCol};
-        int[][] moves = new int[][] {goLeft, goUp, goRight, goDown};
+        int[][] moves = {goLeft, goUp, goRight, goDown};
         for (int[] move : moves) {
             List<int[]> remainingPath = solveMaze(maze, move, exit);
             if (!remainingPath.isEmpty()) {
