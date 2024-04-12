@@ -1,13 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Implement the "flood fill" algorithm to fill a region
- * in a 2D array, using a recursive approach.
- */
 public final class FloodFillRecursive {
-    private FloodFillRecursive() {
-    }
-
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D bitmap, using a recursive approach.

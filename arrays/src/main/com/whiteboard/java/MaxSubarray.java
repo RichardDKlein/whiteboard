@@ -1,13 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * In an array of positive and negative integers, find
- * the subarray whose elements sum to the maximum value.
- */
 public final class MaxSubarray {
-    private MaxSubarray() {
-    }
-
     /**
      * In an array of positive and negative integers, find
      * the subarray whose elements sum to the maximum value.

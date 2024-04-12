@@ -4,13 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Solve a 2D maze.
- */
 public final class SolveMaze {
-    private SolveMaze() {
-    }
-
     /**
      * Solve a 2D maze.
      *

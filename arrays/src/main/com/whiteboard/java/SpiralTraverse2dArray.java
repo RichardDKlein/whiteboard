@@ -3,15 +3,7 @@ package com.whiteboard.java;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Traverse a 2D array in a spiral pattern, starting at
- * the upper-left element and spiralling in the clockwise
- * direction.
- */
 public final class SpiralTraverse2dArray {
-    private SpiralTraverse2dArray() {
-    }
-
     /**
      * Traverse a 2D array, NOT NECESSARILY SQUARE, in a spiral
      * pattern, starting at the upper-left element, and spiralling

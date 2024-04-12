@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Search a sorted and rotated one-dimensional array.
- */
 public final class SearchSortedAndRotatedArray {
-    private SearchSortedAndRotatedArray() {
-    }
-
     /**
      * Search a one-dimensional array that has been sorted and then
      * rotated, so that there is a discontinuity in the array where

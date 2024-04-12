@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Compute the water collected between the bars of a bar graph.
- */
 public final class TrappedWater {
-    private TrappedWater() {
-    }
-
     private static int numBars;
     private static int[] barHeights;
     private static int[] leftTallestBars;

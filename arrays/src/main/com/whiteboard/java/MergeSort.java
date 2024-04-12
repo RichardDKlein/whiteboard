@@ -2,13 +2,7 @@ package com.whiteboard.java;
 
 import java.util.Arrays;
 
-/**
- * Sort an array using the `merge sort` algorithm.
- */
 public final class MergeSort {
-    private MergeSort() {
-    }
-
     /**
      * Sort an array using the `merge sort` algorithm.
      *

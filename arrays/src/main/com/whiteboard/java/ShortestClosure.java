@@ -2,15 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Find the shortest closure of needles in a haystack, i.e.
- * the shortest interval in the haystack that contains all
- * the needles.
- */
 public final class ShortestClosure {
-    private ShortestClosure() {
-    }
-
     private static int[] haystack;
     private static Set<Integer> needles;
     private static Map<Integer, List<Integer>> needleLocationMap;

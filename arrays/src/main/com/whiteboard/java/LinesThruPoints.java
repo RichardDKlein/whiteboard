@@ -2,14 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Given a set of 2D points, finds the number of lines
- * that can be drawn thru at least three points.
- */
 public final class LinesThruPoints {
-    private LinesThruPoints() {
-    }
-
     private static class Line {
         float slope; // Float.MAX_VALUE if line is vertical
         float intercept; // x-coordinate if line is vertical

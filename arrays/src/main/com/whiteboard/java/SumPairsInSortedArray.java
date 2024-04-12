@@ -1,17 +1,9 @@
 package com.whiteboard.java;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * In a sorted (in increasing order) array, find
- * pairs of array elements that sum to a given value.
- */
 public final class SumPairsInSortedArray {
-    private SumPairsInSortedArray() {
-    }
-
     /**
      * In a sorted (in increasing order) array, find
      * pairs of array elements that sum to a given value.

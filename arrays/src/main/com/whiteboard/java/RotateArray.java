@@ -1,9 +1,5 @@
 package com.whiteboard.java;
 
-/**
- * Rotate a square 2D array 90 degrees in the clockwise direction,
- * IN PLACE.
- */
 public final class RotateArray {
     /**
      * Rotate a square 2D array 90 degrees in the clockwise direction,

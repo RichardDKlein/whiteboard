@@ -3,15 +3,7 @@ package com.whiteboard.java;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Implement the "flood fill" algorithm to fill a region
- * in a 2D array, using a Breadth-First Search (BFS)
- * approach.
- */
 public final class FloodFillBreadthFirstSearch {
-    private FloodFillBreadthFirstSearch() {
-    }
-
     /**
      * Implement the "flood fill" algorithm to fill a region
      * in a 2D array, using a Breadth-First Search (BFS)

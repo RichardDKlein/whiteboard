@@ -1,9 +1,5 @@
 package com.whiteboard.java;
 
-/**
- * Search a 2D array in which all rows
- * and columns are sorted in ascending order.
- */
 public final class SearchSorted2dArray {
     /**
      * Search a 2D array in which all rows and columns
