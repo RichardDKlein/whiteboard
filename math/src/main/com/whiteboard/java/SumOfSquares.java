@@ -27,18 +27,16 @@ public final class SumOfSquares {
     public static Set<int[]> sumOfSquares(int n) {
         Set<int[]> result = new HashSet<>();
         Map<Integer, Set<int[]>> squares = new HashMap<>();
-        for (int i = 0; i <= n; ++i) {
-            for (int j = 0; j <= n; ++j) {
-                int square = i * i + j * j;
-                int[] pair = {i, j};
-                squares.computeIfAbsent(square, k -> new HashSet<>()).add(pair);
+        for (int i =0; i <= n; i++) {
+            for (int j = 0; j <= n; j++) {
+                int square = (i * i) + (j * j);
+                squares.computeIfAbsent(square, k -> new HashSet<>()).add(new int[] {i, j});
             }
         }
         for (Set<int[]> pairs : squares.values()) {
             for (int[] pair1 : pairs) {
                 for (int[] pair2 : pairs) {
-                    int[] solution = {pair1[0], pair1[1], pair2[0], pair2[1]};
-                    result.add(solution);
+                    result.add(new int[] {pair1[0], pair1[1], pair2[0], pair2[1]});
                 }
             }
         }
