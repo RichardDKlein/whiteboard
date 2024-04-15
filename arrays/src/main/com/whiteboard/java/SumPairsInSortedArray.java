@@ -30,16 +30,16 @@ public final class SumPairsInSortedArray {
         int right = a.length - 1;
         while (left < right) {
             if (a[left] + a[right] < sum) {
-                ++left;
+                left++;
             } else if (a[left] + a[right] > sum) {
-                --right;
+                right--;
             } else {
                 Set<Integer> pair = new HashSet<>();
                 pair.add(a[left]);
                 pair.add(a[right]);
                 result.add(pair);
-                ++left;
-                --right;
+                left++;
+                right--;
             }
         }
         return result;
