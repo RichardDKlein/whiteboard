@@ -20,7 +20,7 @@ public final class ReverseDecimalNumber {
         int result = 0;
         while (n > 0) {
             int onesDigit = n % 10;
-            result = result * 10 + onesDigit;
+            result = (result * 10) + onesDigit;
             n /= 10;
         }
         return result;
