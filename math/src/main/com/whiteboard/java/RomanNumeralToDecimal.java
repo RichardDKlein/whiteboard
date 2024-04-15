@@ -36,7 +36,7 @@ public final class RomanNumeralToDecimal {
         romanToDecimal.put('M', 1000);
 
         int result = romanToDecimal.get(roman.charAt(roman.length() - 1));
-        for (int i = roman.length() - 2; i >= 0; --i) {
+        for (int i = roman.length() - 2; i >= 0; i--) {
             int currDecimal = romanToDecimal.get(roman.charAt(i));
             int prevDecimal = romanToDecimal.get(roman.charAt(i + 1));
             if (currDecimal < prevDecimal) {
