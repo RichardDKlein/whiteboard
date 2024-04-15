@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Converts a decimal number (positive integer) to base 36.
- */
 public final class DecimalToBase62 {
-    private DecimalToBase62() {
-    }
-
     /**
      * Converts a decimal number (positive integer) to base 62.
      *

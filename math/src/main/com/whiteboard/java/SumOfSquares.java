@@ -2,14 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Find all integers a, b, c, d that are in the range [0..1000],
- * and that satisfy the equation a*a + b*b == c*c + d*d.
- */
 public final class SumOfSquares {
-    private SumOfSquares() {
-    }
-
     /**
      * Find all integers a, b, c, d that are in the range [0..n],
      * and that satisfy the equation a*a + b*b == c*c + d*d.

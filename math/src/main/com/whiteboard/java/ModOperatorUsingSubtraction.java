@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Implement the modulo operator, using subtraction instead of division.
- */
 public final class ModOperatorUsingSubtraction {
-    private ModOperatorUsingSubtraction() {
-    }
-
     /**
      * Implement the modulo operator, using subtraction instead of division.
      *

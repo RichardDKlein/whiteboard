@@ -3,13 +3,7 @@ package com.whiteboard.java;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Convert a Roman numeral to decimal.
- */
 public final class RomanNumeralToDecimal {
-    private RomanNumeralToDecimal() {
-    }
-
     /**
      * Converts a Roman numeral to decimal.
      *

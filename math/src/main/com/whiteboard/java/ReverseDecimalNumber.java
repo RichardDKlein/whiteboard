@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Reverse the digits of a decimal number.
- */
 public final class ReverseDecimalNumber {
-    private ReverseDecimalNumber() {
-    }
-
     /**
      * Reverses the digits of a decimal number.
      *
