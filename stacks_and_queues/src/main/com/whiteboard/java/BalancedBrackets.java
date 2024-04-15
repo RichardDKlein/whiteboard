@@ -2,14 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Determine whether, in an expression containing various kinds
- * of brackets, the brackets are properly balanced and nested.
- */
 public final class BalancedBrackets {
-    private BalancedBrackets() {
-    }
-
     /**
      * Determine whether, in an expression containing various
      * kinds of brackets, the brackets are properly balanced
