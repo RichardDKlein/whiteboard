@@ -9,8 +9,8 @@ public class QueueUsingTwoStacks<E> {
     private Stack<E> addStack = new Stack<>();
     private Stack<E> pollStack = new Stack<>();
 
-    public void add(E item) {
-        addStack.push(item);
+    public void add(E element) {
+        addStack.push(element);
     }
 
     public E poll() {
