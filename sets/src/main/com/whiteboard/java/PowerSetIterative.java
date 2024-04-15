@@ -2,14 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Compute the power set of a set, i.e. the set of all subsets of
- * that set, using an iterative approach.
- */
 public final class PowerSetIterative {
-    private PowerSetIterative() {
-    }
-
     /**
      * Compute the power set of a set, i.e. the set of all subsets of
      * that set, using an iterative approach. (Assume that the size of
@@ -23,10 +16,10 @@ public final class PowerSetIterative {
     public static <E> Set<Set<E>> powerSetIterative(Set<E> set) {
         Set<Set<E>> result = new HashSet<>();
         int numSubsets = (int)Math.round(Math.pow(2, set.size()));
-        for (int i = 0; i < numSubsets; ++i) {
+        for (int i = 0; i < numSubsets; i++) {
             Set<E> subset = new HashSet<>();
             Iterator<E> iterator = set.iterator();
-            for (int bitNum = 0; bitNum < set.size(); ++bitNum) {
+            for (int bitNum = 0; bitNum < set.size(); bitNum++) {
                 E element = iterator.next();
                 if (isBitSet(i, bitNum)) {
                     subset.add(element);
