@@ -3,13 +3,7 @@ package com.whiteboard.java;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Determine whether two strings are permutations of each other.
- */
 public final class AreStringsPermutations {
-    private AreStringsPermutations() {
-    }
-
     /**
      * Determine whether two strings are permutations of each other.
      *
@@ -19,14 +13,14 @@ public final class AreStringsPermutations {
      * s1 and s2 are permutations of each other.
      */
     public static boolean areStringsPermutations(String s1, String s2) {
-        Map<Character, Integer> s1Inventory = inventoryStringChars(s1);
-        Map<Character, Integer> s2Inventory = inventoryStringChars(s2);
-        return s1Inventory.equals(s2Inventory);
+        Map<Character, Integer> inventory1 = inventoryStringChars(s1);
+        Map<Character, Integer> inventory2 = inventoryStringChars(s2);
+        return inventory1.equals(inventory2);
     }
 
     private static Map<Character, Integer> inventoryStringChars(String s) {
         Map<Character, Integer> result = new HashMap<>();
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             int count = result.getOrDefault(c, 0);
             result.put(c, count + 1);
