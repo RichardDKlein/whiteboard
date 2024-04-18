@@ -1,13 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Find the longest palindromic substring of a given string,
- * i.e. the longest substring that is a palindrome.
- */
 public final class LongestPalindromicSubstring {
-    private LongestPalindromicSubstring() {
-    }
-
     /**
      * Find the longest palindromic substring of a given string,
      * i.e. the longest substring that is a palindrome.
@@ -20,7 +13,7 @@ public final class LongestPalindromicSubstring {
             return "";
         }
         String longest = s.substring(0, 1);
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); i++) {
             String longestWithOddLength = longestCenteredAt(s, i, i);
             String longestWithEvenLength = longestCenteredAt(s, i, i + 1);
             if (longestWithOddLength.length() > longest.length()) {
