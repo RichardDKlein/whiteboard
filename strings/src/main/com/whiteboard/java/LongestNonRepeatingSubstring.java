@@ -3,14 +3,7 @@ package com.whiteboard.java;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Find the longest non-repeating substring of a given string,
- * i.e. the longest substring containing no repeated characters.
- */
 public final class LongestNonRepeatingSubstring {
-    private LongestNonRepeatingSubstring() {
-    }
-
     /**
      * Find the longest non-repeating substring of a given string,
      * i.e. the longest substring containing no repeated characters.
@@ -40,18 +33,17 @@ public final class LongestNonRepeatingSubstring {
      * @return The longest non-repeating substring.
      */
     public static String longestNonRepeatingSubstring(String s) {
-        int currStart, currLen, maxStart, maxLen;
-        currStart = maxStart = 0;
-        currLen = maxLen = 0;
+        int currStart, maxStart, currLen, maxLen;
+        currStart = maxStart = currLen = maxLen = 0;
         Map<Character, Integer> charToIndexMap = new HashMap<>();
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             int charIndex = charToIndexMap.getOrDefault(c, -1);
             if (charIndex >= currStart) {
                 currLen = (i - 1) - currStart + 1;
                 if (currLen > maxLen) {
-                    maxStart = currStart;
                     maxLen = currLen;
+                    maxStart = currStart;
                 }
                 currStart = charIndex + 1;
             }
@@ -59,8 +51,8 @@ public final class LongestNonRepeatingSubstring {
         }
         currLen = (s.length() - 1) - currStart + 1;
         if (currLen > maxLen) {
-            maxStart = currStart;
             maxLen = currLen;
+            maxStart = currStart;
         }
         return s.substring(maxStart, maxStart + maxLen);
     }
