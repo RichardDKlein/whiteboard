@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Find a specified substring in a string.
- */
 public final class FindSubstring {
-    private FindSubstring() {
-    }
-
     /**
      * Find a specified substring in a string.
      *
@@ -17,17 +11,17 @@ public final class FindSubstring {
      */
     public static int findSubstring(String string, String substring) {
         int lastIndexToCheck = string.length() - substring.length();
-        for (int i = 0; i <= lastIndexToCheck; ++i) {
-            if (substringFound(string, substring, i)) {
+        for (int i = 0; i <= lastIndexToCheck; i++) {
+            if (substringFoundAtIndex(string, substring, i)) {
                 return i;
             }
         }
         return -1;
     }
 
-    private static boolean substringFound(String string, String substring,
-                                          int startingIndex) {
-        for (int i = 0; i < substring.length(); ++i) {
+    private static boolean substringFoundAtIndex(String string, String substring,
+                                                 int startingIndex) {
+        for (int i = 0; i < substring.length(); i++) {
             if (substring.charAt(i) != string.charAt(startingIndex + i)) {
                 return false;
             }
