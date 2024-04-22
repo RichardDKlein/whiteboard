@@ -3,14 +3,7 @@ package com.whiteboard.java;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Determine whether a given ransom note can be constructed by cutting out
- * letters from a given magazine.
- */
 public final class RansomNote {
-    private RansomNote() {
-    }
-
     private static String note;
     private static String magazine;
     private static Map<Character, Integer> magazineInventory;

@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Parse a string containing no whitespace into its
- * constituent words.
- */
 public final class ParseStringIntoWords {
-    private ParseStringIntoWords() {
-    }
-
     /**
      * Parse a string containing no whitespace into its
      * constituent words.

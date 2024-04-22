@@ -2,14 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Find the 'k' most frequently occurring strings in a list
- * of strings, along with the number of times they occur.
- */
 public final class TopKStrings {
-    private TopKStrings() {
-    }
-
     private static List<String> strings;
     private static int k;
     private static Map<String, Integer> stringCounts;

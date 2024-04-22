@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Reverse a given string.
- */
 public final class ReverseString {
-    private ReverseString() {
-    }
-
     /**
      * Reverse the given string.
      *

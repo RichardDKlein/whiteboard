@@ -1,12 +1,6 @@
 package com.whiteboard.java;
 
-/**
- * Reverse the words in a sentence.
- */
 public final class ReverseWordsInSentence {
-    private ReverseWordsInSentence() {
-    }
-
     /**
      * Reverse the words in a sentence.
      *

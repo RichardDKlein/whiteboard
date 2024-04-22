@@ -2,13 +2,7 @@ package com.whiteboard.java;
 
 import java.util.Arrays;
 
-/**
- * Alphabetize a given string.
- */
 public final class SortString {
-    private SortString() {
-    }
-
     /**
      * Sort the given string.
      *

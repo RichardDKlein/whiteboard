@@ -3,13 +3,7 @@ package com.whiteboard.java;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Find all the permutations of a given string.
- */
 public final class PermutationsOfString {
-    private PermutationsOfString() {
-    }
-
     /**
      * Find all the permutations of a given string.
      *
