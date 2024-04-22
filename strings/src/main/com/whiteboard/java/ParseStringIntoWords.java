@@ -29,7 +29,7 @@ public final class ParseStringIntoWords {
             return result;
         }
         // recursive step
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); i++) {
             String firstWord = s.substring(0, i + 1);
             if (!dictionary.contains(firstWord)) {
                 // try a longer first word
