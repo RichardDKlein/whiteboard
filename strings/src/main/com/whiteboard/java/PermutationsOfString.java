@@ -29,7 +29,7 @@ public final class PermutationsOfString {
         String remainder = s.substring(1);
         Set<String> permutationsOfRemainder = permutationsOfString(remainder);
         for (String permutationOfRemainder : permutationsOfRemainder) {
-            for (int i = 0; i <= permutationOfRemainder.length(); ++i) {
+            for (int i = 0; i <= permutationOfRemainder.length(); i++) {
                 String permutation = insertChar(permutationOfRemainder, firstChar, i);
                 result.add(permutation);
             }
