@@ -15,8 +15,8 @@ public final class ReverseString {
             char tmp = buf[left];
             buf[left] = buf[right];
             buf[right] = tmp;
-            ++left;
-            --right;
+            left++;
+            right--;
         }
         return new String(buf);
     }
