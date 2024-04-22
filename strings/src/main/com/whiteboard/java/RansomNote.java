@@ -4,10 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class RansomNote {
-    private static String note;
-    private static String magazine;
-    private static Map<Character, Integer> magazineInventory;
-
     /**
      * Determine whether a given ransom note can be constructed by
      * cutting out letters from a given magazine.
@@ -28,33 +24,28 @@ public final class RansomNote {
      * the given ransom note can be constructed from the given magazine.
      */
     public static boolean ransomNote(String note, String magazine) {
-        saveCallingParams(note, magazine);
-        inventoryMagazineChars();
-        return createNoteFromMagazine();
+        Map<Character, Integer> charInventory = inventoryMagazineChars(magazine);
+        return buildNoteFromInventory(note, charInventory);
     }
 
-    private static void saveCallingParams(String note, String magazine) {
-        RansomNote.note = note;
-        RansomNote.magazine = magazine;
-    }
-
-    private static void inventoryMagazineChars() {
-        magazineInventory = new HashMap<>();
-        for (int i = 0; i < magazine.length(); ++i) {
+    private static Map<Character, Integer> inventoryMagazineChars(String magazine) {
+        Map<Character, Integer> result = new HashMap<>();
+        for (int i = 0; i < magazine.length(); i++) {
             char c = magazine.charAt(i);
-            int count = magazineInventory.getOrDefault(c, 0);
-            magazineInventory.put(c, count + 1);
+            int count = result.getOrDefault(c, 0);
+            result.put(c, count + 1);
         }
+        return result;
     }
 
-    private static boolean createNoteFromMagazine() {
-        for (int i = 0; i < note.length(); ++i) {
+    private static boolean buildNoteFromInventory(String note, Map<Character, Integer> inventory) {
+        for (int i = 0; i < note.length(); i++) {
             char c = note.charAt(i);
-            int count = magazineInventory.getOrDefault(c, 0);
+            int count = inventory.getOrDefault(c, 0);
             if (count == 0) {
                 return false;
             }
-            magazineInventory.put(c, count - 1);
+            inventory.put(c, count - 1);
         }
         return true;
     }
