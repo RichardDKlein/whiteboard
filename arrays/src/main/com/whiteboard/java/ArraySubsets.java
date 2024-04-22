@@ -32,7 +32,7 @@ public class ArraySubsets {
         }
         a.sort(Collections.reverseOrder());
         long sumA = 0;
-        long sumB = a.stream().mapToInt(Integer::intValue).sum();
+        long sumB = a.stream().reduce(0, Integer::sum);
         for (int n : a) {
             result.add(n);
             sumA += n;
