@@ -3,11 +3,6 @@ package com.whiteboard.java;
 import java.util.*;
 
 public final class TopKStrings {
-    private static List<String> strings;
-    private static int k;
-    private static Map<String, Integer> stringCounts;
-    private static PriorityQueue<Map.Entry<String, Integer>> minHeap;
-
     /**
      * Find the 'k' most frequently occurring strings in a list of
      * strings, along with the number of times they occur.
@@ -18,27 +13,24 @@ public final class TopKStrings {
      * along with the number of times they occur.
      */
     public static List<Map.Entry<String, Integer>> topKStrings (List<String> strings, int k) {
-        saveCallingParams(strings, k);
-        countStrings();
-        buildMinHeap();
-        return extractResultsFromMinHeap();
+        Map<String, Integer> stringCounts = countStrings(strings);
+        PriorityQueue<Map.Entry<String, Integer>> minHeap = buildMinHeap(stringCounts, k);
+        return extractTopKStringsFromMinHeap(minHeap);
     }
 
-    private static void saveCallingParams(List<String> strings, int k) {
-        TopKStrings.strings = strings;
-        TopKStrings.k = k;
-    }
-
-    private static void countStrings() {
-        stringCounts = new HashMap<>();
-        for (String s : strings) {
-            int count = stringCounts.getOrDefault(s, 0);
-            stringCounts.put(s, count + 1);
+    private static Map<String, Integer> countStrings(List<String> strings) {
+        Map<String, Integer> stringCounts = new HashMap<>();
+        for (String string : strings) {
+            int count = stringCounts.getOrDefault(string, 0);
+            stringCounts.put(string, count + 1);
         }
+        return stringCounts;
     }
 
-    private static void buildMinHeap() {
-        minHeap = new PriorityQueue<>((x, y) -> x.getValue() - y.getValue());
+    private static PriorityQueue<Map.Entry<String, Integer>>
+    buildMinHeap(Map<String, Integer> stringCounts, int k) {
+        PriorityQueue<Map.Entry<String, Integer>> minHeap =
+                new PriorityQueue<>((x, y) -> x.getValue() - y.getValue());
         for (Map.Entry<String, Integer> stringCount : stringCounts.entrySet()) {
             if (minHeap.isEmpty() || minHeap.peek().getValue() <= stringCount.getValue()) {
                 minHeap.add(stringCount);
@@ -47,10 +39,12 @@ public final class TopKStrings {
                 }
             }
         }
+        return minHeap;
     }
 
-    private static List<Map.Entry<String, Integer>> extractResultsFromMinHeap() {
-        LinkedList<Map.Entry<String, Integer>> result = new LinkedList<>();
+    private static List<Map.Entry<String, Integer>>
+    extractTopKStringsFromMinHeap(PriorityQueue<Map.Entry<String, Integer>> minHeap) {
+        List<Map.Entry<String, Integer>> result = new LinkedList<>();
         while (!minHeap.isEmpty()) {
             result.addFirst(minHeap.poll());
         }
