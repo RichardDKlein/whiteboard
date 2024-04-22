@@ -12,19 +12,19 @@ public final class ReverseWordsInSentence {
         char[] buf = sentence.toCharArray();
         int i = 0;
         while (i < buf.length) {
-            int iStartOfNextWord = startOfNextWord(buf, i);
-            if (iStartOfNextWord < 0) {
+            int startOfNextWord = findStartOfNextWord(buf, i);
+            if (startOfNextWord < 0) {
                 break;
             }
-            int iEndOfNextWord = endOfCurrWord(buf, iStartOfNextWord);
-            reverseWord(buf, iStartOfNextWord, iEndOfNextWord);
-            i = iEndOfNextWord + 1;
+            int endOfCurrWord = findEndOfCurrWord(buf, startOfNextWord);
+            reverseWord(buf, startOfNextWord, endOfCurrWord);
+            i = endOfCurrWord + 1;
         }
         return new String(buf);
     }
 
-    private static int startOfNextWord(char[] buf, int searchFrom) {
-        for (int i = searchFrom; i < buf.length; ++i) {
+    private static int findStartOfNextWord(char[] buf, int searchFrom) {
+        for (int i = searchFrom; i < buf.length; i++) {
             if (!Character.isWhitespace(buf[i])) {
                 return i;
             }
@@ -32,8 +32,8 @@ public final class ReverseWordsInSentence {
         return -1;
     }
 
-    private static int endOfCurrWord(char[] buf, int searchFrom) {
-        for (int i = searchFrom; i < buf.length; ++i) {
+    private static int findEndOfCurrWord(char[] buf, int searchFrom) {
+        for (int i = searchFrom; i < buf.length; i++) {
             if (Character.isWhitespace(buf[i])) {
                 return i - 1;
             }
@@ -41,15 +41,15 @@ public final class ReverseWordsInSentence {
         return buf.length - 1;
     }
 
-    private static void reverseWord(char[] buf, int iStartWord, int iEndWord) {
-        int left = iStartWord;
-        int right = iEndWord;
+    private static void reverseWord(char[] buf, int startOfWord, int endOfWord) {
+        int left = startOfWord;
+        int right = endOfWord;
         while (left < right) {
             char tmp = buf[left];
             buf[left] = buf[right];
             buf[right] = tmp;
-            ++left;
-            --right;
+            left++;
+            right--;
         }
     }
 }
