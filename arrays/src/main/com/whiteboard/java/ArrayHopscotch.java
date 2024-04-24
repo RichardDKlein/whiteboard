@@ -1,9 +1,6 @@
 package com.whiteboard.java;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ArrayHopscotch {
     /**
@@ -67,8 +64,7 @@ public class ArrayHopscotch {
      * element in `a`, and none of the elements can be indices contained in
      * `visited`. If there are no winning paths, then the Set will be empty.
      */
-    private static Set<List<Integer>> helper(
-            int[] a, int iCurrent, Set<Integer> visited) {
+    private static Set<List<Integer>> helper(int[] a, int iCurrent, Set<Integer> visited) {
         Set<List<Integer>> result = new HashSet<>();
         // error checking
         if (iCurrent < 0 || iCurrent >= a.length || a[iCurrent] < 0) {
@@ -80,21 +76,20 @@ public class ArrayHopscotch {
         }
         // base case
         if (a[iCurrent] == 0) {
-            List<Integer> path = new ArrayList<>();
-            path.add(iCurrent);
-            result.add(path);
-            return result;
+            result.add(Arrays.asList(iCurrent));
         }
         // recursive step
-        visited.add(iCurrent); // don't revisit starting index
-        for (int iHop : new int[] {iCurrent - a[iCurrent], iCurrent + a[iCurrent]}) {
-            Set<List<Integer>> remainingPaths = helper(a, iHop, visited);
-            for (List<Integer> path : remainingPaths) {
-                path.add(0, iCurrent);
+        visited.add(iCurrent);  // don't revisit current index
+        for (int hop : new int[] {iCurrent - a[iCurrent], iCurrent + a[iCurrent]}) {
+            Set<List<Integer>> remainingPaths = helper(a, hop, visited);
+            for (List<Integer> remainingPath : remainingPaths) {
+                List<Integer> path = new ArrayList<>();
+                path.add(iCurrent);
+                path.addAll(remainingPath);
                 result.add(path);
             }
         }
-        visited.remove(iCurrent); // ok to revisit starting index
+        visited.remove(iCurrent);  // ok to revisit current index
         return result;
     }
 }
