@@ -27,27 +27,22 @@ public final class FloodFillBreadthFirstSearch {
         int numRows = a.length;
         int numCols = a[0].length;
         Queue<int[]> queue = new LinkedList<>();
-        int[] seed = {seedRow, seedCol};
-        queue.add(seed);
+        queue.add(new int[] {seedRow, seedCol});
         while (!queue.isEmpty()) {
             int[] pixel = queue.poll();
             int row = pixel[0];
             int col = pixel[1];
-            if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
+            if (row < 0 || col < 0 || row >= numRows || col >= numCols) {
                 continue;
             }
             if (a[row][col] == '@') {
                 continue;
             }
             a[row][col] = '@';
-            int[] left = {row, col - 1};
-            int[] up = {row - 1, col};
-            int[] right = {row, col + 1};
-            int[] down = {row + 1, col};
-            queue.add(left);
-            queue.add(up);
-            queue.add(right);
-            queue.add(down);
+            queue.add(new int[] {row, col - 1});
+            queue.add(new int[] {row - 1, col});
+            queue.add(new int[] {row, col + 1});
+            queue.add(new int[] {row + 1, col});
         }
     }
 }
