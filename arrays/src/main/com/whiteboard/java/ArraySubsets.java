@@ -28,11 +28,14 @@ public class ArraySubsets {
     public static List<Integer> arraySubsets(List<Integer> a) {
         List<Integer> result = new ArrayList<>();
         if (a == null || a.isEmpty()) {
-          return result;
+            return result;
         }
         a.sort(Collections.reverseOrder());
-        long sumA = 0;
-        long sumB = a.stream().reduce(0, Integer::sum);
+        int sumA = 0;
+        int sumB = 0;
+        for (int n : a) {
+            sumB += n;
+        }
         for (int n : a) {
             result.add(n);
             sumA += n;
@@ -41,7 +44,7 @@ public class ArraySubsets {
                 break;
             }
         }
-        Collections.sort(result);
+        result.sort(null);
         return result;
     }
 }
