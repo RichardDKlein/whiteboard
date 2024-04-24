@@ -42,6 +42,10 @@ solving the following subset of problems.
 3. RomanNumeralToDecimal
 4. SumOfSquares
 
+### Sets
+1. PowerSetIterative
+2. PowerSetRecursive
+
 ### Stacks and Queues
 
 1. BalancedBrackets
