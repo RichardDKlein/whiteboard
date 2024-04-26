@@ -69,8 +69,7 @@ public final class ShortestClosure {
 
     private static int[] getNextClosure() {
         Map<Integer, List<Integer>> nextNeedleLocations = new HashMap<>();
-        for (int needle : needles) {
-            List<Integer> needleLocationList = needleLocationMap.get(needle);
+        for (List<Integer> needleLocationList : needleLocationMap.values()) {
             if (needleLocationList.isEmpty()) {
                 return null;
             }
@@ -80,8 +79,7 @@ public final class ShortestClosure {
         int max = Collections.max(nextNeedleLocations.keySet());
         // Remove min from consideration next time we are called.
         nextNeedleLocations.get(min).remove(0);
-        int[] result = {min, max};
-        return result;
+        return new int[] {min, max};
     }
 
     private static int length(int[] closure) {
