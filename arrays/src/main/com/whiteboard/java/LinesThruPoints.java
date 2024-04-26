@@ -4,8 +4,8 @@ import java.util.*;
 
 public final class LinesThruPoints {
     private static class Line {
-        float slope; // Float.MAX_VALUE if line is vertical
-        float intercept; // x-coordinate if line is vertical
+        float slope;
+        float intercept;
 
         Line(double x1, double y1, double x2, double y2) {
             if ((float)x1 == (float)x2) {
@@ -13,7 +13,7 @@ public final class LinesThruPoints {
                 intercept = (float)x1;
             } else {
                 slope = (float)((y2 - y1) / (x2 - x1));
-                intercept = (float)(y1 - slope * x1);
+                intercept = (float)(y1 - (slope * x1));
             }
         }
 
@@ -30,10 +30,6 @@ public final class LinesThruPoints {
             return Objects.hash(slope, intercept);
         }
     }
-
-    private static double[] x;
-    private static double[] y;
-    private static Map<Line, Integer> lineCounts;
 
     /**
      * Given a collection of 2D points, finds the number of
@@ -57,32 +53,27 @@ public final class LinesThruPoints {
      * least three of the given 2D points.
      */
     public static int linesThruPoints(double[] x, double[] y) {
-        init(x, y);
-        findLinesThruPairsOfPoints();
-        return countRepeatedLines();
+        Map<Line, Integer> lineCounts = findLinesThruPairsOfPoints(x, y);
+        return countRepeatedLines(lineCounts);
     }
 
-    private static void init(double[] x, double[] y) {
-        LinesThruPoints.x = x;
-        LinesThruPoints.y = y;
-        lineCounts = new HashMap<>();
-    }
-
-    private static void findLinesThruPairsOfPoints() {
-        for (int i = 0; i < x.length - 1; ++i) {
-            for (int j = i + 1; j < x.length; ++j) {
+    private static Map<Line, Integer> findLinesThruPairsOfPoints(double[] x, double[] y) {
+        Map<Line, Integer> result = new HashMap<>();
+        for (int i = 0; i < x.length; i++) {
+            for (int j = i + 1; j < x.length; j++) {
                 Line line = new Line(x[i], y[i], x[j], y[j]);
-                int count = lineCounts.getOrDefault(line, 0);
-                lineCounts.put(line, count + 1);
+                int count = result.getOrDefault(line, 0);
+                result.put(line, count + 1);
             }
         }
+        return result;
     }
 
-    private static int countRepeatedLines() {
+    private static int countRepeatedLines(Map<Line, Integer> lineCounts) {
         int result = 0;
         for (int lineCount : lineCounts.values()) {
             if (lineCount > 1) {
-                ++result;
+                result++;
             }
         }
         return result;
