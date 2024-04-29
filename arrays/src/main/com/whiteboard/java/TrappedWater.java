@@ -1,16 +1,12 @@
 package com.whiteboard.java;
 
-public final class TrappedWater {
-    private static int numBars;
-    private static int[] barHeights;
-    private static int[] leftTallestBars;
-    private static int[] rightTallestBars;
-    private static int[] waterline;
+import java.util.Arrays;
 
+public final class TrappedWater {
     /**
      * Compute the water collected between the bars of a bar graph.
      *
-     * The computation proceeds in four passes thru the bars.
+     * The computation proceeds in four passes through the bars.
      *
      * The first two passes compute, for each bar 'i', the height
      * of the tallest bar to the left and right of bar 'i',
@@ -31,55 +27,55 @@ public final class TrappedWater {
      * bars of the bar graph.
      */
     public static int trappedWater(int[] barHeights) {
-        init(barHeights);
-        findLeftTallestBars();
-        findRightTallestBars();
-        findWaterline();
-        return computeTrappedWater();
+        int[] leftTallestBars = findLeftTallestBars(barHeights);
+        int[] rightTallestBars = findRightTallestBars(barHeights);
+        int[] waterLine = computeWaterLine(leftTallestBars, rightTallestBars);
+        return computeTrappedWater(barHeights, waterLine);
     }
 
-    private static void init (int[] barHeights) {
-        TrappedWater.barHeights = barHeights;
-        numBars = barHeights.length;
-        leftTallestBars = new int[numBars];
-        rightTallestBars = new int[numBars];
-        waterline = new int[numBars];
-    }
-
-    private static void findLeftTallestBars() {
+    private static int[] findLeftTallestBars(int[] barHeights) {
+        int numBars = barHeights.length;
+        int[] leftTallestBars = new int[numBars];
         int tallestSoFar = 0;
-        for (int bar = 0; bar < numBars; ++bar) {
-            leftTallestBars[bar] = tallestSoFar;
-            if (barHeights[bar] > tallestSoFar) {
-                tallestSoFar = barHeights[bar];
+        for (int i = 0; i < numBars; i++) {
+            leftTallestBars[i] = tallestSoFar;
+            if (barHeights[i] > tallestSoFar) {
+                tallestSoFar = barHeights[i];
             }
         }
+        return leftTallestBars;
     }
 
-    private static void findRightTallestBars() {
+    private static int[] findRightTallestBars(int[] barHeights) {
+        int numBars = barHeights.length;
+        int[] rightTallestBars = new int[numBars];
         int tallestSoFar = 0;
-        for (int bar = numBars - 1; bar >= 0; --bar) {
-            rightTallestBars[bar] = tallestSoFar;
-            if (barHeights[bar] > tallestSoFar) {
-                tallestSoFar = barHeights[bar];
+        for (int i = numBars - 1; i >= 0; i--) {
+            rightTallestBars[i] = tallestSoFar;
+            if (barHeights[i] > tallestSoFar) {
+                tallestSoFar = barHeights[i];
             }
         }
+        return rightTallestBars;
     }
 
-    private static void findWaterline() {
-        for (int bar = 0; bar < numBars; ++bar) {
-            waterline[bar] = Math.min(leftTallestBars[bar],
-                    rightTallestBars[bar]);
+    private static int[] computeWaterLine(int[] leftTallestBars, int[] rightTallestBars) {
+        int numBars = leftTallestBars.length;
+        int[] waterLine = new int[numBars];
+        for (int i = 0; i < waterLine.length; i++) {
+            waterLine[i] = Math.min(leftTallestBars[i], rightTallestBars[i]);
         }
+        return waterLine;
     }
 
-    private static int computeTrappedWater() {
-        int result = 0;
-        for (int bar = 0; bar < numBars; ++bar) {
-            if (waterline[bar] > barHeights[bar]) {
-                result += waterline[bar] - barHeights[bar];
+    private static int computeTrappedWater(int[] barHeights, int[] waterLine) {
+        int numBars = barHeights.length;
+        int trappedWater = 0;
+        for (int i = 0; i < numBars; i++) {
+            if (waterLine[i] > barHeights[i]) {
+                trappedWater += waterLine[i] - barHeights[i];
             }
         }
-        return result;
+        return trappedWater;
     }
 }
