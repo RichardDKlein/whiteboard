@@ -2,16 +2,7 @@ package com.whiteboard.java;
 
 import java.util.*;
 
-/**
- * Given a list of city pairs, where each pair denotes that
- * the two cities belong to the same sales territories, find
- * all the territories, i.e. find all the cities composing
- * each territory.
- */
 public final class SalesTerritories {
-    private SalesTerritories() {
-    }
-
     private static class CityNode {
         String cityName;
         Set<CityNode> neighbors;
@@ -34,11 +25,6 @@ public final class SalesTerritories {
             return cityName.hashCode();
         }
     }
-
-    private static Set<Set<String>> cityPairs;
-    private static Map<String, CityNode> cityGraph;
-    private static Set<CityNode> visited;
-
     /**
      * Given a collection of city pairs, where each pair denotes
      * that the two cities belong to the same sales territories,
@@ -63,44 +49,39 @@ public final class SalesTerritories {
      * their sales territories.
      */
     public static Set<Set<String>> salesTerritories(Set<Set<String>> cityPairs) {
-        init(cityPairs);
-        buildCityGraph();
-        return findTerritories();
+        Map<String, CityNode> cityGraph = buildCityGraph(cityPairs);
+        return findSalesTerritories(cityGraph);
     }
 
-    private static void init(Set<Set<String>> cityPairs) {
-        SalesTerritories.cityPairs = cityPairs;
-        cityGraph = new HashMap<>();
-        visited = new HashSet<>();
-    }
-
-    private static void buildCityGraph() {
+    private static Map<String, CityNode> buildCityGraph(Set<Set<String>> cityPairs) {
+        Map<String, CityNode> cityGraph = new HashMap<>();
         for (Set<String> cityPair : cityPairs) {
-            Iterator<String> iter = cityPair.iterator();
-            String cityName1 = iter.next();
-            String cityName2 = iter.next();
+            Iterator<String> iterator = cityPair.iterator();
+            String cityName1 = iterator.next();
+            String cityName2 = iterator.next();
             CityNode cityNode1 = cityGraph.computeIfAbsent(cityName1, CityNode::new);
             CityNode cityNode2 = cityGraph.computeIfAbsent(cityName2, CityNode::new);
             cityNode1.neighbors.add(cityNode2);
             cityNode2.neighbors.add(cityNode1);
         }
+        return cityGraph;
     }
 
-    private static Set<Set<String>> findTerritories() {
-        Set<Set<String>> result = new HashSet<>();
+    private static Set<Set<String>> findSalesTerritories(Map<String, CityNode> cityGraph) {
+        Set<Set<String>> territories = new HashSet<>();
+        Set<CityNode> visited = new HashSet<>();
         for (CityNode cityNode : cityGraph.values()) {
             if (visited.contains(cityNode)) {
                 continue;
             }
-            Set<String> territory = findConnectedCities(cityNode);
-            result.add(territory);
+            Set<String> territory = findConnectedCities(cityNode, visited);
+            territories.add(territory);
         }
-        return result;
+        return territories;
     }
 
-    private static Set<String> findConnectedCities(CityNode cityNode) {
-        Set<String> result = new HashSet<>();
-        // Breadth-First Search (BFS)
+    private static Set<String> findConnectedCities(CityNode cityNode, Set<CityNode> visited) {
+        Set<String> connectedCities = new HashSet<>();
         Queue<CityNode> queue = new LinkedList<>();
         queue.add(cityNode);
         while (!queue.isEmpty()) {
@@ -109,9 +90,9 @@ public final class SalesTerritories {
                 continue;
             }
             visited.add(node);
-            result.add(node.cityName);
+            connectedCities.add(node.cityName);
             queue.addAll(node.neighbors);
         }
-        return result;
+        return connectedCities;
     }
 }
