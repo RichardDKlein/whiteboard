@@ -16,99 +16,94 @@ import java.util.*;
  * the LRU list node for a given cache key is an O(1) operation.
  */
 public final class LruCache<K, V> {
-    static class LruListNode<K> {
+    static class ListNode<K> {
         K key;
-        LruListNode<K> next;
-        LruListNode<K> prev;
+        ListNode<K> prev;
+        ListNode<K> next;
 
-        LruListNode(K key) {
+        ListNode(K key) {
             this.key = key;
         }
     }
 
     static class LruLinkedList<K> {
-        LruListNode<K> head;
-        LruListNode<K> tail;
+        ListNode<K> head;
+        ListNode<K> tail;
 
-        void addFirst(LruListNode<K> lruListNode) {
-            if (head == null) {
-                head = tail = lruListNode;
-                lruListNode.next = lruListNode.prev = null;
-            } else {
-                lruListNode.next = head;
-                head.prev = lruListNode;
-                head = lruListNode;
-                lruListNode.prev = null;
-            }
-        }
-
-        void remove(LruListNode<K> lruListNode) {
-            if (head == lruListNode && tail == lruListNode) {
+        void remove(ListNode<K> listNode) {
+            if (head == listNode && tail == listNode) {
                 head = tail = null;
-            } else if (head == lruListNode) {
-                head = lruListNode.next;
-                lruListNode.next.prev = null;
-            } else if (tail == lruListNode) {
-                tail = lruListNode.prev;
-                lruListNode.prev.next = null;
+            } else if (head == listNode) {
+                head = listNode.next;
+                listNode.next.prev = null;
+            } else if (tail == listNode) {
+                tail = listNode.prev;
+                listNode.prev.next = null;
             } else {
-                LruListNode<K> prev = lruListNode.prev;
-                LruListNode<K> next = lruListNode.next;
-                prev.next = next;
-                next.prev = prev;
+                listNode.prev.next = listNode.next;
+                listNode.next.prev = listNode.prev;
             }
-            lruListNode.next = lruListNode.prev = null;
         }
 
-        LruListNode<K> removeLast() {
-            LruListNode<K> last = tail;
-            tail = last.prev;
-            last.prev.next = null;
-            last.next = last.prev = null;
-            return last;
+        void insertAtHead(ListNode<K> listNode) {
+            if (head == null) {
+                head = tail = listNode;
+                listNode.prev = listNode.next = null;
+            } else {
+                listNode.prev = null;
+                listNode.next = head;
+                head.prev = listNode;
+                head = listNode;
+            }
+        }
+
+        ListNode<K> removeFromTail() {
+            ListNode<K> tailNode = tail;
+            tail = tailNode.prev;
+            tailNode.prev.next = null;
+            return tailNode;
         }
     }
 
-    private static class CacheNode<K, V> {
+    static class CacheNode<K, V> {
         V value;
-        LruListNode<K> lruListNode;
+        ListNode<K> listNode;
 
-        CacheNode(V value, LruListNode<K> lruListNode) {
+        CacheNode(V value, ListNode<K> listNode) {
             this.value = value;
-            this.lruListNode = lruListNode;
+            this.listNode = listNode;
         }
     }
 
-    private final int capacity;
-    private final Map<K, CacheNode<K, V>> cache;
-    final LruLinkedList<K> lruLinkedList;
+    int capacity;
+    Map<K, CacheNode<K, V>> cache;
+    LruLinkedList<K> lruList;
 
     public LruCache(int capacity) {
         this.capacity = capacity;
         cache = new HashMap<>(capacity);
-        lruLinkedList = new LruLinkedList<>();
-    }
-
-    public void put(K key, V value) {
-        if (cache.size() >= capacity) {
-            evictLeastRecentlyUsed();
-        }
-        LruListNode<K> lruListNode = new LruListNode<>(key);
-        CacheNode<K, V> cacheNode = new CacheNode<>(value, lruListNode);
-        cache.put(key, cacheNode);
-        lruLinkedList.addFirst(lruListNode);
+        lruList = new LruLinkedList<>();
     }
 
     public V get(K key) {
         CacheNode<K, V> cacheNode = cache.get(key);
-        LruListNode<K> lruListNode = cacheNode.lruListNode;
-        lruLinkedList.remove(lruListNode);
-        lruLinkedList.addFirst(lruListNode);
+        lruList.remove(cacheNode.listNode);
+        lruList.insertAtHead(cacheNode.listNode);
         return cacheNode.value;
     }
 
+    public void put(K key, V value) {
+        if (cache.size() == capacity) {
+            evictLeastRecentlyUsed();
+        }
+        ListNode<K> listNode = new ListNode<>(key);
+        CacheNode<K, V> cacheNode = new CacheNode<>(value, listNode);
+        cache.put(key, cacheNode);
+        lruList.insertAtHead(listNode);
+    }
+
     private void evictLeastRecentlyUsed() {
-        LruListNode<K> lruListNode = lruLinkedList.removeLast();
-        cache.remove(lruListNode.key);
+        ListNode<K> lruNode = lruList.removeFromTail();
+        cache.remove(lruNode.key);
     }
 }

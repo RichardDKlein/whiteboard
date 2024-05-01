@@ -1,7 +1,5 @@
 package com.whiteboard.java;
 
-import com.whiteboard.java.LruCache.LruLinkedList;
-
 import org.junit.Test;
 
 public class LruCacheTest {
@@ -66,10 +64,10 @@ public class LruCacheTest {
 
     public String lruLinkedListToString() {
         StringBuilder result = new StringBuilder();
-        if (lruCache.lruLinkedList.head == null) {
+        if (lruCache.lruList.head == null) {
             return("<empty>");
         }
-        LruCache.LruListNode<String> curr = lruCache.lruLinkedList.head;
+        LruCache.ListNode<String> curr = lruCache.lruList.head;
         boolean atHead = true;
         while (curr != null) {
             if (!atHead) {
