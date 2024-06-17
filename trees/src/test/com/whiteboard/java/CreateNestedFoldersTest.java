@@ -4,9 +4,30 @@ import org.junit.Test;
 
 import java.util.*;
 
-import com.whiteboard.java.CreateNestedFolders.Folder;
-
 public class CreateNestedFoldersTest {
+    static class Folder {
+        String folderName;
+        String parentFolderName;
+
+        Folder(String folderName, String parentFolderName) {
+            this.folderName = folderName;
+            this.parentFolderName = parentFolderName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Folder other)) {
+                return false;
+            }
+            return this.folderName.equals(other.folderName);
+        }
+
+        @Override
+        public int hashCode() {
+            return folderName.hashCode();
+        }
+    }
+
     @Test
     public void createNestedFoldersTest() {
         System.out.println();
